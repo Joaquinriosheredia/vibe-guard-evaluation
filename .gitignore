@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+audit-claude.json
+audit-joaquin.json

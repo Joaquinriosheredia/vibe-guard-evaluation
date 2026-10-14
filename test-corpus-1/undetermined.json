@@ -1,0 +1,17 @@
+{
+  "note": "every U of the first review not in the blind sample",
+  "findings": [
+    {
+      "id": "C077",
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "language": "python",
+      "engine": "python-vibe-guard",
+      "ruleId": "PYVIBE-004",
+      "severity": "critical",
+      "message": "threading.RLock() blocks the event loop under contention",
+      "file": "src/novelvideo/cognee/ladybug_access.py",
+      "line": 529
+    }
+  ]
+}
