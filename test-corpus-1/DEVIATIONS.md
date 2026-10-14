@@ -164,3 +164,59 @@ reviewed by Joaquín.
 run as-is). A separate renderer, `scripts/render_metrics.py`, reads `metrics.json` and writes
 `METRICS.md` without recomputing anything. No metric is changed; `METRICS.md` is a rendering
 of `metrics.json`.
+
+## 6. Acceptance criteria 1 and 2 amended for test-corpus-2, justified by the Phase 1 data (2026-10-14)
+
+**What changes (decision by Joaquín, 2026-10-14).** It applies from test-corpus-2 onwards.
+This corpus's frozen result is **not** recomputed: criteria 1 and 2 stay **NOT met**, as in
+`RESULTS.md`.
+
+1. **Noise (criterion 2).**
+   - The volume thresholds, ≤ 5 CRITICAL and ≤ 20 WARNING per 1,000 files per language,
+     **are kept and always published**.
+   - What **decides** the criterion becomes **FP/1000 = (CRITICAL FP / files analysed) ×
+     1000**.
+   - Its threshold is set and argued in the test-corpus-2 pre-registration, **before any
+     search or scan**.
+2. **Precision per language (criterion 1).**
+   - The ≥ 90 % criterion is measured and must be met **separately for Java and for
+     Python**, each with a minimum n. **Neither language compensates for the other.**
+   - Java is selected by **code signals** (imports and annotations for `@Async`, Kafka and
+     Reactor), fixed before scanning and **never derived from vibe-guard results**.
+   - It is published as a **directed sample, not representative of all Java**.
+3. **Freeze rule.** **No acceptance criterion is modified after observing test-corpus-2
+   results.**
+
+**Why: the data from this corpus**, used as a development corpus after the evaluation.
+Measured with python-vibe-guard `master` `9a343b7`, which contains the Phase 1 changes and is
+unreleased, on the frozen checkouts, with the same scope as the evaluation:
+- **Python CRITICAL:** 205 over 5,776 files, or 35.49 per 1,000.
+- **Labels on those 205:**
+  - Joaquín: 16 (11 TP, 4 FP, 1 U);
+  - first review only (Claude): 108 (94 TP, 14 FP);
+  - no verdict: 81.
+
+  Sources: `audit-joaquin.json`, `dev-labels.json`, `audit-claude.json`.
+- **TP density:** applying each rule's labelled precision to all 205 gives **≈ 171 TP, about
+  29.6 per 1,000 files**. That is about 6 times the volume threshold (5 per 1,000).
+  - The volume criterion could therefore not be met **even at 100 % precision**. It counts
+    real problems and false alarms alike.
+  - The estimate leans on first-review labels, which over-called TP in the blind review
+    (16 vs Joaquín's 10), so it is optimistic.
+- **Java:** 1 CRITICAL in 22,741 `.java` files (20 repositories). Its precision was "not
+  conclusive (n < 20)", and the global criterion 1 was in practice a Python figure (149 of
+  150 reviewed).
+  - At that rate, 50 Java CRITICAL would need about 1,000 repositories, against a cap of 150
+    per pool.
+
+The full analysis is in the coordination repository: `vibe-guard` `docs/FASE1-CIERRE.md`, at
+commit [`d70abcb`](https://github.com/Joaquinriosheredia/vibe-guard/blob/d70abcb940f0db3b70309d6c70a28ea4eab009ad/docs/FASE1-CIERRE.md),
+§§ 2, 3 and 4.1. That repository is private; the figures above are reproducible from this
+repository's committed files and the pinned commits.
+
+**Left to the test-corpus-2 pre-registration** (not decided here):
+- the FP/1000 threshold;
+- how FP/1000 is estimated when only a sample of CRITICAL findings is reviewed, and how
+  undetermined findings count;
+- the minimum n per language;
+- the exact Java signals and queries.
