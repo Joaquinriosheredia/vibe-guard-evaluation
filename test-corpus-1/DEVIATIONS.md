@@ -153,3 +153,14 @@ verdict, a one-line reason with file:line evidence, and whether the message is o
 outside the repository, like `audit-claude.json`; only its sha256 is committed). `evaluate.py`
 is not run yet: the single U from the first review (`undetermined.json`, C077) is still to be
 reviewed by Joaquín.
+
+## 5. evaluate.py names METRICS.md in its docstring but never emits it (2026-10-14)
+
+**What happened.** `scripts/evaluate.py`'s docstring states its outputs as
+`-> metrics.json, METRICS.md`, but `main()` only writes `metrics.json`; it never writes
+`METRICS.md`. The discrepancy was noticed when the results were produced.
+
+**What was done.** `evaluate.py` was not modified (it is the pre-registered scorer and was
+run as-is). A separate renderer, `scripts/render_metrics.py`, reads `metrics.json` and writes
+`METRICS.md` without recomputing anything. No metric is changed; `METRICS.md` is a rendering
+of `metrics.json`.
