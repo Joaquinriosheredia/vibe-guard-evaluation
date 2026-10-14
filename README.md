@@ -10,7 +10,7 @@ committed before any search, selection or run. Departures from it go to `DEVIATI
 
 | Directory | What | Status |
 |---|---|---|
-| [`test-corpus-1/`](test-corpus-1/) | Precision of CRITICAL findings (≥ 90 %, ≥ 50 reviewed) and noise per 1,000 files, Java/Spring and Python/FastAPI | pre-registered 2026-10-14 · see its `DEVIATIONS.md` |
+| [`test-corpus-1/`](test-corpus-1/) | Precision of CRITICAL findings (≥ 90 %, ≥ 50 reviewed) and noise per 1,000 files, Java/Spring and Python/FastAPI | test-corpus-1 evaluated 2026-10-14: both pre-registered criteria NOT met — see test-corpus-1/RESULTS.md |
 
 Third-party code is cited by repository, pinned commit and file:line. Nothing is opened in
 those repositories. Checkouts are not stored here; only vibe-guard's outputs are.

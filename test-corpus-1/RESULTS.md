@@ -59,19 +59,24 @@ findings; capping removes that leverage and precision falls further.
 
 ## Two reviews, and why the published figure is probably optimistic
 
-The final verdict for each finding is Joaquín's where he reviewed it (the 20-finding blind
-sample plus the one undetermined case), and the first review's otherwise. **129 of the 150
-final verdicts come from the first review**, which was not independently checked.
+There were two reviews. The **first review was done by Claude (an AI)** over all 150 findings.
+The **second review was done by Joaquín**, assisted by a Claude session that located the
+flagged code and its callers at the pinned commits while Joaquín decided every verdict (see
+`DEVIATIONS.md` #4); it covered the 20-finding blind sample plus the one undetermined case.
 
-On the 20 findings both reviewers judged independently (the blind sample):
+The final verdict for each finding is Joaquín's where he reviewed it (those 21), and Claude's
+first-review verdict otherwise. **129 of the 150 final verdicts come from Claude's first
+review**, which was not independently checked.
+
+On the 20 blind-sample findings judged by both:
 
 - raw agreement **0.60** (12 of 20), Cohen's kappa **0.20** (weak);
-- the first review called **16 TP**, the second **10 TP** on the same 20;
+- Claude's first review called **16 TP**, Joaquín's second review **10 TP** on the same 20;
 - 8 verdicts changed: **7 went TP → FP** (dead code or test-only paths, experimental scripts,
   or exceptions already contained upstream) and **1 went FP → TP**.
 
-So on the only part measured twice, the first review over-called true positives by a factor of
-16/10. The same reviewer produced 129 of the 150 final verdicts. **The published precision
+So on the only part reviewed twice, Claude's first review over-called true positives by a
+factor of 16/10, and Claude produced 129 of the 150 final verdicts. **The published precision
 (0.7067) is therefore likely an overestimate**; a fully independent review of all 150 would be
 expected to score lower.
 
