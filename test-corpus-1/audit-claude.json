@@ -1,0 +1,1055 @@
+{
+  "reviewer": "Claude (Opus 5.5)",
+  "verdicts": [
+    {
+      "id": "C001",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "@Async + @Transactional(readOnly) on HardcoverSyncService.syncProgressToHardcover (@Service, HardcoverSyncService.java:65-67); @EnableAsync in config/TaskExecutorConfig.java:14; called through the proxy from KoboReadingStateService:253, KoreaderService:102, ReadingProgressService:276: the caller's transaction does not propagate"
+    },
+    {
+      "id": "C002",
+      "verdict": "FP",
+      "overstated": true,
+      "path": "main",
+      "reason": "the while True drains a queue with get_nowait() and breaks on queue.Empty (backend/api/main.py:1037-1041); it terminates, in _shutdown_all at shutdown: not an indefinite block"
+    },
+    {
+      "id": "C003",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async compression-pipeline method (src/compression/post_processor.py:179), run on the event loop while serving a session (scheduler._execute_with_snapshots)"
+    },
+    {
+      "id": "C004",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async compression-pipeline method (src/compression/transcript.py:91), run on the event loop while serving a session (scheduler._execute_with_snapshots)"
+    },
+    {
+      "id": "C005",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over invoke() (manager.py:1031): invoke's whole body is try/except Exception around on_session_end, no re-raise — contained"
+    },
+    {
+      "id": "C006",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "open() reads the MCP config in MCPClient.connect_all, called once during server bootstrap (web_server.py:183): startup path, not per request"
+    },
+    {
+      "id": "C007",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _run_claimed_job (memory/jobs.py:281): the job body is in a broad except that does not re-raise (only early-return guards precede it)"
+    },
+    {
+      "id": "C011",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _build_tree recursion (hackernews.py); _build_tree does HTTP with no try, raises on a failed item, the rest run unobserved"
+    },
+    {
+      "id": "C014",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:511 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C016",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:552 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C017",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:607 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C021",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:908 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C024",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:1104 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C025",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:1118 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C026",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:1141 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C027",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:1465 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C030",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:1880 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C032",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2065 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C035",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2096 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C036",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2127 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C038",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2306 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C039",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2339 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C040",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2353 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C044",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in main.py:2561 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C049",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in protocol/mtproto/telemt.py:253 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C052",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in protocol/trojan/xhttp_core.py:343 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C053",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in protocol/vless/websocket.py:100 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C054",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in protocol/vless/xhttp_core.py:378 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C056",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "subprocess.run in the update branch of the CLI's single-run _main_async (fofamap.py:1308-1312); returns right after, with no other coroutine running: nothing is serialized"
+    },
+    {
+      "id": "C057",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in mcp_server.py:238 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C060",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() writes an uploaded file in the async service update_skill (apps/services/skill_service.py:158), on the request path, blocking the loop during the write"
+    },
+    {
+      "id": "C061",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (beizhu-1209/AIHelms apps/tasks/); no global task_time_limit in apps/celery_app.py:14-24; the task does async DB work (get_worker_session_factory) with no statement/lock timeout configured anywhere in the repository, so a stuck query can hold the worker indefinitely (HTTP clients do have timeouts)"
+    },
+    {
+      "id": "C062",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (beizhu-1209/AIHelms apps/tasks/); no global task_time_limit in apps/celery_app.py:14-24; the task does async DB work (get_worker_session_factory) with no statement/lock timeout configured anywhere in the repository, so a stuck query can hold the worker indefinitely (HTTP clients do have timeouts)"
+    },
+    {
+      "id": "C063",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (beizhu-1209/AIHelms apps/tasks/); no global task_time_limit in apps/celery_app.py:14-24; the task does async DB work (get_worker_session_factory) with no statement/lock timeout configured anywhere in the repository, so a stuck query can hold the worker indefinitely (HTTP clients do have timeouts)"
+    },
+    {
+      "id": "C064",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (beizhu-1209/AIHelms apps/tasks/); no global task_time_limit in apps/celery_app.py:14-24; the task does async DB work (get_worker_session_factory) with no statement/lock timeout configured anywhere in the repository, so a stuck query can hold the worker indefinitely (HTTP clients do have timeouts)"
+    },
+    {
+      "id": "C068",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (beizhu-1209/AIHelms apps/tasks/); no global task_time_limit in apps/celery_app.py:14-24; the task does async DB work (get_worker_session_factory) with no statement/lock timeout configured anywhere in the repository, so a stuck query can hold the worker indefinitely (HTTP clients do have timeouts)"
+    },
+    {
+      "id": "C069",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "scripts/check_workflow_agent_contracts.py: a developer diagnostic script, not application code"
+    },
+    {
+      "id": "C070",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over probe_video_duration_seconds; inner _probe raises ValueError on ffprobe failure (video_billing.py:27); one bad clip aborts the gather"
+    },
+    {
+      "id": "C071",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _copy_one (freezone.py:6107): async file copy, no try, raises on I/O error"
+    },
+    {
+      "id": "C072",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over asyncio.to_thread(_freezone_character_audio_refs): sync target has no try (freezone.py:8605) and can raise"
+    },
+    {
+      "id": "C074",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _summary_for_record (projects.py:192): single return of an awaited build, no try"
+    },
+    {
+      "id": "C077",
+      "verdict": "U",
+      "overstated": false,
+      "path": "main",
+      "reason": "RLock acquired on the loop in query (ladybug_access.py:532); every in-repo acquirer (initialize_connection:485, _close_adapter:260 via async ladybug_graph_access) runs on the loop, where RLock is reentrant; contention needs another thread holding it, possible only if cognee (external) calls the adapter from a thread: not decidable in the repository"
+    },
+    {
+      "id": "C080",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/image_generator.py:334); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C081",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/image_generator.py:628); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C082",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/image_generator.py:732); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C083",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/image_generator.py:798); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C086",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "ffprobe via subprocess.run inside async _audio_duration_seconds (generators/indextts2_fal.py:85-87), on the audio generation path: blocks the loop while ffprobe runs"
+    },
+    {
+      "id": "C087",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_character.py:572); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C091",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:5246); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C092",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:5260); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C093",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:5505); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C094",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:5517); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C095",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:5790); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C096",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:6250); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C097",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7204); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C099",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7245); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C100",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7274); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C101",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7304); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C102",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7395); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C103",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7422); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C104",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7458); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C105",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7500); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C107",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_grid.py:7732); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C110",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/nanobanana_prop.py:429); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C112",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/tts_generator.py:333); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C113",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/tts_generator.py:740); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C115",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/video_generator.py:491); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C116",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/video_generator.py:911); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C118",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() reading/writing media in an async generator (src/novelvideo/generators/video_generator.py:4442); the pipeline fans generators out with asyncio.gather, so the disk I/O blocks the event loop and concurrent panels/jobs"
+    },
+    {
+      "id": "C124",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over run(item) in map_bounded (bounded_concurrency.py:66): except re-raises after releasing the semaphore"
+    },
+    {
+      "id": "C125",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over probe(path) (media_io.py:102): probe catches broadly and returns a default without re-raising"
+    },
+    {
+      "id": "C127",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "same probe_video_duration_seconds gathered (video_billing.py:53)"
+    },
+    {
+      "id": "C128",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over one(a) (accounts.py:1088): body is a broad try returning a result/error dict, no re-raise"
+    },
+    {
+      "id": "C129",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over one(a) (accounts.py:1147): an async with runs AFTER the broad try, unguarded, can raise"
+    },
+    {
+      "id": "C130",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over one(a) (accounts.py:1737): assign + async with + return, no try"
+    },
+    {
+      "id": "C131",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _probe (tencent.py:648): assign + broad try that does not re-raise"
+    },
+    {
+      "id": "C132",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over validator.validate (core/validator.py:66): each check await is inside try/except Exception (21-26); returns a ValidationResult"
+    },
+    {
+      "id": "C133",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in ares/core/engine.py:1374 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C134",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/core/sandbox.py:561); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C136",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "subprocess.run with capture_output inside an async method (ares/credential/cracker.py:305); waits for the child on the event loop"
+    },
+    {
+      "id": "C137",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _attempt_with_sem (reuse.py:416): async with sem then the attempt, no try"
+    },
+    {
+      "id": "C138",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/db/database.py:1334); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C140",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/ad/asreproast.py:520); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C141",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync httpx.Client used for HTTP requests inside an async def (Mafifrizi/ARES ares/modules/cloud/identity_federation.py); each request blocks the event loop"
+    },
+    {
+      "id": "C142",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync httpx.Client used for HTTP requests inside an async def (Mafifrizi/ARES ares/modules/cloud/identity_federation.py); each request blocks the event loop"
+    },
+    {
+      "id": "C143",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync httpx.Client used for HTTP requests inside an async def (Mafifrizi/ARES ares/modules/cloud/identity_federation.py); each request blocks the event loop"
+    },
+    {
+      "id": "C144",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync httpx.Client used for HTTP requests inside an async def (Mafifrizi/ARES ares/modules/cloud/identity_federation.py); each request blocks the event loop"
+    },
+    {
+      "id": "C147",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/container.py:266); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C148",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/container.py:296); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C149",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/container.py:353); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C151",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/ld_preload.py:290); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C153",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/nfs_escape.py:332); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C154",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/nfs_escape.py:340); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C156",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/privesc.py:393); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C158",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/privesc.py:419); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C159",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() in an async module method (ares/modules/linux/privesc.py:427); the engine runs modules concurrently via asyncio.gather (ares/core/engine.py:944), so it blocks the event loop and the other modules"
+    },
+    {
+      "id": "C161",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over probe(port) (port_scan.py:491): a refused/failed port raises and aborts the scan — canonical case"
+    },
+    {
+      "id": "C162",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over the per-port probe (service_detect.py:343): a failed port raises"
+    },
+    {
+      "id": "C164",
+      "verdict": "FP",
+      "overstated": true,
+      "path": "main",
+      "reason": "subprocess.Popen inside an async method (ares/pivot/infrastructure.py:367) only starts the child and returns; it does not wait for it, so it does not block for the subprocess duration"
+    },
+    {
+      "id": "C169",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather(_dispatch_loop(), _health_check_loop()) (controller.py:278): dispatch awaits queue.dequeue_for unguarded; if it raises, the health loop runs unobserved"
+    },
+    {
+      "id": "C170",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in ares/worker/controller.py:296 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C171",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "asyncio.create_task(...) as a bare statement in apps/api/app/routers/resources.py:472 (application code); the Task is not stored, no set/registry/add_done_callback/task factory keeps it (checked in the file and the package); the loop keeps only a weak reference"
+    },
+    {
+      "id": "C172",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "pipelex/cli/dev_cli/commands/check_urls_cmd.py: a developer CLI command (asyncio.run) for checking URLs, not production application code"
+    },
+    {
+      "id": "C173",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over prepare_prompt_document (prompt_document_utils.py:30): no try, resolves/loads documents and can raise; the rest run unobserved"
+    },
+    {
+      "id": "C174",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over prepare_prompt_image (prompt_image_utils.py:30): no try, loads images and can raise"
+    },
+    {
+      "id": "C175",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over sub_pipe.run_pipe (pipe_parallel.py): a failed branch raises; the other branches keep running unobserved"
+    },
+    {
+      "id": "C178",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over prepare_image_part/prepare_document_part (google_factory.py): no try, fetch/decode can raise"
+    },
+    {
+      "id": "C179",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over image generation tasks (google_img_gen_worker.py:109): per-image work can raise"
+    },
+    {
+      "id": "C180",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over make_mistral_image_url (mistral_factory.py:95): no try, builds/fetches image URLs and can raise"
+    },
+    {
+      "id": "C181",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over make_mistral_document_url (mistral_factory.py:116): no try, can raise"
+    },
+    {
+      "id": "C182",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "wip/ spike file excluded from the package (pyproject packages/include) — not production code"
+    },
+    {
+      "id": "C183",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "wip/ spike file excluded from the package — not production code"
+    },
+    {
+      "id": "C184",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "wip/ spike file excluded from the package — not production code"
+    },
+    {
+      "id": "C187",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "whisperlivekit/cli.py _listen_main is a CLI one-shot (asyncio.run); the open() writes the result after await h.finish(), when the concurrent listening has ended: no concurrent victim"
+    },
+    {
+      "id": "C188",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "evals/run_evals.py main() under `if __name__=='__main__': asyncio.run(main())` with argparse: a standalone eval script, not application code"
+    },
+    {
+      "id": "C189",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "same eval script evals/run_evals.py main(): not application code"
+    },
+    {
+      "id": "C191",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _one (today.py:1352): body is [try/except Exception, if] with no re-raise — contained"
+    },
+    {
+      "id": "C195",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather of to_thread(retrieve) and to_thread(format_for_prompt) (slack_bot.py:974); neither sync target has a broad try (retriever.py:244, episodic.py:1897), so either can raise and the other thread runs unobserved"
+    },
+    {
+      "id": "C196",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather of _transcribe halves (pdf_reader.py:310): _transcribe has no try and does model transcription, so it can raise"
+    },
+    {
+      "id": "C197",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _transcribe chunks (pdf_reader.py:339): same, can raise"
+    },
+    {
+      "id": "C198",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _del_one (honcho_client.py:445): body is a single async with under try/except Exception, no re-raise — contained (explicit return_exceptions=False, but the awaitable cannot raise)"
+    },
+    {
+      "id": "C199",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over reviewer.critique (committee_reviewers.py:79): the critique call is wrapped in try/except Exception returning a result, no re-raise — contained"
+    },
+    {
+      "id": "C201",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over listed(m) (mail_read_tools.py:404): if + async with, no try, can raise"
+    },
+    {
+      "id": "C203",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _retrieve_for_call and _retrieve_failures_for_call (router.py:278,310): both wrap their work in try/except Exception with no re-raise — contained"
+    },
+    {
+      "id": "C204",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _prefetch_department_for_call (router.py:350): no try, awaits a prefetch that can raise; the others run unobserved"
+    },
+    {
+      "id": "C205",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over call_one (router.py:479): the only await (route_to_specialist) is inside try/except Exception returning a result — contained"
+    },
+    {
+      "id": "C206",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _review_area (weekly_review.py:295): its only await (route_to_specialist) is inside try/except Exception, returns an _AreaReview — contained"
+    },
+    {
+      "id": "C208",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _guarded (standard_stream_retrieval.py:193): despite the name its body is a bare async with (no try), so a retrieval can raise and the others run unobserved"
+    },
+    {
+      "id": "C209",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _one (kg_search_diagnostics.py:558): bare async with, no try, can raise"
+    },
+    {
+      "id": "C211",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _verify_entities_for_chunk (extractor.py:1788): the verification await is inside a trailing try/except Exception with no re-raise — contained"
+    },
+    {
+      "id": "C212",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _extract_relations_for_chunk (extractor.py:2869): same contained shape"
+    },
+    {
+      "id": "C215",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _search_dataset_shard (pipeline.py:373): kg_search is inside try/except returning (id, None, err) — contained"
+    },
+    {
+      "id": "C216",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _async_retry_batch (reranker/base.py:272): it retries and re-raises after exhausting retries, so a batch can raise"
+    },
+    {
+      "id": "C217",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _execute_task (parallelization.py:112): body is [if, return] with no try, can raise; the other tasks run unobserved"
+    },
+    {
+      "id": "C220",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather of _probe_embedding_runtime and _probe_reranker_runtime (rag_runtime_warmup.py): both wrap their work in try/except Exception, no re-raise — contained"
+    },
+    {
+      "id": "C222",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "scripts/live_core_release_gate.py: a release-gate script, not production application code"
+    },
+    {
+      "id": "C223",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "scripts/live_core_release_gate.py: release-gate script, not production code"
+    },
+    {
+      "id": "C227",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (yaojingang/GEORank backend/app/tasks/process.py); no global task_time_limit in app/core/celery_app.py:18-; the pipeline uses async_session with no statement/lock timeout configured in the repository (AI and storage clients do have timeouts)"
+    },
+    {
+      "id": "C228",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (yaojingang/GEORank backend/app/tasks/process.py); no global task_time_limit in app/core/celery_app.py:18-; the pipeline uses async_session with no statement/lock timeout configured in the repository (AI and storage clients do have timeouts)"
+    },
+    {
+      "id": "C229",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (yaojingang/GEORank backend/app/tasks/process.py); no global task_time_limit in app/core/celery_app.py:18-; the pipeline uses async_session with no statement/lock timeout configured in the repository (AI and storage clients do have timeouts)"
+    },
+    {
+      "id": "C230",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "Celery task without soft_time_limit/time_limit (yaojingang/GEORank backend/app/tasks/process.py); no global task_time_limit in app/core/celery_app.py:18-; the pipeline uses async_session with no statement/lock timeout configured in the repository (AI and storage clients do have timeouts)"
+    },
+    {
+      "id": "C231",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather of rank_similar_companies and load_graph_data (company_pages.py:1858): both wrap their body in try/except Exception with no re-raise — contained"
+    },
+    {
+      "id": "C233",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sync open() writes the uploaded file in the async FastAPI route upgrade_import (src/api/upgrade.py:115), on the request path"
+    },
+    {
+      "id": "C235",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "sqlite3.connect in the FastAPI lifespan (src/main.py:61), restore-at-startup branch (:193-203): runs before requests are served"
+    },
+    {
+      "id": "C236",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "threading.Lock created on the loop but only acquired in run_sdk/close_sdk, which run in threads via asyncio.to_thread (harness.py:79,104,153,203): never acquired on the event loop"
+    },
+    {
+      "id": "C238",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "migrate_from_json runs from the startup lifespan (core/lifecycle.py:153): one-time migration, before requests are served"
+    },
+    {
+      "id": "C240",
+      "verdict": "TP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over merge_group (content_summarizer.py:272): bare async with, no try, the summary merge can raise"
+    },
+    {
+      "id": "C241",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _process_chunk (text_optimizer.py:193): the format call is inside try/except returning _basic_transcript_cleanup — contained"
+    },
+    {
+      "id": "C242",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "gather over _translate_chunk (text_translator.py:154): same contained shape, returns a fallback on exception"
+    },
+    {
+      "id": "C243",
+      "verdict": "FP",
+      "overstated": false,
+      "path": "main",
+      "reason": "bare except around string slicing in a sync helper _format_date (video_preview_service.py:102-109): nothing that matters can be raised there, and SIGINT is handled by the server, not raised in handlers"
+    }
+  ]
+}
