@@ -1,0 +1,39 @@
+{
+  "note": "Post-evaluation development verdicts by Joaquín on test-corpus-1 findings. NOT part of the frozen, pre-registered measurement (that is review-set.json + audit-*.json + metrics.json). These labels exist only to anchor regression fixtures while the rules are developed. Every regression fixture in python-vibe-guard must cite an entry here (by id) or in audit-joaquin.json.",
+  "reviewer": "joaquin",
+  "entries": [
+    {
+      "id": "DL-001",
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "file": "ares/pivot/infrastructure.py",
+      "line": 244,
+      "function": "establish_socks5",
+      "rule": "PYVIBE-007",
+      "verdict": "FP",
+      "overstated": true,
+      "reason": "Popen arranca y retorna sin esperar; await asyncio.sleep cede el loop; proc.poll() no bloquea. El mensaje describe subprocess.run, no la operación real.",
+      "evidence": "ares/pivot/infrastructure.py:244-254",
+      "date": "2026-10-14",
+      "pr": "python-vibe-guard#9",
+      "reviewSetId": null
+    },
+    {
+      "id": "DL-002",
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "file": "ares/pivot/infrastructure.py",
+      "line": 367,
+      "function": "establish_local_forward",
+      "rule": "PYVIBE-007",
+      "verdict": "FP",
+      "overstated": true,
+      "reason": "Popen arranca y retorna sin esperar; await asyncio.sleep cede el loop; proc.poll() no bloquea. El mensaje describe subprocess.run, no la operación real.",
+      "evidence": "ares/pivot/infrastructure.py:367-374",
+      "date": "2026-10-14",
+      "pr": "python-vibe-guard#9",
+      "reviewSetId": "C164",
+      "reviewSetNote": "C164 was NOT among the 21 Joaquín reviewed in the evaluation; its prior FP verdict in audit-claude.json was Claude's first review. This entry is Joaquín's own, post-evaluation verdict."
+    }
+  ]
+}
