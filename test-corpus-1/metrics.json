@@ -1,0 +1,625 @@
+{
+  "reviewSet": {
+    "totalCritical": 244,
+    "reviewed": 150,
+    "method": "stratified random sample: {'java': 1, 'python': 149}, seed 20261014"
+  },
+  "overall": {
+    "n": 150,
+    "TP": 106,
+    "FP": 43,
+    "U": 1,
+    "primary": 0.7067,
+    "primaryCI95": [
+      0.6294,
+      0.7736
+    ],
+    "secondary": 0.7114,
+    "secondaryCI95": [
+      0.6341,
+      0.7781
+    ]
+  },
+  "criterion1": {
+    "met": false,
+    "rule": "primary point estimate >= 90% with >= 50 reviewed"
+  },
+  "by_language": {
+    "java": {
+      "n": 1,
+      "TP": 1,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.2065,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.2065,
+        1.0
+      ],
+      "conclusive": false
+    },
+    "python": {
+      "n": 149,
+      "TP": 105,
+      "FP": 43,
+      "U": 1,
+      "primary": 0.7047,
+      "primaryCI95": [
+        0.627,
+        0.7721
+      ],
+      "secondary": 0.7095,
+      "secondaryCI95": [
+        0.6318,
+        0.7766
+      ],
+      "conclusive": true
+    }
+  },
+  "by_ruleId": {
+    "PYVIBE-004": {
+      "n": 2,
+      "TP": 0,
+      "FP": 1,
+      "U": 1,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.6576
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "PYVIBE-005": {
+      "n": 9,
+      "TP": 9,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.7009,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.7009,
+        1.0
+      ]
+    },
+    "PYVIBE-007": {
+      "n": 5,
+      "TP": 2,
+      "FP": 3,
+      "U": 0,
+      "primary": 0.4,
+      "primaryCI95": [
+        0.1176,
+        0.7693
+      ],
+      "secondary": 0.4,
+      "secondaryCI95": [
+        0.1176,
+        0.7693
+      ]
+    },
+    "PYVIBE-008": {
+      "n": 1,
+      "TP": 0,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.7935
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "PYVIBE-009": {
+      "n": 47,
+      "TP": 39,
+      "FP": 8,
+      "U": 0,
+      "primary": 0.8298,
+      "primaryCI95": [
+        0.6986,
+        0.9111
+      ],
+      "secondary": 0.8298,
+      "secondaryCI95": [
+        0.6986,
+        0.9111
+      ]
+    },
+    "PYVIBE-012": {
+      "n": 24,
+      "TP": 23,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.9583,
+      "primaryCI95": [
+        0.7976,
+        0.9926
+      ],
+      "secondary": 0.9583,
+      "secondaryCI95": [
+        0.7976,
+        0.9926
+      ]
+    },
+    "PYVIBE-013": {
+      "n": 55,
+      "TP": 28,
+      "FP": 27,
+      "U": 0,
+      "primary": 0.5091,
+      "primaryCI95": [
+        0.3808,
+        0.6362
+      ],
+      "secondary": 0.5091,
+      "secondaryCI95": [
+        0.3808,
+        0.6362
+      ]
+    },
+    "PYVIBE-016": {
+      "n": 4,
+      "TP": 4,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.5101,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.5101,
+        1.0
+      ]
+    },
+    "PYVIBE-017": {
+      "n": 1,
+      "TP": 0,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.7935
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "PYVIBE-018": {
+      "n": 1,
+      "TP": 0,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.7935
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "transactions": {
+      "n": 1,
+      "TP": 1,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.2065,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.2065,
+        1.0
+      ]
+    }
+  },
+  "by_repo": {
+    "Anil-matcha/open-agent-connector": {
+      "n": 1,
+      "TP": 0,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.7935
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "Mafifrizi/ARES": {
+      "n": 25,
+      "TP": 22,
+      "FP": 3,
+      "U": 0,
+      "primary": 0.88,
+      "primaryCI95": [
+        0.7004,
+        0.9583
+      ],
+      "secondary": 0.88,
+      "secondaryCI95": [
+        0.7004,
+        0.9583
+      ]
+    },
+    "Pipelex/pipelex": {
+      "n": 11,
+      "TP": 7,
+      "FP": 4,
+      "U": 0,
+      "primary": 0.6364,
+      "primaryCI95": [
+        0.3538,
+        0.8483
+      ],
+      "secondary": 0.6364,
+      "secondaryCI95": [
+        0.3538,
+        0.8483
+      ]
+    },
+    "QuentinFuxa/WhisperLiveKit": {
+      "n": 1,
+      "TP": 0,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.7935
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "SenteLabsAI/OpenExecutive": {
+      "n": 13,
+      "TP": 5,
+      "FP": 8,
+      "U": 0,
+      "primary": 0.3846,
+      "primaryCI95": [
+        0.1771,
+        0.6448
+      ],
+      "secondary": 0.3846,
+      "secondaryCI95": [
+        0.1771,
+        0.6448
+      ]
+    },
+    "Yzw202011/OmniSpace": {
+      "n": 2,
+      "TP": 1,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.5,
+      "primaryCI95": [
+        0.0945,
+        0.9055
+      ],
+      "secondary": 0.5,
+      "secondaryCI95": [
+        0.0945,
+        0.9055
+      ]
+    },
+    "aixisstudio/Snitch": {
+      "n": 1,
+      "TP": 0,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.7935
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.7935
+      ]
+    },
+    "alikon-art/DeterminFlow": {
+      "n": 5,
+      "TP": 2,
+      "FP": 3,
+      "U": 0,
+      "primary": 0.4,
+      "primaryCI95": [
+        0.1176,
+        0.7693
+      ],
+      "secondary": 0.4,
+      "secondaryCI95": [
+        0.1176,
+        0.7693
+      ]
+    },
+    "arvin341az-glitch/RVG": {
+      "n": 20,
+      "TP": 20,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.8389,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.8389,
+        1.0
+      ]
+    },
+    "asaotomo/FofaMap": {
+      "n": 2,
+      "TP": 1,
+      "FP": 1,
+      "U": 0,
+      "primary": 0.5,
+      "primaryCI95": [
+        0.0945,
+        0.9055
+      ],
+      "secondary": 0.5,
+      "secondaryCI95": [
+        0.0945,
+        0.9055
+      ]
+    },
+    "beizhu-1209/AIHelms": {
+      "n": 6,
+      "TP": 6,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.6097,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.6097,
+        1.0
+      ]
+    },
+    "dramaclaw/dramaclaw": {
+      "n": 36,
+      "TP": 29,
+      "FP": 6,
+      "U": 1,
+      "primary": 0.8056,
+      "primaryCI95": [
+        0.6497,
+        0.9025
+      ],
+      "secondary": 0.8286,
+      "secondaryCI95": [
+        0.6732,
+        0.919
+      ]
+    },
+    "grimmory-tools/grimmory": {
+      "n": 1,
+      "TP": 1,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.2065,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.2065,
+        1.0
+      ]
+    },
+    "ithtelab/workbuddy-manager": {
+      "n": 4,
+      "TP": 2,
+      "FP": 2,
+      "U": 0,
+      "primary": 0.5,
+      "primaryCI95": [
+        0.15,
+        0.85
+      ],
+      "secondary": 0.5,
+      "secondaryCI95": [
+        0.15,
+        0.85
+      ]
+    },
+    "martian56/redcell": {
+      "n": 1,
+      "TP": 1,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.2065,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.2065,
+        1.0
+      ]
+    },
+    "skygazer42/MimirQ": {
+      "n": 10,
+      "TP": 4,
+      "FP": 6,
+      "U": 0,
+      "primary": 0.4,
+      "primaryCI95": [
+        0.1682,
+        0.6873
+      ],
+      "secondary": 0.4,
+      "secondaryCI95": [
+        0.1682,
+        0.6873
+      ]
+    },
+    "yaojingang/GEORank": {
+      "n": 5,
+      "TP": 5,
+      "FP": 0,
+      "U": 0,
+      "primary": 1.0,
+      "primaryCI95": [
+        0.5655,
+        1.0
+      ],
+      "secondary": 1.0,
+      "secondaryCI95": [
+        0.5655,
+        1.0
+      ]
+    },
+    "zrt-ai-lab/ViNote": {
+      "n": 6,
+      "TP": 0,
+      "FP": 6,
+      "U": 0,
+      "primary": 0.0,
+      "primaryCI95": [
+        0.0,
+        0.3903
+      ],
+      "secondary": 0.0,
+      "secondaryCI95": [
+        0.0,
+        0.3903
+      ]
+    }
+  },
+  "clusteringCap10": {
+    "n": 95,
+    "TP": 56,
+    "FP": 38,
+    "U": 1,
+    "primary": 0.5895,
+    "primaryCI95": [
+      0.489,
+      0.683
+    ],
+    "secondary": 0.5957,
+    "secondaryCI95": [
+      0.4947,
+      0.6893
+    ]
+  },
+  "messageOverstated": 2,
+  "agreementBlind": {
+    "n": 20,
+    "raw": 0.6,
+    "cohenKappa": 0.2,
+    "changed": [
+      "C011",
+      "C093",
+      "C097",
+      "C103",
+      "C124",
+      "C170",
+      "C231",
+      "C240"
+    ]
+  },
+  "undeterminedSecondReview": {
+    "n": 1,
+    "changed": []
+  },
+  "noise": {
+    "thresholdsPer1000": {
+      "critical": 5.0,
+      "warning": 20.0
+    },
+    "byLanguage": {
+      "java": {
+        "files": 22741,
+        "findings": {
+          "major": 61,
+          "warning": 22,
+          "critical": 1
+        },
+        "per1000": {
+          "critical": 0.044,
+          "major": 2.682,
+          "warning": 0.967,
+          "info": 0.0
+        },
+        "perRepo": {
+          "critical": {
+            "median": 0.0,
+            "max": 1.07
+          },
+          "warning": {
+            "median": 0.0,
+            "max": 8.197
+          }
+        },
+        "met": true
+      },
+      "python": {
+        "files": 5776,
+        "findings": {
+          "critical": 243,
+          "warning": 636
+        },
+        "per1000": {
+          "critical": 42.071,
+          "major": 0.0,
+          "warning": 110.111,
+          "info": 0.0
+        },
+        "perRepo": {
+          "critical": {
+            "median": 17.621,
+            "max": 1535.714
+          },
+          "warning": {
+            "median": 73.394,
+            "max": 1214.286
+          }
+        },
+        "met": false
+      }
+    },
+    "criterion2Met": false
+  }
+}
