@@ -1,0 +1,2853 @@
+{
+  "totalCritical": 244,
+  "reviewed": 150,
+  "method": "stratified random sample: {'java': 1, 'python': 149}, seed 20261014",
+  "findings": [
+    {
+      "repo": "grimmory-tools/grimmory",
+      "commit": "56ba9f72deab2806f460f2bcf7593f4d2d0d771d",
+      "pool": "java",
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async \u2014 transaction will NOT propagate to async thread",
+      "file": "backend/src/main/java/org/booklore/service/hardcover/HardcoverSyncService.java",
+      "line": 66,
+      "extra": {},
+      "id": "C001"
+    },
+    {
+      "repo": "aixisstudio/Snitch",
+      "commit": "e9d4099ed13adae4a973088434a73b720d0b4c7f",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await \u2014 event loop blocked indefinitely",
+      "file": "backend/api/main.py",
+      "line": 1037,
+      "extra": {
+        "function": "_shutdown_all",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      },
+      "id": "C002"
+    },
+    {
+      "repo": "alikon-art/DeterminFlow",
+      "commit": "8ad6886303fe78b75bf8c1e37c5c3f0489d68145",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/compression/post_processor.py",
+      "line": 179,
+      "extra": {
+        "function": "_read_file_content",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C003"
+    },
+    {
+      "repo": "alikon-art/DeterminFlow",
+      "commit": "8ad6886303fe78b75bf8c1e37c5c3f0489d68145",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/compression/transcript.py",
+      "line": 91,
+      "extra": {
+        "function": "save_snapshot",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C004"
+    },
+    {
+      "repo": "alikon-art/DeterminFlow",
+      "commit": "8ad6886303fe78b75bf8c1e37c5c3f0489d68145",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/extension_host/manager.py",
+      "line": 1038,
+      "extra": {
+        "function": "notify_session_end",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C005"
+    },
+    {
+      "repo": "alikon-art/DeterminFlow",
+      "commit": "8ad6886303fe78b75bf8c1e37c5c3f0489d68145",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/mcp/client.py",
+      "line": 157,
+      "extra": {
+        "function": "connect_all",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C006"
+    },
+    {
+      "repo": "alikon-art/DeterminFlow",
+      "commit": "8ad6886303fe78b75bf8c1e37c5c3f0489d68145",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/memory/jobs.py",
+      "line": 71,
+      "extra": {
+        "function": "process_due_jobs",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C007"
+    },
+    {
+      "repo": "Anil-matcha/open-agent-connector",
+      "commit": "e857af1c737b1ef64965ffe19b87c99c055d8953",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/app/providers/builtins/developer/hackernews.py",
+      "line": 225,
+      "extra": {
+        "function": "_build_tree",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C011"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 511,
+      "extra": {
+        "function": "_restart_mtproto_instances",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C014"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 552,
+      "extra": {
+        "function": "_attach_mtproto_public_proxy",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C016"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 607,
+      "extra": {
+        "function": "_update_mtproto_ad_tag",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C017"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 908,
+      "extra": {
+        "function": "require_node_key",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C021"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 1104,
+      "extra": {
+        "function": "update_sub",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C024"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 1118,
+      "extra": {
+        "function": "delete_sub",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C025"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 1141,
+      "extra": {
+        "function": "assign_link_to_sub",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C026"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 1465,
+      "extra": {
+        "function": "api_mtproto_fix_proxy",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C027"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 1880,
+      "extra": {
+        "function": "_create_link_core",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C030"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2065,
+      "extra": {
+        "function": "update_link",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C032"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2096,
+      "extra": {
+        "function": "update_ad_tag",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C035"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2127,
+      "extra": {
+        "function": "delete_link",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C036"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2306,
+      "extra": {
+        "function": "create_node_key",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C038"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2339,
+      "extra": {
+        "function": "update_node_key",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C039"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2353,
+      "extra": {
+        "function": "revoke_node_key",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C040"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "main.py",
+      "line": 2561,
+      "extra": {
+        "function": "disconnect_node",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C044"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "protocol/mtproto/telemt.py",
+      "line": 253,
+      "extra": {
+        "function": "start",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C049"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "protocol/trojan/xhttp_core.py",
+      "line": 343,
+      "extra": {
+        "function": "_open_tcp_for_session",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C052"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "protocol/vless/websocket.py",
+      "line": 100,
+      "extra": {
+        "function": "websocket_tunnel",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C053"
+    },
+    {
+      "repo": "arvin341az-glitch/RVG",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "protocol/vless/xhttp_core.py",
+      "line": 378,
+      "extra": {
+        "function": "_open_tcp_for_session",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C054"
+    },
+    {
+      "repo": "asaotomo/FofaMap",
+      "commit": "d959f48bfadcc2517a9338a92acf659cb6389c1c",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.run() blocks the event loop for the entire subprocess duration",
+      "file": "fofamap.py",
+      "line": 1311,
+      "extra": {
+        "function": "_main_async",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(executable, \"-ut\")\nstdout, stderr = await proc.communicate()"
+      },
+      "id": "C056"
+    },
+    {
+      "repo": "asaotomo/FofaMap",
+      "commit": "d959f48bfadcc2517a9338a92acf659cb6389c1c",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "mcp_server.py",
+      "line": 238,
+      "extra": {
+        "function": "fofa_export",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C057"
+    },
+    {
+      "repo": "beizhu-1209/AIHelms",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "apps/services/skill_service.py",
+      "line": 158,
+      "extra": {
+        "function": "update_skill",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C060"
+    },
+    {
+      "repo": "beizhu-1209/AIHelms",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "apps/tasks/audit_log_tasks.py",
+      "line": 22,
+      "extra": {
+        "function": "cleanup_audit_logs",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C061"
+    },
+    {
+      "repo": "beizhu-1209/AIHelms",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "apps/tasks/efficiency_tasks.py",
+      "line": 32,
+      "extra": {
+        "function": "aggregate_cost_summary",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C062"
+    },
+    {
+      "repo": "beizhu-1209/AIHelms",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "apps/tasks/llm_log_tasks.py",
+      "line": 46,
+      "extra": {
+        "function": "sync_llm_logs",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C063"
+    },
+    {
+      "repo": "beizhu-1209/AIHelms",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "apps/tasks/llm_log_tasks.py",
+      "line": 51,
+      "extra": {
+        "function": "cleanup_llm_logs",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C064"
+    },
+    {
+      "repo": "beizhu-1209/AIHelms",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "apps/tasks/mcp_tasks.py",
+      "line": 42,
+      "extra": {
+        "function": "health_check_all_servers",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C068"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.run() blocks the event loop for the entire subprocess duration",
+      "file": "scripts/check_workflow_agent_contracts.py",
+      "line": 563,
+      "extra": {
+        "function": "_run",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(sys.executable, str(root / \"scripts/generate_workflow_contract.py\"), \"--check\")\nstdout, stderr = await proc.communicate()"
+      },
+      "id": "C069"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 839,
+      "extra": {
+        "function": "_start_or_enqueue_freezone_video_gen",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C070"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 6130,
+      "extra": {
+        "function": "freezone_copy_assets_from_project",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C071"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 8771,
+      "extra": {
+        "function": "freezone_audio_references",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C072"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/projects.py",
+      "line": 689,
+      "extra": {
+        "function": "list_project_summaries",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C074"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-004",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "threading.RLock() blocks the event loop under contention",
+      "file": "src/novelvideo/cognee/ladybug_access.py",
+      "line": 529,
+      "extra": {
+        "function": "query",
+        "evidence": "Use `asyncio.Lock()` with `async with lock:` instead",
+        "suggested_fix": null
+      },
+      "id": "C077"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 334,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C080"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 628,
+      "extra": {
+        "function": "generate_with_request",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C081"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 732,
+      "extra": {
+        "function": "upscale_with_img2img",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C082"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 798,
+      "extra": {
+        "function": "upscale_with_img2img",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C083"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.run() blocks the event loop for the entire subprocess duration",
+      "file": "src/novelvideo/generators/indextts2_fal.py",
+      "line": 87,
+      "extra": {
+        "function": "_audio_duration_seconds",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(\"ffprobe\", \"-v\", \"error\", \"-show_entries\", \"format=duration\", \"-of\", \"default=noprint_wrappers=1:nokey=1\", str(audio_path))\nstdout, stderr = await proc.communicate()"
+      },
+      "id": "C086"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_character.py",
+      "line": 572,
+      "extra": {
+        "function": "generate_identity_with_reference",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C087"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5246,
+      "extra": {
+        "function": "generate_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C091"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5260,
+      "extra": {
+        "function": "generate_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C092"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5505,
+      "extra": {
+        "function": "generate_action_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C093"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5517,
+      "extra": {
+        "function": "generate_action_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C094"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5790,
+      "extra": {
+        "function": "reformat_sketch",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C095"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 6250,
+      "extra": {
+        "function": "generate_batch_api",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C096"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7204,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C097"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7245,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C099"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7274,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C100"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7304,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C101"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7395,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C102"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7422,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C103"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7458,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C104"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7500,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C105"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7732,
+      "extra": {
+        "function": "generate_single_preview",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C107"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_prop.py",
+      "line": 429,
+      "extra": {
+        "function": "_generate_via_newapi",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C110"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/tts_generator.py",
+      "line": 333,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C112"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/tts_generator.py",
+      "line": 740,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C113"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 491,
+      "extra": {
+        "function": "_download_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C115"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 911,
+      "extra": {
+        "function": "_download_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C116"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 4442,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C118"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/utils/bounded_concurrency.py",
+      "line": 77,
+      "extra": {
+        "function": "map_bounded",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C124"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/utils/media_io.py",
+      "line": 109,
+      "extra": {
+        "function": "get_audio_durations_async",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C125"
+    },
+    {
+      "repo": "dramaclaw/dramaclaw",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/video_billing.py",
+      "line": 53,
+      "extra": {
+        "function": "probe_total_video_duration_seconds",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C127"
+    },
+    {
+      "repo": "ithtelab/workbuddy-manager",
+      "commit": "d15e98e52f81317dfaa9b5ba87e82f834554c2ec",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/routers/accounts.py",
+      "line": 1100,
+      "extra": {
+        "function": "refresh_all_credits",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C128"
+    },
+    {
+      "repo": "ithtelab/workbuddy-manager",
+      "commit": "d15e98e52f81317dfaa9b5ba87e82f834554c2ec",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/routers/accounts.py",
+      "line": 1194,
+      "extra": {
+        "function": "checkin_all",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C129"
+    },
+    {
+      "repo": "ithtelab/workbuddy-manager",
+      "commit": "d15e98e52f81317dfaa9b5ba87e82f834554c2ec",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/routers/accounts.py",
+      "line": 1749,
+      "extra": {
+        "function": "refresh_all_tokens",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C130"
+    },
+    {
+      "repo": "ithtelab/workbuddy-manager",
+      "commit": "d15e98e52f81317dfaa9b5ba87e82f834554c2ec",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/services/tencent.py",
+      "line": 667,
+      "extra": {
+        "function": "fetch_models",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C131"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "ares/core/engine.py",
+      "line": 811,
+      "extra": {
+        "function": "run_module",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C132"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "ares/core/engine.py",
+      "line": 1374,
+      "extra": {
+        "function": "_finalize_committed_module_result",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C133"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/core/sandbox.py",
+      "line": 561,
+      "extra": {
+        "function": "_run_subprocess",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C134"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.run() blocks the event loop for the entire subprocess duration",
+      "file": "ares/credential/cracker.py",
+      "line": 305,
+      "extra": {
+        "function": "_run_john",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(self._john, \"--show\", str(hash_file))\nstdout, stderr = await proc.communicate()"
+      },
+      "id": "C136"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "ares/credential/reuse.py",
+      "line": 351,
+      "extra": {
+        "function": "spray_all_hosts",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C137"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/db/database.py",
+      "line": 1334,
+      "extra": {
+        "function": "export_json",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C138"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/ad/asreproast.py",
+      "line": 520,
+      "extra": {
+        "function": "_get_asrep_hashes",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C140"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-016",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "httpx.Client() is synchronous \u2014 blocks the event loop for every HTTP request",
+      "file": "ares/modules/cloud/identity_federation.py",
+      "line": 542,
+      "extra": {
+        "function": "_enumerate_adfs",
+        "evidence": "Use `async with httpx.AsyncClient() as client: response = await client.get(url)` instead",
+        "suggested_fix": null
+      },
+      "id": "C141"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-016",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "httpx.Client() is synchronous \u2014 blocks the event loop for every HTTP request",
+      "file": "ares/modules/cloud/identity_federation.py",
+      "line": 585,
+      "extra": {
+        "function": "_enumerate_token_lifetime_policies",
+        "evidence": "Use `async with httpx.AsyncClient() as client: response = await client.get(url)` instead",
+        "suggested_fix": null
+      },
+      "id": "C142"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-016",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "httpx.Client() is synchronous \u2014 blocks the event loop for every HTTP request",
+      "file": "ares/modules/cloud/identity_federation.py",
+      "line": 671,
+      "extra": {
+        "function": "_enumerate_b2b_cross_tenant",
+        "evidence": "Use `async with httpx.AsyncClient() as client: response = await client.get(url)` instead",
+        "suggested_fix": null
+      },
+      "id": "C143"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-016",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "httpx.Client() is synchronous \u2014 blocks the event loop for every HTTP request",
+      "file": "ares/modules/cloud/identity_federation.py",
+      "line": 771,
+      "extra": {
+        "function": "_enumerate_managed_identities",
+        "evidence": "Use `async with httpx.AsyncClient() as client: response = await client.get(url)` instead",
+        "suggested_fix": null
+      },
+      "id": "C144"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/container.py",
+      "line": 266,
+      "extra": {
+        "function": "_check_host_mounts",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C147"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/container.py",
+      "line": 296,
+      "extra": {
+        "function": "_check_k8s_service_account",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C148"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/container.py",
+      "line": 353,
+      "extra": {
+        "function": "_check_host_network",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C149"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/ld_preload.py",
+      "line": 290,
+      "extra": {
+        "function": "run",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C151"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/nfs_escape.py",
+      "line": 332,
+      "extra": {
+        "function": "run",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C153"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/nfs_escape.py",
+      "line": 340,
+      "extra": {
+        "function": "run",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C154"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/privesc.py",
+      "line": 393,
+      "extra": {
+        "function": "_check_sudo",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C156"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/privesc.py",
+      "line": 419,
+      "extra": {
+        "function": "_check_cron",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C158"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "ares/modules/linux/privesc.py",
+      "line": 427,
+      "extra": {
+        "function": "_check_cron",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C159"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "ares/modules/network/port_scan.py",
+      "line": 495,
+      "extra": {
+        "function": "run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C161"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "ares/modules/network/service_detect.py",
+      "line": 347,
+      "extra": {
+        "function": "run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C162"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.Popen() blocks the event loop for the entire subprocess duration",
+      "file": "ares/pivot/infrastructure.py",
+      "line": 367,
+      "extra": {
+        "function": "establish_local_forward",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(*cmd)"
+      },
+      "id": "C164"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "ares/worker/controller.py",
+      "line": 278,
+      "extra": {
+        "function": "start",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C169"
+    },
+    {
+      "repo": "Mafifrizi/ARES",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "ares/worker/controller.py",
+      "line": 296,
+      "extra": {
+        "function": "_dispatch_loop",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C170"
+    },
+    {
+      "repo": "martian56/redcell",
+      "commit": "01afb711829d31be7e82bef31d6edd4046d02ac0",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded \u2014 task may be GC'd and silently cancelled",
+      "file": "apps/api/app/routers/resources.py",
+      "line": 472,
+      "extra": {
+        "function": "chat_send",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C171"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/cli/dev_cli/commands/check_urls_cmd.py",
+      "line": 136,
+      "extra": {
+        "function": "check_all_urls_async",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C172"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/cogt/document/prompt_document_utils.py",
+      "line": 111,
+      "extra": {
+        "function": "prep_prompt_documents",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C173"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/cogt/image/prompt_image_utils.py",
+      "line": 112,
+      "extra": {
+        "function": "prep_prompt_images",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C174"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/pipe_controllers/parallel/pipe_parallel.py",
+      "line": 494,
+      "extra": {
+        "function": "_run_branches_and_combine",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C175"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/providers/google/google_factory.py",
+      "line": 105,
+      "extra": {
+        "function": "prepare_user_contents",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C178"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/providers/google/google_img_gen_worker.py",
+      "line": 109,
+      "extra": {
+        "function": "_gen_image",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C179"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/providers/mistral/mistral_factory.py",
+      "line": 85,
+      "extra": {
+        "function": "make_simple_messages",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C180"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "pipelex/providers/mistral/mistral_factory.py",
+      "line": 88,
+      "extra": {
+        "function": "make_simple_messages",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C181"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "wip/judgment-family/spike/typesafe_async_spike.py",
+      "line": 473,
+      "extra": {
+        "function": "probe_concurrency",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C182"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "wip/judgment-family/spike/typesafe_async_spike.py",
+      "line": 506,
+      "extra": {
+        "function": "probe_stability",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C183"
+    },
+    {
+      "repo": "Pipelex/pipelex",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "wip/judgment-family/spike/typesafe_followups_spike.py",
+      "line": 109,
+      "extra": {
+        "function": "probe_ambiguous_stability",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C184"
+    },
+    {
+      "repo": "QuentinFuxa/WhisperLiveKit",
+      "commit": "363e4f6d029694d9c81ae548beddd9d3c88a3637",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "whisperlivekit/cli.py",
+      "line": 1074,
+      "extra": {
+        "function": "_listen_main",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C187"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "evals/run_evals.py",
+      "line": 290,
+      "extra": {
+        "function": "main",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C188"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "evals/run_evals.py",
+      "line": 371,
+      "extra": {
+        "function": "main",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C189"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/api/routes/today.py",
+      "line": 1369,
+      "extra": {
+        "function": "_regen_stale_insights",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C191"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/integrations/slack_bot.py",
+      "line": 974,
+      "extra": {
+        "function": "_handle_message",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C195"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/knowledge/pdf_reader.py",
+      "line": 310,
+      "extra": {
+        "function": "_transcribe",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C196"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/knowledge/pdf_reader.py",
+      "line": 339,
+      "extra": {
+        "function": "_read_with_model",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C197"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/memory/honcho_client.py",
+      "line": 491,
+      "extra": {
+        "function": "_purge_workspace_sessions",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C198"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/orchestrator/committee.py",
+      "line": 85,
+      "extra": {
+        "function": "review",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C199"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/orchestrator/mail_read_tools.py",
+      "line": 410,
+      "extra": {
+        "function": "_attachment_list",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C201"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/orchestrator/router.py",
+      "line": 445,
+      "extra": {
+        "function": "route_parallel",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C203"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/orchestrator/router.py",
+      "line": 460,
+      "extra": {
+        "function": "route_parallel",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C204"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/orchestrator/router.py",
+      "line": 519,
+      "extra": {
+        "function": "route_parallel",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C205"
+    },
+    {
+      "repo": "SenteLabsAI/OpenExecutive",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "packages/core/openexecutive/workflows/weekly_review.py",
+      "line": 186,
+      "extra": {
+        "function": "run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C206"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/engine_support/standard_stream_retrieval.py",
+      "line": 199,
+      "extra": {
+        "function": "execute_retrieval_plan",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C208"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/evaluation/kg_search_diagnostics.py",
+      "line": 579,
+      "extra": {
+        "function": "_run_preflight_extraction",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C209"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 1905,
+      "extra": {
+        "function": "_run_entity_verification",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C211"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 2930,
+      "extra": {
+        "function": "_populate_relation_extraction_results",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C212"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/pipeline.py",
+      "line": 408,
+      "extra": {
+        "function": "_search_multi_dataset_scope",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C215"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/reranker/base.py",
+      "line": 628,
+      "extra": {
+        "function": "acompute_score",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C216"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/workflows/parallelization.py",
+      "line": 155,
+      "extra": {
+        "function": "_collect_task_results",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C217"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/services/rag_runtime_warmup.py",
+      "line": 324,
+      "extra": {
+        "function": "warmup_rag_runtime",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C220"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/live_core_release_gate.py",
+      "line": 391,
+      "extra": {
+        "function": "_run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C222"
+    },
+    {
+      "repo": "skygazer42/MimirQ",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/live_core_release_gate.py",
+      "line": 492,
+      "extra": {
+        "function": "_run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C223"
+    },
+    {
+      "repo": "yaojingang/GEORank",
+      "commit": "424a0cf92b37ad63c94ae9dc6f39745189ab7c94",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "backend/app/tasks/process.py",
+      "line": 730,
+      "extra": {
+        "function": "clean_company_data",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C227"
+    },
+    {
+      "repo": "yaojingang/GEORank",
+      "commit": "424a0cf92b37ad63c94ae9dc6f39745189ab7c94",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "backend/app/tasks/process.py",
+      "line": 832,
+      "extra": {
+        "function": "build_knowledge_graph",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C228"
+    },
+    {
+      "repo": "yaojingang/GEORank",
+      "commit": "424a0cf92b37ad63c94ae9dc6f39745189ab7c94",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "backend/app/tasks/process.py",
+      "line": 932,
+      "extra": {
+        "function": "vectorize_knowledge_base",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C229"
+    },
+    {
+      "repo": "yaojingang/GEORank",
+      "commit": "424a0cf92b37ad63c94ae9dc6f39745189ab7c94",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "Celery task defined without soft_time_limit or time_limit \u2014 can hang forever",
+      "file": "backend/app/tasks/process.py",
+      "line": 1033,
+      "extra": {
+        "function": "re_diagnose_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      },
+      "id": "C230"
+    },
+    {
+      "repo": "yaojingang/GEORank",
+      "commit": "424a0cf92b37ad63c94ae9dc6f39745189ab7c94",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "backend/app/web/company_pages.py",
+      "line": 1867,
+      "extra": {
+        "function": "company_detail_page",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C231"
+    },
+    {
+      "repo": "Yzw202011/OmniSpace",
+      "commit": "cf19b1108eda7e4877d6efc1c59d21ab34eba241",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "src/api/upgrade.py",
+      "line": 115,
+      "extra": {
+        "function": "upgrade_import",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C233"
+    },
+    {
+      "repo": "Yzw202011/OmniSpace",
+      "commit": "cf19b1108eda7e4877d6efc1c59d21ab34eba241",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-008",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "sqlite3.connect() is synchronous \u2014 blocks the event loop during I/O",
+      "file": "src/main.py",
+      "line": 195,
+      "extra": {
+        "function": "lifespan",
+        "evidence": "Use `async with aiosqlite.connect('db.sqlite3') as db:` instead",
+        "suggested_fix": "async with aiosqlite.connect(str(config.DB_PATH)) as db:"
+      },
+      "id": "C235"
+    },
+    {
+      "repo": "zrt-ai-lab/ViNote",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-004",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "threading.Lock() blocks the event loop under contention",
+      "file": "backend/agent_runtime/harness.py",
+      "line": 53,
+      "extra": {
+        "function": "run",
+        "evidence": "Use `asyncio.Lock()` with `async with lock:` instead",
+        "suggested_fix": null
+      },
+      "id": "C236"
+    },
+    {
+      "repo": "zrt-ai-lab/ViNote",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O \u2014 blocks the event loop",
+      "file": "backend/db/schema.py",
+      "line": 175,
+      "extra": {
+        "function": "migrate_from_json",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      },
+      "id": "C238"
+    },
+    {
+      "repo": "zrt-ai-lab/ViNote",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "backend/services/content_summarizer.py",
+      "line": 280,
+      "extra": {
+        "function": "_integrate_hierarchical_summaries",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C240"
+    },
+    {
+      "repo": "zrt-ai-lab/ViNote",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "backend/services/text_optimizer.py",
+      "line": 207,
+      "extra": {
+        "function": "_format_long_transcript_in_chunks",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C241"
+    },
+    {
+      "repo": "zrt-ai-lab/ViNote",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "backend/services/text_translator.py",
+      "line": 195,
+      "extra": {
+        "function": "_translate_with_chunks",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      },
+      "id": "C242"
+    },
+    {
+      "repo": "zrt-ai-lab/ViNote",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "pool": "python",
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "bare except swallows all exceptions including KeyboardInterrupt and SystemExit",
+      "file": "backend/services/video_preview_service.py",
+      "line": 108,
+      "extra": {
+        "function": "_format_date",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      },
+      "id": "C243"
+    }
+  ]
+}
