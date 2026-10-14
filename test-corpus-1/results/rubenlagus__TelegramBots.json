@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "telegrambots-abilities/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "telegrambots-client-jetty-adapter/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "telegrambots-client/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "telegrambots-extensions/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "telegrambots-longpolling/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "telegrambots-meta/src/test",
+        "pattern": "test",
+        "files": 125
+      },
+      {
+        "path": "telegrambots-springboot-longpolling-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "telegrambots-springboot-webhook-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "telegrambots-webhook/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 163
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 875,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

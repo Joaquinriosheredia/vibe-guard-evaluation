@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "deploy/helm/mimirq/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "docs/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 399
+      },
+      {
+        "path": "web/e2e/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "web/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 399
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.13.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 17,
+    "major": 0,
+    "warning": 33,
+    "info": 0,
+    "total": 50
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/embedding/base.py",
+      "line": 194,
+      "extra": {
+        "function": "abatch_encode",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/engine_support/standard_stream_retrieval.py",
+      "line": 199,
+      "extra": {
+        "function": "execute_retrieval_plan",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/evaluation/kg_search_diagnostics.py",
+      "line": 579,
+      "extra": {
+        "function": "_run_preflight_extraction",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 1127,
+      "extra": {
+        "function": "_extract_chunk_groups",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 1905,
+      "extra": {
+        "function": "_run_entity_verification",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 2930,
+      "extra": {
+        "function": "_populate_relation_extraction_results",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 2953,
+      "extra": {
+        "function": "_populate_relation_extraction_results",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/extraction/extractor.py",
+      "line": 3766,
+      "extra": {
+        "function": "_collect_skills_by_chunk",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/kg/pipeline.py",
+      "line": 408,
+      "extra": {
+        "function": "_search_multi_dataset_scope",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/reranker/base.py",
+      "line": 628,
+      "extra": {
+        "function": "acompute_score",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/workflows/parallelization.py",
+      "line": 155,
+      "extra": {
+        "function": "_collect_task_results",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/rag/workflows/planner_worker.py",
+      "line": 197,
+      "extra": {
+        "function": "_execute_subtasks",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-004",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "threading.BoundedSemaphore() blocks the event loop under contention",
+      "file": "app/services/chat_stream_graph.py",
+      "line": 115,
+      "extra": {
+        "function": "_iterate_sync_in_worker",
+        "evidence": "Use `asyncio.Lock()` with `async with lock:` instead",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "app/services/rag_runtime_warmup.py",
+      "line": 324,
+      "extra": {
+        "function": "warmup_rag_runtime",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/deepdoc_quality_gate.py",
+      "line": 542,
+      "extra": {
+        "function": "run_gate",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/live_core_release_gate.py",
+      "line": 391,
+      "extra": {
+        "function": "_run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/live_core_release_gate.py",
+      "line": 492,
+      "extra": {
+        "function": "_run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "alembic/env.py",
+      "line": 45,
+      "extra": {
+        "function": "_get_database_url",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "app/api/v1/observability.py",
+      "line": 557,
+      "extra": {
+        "function": "_audit_index_reconcile_request",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "app/rag/preprocessing/html_xpath.py",
+      "line": 89,
+      "extra": {
+        "function": "_extract_html_text",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "app/services/external_conversation_ingest.py",
+      "line": 346,
+      "extra": {
+        "function": "_normalize_mimirq_citation",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "app/services/metrics_logger.py",
+      "line": 429,
+      "extra": {
+        "function": "emit",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "app/services/online_eval_service.py",
+      "line": 447,
+      "extra": {
+        "function": "maybe_enqueue_online_eval",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "docker/olmocr/server.py",
+      "line": 307,
+      "extra": {
+        "function": "_run_pipeline",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/kg_search_regression_gate.py",
+      "line": 109,
+      "extra": {
+        "function": "normalize_thresholds",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/kg_search_regression_gate.py",
+      "line": 114,
+      "extra": {
+        "function": "normalize_thresholds",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/must_recall_provenance_gate.py",
+      "line": 89,
+      "extra": {
+        "function": "_summary_case_total",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/parser_benchmark.py",
+      "line": 279,
+      "extra": {
+        "function": "_load_table_continuity",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/parser_benchmark.py",
+      "line": 284,
+      "extra": {
+        "function": "_load_table_continuity",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/production_readiness_chain.py",
+      "line": 145,
+      "extra": {
+        "function": "_retry_delay",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/rag_e2e_load_test.py",
+      "line": 439,
+      "extra": {
+        "function": "_run_ingest_phase",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "scripts/rag_e2e_load_test.py",
+      "line": 496,
+      "extra": {
+        "function": "_run_request_phase",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/rebuild_retrieval_indexes.py",
+      "line": 43,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 339,
+      "extra": {
+        "function": "normalize_thresholds",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 344,
+      "extra": {
+        "function": "normalize_thresholds",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 622,
+      "extra": {
+        "function": "_qs_resolve_policy",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 627,
+      "extra": {
+        "function": "_qs_resolve_policy",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 747,
+      "extra": {
+        "function": "summarize_multihop_diagnostics",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 752,
+      "extra": {
+        "function": "summarize_multihop_diagnostics",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/regression_gate.py",
+      "line": 1108,
+      "extra": {
+        "function": "normalize_threshold_case_source",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/release_gate.py",
+      "line": 362,
+      "extra": {
+        "function": "_poll_rag_trace_count",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/remote_kg_quality_report_probe.py",
+      "line": 194,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/remote_observability_metrics_probe.py",
+      "line": 327,
+      "extra": {
+        "function": "cleanup_probe_resources",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/remote_observability_metrics_probe.py",
+      "line": 339,
+      "extra": {
+        "function": "cleanup_probe_resources",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/remote_observability_metrics_probe.py",
+      "line": 352,
+      "extra": {
+        "function": "cleanup_probe_resources",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/remote_table_store_probe.py",
+      "line": 280,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/seed_public_bench_cfever_dev.py",
+      "line": 310,
+      "extra": {
+        "function": "_delete_dataset_documents",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/seed_public_bench_miracl_zh_pool.py",
+      "line": 339,
+      "extra": {
+        "function": "_delete_dataset_documents",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/smoke_test.py",
+      "line": 216,
+      "extra": {
+        "function": "_detect_auth_mode",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "scripts/smoke_test.py",
+      "line": 1277,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

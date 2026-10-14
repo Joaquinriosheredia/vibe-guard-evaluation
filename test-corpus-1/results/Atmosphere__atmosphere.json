@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "atmosphere.js/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "e2e/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "modules/a2a/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "modules/adk/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "modules/admin/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "modules/agent/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "modules/agentscope/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "modules/agui/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "modules/ai-audit-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "modules/ai-audit-postgres/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/ai-decision-typesafe/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "modules/ai-policy-cedar/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "modules/ai-policy-rego/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "modules/ai-test/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "modules/ai/src/test",
+        "pattern": "test",
+        "files": 415
+      },
+      {
+        "path": "modules/anthropic/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "modules/channels/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "modules/checkpoint-postgres/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/checkpoint-temporal/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/checkpoint/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "modules/cohere/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "modules/coordinator/src/test",
+        "pattern": "test",
+        "files": 53
+      },
+      {
+        "path": "modules/cpr/src/test",
+        "pattern": "test",
+        "files": 211
+      },
+      {
+        "path": "modules/crewai/sidecar/examples",
+        "pattern": "examples",
+        "files": 1
+      },
+      {
+        "path": "modules/crewai/sidecar/tests",
+        "pattern": "tests",
+        "files": 7
+      },
+      {
+        "path": "modules/crewai/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "modules/durable-sessions-redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/durable-sessions-sqlite/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "modules/durable-sessions/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "modules/embabel/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "modules/grpc/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "modules/integration-tests/e2e/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "modules/integration-tests/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "modules/interactions-postgres/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/interactions/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "modules/kafka/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/koog/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "modules/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "modules/langchain4j/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "modules/mcp-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "modules/mcp/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "modules/protocol-common/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "modules/quarkus-admin-extension/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "modules/quarkus-admin-extension/runtime/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "modules/quarkus-extension/deployment/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "modules/quarkus-grpc/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/rag/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "modules/redis/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "modules/sandbox/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "modules/semantic-kernel/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "modules/spring-ai-alibaba/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "modules/spring-ai/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "modules/spring-boot-ai-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 66
+      },
+      {
+        "path": "modules/spring-boot3-starter/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "modules/verifier-smt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "modules/verifier/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "modules/wasync/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "samples/kotlin-dsl-chat/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "samples/spring-boot-a2a-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-admin-bundle/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-agui-chat/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-ai-chat/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "samples/spring-boot-ai-classroom/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "samples/spring-boot-ai-tools/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "samples/spring-boot-browser-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-channels-chat/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-chat/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "samples/spring-boot-checkpoint-agent/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "samples/spring-boot-dentist-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-durable-sessions/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-guarded-email-agent/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "samples/spring-boot-low-level-handlers/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "samples/spring-boot-mcp-server/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "samples/spring-boot-ms-governance-chat/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "samples/spring-boot-multi-agent-startup-team/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "samples/spring-boot-one-dep-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-orchestration-demo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-otel-chat/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-passivation-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-personal-assistant/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "samples/spring-boot-rag-chat/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "samples/spring-boot-spring-ai-advisors/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-boot-team-rooms/src/test",
+        "pattern": "test",
+        "files": 4
+      }
+    ],
+    "filesExcluded": 1253
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 3227,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.13.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-boot-admin-client/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "spring-boot-admin-samples/spring-boot-admin-sample-consul/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-boot-admin-samples/spring-boot-admin-sample-eureka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-boot-admin-samples/spring-boot-admin-sample-reactive/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-boot-admin-server-cloud/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-boot-admin-server-mcp/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "spring-boot-admin-server-ui/src/main/frontend/mocks/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "spring-boot-admin-server-ui/src/main/frontend/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "spring-boot-admin-server-ui/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "spring-boot-admin-server/src/test",
+        "pattern": "test",
+        "files": 101
+      }
+    ],
+    "filesExcluded": 164
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 481,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 2,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/docker-compose.yml",
+      "line": 2,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/src/main/resources/application.yml",
+      "line": 7,
+      "extra": {}
+    }
+  ]
+}

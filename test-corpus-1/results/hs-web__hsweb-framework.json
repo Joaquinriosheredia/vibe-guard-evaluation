@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "hsweb-authorization/hsweb-authorization-api/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "hsweb-authorization/hsweb-authorization-basic/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "hsweb-authorization/hsweb-authorization-oauth2/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "hsweb-commons/hsweb-commons-api/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "hsweb-commons/hsweb-commons-crud/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "hsweb-concurrent/hsweb-concurrent-cache/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "hsweb-core/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "hsweb-datasource/hsweb-datasource-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "hsweb-starter/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "hsweb-system/hsweb-system-authorization/hsweb-system-authorization-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "hsweb-system/hsweb-system-authorization/hsweb-system-authorization-default/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "hsweb-system/hsweb-system-authorization/hsweb-system-authorization-oauth2/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "hsweb-system/hsweb-system-dictionary/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "hsweb-system/hsweb-system-file/src/test",
+        "pattern": "test",
+        "files": 4
+      }
+    ],
+    "filesExcluded": 121
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 781,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 2,
+    "warning": 0,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ReactiveRepository)",
+      "file": "hsweb-system/hsweb-system-authorization/hsweb-system-authorization-default/src/main/java/org/hswebframework/web/system/authorization/defaults/webflux/WebFluxDimensionTypeController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DictDefineRepository)",
+      "file": "hsweb-system/hsweb-system-dictionary/src/main/java/org/hswebframework/web/dictionary/webflux/WebfluxDictionaryController.java",
+      "line": 34,
+      "extra": {}
+    }
+  ]
+}

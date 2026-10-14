@@ -1,0 +1,1909 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 456
+      }
+    ],
+    "filesExcluded": 458
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.13.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 59,
+    "major": 0,
+    "warning": 64,
+    "info": 0,
+    "total": 123
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.run() blocks the event loop for the entire subprocess duration",
+      "file": "scripts/check_workflow_agent_contracts.py",
+      "line": 563,
+      "extra": {
+        "function": "_run",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(sys.executable, str(root / \"scripts/generate_workflow_contract.py\"), \"--check\")\nstdout, stderr = await proc.communicate()"
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 839,
+      "extra": {
+        "function": "_start_or_enqueue_freezone_video_gen",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 6130,
+      "extra": {
+        "function": "freezone_copy_assets_from_project",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 8771,
+      "extra": {
+        "function": "freezone_audio_references",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 9726,
+      "extra": {
+        "function": "_validate_catalog_reference_audio_items",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/api/routes/projects.py",
+      "line": 689,
+      "extra": {
+        "function": "list_project_summaries",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-006",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "ContextVar.set() without guaranteed cleanup leaks state between async tasks",
+      "file": "src/novelvideo/brainclaw_outcome_runtime.py",
+      "line": 45,
+      "extra": {
+        "function": "capture_brainclaw_receipt",
+        "evidence": "Capture the token: `token = var.set(v)` then call `var.reset(token)` in a finally block",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/chat/store.py",
+      "line": 454,
+      "extra": {
+        "function": "list_freezone_canvas_agent_summaries_async",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-004",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "threading.RLock() blocks the event loop under contention",
+      "file": "src/novelvideo/cognee/ladybug_access.py",
+      "line": 529,
+      "extra": {
+        "function": "query",
+        "evidence": "Use `asyncio.Lock()` with `async with lock:` instead",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/freezone/recipe_runtime.py",
+      "line": 716,
+      "extra": {
+        "function": "compile_recipe_prompt_batch",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/freezone/skill_import_retrieval.py",
+      "line": 429,
+      "extra": {
+        "function": "resolve_task_recipes",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 334,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 628,
+      "extra": {
+        "function": "generate_with_request",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 732,
+      "extra": {
+        "function": "upscale_with_img2img",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 798,
+      "extra": {
+        "function": "upscale_with_img2img",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 862,
+      "extra": {
+        "function": "edit_with_seededit",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 935,
+      "extra": {
+        "function": "edit_with_seededit",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-007",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "subprocess.run() blocks the event loop for the entire subprocess duration",
+      "file": "src/novelvideo/generators/indextts2_fal.py",
+      "line": 87,
+      "extra": {
+        "function": "_audio_duration_seconds",
+        "evidence": "Use `proc = await asyncio.create_subprocess_exec(*cmd)` then `await proc.communicate()`",
+        "suggested_fix": "proc = await asyncio.create_subprocess_exec(\"ffprobe\", \"-v\", \"error\", \"-show_entries\", \"format=duration\", \"-of\", \"default=noprint_wrappers=1:nokey=1\", str(audio_path))\nstdout, stderr = await proc.communicate()"
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_character.py",
+      "line": 572,
+      "extra": {
+        "function": "generate_identity_with_reference",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_character.py",
+      "line": 582,
+      "extra": {
+        "function": "generate_identity_with_reference",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_character.py",
+      "line": 1341,
+      "extra": {
+        "function": "_generate_single_image",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_character.py",
+      "line": 1618,
+      "extra": {
+        "function": "_generate_with_reference",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5246,
+      "extra": {
+        "function": "generate_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5260,
+      "extra": {
+        "function": "generate_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5505,
+      "extra": {
+        "function": "generate_action_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5517,
+      "extra": {
+        "function": "generate_action_grid",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 5790,
+      "extra": {
+        "function": "reformat_sketch",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 6250,
+      "extra": {
+        "function": "generate_batch_api",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7204,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7221,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7245,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7274,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7304,
+      "extra": {
+        "function": "_render_single_panel_gemini",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7395,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7422,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7458,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7500,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7542,
+      "extra": {
+        "function": "upscale_with_nanobanana",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 7732,
+      "extra": {
+        "function": "generate_single_preview",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_prop.py",
+      "line": 360,
+      "extra": {
+        "function": "_generate_via_openrouter",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_prop.py",
+      "line": 391,
+      "extra": {
+        "function": "_generate_via_openai",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/nanobanana_prop.py",
+      "line": 429,
+      "extra": {
+        "function": "_generate_via_newapi",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/tts_generator.py",
+      "line": 321,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/tts_generator.py",
+      "line": 333,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/tts_generator.py",
+      "line": 740,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/tts_generator.py",
+      "line": 745,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 491,
+      "extra": {
+        "function": "_download_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 911,
+      "extra": {
+        "function": "_download_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 1222,
+      "extra": {
+        "function": "_download_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 4442,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 4449,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 4611,
+      "extra": {
+        "function": "generate",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/task_backend/runners/render.py",
+      "line": 370,
+      "extra": {
+        "function": "_run_batch_render_async",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/task_backend/runners/render.py",
+      "line": 883,
+      "extra": {
+        "function": "_run_grid_regenerate_async",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "src/novelvideo/task_backend/runners/render.py",
+      "line": 932,
+      "extra": {
+        "function": "_run_grid_regenerate_async",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/utils/bounded_concurrency.py",
+      "line": 77,
+      "extra": {
+        "function": "map_bounded",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/utils/media_io.py",
+      "line": 109,
+      "extra": {
+        "function": "get_audio_durations_async",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/verification/sketch_visual_gate.py",
+      "line": 489,
+      "extra": {
+        "function": "gate_candidate_cells",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "src/novelvideo/video_billing.py",
+      "line": 53,
+      "extra": {
+        "function": "probe_total_video_duration_seconds",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": ".hermes/plugins/dramaclaw/__init__.py",
+      "line": 1921,
+      "extra": {
+        "function": "_handle_get_character_media",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/api/__init__.py",
+      "line": 40,
+      "extra": {
+        "function": "<module>",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/api/routes/chat.py",
+      "line": 201,
+      "extra": {
+        "function": "cancel_chat_turn",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/api/routes/freezone.py",
+      "line": 1208,
+      "extra": {
+        "function": "_collect_mainline_typed_reference_urls",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/api/routes/generation.py",
+      "line": 6166,
+      "extra": {
+        "function": "assign_sketch_colors",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/chat/backend_sdk.py",
+      "line": 949,
+      "extra": {
+        "function": "stream",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/chat/display_fallback.py",
+      "line": 677,
+      "extra": {
+        "function": "build",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/chat/hermes_egress.py",
+      "line": 164,
+      "extra": {
+        "function": "authorize_credentialed_hermes",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/chat/hermes_sdk.py",
+      "line": 1563,
+      "extra": {
+        "function": "close",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 108,
+      "extra": {
+        "function": "_preserve_application_logging",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 407,
+      "extra": {
+        "function": "_clear_cognee_embedding_config_cache",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 421,
+      "extra": {
+        "function": "_clear_cognee_llm_config_cache",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 655,
+      "extra": {
+        "function": "_embedding_response_trace",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 952,
+      "extra": {
+        "function": "_run_project_embedding_with_billing",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 959,
+      "extra": {
+        "function": "_run_project_embedding_with_billing",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/cognee/config.py",
+      "line": 983,
+      "extra": {
+        "function": "_run_project_embedding_with_billing",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/director_world/control_frame_compose.py",
+      "line": 101,
+      "extra": {
+        "function": "compose_combined",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/freezone/agent_workflows/catalog.py",
+      "line": 4764,
+      "extra": {
+        "function": "_load_agent_config_items",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/freezone/audio_node.py",
+      "line": 124,
+      "extra": {
+        "function": "_refund_music_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/freezone/audio_node.py",
+      "line": 146,
+      "extra": {
+        "function": "_confirm_music_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/freezone/presets.py",
+      "line": 1016,
+      "extra": {
+        "function": "build_beat_preset_context",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/freezone/presets.py",
+      "line": 1930,
+      "extra": {
+        "function": "_reference_path_lookup_keys",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/freezone/presets.py",
+      "line": 1932,
+      "extra": {
+        "function": "_reference_path_lookup_keys",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 70,
+      "extra": {
+        "function": "_refund_image_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 89,
+      "extra": {
+        "function": "_confirm_image_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/image_generator.py",
+      "line": 104,
+      "extra": {
+        "function": "_mark_image_model_call_accepted",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/indextts2_fal.py",
+      "line": 53,
+      "extra": {
+        "function": "_refund_tts_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/indextts2_fal.py",
+      "line": 72,
+      "extra": {
+        "function": "_confirm_tts_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 272,
+      "extra": {
+        "function": "_mark_paid_image_attempt_accepted",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 3470,
+      "extra": {
+        "function": "_refund",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 3494,
+      "extra": {
+        "function": "_confirm",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 3792,
+      "extra": {
+        "function": "_refund",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 3816,
+      "extra": {
+        "function": "_confirm",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 3983,
+      "extra": {
+        "function": "_call_newapi_image_api",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/nanobanana_grid.py",
+      "line": 6780,
+      "extra": {
+        "function": "_append_reference_parts_from_plan",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/pool_indexer.py",
+      "line": 55,
+      "extra": {
+        "function": "compute_beat_content_hash",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/video_composer.py",
+      "line": 364,
+      "extra": {
+        "function": "_create_title_card",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/video_composer.py",
+      "line": 416,
+      "extra": {
+        "function": "_create_end_card",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 191,
+      "extra": {
+        "function": "_refund_video_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/video_generator.py",
+      "line": 210,
+      "extra": {
+        "function": "_confirm_video_model_call",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/generators/voxel_restyle.py",
+      "line": 156,
+      "extra": {
+        "function": "render_voxel_shot_styled",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/llm_instrumentation.py",
+      "line": 299,
+      "extra": {
+        "function": "_extract_provider_ids",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/llm_instrumentation.py",
+      "line": 364,
+      "extra": {
+        "function": "_extract_litellm_usage",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/llm_instrumentation.py",
+      "line": 411,
+      "extra": {
+        "function": "_json_log_value",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/llm_instrumentation.py",
+      "line": 633,
+      "extra": {
+        "function": "_tracked_run",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/seedance2_i2v/narration_audio_task.py",
+      "line": 94,
+      "extra": {
+        "function": "_emit_log",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/seedance2_i2v/voice_audio_task.py",
+      "line": 103,
+      "extra": {
+        "function": "_emit_log",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/services/prop_ref_service.py",
+      "line": 71,
+      "extra": {
+        "function": "episode_prop_menu_from_store",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/services/style_service.py",
+      "line": 170,
+      "extra": {
+        "function": "_resolve_project_context",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/stage_asset_tasks.py",
+      "line": 768,
+      "extra": {
+        "function": "_fallback_unavailable_mps",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/task_backend/run_core.py",
+      "line": 641,
+      "extra": {
+        "function": "_project_task_failure_for_exception",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/task_backend/run_core.py",
+      "line": 663,
+      "extra": {
+        "function": "_project_task_failure_for_exception",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/task_backend/run_core.py",
+      "line": 671,
+      "extra": {
+        "function": "_project_task_failure_for_exception",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/task_backend/run_core.py",
+      "line": 683,
+      "extra": {
+        "function": "_project_task_failure_for_exception",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/task_backend/run_core.py",
+      "line": 696,
+      "extra": {
+        "function": "_project_task_failure_for_exception",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/utils/logging.py",
+      "line": 276,
+      "extra": {
+        "function": "_record_trace",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/cli/copy_back_passed.py",
+      "line": 147,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/cli/run_gate.py",
+      "line": 27,
+      "extra": {
+        "function": "<module>",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/cli/run_gate.py",
+      "line": 151,
+      "extra": {
+        "function": "main_async",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/routes.py",
+      "line": 122,
+      "extra": {
+        "function": "verify_beat",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/routes.py",
+      "line": 406,
+      "extra": {
+        "function": "score_beat",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/routes.py",
+      "line": 453,
+      "extra": {
+        "function": "score_batch",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/sketch_visual_gate.py",
+      "line": 502,
+      "extra": {
+        "function": "gate_candidate_cells",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "src/novelvideo/verification/utils.py",
+      "line": 48,
+      "extra": {
+        "function": "load_all_beats",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

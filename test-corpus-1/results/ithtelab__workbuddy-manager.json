@@ -1,0 +1,1133 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [],
+    "filesExcluded": 0
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.13.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 4,
+    "major": 0,
+    "warning": 68,
+    "info": 0,
+    "total": 72
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/routers/accounts.py",
+      "line": 1100,
+      "extra": {
+        "function": "refresh_all_credits",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/routers/accounts.py",
+      "line": 1194,
+      "extra": {
+        "function": "checkin_all",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/routers/accounts.py",
+      "line": 1749,
+      "extra": {
+        "function": "refresh_all_tokens",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/services/tencent.py",
+      "line": 667,
+      "extra": {
+        "function": "fetch_models",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 254,
+      "extra": {
+        "function": "flush",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 318,
+      "extra": {
+        "function": "http_json",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 776,
+      "extra": {
+        "function": "_clear_version_cache",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 1076,
+      "extra": {
+        "function": "_compose_plugin_paths",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 1127,
+      "extra": {
+        "function": "wait_health",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 1349,
+      "extra": {
+        "function": "_cleanup_release_cache",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "deploy/update.py",
+      "line": 1514,
+      "extra": {
+        "function": "in_container",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_account_groups_ui.py",
+      "line": 104,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_account_proxy_ui.py",
+      "line": 125,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_dashboard_groups_ui.py",
+      "line": 144,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_palette_ui.py",
+      "line": 75,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_pgsync_form_ui.py",
+      "line": 52,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_redis_probe_e2e.py",
+      "line": 94,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_state_honesty_ui.py",
+      "line": 136,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_update_clear_ui.py",
+      "line": 95,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "dev/verify_upstreams_ui.py",
+      "line": 79,
+      "extra": {
+        "function": "main",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/config.py",
+      "line": 368,
+      "extra": {
+        "function": "_sticky_pick",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/db.py",
+      "line": 477,
+      "extra": {
+        "function": "connect",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/db.py",
+      "line": 1025,
+      "extra": {
+        "function": "_prune_request_logs",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/db.py",
+      "line": 1153,
+      "extra": {
+        "function": "add_ip_access_log",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/routers/accounts.py",
+      "line": 1351,
+      "extra": {
+        "function": "_nickname_resolver",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/routers/gateway.py",
+      "line": 86,
+      "extra": {
+        "function": "max_body_bytes",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/routers/playground.py",
+      "line": 112,
+      "extra": {
+        "function": "chat",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/routers/stats.py",
+      "line": 161,
+      "extra": {
+        "function": "_failures",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/security.py",
+      "line": 406,
+      "extra": {
+        "function": "audit",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/credits.py",
+      "line": 71,
+      "extra": {
+        "function": "_save_snapshot",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/credits.py",
+      "line": 145,
+      "extra": {
+        "function": "get_credits",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/proxyroutes.py",
+      "line": 546,
+      "extra": {
+        "function": "record_probe",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/realm.py",
+      "line": 75,
+      "extra": {
+        "function": "_read_global_config",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/realm.py",
+      "line": 137,
+      "extra": {
+        "function": "client_version",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/realm.py",
+      "line": 150,
+      "extra": {
+        "function": "cli_version",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/realm.py",
+      "line": 362,
+      "extra": {
+        "function": "_read_upstream_sec",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/tencent.py",
+      "line": 1020,
+      "extra": {
+        "function": "_parse_error_body",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/tencent.py",
+      "line": 1197,
+      "extra": {
+        "function": "_region_fields",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 64,
+      "extra": {
+        "function": "in_container",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 137,
+      "extra": {
+        "function": "read_status",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 142,
+      "extra": {
+        "function": "read_status",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 173,
+      "extra": {
+        "function": "current_version",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 373,
+      "extra": {
+        "function": "_write_initial_status",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 460,
+      "extra": {
+        "function": "start_update",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 467,
+      "extra": {
+        "function": "start_update",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 556,
+      "extra": {
+        "function": "_local_upstream_head",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/updater.py",
+      "line": 653,
+      "extra": {
+        "function": "_write_cache",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/wb2api.py",
+      "line": 1000,
+      "extra": {
+        "function": "_kill_quietly",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/services/wb2api.py",
+      "line": 1758,
+      "extra": {
+        "function": "_redis_ping",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_access_log_reason.py",
+      "line": 46,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_access_log_reason.py",
+      "line": 125,
+      "extra": {
+        "function": "test_migration_adds_column_to_existing_db",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_access_log_reason.py",
+      "line": 291,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_auth_bypass.py",
+      "line": 322,
+      "extra": {
+        "function": "setUp",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_credit_expiry.py",
+      "line": 327,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_credits_ledger.py",
+      "line": 52,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_day_filter_equivalence.py",
+      "line": 70,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_day_filter_equivalence.py",
+      "line": 213,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_http_client_pool.py",
+      "line": 291,
+      "extra": {
+        "function": "scenario",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_issue67_account_note.py",
+      "line": 74,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_issue69_cache_tokens.py",
+      "line": 96,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_issue69_cache_tokens.py",
+      "line": 202,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_ssrf_guard.py",
+      "line": 202,
+      "extra": {
+        "function": "_handle",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_stats_failures.py",
+      "line": 66,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_stats_failures.py",
+      "line": 205,
+      "extra": {
+        "function": "test_returns_zeros_on_error",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_task_log_filter_visibility.py",
+      "line": 63,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_tasklog_collect.py",
+      "line": 43,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_tasklog_collect.py",
+      "line": 114,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_tasklog_collect.py",
+      "line": 177,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_usage_credit.py",
+      "line": 232,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_usage_credit.py",
+      "line": 310,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tests/test_usage_timezone.py",
+      "line": 42,
+      "extra": {
+        "function": "tearDown",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "except Exception with empty body silences all errors silently",
+      "file": "server/tokensvc.py",
+      "line": 153,
+      "extra": {
+        "function": "touch",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

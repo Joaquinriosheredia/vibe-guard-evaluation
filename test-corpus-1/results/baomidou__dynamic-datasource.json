@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "dynamic-datasource-creator/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dynamic-datasource-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "dynamic-datasource-spring-boot3-starter/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "dynamic-datasource-spring-boot4-starter/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "dynamic-datasource-spring/src/test",
+        "pattern": "test",
+        "files": 14
+      }
+    ],
+    "filesExcluded": 51
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 217,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

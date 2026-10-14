@@ -1,0 +1,2445 @@
+{
+  "batches": [
+    {
+      "batch": 1,
+      "at": "2026-10-14T06:25:00.062Z",
+      "added": {
+        "java": 20,
+        "python": 20
+      },
+      "includedJava": 20,
+      "includedPython": 20,
+      "criticalSoFar": 244
+    }
+  ],
+  "processed": [
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 1,
+      "full_name": "macrozheng/mall",
+      "id": 127988011,
+      "stars": 84893,
+      "processedAt": "2026-10-14T06:18:22.711Z",
+      "commit": "dcaa93b3150352e5044708d7211b5bed0af4509f",
+      "files": {
+        "java": 519,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 304
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 2,
+      "full_name": "spring-projects/spring-boot",
+      "id": 6296790,
+      "stars": 81619,
+      "processedAt": "2026-10-14T06:18:23.789Z",
+      "commit": "c6be2d61c837a82eec40de9141dc4f3100d1c79c",
+      "files": {
+        "java": 5210,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 2091
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 3,
+      "full_name": "conductor-oss/conductor",
+      "id": 728981719,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 4,
+      "full_name": "apolloconfig/apollo",
+      "id": 53127403,
+      "stars": 29822,
+      "processedAt": "2026-10-14T06:18:33.417Z",
+      "commit": "42d4d827ebb95189c99e2ca85baffcd8594784ef",
+      "files": {
+        "java": 521,
+        "python": 2
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 576
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 5,
+      "full_name": "elunez/eladmin",
+      "id": 161757837,
+      "stars": 21905,
+      "processedAt": "2026-10-14T06:18:36.979Z",
+      "commit": "55fbf705956949697dbd68bf9003776609d3d029",
+      "files": {
+        "java": 269,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 174
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 6,
+      "full_name": "linlinjava/litemall",
+      "id": 126365965,
+      "stars": 20381,
+      "processedAt": "2026-10-14T06:18:38.702Z",
+      "commit": "a1ef964a718b7277925b19ea26afe78ea3a1d325",
+      "files": {
+        "java": 304,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 396
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 7,
+      "full_name": "macrozheng/mall-swarm",
+      "id": 223881576,
+      "stars": 13160,
+      "processedAt": "2026-10-14T06:18:41.400Z",
+      "commit": "04c442fe318356bae4445a109dde7af297ce1e84",
+      "files": {
+        "java": 526,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 282
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 8,
+      "full_name": "codecentric/spring-boot-admin",
+      "id": 22254856,
+      "stars": 12854,
+      "processedAt": "2026-10-14T06:18:44.149Z",
+      "commit": "5bbe2a5bd8ad6b6d8c6327c9cc1ee5039673dd33",
+      "files": {
+        "java": 244,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 374
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 9,
+      "full_name": "apereo/cas",
+      "id": 2352744,
+      "stars": 11387,
+      "processedAt": "2026-10-14T06:18:47.280Z",
+      "commit": "70252f9a349123b3a238fbd599f3dfec5d5f7d3b",
+      "files": {
+        "java": 4999,
+        "python": 3
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 2185
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 10,
+      "full_name": "zfile-dev/zfile",
+      "id": 203183673,
+      "stars": 10849,
+      "processedAt": "2026-10-14T06:18:58.537Z",
+      "commit": "775b0172f3b1d3f68aabca727ef7e083e6bd5aa5",
+      "files": {
+        "java": 417,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 246
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 11,
+      "full_name": "hs-web/hsweb-framework",
+      "id": 49850704,
+      "stars": 8397,
+      "processedAt": "2026-10-14T06:19:00.953Z",
+      "commit": "72f42efa01bd8cb83dd130521daa4be1b3fd27c1",
+      "files": {
+        "java": 614,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 354
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 12,
+      "full_name": "pig-mesh/pig",
+      "id": 204388092,
+      "stars": 6690,
+      "processedAt": "2026-10-14T06:19:03.358Z",
+      "commit": "a0d273afd3adc6678b065c0f2d25433541343ad7",
+      "files": {
+        "java": 545,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 292
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 13,
+      "full_name": "jetlinks/jetlinks-community",
+      "id": 231329990,
+      "stars": 6653,
+      "processedAt": "2026-10-14T06:19:05.970Z",
+      "commit": "d81b571db19658d974f5ce652dd82d904cabf485",
+      "files": {
+        "java": 1381,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 775
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 14,
+      "full_name": "DerekYRC/mini-spring",
+      "id": 313605398,
+      "stars": 6365,
+      "processedAt": "2026-10-14T06:19:11.683Z",
+      "commit": "7d9c897c31523324dab888d2dff4768a67e1294d",
+      "files": {
+        "java": 98,
+        "python": 0
+      },
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 98 .java files"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 15,
+      "full_name": "rubenlagus/TelegramBots",
+      "id": 49610798,
+      "stars": 5534,
+      "processedAt": "2026-10-14T06:19:14.127Z",
+      "commit": "15ff4c479671267015d41d8a1a8d13da83f02abe",
+      "files": {
+        "java": 694,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 288
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 16,
+      "full_name": "baomidou/dynamic-datasource",
+      "id": 131364545,
+      "stars": 5187,
+      "processedAt": "2026-10-14T06:19:16.494Z",
+      "commit": "d7353d7795610b56b8b2fb9d02f860f17ca5d82f",
+      "files": {
+        "java": 138,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 179
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 17,
+      "full_name": "spring-cloud/spring-cloud-netflix",
+      "id": 21741891,
+      "stars": 4969,
+      "processedAt": "2026-10-14T06:19:18.419Z",
+      "commit": "5d6a50b52901059698824feea17e4b16dff051e1",
+      "files": {
+        "java": 70,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 178
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 18,
+      "full_name": "spring-cloud/spring-cloud-gateway",
+      "id": 73963835,
+      "stars": 4911,
+      "processedAt": "2026-10-14T06:19:20.388Z",
+      "commit": "0185ec967efa368495068490025273754b4a1096",
+      "files": {
+        "java": 390,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 364
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 19,
+      "full_name": "s4kibs4mi/java-developer-roadmap",
+      "id": 182950817,
+      "stars": 4547,
+      "processedAt": "2026-10-14T06:19:22.852Z",
+      "commit": "94e21c63e1c86cee7c6dd6fdcd1661d75220df3f",
+      "files": {
+        "java": 1,
+        "python": 0
+      },
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1 .java files"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 20,
+      "full_name": "grimmory-tools/grimmory",
+      "id": 1180257966,
+      "stars": 4522,
+      "processedAt": "2026-10-14T06:19:24.728Z",
+      "commit": "56ba9f72deab2806f460f2bcf7593f4d2d0d771d",
+      "files": {
+        "java": 935,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 546
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 21,
+      "full_name": "lilishop/lilishop",
+      "id": 367217461,
+      "stars": 4320,
+      "processedAt": "2026-10-14T06:19:26.206Z",
+      "commit": "a8e49aed4279697cc949cfda199b4e658ab72174",
+      "files": {
+        "java": 2086,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 519
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 22,
+      "full_name": "mybatis/spring-boot-starter",
+      "id": 43142077,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 23,
+      "full_name": "1024-lab/smart-admin",
+      "id": 222035707,
+      "stars": 3901,
+      "processedAt": "2026-10-14T06:19:29.036Z",
+      "commit": "2dbf3c285afbb187efb19630c4dd70664067cbc2",
+      "files": {
+        "java": 1122,
+        "python": 0
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 394
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "batch": 1,
+      "rank": 24,
+      "full_name": "Atmosphere/atmosphere",
+      "id": 749137,
+      "stars": 3821,
+      "processedAt": "2026-10-14T06:19:33.341Z",
+      "commit": "70fd698a0c586d288626e70a067127c21924d5a2",
+      "files": {
+        "java": 1752,
+        "python": 11
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1534
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 1,
+      "full_name": "fastapi/fastapi",
+      "id": 160919119,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 2,
+      "full_name": "headroomlabs-ai/headroom",
+      "id": 1129940957,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 3,
+      "full_name": "Zeyi-Lin/HivisionIDPhotos",
+      "id": 655413331,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 4,
+      "full_name": "Evil0ctal/Douyin_TikTok_Download_API",
+      "id": 425387994,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 5,
+      "full_name": "fastapi/sqlmodel",
+      "id": 399495186,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 6,
+      "full_name": "coleifer/peewee",
+      "id": 979480,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 7,
+      "full_name": "QuentinFuxa/WhisperLiveKit",
+      "id": 905697354,
+      "stars": 11139,
+      "processedAt": "2026-10-14T06:19:39.931Z",
+      "commit": "363e4f6d029694d9c81ae548beddd9d3c88a3637",
+      "files": {
+        "java": 0,
+        "python": 109
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 3711
+      },
+      "excludesMatch": true,
+      "critical": 3,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 8,
+      "full_name": "polarsource/polar",
+      "id": 593558875,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 9,
+      "full_name": "pycaret/pycaret",
+      "id": 223636350,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 10,
+      "full_name": "vastsa/FileCodeBox",
+      "id": 576247474,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 11,
+      "full_name": "nonebot/nonebot2",
+      "id": 289605524,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 12,
+      "full_name": "xerrors/Yuxi",
+      "id": 824541776,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 13,
+      "full_name": "dramaclaw/dramaclaw",
+      "id": 1193300953,
+      "stars": 6269,
+      "processedAt": "2026-10-14T06:19:46.659Z",
+      "commit": "51cd2c4f833fc31e2167d3f06d144ee64d728c09",
+      "files": {
+        "java": 0,
+        "python": 492
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 34857
+      },
+      "excludesMatch": true,
+      "critical": 59,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 14,
+      "full_name": "fastapi-users/fastapi-users",
+      "id": 213025388,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 15,
+      "full_name": "shy3130/tick-stock-panel",
+      "id": 1273015953,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 16,
+      "full_name": "liuzhao1225/YouDub-webui",
+      "id": 735872604,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 17,
+      "full_name": "SenteLabsAI/OpenExecutive",
+      "id": 1266695553,
+      "stars": 5598,
+      "processedAt": "2026-10-14T06:20:27.724Z",
+      "commit": "5541ed062d2579a4764afb3681b766a1b0543478",
+      "files": {
+        "java": 0,
+        "python": 412
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 23858
+      },
+      "excludesMatch": true,
+      "critical": 19,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 18,
+      "full_name": "remsky/Kokoro-FastAPI",
+      "id": 910061041,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 19,
+      "full_name": "strawberry-graphql/strawberry",
+      "id": 162690887,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 20,
+      "full_name": "IBM/mcp-context-forge",
+      "id": 979886407,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 21,
+      "full_name": "pydantic/logfire",
+      "id": 790713784,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 22,
+      "full_name": "dynaconf/dynaconf",
+      "id": 40736676,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 23,
+      "full_name": "arvin341az-glitch/RVG",
+      "id": 1267280589,
+      "stars": 4246,
+      "processedAt": "2026-10-14T06:20:54.366Z",
+      "commit": "cdece8ea86d2bdda11530e9e6c27cfaa5f467ea7",
+      "files": {
+        "java": 0,
+        "python": 28
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1050
+      },
+      "excludesMatch": true,
+      "critical": 43,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 24,
+      "full_name": "datamodel-code-generator/datamodel-code-generator",
+      "id": 189179081,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 25,
+      "full_name": "Lightning-AI/LitServe",
+      "id": 730728120,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 26,
+      "full_name": "TracecatHQ/tracecat",
+      "id": 763923484,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 27,
+      "full_name": "lxf746/any-auto-register",
+      "id": 1185330299,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 28,
+      "full_name": "Soju06/codex-lb",
+      "id": 1129437678,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 29,
+      "full_name": "ml-tooling/opyrator",
+      "id": 355109043,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 30,
+      "full_name": "tiangolo/uvicorn-gunicorn-fastapi-docker",
+      "id": 164136678,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 31,
+      "full_name": "smithyhq/sqladmin",
+      "id": 440814573,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 32,
+      "full_name": "s3rius/FastAPI-template",
+      "id": 301531901,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 33,
+      "full_name": "wassim249/fastapi-langgraph-agent-production-ready-template",
+      "id": 962106649,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 34,
+      "full_name": "the-momentum/open-wearables",
+      "id": 1086572146,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 35,
+      "full_name": "supabase/supabase-py",
+      "id": 290969078,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 36,
+      "full_name": "fastapi-practices/fastapi-best-architecture",
+      "id": 624721291,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 37,
+      "full_name": "CJackHwang/AIstudioProxyAPI",
+      "id": 973292935,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 38,
+      "full_name": "jwadow/kiro-gateway",
+      "id": 1115489218,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 39,
+      "full_name": "3441293738/creatorhub",
+      "id": 1288067014,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 40,
+      "full_name": "widgetti/solara",
+      "id": 467834772,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 41,
+      "full_name": "Kludex/mangum",
+      "id": 165652505,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 42,
+      "full_name": "TNT-Likely/PanWatch",
+      "id": 1140582982,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 43,
+      "full_name": "benavlabs/FastAPI-boilerplate",
+      "id": 694874070,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 44,
+      "full_name": "BetaStreetOmnis/xhs_ai_publisher",
+      "id": 886118922,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 45,
+      "full_name": "laurentS/slowapi",
+      "id": 242139417,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 46,
+      "full_name": "openapi-generators/openapi-python-client",
+      "id": 240776275,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 47,
+      "full_name": "piccolo-orm/piccolo",
+      "id": 155008334,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 48,
+      "full_name": "vstorm-co/full-stack-ai-agent-template",
+      "id": 1119531734,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 49,
+      "full_name": "pmh1314520/WebRPA",
+      "id": 1124045066,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 50,
+      "full_name": "ormar-orm/ormar",
+      "id": 284405810,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 51,
+      "full_name": "drmingler/docling-api",
+      "id": 883864343,
+      "stars": 1690,
+      "processedAt": "2026-10-14T06:20:57.010Z",
+      "commit": "6ba1ce740ec84a2338c99e5df9463a65616a45e2",
+      "files": {
+        "java": 0,
+        "python": 10
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import found, 10 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 52,
+      "full_name": "uriyyo/fastapi-pagination",
+      "id": 310670921,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 53,
+      "full_name": "guillevc/yubal",
+      "id": 1124730302,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 54,
+      "full_name": "benavlabs/fastcrud",
+      "id": 740300919,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 55,
+      "full_name": "fim-ai/fim-one",
+      "id": 1164059777,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 56,
+      "full_name": "insistence/RuoYi-FastAPI",
+      "id": 749697840,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 57,
+      "full_name": "teamhide/fastapi-boilerplate",
+      "id": 248507413,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 58,
+      "full_name": "trallnag/prometheus-fastapi-instrumentator",
+      "id": 278339916,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 59,
+      "full_name": "devnen/Chatterbox-TTS-Server",
+      "id": 993746345,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 60,
+      "full_name": "transmute-app/transmute",
+      "id": 1160337220,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 61,
+      "full_name": "koxudaxi/fastapi-code-generator",
+      "id": 272182431,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 62,
+      "full_name": "Amm1rr/WebAI-to-API",
+      "id": 669611694,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 63,
+      "full_name": "slackapi/bolt-python",
+      "id": 268795735,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 64,
+      "full_name": "aegra/aegra",
+      "id": 1023243010,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 65,
+      "full_name": "SalesforceAIResearch/enterprise-deep-research",
+      "id": 1058148535,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 66,
+      "full_name": "yezz123/authx",
+      "id": 399171157,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 67,
+      "full_name": "developmentseed/titiler",
+      "id": 194306692,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 68,
+      "full_name": "larlarua/AutoCVE",
+      "id": 1270272670,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 69,
+      "full_name": "atpuxiner/fastapi-scaff",
+      "id": 835573204,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 70,
+      "full_name": "ithtelab/workbuddy-manager",
+      "id": 1366072565,
+      "stars": 1177,
+      "processedAt": "2026-10-14T06:20:58.716Z",
+      "commit": "d15e98e52f81317dfaa9b5ba87e82f834554c2ec",
+      "files": {
+        "java": 0,
+        "python": 227
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 7186
+      },
+      "excludesMatch": true,
+      "critical": 4,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 71,
+      "full_name": "art049/odmantic",
+      "id": 260472474,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 72,
+      "full_name": "Ricky-7-Yan/intelligent-audit-system",
+      "id": 1085130367,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 73,
+      "full_name": "asdfghj1237890/WebVideo2NAS",
+      "id": 1074844499,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 74,
+      "full_name": "TypeError/secure",
+      "id": 159254159,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 75,
+      "full_name": "tsukumijima/KonomiTV",
+      "id": 400551970,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 76,
+      "full_name": "Finrandojin/alexandria-audiobook",
+      "id": 1148749246,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 77,
+      "full_name": "jowilf/starlette-admin",
+      "id": 530277810,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 78,
+      "full_name": "beizhu-1209/AIHelms",
+      "id": 1233558941,
+      "stars": 1029,
+      "processedAt": "2026-10-14T06:21:08.513Z",
+      "commit": "a88ee6e4085d281946fd43a13af76de77931fdae",
+      "files": {
+        "java": 0,
+        "python": 159
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 3262
+      },
+      "excludesMatch": true,
+      "critical": 11,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 79,
+      "full_name": "dunossauro/fastapi-do-zero",
+      "id": 665865348,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 80,
+      "full_name": "sabuhish/fastapi-mail",
+      "id": 236163572,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 81,
+      "full_name": "bitcart/bitcart",
+      "id": 173628650,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 82,
+      "full_name": "CloakHQ/CloakBrowser-Manager",
+      "id": 1178490874,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 83,
+      "full_name": "weiwill88/Local_Pdf_Chat_RAG",
+      "id": 925508103,
+      "stars": 961,
+      "processedAt": "2026-10-14T06:21:13.815Z",
+      "commit": "38b39f641a5228673fc46a64c802307e2e6d5209",
+      "files": {
+        "java": 0,
+        "python": 19
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import found, 19 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 84,
+      "full_name": "Pipelex/pipelex",
+      "id": 990481429,
+      "stars": 944,
+      "processedAt": "2026-10-14T06:21:15.845Z",
+      "commit": "284ec40840493d7b9f0443746961feff9ac57603",
+      "files": {
+        "java": 0,
+        "python": 1193
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 30938
+      },
+      "excludesMatch": true,
+      "critical": 13,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 85,
+      "full_name": "JMS1717/8mb.local",
+      "id": 1088486120,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 86,
+      "full_name": "feldroy/air",
+      "id": 47806393,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 87,
+      "full_name": "LibreChat-AI/rag-api",
+      "id": 773345074,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 88,
+      "full_name": "alikon-art/DeterminFlow",
+      "id": 1319927892,
+      "stars": 909,
+      "processedAt": "2026-10-14T06:21:52.339Z",
+      "commit": "8ad6886303fe78b75bf8c1e37c5c3f0489d68145",
+      "files": {
+        "java": 0,
+        "python": 265
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 11084
+      },
+      "excludesMatch": true,
+      "critical": 7,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 89,
+      "full_name": "cle-b/httpdbg",
+      "id": 273906263,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 90,
+      "full_name": "LvcidPsyche/auto-browser",
+      "id": 1176557412,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 91,
+      "full_name": "getludic/ludic",
+      "id": 769005895,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 92,
+      "full_name": "Aeternalis-Ingenium/FastAPI-Backend-Template",
+      "id": 574421004,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 93,
+      "full_name": "JoeanAmier/KS-Downloader",
+      "id": 784282243,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 94,
+      "full_name": "Anil-matcha/open-agent-connector",
+      "id": 811339757,
+      "stars": 838,
+      "processedAt": "2026-10-14T06:22:05.767Z",
+      "commit": "e857af1c737b1ef64965ffe19b87c99c055d8953",
+      "files": {
+        "java": 0,
+        "python": 279
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 9233
+      },
+      "excludesMatch": true,
+      "critical": 2,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 95,
+      "full_name": "Guard-Core/fastapi-guard",
+      "id": 838357935,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 96,
+      "full_name": "felipeall/resumeio-to-pdf",
+      "id": 561940055,
+      "stars": 817,
+      "processedAt": "2026-10-14T06:22:17.044Z",
+      "commit": "62fb6d1a411f71e3a67d6f8f3e4167fbed9e2b78",
+      "files": {
+        "java": 0,
+        "python": 10
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import found, 10 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 97,
+      "full_name": "litestar-org/advanced-alchemy",
+      "id": 687666119,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 98,
+      "full_name": "fastapi-mvc/fastapi-mvc",
+      "id": 389362936,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 99,
+      "full_name": "ChenShuo2004/cs-board",
+      "id": 1341264609,
+      "stars": 773,
+      "processedAt": "2026-10-14T06:22:18.533Z",
+      "commit": "f7780ef08cc2c752806e49805f5f696bfcd020de",
+      "files": {
+        "java": 0,
+        "python": 11
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import found, 11 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 100,
+      "full_name": "mr-fatalyst/oxyde",
+      "id": 1089078092,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 101,
+      "full_name": "asaotomo/FofaMap",
+      "id": 442706416,
+      "stars": 744,
+      "processedAt": "2026-10-14T06:22:23.072Z",
+      "commit": "d959f48bfadcc2517a9338a92acf659cb6389c1c",
+      "files": {
+        "java": 0,
+        "python": 29
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1986
+      },
+      "excludesMatch": true,
+      "critical": 3,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 102,
+      "full_name": "myccarl/ai-shortVideo-pipeline",
+      "id": 1259424581,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 103,
+      "full_name": "volfpeter/fasthx",
+      "id": 747609684,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 104,
+      "full_name": "iktakahiro/dddpy",
+      "id": 340649318,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 105,
+      "full_name": "Nativu5/Gemini-FastAPI",
+      "id": 1000933836,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 106,
+      "full_name": "vibber-ai/fastapi-azure-auth",
+      "id": 394764603,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 107,
+      "full_name": "AgentTeam-TaichuAI/ScienceClaw",
+      "id": 1180557903,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 108,
+      "full_name": "judahpaul16/gpt-home",
+      "id": 687633030,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 109,
+      "full_name": "fastapi/fastapi-cli",
+      "id": 795186513,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 110,
+      "full_name": "canarybyte/veridrop",
+      "id": 1229651069,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 111,
+      "full_name": "Mafifrizi/ARES",
+      "id": 1276141044,
+      "stars": 620,
+      "processedAt": "2026-10-14T06:22:24.279Z",
+      "commit": "3e1a9dd5137cc778b19a0aae6cd4218853f4f603",
+      "files": {
+        "java": 0,
+        "python": 254
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 20877
+      },
+      "excludesMatch": true,
+      "critical": 39,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 112,
+      "full_name": "hotosm/tasking-manager",
+      "id": 80733077,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 113,
+      "full_name": "tomwojcik/starlette-context",
+      "id": 219023167,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 114,
+      "full_name": "emersonfelipesp/netbox-proxbox",
+      "id": 355673550,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 115,
+      "full_name": "Krukov/cashews",
+      "id": 227915294,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 116,
+      "full_name": "ivan-borovets/fastapi-clean-example",
+      "id": 883271732,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 117,
+      "full_name": "SulgX/SulgX-Panel",
+      "id": 1275613120,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 118,
+      "full_name": "rafsaf/minimal-fastapi-postgres-template",
+      "id": 408249394,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 119,
+      "full_name": "skygazer42/MimirQ",
+      "id": 1105700003,
+      "stars": 544,
+      "processedAt": "2026-10-14T06:22:48.352Z",
+      "commit": "5d08b54beb8011a17ce274319fb79a5f121568c9",
+      "files": {
+        "java": 0,
+        "python": 1399
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 50761
+      },
+      "excludesMatch": true,
+      "critical": 17,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 120,
+      "full_name": "SearchSavior/OpenArc",
+      "id": 930733499,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 121,
+      "full_name": "Hainrixz/whatsapp-agentkit",
+      "id": 1184935822,
+      "stars": 536,
+      "processedAt": "2026-10-14T06:23:44.875Z",
+      "commit": "ad278b7d6f4bdc51b869fefbe42a7bfffc2b6324",
+      "files": {
+        "java": 0,
+        "python": 1
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import not found, 1 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 122,
+      "full_name": "PunithVT/ai-avatar-system",
+      "id": 1106924851,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 123,
+      "full_name": "Anil-matcha/Open-AI-Micro-Drama-Generator",
+      "id": 653702419,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 124,
+      "full_name": "LeDat98/NexusRAG",
+      "id": 1182227156,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 125,
+      "full_name": "grillazz/fastapi-sqlalchemy-asyncpg",
+      "id": 351697323,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 126,
+      "full_name": "JiayuXu0/FastAPI-Template",
+      "id": 1018797543,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 127,
+      "full_name": "GACWR/OpenUBA",
+      "id": 210659697,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 128,
+      "full_name": "Lancetnik/FastDepends",
+      "id": 628503532,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 129,
+      "full_name": "apocas/restai",
+      "id": 642578676,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 130,
+      "full_name": "Azure-Samples/rag-postgres-openai-python",
+      "id": 800643890,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 131,
+      "full_name": "Yzw202011/OmniSpace",
+      "id": 1343865323,
+      "stars": 500,
+      "processedAt": "2026-10-14T06:23:46.753Z",
+      "commit": "cf19b1108eda7e4877d6efc1c59d21ab34eba241",
+      "files": {
+        "java": 0,
+        "python": 254
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 10758
+      },
+      "excludesMatch": true,
+      "critical": 4,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 132,
+      "full_name": "caura-ai/caura",
+      "id": 1222639711,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 133,
+      "full_name": "yaojingang/GEORank",
+      "id": 1271844443,
+      "stars": 497,
+      "processedAt": "2026-10-14T06:24:02.747Z",
+      "commit": "424a0cf92b37ad63c94ae9dc6f39745189ab7c94",
+      "files": {
+        "java": 0,
+        "python": 102
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 4757
+      },
+      "excludesMatch": true,
+      "critical": 8,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 134,
+      "full_name": "tomasvotava/fastapi-sso",
+      "id": 346033602,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 135,
+      "full_name": "jod35/fastapi-beyond-CRUD",
+      "id": 764211372,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 136,
+      "full_name": "violit-dev/violit",
+      "id": 1136899489,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 137,
+      "full_name": "zrt-ai-lab/ViNote",
+      "id": 1081729785,
+      "stars": 473,
+      "processedAt": "2026-10-14T06:24:09.616Z",
+      "commit": "e8e46a144caa718eb85bf053619892fc261fc1f9",
+      "files": {
+        "java": 0,
+        "python": 67
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1934
+      },
+      "excludesMatch": true,
+      "critical": 9,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 138,
+      "full_name": "RMA-MUN/RAGNotebook",
+      "id": 1174262723,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 139,
+      "full_name": "bigsk1/voice-chat-ai",
+      "id": 814848397,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 140,
+      "full_name": "piccolo-orm/piccolo_admin",
+      "id": 193770368,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 141,
+      "full_name": "felipeall/transfermarkt-api",
+      "id": 602327494,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 142,
+      "full_name": "didilili/shopkeeper-agent",
+      "id": 1212059169,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 143,
+      "full_name": "benavlabs/crudadmin",
+      "id": 799684559,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 144,
+      "full_name": "shuxiachai/academic-commercialization-agent",
+      "id": 1280019852,
+      "stars": 450,
+      "processedAt": "2026-10-14T06:24:14.041Z",
+      "commit": "c0dcbf1cdc9df8f1f31a8cb950f1b8fcb33ecc64",
+      "files": {
+        "java": 0,
+        "python": 189
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 14652
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 145,
+      "full_name": "Beever-AI/beever-atlas",
+      "id": 1217456816,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 146,
+      "full_name": "dialoguemd/fastapi-sqla",
+      "id": 298082175,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 147,
+      "full_name": "tomascupr/sandstorm",
+      "id": 1157928891,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 148,
+      "full_name": "KLR-Pattern/fastapi-voyager",
+      "id": 1042429884,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 149,
+      "full_name": "OschAI/VisioFirm",
+      "id": 1044312231,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 150,
+      "full_name": "maldoinc/wireup",
+      "id": 680634709,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 151,
+      "full_name": "sleepy-project/sleepy",
+      "id": 833691953,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 152,
+      "full_name": "smagafurov/fastapi-jsonrpc",
+      "id": 201516795,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 153,
+      "full_name": "hynek/svcs",
+      "id": 665456447,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 154,
+      "full_name": "chrismattmann/sparkler",
+      "id": 59703501,
+      "stars": 419,
+      "processedAt": "2026-10-14T06:24:30.870Z",
+      "commit": "2a27562d1a99d6f7fe8c8893a1c344c3e8c76900",
+      "files": {
+        "java": 0,
+        "python": 18
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import found, 18 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 155,
+      "full_name": "koldakov/futuramaapi",
+      "id": 725719603,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 156,
+      "full_name": "DemonDamon/AgenticX",
+      "id": 772408997,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 157,
+      "full_name": "stephenhillier/starlette_exporter",
+      "id": 217774698,
+      "stars": 411,
+      "processedAt": "2026-10-14T06:24:32.487Z",
+      "commit": "867cbb5609b53e19c0caad9b9e994657add00d45",
+      "files": {
+        "java": 0,
+        "python": 5
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import found, 5 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 158,
+      "full_name": "doganarif/fastapi-radar",
+      "id": 1059778083,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 159,
+      "full_name": "redis/fastapi-redis-sdk",
+      "id": 1246787859,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 160,
+      "full_name": "xeronsh/openOii",
+      "id": 1139883371,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 161,
+      "full_name": "sleep1223/fast-soy-admin",
+      "id": 802120148,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 162,
+      "full_name": "volfpeter/htmy",
+      "id": 867051254,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 163,
+      "full_name": "Duelion/homebox-companion",
+      "id": 1106277470,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 164,
+      "full_name": "zqbxdev/webchat2api",
+      "id": 1245299074,
+      "stars": 393,
+      "processedAt": "2026-10-14T06:24:33.748Z",
+      "commit": "25752b97cb3abd12266698e02bcc4535b95d535f",
+      "files": {
+        "java": 0,
+        "python": 84
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 4088
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 165,
+      "full_name": "GHJJ123/brainrotguard",
+      "id": 1158733207,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 166,
+      "full_name": "ghost-in-the-droid/android-agent",
+      "id": 1204406252,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 167,
+      "full_name": "iLearn-Lab/NovelClaw",
+      "id": 1174957711,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 168,
+      "full_name": "Climate-Vision/ClimateVision",
+      "id": 1172358936,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 169,
+      "full_name": "CronusL-1141/AI-company",
+      "id": 1179469954,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 170,
+      "full_name": "Oh-Sheet-Team/oh-sheet",
+      "id": 1203287184,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 171,
+      "full_name": "Johnson-Durui/Companion-Space",
+      "id": 1338445797,
+      "stars": 363,
+      "processedAt": "2026-10-14T06:24:40.173Z",
+      "commit": "95b0e0afb2cf9e89f309b822d2e9f7d1ab598a4a",
+      "files": {
+        "java": 5,
+        "python": 53
+      },
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 3468
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 172,
+      "full_name": "cubist38/mlx-openai-server",
+      "id": 956296598,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 173,
+      "full_name": "Kohei-Wada/taskdog",
+      "id": 1073431424,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 174,
+      "full_name": "meadsteve/lagom",
+      "id": 189738708,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 175,
+      "full_name": "AtticusZeller/fastapi_supabase_template",
+      "id": 711453198,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 176,
+      "full_name": "Lolomgrofl/fastapi-genesis",
+      "id": 665543477,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 177,
+      "full_name": "xr843/fojin",
+      "id": 1177921872,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 178,
+      "full_name": "yihong1120/Construction-Hazard-Detection",
+      "id": 738155120,
+      "stars": 348,
+      "processedAt": "2026-10-14T06:24:49.691Z",
+      "commit": "41e98d568e99ef1d1eb05d5d5cdaed53b40b7f15",
+      "files": {
+        "java": 4,
+        "python": 46
+      },
+      "status": "excluded",
+      "reason": "3e stack: fastapi import not found, 46 .py files"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 179,
+      "full_name": "martian56/redcell",
+      "id": 1320084226,
+      "stars": 340,
+      "processedAt": "2026-10-14T06:24:51.238Z",
+      "commit": "01afb711829d31be7e82bef31d6edd4046d02ac0",
+      "files": {
+        "java": 0,
+        "python": 140
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1830
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "python",
+      "batch": 1,
+      "rank": 180,
+      "full_name": "aixisstudio/Snitch",
+      "id": 1400284027,
+      "stars": 338,
+      "processedAt": "2026-10-14T06:24:55.024Z",
+      "commit": "e9d4099ed13adae4a973088434a73b720d0b4c7f",
+      "files": {
+        "java": 0,
+        "python": 25
+      },
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 629
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    }
+  ],
+  "frozen": true,
+  "frozenReason": "244 CRITICAL >= 50"
+}

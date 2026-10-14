@@ -1,0 +1,1730 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "build-plugin/spring-boot-gradle-plugin/src/docs/antora/modules/gradle-plugin/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "build-plugin/spring-boot-gradle-plugin/src/test",
+        "pattern": "test",
+        "files": 56
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/docs/antora/modules/maven-plugin/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/aot-test-exclude-devtools/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/aot-test-skip/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/aot-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/run-test-classpath-all/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/run-test-classpath-dependencies/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/run-test-classpath-off/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/start-stop-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/intTest/projects/test-run/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "build-plugin/spring-boot-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "buildSrc/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "buildpack/spring-boot-buildpack-platform/src/test",
+        "pattern": "test",
+        "files": 67
+      },
+      {
+        "path": "cli/spring-boot-cli/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "configuration-metadata/spring-boot-configuration-metadata-changelog-generator/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "configuration-metadata/spring-boot-configuration-metadata/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "configuration-metadata/spring-boot-configuration-processor/src/test",
+        "pattern": "test",
+        "files": 200
+      },
+      {
+        "path": "core/spring-boot-autoconfigure-processor/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "core/spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 104
+      },
+      {
+        "path": "core/spring-boot-docker-compose/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "core/spring-boot-docker-compose/src/testFixtures/java/org/springframework/boot/docker/compose/service/connection/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "core/spring-boot-properties-migrator/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "core/spring-boot-test-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "core/spring-boot-test/src/test",
+        "pattern": "test",
+        "files": 108
+      },
+      {
+        "path": "core/spring-boot-testcontainers/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "core/spring-boot/src/test",
+        "pattern": "test",
+        "files": 417
+      },
+      {
+        "path": "documentation/spring-boot-actuator-docs/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "documentation/spring-boot-docs/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "integration-test/spring-boot-actuator-integration-tests/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "integration-test/spring-boot-configuration-processor-integration-tests/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-test/spring-boot-integration-tests/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-test/spring-boot-test-integration-tests/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "loader/spring-boot-jarmode-tools/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "loader/spring-boot-loader-tools/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "loader/spring-boot-loader/src/test",
+        "pattern": "test",
+        "files": 60
+      },
+      {
+        "path": "module/spring-boot-activemq/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-actuator-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "module/spring-boot-actuator/src/test",
+        "pattern": "test",
+        "files": 85
+      },
+      {
+        "path": "module/spring-boot-actuator/src/testFixtures/java/org/springframework/boot/actuate/endpoint/web/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-amqp-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-amqp/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-artemis/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "module/spring-boot-batch-data-mongodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-batch-jdbc/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-batch/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-cache-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-cache/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "module/spring-boot-cassandra/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-cloudfoundry/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "module/spring-boot-couchbase/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-cassandra-test/src/dockerTest/java/org/springframework/boot/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-cassandra-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-data-cassandra/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "module/spring-boot-data-commons/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "module/spring-boot-data-couchbase-test/src/dockerTest/java/org/springframework/boot/data/couchbase/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-couchbase-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-data-couchbase/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "module/spring-boot-data-elasticsearch-test/src/dockerTest/java/org/springframework/boot/data/elasticsearch/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-data-elasticsearch/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-jdbc-test/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-jdbc/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-data-jpa-test/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-data-jpa/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "module/spring-boot-data-ldap-test/src/dockerTest/java/org/springframework/boot/data/ldap/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-data-ldap-test/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-ldap/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-data-mongodb-test/src/dockerTest/java/org/springframework/boot/data/mongodb/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-data-mongodb-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-data-mongodb/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "module/spring-boot-data-neo4j-test/src/dockerTest/java/org/springframework/boot/data/neo4j/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-data-neo4j/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "module/spring-boot-data-r2dbc-test/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-data-r2dbc/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-data-redis-test/src/dockerTest/java/org/springframework/boot/data/redis/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-data-redis/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "module/spring-boot-data-rest/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-devtools/src/intTest/java/com/example",
+        "pattern": "example",
+        "files": 3
+      },
+      {
+        "path": "module/spring-boot-devtools/src/intTest/java/org/springframework/boot/devtools/tests",
+        "pattern": "tests",
+        "files": 15
+      },
+      {
+        "path": "module/spring-boot-devtools/src/test",
+        "pattern": "test",
+        "files": 59
+      },
+      {
+        "path": "module/spring-boot-elasticsearch/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-flyway/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-freemarker/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-graphql-test/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-graphql/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "module/spring-boot-groovy-templates/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-grpc-client/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "module/spring-boot-grpc-server/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "module/spring-boot-grpc-test/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-gson/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "module/spring-boot-h2console/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-hateoas/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "module/spring-boot-hazelcast/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "module/spring-boot-health/src/test",
+        "pattern": "test",
+        "files": 67
+      },
+      {
+        "path": "module/spring-boot-hibernate/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "module/spring-boot-http-client/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "module/spring-boot-http-codec/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-http-converter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-integration/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-jackson/src/test",
+        "pattern": "test",
+        "files": 38
+      },
+      {
+        "path": "module/spring-boot-jackson2/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "module/spring-boot-jdbc-test/src/dockerTest/java/org/springframework/boot/jdbc/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-jdbc-test/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "module/spring-boot-jdbc/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "module/spring-boot-jersey/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "module/spring-boot-jersey/src/testFixtures/java/org/springframework/boot/jersey/actuate/endpoint/web/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-jetty/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "module/spring-boot-jms/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-jooq-test/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-jooq/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-jpa-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-jpa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-jsonb/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "module/spring-boot-kafka/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-kotlinx-serialization-json/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-ldap/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-liquibase/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-mail/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-micrometer-metrics-test/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-micrometer-metrics/src/test",
+        "pattern": "test",
+        "files": 83
+      },
+      {
+        "path": "module/spring-boot-micrometer-observation/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-micrometer-tracing-brave/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-micrometer-tracing-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-micrometer-tracing-test/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-micrometer-tracing/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "module/spring-boot-mongodb/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "module/spring-boot-mustache/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "module/spring-boot-neo4j/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-netty/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "module/spring-boot-persistence/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "module/spring-boot-pulsar/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-quartz/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-r2dbc/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "module/spring-boot-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "module/spring-boot-reactor-netty/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-reactor/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "module/spring-boot-restclient-test/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "module/spring-boot-restclient/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "module/spring-boot-restdocs/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-resttestclient/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "module/spring-boot-rsocket-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-rsocket/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "module/spring-boot-security-oauth2-authorization-server/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-security-oauth2-client/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "module/spring-boot-security-oauth2-resource-server/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "module/spring-boot-security-saml2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-security-test/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "module/spring-boot-security/src/test",
+        "pattern": "test",
+        "files": 31
+      },
+      {
+        "path": "module/spring-boot-sendgrid/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-servlet/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "module/spring-boot-session-jdbc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-session/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-sql/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "module/spring-boot-thymeleaf/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "module/spring-boot-tomcat/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "module/spring-boot-transaction/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "module/spring-boot-validation/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-web-server/src/test",
+        "pattern": "test",
+        "files": 40
+      },
+      {
+        "path": "module/spring-boot-webclient-test/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "module/spring-boot-webclient/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "module/spring-boot-webflux-test/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "module/spring-boot-webflux/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "module/spring-boot-webflux/src/testFixtures/java/org/springframework/boot/webflux/actuate/endpoint/web/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-webmvc-test/src/test",
+        "pattern": "test",
+        "files": 46
+      },
+      {
+        "path": "module/spring-boot-webmvc/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "module/spring-boot-webmvc/src/testFixtures/java/org/springframework/boot/webmvc/actuate/endpoint/web/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "module/spring-boot-webservices-test/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "module/spring-boot-webservices/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "module/spring-boot-websocket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "module/spring-boot-webtestclient/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "module/spring-boot-zipkin/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-activemq-embedded/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-actuator-custom-security/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-actuator-extension/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-actuator-log4j2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-actuator-noweb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-actuator-ui/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-actuator/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-ant/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-aspectj/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-autoconfigure-classic/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-batch-data-mongodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-batch-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-batch/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-bootstrap-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-cache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-config/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-couchbase/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-jdbc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-ldap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-mongodb/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-r2dbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-redis/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-data-rest/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-devtools/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-flyway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-graphql/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-grpc-client-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-grpc-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-grpc-server-oauth/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-grpc-server-secure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-grpc-server-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-hateoas/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-hibernate/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-integration/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-jackson2-mixed/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-jackson2-only/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-jersey/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-jetty-jsp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-jetty-ssl/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-jetty/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-liquibase/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-log4j2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-logback/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-oauth2-authorization-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-oauth2-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-oauth2-resource-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-parent-context/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-profile/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-prometheus/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-property-validation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-quartz/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-reactive-oauth2-resource-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-restclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-rsocket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-saml2-service-provider/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-secure-jersey/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-secure-webflux/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-secure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-servlet/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-session-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-simple/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-structured-logging-log4j2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-structured-logging/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-test-nomockito/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-test/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-testng/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-tomcat-jsp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-tomcat-multi-connectors/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-tomcat-ssl/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-tomcat/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-traditional/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-war/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-application-type/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-freemarker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-groovy-templates/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-jsp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-method-security/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-mustache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-secure-custom/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-secure-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-secure/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-static/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-web-thymeleaf/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-webflux-coroutines/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-webflux/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-webservices/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-websocket-jetty/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-websocket-tomcat/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smoke-test/spring-boot-smoke-test-xml/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "test-support/spring-boot-test-support/src/test",
+        "pattern": "test",
+        "files": 18
+      }
+    ],
+    "filesExcluded": 3155
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 9796,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 20,
+    "warning": 11,
+    "info": 0,
+    "total": 31
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/reactive/webflux/MyRestController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/reactive/webflux/MyRestController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/reactive/webflux/MyRestController.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/servlet/springmvc/MyRestController.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/servlet/springmvc/MyRestController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/servlet/springmvc/MyRestController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-data-jdbc/src/main/java/smoketest/data/jdbc/SampleController.java",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-data-jdbc/src/main/java/smoketest/data/jdbc/SampleController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "smoke-test/spring-boot-smoke-test-data-jdbc/src/main/java/smoketest/data/jdbc/SampleController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "smoke-test/spring-boot-smoke-test-data-jpa/src/main/java/smoketest/data/jpa/web/SampleController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CityRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-data-r2dbc/src/main/java/smoketest/data/r2dbc/CityController.java",
+      "line": 17,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CityRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-data-r2dbc/src/main/java/smoketest/data/r2dbc/CityController.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-hateoas/src/main/java/smoketest/hateoas/web/CustomerController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-hateoas/src/main/java/smoketest/hateoas/web/CustomerController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-hibernate/src/main/java/smoketest/jpa/web/IndexController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "smoke-test/spring-boot-smoke-test-hibernate/src/main/java/smoketest/jpa/web/IndexController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-web-groovy-templates/src/main/java/smoketest/groovytemplates/mvc/MessageController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-web-groovy-templates/src/main/java/smoketest/groovytemplates/mvc/MessageController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-web-thymeleaf/src/main/java/smoketest/web/thymeleaf/mvc/MessageController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "smoke-test/spring-boot-smoke-test-web-thymeleaf/src/main/java/smoketest/web/thymeleaf/mvc/MessageController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/messaging/kafka/receiving/MyBean.java",
+      "line": 13,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/messaging/kafka/receiving/MyBean.java",
+      "line": 13,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "documentation/spring-boot-docs/src/main/java/org/springframework/boot/docs/web/graphql/transports/rsocket/RSocketGraphQlClientExample.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "module/spring-boot-kafka/src/dockerTest/java/org/springframework/boot/kafka/testcontainers/ApacheKafkaContainerConnectionDetailsFactoryIntegrationTests.java",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "module/spring-boot-kafka/src/dockerTest/java/org/springframework/boot/kafka/testcontainers/ApacheKafkaContainerConnectionDetailsFactoryIntegrationTests.java",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "module/spring-boot-kafka/src/dockerTest/java/org/springframework/boot/kafka/testcontainers/ConfluentKafkaContainerConnectionDetailsFactoryIntegrationTests.java",
+      "line": 76,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "module/spring-boot-kafka/src/dockerTest/java/org/springframework/boot/kafka/testcontainers/ConfluentKafkaContainerConnectionDetailsFactoryIntegrationTests.java",
+      "line": 76,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "module/spring-boot-kafka/src/dockerTest/java/org/springframework/boot/kafka/testcontainers/RedpandaContainerConnectionDetailsFactoryIntegrationTests.java",
+      "line": 74,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "module/spring-boot-kafka/src/dockerTest/java/org/springframework/boot/kafka/testcontainers/RedpandaContainerConnectionDetailsFactoryIntegrationTests.java",
+      "line": 74,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "smoke-test/spring-boot-smoke-test-kafka/src/main/java/smoketest/kafka/Consumer.java",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "smoke-test/spring-boot-smoke-test-kafka/src/main/java/smoketest/kafka/Consumer.java",
+      "line": 18,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,1981 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.1.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "api/cas-server-core-api-audit/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "api/cas-server-core-api-authentication/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "api/cas-server-core-api-configuration-model/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "api/cas-server-core-api-events/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "api/cas-server-core-api-logout/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "api/cas-server-core-api-mfa/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "api/cas-server-core-api-monitor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "api/cas-server-core-api-services/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "api/cas-server-core-api-throttle/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "api/cas-server-core-api-ticket/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "api/cas-server-core-api-util/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "api/cas-server-core-api-validation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "api/cas-server-core-api-webflow/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "ci/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "core/cas-server-core-audit-api/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "core/cas-server-core-audit/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "core/cas-server-core-authentication-api/src/test",
+        "pattern": "test",
+        "files": 46
+      },
+      {
+        "path": "core/cas-server-core-authentication-attributes/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "core/cas-server-core-authentication-mfa-api/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "core/cas-server-core-authentication-mfa/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "core/cas-server-core-authentication-throttle/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "core/cas-server-core-authentication/src/test",
+        "pattern": "test",
+        "files": 46
+      },
+      {
+        "path": "core/cas-server-core-configuration-api/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "core/cas-server-core-configuration/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "core/cas-server-core-cookie-api/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "core/cas-server-core-cookie/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "core/cas-server-core-events-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "core/cas-server-core-events-configuration-cloud-bus/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "core/cas-server-core-events-configuration/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "core/cas-server-core-events/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "core/cas-server-core-logging-api/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "core/cas-server-core-logging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "core/cas-server-core-logout/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "core/cas-server-core-monitor/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "core/cas-server-core-multitenancy/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "core/cas-server-core-notifications/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "core/cas-server-core-rest/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "core/cas-server-core-scripting/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "core/cas-server-core-services-api/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "core/cas-server-core-services-authentication/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "core/cas-server-core-services-registry/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "core/cas-server-core-services/src/test",
+        "pattern": "test",
+        "files": 68
+      },
+      {
+        "path": "core/cas-server-core-tickets/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "core/cas-server-core-util-api/src/test",
+        "pattern": "test",
+        "files": 56
+      },
+      {
+        "path": "core/cas-server-core-util/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "core/cas-server-core-validation/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "core/cas-server-core-web-api/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "core/cas-server-core-web/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "core/cas-server-core-webflow-api/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "core/cas-server-core-webflow-mfa-api/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "core/cas-server-core-webflow-mfa/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "core/cas-server-core-webflow/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "core/cas-server-core/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "support/cas-server-support-account-mgmt/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "support/cas-server-support-acme/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-actions/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "support/cas-server-support-amqp-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-audit-aws-firehose/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-audit-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-audit-jdbc/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "support/cas-server-support-audit-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-audit-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-audit-rest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-aup-jdbc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-aup-ldap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-aup-mongo/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-aup-redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-aup-rest/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-aup-webflow/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-aws-cloudwatch/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-aws-cognito-authentication/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-aws-s3-service-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-aws-ses/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-aws/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-azure-monitor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-azuread-authentication/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-basic/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-bootadmin/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-bucket4j-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-captcha-core/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-captcha/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-cassandra-authentication/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-cassandra-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-cassandra-service-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-cassandra-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-cloud-directory-authentication/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-aws-s3/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-aws-secretsmanager/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-aws-ssm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-etcd/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-gcp-secretsmanager/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-mongo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-rest/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-configuration-cloud-zookeeper/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-configuration-metadata-repository/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-consent-core/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "support/cas-server-support-consent-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-consent-jdbc/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-consent-ldap/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-consent-mongo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-consent-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-consent-rest/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-consent-webflow/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-consul-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-cosmosdb-core/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-cosmosdb-service-registry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-cosmosdb-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-discovery-profile/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-duo-core-mfa/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-duo-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-duo/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "support/cas-server-support-dynamodb-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-dynamodb-service-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-dynamodb-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-elastic/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-electrofence/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "support/cas-server-support-eureka-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-events-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-events-influxdb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-events-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-events-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-events-memory/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-events-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-events-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-gauth-core-mfa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-gauth-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-gauth-dynamodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-gauth-jpa/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-gauth-ldap/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-gauth-mongo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-gauth-redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-gauth/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "support/cas-server-support-gcp-firestore-service-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-gcp-firestore-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-gcp-logging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-gcp-pubsub-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-gcp-storage-service-registry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-generic-remote-webflow/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-generic/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-geode-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-geolocation-azure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-geolocation-googlemaps/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-geolocation-ip/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-geolocation-maxmind/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-geolocation/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-git-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-git-service-registry/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-google-analytics/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-grouper-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-grouper/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-gua/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-discovery-aws/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-discovery-azure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-discovery-gcp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-discovery-jclouds/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-discovery-kubernetes/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-discovery-zookeeper/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-monitor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-hazelcast-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-heimdall/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "support/cas-server-support-ignite-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-influxdb-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-interrupt-core/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-interrupt-webflow/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-inwebo-mfa/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "support/cas-server-support-javamelody/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-javers/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-jdbc-authentication/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-jdbc-drivers/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-jdbc-monitor/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-jdbc/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-jmx/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-jpa-eclipselink/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-jpa-hibernate/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-jpa-service-registry/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-jpa-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "support/cas-server-support-jpa-util/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-json-service-registry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-kafka-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-kafka-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-ldap-core/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "support/cas-server-support-ldap-monitor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-ldap-service-registry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-ldap/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "support/cas-server-support-logback/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-logging-config-loki/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-logging-config-splunk/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-logging-config-sqs/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-lucene/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-mail-microsoft/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-mailgun/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-mailjet/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-memcached-core/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-memcached-monitor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-memcached-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-metrics/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-mongo-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-mongo-monitor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-mongo-service-registry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-mongo-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-mongo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-native/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-notifications-apn/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-notifications-fcm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-notifications-slack/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-oauth-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-oauth-core-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-oauth-services/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-oauth-uma-jpa/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-oauth-uma/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "support/cas-server-support-oauth-webflow/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-oauth/src/test",
+        "pattern": "test",
+        "files": 99
+      },
+      {
+        "path": "support/cas-server-support-oidc-core/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-oidc-federation/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-oidc-jpa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-oidc-mongo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-oidc-services/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-oidc-vc/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "support/cas-server-support-oidc/src/test",
+        "pattern": "test",
+        "files": 128
+      },
+      {
+        "path": "support/cas-server-support-okta-authentication/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-otp-mfa-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-otp-mfa/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-pac4j-api/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-pac4j-cas/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-pac4j-core-clients/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-pac4j-core/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "support/cas-server-support-pac4j-oidc/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "support/cas-server-support-pac4j-saml/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "support/cas-server-support-pac4j-webflow/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "support/cas-server-support-palantir/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-passwordless-authentication/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "support/cas-server-support-passwordless-jpa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-passwordless-ldap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-passwordless-mongo/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-passwordless-webflow/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "support/cas-server-support-permitio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-person-directory-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-person-directory/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "support/cas-server-support-pm-core/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-pm-jdbc/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-pm-ldap/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-pm-rest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-pm-webflow/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "support/cas-server-support-pm/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "support/cas-server-support-pulsar-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-qr-authentication/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-radius-core-mfa/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-radius-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-radius-mfa/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-radius/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-redis-authentication/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-redis-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-redis-modules/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-redis-service-registry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-redis-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "support/cas-server-support-reports/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "support/cas-server-support-rest-authentication/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-rest-service-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-rest-services/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-rest-tokens/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-rest-x509/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-rest/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-saml-core-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-saml-core/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-discovery/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-aws-s3/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-dynamodb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-gcp-storage/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-git/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-jpa/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-mongo/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-redis/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata-rest/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-metadata/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-ticket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-saml-idp-web/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-saml-idp/src/test",
+        "pattern": "test",
+        "files": 94
+      },
+      {
+        "path": "support/cas-server-support-saml-mdui-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-saml-mdui/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-saml-sp-integrations/src/test",
+        "pattern": "test",
+        "files": 60
+      },
+      {
+        "path": "support/cas-server-support-saml/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-scim/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-sendgrid/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-sentry/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-service-registry-stream-hazelcast/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-service-registry-stream-kafka/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-service-registry-stream/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-session-hazelcast/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-session-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-session-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-session-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-session-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-shell/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "support/cas-server-support-shibboleth/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-simple-mfa-core/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-simple-mfa/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "support/cas-server-support-sms-aws-sns/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-sms-clickatell/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-sms-nexmo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-sms-smsmode/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-sms-textmagic/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-spnego-webflow/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-spnego/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-stateless-ticket-registry-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-stateless-ticket-registry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-surrogate-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-surrogate-authentication-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-surrogate-authentication-ldap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-surrogate-authentication-rest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-surrogate-authentication/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "support/cas-server-support-surrogate-webflow/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-swagger/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-syncope-authentication/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-themes-collection/src/main/resources/static/themes/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-themes-collection/src/main/resources/templates/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "support/cas-server-support-themes/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-throttle-bucket4j/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-throttle-hazelcast/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-throttle-jdbc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-throttle-ldap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-throttle-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-throttle-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-throttle/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-thymeleaf/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "support/cas-server-support-token-authentication/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-token-core-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-token-core/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-token-tickets/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-token-webflow/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-tracing-jaeger/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa-jdbc/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa-rest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-trusted-mfa/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "support/cas-server-support-trusted-webflow/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-trusted/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "support/cas-server-support-twilio-mfa/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "support/cas-server-support-twilio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-validation-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-validation/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "support/cas-server-support-webauthn-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-webauthn-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-webauthn-jpa/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-webauthn-ldap/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-webauthn-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-webauthn-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-webauthn-rest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-webauthn/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "support/cas-server-support-webconfig/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "support/cas-server-support-ws-idp-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-ws-idp/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "support/cas-server-support-ws-sts-api/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-ws-sts/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-wsfederation-webflow/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "support/cas-server-support-wsfederation/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "support/cas-server-support-x509-core/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "support/cas-server-support-x509-webflow/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "support/cas-server-support-x509/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "support/cas-server-support-yaml-service-registry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "support/cas-server-support-yubikey-core-mfa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "support/cas-server-support-yubikey-core/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "support/cas-server-support-yubikey-dynamodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-yubikey-jpa/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "support/cas-server-support-yubikey-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-yubikey-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "support/cas-server-support-yubikey/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "webapp/cas-server-webapp-init-config-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "webapp/cas-server-webapp-init-tomcat/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "webapp/cas-server-webapp-init/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "webapp/cas-server-webapp-jetty/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "webapp/cas-server-webapp-resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "webapp/cas-server-webapp-tomcat/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 2539
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 8504,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.13.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 1,
+    "warning": 2,
+    "info": 0,
+    "total": 3
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AcmeChallengeRepository)",
+      "file": "support/cas-server-support-acme/src/main/java/org/apereo/cas/acme/AcmeWellKnownChallengeController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "support/cas-server-support-service-registry-stream-kafka/src/main/java/org/apereo/cas/services/RegisteredServiceKafkaDistributedCacheListener.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "support/cas-server-support-service-registry-stream-kafka/src/main/java/org/apereo/cas/services/RegisteredServiceKafkaDistributedCacheListener.java",
+      "line": 34,
+      "extra": {}
+    }
+  ]
+}
