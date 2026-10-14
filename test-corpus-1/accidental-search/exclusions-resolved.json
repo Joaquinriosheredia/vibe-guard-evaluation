@@ -1,0 +1,4821 @@
+{
+  "resolvedAt": "2026-10-14T06:00:36.834Z",
+  "repositories": [
+    {
+      "name": "05bit/peewee-async",
+      "id": 24544015,
+      "current": "05bit/peewee-async"
+    },
+    {
+      "name": "100nm/python-injection",
+      "id": 666041049,
+      "current": "100nm/python-injection"
+    },
+    {
+      "name": "22kk12/mengwei-local-leads-workbench",
+      "id": 1281362103,
+      "current": "22kk12/mengwei-local-leads-workbench"
+    },
+    {
+      "name": "2417467487-hub/Trend2Video-Pro",
+      "id": 1262714152,
+      "current": "JiayiLu2003/Trend2Video-Pro"
+    },
+    {
+      "name": "3441293738/creatorhub",
+      "id": 1288067014,
+      "current": "3441293738/creatorhub"
+    },
+    {
+      "name": "3YOURMIND/django-migration-linter",
+      "id": 87307127,
+      "current": "3YOURMIND/django-migration-linter"
+    },
+    {
+      "name": "9tigerio/db2rest",
+      "id": 731745834,
+      "current": "9tigerio/db2rest"
+    },
+    {
+      "name": "a-luna/fastapi-redis-cache",
+      "id": 360415987,
+      "current": "a-luna/fastapi-redis-cache"
+    },
+    {
+      "name": "aaronsb/knowledge-graph-system",
+      "id": 1070011302,
+      "current": "aaronsb/knowledge-graph-system"
+    },
+    {
+      "name": "aaugustin/django-sesame",
+      "id": 3916311,
+      "current": "aaugustin/django-sesame"
+    },
+    {
+      "name": "achimnol/aiotools",
+      "id": 88231996,
+      "current": "achimnol/aiotools"
+    },
+    {
+      "name": "adamchainz/django-browser-reload",
+      "id": 438426152,
+      "current": "adamchainz/django-browser-reload"
+    },
+    {
+      "name": "adamchainz/django-cors-headers",
+      "id": 7701103,
+      "current": "adamchainz/django-cors-headers"
+    },
+    {
+      "name": "adamchainz/django-mysql",
+      "id": 30379674,
+      "current": "adamchainz/django-mysql"
+    },
+    {
+      "name": "adamchainz/django-upgrade",
+      "id": 400482050,
+      "current": "adamchainz/django-upgrade"
+    },
+    {
+      "name": "Addepto/graph_builder",
+      "id": 1023471845,
+      "current": "Addepto/graph_builder"
+    },
+    {
+      "name": "aegra/aegra",
+      "id": 1023243010,
+      "current": "aegra/aegra"
+    },
+    {
+      "name": "aekasitt/fastapi-csrf-protect",
+      "id": 315881459,
+      "current": "aekasitt/fastapi-csrf-protect"
+    },
+    {
+      "name": "Aeternalis-Ingenium/FastAPI-Backend-Template",
+      "id": 574421004,
+      "current": "Aeternalis-Ingenium/FastAPI-Backend-Template"
+    },
+    {
+      "name": "ag2ai/faststream",
+      "id": 572911222,
+      "current": "ag2ai/faststream"
+    },
+    {
+      "name": "agconti/cookiecutter-django-rest",
+      "id": 36883316,
+      "current": "agconti/cookiecutter-django-rest"
+    },
+    {
+      "name": "ageerle/ruoyi-ai",
+      "id": 743825398,
+      "current": "ageerle/ruoyi-ai"
+    },
+    {
+      "name": "AgentTeam-TaichuAI/ScienceClaw",
+      "id": 1180557903,
+      "current": "AgentTeam-TaichuAI/ScienceClaw"
+    },
+    {
+      "name": "agronholm/anyio",
+      "id": 145337588,
+      "current": "agronholm/anyio"
+    },
+    {
+      "name": "ahopkins/mayim",
+      "id": 493992280,
+      "current": "ahopkins/mayim"
+    },
+    {
+      "name": "ai-forever/gpt2giga",
+      "id": 908190429,
+      "current": "ai-forever/gpt2giga"
+    },
+    {
+      "name": "aio-libs-abandoned/async-timeout",
+      "id": 67703198,
+      "current": "aio-libs-abandoned/async-timeout"
+    },
+    {
+      "name": "aio-libs/aiobotocore",
+      "id": 36618494,
+      "current": "aio-libs/aiobotocore"
+    },
+    {
+      "name": "aio-libs/aiocache",
+      "id": 69653334,
+      "current": "aio-libs/aiocache"
+    },
+    {
+      "name": "aio-libs/aiodns",
+      "id": 18157561,
+      "current": "aio-libs/aiodns"
+    },
+    {
+      "name": "aio-libs/aiodocker",
+      "id": 18470884,
+      "current": "aio-libs/aiodocker"
+    },
+    {
+      "name": "aio-libs/aioftp",
+      "id": 33934261,
+      "current": "aio-libs/aioftp"
+    },
+    {
+      "name": "aio-libs/aiohttp",
+      "id": 13258039,
+      "current": "aio-libs/aiohttp"
+    },
+    {
+      "name": "aio-libs/aiohttp-admin",
+      "id": 48922724,
+      "current": "aio-libs/aiohttp-admin"
+    },
+    {
+      "name": "aio-libs/aiohttp-cors",
+      "id": 43020725,
+      "current": "aio-libs/aiohttp-cors"
+    },
+    {
+      "name": "aio-libs/aiohttp-devtools",
+      "id": 68917117,
+      "current": "aio-libs/aiohttp-devtools"
+    },
+    {
+      "name": "aio-libs/aiohttp-jinja2",
+      "id": 28298614,
+      "current": "aio-libs/aiohttp-jinja2"
+    },
+    {
+      "name": "aio-libs/aiohttp-security",
+      "id": 38769230,
+      "current": "aio-libs/aiohttp-security"
+    },
+    {
+      "name": "aio-libs/aiohttp-session",
+      "id": 29313003,
+      "current": "aio-libs/aiohttp-session"
+    },
+    {
+      "name": "aio-libs/aiohttp-sse",
+      "id": 31738506,
+      "current": "aio-libs/aiohttp-sse"
+    },
+    {
+      "name": "aio-libs/aiojobs",
+      "id": 95887977,
+      "current": "aio-libs/aiojobs"
+    },
+    {
+      "name": "aio-libs/aiokafka",
+      "id": 26046938,
+      "current": "aio-libs/aiokafka"
+    },
+    {
+      "name": "aio-libs/aiomcache",
+      "id": 16504228,
+      "current": "aio-libs/aiomcache"
+    },
+    {
+      "name": "aio-libs/aiomonitor",
+      "id": 75670021,
+      "current": "aio-libs/aiomonitor"
+    },
+    {
+      "name": "aio-libs/aiomysql",
+      "id": 28932001,
+      "current": "aio-libs/aiomysql"
+    },
+    {
+      "name": "aio-libs/aiopg",
+      "id": 18398494,
+      "current": "aio-libs/aiopg"
+    },
+    {
+      "name": "aio-libs/aiorwlock",
+      "id": 28309794,
+      "current": "aio-libs/aiorwlock"
+    },
+    {
+      "name": "aio-libs/aiosignal",
+      "id": 205007356,
+      "current": "aio-libs/aiosignal"
+    },
+    {
+      "name": "aio-libs/aiosmtpd",
+      "id": 63340589,
+      "current": "aio-libs/aiosmtpd"
+    },
+    {
+      "name": "aio-libs/aiozipkin",
+      "id": 105470666,
+      "current": "aio-libs/aiozipkin"
+    },
+    {
+      "name": "aio-libs/aiozmq",
+      "id": 12610153,
+      "current": "aio-libs/aiozmq"
+    },
+    {
+      "name": "aio-libs/async-lru",
+      "id": 82564779,
+      "current": "aio-libs/async-lru"
+    },
+    {
+      "name": "aio-libs/frozenlist",
+      "id": 204197530,
+      "current": "aio-libs/frozenlist"
+    },
+    {
+      "name": "aio-libs/janus",
+      "id": 37076376,
+      "current": "aio-libs/janus"
+    },
+    {
+      "name": "aio-libs/multidict",
+      "id": 51206425,
+      "current": "aio-libs/multidict"
+    },
+    {
+      "name": "aio-libs/pytest-aiohttp",
+      "id": 63405966,
+      "current": "aio-libs/pytest-aiohttp"
+    },
+    {
+      "name": "aio-libs/sockjs",
+      "id": 33464566,
+      "current": "aio-libs/sockjs"
+    },
+    {
+      "name": "aio-libs/yarl",
+      "id": 64756820,
+      "current": "aio-libs/yarl"
+    },
+    {
+      "name": "aiogram/aiogram",
+      "id": 111210856,
+      "current": "aiogram/aiogram"
+    },
+    {
+      "name": "aiokitchen/aiomisc",
+      "id": 129414094,
+      "current": "aiokitchen/aiomisc"
+    },
+    {
+      "name": "aiortc/aioice",
+      "id": 120102008,
+      "current": "aiortc/aioice"
+    },
+    {
+      "name": "aiortc/aioquic",
+      "id": 169165755,
+      "current": "aiortc/aioquic"
+    },
+    {
+      "name": "aiortc/aiortc",
+      "id": 122677553,
+      "current": "aiortc/aiortc"
+    },
+    {
+      "name": "airweave-ai/error-monitoring-agent",
+      "id": 1140551409,
+      "current": "airweave-ai/error-monitoring-agent"
+    },
+    {
+      "name": "aitradingbotspro/cryto-trading-ai-assistant",
+      "id": 1181062194,
+      "current": "aitradingbotspro/cryto-trading-ai-assistant"
+    },
+    {
+      "name": "Aivis-Project/AivisSpeech-Engine",
+      "id": 766779347,
+      "current": "Aivis-Project/AivisSpeech-Engine"
+    },
+    {
+      "name": "akfamily/aktools",
+      "id": 228558704,
+      "current": "akfamily/aktools"
+    },
+    {
+      "name": "akornor/playlistor",
+      "id": 161928541,
+      "current": "akornor/playlistor"
+    },
+    {
+      "name": "akutayural/APIException",
+      "id": 886405375,
+      "current": "akutayural/APIException"
+    },
+    {
+      "name": "AlanBinu007/Spring-Boot-Advanced-Projects",
+      "id": 437186659,
+      "current": "AlanBinu007/Spring-Boot-Advanced-Projects"
+    },
+    {
+      "name": "alanjds/drf-nested-routers",
+      "id": 13226530,
+      "current": "alanjds/drf-nested-routers"
+    },
+    {
+      "name": "AlekseyKorshuk/yoomoney-api",
+      "id": 369507789,
+      "current": "AlekseyKorshuk/yoomoney-api"
+    },
+    {
+      "name": "AleksNeStu/ai-real-estate-assistant",
+      "id": 834466950,
+      "current": "AleksNeStu/ai-real-estate-assistant"
+    },
+    {
+      "name": "aleksul/repid",
+      "id": 420659467,
+      "current": "aleksul/repid"
+    },
+    {
+      "name": "alex-oleshkevich/starsessions",
+      "id": 380000154,
+      "current": "alex-oleshkevich/starsessions"
+    },
+    {
+      "name": "alexdelorenzo/aiopath",
+      "id": 345789541,
+      "current": "alexdelorenzo/aiopath"
+    },
+    {
+      "name": "alexpovel/ancv",
+      "id": 498062460,
+      "current": "alexpovel/ancv"
+    },
+    {
+      "name": "ali-zahedi/az-iranian-bank-gateways",
+      "id": 318857705,
+      "current": "ali-zahedi/az-iranian-bank-gateways"
+    },
+    {
+      "name": "AliceBotProject/alicebot",
+      "id": 389120946,
+      "current": "AliceBotProject/alicebot"
+    },
+    {
+      "name": "aliev/aioauth",
+      "id": 288096097,
+      "current": "aliev/aioauth"
+    },
+    {
+      "name": "alisaifee/coredis",
+      "id": 437958398,
+      "current": "alisaifee/coredis"
+    },
+    {
+      "name": "allegro/ralph",
+      "id": 4359038,
+      "current": "allegro/ralph"
+    },
+    {
+      "name": "allient/create-fastapi-project",
+      "id": 677897164,
+      "current": "allient/create-fastapi-project"
+    },
+    {
+      "name": "Amaindex/asyncio-socks-server",
+      "id": 405059928,
+      "current": "Amaindex/asyncio-socks-server"
+    },
+    {
+      "name": "AmbitionEng/django-pghistory",
+      "id": 275410300,
+      "current": "AmbitionEng/django-pghistory"
+    },
+    {
+      "name": "AmbitionEng/django-pgtrigger",
+      "id": 275277603,
+      "current": "AmbitionEng/django-pgtrigger"
+    },
+    {
+      "name": "amidaware/tacticalrmm",
+      "id": 216919645,
+      "current": "amidaware/tacticalrmm"
+    },
+    {
+      "name": "amisadmin/fastapi-amis-admin",
+      "id": 448282033,
+      "current": "amisadmin/fastapi-amis-admin"
+    },
+    {
+      "name": "Amm1rr/WebAI-to-API",
+      "id": 669611694,
+      "current": "Amm1rr/WebAI-to-API"
+    },
+    {
+      "name": "Ananto30/zero",
+      "id": 257673445,
+      "current": "Ananto30/zero"
+    },
+    {
+      "name": "aniketmaurya/chitra",
+      "id": 235809577,
+      "current": "aniketmaurya/chitra"
+    },
+    {
+      "name": "Anil-matcha/Open-AI-Micro-Drama-Generator",
+      "id": 653702419,
+      "current": "Anil-matcha/Open-AI-Micro-Drama-Generator"
+    },
+    {
+      "name": "ansible-community/ara",
+      "id": 60729995,
+      "current": "ansible-community/ara"
+    },
+    {
+      "name": "ansible/awx",
+      "id": 91594105,
+      "current": "ansible/awx"
+    },
+    {
+      "name": "antgroup/CloudRec",
+      "id": 984491888,
+      "current": "antgroup/CloudRec"
+    },
+    {
+      "name": "anymail/django-anymail",
+      "id": 53549881,
+      "current": "anymail/django-anymail"
+    },
+    {
+      "name": "apache/syncope",
+      "id": 25623942,
+      "current": "apache/syncope"
+    },
+    {
+      "name": "apitally/apitally-py",
+      "id": 661287015,
+      "current": "apitally/apitally-py"
+    },
+    {
+      "name": "apocas/restai",
+      "id": 642578676,
+      "current": "apocas/restai"
+    },
+    {
+      "name": "apragacz/django-rest-registration",
+      "id": 48646785,
+      "current": "apragacz/django-rest-registration"
+    },
+    {
+      "name": "APSL/puput",
+      "id": 39860842,
+      "current": "APSL/puput"
+    },
+    {
+      "name": "arcadeai-labs/SlackAgent",
+      "id": 875417426,
+      "current": "arcadeai-labs/SlackAgent"
+    },
+    {
+      "name": "Archmonger/django-dbbackup",
+      "id": 28577756,
+      "current": "Archmonger/django-dbbackup"
+    },
+    {
+      "name": "arrobalytics/django-ledger",
+      "id": 155289518,
+      "current": "arrobalytics/django-ledger"
+    },
+    {
+      "name": "art049/odmantic",
+      "id": 260472474,
+      "current": "art049/odmantic"
+    },
+    {
+      "name": "arthurhenrique/cookiecutter-fastapi",
+      "id": 233464042,
+      "current": "arthurhenrique/cookiecutter-fastapi"
+    },
+    {
+      "name": "arthurio/fastapi-filter",
+      "id": 492128139,
+      "current": "arthurio/fastapi-filter"
+    },
+    {
+      "name": "arturboyun/AiogramBotTemplate",
+      "id": 282882659,
+      "current": "arturboyun/AiogramBotTemplate"
+    },
+    {
+      "name": "arvindsis11/Ai-Healthcare-Chatbot",
+      "id": 227432017,
+      "current": "arvindsis11/Ai-Healthcare-Chatbot"
+    },
+    {
+      "name": "asdfghj1237890/WebVideo2NAS",
+      "id": 1074844499,
+      "current": "asdfghj1237890/WebVideo2NAS"
+    },
+    {
+      "name": "asphalt-framework/asphalt",
+      "id": 34962104,
+      "current": "asphalt-framework/asphalt"
+    },
+    {
+      "name": "atpuxiner/fastapi-scaff",
+      "id": 835573204,
+      "current": "atpuxiner/fastapi-scaff"
+    },
+    {
+      "name": "AtticusZeller/fastapi_supabase_template",
+      "id": 711453198,
+      "current": "AtticusZeller/fastapi_supabase_template"
+    },
+    {
+      "name": "authlib/authlib",
+      "id": 108510280,
+      "current": "authlib/authlib"
+    },
+    {
+      "name": "AV1080p/tourist-dapp-payment-integration",
+      "id": null,
+      "current": null,
+      "status": 404
+    },
+    {
+      "name": "av1155/houndarr",
+      "id": 1179472499,
+      "current": "av1155/houndarr"
+    },
+    {
+      "name": "awslabs/amazon-transcribe-streaming-sdk",
+      "id": 280005595,
+      "current": "awslabs/amazon-transcribe-streaming-sdk"
+    },
+    {
+      "name": "axnsan12/drf-yasg",
+      "id": 112461400,
+      "current": "axnsan12/drf-yasg"
+    },
+    {
+      "name": "axsddlr/vlrggapi",
+      "id": 369292406,
+      "current": "axsddlr/vlrggapi"
+    },
+    {
+      "name": "ayushh0110/ScreenMind",
+      "id": 1246532319,
+      "current": "ayushh0110/ScreenMind"
+    },
+    {
+      "name": "Azure-Samples/rag-postgres-openai-python",
+      "id": 800643890,
+      "current": "Azure-Samples/rag-postgres-openai-python"
+    },
+    {
+      "name": "babybuddy/babybuddy",
+      "id": 107898477,
+      "current": "babybuddy/babybuddy"
+    },
+    {
+      "name": "bachya/pytile",
+      "id": 109420826,
+      "current": "bachya/pytile"
+    },
+    {
+      "name": "baizunxian/zerorunner",
+      "id": 484946825,
+      "current": "baizunxian/zerorunner"
+    },
+    {
+      "name": "bakrianoo/mini-rag",
+      "id": 764102710,
+      "current": "bakrianoo/mini-rag"
+    },
+    {
+      "name": "bali-framework/bali",
+      "id": 303596896,
+      "current": "bali-framework/bali"
+    },
+    {
+      "name": "baoliay2008/lccn_predictor",
+      "id": 494329163,
+      "current": "baoliay2008/lccn_predictor"
+    },
+    {
+      "name": "BeanieODM/beanie",
+      "id": 341677148,
+      "current": "BeanieODM/beanie"
+    },
+    {
+      "name": "beenuar/AiSOC",
+      "id": 1226971975,
+      "current": "beenuar/AiSOC"
+    },
+    {
+      "name": "Beever-AI/beever-atlas",
+      "id": 1217456816,
+      "current": "Beever-AI/beever-atlas"
+    },
+    {
+      "name": "benavlabs/crudadmin",
+      "id": 799684559,
+      "current": "benavlabs/crudadmin"
+    },
+    {
+      "name": "benavlabs/FastAPI-boilerplate",
+      "id": 694874070,
+      "current": "benavlabs/FastAPI-boilerplate"
+    },
+    {
+      "name": "benavlabs/fastcrud",
+      "id": 740300919,
+      "current": "benavlabs/fastcrud"
+    },
+    {
+      "name": "benavlabs/SQLModel-boilerplate",
+      "id": 798040027,
+      "current": "benavlabs/SQLModel-boilerplate"
+    },
+    {
+      "name": "bennylope/django-organizations",
+      "id": 3331322,
+      "current": "bennylope/django-organizations"
+    },
+    {
+      "name": "betaacid/FastAPI-Reference-App",
+      "id": 854215520,
+      "current": "betaacid/FastAPI-Reference-App"
+    },
+    {
+      "name": "BetaStreetOmnis/xhs_ai_publisher",
+      "id": 886118922,
+      "current": "BetaStreetOmnis/xhs_ai_publisher"
+    },
+    {
+      "name": "biao994/DocPaws",
+      "id": 1249983772,
+      "current": "biao994/DocPaws"
+    },
+    {
+      "name": "bigsk1/voice-chat-ai",
+      "id": 814848397,
+      "current": "bigsk1/voice-chat-ai"
+    },
+    {
+      "name": "bitcart/bitcart",
+      "id": 173628650,
+      "current": "bitcart/bitcart"
+    },
+    {
+      "name": "blacklanternsecurity/badsecrets",
+      "id": 550438274,
+      "current": "blacklanternsecurity/badsecrets"
+    },
+    {
+      "name": "blueswen/fastapi-observability",
+      "id": 481317492,
+      "current": "blueswen/fastapi-observability"
+    },
+    {
+      "name": "bmoscon/cryptofeed",
+      "id": 114459569,
+      "current": "bmoscon/cryptofeed"
+    },
+    {
+      "name": "boardpack/pydantic-i18n",
+      "id": 392117825,
+      "current": "boardpack/pydantic-i18n"
+    },
+    {
+      "name": "bomzheg/Shvatka",
+      "id": 514809323,
+      "current": "bomzheg/Shvatka"
+    },
+    {
+      "name": "box/mojito",
+      "id": 60379785,
+      "current": "box/mojito"
+    },
+    {
+      "name": "br3ndonland/inboard",
+      "id": 284327701,
+      "current": "br3ndonland/inboard"
+    },
+    {
+      "name": "braedonsaunders/homerun",
+      "id": 1149236564,
+      "current": "braedonsaunders/homerun"
+    },
+    {
+      "name": "brainix/pottery",
+      "id": 37182318,
+      "current": "brainix/pottery"
+    },
+    {
+      "name": "BrendownFerreira/transcriber",
+      "id": 1039763226,
+      "current": "BrendownFerreira/transcriber"
+    },
+    {
+      "name": "brightbeanxyz/brightbean-studio",
+      "id": 1191561598,
+      "current": "brightbeanxyz/brightbean-studio"
+    },
+    {
+      "name": "browser-use/bubus",
+      "id": 1004114774,
+      "current": "browser-use/bubus"
+    },
+    {
+      "name": "buiapp/reaktiv",
+      "id": 924404375,
+      "current": "buiapp/reaktiv"
+    },
+    {
+      "name": "BxNxM/micrOS",
+      "id": 106599127,
+      "current": "BxNxM/micrOS"
+    },
+    {
+      "name": "bytechefhq/bytechef",
+      "id": 411912097,
+      "current": "bytechefhq/bytechef"
+    },
+    {
+      "name": "Bytedesk/bytedesk",
+      "id": 703802567,
+      "current": "Bytedesk/bytedesk"
+    },
+    {
+      "name": "CabbageDevelopment/qasync",
+      "id": 219193663,
+      "current": "CabbageDevelopment/qasync"
+    },
+    {
+      "name": "CaddyGlow/ccproxy-api",
+      "id": 1013628913,
+      "current": "CaddyGlow/ccproxy-api"
+    },
+    {
+      "name": "canarybyte/veridrop",
+      "id": 1229651069,
+      "current": "canarybyte/veridrop"
+    },
+    {
+      "name": "cansarigol/pdbr",
+      "id": 274461698,
+      "current": "cansarigol/pdbr"
+    },
+    {
+      "name": "caoqianming/django-vue-admin",
+      "id": 256214961,
+      "current": "caoqianming/django-vue-admin"
+    },
+    {
+      "name": "Caoyongqi912/case_auto_hub",
+      "id": 890708111,
+      "current": "Caoyongqi912/case_auto_hub"
+    },
+    {
+      "name": "CarlosIbCu/polymarket-kalshi-btc-arbitrage-bot",
+      "id": 1104202074,
+      "current": "CarlosIbCu/polymarket-kalshi-btc-arbitrage-bot"
+    },
+    {
+      "name": "carltongibson/neapolitan",
+      "id": 268241771,
+      "current": "carltongibson/neapolitan"
+    },
+    {
+      "name": "CassiopeiaCode/q2api",
+      "id": 1099737075,
+      "current": "CassiopeiaCode/q2api"
+    },
+    {
+      "name": "caura-ai/caura-memclaw",
+      "id": 1222639711,
+      "current": "caura-ai/caura"
+    },
+    {
+      "name": "cBioPortal/cbioportal",
+      "id": 32481543,
+      "current": "cBioPortal/cbioportal"
+    },
+    {
+      "name": "cdddg/py-clean-arch",
+      "id": 358319290,
+      "current": "cdddg/py-clean-arch"
+    },
+    {
+      "name": "celery/billiard",
+      "id": 374820,
+      "current": "celery/billiard"
+    },
+    {
+      "name": "celery/celery",
+      "id": 184460,
+      "current": "celery/celery"
+    },
+    {
+      "name": "celery/django-celery-beat",
+      "id": 64884021,
+      "current": "celery/django-celery-beat"
+    },
+    {
+      "name": "celery/django-celery-results",
+      "id": 64985162,
+      "current": "celery/django-celery-results"
+    },
+    {
+      "name": "celery/kombu",
+      "id": 735498,
+      "current": "celery/kombu"
+    },
+    {
+      "name": "CenterForOpenScience/osf.io",
+      "id": 10199599,
+      "current": "CenterForOpenScience/osf.io"
+    },
+    {
+      "name": "chenyme/grok2api",
+      "id": 1073538908,
+      "current": "chenyme/grok2api"
+    },
+    {
+      "name": "china-testing/python_cn_resouce",
+      "id": 602291196,
+      "current": "china-testing/python_cn_resouce"
+    },
+    {
+      "name": "chopratejas/headroom",
+      "id": 1129940957,
+      "current": "headroomlabs-ai/headroom"
+    },
+    {
+      "name": "chrysn/aiocoap",
+      "id": 20484530,
+      "current": "chrysn/aiocoap"
+    },
+    {
+      "name": "circuits/circuits",
+      "id": 12450349,
+      "current": "circuits/circuits"
+    },
+    {
+      "name": "cirospaciari/socketify.py",
+      "id": 495961532,
+      "current": "cirospaciari/socketify.py"
+    },
+    {
+      "name": "Citrus-bit/Anaxa",
+      "id": 1195714375,
+      "current": "Citrus-bit/Anaxa"
+    },
+    {
+      "name": "ciur/papermerge",
+      "id": 232151602,
+      "current": "ciur/papermerge"
+    },
+    {
+      "name": "CJackHwang/AIstudioProxyAPI",
+      "id": 973292935,
+      "current": "CJackHwang/AIstudioProxyAPI"
+    },
+    {
+      "name": "cjrh/aiorun",
+      "id": 107533067,
+      "current": "cjrh/aiorun"
+    },
+    {
+      "name": "cle-b/httpdbg",
+      "id": 273906263,
+      "current": "cle-b/httpdbg"
+    },
+    {
+      "name": "Climate-Vision/ClimateVision",
+      "id": 1172358936,
+      "current": "Climate-Vision/ClimateVision"
+    },
+    {
+      "name": "ClimenteA/flaskwebgui",
+      "id": 190868972,
+      "current": "ClimenteA/flaskwebgui"
+    },
+    {
+      "name": "CloakHQ/CloakBrowser-Manager",
+      "id": 1178490874,
+      "current": "CloakHQ/CloakBrowser-Manager"
+    },
+    {
+      "name": "clokep/celery-batches",
+      "id": 126513816,
+      "current": "clokep/celery-batches"
+    },
+    {
+      "name": "closeio/socketshark",
+      "id": 86847971,
+      "current": "closeio/socketshark"
+    },
+    {
+      "name": "Cloud-CV/EvalAI",
+      "id": 71516397,
+      "current": "Cloud-CV/EvalAI"
+    },
+    {
+      "name": "cmlbeliever/SpringBootLearning",
+      "id": 82428431,
+      "current": "cmlbeliever/SpringBootLearning"
+    },
+    {
+      "name": "coady/lupyne",
+      "id": 42794334,
+      "current": "coady/lupyne"
+    },
+    {
+      "name": "coaxk/subarr",
+      "id": 1251142806,
+      "current": "coaxk/subarr"
+    },
+    {
+      "name": "coderedcorp/coderedcms",
+      "id": 142790775,
+      "current": "coderedcorp/coderedcms"
+    },
+    {
+      "name": "codingjoe/django-crontask",
+      "id": 1112218097,
+      "current": "codingjoe/django-crontask"
+    },
+    {
+      "name": "codingjoe/django-health-check",
+      "id": 2238739,
+      "current": "codingjoe/django-health-check"
+    },
+    {
+      "name": "cole/aiosmtplib",
+      "id": 23762079,
+      "current": "cole/aiosmtplib"
+    },
+    {
+      "name": "coleifer/huey",
+      "id": 2703394,
+      "current": "coleifer/huey"
+    },
+    {
+      "name": "coleifer/peewee",
+      "id": 979480,
+      "current": "coleifer/peewee"
+    },
+    {
+      "name": "comeuplater/fastapi_cache",
+      "id": 282604948,
+      "current": "comeuplater/fastapi_cache"
+    },
+    {
+      "name": "conductor-oss/conductor",
+      "id": 728981719,
+      "current": "conductor-oss/conductor"
+    },
+    {
+      "name": "cookiecutter/cookiecutter-django",
+      "id": 12115269,
+      "current": "cookiecutter/cookiecutter-django"
+    },
+    {
+      "name": "cool-team-official/cool-admin-java",
+      "id": 820975675,
+      "current": "cool-team-official/cool-admin-java"
+    },
+    {
+      "name": "cr0hn/aiotasks",
+      "id": 79237710,
+      "current": "cr0hn/aiotasks"
+    },
+    {
+      "name": "crawlcore/qcrawl",
+      "id": 1100017011,
+      "current": "crawlcore/qcrawl"
+    },
+    {
+      "name": "crccheck/django-object-actions",
+      "id": 6312523,
+      "current": "crccheck/django-object-actions"
+    },
+    {
+      "name": "CronusL-1141/AI-company",
+      "id": 1179469954,
+      "current": "CronusL-1141/AI-company"
+    },
+    {
+      "name": "crossbario/autobahn-python",
+      "id": 2113510,
+      "current": "crossbario/autobahn-python"
+    },
+    {
+      "name": "cubist38/mlx-openai-server",
+      "id": 956296598,
+      "current": "cubist38/mlx-openai-server"
+    },
+    {
+      "name": "cx-lukas-salkauskas-x/InAppPy",
+      "id": 81078871,
+      "current": "cx-lukas-salkauskas-x/InAppPy"
+    },
+    {
+      "name": "Cyberdrop-DL/cyberdrop-dl",
+      "id": 829129386,
+      "current": "Cyberdrop-DL/cyberdrop-dl"
+    },
+    {
+      "name": "danielgtaylor/python-betterproto",
+      "id": 214084028,
+      "current": "danielgtaylor/python-betterproto"
+    },
+    {
+      "name": "danny-avila/rag_api",
+      "id": 773345074,
+      "current": "LibreChat-AI/rag-api"
+    },
+    {
+      "name": "DarkEnergyProcessor/NPPS4",
+      "id": 606164224,
+      "current": "DarkEnergyProcessor/NPPS4"
+    },
+    {
+      "name": "DarrenOfficial/dpaste",
+      "id": 1557925,
+      "current": "DarrenOfficial/dpaste"
+    },
+    {
+      "name": "DataDog/dd-trace-java",
+      "id": 89221572,
+      "current": "DataDog/dd-trace-java"
+    },
+    {
+      "name": "davidefiocco/streamlit-fastapi-model-serving",
+      "id": 273767286,
+      "current": "davidefiocco/streamlit-fastapi-model-serving"
+    },
+    {
+      "name": "dbrattli/aioreactive",
+      "id": 70188493,
+      "current": "dbrattli/aioreactive"
+    },
+    {
+      "name": "deepankarm/pyleak",
+      "id": 992618065,
+      "current": "deepankarm/pyleak"
+    },
+    {
+      "name": "DemonDamon/AgenticX",
+      "id": 772408997,
+      "current": "DemonDamon/AgenticX"
+    },
+    {
+      "name": "deschler/django-modeltranslation",
+      "id": 6241977,
+      "current": "deschler/django-modeltranslation"
+    },
+    {
+      "name": "developmentseed/titiler",
+      "id": 194306692,
+      "current": "developmentseed/titiler"
+    },
+    {
+      "name": "devnen/Chatterbox-TTS-Server",
+      "id": 993746345,
+      "current": "devnen/Chatterbox-TTS-Server"
+    },
+    {
+      "name": "devnen/Dia-TTS-Server",
+      "id": 970873979,
+      "current": "devnen/Dia-TTS-Server"
+    },
+    {
+      "name": "devnen/Kitten-TTS-Server",
+      "id": 1032850395,
+      "current": "devnen/Kitten-TTS-Server"
+    },
+    {
+      "name": "dfunckt/django-rules",
+      "id": 17492139,
+      "current": "dfunckt/django-rules"
+    },
+    {
+      "name": "dhis2/dhis2-core",
+      "id": 66940520,
+      "current": "dhis2/dhis2-core"
+    },
+    {
+      "name": "dialoguemd/fastapi-sqla",
+      "id": 298082175,
+      "current": "dialoguemd/fastapi-sqla"
+    },
+    {
+      "name": "didilili/deepsearch-agents",
+      "id": 1230659792,
+      "current": "didilili/deepsearch-agents"
+    },
+    {
+      "name": "didilili/shopkeeper-agent",
+      "id": 1212059169,
+      "current": "didilili/shopkeeper-agent"
+    },
+    {
+      "name": "diefenbach/django-lfs",
+      "id": 3028222,
+      "current": "diefenbach/django-lfs"
+    },
+    {
+      "name": "dj-bolt/django-bolt",
+      "id": 1060871652,
+      "current": "dj-bolt/django-bolt"
+    },
+    {
+      "name": "dj-stripe/dj-stripe",
+      "id": 11901762,
+      "current": "dj-stripe/dj-stripe"
+    },
+    {
+      "name": "django-cms/django-cms",
+      "id": 143580,
+      "current": "django-cms/django-cms"
+    },
+    {
+      "name": "django-cms/django-filer",
+      "id": 286516,
+      "current": "django-cms/django-filer"
+    },
+    {
+      "name": "django-commons/django-polymorphic",
+      "id": 1360247,
+      "current": "django-commons/django-polymorphic"
+    },
+    {
+      "name": "django-commons/django-prometheus",
+      "id": 33433092,
+      "current": "django-commons/django-prometheus"
+    },
+    {
+      "name": "django-commons/django-unicorn",
+      "id": 278956794,
+      "current": "django-commons/django-unicorn"
+    },
+    {
+      "name": "django-components/django-components",
+      "id": 37275310,
+      "current": "django-components/django-components"
+    },
+    {
+      "name": "django-helpdesk/django-helpdesk",
+      "id": 985638,
+      "current": "django-helpdesk/django-helpdesk"
+    },
+    {
+      "name": "django-hijack/django-hijack",
+      "id": 13565268,
+      "current": "django-hijack/django-hijack"
+    },
+    {
+      "name": "django-import-export/django-import-export",
+      "id": 6704888,
+      "current": "django-import-export/django-import-export"
+    },
+    {
+      "name": "django-money/django-money",
+      "id": 1750874,
+      "current": "django-money/django-money"
+    },
+    {
+      "name": "django-notifications/django-notifications",
+      "id": 5140859,
+      "current": "django-notifications/django-notifications"
+    },
+    {
+      "name": "django-oauth/django-oauth-toolkit",
+      "id": 10176112,
+      "current": "django-oauth/django-oauth-toolkit"
+    },
+    {
+      "name": "django-oscar/django-oscar",
+      "id": 1151051,
+      "current": "django-oscar/django-oscar"
+    },
+    {
+      "name": "django-parler/django-parler",
+      "id": 12710059,
+      "current": "django-parler/django-parler"
+    },
+    {
+      "name": "django-recaptcha/django-recaptcha",
+      "id": 688991,
+      "current": "django-recaptcha/django-recaptcha"
+    },
+    {
+      "name": "django-treebeard/django-treebeard",
+      "id": 602040,
+      "current": "django-treebeard/django-treebeard"
+    },
+    {
+      "name": "django-webpack/django-webpack-loader",
+      "id": 35731316,
+      "current": "django-webpack/django-webpack-loader"
+    },
+    {
+      "name": "django-wiki/django-wiki",
+      "id": 5086313,
+      "current": "django-wiki/django-wiki"
+    },
+    {
+      "name": "django/django",
+      "id": 4164482,
+      "current": "django/django"
+    },
+    {
+      "name": "DjangoCRM/django-crm",
+      "id": 818991119,
+      "current": "DjangoCRM/django-crm"
+    },
+    {
+      "name": "djangopackages/djangopackages",
+      "id": 2351637,
+      "current": "djangopackages/djangopackages"
+    },
+    {
+      "name": "djangostarter/web",
+      "id": 319581627,
+      "current": "djangostarter/web"
+    },
+    {
+      "name": "djaodjin/djaodjin-saas",
+      "id": 9898720,
+      "current": "djaodjin/djaodjin-saas"
+    },
+    {
+      "name": "djlint/djLint",
+      "id": 385344359,
+      "current": "djlint/djLint"
+    },
+    {
+      "name": "doableware/djongo",
+      "id": 97014480,
+      "current": "doableware/djongo"
+    },
+    {
+      "name": "docarray/docarray",
+      "id": 438303578,
+      "current": "docarray/docarray"
+    },
+    {
+      "name": "doganarif/fastapi-radar",
+      "id": 1059778083,
+      "current": "doganarif/fastapi-radar"
+    },
+    {
+      "name": "DogsTailFarmer/martin-binance",
+      "id": 436581677,
+      "current": "DogsTailFarmer/martin-binance"
+    },
+    {
+      "name": "Donnype/fastapi-template",
+      "id": 553189946,
+      "current": "Donnype/fastapi-template"
+    },
+    {
+      "name": "drasstry/shortdrama-pipeline",
+      "id": 1223373345,
+      "current": "drasstry/shortdrama-pipeline"
+    },
+    {
+      "name": "Duelion/homebox-companion",
+      "id": 1106277470,
+      "current": "Duelion/homebox-companion"
+    },
+    {
+      "name": "dunossauro/fastapi-do-zero",
+      "id": 665865348,
+      "current": "dunossauro/fastapi-do-zero"
+    },
+    {
+      "name": "dunwu/spring-boot-tutorial",
+      "id": 145809917,
+      "current": "dunwu/spring-boot-tutorial"
+    },
+    {
+      "name": "dunwu/spring-tutorial",
+      "id": 64465730,
+      "current": "dunwu/spring-tutorial"
+    },
+    {
+      "name": "dyc87112/SpringBoot-Learning",
+      "id": 66179765,
+      "current": "dyc87112/SpringBoot-Learning"
+    },
+    {
+      "name": "dymmond/edgy",
+      "id": 635408274,
+      "current": "dymmond/edgy"
+    },
+    {
+      "name": "dymmond/ravyn",
+      "id": 553553797,
+      "current": "dymmond/ravyn"
+    },
+    {
+      "name": "dynaconf/dynaconf",
+      "id": 40736676,
+      "current": "dynaconf/dynaconf"
+    },
+    {
+      "name": "eadwinCode/django-ninja-extra",
+      "id": 377783591,
+      "current": "eadwinCode/django-ninja-extra"
+    },
+    {
+      "name": "earthcomfy/django-ecommerce-api",
+      "id": 535983186,
+      "current": "earthcomfy/django-ecommerce-api"
+    },
+    {
+      "name": "ebonnal/streamable",
+      "id": 669800207,
+      "current": "ebonnal/streamable"
+    },
+    {
+      "name": "EddieTYP/image-prompt-library",
+      "id": 1221558912,
+      "current": "EddieTYP/image-prompt-library"
+    },
+    {
+      "name": "egorsmkv/simple-django-login-and-register",
+      "id": 99043550,
+      "current": "egorsmkv/simple-django-login-and-register"
+    },
+    {
+      "name": "eightBEC/fastapi-ml-skeleton",
+      "id": 240726747,
+      "current": "eightBEC/fastapi-ml-skeleton"
+    },
+    {
+      "name": "eitchtee/WYGIWYH",
+      "id": 863558051,
+      "current": "eitchtee/WYGIWYH"
+    },
+    {
+      "name": "elliotgao2/gain",
+      "id": 92926018,
+      "current": "elliotgao2/gain"
+    },
+    {
+      "name": "ellmetha/django-machina",
+      "id": 14761593,
+      "current": "ellmetha/django-machina"
+    },
+    {
+      "name": "emersonfelipesp/netbox-proxbox",
+      "id": 355673550,
+      "current": "emersonfelipesp/netbox-proxbox"
+    },
+    {
+      "name": "emmett-framework/emmett",
+      "id": 25485025,
+      "current": "emmett-framework/emmett"
+    },
+    {
+      "name": "empicano/aiomqtt",
+      "id": 253497870,
+      "current": "empicano/aiomqtt"
+    },
+    {
+      "name": "enchant97/web-portal",
+      "id": 337408872,
+      "current": "enchant97/web-portal"
+    },
+    {
+      "name": "encode/django-rest-framework",
+      "id": 1431547,
+      "current": "encode/django-rest-framework"
+    },
+    {
+      "name": "encode/httpx",
+      "id": 179492861,
+      "current": "encode/httpx"
+    },
+    {
+      "name": "eren23/openflipbook",
+      "id": 1219379107,
+      "current": "eren23/openflipbook"
+    },
+    {
+      "name": "esphome/aioesphomeapi",
+      "id": 161691980,
+      "current": "esphome/aioesphomeapi"
+    },
+    {
+      "name": "ets-labs/python-dependency-injector",
+      "id": 28774758,
+      "current": "ets-labs/python-dependency-injector"
+    },
+    {
+      "name": "eugenp/tutorials",
+      "id": 9754983,
+      "current": "eugenp/tutorials"
+    },
+    {
+      "name": "evansd/whitenoise",
+      "id": 11974348,
+      "current": "evansd/whitenoise"
+    },
+    {
+      "name": "evennia/evennia",
+      "id": 16120959,
+      "current": "evennia/evennia"
+    },
+    {
+      "name": "Evil0ctal/Douyin_TikTok_Download_API",
+      "id": 425387994,
+      "current": "Evil0ctal/Douyin_TikTok_Download_API"
+    },
+    {
+      "name": "fabiocaccamo/django-admin-interface",
+      "id": 44974847,
+      "current": "fabiocaccamo/django-admin-interface"
+    },
+    {
+      "name": "fabiocaccamo/django-colorfield",
+      "id": 645063,
+      "current": "fabiocaccamo/django-colorfield"
+    },
+    {
+      "name": "fabiocaccamo/django-extra-settings",
+      "id": 239991252,
+      "current": "fabiocaccamo/django-extra-settings"
+    },
+    {
+      "name": "fabiocaccamo/django-maintenance-mode",
+      "id": 37062480,
+      "current": "fabiocaccamo/django-maintenance-mode"
+    },
+    {
+      "name": "fabiocaccamo/django-treenode",
+      "id": 127927721,
+      "current": "fabiocaccamo/django-treenode"
+    },
+    {
+      "name": "fabriziosalmi/wildbox",
+      "id": 1002638740,
+      "current": "fabriziosalmi/wildbox"
+    },
+    {
+      "name": "FactoryBoy/factory_boy",
+      "id": 1732211,
+      "current": "FactoryBoy/factory_boy"
+    },
+    {
+      "name": "FAForever/downlords-faf-client",
+      "id": 32919066,
+      "current": "FAForever/downlords-faf-client"
+    },
+    {
+      "name": "fastapi-mvc/fastapi-mvc",
+      "id": 389362936,
+      "current": "fastapi-mvc/fastapi-mvc"
+    },
+    {
+      "name": "fastapi-practices/fastapi-best-architecture",
+      "id": 624721291,
+      "current": "fastapi-practices/fastapi-best-architecture"
+    },
+    {
+      "name": "fastapi-practices/fba-slim",
+      "id": 471917984,
+      "current": "fastapi-practices/fba-slim"
+    },
+    {
+      "name": "fastapi-users/fastapi-users",
+      "id": 213025388,
+      "current": "fastapi-users/fastapi-users"
+    },
+    {
+      "name": "fastapi/asyncer",
+      "id": 444565271,
+      "current": "fastapi/asyncer"
+    },
+    {
+      "name": "fastapi/fastapi",
+      "id": 160919119,
+      "current": "fastapi/fastapi"
+    },
+    {
+      "name": "fastapi/fastapi-cli",
+      "id": 795186513,
+      "current": "fastapi/fastapi-cli"
+    },
+    {
+      "name": "fastapi/fastapi-new",
+      "id": 1084515672,
+      "current": "fastapi/fastapi-new"
+    },
+    {
+      "name": "fastapi/sqlmodel",
+      "id": 399495186,
+      "current": "fastapi/sqlmodel"
+    },
+    {
+      "name": "faststream-community/fastapi-dishka-faststream",
+      "id": 770039164,
+      "current": "faststream-community/fastapi-dishka-faststream"
+    },
+    {
+      "name": "faust-streaming/faust",
+      "id": 306382059,
+      "current": "faust-streaming/faust"
+    },
+    {
+      "name": "fdueblab/Micro-Agent",
+      "id": 954532463,
+      "current": "fdueblab/Micro-Agent"
+    },
+    {
+      "name": "feldroy/air",
+      "id": 47806393,
+      "current": "feldroy/air"
+    },
+    {
+      "name": "felipeall/transfermarkt-api",
+      "id": 602327494,
+      "current": "felipeall/transfermarkt-api"
+    },
+    {
+      "name": "fief-dev/fief",
+      "id": 444125382,
+      "current": "fief-dev/fief"
+    },
+    {
+      "name": "fike/fastapi-blog",
+      "id": 337758582,
+      "current": "fike/fastapi-blog"
+    },
+    {
+      "name": "fim-ai/fim-one",
+      "id": 1164059777,
+      "current": "fim-ai/fim-one"
+    },
+    {
+      "name": "Finrandojin/alexandria-audiobook",
+      "id": 1148749246,
+      "current": "Finrandojin/alexandria-audiobook"
+    },
+    {
+      "name": "flamehaven01/Flamehaven-Filesearch",
+      "id": 1094403152,
+      "current": "flamehaven01/Flamehaven-Filesearch"
+    },
+    {
+      "name": "florimondmanca/arel",
+      "id": 252835840,
+      "current": "florimondmanca/arel"
+    },
+    {
+      "name": "florimondmanca/msgpack-asgi",
+      "id": 219042240,
+      "current": "florimondmanca/msgpack-asgi"
+    },
+    {
+      "name": "FrankHui/paragents",
+      "id": 1224866871,
+      "current": "FrankHui/paragents"
+    },
+    {
+      "name": "freechat-fun/freechat",
+      "id": 696078967,
+      "current": "freechat-fun/freechat"
+    },
+    {
+      "name": "FreeOpcUa/opcua-asyncio",
+      "id": 143260613,
+      "current": "FreeOpcUa/opcua-asyncio"
+    },
+    {
+      "name": "FuzzyGrim/Yamtrack",
+      "id": 576455465,
+      "current": "FuzzyGrim/Yamtrack"
+    },
+    {
+      "name": "GACWR/OpenUBA",
+      "id": 210659697,
+      "current": "GACWR/OpenUBA"
+    },
+    {
+      "name": "GautamVhavle/CatGPT-Gateway",
+      "id": 1159952644,
+      "current": "GautamVhavle/CatGPT-Gateway"
+    },
+    {
+      "name": "gawel/aiocron",
+      "id": 31164398,
+      "current": "gawel/aiocron"
+    },
+    {
+      "name": "gawel/irc3",
+      "id": 14820406,
+      "current": "gawel/irc3"
+    },
+    {
+      "name": "gbeced/basana",
+      "id": 609367611,
+      "current": "gbeced/basana"
+    },
+    {
+      "name": "GdeiAssistant/GdeiAssistant",
+      "id": 138773137,
+      "current": "GdeiAssistant/GdeiAssistant"
+    },
+    {
+      "name": "geex-arts/django-jet",
+      "id": 39917544,
+      "current": "geex-arts/django-jet"
+    },
+    {
+      "name": "geldata/gel-python",
+      "id": 139201883,
+      "current": "geldata/gel-python"
+    },
+    {
+      "name": "GeoNode/geonode",
+      "id": 701765,
+      "current": "GeoNode/geonode"
+    },
+    {
+      "name": "Gerapy/Gerapy",
+      "id": 95846805,
+      "current": "Gerapy/Gerapy"
+    },
+    {
+      "name": "gerlero/foamlib",
+      "id": 773906449,
+      "current": "gerlero/foamlib"
+    },
+    {
+      "name": "getkanchi/kanchi",
+      "id": 1062750847,
+      "current": "getkanchi/kanchi"
+    },
+    {
+      "name": "getludic/ludic",
+      "id": 769005895,
+      "current": "getludic/ludic"
+    },
+    {
+      "name": "getsentry/sentry",
+      "id": 873328,
+      "current": "getsentry/sentry"
+    },
+    {
+      "name": "gevent/gevent",
+      "id": 5801666,
+      "current": "gevent/gevent"
+    },
+    {
+      "name": "ghandic/jsf",
+      "id": 355966889,
+      "current": "ghandic/jsf"
+    },
+    {
+      "name": "GHJJ123/brainrotguard",
+      "id": 1158733207,
+      "current": "GHJJ123/brainrotguard"
+    },
+    {
+      "name": "ghost-in-the-droid/android-agent",
+      "id": 1204406252,
+      "current": "ghost-in-the-droid/android-agent"
+    },
+    {
+      "name": "giannitedesco/minotaur",
+      "id": 289624576,
+      "current": "giannitedesco/minotaur"
+    },
+    {
+      "name": "GibbsConsulting/django-plotly-dash",
+      "id": 132558287,
+      "current": "GibbsConsulting/django-plotly-dash"
+    },
+    {
+      "name": "gidgethub/gidgethub",
+      "id": 79673050,
+      "current": "gidgethub/gidgethub"
+    },
+    {
+      "name": "gita/bhagavad-gita-api",
+      "id": 380425608,
+      "current": "gita/bhagavad-gita-api"
+    },
+    {
+      "name": "gjcarneiro/yacron",
+      "id": 97506953,
+      "current": "gjcarneiro/yacron"
+    },
+    {
+      "name": "Gobot1234/steam.py",
+      "id": 233127732,
+      "current": "Gobot1234/steam.py"
+    },
+    {
+      "name": "google-gemini/genai-processors",
+      "id": 975045036,
+      "current": "google-gemini/genai-processors"
+    },
+    {
+      "name": "GraiaProject/Ariadne",
+      "id": 417875186,
+      "current": "GraiaProject/Ariadne"
+    },
+    {
+      "name": "GrandpaEJ/BustAPI",
+      "id": 1045327914,
+      "current": "GrandpaEJ/BustAPI"
+    },
+    {
+      "name": "graphql-python/graphene-django",
+      "id": 68483365,
+      "current": "graphql-python/graphene-django"
+    },
+    {
+      "name": "graphql-python/graphql-core",
+      "id": 143207933,
+      "current": "graphql-python/graphql-core"
+    },
+    {
+      "name": "graphql-python/graphql-server",
+      "id": 85903189,
+      "current": "graphql-python/graphql-server"
+    },
+    {
+      "name": "Grashjs/cmms",
+      "id": 934441434,
+      "current": "Grashjs/cmms"
+    },
+    {
+      "name": "GregaVrbancic/fastapi-celery",
+      "id": 180937561,
+      "current": "GregaVrbancic/fastapi-celery"
+    },
+    {
+      "name": "grillazz/fastapi-sqlalchemy-asyncpg",
+      "id": 351697323,
+      "current": "grillazz/fastapi-sqlalchemy-asyncpg"
+    },
+    {
+      "name": "guillevc/yubal",
+      "id": 1124730302,
+      "current": "guillevc/yubal"
+    },
+    {
+      "name": "gyj1201/zipEnhancer",
+      "id": null,
+      "current": null,
+      "status": 404
+    },
+    {
+      "name": "halo-dev/halo",
+      "id": 126178683,
+      "current": "halo-dev/halo"
+    },
+    {
+      "name": "Hannes221/rq-dashboard-fast",
+      "id": 743490923,
+      "current": "Hannes221/rq-dashboard-fast"
+    },
+    {
+      "name": "hantsy/spring-puzzles",
+      "id": 286759011,
+      "current": "hantsy/spring-puzzles"
+    },
+    {
+      "name": "hanxiao/knowledge-graph-extractor",
+      "id": 1251648836,
+      "current": "hanxiao/knowledge-graph-extractor"
+    },
+    {
+      "name": "Haohao-end/openagent",
+      "id": 1005290568,
+      "current": "Haohao-end/openagent"
+    },
+    {
+      "name": "haoyiyin/basjoo",
+      "id": 1194566359,
+      "current": "haoyiyin/basjoo"
+    },
+    {
+      "name": "HaoZhang95/Python24",
+      "id": 165551447,
+      "current": "HaoZhang95/Python24"
+    },
+    {
+      "name": "Harries/springboot-demo",
+      "id": 725933931,
+      "current": "Harries/springboot-demo"
+    },
+    {
+      "name": "hbakri/django-ninja-crud",
+      "id": 651888019,
+      "current": "hbakri/django-ninja-crud"
+    },
+    {
+      "name": "hbldh/bleak",
+      "id": 131211505,
+      "current": "hbldh/bleak"
+    },
+    {
+      "name": "HDFGroup/hsds",
+      "id": 64322709,
+      "current": "HDFGroup/hsds"
+    },
+    {
+      "name": "headroomlabs-ai/headroom",
+      "id": 1129940957,
+      "current": "headroomlabs-ai/headroom"
+    },
+    {
+      "name": "healthchecks/healthchecks",
+      "id": 38067078,
+      "current": "healthchecks/healthchecks"
+    },
+    {
+      "name": "hebertcisco/deploy-python-fastapi-in-vercel",
+      "id": 579529975,
+      "current": "hebertcisco/deploy-python-fastapi-in-vercel"
+    },
+    {
+      "name": "Hecate2/Ignareo-ISML-auto-voter",
+      "id": 152713495,
+      "current": "Hecate2/Ignareo-ISML-auto-voter"
+    },
+    {
+      "name": "hect0x7/JMComic-Crawler-Python",
+      "id": 622576337,
+      "current": "hect0x7/JMComic-Crawler-Python"
+    },
+    {
+      "name": "Hello-hao/Tbed",
+      "id": 168292197,
+      "current": "Hello-hao/Tbed"
+    },
+    {
+      "name": "henrique-coder/perplexity-webui-scraper",
+      "id": 958012285,
+      "current": "henrique-coder/perplexity-webui-scraper"
+    },
+    {
+      "name": "heowc/SpringBootSample",
+      "id": 72743098,
+      "current": "heowc/SpringBootSample"
+    },
+    {
+      "name": "hequan2017/autoops",
+      "id": 101852470,
+      "current": "hequan2017/autoops"
+    },
+    {
+      "name": "hequan2017/chain",
+      "id": 125453150,
+      "current": "hequan2017/chain"
+    },
+    {
+      "name": "heroku/python-getting-started",
+      "id": 21937935,
+      "current": "heroku/python-getting-started"
+    },
+    {
+      "name": "hexliulab/fund-analysis-agents",
+      "id": 1198533709,
+      "current": "hexliulab/fund-analysis-agents"
+    },
+    {
+      "name": "hiall-fyi/tado_ce",
+      "id": 1136484732,
+      "current": "hiall-fyi/tado_ce"
+    },
+    {
+      "name": "hikari-py/hikari",
+      "id": 287714309,
+      "current": "hikari-py/hikari"
+    },
+    {
+      "name": "Hipo/drf-extra-fields",
+      "id": 21973580,
+      "current": "Hipo/drf-extra-fields"
+    },
+    {
+      "name": "hivesolutions/netius",
+      "id": 19062086,
+      "current": "hivesolutions/netius"
+    },
+    {
+      "name": "hl897tech/xhs_content_agent",
+      "id": 1195477175,
+      "current": "hl897tech/xhs_content_agent"
+    },
+    {
+      "name": "HMaker/python-cdp",
+      "id": 465058769,
+      "current": "HMaker/python-cdp"
+    },
+    {
+      "name": "HogaStack/Dash-FastAPI-Admin",
+      "id": 690644220,
+      "current": "HogaStack/Dash-FastAPI-Admin"
+    },
+    {
+      "name": "home-assistant-libs/pytradfri",
+      "id": 87844301,
+      "current": "home-assistant-libs/pytradfri"
+    },
+    {
+      "name": "home-assistant/core",
+      "id": 12888993,
+      "current": "home-assistant/core"
+    },
+    {
+      "name": "Hopetree/izone",
+      "id": 115265222,
+      "current": "Hopetree/izone"
+    },
+    {
+      "name": "hotosm/tasking-manager",
+      "id": 80733077,
+      "current": "hotosm/tasking-manager"
+    },
+    {
+      "name": "houko/SpringBootUnity",
+      "id": 55276445,
+      "current": "houko/SpringBootUnity"
+    },
+    {
+      "name": "huge-dream/django-vue3-admin",
+      "id": 645707436,
+      "current": "huge-dream/django-vue3-admin"
+    },
+    {
+      "name": "humenglover/yuemu",
+      "id": 932662080,
+      "current": "humenglover/yuemu"
+    },
+    {
+      "name": "hunvreus/devpush",
+      "id": 917559301,
+      "current": "hunvreus/devpush"
+    },
+    {
+      "name": "HuQi2018/BiSheServer",
+      "id": 352286639,
+      "current": "HuQi2018/BiSheServer"
+    },
+    {
+      "name": "huynguyengl99/chanx",
+      "id": 966278146,
+      "current": "huynguyengl99/chanx"
+    },
+    {
+      "name": "hydrogram/hydrogram",
+      "id": 711555265,
+      "current": "hydrogram/hydrogram"
+    },
+    {
+      "name": "hynek/prometheus-async",
+      "id": 43549530,
+      "current": "hynek/prometheus-async"
+    },
+    {
+      "name": "hynek/svcs",
+      "id": 665456447,
+      "current": "hynek/svcs"
+    },
+    {
+      "name": "hyprland-community/pyprland",
+      "id": 633571482,
+      "current": "hyprland-community/pyprland"
+    },
+    {
+      "name": "iamsinghrajat/async-cache",
+      "id": 259206079,
+      "current": "iamsinghrajat/async-cache"
+    },
+    {
+      "name": "iamtelescope/telescope",
+      "id": 909184070,
+      "current": "iamtelescope/telescope"
+    },
+    {
+      "name": "IBM/mcp-context-forge",
+      "id": 979886407,
+      "current": "IBM/mcp-context-forge"
+    },
+    {
+      "name": "ibuilder/massing",
+      "id": 1269449119,
+      "current": "ibuilder/massing"
+    },
+    {
+      "name": "ietf-tools/datatracker",
+      "id": 465885927,
+      "current": "ietf-tools/datatracker"
+    },
+    {
+      "name": "IHosseini083/Shortify",
+      "id": 527065571,
+      "current": "IHosseini083/Shortify"
+    },
+    {
+      "name": "Ikaros-521/LX_SkyRoam_Agent",
+      "id": 1073383438,
+      "current": "Ikaros-521/LX_SkyRoam_Agent"
+    },
+    {
+      "name": "iktakahiro/dddpy",
+      "id": 340649318,
+      "current": "iktakahiro/dddpy"
+    },
+    {
+      "name": "iLearn-Lab/NovelClaw",
+      "id": 1174957711,
+      "current": "iLearn-Lab/NovelClaw"
+    },
+    {
+      "name": "imankulov/linguee-api",
+      "id": 74171706,
+      "current": "imankulov/linguee-api"
+    },
+    {
+      "name": "iMerica/dj-rest-auth",
+      "id": 243840407,
+      "current": "iMerica/dj-rest-auth"
+    },
+    {
+      "name": "ImFeH2/flowent",
+      "id": 1161490172,
+      "current": "imfeh2/fora"
+    },
+    {
+      "name": "infinri/Writ",
+      "id": 1182794808,
+      "current": "infinri/Writ"
+    },
+    {
+      "name": "insistence/RuoYi-Vue3-FastAPI",
+      "id": 749697840,
+      "current": "insistence/RuoYi-FastAPI"
+    },
+    {
+      "name": "inventree/InvenTree",
+      "id": 85894461,
+      "current": "inventree/InvenTree"
+    },
+    {
+      "name": "inyutin/aiohttp_retry",
+      "id": 230159234,
+      "current": "inyutin/aiohttp_retry"
+    },
+    {
+      "name": "iommirocks/iommi",
+      "id": 237183434,
+      "current": "iommirocks/iommi"
+    },
+    {
+      "name": "iroco-co/aioimaplib",
+      "id": 62559536,
+      "current": "iroco-co/aioimaplib"
+    },
+    {
+      "name": "israelbls/notebooklm-podcast-automator",
+      "id": 1104030013,
+      "current": "israelbls/notebooklm-podcast-automator"
+    },
+    {
+      "name": "itamarst/eliot",
+      "id": 18601900,
+      "current": "itamarst/eliot"
+    },
+    {
+      "name": "ivan-borovets/fastapi-clean-example",
+      "id": 883271732,
+      "current": "ivan-borovets/fastapi-clean-example"
+    },
+    {
+      "name": "IYque/Iyque-SCRM",
+      "id": 852633968,
+      "current": "IYque/Iyque-SCRM"
+    },
+    {
+      "name": "JackyST0/hotpush",
+      "id": 1148588656,
+      "current": "JackyST0/hotpush"
+    },
+    {
+      "name": "jaehyeon-kim/nicegui-fastapi-template",
+      "id": 1095427306,
+      "current": "jaehyeon-kim/nicegui-fastapi-template"
+    },
+    {
+      "name": "janbjorge/pipegate",
+      "id": 902518345,
+      "current": "janbjorge/pipegate"
+    },
+    {
+      "name": "jason8745/llm-agent-trader",
+      "id": 1029874236,
+      "current": "jason8745/llm-agent-trader"
+    },
+    {
+      "name": "JasperSui/fastapi-injectable",
+      "id": 905359425,
+      "current": "JasperSui/fastapi-injectable"
+    },
+    {
+      "name": "javahongxi/whatsmars",
+      "id": 55224431,
+      "current": "javahongxi/whatsmars"
+    },
+    {
+      "name": "javipalanca/spade",
+      "id": 6829344,
+      "current": "javipalanca/spade"
+    },
+    {
+      "name": "jazzband/django-analytical",
+      "id": 1262665,
+      "current": "jazzband/django-analytical"
+    },
+    {
+      "name": "jazzband/django-auditlog",
+      "id": 13718462,
+      "current": "jazzband/django-auditlog"
+    },
+    {
+      "name": "jazzband/django-avatar",
+      "id": 85423,
+      "current": "jazzband/django-avatar"
+    },
+    {
+      "name": "jazzband/django-newsletter",
+      "id": 228466,
+      "current": "jazzband/django-newsletter"
+    },
+    {
+      "name": "jazzband/django-payments",
+      "id": 951385,
+      "current": "jazzband/django-payments"
+    },
+    {
+      "name": "jazzband/django-push-notifications",
+      "id": 8788941,
+      "current": "jazzband/django-push-notifications"
+    },
+    {
+      "name": "jazzband/django-two-factor-auth",
+      "id": 5765336,
+      "current": "jazzband/django-two-factor-auth"
+    },
+    {
+      "name": "jazzband/django-user-sessions",
+      "id": 14378574,
+      "current": "jazzband/django-user-sessions"
+    },
+    {
+      "name": "jerry609/PaperBot",
+      "id": 821183982,
+      "current": "jerry609/PaperBot"
+    },
+    {
+      "name": "jfhbrook/pyee",
+      "id": 2059865,
+      "current": "jfhbrook/pyee"
+    },
+    {
+      "name": "JiayuXu0/create-fastapi-app",
+      "id": 1025569731,
+      "current": "JiayuXu0/create-fastapi-app"
+    },
+    {
+      "name": "JiayuXu0/FastAPI-Template",
+      "id": 1018797543,
+      "current": "JiayuXu0/FastAPI-Template"
+    },
+    {
+      "name": "jieter/django-tables2",
+      "id": 1145581,
+      "current": "jieter/django-tables2"
+    },
+    {
+      "name": "jiisanda/docflow",
+      "id": 671000997,
+      "current": "jiisanda/docflow"
+    },
+    {
+      "name": "jimmy201602/webterminal",
+      "id": 103753749,
+      "current": "jimmy201602/webterminal"
+    },
+    {
+      "name": "JMS1717/8mb.local",
+      "id": 1088486120,
+      "current": "JMS1717/8mb.local"
+    },
+    {
+      "name": "jod35/fastapi-beyond-CRUD",
+      "id": 764211372,
+      "current": "jod35/fastapi-beyond-CRUD"
+    },
+    {
+      "name": "JoeanAmier/KS-Downloader",
+      "id": 784282243,
+      "current": "JoeanAmier/KS-Downloader"
+    },
+    {
+      "name": "JoeanAmier/XHS-Downloader",
+      "id": 679219059,
+      "current": "JoeanAmier/XHS-Downloader"
+    },
+    {
+      "name": "joerick/pyinstrument",
+      "id": 17720394,
+      "current": "joerick/pyinstrument"
+    },
+    {
+      "name": "JohnYan2017/SmartCharts",
+      "id": 316876895,
+      "current": "JohnYan2017/SmartCharts"
+    },
+    {
+      "name": "joke2k/django-environ",
+      "id": 9171234,
+      "current": "joke2k/django-environ"
+    },
+    {
+      "name": "jookies/jasmin",
+      "id": 6835366,
+      "current": "jookies/jasmin"
+    },
+    {
+      "name": "JoshuaC215/agent-service-toolkit",
+      "id": 838093526,
+      "current": "JoshuaC215/agent-service-toolkit"
+    },
+    {
+      "name": "jouninno/java-vibe-guard",
+      "id": null,
+      "current": null,
+      "status": 404
+    },
+    {
+      "name": "jowilf/starlette-admin",
+      "id": 530277810,
+      "current": "jowilf/starlette-admin"
+    },
+    {
+      "name": "jrhubott/adaptive-cover-pro",
+      "id": 1144502403,
+      "current": "jrhubott/adaptive-cover-pro"
+    },
+    {
+      "name": "jrief/django-admin-sortable2",
+      "id": 11240449,
+      "current": "jrief/django-admin-sortable2"
+    },
+    {
+      "name": "jrobichaud/django-structlog",
+      "id": 180026172,
+      "current": "jrobichaud/django-structlog"
+    },
+    {
+      "name": "jtgsystems/Custom-Modes-Roo-Code",
+      "id": 927510640,
+      "current": "jtgsystems/Custom-Modes-Roo-Code"
+    },
+    {
+      "name": "judahpaul16/gpt-home",
+      "id": 687633030,
+      "current": "judahpaul16/gpt-home"
+    },
+    {
+      "name": "jumpserver/jumpserver",
+      "id": 21484781,
+      "current": "jumpserver/jumpserver"
+    },
+    {
+      "name": "JuneQQQ/polynoia",
+      "id": 1246749616,
+      "current": "JuneQQQ/polynoia"
+    },
+    {
+      "name": "Junkz3/wrench-board",
+      "id": 1217379261,
+      "current": "Junkz3/wrench-board"
+    },
+    {
+      "name": "jupyter-server/jupyverse",
+      "id": 388825967,
+      "current": "jupyter-server/jupyverse"
+    },
+    {
+      "name": "jupyter/notebook",
+      "id": 33653601,
+      "current": "jupyter/notebook"
+    },
+    {
+      "name": "jwadow/kiro-gateway",
+      "id": 1115489218,
+      "current": "jwadow/kiro-gateway"
+    },
+    {
+      "name": "Kabanosk/whisper-website",
+      "id": 541797614,
+      "current": "Kabanosk/whisper-website"
+    },
+    {
+      "name": "kalaspuff/tomodachi",
+      "id": 62165703,
+      "current": "kalaspuff/tomodachi"
+    },
+    {
+      "name": "Kav-K/GPTDiscord",
+      "id": 575751232,
+      "current": "Kav-K/GPTDiscord"
+    },
+    {
+      "name": "kaxiluo/fastapi-skeleton",
+      "id": 508259957,
+      "current": "kaxiluo/fastapi-skeleton"
+    },
+    {
+      "name": "KenMwaura1/Fast-Api-example",
+      "id": 233850146,
+      "current": "KenMwaura1/Fast-Api-example"
+    },
+    {
+      "name": "kevaldekivadiya2415/fastapi-genai-boilerplate",
+      "id": 909059285,
+      "current": "kevaldekivadiya2415/fastapi-genai-boilerplate"
+    },
+    {
+      "name": "kevin333353/jobsmith",
+      "id": 1278839743,
+      "current": "kevin333353/jobsmith"
+    },
+    {
+      "name": "klen/muffin",
+      "id": 30243627,
+      "current": "klen/muffin"
+    },
+    {
+      "name": "KLR-Pattern/fastapi-voyager",
+      "id": 1042429884,
+      "current": "KLR-Pattern/fastapi-voyager"
+    },
+    {
+      "name": "KLR-Pattern/pydantic-resolve",
+      "id": 610649159,
+      "current": "KLR-Pattern/pydantic-resolve"
+    },
+    {
+      "name": "Kludex/mangum",
+      "id": 165652505,
+      "current": "Kludex/mangum"
+    },
+    {
+      "name": "Kludex/uvicorn",
+      "id": 92946971,
+      "current": "Kludex/uvicorn"
+    },
+    {
+      "name": "kmmbvnr/django-fsm",
+      "id": 695461,
+      "current": "kmmbvnr/django-fsm"
+    },
+    {
+      "name": "KoalixSwitzerland/koalixcrm",
+      "id": 1425463,
+      "current": "KoalixSwitzerland/koalixcrm"
+    },
+    {
+      "name": "Kohei-Wada/taskdog",
+      "id": 1073431424,
+      "current": "Kohei-Wada/taskdog"
+    },
+    {
+      "name": "KOKOSde/localmod",
+      "id": 1123476895,
+      "current": "KOKOSde/localmod"
+    },
+    {
+      "name": "koldakov/futuramaapi",
+      "id": 725719603,
+      "current": "koldakov/futuramaapi"
+    },
+    {
+      "name": "koxudaxi/datamodel-code-generator",
+      "id": 189179081,
+      "current": "datamodel-code-generator/datamodel-code-generator"
+    },
+    {
+      "name": "koxudaxi/fastapi-code-generator",
+      "id": 272182431,
+      "current": "koxudaxi/fastapi-code-generator"
+    },
+    {
+      "name": "kr8s-org/kr8s",
+      "id": 615259748,
+      "current": "kr8s-org/kr8s"
+    },
+    {
+      "name": "Krukov/cashews",
+      "id": 227915294,
+      "current": "Krukov/cashews"
+    },
+    {
+      "name": "kthwaite/fastapi-websocket-broadcast",
+      "id": 170907929,
+      "current": "kthwaite/fastapi-websocket-broadcast"
+    },
+    {
+      "name": "Kyros-494/kyros-ai",
+      "id": 1226271186,
+      "current": "Kyros-494/kyros-ai"
+    },
+    {
+      "name": "laixintao/python-parallel-programming-cookbook-cn",
+      "id": 103828157,
+      "current": "laixintao/python-parallel-programming-cookbook-cn"
+    },
+    {
+      "name": "lalitgehani/SnackBase",
+      "id": 1122444837,
+      "current": "lalitgehani/SnackBase"
+    },
+    {
+      "name": "Lancetnik/FastDepends",
+      "id": 628503532,
+      "current": "Lancetnik/FastDepends"
+    },
+    {
+      "name": "lardbit/nefarious",
+      "id": 157997028,
+      "current": "lardbit/nefarious"
+    },
+    {
+      "name": "larlarua/AutoCVE",
+      "id": 1270272670,
+      "current": "larlarua/AutoCVE"
+    },
+    {
+      "name": "laurentS/slowapi",
+      "id": 242139417,
+      "current": "laurentS/slowapi"
+    },
+    {
+      "name": "lbedner/aegis-stack",
+      "id": 973873346,
+      "current": "lbedner/aegis-stack"
+    },
+    {
+      "name": "learning-at-home/hivemind",
+      "id": 243530669,
+      "current": "learning-at-home/hivemind"
+    },
+    {
+      "name": "LeDat98/NexusRAG",
+      "id": 1182227156,
+      "current": "LeDat98/NexusRAG"
+    },
+    {
+      "name": "leonh/redis-streams-fastapi-chat",
+      "id": 219035044,
+      "current": "leonh/redis-streams-fastapi-chat"
+    },
+    {
+      "name": "LeyckerS/moondownloader",
+      "id": 866710555,
+      "current": "LeyckerS/moondownloader"
+    },
+    {
+      "name": "Li-Evan/Bloom",
+      "id": 1177971308,
+      "current": "Li-Evan/Bloom"
+    },
+    {
+      "name": "liangliangyy/DjangoBlog",
+      "id": 72640835,
+      "current": "liangliangyy/DjangoBlog"
+    },
+    {
+      "name": "LibrePhotos/librephotos",
+      "id": 312112440,
+      "current": "LibrePhotos/librephotos"
+    },
+    {
+      "name": "Lightning-AI/LitServe",
+      "id": 730728120,
+      "current": "Lightning-AI/LitServe"
+    },
+    {
+      "name": "lihuacai168/AnotherFasterRunner",
+      "id": 320772042,
+      "current": "lihuacai168/AnotherFasterRunner"
+    },
+    {
+      "name": "litestar-org/advanced-alchemy",
+      "id": 687666119,
+      "current": "litestar-org/advanced-alchemy"
+    },
+    {
+      "name": "litestar-org/litestar",
+      "id": 435625572,
+      "current": "litestar-org/litestar"
+    },
+    {
+      "name": "liuzhao1225/YouDub-webui",
+      "id": 735872604,
+      "current": "liuzhao1225/YouDub-webui"
+    },
+    {
+      "name": "livehl/aimirror",
+      "id": 1173582824,
+      "current": "livehl/aimirror"
+    },
+    {
+      "name": "lkmeta/txtify",
+      "id": 787021172,
+      "current": "lkmeta/txtify"
+    },
+    {
+      "name": "LogicPaper/LogicPaper",
+      "id": 1114860442,
+      "current": "LogicPaper/LogicPaper"
+    },
+    {
+      "name": "Lolomgrofl/fastapi-genesis",
+      "id": 665543477,
+      "current": "Lolomgrofl/fastapi-genesis"
+    },
+    {
+      "name": "long2ice/asynch",
+      "id": 290518295,
+      "current": "long2ice/asynch"
+    },
+    {
+      "name": "long2ice/asyncmy",
+      "id": 336724491,
+      "current": "long2ice/asyncmy"
+    },
+    {
+      "name": "long2ice/fastapi-cache",
+      "id": 290160721,
+      "current": "long2ice/fastapi-cache"
+    },
+    {
+      "name": "long2ice/fastapi-limiter",
+      "id": 310551010,
+      "current": "long2ice/fastapi-limiter"
+    },
+    {
+      "name": "love-apples/maxapi",
+      "id": 1002591313,
+      "current": "love-apples/maxapi"
+    },
+    {
+      "name": "ls1intum/Artemis",
+      "id": 69562331,
+      "current": "ls1intum/Artemis"
+    },
+    {
+      "name": "lumina37/aiotieba",
+      "id": 364564678,
+      "current": "lumina37/aiotieba"
+    },
+    {
+      "name": "LvcidPsyche/auto-browser",
+      "id": 1176557412,
+      "current": "LvcidPsyche/auto-browser"
+    },
+    {
+      "name": "lxf746/any-auto-register",
+      "id": 1185330299,
+      "current": "lxf746/any-auto-register"
+    },
+    {
+      "name": "macropin/django-registration",
+      "id": 19168375,
+      "current": "macropin/django-registration"
+    },
+    {
+      "name": "Mag1cFall/AIStudio2API",
+      "id": 1042224154,
+      "current": "Mag1cFall/AIStudio2API"
+    },
+    {
+      "name": "MagicStack/asyncpg",
+      "id": 63652864,
+      "current": "MagicStack/asyncpg"
+    },
+    {
+      "name": "MagicStack/uvloop",
+      "id": 45766550,
+      "current": "MagicStack/uvloop"
+    },
+    {
+      "name": "magicyuan876/mineru-tianshu",
+      "id": 845810091,
+      "current": "magicyuan876/mineru-tianshu"
+    },
+    {
+      "name": "maksimzayats/diwire",
+      "id": 1141834163,
+      "current": "maksimzayats/diwire"
+    },
+    {
+      "name": "maldoinc/wireup",
+      "id": 680634709,
+      "current": "maldoinc/wireup"
+    },
+    {
+      "name": "ManiMozaffar/aioclock",
+      "id": 779946517,
+      "current": "ManiMozaffar/aioclock"
+    },
+    {
+      "name": "manjurulhoque/django-job-portal",
+      "id": 180424218,
+      "current": "manjurulhoque/django-job-portal"
+    },
+    {
+      "name": "manjurulhoque/django-social-network",
+      "id": 204292923,
+      "current": "manjurulhoque/django-social-network"
+    },
+    {
+      "name": "Mariatta/black_out",
+      "id": 135775682,
+      "current": "Mariatta/black_out"
+    },
+    {
+      "name": "MarshalX/yandex-music-api",
+      "id": 185270983,
+      "current": "MarshalX/yandex-music-api"
+    },
+    {
+      "name": "marshmallow-code/webargs",
+      "id": 16899445,
+      "current": "marshmallow-code/webargs"
+    },
+    {
+      "name": "masouduut94/volleyball_analytics",
+      "id": 622558002,
+      "current": "masouduut94/volleyball_analytics"
+    },
+    {
+      "name": "matrix-nio/matrix-nio",
+      "id": 128386567,
+      "current": "matrix-nio/matrix-nio"
+    },
+    {
+      "name": "maubot/maubot",
+      "id": 136799312,
+      "current": "maubot/maubot"
+    },
+    {
+      "name": "mautrix/python",
+      "id": 124447503,
+      "current": "mautrix/python"
+    },
+    {
+      "name": "max-pfeiffer/uvicorn-poetry",
+      "id": 432675971,
+      "current": "max-pfeiffer/uvicorn-poetry"
+    },
+    {
+      "name": "max-pfeiffer/uvicorn-poetry-fastapi-project-template",
+      "id": 488334622,
+      "current": "max-pfeiffer/uvicorn-poetry-fastapi-project-template"
+    },
+    {
+      "name": "maxfischer2781/asyncstdlib",
+      "id": 222984602,
+      "current": "maxfischer2781/asyncstdlib"
+    },
+    {
+      "name": "maximdanilchenko/aiochclient",
+      "id": 147911533,
+      "current": "maximdanilchenko/aiochclient"
+    },
+    {
+      "name": "mayan-edms/Mayan-EDMS",
+      "id": 184955400,
+      "current": "mayan-edms/Mayan-EDMS"
+    },
+    {
+      "name": "mbi/django-rosetta",
+      "id": 1904815,
+      "current": "mbi/django-rosetta"
+    },
+    {
+      "name": "mbi/django-simple-captcha",
+      "id": 3929597,
+      "current": "mbi/django-simple-captcha"
+    },
+    {
+      "name": "mdapena/pyventus",
+      "id": 714718289,
+      "current": "mdapena/pyventus"
+    },
+    {
+      "name": "mdn/django-locallibrary-tutorial",
+      "id": 72620958,
+      "current": "mdn/django-locallibrary-tutorial"
+    },
+    {
+      "name": "meadsteve/lagom",
+      "id": 189738708,
+      "current": "meadsteve/lagom"
+    },
+    {
+      "name": "meeb/django-distill",
+      "id": 34370345,
+      "current": "meeb/django-distill"
+    },
+    {
+      "name": "mfmezger/conversational-agent-langchain",
+      "id": 616983144,
+      "current": "mfmezger/conversational-agent-langchain"
+    },
+    {
+      "name": "mftnakrsu/Automatic_Number_Plate_Recognition_YOLO_OCR",
+      "id": 488927028,
+      "current": "mftnakrsu/Automatic_Number_Plate_Recognition_YOLO_OCR"
+    },
+    {
+      "name": "mher/flower",
+      "id": 4946406,
+      "current": "mher/flower"
+    },
+    {
+      "name": "miaucl/cookidoo-api",
+      "id": 857677488,
+      "current": "miaucl/cookidoo-api"
+    },
+    {
+      "name": "MichielMe/fastscheduler",
+      "id": 1091504296,
+      "current": "MichielMe/fastscheduler"
+    },
+    {
+      "name": "MicroPyramid/Django-CRM",
+      "id": 92284018,
+      "current": "Django-CRM/Django-CRM"
+    },
+    {
+      "name": "miguelgrinberg/greenletio",
+      "id": 279851837,
+      "current": "miguelgrinberg/greenletio"
+    },
+    {
+      "name": "miguelgrinberg/python-socketio",
+      "id": 39119843,
+      "current": "miguelgrinberg/python-socketio"
+    },
+    {
+      "name": "miguelgrinberg/retrofun",
+      "id": 606920059,
+      "current": "miguelgrinberg/retrofun"
+    },
+    {
+      "name": "mikeckennedy/fastapi-chameleon",
+      "id": 307430870,
+      "current": "mikeckennedy/fastapi-chameleon"
+    },
+    {
+      "name": "milesmcc/shynet",
+      "id": 254441446,
+      "current": "milesmcc/shynet"
+    },
+    {
+      "name": "mindflayer/python-mocket",
+      "id": 9766348,
+      "current": "mindflayer/python-mocket"
+    },
+    {
+      "name": "mirumee/ariadne",
+      "id": 140265025,
+      "current": "mirumee/ariadne"
+    },
+    {
+      "name": "mixxorz/slippers",
+      "id": 384881226,
+      "current": "mixxorz/slippers"
+    },
+    {
+      "name": "mjpieters/aiolimiter",
+      "id": 224899282,
+      "current": "mjpieters/aiolimiter"
+    },
+    {
+      "name": "ml-tooling/opyrator",
+      "id": 355109043,
+      "current": "ml-tooling/opyrator"
+    },
+    {
+      "name": "mmTheBest/arxie",
+      "id": 1168629271,
+      "current": "mmTheBest/arxie"
+    },
+    {
+      "name": "modal-labs/synchronicity",
+      "id": 349891952,
+      "current": "modal-labs/synchronicity"
+    },
+    {
+      "name": "model-bakers/model_bakery",
+      "id": 213640673,
+      "current": "model-bakers/model_bakery"
+    },
+    {
+      "name": "modern-python/fastapi-sqlalchemy-template",
+      "id": 340951270,
+      "current": "modern-python/fastapi-sqlalchemy-template"
+    },
+    {
+      "name": "modern-python/that-depends",
+      "id": 773446541,
+      "current": "modern-python/that-depends"
+    },
+    {
+      "name": "modoboa/modoboa",
+      "id": 9469271,
+      "current": "modoboa/modoboa"
+    },
+    {
+      "name": "MODSetter/SurfSense",
+      "id": 835975784,
+      "current": "MODSetter/SurfSense"
+    },
+    {
+      "name": "molgenis/molgenis",
+      "id": 8010626,
+      "current": "molgenis/molgenis"
+    },
+    {
+      "name": "mongodb-developer/FARM-Intro",
+      "id": 314014565,
+      "current": "mongodb-developer/FARM-Intro"
+    },
+    {
+      "name": "mongodb/motor",
+      "id": 7567432,
+      "current": "mongodb/motor"
+    },
+    {
+      "name": "mosquito/aio-pika",
+      "id": 69458400,
+      "current": "mosquito/aio-pika"
+    },
+    {
+      "name": "mosquito/aiofile",
+      "id": 77929483,
+      "current": "mosquito/aiofile"
+    },
+    {
+      "name": "mosquito/aiormq",
+      "id": 162988073,
+      "current": "mosquito/aiormq"
+    },
+    {
+      "name": "mouredev/Hello-Python",
+      "id": 520969009,
+      "current": "mouredev/Hello-Python"
+    },
+    {
+      "name": "mouseart2025/AI-Reader-V2",
+      "id": null,
+      "current": null,
+      "status": 404
+    },
+    {
+      "name": "mozilla/django-csp",
+      "id": 775086,
+      "current": "mozilla/django-csp"
+    },
+    {
+      "name": "mozilla/pontoon",
+      "id": 1385890,
+      "current": "mozilla/pontoon"
+    },
+    {
+      "name": "mr-fatalyst/fastopenapi",
+      "id": 937666512,
+      "current": "mr-fatalyst/fastopenapi"
+    },
+    {
+      "name": "mr-fatalyst/oxyde",
+      "id": 1089078092,
+      "current": "mr-fatalyst/oxyde"
+    },
+    {
+      "name": "mslaursen/fastapi-forge",
+      "id": 913065483,
+      "current": "mslaursen/fastapi-forge"
+    },
+    {
+      "name": "msmarkgu/RelayFreeLLM",
+      "id": 1182971211,
+      "current": "msmarkgu/RelayFreeLLM"
+    },
+    {
+      "name": "mutating/transfunctions",
+      "id": 945676098,
+      "current": "mutating/transfunctions"
+    },
+    {
+      "name": "mwangli/stock-trading",
+      "id": 616259737,
+      "current": "mwangli/stock-trading"
+    },
+    {
+      "name": "mwarkentin/django-watchman",
+      "id": 16655352,
+      "current": "mwarkentin/django-watchman"
+    },
+    {
+      "name": "myccarl/ai-shortVideo-pipeline",
+      "id": 1259424581,
+      "current": "myccarl/ai-shortVideo-pipeline"
+    },
+    {
+      "name": "najibyahya/Boterdrop-Solver",
+      "id": 1173243842,
+      "current": "najibyahya/Boterdrop-Solver"
+    },
+    {
+      "name": "nanotaboada/python-samples-fastapi-restful",
+      "id": 396552448,
+      "current": "nanotaboada/python-samples-fastapi-restful"
+    },
+    {
+      "name": "Nativu5/Gemini-FastAPI",
+      "id": 1000933836,
+      "current": "Nativu5/Gemini-FastAPI"
+    },
+    {
+      "name": "nats-io/nats.py",
+      "id": 48712355,
+      "current": "nats-io/nats.py"
+    },
+    {
+      "name": "Nayjest/lm-proxy",
+      "id": 989699265,
+      "current": "Nayjest/lm-proxy"
+    },
+    {
+      "name": "ncoevoet/facet",
+      "id": 1159371371,
+      "current": "ncoevoet/facet"
+    },
+    {
+      "name": "Neoteroi/BlackSheep",
+      "id": 158754800,
+      "current": "Neoteroi/BlackSheep"
+    },
+    {
+      "name": "netbox-community/netbox",
+      "id": 52796596,
+      "current": "netbox-community/netbox"
+    },
+    {
+      "name": "neutronX/django-markdownx",
+      "id": 26052435,
+      "current": "neutronX/django-markdownx"
+    },
+    {
+      "name": "newpanjing/simpleui",
+      "id": 147495704,
+      "current": "newpanjing/simpleui"
+    },
+    {
+      "name": "nexios-labs/nexios",
+      "id": 885634129,
+      "current": "sillohq/core"
+    },
+    {
+      "name": "NextWeb4/lan-file-transfer",
+      "id": 1297953833,
+      "current": "NextWeb4/lan-file-transfer"
+    },
+    {
+      "name": "nggit/tremolo",
+      "id": 596137881,
+      "current": "nggit/tremolo"
+    },
+    {
+      "name": "NHA-ABDM/UHI",
+      "id": 479330307,
+      "current": "NHA-ABDM/UHI"
+    },
+    {
+      "name": "NicholasGoh/fastapi-mcp-langgraph-template",
+      "id": 967463473,
+      "current": "NicholasGoh/fastapi-mcp-langgraph-template"
+    },
+    {
+      "name": "nickatnight/cookiecutter-fastapi-backend",
+      "id": 595827381,
+      "current": "nickatnight/cookiecutter-fastapi-backend"
+    },
+    {
+      "name": "nickjj/docker-django-example",
+      "id": 342038855,
+      "current": "nickjj/docker-django-example"
+    },
+    {
+      "name": "nickjj/docker-flask-example",
+      "id": 324186031,
+      "current": "nickjj/docker-flask-example"
+    },
+    {
+      "name": "nolar/kopf",
+      "id": 288234242,
+      "current": "nolar/kopf"
+    },
+    {
+      "name": "nonebot/nonebot2",
+      "id": 289605524,
+      "current": "nonebot/nonebot2"
+    },
+    {
+      "name": "NoneGG/aredis",
+      "id": 76640818,
+      "current": "NoneGG/aredis"
+    },
+    {
+      "name": "noripyt/django-cachalot",
+      "id": 24499768,
+      "current": "noripyt/django-cachalot"
+    },
+    {
+      "name": "notadev-iamaura/OneRAG",
+      "id": 1126500391,
+      "current": "notadev-iamaura/OneRAG"
+    },
+    {
+      "name": "NovaCode37/Prism-platform",
+      "id": 1195989923,
+      "current": "NovaCode37/Prism-platform"
+    },
+    {
+      "name": "nox-project/nox-framework",
+      "id": 1203636982,
+      "current": "nox-project/nox-framework"
+    },
+    {
+      "name": "noxdafox/pebble",
+      "id": 13610897,
+      "current": "noxdafox/pebble"
+    },
+    {
+      "name": "nsupdate-info/nsupdate.info",
+      "id": 13284138,
+      "current": "nsupdate-info/nsupdate.info"
+    },
+    {
+      "name": "nuglifeleoji/Options-Analytics-Agent",
+      "id": 1100083946,
+      "current": "nuglifeleoji/Options-Analytics-Agent"
+    },
+    {
+      "name": "nysenate/OpenLegislation",
+      "id": 835507,
+      "current": "nysenate/OpenLegislation"
+    },
+    {
+      "name": "Oh-Sheet-Team/oh-sheet",
+      "id": 1203287184,
+      "current": "Oh-Sheet-Team/oh-sheet"
+    },
+    {
+      "name": "oliver-zehentleitner/unicorn-binance-websocket-api",
+      "id": 178475603,
+      "current": "oliver-zehentleitner/unicorn-binance-websocket-api"
+    },
+    {
+      "name": "omegaml/omegaml",
+      "id": 161178225,
+      "current": "omegaml/omegaml"
+    },
+    {
+      "name": "omnilib/aioitertools",
+      "id": 138766676,
+      "current": "omnilib/aioitertools"
+    },
+    {
+      "name": "omnilib/aiosqlite",
+      "id": 92359539,
+      "current": "omnilib/aiosqlite"
+    },
+    {
+      "name": "omnirexflora-labs/omnicoreagent",
+      "id": 951237777,
+      "current": "omnirexflora-labs/omnicoreagent"
+    },
+    {
+      "name": "open-webui/open-webui",
+      "id": 701547123,
+      "current": "open-webui/open-webui"
+    },
+    {
+      "name": "openapi-generators/openapi-python-client",
+      "id": 240776275,
+      "current": "openapi-generators/openapi-python-client"
+    },
+    {
+      "name": "opencve/opencve",
+      "id": 298383750,
+      "current": "opencve/opencve"
+    },
+    {
+      "name": "OpenDemon/Pilipili-AutoVideo",
+      "id": 1187721713,
+      "current": "OpenDemon/Pilipili-AutoVideo"
+    },
+    {
+      "name": "openl-tablets/openl-tablets",
+      "id": 39414547,
+      "current": "openl-tablets/openl-tablets"
+    },
+    {
+      "name": "openwisp/django-rest-framework-gis",
+      "id": 7987095,
+      "current": "openwisp/django-rest-framework-gis"
+    },
+    {
+      "name": "openwisp/openwisp-controller",
+      "id": 77444607,
+      "current": "openwisp/openwisp-controller"
+    },
+    {
+      "name": "opsdroid/opsdroid",
+      "id": 64034523,
+      "current": "opsdroid/opsdroid"
+    },
+    {
+      "name": "opsre/LiteOps",
+      "id": 1000739733,
+      "current": "opsre/LiteOps"
+    },
+    {
+      "name": "oracle-devrel/oracle-ai-developer-hub",
+      "id": 744164276,
+      "current": "oracle-devrel/oracle-ai-developer-hub"
+    },
+    {
+      "name": "ormar-orm/ormar",
+      "id": 284405810,
+      "current": "ormar-orm/ormar"
+    },
+    {
+      "name": "OschAI/VisioFirm",
+      "id": 1044312231,
+      "current": "OschAI/VisioFirm"
+    },
+    {
+      "name": "osmandapp/OsmAnd-tools",
+      "id": 7109715,
+      "current": "osmandapp/OsmAnd-tools"
+    },
+    {
+      "name": "osswangxining/iotplatform",
+      "id": 99548234,
+      "current": "osswangxining/iotplatform"
+    },
+    {
+      "name": "PacktPublishing/Building-Data-Science-Applications-with-FastAPI",
+      "id": 344097274,
+      "current": "PacktPublishing/Building-Data-Science-Applications-with-FastAPI"
+    },
+    {
+      "name": "PacktPublishing/Hands-On-Reactive-Programming-in-Spring-5",
+      "id": 133016017,
+      "current": "PacktPublishing/Hands-On-Reactive-Programming-in-Spring-5"
+    },
+    {
+      "name": "pallets/quart",
+      "id": 110288200,
+      "current": "pallets/quart"
+    },
+    {
+      "name": "Paparusi/legal-ai-agent",
+      "id": 1182086512,
+      "current": "Paparusi/legal-ai-agent"
+    },
+    {
+      "name": "paperless-ngx/paperless-ngx",
+      "id": 458648791,
+      "current": "paperless-ngx/paperless-ngx"
+    },
+    {
+      "name": "ParallelSSH/parallel-ssh",
+      "id": 7308334,
+      "current": "ParallelSSH/parallel-ssh"
+    },
+    {
+      "name": "pasonk/ai-chatkit",
+      "id": 1001341359,
+      "current": "pasonk/ai-chatkit"
+    },
+    {
+      "name": "Pathwit/file2md",
+      "id": 998273811,
+      "current": "Pathwit/file2md"
+    },
+    {
+      "name": "patrick-kidger/tinyio",
+      "id": 1023032182,
+      "current": "patrick-kidger/tinyio"
+    },
+    {
+      "name": "patx/micropie",
+      "id": 918862197,
+      "current": "patx/micropie"
+    },
+    {
+      "name": "paulocoutinhox/pyaa",
+      "id": 866772415,
+      "current": "paulocoutinhox/pyaa"
+    },
+    {
+      "name": "paulpierre/RasaGPT",
+      "id": 632500708,
+      "current": "paulpierre/RasaGPT"
+    },
+    {
+      "name": "pavelzbornik/whisperX-FastAPI",
+      "id": 729514185,
+      "current": "pavelzbornik/whisperX-FastAPI"
+    },
+    {
+      "name": "pcliangx/AppGenesisForge",
+      "id": null,
+      "current": null,
+      "status": 404
+    },
+    {
+      "name": "pennersr/django-allauth",
+      "id": 976994,
+      "current": "pennersr/django-allauth"
+    },
+    {
+      "name": "Peopl3s/clean-architecture-fastapi-project-template",
+      "id": 1066149221,
+      "current": "Peopl3s/clean-architecture-fastapi-project-template"
+    },
+    {
+      "name": "PEPETII/danmuai",
+      "id": 1241515224,
+      "current": "PEPETII/danmuai"
+    },
+    {
+      "name": "peterhinch/micropython-async",
+      "id": 75714033,
+      "current": "peterhinch/micropython-async"
+    },
+    {
+      "name": "peva3/SmarterRouter",
+      "id": 1158849733,
+      "current": "peva3/SmarterRouter"
+    },
+    {
+      "name": "pgjones/hypercorn",
+      "id": 135839606,
+      "current": "pgjones/hypercorn"
+    },
+    {
+      "name": "phalt/clientele",
+      "id": 669029134,
+      "current": "phalt/clientele"
+    },
+    {
+      "name": "photonixapp/photonix",
+      "id": 84252717,
+      "current": "photonixapp/photonix"
+    },
+    {
+      "name": "Pi3-l22/TingJu",
+      "id": 1030322578,
+      "current": "Pi3-l22/TingJu"
+    },
+    {
+      "name": "piccolo-orm/piccolo",
+      "id": 155008334,
+      "current": "piccolo-orm/piccolo"
+    },
+    {
+      "name": "piccolo-orm/piccolo_admin",
+      "id": 193770368,
+      "current": "piccolo-orm/piccolo_admin"
+    },
+    {
+      "name": "piccolo-orm/piccolo_api",
+      "id": 196019980,
+      "current": "piccolo-orm/piccolo_api"
+    },
+    {
+      "name": "pinry/pinry",
+      "id": 8568252,
+      "current": "pinry/pinry"
+    },
+    {
+      "name": "plastic-labs/honcho",
+      "id": 689777286,
+      "current": "plastic-labs/honcho"
+    },
+    {
+      "name": "pmariglia/foul-play",
+      "id": 177430843,
+      "current": "pmariglia/foul-play"
+    },
+    {
+      "name": "pmh1314520/WebRPA",
+      "id": 1124045066,
+      "current": "pmh1314520/WebRPA"
+    },
+    {
+      "name": "pnuckowski/aioresponses",
+      "id": 71044055,
+      "current": "pnuckowski/aioresponses"
+    },
+    {
+      "name": "poe-platform/fastapi_poe",
+      "id": 663707775,
+      "current": "poe-platform/fastapi_poe"
+    },
+    {
+      "name": "polarsource/polar",
+      "id": 593558875,
+      "current": "polarsource/polar"
+    },
+    {
+      "name": "PorunC/CodeWiki",
+      "id": 1235313065,
+      "current": "PorunC/CodeWiki"
+    },
+    {
+      "name": "postlund/pyatv",
+      "id": 80614028,
+      "current": "postlund/pyatv"
+    },
+    {
+      "name": "pretalx/pretalx",
+      "id": 83081285,
+      "current": "pretalx/pretalx"
+    },
+    {
+      "name": "pretix/pretix",
+      "id": 23791087,
+      "current": "pretix/pretix"
+    },
+    {
+      "name": "pseudo-r/Public-ESPN-API",
+      "id": 637453835,
+      "current": "pseudo-r/Public-ESPN-API"
+    },
+    {
+      "name": "pssolanki111/polygon",
+      "id": 400262437,
+      "current": "pssolanki111/polygon"
+    },
+    {
+      "name": "PunithVT/ai-avatar-system",
+      "id": 1106924851,
+      "current": "PunithVT/ai-avatar-system"
+    },
+    {
+      "name": "Purple-Horizons/openclaw-voice",
+      "id": 1146184013,
+      "current": "Purple-Horizons/openclaw-voice"
+    },
+    {
+      "name": "puzl-cloud/kubesdk",
+      "id": 1076163061,
+      "current": "puzl-cloud/kubesdk"
+    },
+    {
+      "name": "pycaret/pycaret",
+      "id": 223636350,
+      "current": "pycaret/pycaret"
+    },
+    {
+      "name": "pydantic/FastUI",
+      "id": 693037145,
+      "current": "pydantic/FastUI"
+    },
+    {
+      "name": "pydantic/logfire",
+      "id": 790713784,
+      "current": "pydantic/logfire"
+    },
+    {
+      "name": "pyeventsourcing/eventsourcing",
+      "id": 41365202,
+      "current": "pyeventsourcing/eventsourcing"
+    },
+    {
+      "name": "pylakey/aiotdlib",
+      "id": 348848643,
+      "current": "pylakey/aiotdlib"
+    },
+    {
+      "name": "PyPlanet/PyPlanet",
+      "id": 84738370,
+      "current": "PyPlanet/PyPlanet"
+    },
+    {
+      "name": "pytdbot/client",
+      "id": 499904766,
+      "current": "pytdbot/client"
+    },
+    {
+      "name": "pytest-dev/pytest-asyncio",
+      "id": 33756412,
+      "current": "pytest-dev/pytest-asyncio"
+    },
+    {
+      "name": "pytest-dev/pytest-django",
+      "id": 2484397,
+      "current": "pytest-dev/pytest-django"
+    },
+    {
+      "name": "python-arq/arq",
+      "id": 63892846,
+      "current": "python-arq/arq"
+    },
+    {
+      "name": "python-discord/site",
+      "id": 120370405,
+      "current": "python-discord/site"
+    },
+    {
+      "name": "python-kasa/python-kasa",
+      "id": 221571611,
+      "current": "python-kasa/python-kasa"
+    },
+    {
+      "name": "python-sdbus/python-sdbus",
+      "id": 311269257,
+      "current": "python-sdbus/python-sdbus"
+    },
+    {
+      "name": "python-social-auth/social-app-django",
+      "id": 69119240,
+      "current": "python-social-auth/social-app-django"
+    },
+    {
+      "name": "python-trio/sniffio",
+      "id": 142657210,
+      "current": "python-trio/sniffio"
+    },
+    {
+      "name": "python/cpython",
+      "id": 81598961,
+      "current": "python/cpython"
+    },
+    {
+      "name": "PythonNest/PyNest",
+      "id": 642661495,
+      "current": "PythonNest/PyNest"
+    },
+    {
+      "name": "qodex-ai/apimesh",
+      "id": 910368884,
+      "current": "qodex-ai/apimesh"
+    },
+    {
+      "name": "rabbitmq-community/rstream",
+      "id": 395460515,
+      "current": "rabbitmq-community/rstream"
+    },
+    {
+      "name": "raceychan/lihil",
+      "id": 925936041,
+      "current": "raceychan/lihil"
+    },
+    {
+      "name": "rafalp/Misago",
+      "id": 4751958,
+      "current": "rafalp/Misago"
+    },
+    {
+      "name": "rafsaf/minimal-fastapi-postgres-template",
+      "id": 408249394,
+      "current": "rafsaf/minimal-fastapi-postgres-template"
+    },
+    {
+      "name": "RameshMF/spring-boot-tutorial",
+      "id": 149085612,
+      "current": "RameshMF/spring-boot-tutorial"
+    },
+    {
+      "name": "RamezIssac/django-slick-reporting",
+      "id": 257525048,
+      "current": "RamezIssac/django-slick-reporting"
+    },
+    {
+      "name": "Ramseygithub/ai-legal-compliance-assistant",
+      "id": 1083958719,
+      "current": "Ramseygithub/ai-legal-compliance-assistant"
+    },
+    {
+      "name": "raullenchai/Rapid-MLX",
+      "id": 1166182351,
+      "current": "raullenchai/Rapid-MLX"
+    },
+    {
+      "name": "raveberry/raveberry",
+      "id": 200798548,
+      "current": "raveberry/raveberry"
+    },
+    {
+      "name": "rclement/mailer",
+      "id": 162722142,
+      "current": "rclement/mailer"
+    },
+    {
+      "name": "RealmTeam/django-rest-framework-social-oauth2",
+      "id": 31625947,
+      "current": "RealmTeam/django-rest-framework-social-oauth2"
+    },
+    {
+      "name": "RealOrangeOne/django-tasks",
+      "id": 755166719,
+      "current": "RealOrangeOne/django-tasks"
+    },
+    {
+      "name": "redis/fastapi-redis-sdk",
+      "id": 1246787859,
+      "current": "redis/fastapi-redis-sdk"
+    },
+    {
+      "name": "redis/redis-om-python",
+      "id": 401531966,
+      "current": "redis/redis-om-python"
+    },
+    {
+      "name": "rednafi/fastapi-nano",
+      "id": 267302274,
+      "current": "rednafi/fastapi-nano"
+    },
+    {
+      "name": "rednafi/hook-slinger",
+      "id": 387929396,
+      "current": "rednafi/hook-slinger"
+    },
+    {
+      "name": "remsky/Kokoro-FastAPI",
+      "id": 910061041,
+      "current": "remsky/Kokoro-FastAPI"
+    },
+    {
+      "name": "rennf93/fastapi-guard",
+      "id": 838357935,
+      "current": "Guard-Core/fastapi-guard"
+    },
+    {
+      "name": "requests-cache/aiohttp-client-cache",
+      "id": 313084240,
+      "current": "requests-cache/aiohttp-client-cache"
+    },
+    {
+      "name": "ReturnFI/Blitz",
+      "id": 803964526,
+      "current": "ReturnFI/Blitz"
+    },
+    {
+      "name": "revsys/django-test-plus",
+      "id": 36131033,
+      "current": "revsys/django-test-plus"
+    },
+    {
+      "name": "richardbarran/django-photologue",
+      "id": 5278549,
+      "current": "richardbarran/django-photologue"
+    },
+    {
+      "name": "Ricky-7-Yan/intelligent-audit-system",
+      "id": 1085130367,
+      "current": "Ricky-7-Yan/intelligent-audit-system"
+    },
+    {
+      "name": "RMA-MUN/RAGNotebook",
+      "id": 1174262723,
+      "current": "RMA-MUN/RAGNotebook"
+    },
+    {
+      "name": "rndusr/stig",
+      "id": 71486542,
+      "current": "rndusr/stig"
+    },
+    {
+      "name": "rollbar/pyrollbar",
+      "id": 5391990,
+      "current": "rollbar/pyrollbar"
+    },
+    {
+      "name": "romgar/django-dirtyfields",
+      "id": 898046,
+      "current": "romgar/django-dirtyfields"
+    },
+    {
+      "name": "romis2012/aiohttp-socks",
+      "id": 139717198,
+      "current": "romis2012/aiohttp-socks"
+    },
+    {
+      "name": "romis2012/python-socks",
+      "id": 297057488,
+      "current": "romis2012/python-socks"
+    },
+    {
+      "name": "ronf/asyncssh",
+      "id": 15503123,
+      "current": "ronf/asyncssh"
+    },
+    {
+      "name": "rq/django-rq",
+      "id": 4334538,
+      "current": "rq/django-rq"
+    },
+    {
+      "name": "rsinger86/django-lifecycle",
+      "id": 125766600,
+      "current": "rsinger86/django-lifecycle"
+    },
+    {
+      "name": "rthalley/dnspython",
+      "id": 2261155,
+      "current": "rthalley/dnspython"
+    },
+    {
+      "name": "ruddra/docker-django",
+      "id": 65659765,
+      "current": "ruddra/docker-django"
+    },
+    {
+      "name": "rundef/async_rithmic",
+      "id": 885493492,
+      "current": "rundef/async_rithmic"
+    },
+    {
+      "name": "ruzhila/voiceapi",
+      "id": 856669775,
+      "current": "ruzhila/voiceapi"
+    },
+    {
+      "name": "s3rius/FastAPI-template",
+      "id": 301531901,
+      "current": "s3rius/FastAPI-template"
+    },
+    {
+      "name": "sabuhish/fastapi-mail",
+      "id": 236163572,
+      "current": "sabuhish/fastapi-mail"
+    },
+    {
+      "name": "sachelsout/infra-lab",
+      "id": 999185862,
+      "current": "sachelsout/infra-lab"
+    },
+    {
+      "name": "SalesforceAIResearch/enterprise-deep-research",
+      "id": 1058148535,
+      "current": "SalesforceAIResearch/enterprise-deep-research"
+    },
+    {
+      "name": "samuelcolvin/watchfiles",
+      "id": 106854381,
+      "current": "samuelcolvin/watchfiles"
+    },
+    {
+      "name": "SamWarden/user_service",
+      "id": 582807211,
+      "current": "SamWarden/user_service"
+    },
+    {
+      "name": "sanchomuzax/hermes-webui",
+      "id": 1188925395,
+      "current": "sanchomuzax/hermes-webui"
+    },
+    {
+      "name": "sanic-org/sanic",
+      "id": 59720190,
+      "current": "sanic-org/sanic"
+    },
+    {
+      "name": "sasha-tkachev/fastapi-cloudevents",
+      "id": 521671793,
+      "current": "sasha-tkachev/fastapi-cloudevents"
+    },
+    {
+      "name": "sbdchd/celery-types",
+      "id": 336931276,
+      "current": "sbdchd/celery-types"
+    },
+    {
+      "name": "Scille/umongo",
+      "id": 53513600,
+      "current": "Scille/umongo"
+    },
+    {
+      "name": "ScrapeGraphAI/scrapecraft",
+      "id": 1011941664,
+      "current": "ScrapeGraphAI/scrapecraft"
+    },
+    {
+      "name": "scrazzz/redgifs",
+      "id": 465347997,
+      "current": "scrazzz/redgifs"
+    },
+    {
+      "name": "seanZhang414/openadserver",
+      "id": 1106818819,
+      "current": "seanZhang414/openadserver"
+    },
+    {
+      "name": "seapagan/fastapi-template",
+      "id": 550350069,
+      "current": "seapagan/fastapi-template"
+    },
+    {
+      "name": "SearchSavior/OpenArc",
+      "id": 930733499,
+      "current": "SearchSavior/OpenArc"
+    },
+    {
+      "name": "SectorLabs/django-postgres-extra",
+      "id": 80707765,
+      "current": "SectorLabs/django-postgres-extra"
+    },
+    {
+      "name": "seriaati/genshin.py",
+      "id": 410108216,
+      "current": "seriaati/genshin.py"
+    },
+    {
+      "name": "SFTtech/kevin-ci",
+      "id": 41760921,
+      "current": "SFTtech/kevin-ci"
+    },
+    {
+      "name": "shacker/django-todo",
+      "id": 941011,
+      "current": "shacker/django-todo"
+    },
+    {
+      "name": "shashstormer/AuthTuna",
+      "id": 1051084507,
+      "current": "shashstormer/AuthTuna"
+    },
+    {
+      "name": "shayypy/guilded.py",
+      "id": 283399437,
+      "current": "shayypy/guilded.py"
+    },
+    {
+      "name": "shenhao-stu/ohmycaptcha",
+      "id": 1176634451,
+      "current": "shenhao-stu/ohmycaptcha"
+    },
+    {
+      "name": "shenmintao/marginalia",
+      "id": null,
+      "current": null,
+      "status": 404
+    },
+    {
+      "name": "Shy2593666979/AgentChat",
+      "id": 845116230,
+      "current": "Shy2593666979/AgentChat"
+    },
+    {
+      "name": "shy3130/tickflow-stock-panel",
+      "id": 1273015953,
+      "current": "shy3130/tick-stock-panel"
+    },
+    {
+      "name": "sibson/redbeat",
+      "id": 41076741,
+      "current": "sibson/redbeat"
+    },
+    {
+      "name": "signorrayan/RedTeam_toolkit",
+      "id": 397535620,
+      "current": "signorrayan/RedTeam_toolkit"
+    },
+    {
+      "name": "silentsokolov/django-admin-rangefilter",
+      "id": 61870612,
+      "current": "silentsokolov/django-admin-rangefilter"
+    },
+    {
+      "name": "Simatwa/python-tgpt",
+      "id": 737281810,
+      "current": "Simatwa/python-tgpt"
+    },
+    {
+      "name": "simovilab/databus",
+      "id": 728916007,
+      "current": "simovilab/databus"
+    },
+    {
+      "name": "skatesham/fastapi-bigger-application",
+      "id": 386847660,
+      "current": "skatesham/fastapi-bigger-application"
+    },
+    {
+      "name": "skernelx/tavily-key-generator",
+      "id": 1181380420,
+      "current": "skernelx/tavily-key-generator"
+    },
+    {
+      "name": "slackapi/bolt-python",
+      "id": 268795735,
+      "current": "slackapi/bolt-python"
+    },
+    {
+      "name": "slackapi/python-slack-sdk",
+      "id": 26456792,
+      "current": "slackapi/python-slack-sdk"
+    },
+    {
+      "name": "sleep1223/fast-soy-admin",
+      "id": 802120148,
+      "current": "sleep1223/fast-soy-admin"
+    },
+    {
+      "name": "sleepy-project/sleepy",
+      "id": 833691953,
+      "current": "sleepy-project/sleepy"
+    },
+    {
+      "name": "slive777/OpenAver",
+      "id": 1134428804,
+      "current": "slive777/OpenAver"
+    },
+    {
+      "name": "sloria/environs",
+      "id": 57014273,
+      "current": "sloria/environs"
+    },
+    {
+      "name": "slyapustin/django-chatbot",
+      "id": 194929753,
+      "current": "slyapustin/django-chatbot"
+    },
+    {
+      "name": "smagafurov/fastapi-jsonrpc",
+      "id": 201516795,
+      "current": "smagafurov/fastapi-jsonrpc"
+    },
+    {
+      "name": "smart-doc-group/smart-doc-example-cn",
+      "id": 138856963,
+      "current": "smart-doc-group/smart-doc-example-cn"
+    },
+    {
+      "name": "SmileyChris/django-countries",
+      "id": 10851294,
+      "current": "SmileyChris/django-countries"
+    },
+    {
+      "name": "smithyhq/fastapi-storages",
+      "id": 593553117,
+      "current": "smithyhq/fastapi-storages"
+    },
+    {
+      "name": "smithyhq/sqladmin",
+      "id": 440814573,
+      "current": "smithyhq/sqladmin"
+    },
+    {
+      "name": "Snailedlt/Markdown-Videos",
+      "id": 561869053,
+      "current": "Snailedlt/Markdown-Videos"
+    },
+    {
+      "name": "snok/asgi-correlation-id",
+      "id": 421007644,
+      "current": "snok/asgi-correlation-id"
+    },
+    {
+      "name": "snok/django-guid",
+      "id": 229243355,
+      "current": "snok/django-guid"
+    },
+    {
+      "name": "soggy8/musikat",
+      "id": 1117128097,
+      "current": "soggy8/musikat"
+    },
+    {
+      "name": "Soju06/codex-lb",
+      "id": 1129437678,
+      "current": "Soju06/codex-lb"
+    },
+    {
+      "name": "soma-smart/framefox",
+      "id": 901876407,
+      "current": "soma-smart/framefox"
+    },
+    {
+      "name": "somespecialone/aiosteampy",
+      "id": 461351628,
+      "current": "somespecialone/aiosteampy"
+    },
+    {
+      "name": "Somnusochi/VLM-AutoYOLO",
+      "id": 1256747268,
+      "current": "Somnusochi/VLM-AutoYOLO"
+    },
+    {
+      "name": "sonic182/aiosonic",
+      "id": 197324152,
+      "current": "sonic182/aiosonic"
+    },
+    {
+      "name": "soynatan/django-easy-audit",
+      "id": 71686939,
+      "current": "soynatan/django-easy-audit"
+    },
+    {
+      "name": "spoo-me/spoo",
+      "id": 657776061,
+      "current": "spoo-me/spoo"
+    },
+    {
+      "name": "spookylukey/django-paypal",
+      "id": 4607655,
+      "current": "spookylukey/django-paypal"
+    },
+    {
+      "name": "spring-projects/spring-data-commons",
+      "id": 1072614,
+      "current": "spring-projects/spring-data-commons"
+    },
+    {
+      "name": "spring-projects/spring-framework",
+      "id": 1148753,
+      "current": "spring-projects/spring-framework"
+    },
+    {
+      "name": "spring-projects/spring-petclinic",
+      "id": 7517918,
+      "current": "spring-projects/spring-petclinic"
+    },
+    {
+      "name": "spyoungtech/ahk",
+      "id": 158650053,
+      "current": "spyoungtech/ahk"
+    },
+    {
+      "name": "stac-utils/stac-fastapi",
+      "id": 272869556,
+      "current": "stac-utils/stac-fastapi"
+    },
+    {
+      "name": "steveyeow/Feynman",
+      "id": 1153708685,
+      "current": "steveyeow/Feynman"
+    },
+    {
+      "name": "stoatchat/python-client-sdk",
+      "id": 397415052,
+      "current": "stoatchat/python-client-sdk"
+    },
+    {
+      "name": "strawberry-graphql/strawberry",
+      "id": 162690887,
+      "current": "strawberry-graphql/strawberry"
+    },
+    {
+      "name": "strongbugman/danio",
+      "id": 382339548,
+      "current": "strongbugman/danio"
+    },
+    {
+      "name": "suislanchez/polymarket-kalshi-weather-bot",
+      "id": 1154871696,
+      "current": "suislanchez/polymarket-kalshi-weather-bot"
+    },
+    {
+      "name": "suitenumerique/docs",
+      "id": 741012134,
+      "current": "suitenumerique/docs"
+    },
+    {
+      "name": "suitenumerique/meet",
+      "id": 819864674,
+      "current": "suitenumerique/meet"
+    },
+    {
+      "name": "SulgX/SulgX-Panel",
+      "id": 1275613120,
+      "current": "SulgX/SulgX-Panel"
+    },
+    {
+      "name": "sumerc/yappi",
+      "id": 330227,
+      "current": "sumerc/yappi"
+    },
+    {
+      "name": "sunhailin-Leo/fastapi_profiler",
+      "id": 308579691,
+      "current": "sunhailin-Leo/fastapi_profiler"
+    },
+    {
+      "name": "Suor/django-cacheops",
+      "id": 1846638,
+      "current": "Suor/django-cacheops"
+    },
+    {
+      "name": "supabase/supabase-py",
+      "id": 290969078,
+      "current": "supabase/supabase-py"
+    },
+    {
+      "name": "SurveyController/SurveyController",
+      "id": 1102289086,
+      "current": "SurveyController/SurveyController"
+    },
+    {
+      "name": "svzdev/doudizhu",
+      "id": 37860149,
+      "current": "svzdev/doudizhu"
+    },
+    {
+      "name": "swirlai/swirl-search",
+      "id": 479199191,
+      "current": "swirlai/swirl-search"
+    },
+    {
+      "name": "synchronizing/mitm",
+      "id": 192709769,
+      "current": "synchronizing/mitm"
+    },
+    {
+      "name": "szastupov/aiotg",
+      "id": 38321888,
+      "current": "szastupov/aiotg"
+    },
+    {
+      "name": "tabby-sec/tabby",
+      "id": 302626854,
+      "current": "tabby-sec/tabby"
+    },
+    {
+      "name": "tadata-org/fastapi_mcp",
+      "id": 944976593,
+      "current": "tadata-org/fastapi_mcp"
+    },
+    {
+      "name": "talkiq/gcloud-aio",
+      "id": 107485978,
+      "current": "talkiq/gcloud-aio"
+    },
+    {
+      "name": "talkpython/async-techniques-python-course",
+      "id": 145053438,
+      "current": "talkpython/async-techniques-python-course"
+    },
+    {
+      "name": "talkpython/modern-apis-with-fastapi",
+      "id": 308398692,
+      "current": "talkpython/modern-apis-with-fastapi"
+    },
+    {
+      "name": "tarasko/picows",
+      "id": 839658603,
+      "current": "tarasko/picows"
+    },
+    {
+      "name": "tarsil/saffier",
+      "id": 602231431,
+      "current": "tarsil/saffier"
+    },
+    {
+      "name": "taskiq-python/taskiq",
+      "id": 514860374,
+      "current": "taskiq-python/taskiq"
+    },
+    {
+      "name": "tastyware/streaq",
+      "id": 927444432,
+      "current": "tastyware/streaq"
+    },
+    {
+      "name": "tastyware/tastytrade",
+      "id": 491282691,
+      "current": "tastyware/tastytrade"
+    },
+    {
+      "name": "tbicr/django-pg-zero-downtime-migrations",
+      "id": 137562760,
+      "current": "tbicr/django-pg-zero-downtime-migrations"
+    },
+    {
+      "name": "teamhide/fastapi-boilerplate",
+      "id": 248507413,
+      "current": "teamhide/fastapi-boilerplate"
+    },
+    {
+      "name": "tedivm/robs_awesome_python_template",
+      "id": 576784992,
+      "current": "tedivm/robs_awesome_python_template"
+    },
+    {
+      "name": "TeKrop/overfast-api",
+      "id": 429216369,
+      "current": "TeKrop/overfast-api"
+    },
+    {
+      "name": "testdrivenio/fastapi-tdd-docker",
+      "id": 259486646,
+      "current": "testdrivenio/fastapi-tdd-docker"
+    },
+    {
+      "name": "tetra-framework/tetra",
+      "id": 487588681,
+      "current": "tetra-framework/tetra"
+    },
+    {
+      "name": "tfranzel/drf-spectacular",
+      "id": 244234763,
+      "current": "tfranzel/drf-spectacular"
+    },
+    {
+      "name": "the-momentum/open-wearables",
+      "id": 1086572146,
+      "current": "the-momentum/open-wearables"
+    },
+    {
+      "name": "theatlantic/django-nested-admin",
+      "id": 21249967,
+      "current": "theatlantic/django-nested-admin"
+    },
+    {
+      "name": "thevickypedia/Jarvis",
+      "id": 293330662,
+      "current": "thevickypedia/Jarvis"
+    },
+    {
+      "name": "tiangolo/fastapi",
+      "id": 160919119,
+      "current": "fastapi/fastapi"
+    },
+    {
+      "name": "tiangolo/uvicorn-gunicorn-docker",
+      "id": 164100644,
+      "current": "tiangolo/uvicorn-gunicorn-docker"
+    },
+    {
+      "name": "tiangolo/uvicorn-gunicorn-fastapi-docker",
+      "id": 164136678,
+      "current": "tiangolo/uvicorn-gunicorn-fastapi-docker"
+    },
+    {
+      "name": "timonweb/django-tailwind",
+      "id": 180866820,
+      "current": "timonweb/django-tailwind"
+    },
+    {
+      "name": "Tinche/aiofiles",
+      "id": 33088125,
+      "current": "Tinche/aiofiles"
+    },
+    {
+      "name": "Tisha-runwal/Personalized-Federated-Learning-for-Privacy--Preserving-and-Scalable-IoT-Driven-Smart-Healthcare",
+      "id": 1201898455,
+      "current": "Tisha-runwal/Personalized-Federated-Learning-for-Privacy--Preserving-and-Scalable-IoT-Driven-Smart-Healthcare"
+    },
+    {
+      "name": "Tishka17/aiogram_dialog",
+      "id": 270001385,
+      "current": "Tishka17/aiogram_dialog"
+    },
+    {
+      "name": "TNT-Likely/PanWatch",
+      "id": 1140582982,
+      "current": "TNT-Likely/PanWatch"
+    },
+    {
+      "name": "Tobi-De/cookiecutter-fastapi",
+      "id": 488307376,
+      "current": "Tobi-De/cookiecutter-fastapi"
+    },
+    {
+      "name": "tobymao/saq",
+      "id": 441399449,
+      "current": "tobymao/saq"
+    },
+    {
+      "name": "tomascupr/sandstorm",
+      "id": 1157928891,
+      "current": "tomascupr/sandstorm"
+    },
+    {
+      "name": "tomasvotava/fastapi-sso",
+      "id": 346033602,
+      "current": "tomasvotava/fastapi-sso"
+    },
+    {
+      "name": "tomplus/kubernetes_asyncio",
+      "id": 128578499,
+      "current": "tomplus/kubernetes_asyncio"
+    },
+    {
+      "name": "tomwojcik/starlette-context",
+      "id": 219023167,
+      "current": "tomwojcik/starlette-context"
+    },
+    {
+      "name": "tortoise/tortoise-orm",
+      "id": 127320882,
+      "current": "tortoise/tortoise-orm"
+    },
+    {
+      "name": "tqdm/tqdm",
+      "id": 36804486,
+      "current": "tqdm/tqdm"
+    },
+    {
+      "name": "TracecatHQ/tracecat",
+      "id": 763923484,
+      "current": "TracecatHQ/tracecat"
+    },
+    {
+      "name": "trallnag/prometheus-fastapi-instrumentator",
+      "id": 278339916,
+      "current": "trallnag/prometheus-fastapi-instrumentator"
+    },
+    {
+      "name": "transmute-app/transmute",
+      "id": 1160337220,
+      "current": "transmute-app/transmute"
+    },
+    {
+      "name": "triton-inference-server/pytriton",
+      "id": 563462295,
+      "current": "triton-inference-server/pytriton"
+    },
+    {
+      "name": "tropicoo/yt-dlp-bot",
+      "id": 455346610,
+      "current": "tropicoo/yt-dlp-bot"
+    },
+    {
+      "name": "tsukumijima/KonomiTV",
+      "id": 400551970,
+      "current": "tsukumijima/KonomiTV"
+    },
+    {
+      "name": "tubecreate/tubecli",
+      "id": 1184839874,
+      "current": "tubecreate/tubecli"
+    },
+    {
+      "name": "tutu-zzz/zhilv-yuntu",
+      "id": 1208007992,
+      "current": "tutu-zzz/zhilv-yuntu"
+    },
+    {
+      "name": "tuyucheng7/taketoday-tutorial4j",
+      "id": 576611966,
+      "current": "tuyucheng7/taketoday-tutorial4j"
+    },
+    {
+      "name": "TWT233/khl.py",
+      "id": 321686326,
+      "current": "TWT233/khl.py"
+    },
+    {
+      "name": "twtrubiks/docker-tutorial",
+      "id": 106928246,
+      "current": "twtrubiks/docker-tutorial"
+    },
+    {
+      "name": "typeddjango/django-stubs",
+      "id": 142779680,
+      "current": "typeddjango/django-stubs"
+    },
+    {
+      "name": "typeddjango/djangorestframework-stubs",
+      "id": 157137780,
+      "current": "typeddjango/djangorestframework-stubs"
+    },
+    {
+      "name": "TypeError/secure",
+      "id": 159254159,
+      "current": "TypeError/secure"
+    },
+    {
+      "name": "uburuntu/throttler",
+      "id": 249999688,
+      "current": "uburuntu/throttler"
+    },
+    {
+      "name": "unfoldadmin/django-unfold",
+      "id": 526497574,
+      "current": "unfoldadmin/django-unfold"
+    },
+    {
+      "name": "UpstreamData/pyasic",
+      "id": 409345141,
+      "current": "UpstreamData/pyasic"
+    },
+    {
+      "name": "uriyyo/fastapi-pagination",
+      "id": 310670921,
+      "current": "uriyyo/fastapi-pagination"
+    },
+    {
+      "name": "Urunov/SpringBoot-Projects-FullStack",
+      "id": 240722764,
+      "current": "Urunov/SpringBoot-Projects-FullStack"
+    },
+    {
+      "name": "uselotus/lotus",
+      "id": 516192901,
+      "current": "uselotus/lotus"
+    },
+    {
+      "name": "utensils/Envisaged",
+      "id": 127937838,
+      "current": "utensils/Envisaged"
+    },
+    {
+      "name": "utilmeta/utilmeta-py",
+      "id": 733086313,
+      "current": "utilmeta/utilmeta-py"
+    },
+    {
+      "name": "v55448330/lazy-balancer",
+      "id": 62794699,
+      "current": "v55448330/lazy-balancer"
+    },
+    {
+      "name": "vakovalskii/searcharvester",
+      "id": 1055165419,
+      "current": "vakovalskii/searcharvester"
+    },
+    {
+      "name": "vargasjona/fastapi-alembic-sqlmodel-async",
+      "id": 466844534,
+      "current": "vargasjona/fastapi-alembic-sqlmodel-async"
+    },
+    {
+      "name": "vas3k/vas3k.club",
+      "id": 254190180,
+      "current": "vas3k/vas3k.club"
+    },
+    {
+      "name": "Vasallo94/ObsidianRAG",
+      "id": 850457823,
+      "current": "Vasallo94/ObsidianRAG"
+    },
+    {
+      "name": "vastsa/FileCodeBox",
+      "id": 576247474,
+      "current": "vastsa/FileCodeBox"
+    },
+    {
+      "name": "vchaptsev/cookiecutter-django-vue",
+      "id": 107886587,
+      "current": "vchaptsev/cookiecutter-django-vue"
+    },
+    {
+      "name": "vector4wang/spring-boot-quick",
+      "id": 84824299,
+      "current": "vector4wang/spring-boot-quick"
+    },
+    {
+      "name": "velviagris/PaddleOCRFastAPI",
+      "id": 525007184,
+      "current": "velviagris/PaddleOCRFastAPI"
+    },
+    {
+      "name": "versun/RSSBox",
+      "id": 683062270,
+      "current": "versun/RSSBox"
+    },
+    {
+      "name": "vibber-ai/fastapi-azure-auth",
+      "id": 394764603,
+      "current": "vibber-ai/fastapi-azure-auth"
+    },
+    {
+      "name": "viewflow/viewflow",
+      "id": 12726564,
+      "current": "viewflow/viewflow"
+    },
+    {
+      "name": "vintasoftware/django-react-boilerplate",
+      "id": 63726409,
+      "current": "vintasoftware/django-react-boilerplate"
+    },
+    {
+      "name": "violit-dev/violit",
+      "id": 1136899489,
+      "current": "violit-dev/violit"
+    },
+    {
+      "name": "vitalik/django-ninja",
+      "id": 265194554,
+      "current": "vitalik/django-ninja"
+    },
+    {
+      "name": "vitorfs/parsifal",
+      "id": 11648402,
+      "current": "vitorfs/parsifal"
+    },
+    {
+      "name": "vkbottle/vkbottle",
+      "id": 211668268,
+      "current": "vkbottle/vkbottle"
+    },
+    {
+      "name": "vmagamedov/grpclib",
+      "id": 79909496,
+      "current": "vmagamedov/grpclib"
+    },
+    {
+      "name": "volfpeter/fasthx",
+      "id": 747609684,
+      "current": "volfpeter/fasthx"
+    },
+    {
+      "name": "volfpeter/holm",
+      "id": 1064100625,
+      "current": "volfpeter/holm"
+    },
+    {
+      "name": "volfpeter/htmy",
+      "id": 867051254,
+      "current": "volfpeter/htmy"
+    },
+    {
+      "name": "vsdudakov/fastadmin",
+      "id": 604944903,
+      "current": "vsdudakov/fastadmin"
+    },
+    {
+      "name": "vstorm-co/full-stack-ai-agent-template",
+      "id": 1119531734,
+      "current": "vstorm-co/full-stack-ai-agent-template"
+    },
+    {
+      "name": "vxgmichel/aioconsole",
+      "id": 44499555,
+      "current": "vxgmichel/aioconsole"
+    },
+    {
+      "name": "wagtail/wagtail",
+      "id": 16479108,
+      "current": "wagtail/wagtail"
+    },
+    {
+      "name": "wakaree/aiogram_bot_template",
+      "id": 695770274,
+      "current": "wakaree/aiogram_bot_template"
+    },
+    {
+      "name": "wakatime/wakaq",
+      "id": 529595070,
+      "current": "wakatime/wakaq"
+    },
+    {
+      "name": "wassim249/fastapi-langgraph-agent-production-ready-template",
+      "id": 962106649,
+      "current": "wassim249/fastapi-langgraph-agent-production-ready-template"
+    },
+    {
+      "name": "weaiw/trove-ai",
+      "id": 1247469826,
+      "current": "weaiw/trove-ai"
+    },
+    {
+      "name": "WeblateOrg/weblate",
+      "id": 3559019,
+      "current": "WeblateOrg/weblate"
+    },
+    {
+      "name": "weebzone/Telegram-Stremio",
+      "id": 1072233476,
+      "current": "weebzone/Telegram-Stremio"
+    },
+    {
+      "name": "weiguangli-io/rydr",
+      "id": 286935073,
+      "current": "weiguangli-io/rydr"
+    },
+    {
+      "name": "wemake-services/django-modern-rest",
+      "id": 1072817092,
+      "current": "wemake-services/django-modern-rest"
+    },
+    {
+      "name": "wemake-services/django-split-settings",
+      "id": 10117110,
+      "current": "wemake-services/django-split-settings"
+    },
+    {
+      "name": "wemake-services/django-test-migrations",
+      "id": 223188953,
+      "current": "wemake-services/django-test-migrations"
+    },
+    {
+      "name": "wemake-services/wemake-django-template",
+      "id": 103513062,
+      "current": "wemake-services/wemake-django-template"
+    },
+    {
+      "name": "wger-project/wger",
+      "id": 7705569,
+      "current": "wger-project/wger"
+    },
+    {
+      "name": "wialon/gmqtt",
+      "id": 122037266,
+      "current": "wialon/gmqtt"
+    },
+    {
+      "name": "widgetti/solara",
+      "id": 467834772,
+      "current": "widgetti/solara"
+    },
+    {
+      "name": "Wlz-Hit/Topic_and_user_profile_analysis_system",
+      "id": 453639681,
+      "current": "Wlz-Hit/Topic_and_user_profile_analysis_system"
+    },
+    {
+      "name": "wooey/Wooey",
+      "id": 31502883,
+      "current": "wooey/Wooey"
+    },
+    {
+      "name": "wq/django-rest-pandas",
+      "id": 15720872,
+      "current": "wq/django-rest-pandas"
+    },
+    {
+      "name": "wrabit/django-cotton",
+      "id": 812292032,
+      "current": "wrabit/django-cotton"
+    },
+    {
+      "name": "wsvincent/awesome-django",
+      "id": 129094260,
+      "current": "wsvincent/awesome-django"
+    },
+    {
+      "name": "wsvincent/lithium",
+      "id": 121658961,
+      "current": "wsvincent/lithium"
+    },
+    {
+      "name": "wyeeeee/hajimi",
+      "id": 957796112,
+      "current": "wyeeeee/hajimi"
+    },
+    {
+      "name": "Xeron2000/openOii",
+      "id": 1139883371,
+      "current": "xeronsh/openOii"
+    },
+    {
+      "name": "xerrors/Yuxi",
+      "id": 824541776,
+      "current": "xerrors/Yuxi"
+    },
+    {
+      "name": "Xewdy444/Playwright-reCAPTCHA",
+      "id": 590712876,
+      "current": "Xewdy444/Playwright-reCAPTCHA"
+    },
+    {
+      "name": "xiao-villamor/PrintStash",
+      "id": 1246079421,
+      "current": "xiao-villamor/PrintStash"
+    },
+    {
+      "name": "xiaojiou176-open/codeflow",
+      "id": 1203194069,
+      "current": "xiaojiou176-open/codeflow"
+    },
+    {
+      "name": "XiaoYouChR/Ghost-Downloader-3",
+      "id": 679086250,
+      "current": "XiaoYouChR/Ghost-Downloader-3"
+    },
+    {
+      "name": "xieyumc/YuYuWechat",
+      "id": 781367266,
+      "current": "xieyumc/YuYuWechat"
+    },
+    {
+      "name": "xr843/fojin",
+      "id": 1177921872,
+      "current": "xr843/fojin"
+    },
+    {
+      "name": "xtrinch/fcm-django",
+      "id": 65031294,
+      "current": "xtrinch/fcm-django"
+    },
+    {
+      "name": "Y0oshi/Project-Deep-Focus",
+      "id": 1133095732,
+      "current": "Y0oshi/Project-Deep-Focus"
+    },
+    {
+      "name": "yanhua1010/zero-to-ai-fullstack",
+      "id": 1204451737,
+      "current": "yanhua1010/zero-to-ai-fullstack"
+    },
+    {
+      "name": "Yaogui415/newsflow-oss",
+      "id": 1230579759,
+      "current": "Yaogui415/newsflow-oss"
+    },
+    {
+      "name": "ydf0509/funboost",
+      "id": 441725814,
+      "current": "ydf0509/funboost"
+    },
+    {
+      "name": "ydsgangge-ux/dramatica-flow",
+      "id": 1193467421,
+      "current": "ydsgangge-ux/dramatica-flow"
+    },
+    {
+      "name": "yezz123/ai-template",
+      "id": 366633671,
+      "current": "yezz123/ai-template"
+    },
+    {
+      "name": "yezz123/authx",
+      "id": 399171157,
+      "current": "yezz123/authx"
+    },
+    {
+      "name": "yezz123/fastango",
+      "id": 412096693,
+      "current": "yezz123/fastango"
+    },
+    {
+      "name": "yezz123/fastapi-class",
+      "id": 413233165,
+      "current": "yezz123/fastapi-class"
+    },
+    {
+      "name": "yigitkonur/api-llm-ocr",
+      "id": 861091302,
+      "current": "yigitkonur/api-llm-ocr"
+    },
+    {
+      "name": "yourlabs/django-autocomplete-light",
+      "id": 4213386,
+      "current": "yourlabs/django-autocomplete-light"
+    },
+    {
+      "name": "YunaiV/ruoyi-vue-pro",
+      "id": 332357698,
+      "current": "YunaiV/ruoyi-vue-pro"
+    },
+    {
+      "name": "yuqie6/ProductFlow",
+      "id": 1218018309,
+      "current": "yuqie6/ProductFlow"
+    },
+    {
+      "name": "yutto-dev/yutto",
+      "id": 363690519,
+      "current": "yutto-dev/yutto"
+    },
+    {
+      "name": "yycyyv/M-Cube",
+      "id": 1180872582,
+      "current": "yycyyv/M-Cube"
+    },
+    {
+      "name": "zappa/Zappa",
+      "id": 279672524,
+      "current": "zappa/Zappa"
+    },
+    {
+      "name": "zauberzeug/rosys",
+      "id": 281124022,
+      "current": "zauberzeug/rosys"
+    },
+    {
+      "name": "Zeyi-Lin/HivisionIDPhotos",
+      "id": 655413331,
+      "current": "Zeyi-Lin/HivisionIDPhotos"
+    },
+    {
+      "name": "zhanymkanov/fastapi_production_template",
+      "id": 585608448,
+      "current": "zhanymkanov/fastapi_production_template"
+    },
+    {
+      "name": "zhayinggang/ktv-home",
+      "id": 1314471564,
+      "current": "zhayinggang/ktv-home"
+    },
+    {
+      "name": "zhinianboke/xianyu-auto-reply",
+      "id": 1025302827,
+      "current": "zhinianboke/xianyu-auto-reply"
+    },
+    {
+      "name": "ZhuLinsen/FastDatasets",
+      "id": 972684945,
+      "current": "ZhuLinsen/FastDatasets"
+    },
+    {
+      "name": "ZhuoZhuoCrayon/throttled-py",
+      "id": 912253327,
+      "current": "ZhuoZhuoCrayon/throttled-py"
+    },
+    {
+      "name": "zimingttkx/Network-Security-Based-On-ML",
+      "id": 1013026010,
+      "current": "zimingttkx/Network-Security-Based-On-ML"
+    },
+    {
+      "name": "ZJUEarthData/Geochemistrypi",
+      "id": 416555310,
+      "current": "ZJUEarthData/Geochemistrypi"
+    },
+    {
+      "name": "zmievsa/cadwyn",
+      "id": 652774401,
+      "current": "zmievsa/cadwyn"
+    },
+    {
+      "name": "zostera/django-bootstrap3",
+      "id": 12082924,
+      "current": "zostera/django-bootstrap3"
+    },
+    {
+      "name": "zostera/django-bootstrap4",
+      "id": 89379547,
+      "current": "zostera/django-bootstrap4"
+    },
+    {
+      "name": "zw-zhtlab/Text2Dialog",
+      "id": 1061158819,
+      "current": "zw-zhtlab/Text2Dialog"
+    }
+  ]
+}
