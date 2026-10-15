@@ -9,6 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import cards  # noqa: E402
 import evaluate as ev  # noqa: E402
+import review_sheet  # noqa: E402
 import sample  # noqa: E402
 
 
@@ -250,6 +251,56 @@ class CardsRecords(unittest.TestCase):
             cards.parse_record(b" visibility 0s 1s,")
         self.assertEqual(cards.parse_record(b"Binary file b/app.so matches")["line"], None)
         self.assertEqual(cards.parse_record(b"a/b.py:12:  x = 1")["line"], 12)
+
+
+class ReviewSheet(unittest.TestCase):
+    IDS = ["J001", "J002", "P001"]
+
+    def filled(self, **override):
+        rows = {"J001": ("TP", "a/B.java:10 runs on the @Async pool", "No"),
+                "J002": ("FP", "b/C.java:3 only called from tests", "Sí"),
+                "P001": ("U", "x.py:5 caller outside the repository", "no")}
+        rows.update(override)
+        text = review_sheet.render_sheet(self.IDS)
+        for i, (v, r, o) in rows.items():
+            text = text.replace(f"## {i}\n\n- Card: [cards/{i}.md](cards/{i}.md)\n- Verdict: \n- Reason (file:line): \n- Overstated: ",
+                                f"## {i}\n\n- Card: [cards/{i}.md](cards/{i}.md)\n- Verdict: {v}\n- Reason (file:line): {r}\n- Overstated: {o}")
+        return text
+
+    def test_sheet_has_only_id_card_and_empty_fields(self):
+        text = review_sheet.render_sheet(self.IDS)
+        block = text.split("## J001\n", 1)[1].split("## J002", 1)[0]
+        self.assertEqual(block, "\n- Card: [cards/J001.md](cards/J001.md)\n- Verdict: \n- Reason (file:line): \n- Overstated: \n\n")
+
+    def test_complete_sheet_converts(self):
+        out = review_sheet.parse_sheet(self.filled(), self.IDS)
+        self.assertEqual([(v["id"], v["verdict"], v["overstated"]) for v in out], [("J001", "TP", False), ("J002", "FP", True), ("P001", "U", False)])
+        self.assertEqual(out[0]["reason"], "a/B.java:10 runs on the @Async pool")
+
+    def test_fails_on_missing_or_invalid(self):
+        for override, expected in [({"J002": ("", "r", "No")}, "J002: verdict missing"),
+                                   ({"J002": ("tp", "r", "No")}, "J002: verdict 'tp' is not TP, FP or U"),
+                                   ({"J002": ("TP", "", "No")}, "J002: reason missing"),
+                                   ({"J002": ("TP", "r", "maybe")}, "J002: Overstated 'maybe' is not Sí or No"),
+                                   ({"J002": ("TP", "r", "")}, "J002: Overstated missing")]:
+            with self.assertRaises(ValueError) as cm:
+                review_sheet.parse_sheet(self.filled(**override), self.IDS)
+            self.assertIn(expected, str(cm.exception))
+        with self.assertRaises(ValueError):
+            review_sheet.parse_sheet(self.filled(), ["J001", "J002"])  # an ID too many
+        with self.assertRaises(ValueError):
+            review_sheet.parse_sheet(review_sheet.render_sheet(self.IDS), self.IDS)  # empty sheet
+
+    def test_committed_sheet_and_guide(self):
+        tc2 = Path(__file__).resolve().parent.parent
+        ids = [f["id"] for f in __import__("json").loads((tc2 / "review-set.json").read_text())["findings"]]
+        self.assertEqual((tc2 / "REVIEW-SHEET.md").read_text(), review_sheet.render_sheet(ids) + "\n")
+        prereg = (tc2 / "PREREGISTRATION.md").read_text()
+        guide = (tc2 / "REVIEW-GUIDE.md").read_text()
+        verdicts = prereg[prereg.index("## Verdicts (the rules"):prereg.index("## Reviewers, cards and blindness")].rstrip("\n")
+        assistance = prereg[prereg.index("**Assistance during the review:**"):prereg.index("**Known limit of the literal search:**")].rstrip("\n")
+        self.assertIn(verdicts, guide)
+        self.assertIn(assistance, guide)
 
 
 if __name__ == "__main__":
