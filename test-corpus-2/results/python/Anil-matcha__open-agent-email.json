@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 1
+      },
+      {
+        "path": "fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "sdks/python/tests",
+        "pattern": "tests",
+        "files": 11
+      },
+      {
+        "path": "sdks/typescript/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "server/tests",
+        "pattern": "tests",
+        "files": 41
+      }
+    ],
+    "filesExcluded": 53
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 4,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/app/routers/domains.py",
+      "line": 110,
+      "extra": {
+        "function": "verify_domain",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "server/app/services/mail_auth.py",
+      "line": 380,
+      "extra": {
+        "function": "evaluate_inbound_authentication",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-019",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "retry loop without backoff — except retries immediately with no delay",
+      "file": "server/app/services/idempotency.py",
+      "line": 108,
+      "extra": {
+        "function": "reserve_idempotency",
+        "evidence": "Add `await asyncio.sleep(2 ** attempt)` before continue, or use tenacity / backoff library",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() performs synchronous file I/O — blocks the event loop",
+      "file": "server/scripts/ops_drill.py",
+      "line": 85,
+      "extra": {
+        "function": "main",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-016",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "httpx.Client() is synchronous — blocks the event loop for every HTTP request",
+      "file": "server/scripts/ops_drill.py",
+      "line": 86,
+      "extra": {
+        "function": "main",
+        "evidence": "Use `async with httpx.AsyncClient() as client: response = await client.get(url)` instead",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-016",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "httpx.Client() is synchronous — blocks the event loop for every HTTP request",
+      "file": "server/scripts/ops_drill.py",
+      "line": 123,
+      "extra": {
+        "function": "main",
+        "evidence": "Use `async with httpx.AsyncClient() as client: response = await client.get(url)` instead",
+        "suggested_fix": null
+      }
+    }
+  ]
+}
