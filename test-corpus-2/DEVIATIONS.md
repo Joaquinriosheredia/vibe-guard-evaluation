@@ -158,3 +158,38 @@ It is replaced by a double AI review plus a human audit.
 
 **Order:** this section frozen → `REVIEW-B-INSTRUCTIONS.md` committed → review B sealed →
 A and B opened → list of disagreements and audit sample (IDs only, no verdicts).
+
+### 3a. Decisions on the open points (Joaquín, 2026-10-15), before the audit and before `evaluate.py`
+
+**State when decided:**
+- A and B were opened (`f19f025`), and `REVIEW-AB.md` lists IDs and counts only.
+- A and B agree on 151 of 158 verdicts, with 7 disagreements.
+- 69 agreeing cases differ on `overstated`.
+- No human verdict exists and `evaluate.py` has not run.
+
+1. **Audit rule:** if Joaquín changes **≥ 3 of the 20 in total**, the AI review is declared
+   **NOT RELIABLE** and **criterion 1 is NOT MET in BOTH languages**.
+   - A change means that Joaquín's verdict (TP/FP/U) differs from the A = B verdict.
+   - The changes are also published separately for Java (of 7) and Python (of 13), each with
+     its 95 % Wilson interval, next to the total (of 20).
+2. **`overstated`:**
+   - Where A and B agree on the verdict but not on `overstated`, the final flag is **yes**
+     (conservative).
+   - Where both say no, it is no; where both say yes, it is yes.
+   - The number of cases in dispute (69) is published.
+   - In the 27 cases Joaquín reviews, Joaquín decides.
+3. **Joaquín's sheet and the final verdicts:**
+   - `REVIEW-SHEET.md` holds **only the 27 IDs** (the 7 disagreements and the 20 of the
+     audit), with the same empty fields.
+   - The sheet does not say which ID is a disagreement and which is part of the audit.
+     (`REVIEW-AB.md`, committed in `f19f025`, does list both groups.)
+   - **Order:** the 27 IDs are taken in review-set order and shuffled with
+     `random.Random(20261026).shuffle`. The seed is fixed here, before the sheet is generated.
+   - The converter produces `audit-joaquin.json` with exactly those 27 IDs.
+   - **Final verdict of each finding:**
+     - Joaquín's verdict wherever he reviewed: the 7 disagreements and the 20 of the audit;
+     - the A = B verdict for the other 131.
+   - `evaluate.py` reads A, B (both checked against their committed sha256) and Joaquín's
+     27 verdicts. It checks that the disagreements and the audit sample match
+     `REVIEW-AB.md`, builds the final verdicts and applies rule 1.
+   - Repeatability is no longer an input, and A against B is published as the agreement.
