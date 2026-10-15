@@ -97,3 +97,64 @@ still listed, with path and line. But the order was to stop on any error.
   - Result: **158 cards, 25,973 records, 0 unparsable**.
   - After that, the empty `cards/` was removed and the cards were generated once.
 
+
+## 3. Review method changed: two independent AI reviews plus a human audit (2026-10-15) — decided by Joaquín
+
+**State when decided:** phases 1–6 were done and sealed (`audit-claude.sha256`, `repeat-sample.sha256`).
+Review materials for Joaquín were merged (PR #8, `a80d9ab`). **No verdict had been opened:**
+`audit-claude.json` was still sealed and unread, and no human verdict existed.
+
+**Reason (Joaquín):** a full review of the 158 cards by Joaquín (about 25 h) is not feasible.
+It is replaced by a double AI review plus a human audit.
+
+**New method:**
+1. **Review A** = `audit-claude.json`, already sealed (sha256 `6aeb6e7f…5dda`). It is not touched.
+2. **Review B:** new, independent AI sessions that do **not** see A.
+   - Model: **Claude Sonnet 5.5** (`claude-sonnet-5-5`). Review A was written by Claude Opus 5.5.
+   - Instructions: `REVIEW-B-INSTRUCTIONS.md`, committed before B starts. They require:
+     - applying the pre-registration rules to the letter;
+     - always following callers to the end (tests, scripts, dead code = FP by reachability);
+     - checking whether exceptions are already contained;
+     - U when the repository does not let the case be decided;
+     - file:line for every claim, with no guessing or inventing;
+     - test-corpus-1's known failures, as a warning.
+   - Output: `audit-claude-B.json`, same format as A. It is kept outside the repository and only
+     its sha256 is committed (`audit-claude-B.sha256`).
+3. **Opening:**
+   - A's file is checked against its committed hash, then A and B are opened.
+   - Final verdict: if A = B, that verdict; if A ≠ B, Joaquín decides from the card, logging
+     any help in `REVIEW-LOG.md`.
+   - "A = B" compares the `verdict` field (TP/FP/U).
+4. **Audit:** 20 cases drawn at random from the agreeing ones and reviewed by Joaquín without
+   seeing A or B.
+   - Draw: `random.Random(20261025).sample(agreeing, 20)`, where `agreeing` lists the agreeing
+     IDs in review-set order. The 20 are listed in review-set order.
+   - **Rule:** if Joaquín changes **≥ 3 of the 20**, the AI review is declared **NOT RELIABLE**
+     and **criterion 1 is NOT MET in the affected language**.
+   - The change rate is published with its 95 % Wilson interval.
+5. **Repeatability is dropped:** the 10-case repeat review (`random.Random(20261023)`) is not
+   done. `repeat-sample.sha256` stays committed. The sample is not used and is not opened.
+6. **Honest publication:** "reviewed by two independent AIs; disagreements and a sample of 20
+   audited by the author; A–B agreement X, kappa Y; corrections in the audit Z/20".
+7. **Everything else in the pre-registration does not change:** thresholds, n, metrics, U
+   counted as FP.
+
+**What this replaces in the pre-registration:**
+- **"Official verdicts: Joaquín only":** the official verdicts are the final verdicts of point 3.
+- **Steps 4–7 of "Order of the steps":** replaced by points 2–5.
+- **Agreement:** the published agreement is A against B. It is no longer Claude against
+  Joaquín.
+- `REVIEW-SHEET.md` and `scripts/review_sheet.py` (PR #8) were written for a full review by
+  Joaquín. How they are used for the disagreements and the audit is still to be adapted.
+- `evaluate.py` still requires `audit-joaquin.json` for all 158. It must be adapted to read
+  the final verdicts before it runs. Nothing is run until then.
+
+**Open points, not decided here (Joaquín decides before they are applied):**
+- **Which language is affected by the audit rule.** The rule names "the affected language"
+  but the sample of 20 is drawn over both languages together. The decision text does not
+  say how ≥ 3 changes split between Java and Python map to a language.
+- **The message-accuracy flag (`overstated`) in the final verdict** when A and B agree on the
+  verdict but differ on this flag.
+
+**Order:** this section frozen → `REVIEW-B-INSTRUCTIONS.md` committed → review B sealed →
+A and B opened → list of disagreements and audit sample (IDs only, no verdicts).
