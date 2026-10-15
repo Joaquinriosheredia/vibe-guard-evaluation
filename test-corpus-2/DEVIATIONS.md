@@ -50,3 +50,38 @@ Either option needs:
     parsed row and the card row;
   - the empty `cards/` was removed and phase 4 was re-run from the start.
 - Nothing else in the pre-registration changes.
+
+## 2. OPEN: `cards.py` splits some `git grep` records wrongly (2026-10-15)
+
+**State when it happened:** deviation 1 was applied (`54931ff`), the empty `cards/` was
+removed and phase 4 was re-run from the start.
+
+**What happened:** `cards.py` stopped again on the first card (J001), in `literal_matches`, with
+`ValueError: invalid literal for int()`. No card was written. `cards.py` recreated the empty
+directory `cards/`, which is left as it was and is untracked.
+
+**Cause:** `cards.py` reads the output of `git grep` in text mode (`text=True`) and splits it
+with `str.splitlines()`. That breaks one `path:line:text` record into several when the matched
+line contains:
+- a `\r` (text mode applies universal newlines);
+- a Unicode line separator that `splitlines()` honours (`\x85`, `\x1c`–`\x1e`, ` `…).
+
+`git grep` itself ends each record with `\n` only. The fragments have no `path:line:` prefix.
+Seen in minified CSS/JS files that the repositories track.
+
+**Scope:** checked by re-running only the same literal searches, without writing any card.
+- **3 of the 158** cards get records split this way.
+- Splitting the raw bytes on `\n` only leaves **0** unparsable records over the whole review set.
+
+**What was done:** nothing else. No card, no hash and no verdict exist. No threshold, query or
+seed was touched.
+
+**Why it stops here:** this is an implementation error, not a change of method. Every match is
+still listed, with path and line. But the order was to stop on any error.
+
+**Proposed fix (Joaquín decides):**
+- In `literal_matches`, read `git grep` as bytes, split records on `\n` only and decode each
+  record as UTF-8 with replacement.
+- The table cell escapes control characters.
+- Add a test with a committed text file whose matched line contains `\r` and `\x85`.
+- Remove the empty `cards/` and re-run phase 4 from the start.
