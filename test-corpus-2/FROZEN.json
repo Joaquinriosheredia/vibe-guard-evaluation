@@ -1,0 +1,20 @@
+{
+  "note": "Versions under test, frozen by PREREGISTRATION.md. scripts/select.mjs and scripts/run.mjs refuse to run while any value starts with 'TO-FILL'.",
+  "vibeGuardScan": {
+    "version": "0.2.0",
+    "repository": "Joaquinriosheredia/vibe-guard-scan (private)",
+    "commit": "37edd93e9ad437e36d3c693838ccd8448b6296af",
+    "versionLine": "vibe-guard 0.2.0 (java-vibe-guard 2.4.0; pyvibe 0.14.0)"
+  },
+  "pyvibe": {
+    "package": "python-vibe-guard",
+    "version": "0.14.0",
+    "wheel": "python_vibe_guard-0.14.0-py3-none-any.whl",
+    "sha256": "7847e9577bca8eb74e77d4079ecf437232ef5c9d187e3c75cf3ce67084caf254"
+  },
+  "javaVibeGuard": {
+    "package": "java-vibe-guard",
+    "version": "2.4.0",
+    "integrity": "sha512-YawOnqjT9X48nqWwjwbl31xecv6jDoqQAUQD0Ohpy4aI1iiReO/QYXm+KKQJeyi0yGvhKuiAhwAuh6b3UubEyQ=="
+  }
+}
