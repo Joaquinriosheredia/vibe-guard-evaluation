@@ -61,7 +61,7 @@ These are the Definition of done criteria 1, 2 and 9, as amended for test-corpus
 ## Tools under test (frozen in `FROZEN.json`)
 
 - **vibe-guard-scan 0.2.0** (vibe-guard's wrapper; private repository).
-  - Commit: **`TO-FILL: merge SHA of vibe-guard-scan PR #6`**. It is filled after that merge
+  - Commit: **`37edd93e9ad437e36d3c693838ccd8448b6296af`**. It is filled after that merge
     and before any search, in `FROZEN.json` and here, in one commit.
   - Installed with `npm ci` at that commit.
   - Its lockfile pins **java-vibe-guard 2.4.0**, npm integrity
