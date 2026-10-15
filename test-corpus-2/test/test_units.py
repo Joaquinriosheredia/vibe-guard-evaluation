@@ -197,13 +197,24 @@ class Cards(unittest.TestCase):
             Path(d, "tests", "test_api.py").write_text("await handler(req)\n")
             subprocess.run(["git", "add", "-A"], cwd=d, check=True)
             subprocess.run(["git", "commit", "-qm", "x"], cwd=d, check=True, env=env)
+            Path(d, "build").mkdir()
+            Path(d, "build", "app.so").write_bytes(b"\x00\x01 handler \x00\xff")
+            subprocess.run(["git", "add", "-A"], cwd=d, check=True)
+            subprocess.run(["git", "commit", "-qm", "binary"], cwd=d, check=True, env=env)
+            raw = subprocess.run(["git", "grep", "-n", "-w", "-F", "-e", "handler"], cwd=d, capture_output=True, text=True).stdout
+            self.assertIn("Binary file build/app.so matches", raw)  # the git output this covers
             matches = cards.literal_matches(d, "handler")
+            self.assertEqual([(m["path"], m["line"], m["class"], m["text"]) for m in matches][:2],
+                             [("app/api.py", 7, "main", "async def handler(req):"), ("app/main.py", 1, "main", "from app.api import handler")])
             self.assertEqual([(m["path"], m["line"], m["class"]) for m in matches],
-                             [("app/api.py", 7, "main"), ("app/main.py", 1, "main"), ("app/main.py", 2, "main"), ("tests/test_api.py", 1, "test")])
+                             [("app/api.py", 7, "main"), ("app/main.py", 1, "main"), ("app/main.py", 2, "main"),
+                              ("build/app.so", None, "main"), ("tests/test_api.py", 1, "test")])
+            self.assertEqual(matches[3]["text"], "binary file")
             f = {"id": "P001", "language": "python", "repo": "o/r", "commit": "c" * 40, "file": "app/api.py", "line": 8,
                  "ruleId": "PYVIBE-009", "engine": "python-vibe-guard", "severity": "critical", "message": "MESSAGE"}
             card = cards.render_card(f, PY_SRC, matches)
-            self.assertIn("**4 matches**, all listed", card)
+            self.assertIn("**5 matches**, all listed", card)
+            self.assertIn("| build/app.so | — | main | `binary file` |", card)
             self.assertIn('>8      data = open("f").read()', card)
             self.assertIn("https://github.com/o/r/tree/" + "c" * 40, card)
             template = card.replace("MESSAGE", "")

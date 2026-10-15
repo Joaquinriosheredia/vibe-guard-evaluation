@@ -3,7 +3,8 @@ checkouts at the pinned commits. A card holds facts only, never a verdict or an 
   - the finding (rule, message, file:line, link to the file at the pinned commit);
   - the enclosing function, complete, with line numbers (Python: ast; Java: brace matching);
   - EVERY match of a literal search of that function's name in the repository
-    (`git grep -n -w -F`, all tracked files, nothing filtered);
+    (`git grep -n -w -F`, all tracked files, nothing filtered; a binary file is listed with its
+    path, line "—" and text "binary file");
   - a path class for the finding and for every match (test / example-or-script / main).
 The repository at the pinned commit is always linked and may be consulted freely.
 
@@ -143,9 +144,14 @@ def literal_matches(checkout, name):
         raise RuntimeError(f"git grep failed in {checkout}: {r.stderr.strip()}")
     out = []
     for row in r.stdout.splitlines():
+        binary = re.fullmatch(r"Binary file (.+) matches", row)
+        if binary:  # a binary tracked file has no line: listed with its path (DEVIATIONS.md §1, option a)
+            path = binary.group(1)
+            out.append({"path": path, "line": None, "class": classify_path(path), "text": "binary file"})
+            continue
         path, ln, text = row.split(":", 2)
         out.append({"path": path, "line": int(ln), "class": classify_path(path), "text": text.strip()})
-    return sorted(out, key=lambda m: (m["path"], m["line"]))
+    return sorted(out, key=lambda m: (m["path"], m["line"] or 0))
 
 
 def _cell(text, limit=200):
@@ -181,7 +187,7 @@ def render_card(f, source, matches):
                f"`git grep -n -w -F -e {name}` over every tracked file at the pinned commit: **{len(matches)} matches**, all listed.", ""]
         if matches:
             md += ["| path | line | path class | text |", "|---|---|---|---|"]
-            md += [f"| {_cell(m['path'], 300)} | {m['line']} | {m['class']} | `{_cell(m['text'])}` |" for m in matches]
+            md += [f"| {_cell(m['path'], 300)} | {m['line'] if m['line'] is not None else '—'} | {m['class']} | `{_cell(m['text'])}` |" for m in matches]
         md.append("")
     else:
         md += ["## Literal search", "", "No enclosing function, so no name to search.", ""]

@@ -1,6 +1,6 @@
 # Deviations — test-corpus-2
 
-## 1. OPEN: `cards.py` stops on binary matches of `git grep` (2026-10-15)
+## 1. `cards.py` stops on binary matches of `git grep` (2026-10-15) — decided: option (a)
 
 **State when it happened:** phases 1–3 were done and sealed.
 - `be29edd`: search;
@@ -37,4 +37,16 @@ Either option needs:
 - removing the empty `cards/`;
 - re-running phase 4 from the start.
 
-The text of this entry is updated with the decision.
+**Decision (Joaquín, 2026-10-15): option (a).**
+- **What:** matches in binary files are listed as rows `binary file`, with their path and path
+  class and no line number (`—`). **All matches are kept.**
+- **Why:**
+  - it keeps "every match … nothing filtered";
+  - it happens before any verdict (no card, no verdict and no hash existed);
+  - it affects 6 of the 158 cards.
+- **Done:**
+  - `literal_matches` in `scripts/cards.py` parses `Binary file <path> matches`;
+  - `test/test_units.py` covers that git output with a committed binary file, both the
+    parsed row and the card row;
+  - the empty `cards/` was removed and phase 4 was re-run from the start.
+- Nothing else in the pre-registration changes.
