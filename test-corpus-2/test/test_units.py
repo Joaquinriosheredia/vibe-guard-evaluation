@@ -73,35 +73,90 @@ def synthetic(n_java=50, n_py=100):
     return rs, corpora, reports
 
 
-class Evaluate(unittest.TestCase):
-    def test_official_verdicts_are_joaquins_only(self):
-        rs, corpora, reports = synthetic()
-        joaquin = {f["id"]: {"verdict": "TP"} for f in rs["findings"]}
-        del joaquin["P007"]
-        claude = {f["id"]: {"verdict": "TP"} for f in rs["findings"]}
-        with self.assertRaises(SystemExit):
-            ev.evaluate(rs, corpora, reports, joaquin, claude)
+def ab_inputs(rs, verdict_of, dis=(), audit=(), joaquin_of=None, over_a=None, over_b=None):
+    """A and B agree on verdict_of(f) except on `dis` (B flips TP<->FP); Joaquín reviews dis + audit."""
+    a, b = {}, {}
+    for f in rs["findings"]:
+        i, v = f["id"], verdict_of(f)
+        a[i] = {"verdict": v, "overstated": bool(over_a and i in over_a)}
+        b[i] = {"verdict": ({"TP": "FP", "FP": "TP", "U": "TP"}[v] if i in dis else v), "overstated": bool(over_b and i in over_b)}
+    joaquin_of = joaquin_of or (lambda i: a[i]["verdict"])
+    joaquin = {i: {"verdict": joaquin_of(i), "overstated": False} for i in list(dis) + list(audit)}
+    return a, b, joaquin
 
-    def test_claude_never_counts_and_languages_are_separate(self):
+
+AUDIT = ["J001", "J002", "J003", "J004", "J005", "J006", "J007"] + [f"P{n:03d}" for n in range(1, 14)]
+
+
+class Evaluate(unittest.TestCase):
+    def run_eval(self, rs, corpora, reports, *args, **kw):
+        final, review = ev.final_verdicts(rs["findings"], *ab_inputs(rs, *args, **kw), kw.get("dis", ()), kw.get("audit", AUDIT))
+        return ev.evaluate(rs, corpora, reports, final, review), final, review
+
+    def test_joaquin_must_cover_exactly_the_reviewed_ids(self):
+        rs, _, _ = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT)
+        del joaquin["P100"]
+        with self.assertRaises(SystemExit):
+            ev.final_verdicts(rs["findings"], a, b, joaquin, ["P100"], AUDIT)
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT)
+        joaquin["P099"] = {"verdict": "TP", "overstated": False}
+        with self.assertRaises(SystemExit):
+            ev.final_verdicts(rs["findings"], a, b, joaquin, ["P100"], AUDIT)
+
+    def test_unreviewed_disagreement_is_refused(self):
+        rs, _, _ = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT)
+        with self.assertRaises(SystemExit):
+            ev.final_verdicts(rs["findings"], a, b, {i: joaquin[i] for i in AUDIT}, [], AUDIT)
+
+    def test_final_is_joaquin_where_reviewed_else_a_equals_b(self):
+        rs, _, _ = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT, joaquin_of=lambda i: "U" if i == "P100" else "TP")
+        final, review = ev.final_verdicts(rs["findings"], a, b, joaquin, ["P100"], AUDIT)
+        self.assertEqual((final["P100"]["verdict"], final["P100"]["source"]), ("U", "Joaquín"))
+        self.assertEqual((final["P050"]["verdict"], final["P050"]["source"]), ("TP", "A=B"))
+        self.assertEqual(review["disagreements"], ["P100"])
+        self.assertEqual(review["agreementAB"]["n"], 150)
+
+    def test_overstated_disputed_is_yes_and_joaquin_decides_where_reviewed(self):
+        rs, _, _ = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", audit=AUDIT, over_a={"P050", "P051", "P001"}, over_b={"P051"})
+        final, review = ev.final_verdicts(rs["findings"], a, b, joaquin, [], AUDIT)
+        self.assertTrue(final["P050"]["overstated"])   # A yes, B no -> yes
+        self.assertTrue(final["P051"]["overstated"])   # both yes
+        self.assertFalse(final["P052"]["overstated"])  # both no
+        self.assertFalse(final["P001"]["overstated"])  # in the audit: Joaquín said no
+        self.assertEqual(review["overstatedDisputedSetToYes"], 2)  # P050 and P001
+
+    def test_audit_two_changes_reliable_three_not_met_in_both_languages(self):
         rs, corpora, reports = synthetic()
-        joaquin = {f["id"]: {"verdict": "TP" if f["language"] == "java" else ("TP" if int(f["id"][1:]) <= 80 else "FP")} for f in rs["findings"]}
-        claude = {f["id"]: {"verdict": "FP"} for f in rs["findings"]}
-        m = ev.evaluate(rs, corpora, reports, joaquin, claude)
+        for changed, reliable in ((["J001", "P001"], True), (["J001", "P001", "P002"], False)):
+            m, _, review = self.run_eval(rs, corpora, reports, lambda f: "TP", audit=AUDIT, joaquin_of=lambda i: "FP" if i in changed else "TP")
+            au = review["audit"]
+            self.assertEqual((au["n"], au["changed"], au["reliable"]), (20, len(changed), reliable))
+            self.assertEqual((au["byLanguage"]["java"]["n"], au["byLanguage"]["java"]["changed"]), (7, 1))
+            self.assertEqual((au["byLanguage"]["python"]["n"], au["byLanguage"]["python"]["changed"]), (13, len(changed) - 1))
+            self.assertEqual(au["rateCI95"], ev.wilson(len(changed), 20))
+            for lang in ("java", "python"):
+                c1 = m["languages"][lang]["criterion1"]
+                self.assertEqual(c1["status"], "MET" if reliable else "NOT MET")
+                self.assertEqual(any("NOT RELIABLE" in r for r in c1["reasons"]), not reliable)
+            self.assertIn("NOT RELIABLE" if not reliable else "**RELIABLE**", ev.render(m))
+
+    def test_languages_are_separate(self):
+        rs, corpora, reports = synthetic()
+        m, _, _ = self.run_eval(rs, corpora, reports, lambda f: "TP" if f["language"] == "java" else ("TP" if int(f["id"][1:]) <= 80 else "FP"), audit=AUDIT)
         self.assertEqual(m["languages"]["java"]["criterion1"]["status"], "MET")
         self.assertEqual(m["languages"]["python"]["criterion1"]["status"], "NOT MET")  # 0.80
         self.assertEqual(m["languages"]["python"]["fpPer1000"]["primary"], 4.0)  # 20/100 × 20
         self.assertEqual(m["languages"]["python"]["criterion2"]["status"], "MET")
         self.assertEqual(m["languages"]["python"]["volume"]["per1000"]["warning"], 0.2)
-        self.assertEqual(m["agreementClaudeSealed"]["counts"], "never")
-        self.assertEqual(m, ev.evaluate(rs, corpora, reports, joaquin, claude) | {})
-        without = ev.evaluate(rs, corpora, reports, joaquin)
-        self.assertEqual(without["languages"], m["languages"])
         self.assertIn("does **not** show with 95 % confidence", ev.render(m))
 
     def test_java_short_of_the_sample_is_not_met(self):
         rs, corpora, reports = synthetic(n_java=30)
-        joaquin = {f["id"]: {"verdict": "TP"} for f in rs["findings"]}
-        m = ev.evaluate(rs, corpora, reports, joaquin)
+        m, _, _ = self.run_eval(rs, corpora, reports, lambda f: "TP", audit=AUDIT)
         self.assertEqual(m["languages"]["java"]["criterion1"]["status"], "NOT MET")
         self.assertEqual(m["languages"]["java"]["precision"]["primary"], 1.0)
 
@@ -295,13 +350,30 @@ class ReviewSheet(unittest.TestCase):
     def test_committed_sheet_and_guide(self):
         tc2 = Path(__file__).resolve().parent.parent
         ids = [f["id"] for f in __import__("json").loads((tc2 / "review-set.json").read_text())["findings"]]
-        self.assertEqual((tc2 / "REVIEW-SHEET.md").read_text(), review_sheet.render_sheet(ids) + "\n")
+        dis, audit = review_sheet.ab_lists((tc2 / "REVIEW-AB.md").read_text())
+        self.assertEqual((len(dis), len(audit), len(set(dis) | set(audit))), (7, 20, 27))
+        self.assertEqual((tc2 / "REVIEW-SHEET.md").read_text(), review_sheet.render_sheet(review_sheet.sheet_ids(ids, dis, audit)) + "\n")
         prereg = (tc2 / "PREREGISTRATION.md").read_text()
         guide = (tc2 / "REVIEW-GUIDE.md").read_text()
         verdicts = prereg[prereg.index("## Verdicts (the rules"):prereg.index("## Reviewers, cards and blindness")].rstrip("\n")
         assistance = prereg[prereg.index("**Assistance during the review:**"):prereg.index("**Known limit of the literal search:**")].rstrip("\n")
         self.assertIn(verdicts, guide)
         self.assertIn(assistance, guide)
+
+    def test_sheet_ids_shuffled_with_fixed_seed_and_no_group_labels(self):
+        import random
+        ids = [f"J{n:03d}" for n in range(1, 30)] + [f"P{n:03d}" for n in range(1, 60)]
+        dis, audit = ["J002", "P010"], ["J005", "P003", "P040"]
+        expected = ["J002", "J005", "P003", "P010", "P040"]
+        random.Random(20261026).shuffle(expected)
+        self.assertEqual(review_sheet.sheet_ids(ids, dis, audit), expected)
+        text = review_sheet.render_sheet(expected).lower()
+        for word in ("disagree", "audit", "desacuerdo", "auditor"):
+            self.assertNotIn(word, text)
+
+    def test_ab_lists_parses_review_ab(self):
+        md = "# x\n\n| a |\n\n## Disagreements (2): x\n\n- [J001](cards/J001.md)\n- [P072](cards/P072.md)\n\n## Audit sample (1 of x)\n\n- [P002](cards/P002.md)\n"
+        self.assertEqual(review_sheet.ab_lists(md), (["J001", "P072"], ["P002"]))
 
 
 class ReviewAB(unittest.TestCase):

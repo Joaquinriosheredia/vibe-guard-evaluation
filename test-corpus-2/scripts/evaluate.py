@@ -1,7 +1,9 @@
 """Metrics and acceptance criteria of PREREGISTRATION.md, per language (Java and Python are
-evaluated separately; neither compensates for the other). Official verdicts: Joaquín's only.
+evaluated separately; neither compensates for the other), with the review method of
+DEVIATIONS.md §3/§3a: final verdict = Joaquín's where he reviewed (the A/B disagreements and the
+audit sample of REVIEW-AB.md), otherwise the agreeing verdict of reviews A and B.
 
-  python3 scripts/evaluate.py <audit-joaquin.json> [--claude <audit-claude.json>] [--repeat <repeat-joaquin.json>]
+  python3 scripts/evaluate.py <audit-claude.json> <audit-claude-B.json> <audit-joaquin.json>
       -> metrics.json and METRICS.md
 
 Verdict files: {"reviewer": "...", "verdicts": [{"id", "verdict": "TP"|"FP"|"U", "reason", "overstated": bool}]}.
@@ -25,6 +27,8 @@ SEED_CAP = 20261022
 SEED_BOOT = 20261024
 BOOT_B = 2000
 CATS = ("TP", "FP", "U")
+AUDIT_N = 20
+AUDIT_MAX_CHANGES = 3  # >= 3 changes of the 20 -> AI review NOT RELIABLE, criterion 1 NOT MET in both languages
 
 
 def wilson(k, n):
@@ -63,8 +67,10 @@ def fp_per_1000(p, critical_total, files):
             "secondary": round(density * p["FP"] / n2, 4) if n2 else None}
 
 
-def criterion1(p, reviewed, required):
+def criterion1(p, reviewed, required, audit=None):
     reasons = []
+    if audit is not None and not audit["reliable"]:
+        reasons.append(f"AI review NOT RELIABLE: Joaquín changed {audit['changed']} of {audit['n']} in the audit (>= {AUDIT_MAX_CHANGES})")
     if reviewed < required:
         reasons.append(f"only {reviewed} CRITICAL reviewed, {required} required")
     if p["primary"] is None or p["primary"] < PRECISION_TARGET:
@@ -118,6 +124,45 @@ def capped(findings, final, cap=CAP_PER_REPO, seed=SEED_CAP):
     return precision(final[f["id"]] for f in out)
 
 
+def final_verdicts(findings, a, b, joaquin, disagreeing, audit):
+    """DEVIATIONS.md §3/§3a. a, b, joaquin: {id: {"verdict", "overstated"}}.
+    Returns (final {id: {"verdict", "overstated", "source"}}, review summary)."""
+    reviewed = set(disagreeing) | set(audit)
+    if set(joaquin) != reviewed:
+        raise SystemExit(f"Joaquín's verdicts must cover exactly the {len(reviewed)} reviewed IDs: "
+                         f"missing {sorted(reviewed - set(joaquin))}, extra {sorted(set(joaquin) - reviewed)}")
+    final, disputed = {}, 0
+    for f in findings:
+        i = f["id"]
+        if i in reviewed:
+            final[i] = {"verdict": joaquin[i]["verdict"], "overstated": joaquin[i]["overstated"] is True, "source": "Joaquín"}
+            continue
+        if a[i]["verdict"] != b[i]["verdict"]:
+            raise SystemExit(f"{i}: A and B disagree but Joaquín did not review it")
+        final[i] = {"verdict": a[i]["verdict"], "overstated": a[i]["overstated"] is True or b[i]["overstated"] is True, "source": "A=B"}
+    for f in findings:
+        i = f["id"]
+        if i not in disagreeing and a[i]["verdict"] == b[i]["verdict"] and (a[i]["overstated"] is True) != (b[i]["overstated"] is True):
+            disputed += 1
+    lang_of = {f["id"]: f["language"] for f in findings}
+
+    def rate(ids):
+        ch = [i for i in ids if joaquin[i]["verdict"] != a[i]["verdict"]]
+        return {"n": len(ids), "changed": len(ch), "rate": round(len(ch) / len(ids), 4) if ids else None,
+                "rateCI95": wilson(len(ch), len(ids)), "changedIds": ch}
+    total = rate(list(audit))
+    summary = {
+        "agreementAB": kappa([(a[f["id"]]["verdict"], b[f["id"]]["verdict"]) for f in findings]),
+        "agreementABByLanguage": {lang: kappa([(a[f["id"]]["verdict"], b[f["id"]]["verdict"]) for f in findings if f["language"] == lang]) for lang in LANGS},
+        "disagreements": list(disagreeing),
+        "overstatedDisputedSetToYes": disputed,
+        "audit": {**total, "reliable": total["changed"] < AUDIT_MAX_CHANGES,
+                  "rule": f">= {AUDIT_MAX_CHANGES} of {AUDIT_N} changed -> AI review NOT RELIABLE, criterion 1 NOT MET in both languages",
+                  "byLanguage": {lang: rate([i for i in audit if lang_of[i] == lang]) for lang in LANGS}},
+    }
+    return final, summary
+
+
 def load_verdicts(path, ids):
     data = json.loads(Path(path).read_text())
     v = {a["id"]: a for a in data["verdicts"]}
@@ -127,14 +172,16 @@ def load_verdicts(path, ids):
     return v, data.get("reviewer")
 
 
-def evaluate(rs, corpora, reports, joaquin, claude=None, repeat=None):
-    """rs: review-set.json; corpora[lang]: corpus-<lang>.json; reports[lang][full_name]: wrapper report."""
+def evaluate(rs, corpora, reports, final_full, review):
+    """rs: review-set.json; corpora[lang]: corpus-<lang>.json; reports[lang][full_name]: wrapper report;
+    final_full, review: from final_verdicts()."""
     findings = rs["findings"]
-    missing = [f["id"] for f in findings if f["id"] not in joaquin]
+    missing = [f["id"] for f in findings if f["id"] not in final_full]
     if missing:
-        raise SystemExit(f"official verdicts (Joaquín) missing for {missing}")
-    final = {f["id"]: joaquin[f["id"]]["verdict"] for f in findings}
-    m = {"officialReviewer": "Joaquín", "languages": {}}
+        raise SystemExit(f"final verdicts missing for {missing}")
+    final = {f["id"]: final_full[f["id"]]["verdict"] for f in findings}
+    m = {"reviewMethod": "two independent AI reviews (A, B); disagreements and an audit sample of 20 decided by Joaquín (DEVIATIONS.md §3/§3a)",
+         "review": review, "languages": {}}
     for lang in LANGS:
         fl = [f for f in findings if f["language"] == lang]
         info = rs["languages"][lang]
@@ -168,21 +215,15 @@ def evaluate(rs, corpora, reports, joaquin, claude=None, repeat=None):
             "corpusFrozenReason": info["corpusFrozenReason"], "includedRepositories": len(included),
             "totalCritical": info["totalCritical"], "reviewed": info["reviewed"], "required": info["required"],
             "sampling": info["method"],
-            "precision": p, "criterion1": criterion1(p, info["reviewed"], info["required"]),
+            "precision": p, "criterion1": criterion1(p, info["reviewed"], info["required"], review["audit"]),
             "fpPer1000": fp, "criterion2": criterion2(fp),
             "volume": {"files": files, "findings": dict(counts), "per1000": per1000,
                        "withinOriginalD2": {s: per1000[s] is not None and per1000[s] <= t for s, t in VOLUME_D2.items()},
                        "note": "published always; does not decide (amendment of 2026-10-14)"},
             "clusteringCap10": capped(fl, final),
-            "messageOverstated": sum(1 for f in fl if joaquin[f["id"]].get("overstated") is True),
+            "messageOverstated": sum(1 for f in fl if final_full[f["id"]]["overstated"]),
             **groups,
         }
-    if claude is not None:
-        pairs = [(claude[f["id"]]["verdict"], final[f["id"]]) for f in findings if f["id"] in claude]
-        m["agreementClaudeSealed"] = {**kappa(pairs), "counts": "never", "changed": [f["id"] for f in findings if f["id"] in claude and claude[f["id"]]["verdict"] != final[f["id"]]]}
-    if repeat is not None:
-        pairs = [(final[i], a["verdict"]) for i, a in repeat.items() if i in final]
-        m["repeatability"] = {**kappa(pairs), "changed": [i for i, a in repeat.items() if i in final and a["verdict"] != final[i]]}
     return m
 
 
@@ -191,7 +232,8 @@ def _fmt(x):
 
 
 def render(m):
-    md = ["# Metrics — test-corpus-2", "", "Rendered by `scripts/evaluate.py` from `metrics.json`. Official verdicts: Joaquín's only.", "",
+    md = ["# Metrics — test-corpus-2", "", "Rendered by `scripts/evaluate.py` from `metrics.json`.", "",
+          "Reviewed by two independent AIs; disagreements and a sample of 20 audited by the author (`DEVIATIONS.md` §3/§3a).", "",
           "Reaching 90 % as a point estimate does **not** show with 95 % confidence that the true precision is ≥ 90 %; the Wilson interval is published next to it.", ""]
     for lang, L in m["languages"].items():
         p, fp, v = L["precision"], L["fpPer1000"], L["volume"]
@@ -206,32 +248,40 @@ def render(m):
                "| rule | n | TP | FP | U | primary | Wilson 95 % |", "|---|---|---|---|---|---|---|"]
         md += [f"| {r} | {q['n']} | {q['TP']} | {q['FP']} | {q['U']} | {_fmt(q['primary'])} | {_fmt(q['primaryCI95'])} |" for r, q in L["by_ruleId"].items()]
         md.append("")
-    if "agreementClaudeSealed" in m:
-        a = m["agreementClaudeSealed"]
-        md += [f"Claude's sealed verdicts (never count) vs Joaquín: n {a['n']}, raw {_fmt(a['raw'])}, kappa {_fmt(a['cohenKappa'])}.", ""]
-    if "repeatability" in m:
-        a = m["repeatability"]
-        md += [f"Repeatability (Joaquín, ≥ 7 days): n {a['n']}, raw {_fmt(a['raw'])}, kappa {_fmt(a['cohenKappa'])}, changed {a['changed']}.", ""]
+    r = m["review"]
+    ab, au = r["agreementAB"], r["audit"]
+    md += ["## Review", "",
+           f"- Agreement A–B: n {ab['n']}, raw {_fmt(ab['raw'])}, kappa {_fmt(ab['cohenKappa'])}; disagreements {len(r['disagreements'])}, decided by Joaquín.",
+           f"- Corrections in the audit: {au['changed']}/{au['n']} (Wilson 95 % {_fmt(au['rateCI95'])}) — AI review **{'RELIABLE' if au['reliable'] else 'NOT RELIABLE'}** (rule: {au['rule']}).",
+           *[f"  - {lang}: {x['changed']}/{x['n']} (Wilson 95 % {_fmt(x['rateCI95'])})" for lang, x in au["byLanguage"].items()],
+           f"- Overstated in dispute between A and B (set to yes): {r['overstatedDisputedSetToYes']}.", ""]
     return "\n".join(md)
 
 
 def main(argv):
-    if not argv or len(argv) % 2 != 1:
+    if len(argv) != 3:
         raise SystemExit(__doc__)
-    opts = dict(zip(argv[1::2], argv[2::2]))
-    if set(opts) - {"--claude", "--repeat"}:
-        raise SystemExit(__doc__)
+    import review_ab  # here, not at import: review_ab imports this module
+    import review_sheet
+    for path, name in ((argv[0], "audit-claude.sha256"), (argv[1], "audit-claude-B.sha256")):
+        if review_ab.sha256(path) != review_ab.committed(name):
+            raise SystemExit(f"{path} does not match {name}")
     rs = json.loads((DIR / "review-set.json").read_text())
-    ids = {f["id"] for f in rs["findings"]}
-    joaquin, _ = load_verdicts(argv[0], ids)
-    claude = load_verdicts(opts["--claude"], ids)[0] if "--claude" in opts else None
-    repeat = load_verdicts(opts["--repeat"], ids)[0] if "--repeat" in opts else None
+    ids = [f["id"] for f in rs["findings"]]
+    a, _ = load_verdicts(argv[0], ids)
+    b, _ = load_verdicts(argv[1], ids)
+    joaquin, _ = load_verdicts(argv[2], ids)
+    disagreeing, audit = review_sheet.ab_lists((DIR / "REVIEW-AB.md").read_text())
+    cmp = review_ab.compare([a[i] for i in ids], [b[i] for i in ids], ids)
+    if cmp["all"]["disagreeing"] != disagreeing or review_ab.audit_sample([i for i in ids if i not in set(disagreeing)]) != audit:
+        raise SystemExit("REVIEW-AB.md does not match A and B")
+    final_full, review = final_verdicts(rs["findings"], a, b, joaquin, disagreeing, audit)
     corpora, reports = {}, {}
     for lang in LANGS:
         corpora[lang] = json.loads((DIR / f"corpus-{lang}.json").read_text())
         reports[lang] = {c["full_name"]: json.loads((DIR / "results" / lang / f"{c['full_name'].replace('/', '__')}.json").read_text())
                          for c in corpora[lang]["processed"] if c["status"] == "included"}
-    m = evaluate(rs, corpora, reports, joaquin, claude, repeat)
+    m = evaluate(rs, corpora, reports, final_full, review)
     (DIR / "metrics.json").write_text(json.dumps(m, indent=2) + "\n")
     (DIR / "METRICS.md").write_text(render(m) + "\n")
     print(json.dumps({lang: {"criterion1": L["criterion1"]["status"], "criterion2": L["criterion2"]["status"]} for lang, L in m["languages"].items()}, indent=2))

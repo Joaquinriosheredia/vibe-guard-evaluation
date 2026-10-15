@@ -1,13 +1,14 @@
-"""Joaquín's review sheet and its conversion to the official verdicts (PREREGISTRATION.md,
-"Reviewers, cards and blindness").
+"""Joaquín's review sheet and its conversion to his verdicts (DEVIATIONS.md §3a).
 
-  python3 scripts/review_sheet.py sheet   -> REVIEW-SHEET.md: the review-set IDs in order, each with
-                                             only a link to its card and empty fields (once)
+  python3 scripts/review_sheet.py sheet   -> REVIEW-SHEET.md: the 27 IDs of REVIEW-AB.md (disagreements
+                                             and audit sample) shuffled with random.Random(20261026),
+                                             each with only a link to its card and empty fields (once)
   python3 scripts/review_sheet.py audit   -> audit-joaquin.json from REVIEW-SHEET.md; fails if any
                                              verdict is missing or not TP/FP/U, a reason is missing,
                                              or Overstated is not Sí/No
 """
 import json
+import random
 import re
 import sys
 from pathlib import Path
@@ -15,13 +16,14 @@ from pathlib import Path
 DIR = Path(__file__).resolve().parent.parent
 VERDICTS = ("TP", "FP", "U")
 OVERSTATED = {"sí": True, "si": True, "no": False}
+SEED_SHEET = 20261026
 FIELDS = ("Verdict", "Reason (file:line)", "Overstated")
 _FIELD_RE = re.compile(r"^- (Verdict|Reason \(file:line\)|Overstated):[ \t]*(.*)$")
 
 
 def render_sheet(ids):
     md = ["# Review sheet — test-corpus-2", "",
-          "Official verdicts: Joaquín only. One block per finding, in the order of `review-set.json`.",
+          f"Joaquín's verdicts on {len(ids)} findings (`DEVIATIONS.md` §3a), in a random order. One block per finding.",
           "Fill `Verdict` (TP, FP or U), `Reason (file:line)` and `Overstated` (Sí or No).",
           "Rules: `REVIEW-GUIDE.md`. Any help received: `REVIEW-LOG.md`.", ""]
     for i in ids:
@@ -45,7 +47,7 @@ def parse_sheet(text, ids):
             blocks[current][m.group(1)] = m.group(2).strip()
     problems = []
     if list(blocks) != list(ids):
-        problems.append(f"the IDs are not exactly the review set in order (sheet {len(blocks)}, review set {len(ids)})")
+        problems.append(f"the IDs are not exactly the expected ones in order (sheet {len(blocks)}, expected {len(ids)})")
     out = []
     for i in ids:
         b = blocks.get(i, {})
@@ -62,6 +64,35 @@ def parse_sheet(text, ids):
     return out
 
 
+def ab_lists(text):
+    """REVIEW-AB.md -> (disagreeing IDs, audit-sample IDs), each in the file's order."""
+    groups, current = {"dis": [], "audit": []}, None
+    for line in text.splitlines():
+        if line.startswith("## Disagreements"):
+            current = "dis"
+        elif line.startswith("## Audit sample"):
+            current = "audit"
+        elif line.startswith("## "):
+            current = None
+        else:
+            m = re.match(r"^- \[(\w+)\]\(cards/\1\.md\)$", line)
+            if m and current:
+                groups[current].append(m.group(1))
+    return groups["dis"], groups["audit"]
+
+
+def sheet_ids(ids, disagreeing, audit):
+    """The reviewed IDs in review-set order, shuffled with random.Random(20261026)."""
+    chosen = set(disagreeing) | set(audit)
+    out = [i for i in ids if i in chosen]
+    random.Random(SEED_SHEET).shuffle(out)
+    return out
+
+
+def joaquin_ids():
+    return sheet_ids(review_ids(), *ab_lists((DIR / "REVIEW-AB.md").read_text()))
+
+
 def review_ids():
     return [f["id"] for f in json.loads((DIR / "review-set.json").read_text())["findings"]]
 
@@ -71,14 +102,15 @@ def main(cmd):
         out = DIR / "REVIEW-SHEET.md"
         if out.exists():
             raise SystemExit("REVIEW-SHEET.md exists: it is generated once")
-        out.write_text(render_sheet(review_ids()) + "\n")
-        print(f"REVIEW-SHEET.md: {len(review_ids())} findings")
+        ids = joaquin_ids()
+        out.write_text(render_sheet(ids) + "\n")
+        print(f"REVIEW-SHEET.md: {len(ids)} findings")
     elif cmd == "audit":
         out = DIR / "audit-joaquin.json"
         if out.exists():
             raise SystemExit("audit-joaquin.json exists")
         try:
-            verdicts = parse_sheet((DIR / "REVIEW-SHEET.md").read_text(), review_ids())
+            verdicts = parse_sheet((DIR / "REVIEW-SHEET.md").read_text(), joaquin_ids())
         except ValueError as e:
             raise SystemExit(f"REVIEW-SHEET.md is not complete:\n{e}")
         out.write_text(json.dumps({"reviewer": "Joaquín", "source": "REVIEW-SHEET.md", "verdicts": verdicts}, indent=2, ensure_ascii=False) + "\n")
