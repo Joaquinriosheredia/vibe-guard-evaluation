@@ -319,7 +319,18 @@ assessment:
   before the review starts**.
 - The cards are not edited afterwards.
 - If Joaquín asks for more navigation on a finding, the request and the factual answer are
-  logged with their date in `REVIEW-LOG.md`. The card stays as it was.
+  logged with their date in `REVIEW-LOG.md` (see "Assistance during the review"). The card
+  stays as it was.
+
+**Assistance during the review:**
+- **Who it covers:** any assistant, meaning any Claude session or other AI, including Joaquín's
+  adviser.
+- **What is allowed:** only factual navigation: where a file is, what a line contains, what a
+  search returns.
+- **What is never allowed:** a verdict, an assessment or an opinion on the case.
+- **Logging:** every piece of help, from whoever gives it, is logged in `REVIEW-LOG.md` with
+  its date, the question and the answer.
+- **The cards do not change.**
 
 **Known limit of the literal search:** it does not resolve dynamic dispatch, reflection,
 dependency injection or framework entry points. The whole function, with its annotations and
@@ -436,6 +447,8 @@ adjusted. Any departure goes to `DEVIATIONS.md`.
 - `stars:>=50` / `>=100` and the window bias the corpus towards maintained, popular projects.
 - The toy filter is lexical.
 - **The Java pool is directed by stack signals and is not representative of all Java.**
+- **Exclusion e for Java requires `spring-boot` in `pom.xml`, `build.gradle` or
+  `build.gradle.kts`:** Kafka or Reactor projects without Spring Boot are outside the pool.
 - The expected Java yield is unknown: test-corpus-1 had 1 CRITICAL in 20 undirected
   repositories. **Java may not reach 50 within the cap.**
 - The literal caller search has the limits stated above.
