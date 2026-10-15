@@ -8,8 +8,10 @@ checkouts at the pinned commits. A card holds facts only, never a verdict or an 
   - a path class for the finding and for every match (test / example-or-script / main).
 The repository at the pinned commit is always linked and may be consulted freely.
 
-  python3 scripts/cards.py <WORK>   -> cards/<id>.md and cards/SHA256SUMS (the sha256 of SHA256SUMS
-                                       is published before the review starts)
+  python3 scripts/cards.py <WORK>              -> cards/<id>.md and cards/SHA256SUMS (the sha256 of
+                                                  SHA256SUMS is published before the review starts)
+  python3 scripts/cards.py --validate <WORK>   -> parses every git grep record of the review set,
+                                                  writes nothing, exit 1 if any record is unparsable
 """
 import ast
 import hashlib
@@ -137,25 +139,44 @@ def java_enclosing(source, line):
     return best
 
 
+_BINARY_RE = re.compile(r"Binary file (.+) matches")
+_RECORD_RE = re.compile(r"(.+?):(\d+):(.*)", re.S)
+
+
+def parse_record(record):
+    """One `git grep -n` record (bytes, without its final \n) -> match dict. Raises ValueError if unparsable."""
+    row = record.decode("utf-8", errors="replace")
+    binary = _BINARY_RE.fullmatch(row)
+    if binary:  # a binary tracked file has no line: listed with its path (DEVIATIONS.md §1, option a)
+        path = binary.group(1)
+        return {"path": path, "line": None, "class": classify_path(path), "text": "binary file"}
+    m = _RECORD_RE.fullmatch(row)
+    if not m:
+        raise ValueError(f"unparsable git grep record: {row[:120]!r}")
+    path, ln, text = m.groups()
+    return {"path": path, "line": int(ln), "class": classify_path(path), "text": text.strip()}
+
+
+def grep_records(checkout, name):
+    """Raw `git grep -n -w -F` records, read as bytes and split on \n only (DEVIATIONS.md §2)."""
+    r = subprocess.run(["git", "grep", "-n", "-w", "-F", "-e", name], cwd=checkout, capture_output=True)
+    if r.returncode not in (0, 1):
+        raise RuntimeError(f"git grep failed in {checkout}: {r.stderr.decode(errors='replace').strip()}")
+    out = r.stdout[:-1] if r.stdout.endswith(b"\n") else r.stdout
+    return out.split(b"\n") if out else []
+
+
 def literal_matches(checkout, name):
     """Every match of `git grep -n -w -F` for the name in the checkout's tracked files, sorted."""
-    r = subprocess.run(["git", "grep", "-n", "-w", "-F", "-e", name], cwd=checkout, capture_output=True, text=True, errors="replace")
-    if r.returncode not in (0, 1):
-        raise RuntimeError(f"git grep failed in {checkout}: {r.stderr.strip()}")
-    out = []
-    for row in r.stdout.splitlines():
-        binary = re.fullmatch(r"Binary file (.+) matches", row)
-        if binary:  # a binary tracked file has no line: listed with its path (DEVIATIONS.md §1, option a)
-            path = binary.group(1)
-            out.append({"path": path, "line": None, "class": classify_path(path), "text": "binary file"})
-            continue
-        path, ln, text = row.split(":", 2)
-        out.append({"path": path, "line": int(ln), "class": classify_path(path), "text": text.strip()})
-    return sorted(out, key=lambda m: (m["path"], m["line"] or 0))
+    return sorted((parse_record(rec) for rec in grep_records(checkout, name)), key=lambda m: (m["path"], m["line"] or 0))
+
+
+_CONTROL_RE = re.compile("[\x00-\x1f\x7f-\x9f\u2028\u2029]")
 
 
 def _cell(text, limit=200):
     text = text if len(text) <= limit else text[:limit] + " …"
+    text = _CONTROL_RE.sub(lambda m: f"\\x{ord(m.group()):02x}" if ord(m.group()) < 0x100 else f"\\u{ord(m.group()):04x}", text)
     return text.replace("|", "\\|").replace("`", "'")
 
 
@@ -195,6 +216,36 @@ def render_card(f, source, matches):
     return "\n".join(md) + "\n"
 
 
+def checkout_for(work, f):
+    checkout = Path(work) / f["language"] / f["repo"].replace("/", "__")
+    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=checkout, capture_output=True, text=True).stdout.strip()
+    if head != f["commit"]:
+        raise SystemExit(f"{f['id']}: checkout {checkout} is at {head}, not {f['commit']}")
+    return checkout
+
+
+def enclosing_of(f, source):
+    return python_enclosing(source, f["line"]) if f["language"] == "python" else java_enclosing(source, f["line"])
+
+
+def validate(work):
+    """Parses every git grep record of every review-set card without writing anything; exit 1 if any is unparsable."""
+    rs = json.loads((DIR / "review-set.json").read_text())["findings"]
+    records = failures = 0
+    for f in rs:
+        checkout = checkout_for(work, f)
+        enclosing = enclosing_of(f, (checkout / f["file"]).read_text(encoding="utf-8", errors="replace"))
+        for rec in (grep_records(checkout, enclosing[0]) if enclosing else []):
+            records += 1
+            try:
+                parse_record(rec)
+            except ValueError as e:
+                failures += 1
+                print(f"{f['id']}: {e}")
+    print(f"validate: {len(rs)} cards, {records} git grep records, {failures} unparsable")
+    raise SystemExit(1 if failures else 0)
+
+
 def main(work):
     out = DIR / "cards"
     if out.exists():
@@ -203,12 +254,9 @@ def main(work):
     out.mkdir()
     sums = []
     for f in rs:
-        checkout = Path(work) / f["language"] / f["repo"].replace("/", "__")
-        head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=checkout, capture_output=True, text=True).stdout.strip()
-        if head != f["commit"]:
-            raise SystemExit(f"{f['id']}: checkout {checkout} is at {head}, not {f['commit']}")
+        checkout = checkout_for(work, f)
         source = (checkout / f["file"]).read_text(encoding="utf-8", errors="replace")
-        enclosing = python_enclosing(source, f["line"]) if f["language"] == "python" else java_enclosing(source, f["line"])
+        enclosing = enclosing_of(f, source)
         matches = literal_matches(checkout, enclosing[0]) if enclosing else []
         text = render_card(f, source, matches)
         (out / f"{f['id']}.md").write_text(text)
@@ -218,6 +266,9 @@ def main(work):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) == 3 and sys.argv[1] == "--validate":
+        validate(sys.argv[2])
+    elif len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
         raise SystemExit(__doc__)
-    main(sys.argv[1])

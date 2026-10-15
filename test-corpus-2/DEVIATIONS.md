@@ -51,7 +51,7 @@ Either option needs:
   - the empty `cards/` was removed and phase 4 was re-run from the start.
 - Nothing else in the pre-registration changes.
 
-## 2. OPEN: `cards.py` splits some `git grep` records wrongly (2026-10-15)
+## 2. `cards.py` splits some `git grep` records wrongly (2026-10-15) — fixed with Joaquín's OK
 
 **State when it happened:** deviation 1 was applied (`54931ff`), the empty `cards/` was
 removed and phase 4 was re-run from the start.
@@ -85,3 +85,15 @@ still listed, with path and line. But the order was to stop on any error.
 - The table cell escapes control characters.
 - Add a test with a committed text file whose matched line contains `\r` and `\x85`.
 - Remove the empty `cards/` and re-run phase 4 from the start.
+
+**Decision (Joaquín, 2026-10-15): OK to the proposed fix.**
+- **What changed:**
+  - `literal_matches` reads `git grep` as bytes, splits records on `\n` only and decodes each one as UTF-8 with replacement (`grep_records`, `parse_record`);
+  - the table cell escapes control characters as `\xNN` / `\uNNNN`.
+- **Tests:** `test/test_units.py` `CardsRecords`, with a committed file whose matched line contains `\r` and `\x85`; plus `parse_record` rejecting a fragment.
+- **Method unchanged:** every match is still listed, with path, line or `binary file`, and path class.
+- **Bounded permission (Joaquín, 2026-10-15):** for the rest of phase 4, an implementation error of `cards.py` that does **not** change the method may be fixed without stopping. Each one needs a test that reproduces it and a §N here with date, cause, scope and fix. Anything that changes the method, the content of the cards or the pre-registration stops the run.
+- **Validation mode added:** `python3 scripts/cards.py --validate <WORK>` parses every `git grep` record of the review set, writes nothing, and exits 1 if any record is unparsable.
+  - Result: **158 cards, 25,973 records, 0 unparsable**.
+  - After that, the empty `cards/` was removed and the cards were generated once.
+
