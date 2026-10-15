@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "etc/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "spring-modulith-actuator/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-modulith-apt/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-modulith-benchmarks/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-modulith-core/src/test",
+        "pattern": "test",
+        "files": 110
+      },
+      {
+        "path": "spring-modulith-docs/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-amqp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-api/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-core/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-jdbc/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-jms/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-jobrunr/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-jpa/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-kafka/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-messaging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-mongodb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-namastack/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-neo4j/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-modulith-events/spring-modulith-events-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-examples/spring-modulith-example-epr-jdbc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-examples/spring-modulith-example-epr-mongodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-examples/spring-modulith-example-epr-neo4j/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-modulith-examples/spring-modulith-example-full/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-modulith-examples/spring-modulith-example-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-modulith-examples/spring-modulith-example-outbox/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-modulith-integration-test/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "spring-modulith-junit/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "spring-modulith-moments/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "spring-modulith-observability/spring-modulith-observability-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "spring-modulith-observability/spring-modulith-observability-core/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "spring-modulith-runtime/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "spring-modulith-test/src/test",
+        "pattern": "test",
+        "files": 14
+      }
+    ],
+    "filesExcluded": 289
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 844,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "spring-modulith-events/spring-modulith-events-api/src/main/java/org/springframework/modulith/events/ApplicationModuleListener.java",
+      "line": 46,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "spring-modulith-events/spring-modulith-events-kafka/src/main/resources/kafka-json.properties",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

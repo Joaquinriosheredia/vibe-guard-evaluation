@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-starter-single-step-batch-job/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "spring-cloud-task-batch/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "spring-cloud-task-core/src/test",
+        "pattern": "test",
+        "files": 38
+      },
+      {
+        "path": "spring-cloud-task-integration-tests/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "spring-cloud-task-samples/batch-events/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-task-samples/batch-job/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-cloud-task-samples/jpa-sample/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-task-samples/multiple-datasources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-task-samples/single-step-batch-job/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-task-samples/task-observations/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-task-samples/timestamp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-task-stream/src/test",
+        "pattern": "test",
+        "files": 9
+      }
+    ],
+    "filesExcluded": 84
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 323,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 2,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "spring-cloud-task-samples/single-step-batch-job/src/main/resources/application-kafkareader.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "spring-cloud-task-samples/single-step-batch-job/src/main/resources/application-kafkawriter.properties",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

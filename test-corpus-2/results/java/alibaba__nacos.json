@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "address/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "ai-registry-adaptor/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "ai/src/test",
+        "pattern": "test",
+        "files": 305
+      },
+      {
+        "path": "api/src/test",
+        "pattern": "test",
+        "files": 288
+      },
+      {
+        "path": "auth/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "bootstrap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "client-basic/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "client/src/test",
+        "pattern": "test",
+        "files": 153
+      },
+      {
+        "path": "common/src/test",
+        "pattern": "test",
+        "files": 136
+      },
+      {
+        "path": "config/src/test",
+        "pattern": "test",
+        "files": 182
+      },
+      {
+        "path": "consistency/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "console-ui/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "console/src/test",
+        "pattern": "test",
+        "files": 112
+      },
+      {
+        "path": "copilot/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "core/src/test",
+        "pattern": "test",
+        "files": 289
+      },
+      {
+        "path": "dns/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "example",
+        "pattern": "example",
+        "files": 7
+      },
+      {
+        "path": "istio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "k8s-sync/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "lock/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "logger-adapter-impl/log4j2-adapter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "logger-adapter-impl/logback-adapter-12/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "maintainer-client/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "naming/src/test",
+        "pattern": "test",
+        "files": 188
+      },
+      {
+        "path": "persistence/src/test",
+        "pattern": "test",
+        "files": 42
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-ai-importer-plugin/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-ai-pipeline-plugin/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-ai-trace-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-ai-vector-plugin/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-auth-plugin/src/test",
+        "pattern": "test",
+        "files": 54
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-control-plugin/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-datasource-plugin/nacos-datasource-plugin-base/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-datasource-plugin/nacos-datasource-plugin-derby/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-datasource-plugin/nacos-datasource-plugin-mysql/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-datasource-plugin/nacos-datasource-plugin-oracle/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "plugin-default-impl/nacos-default-datasource-plugin/nacos-datasource-plugin-postgresql/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "plugin-default-impl/nacos-ldap-auth-plugin/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "plugin-default-impl/nacos-oidc-auth-plugin/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "plugin/ai/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "plugin/auth/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "plugin/config/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "plugin/control/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "plugin/datasource/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "plugin/encryption/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "plugin/environment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "plugin/trace/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "plugin/visibility/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "prometheus/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "sys/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "test",
+        "pattern": "test",
+        "files": 150
+      }
+    ],
+    "filesExcluded": 2264
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 5420,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

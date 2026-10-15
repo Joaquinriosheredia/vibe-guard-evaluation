@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "auth-service/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "common-lib/common-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "common-lib/common-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "promotion-service/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "rating-service/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "search-service/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tax-service/src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 8
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 476,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 7,
+    "info": 0,
+    "total": 7
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "common-lib/common-kafka/src/main/java/com/ecommerce/commonlib/kafka/cdc/config/BaseKafkaListenerConfig.java",
+      "line": 16,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "common-lib/common-kafka/src/main/java/com/ecommerce/commonlib/kafka/cdc/config/BaseKafkaListenerConfig.java",
+      "line": 16,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/com/ecommerce/notificationservice/event/EventConsumer.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/com/ecommerce/notificationservice/event/EventConsumer.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "order-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "search-service/src/main/java/com/ecommerce/search/consumer/ProductSyncDataConsumer.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "search-service/src/main/java/com/ecommerce/search/consumer/ProductSyncDataConsumer.java",
+      "line": 23,
+      "extra": {}
+    }
+  ]
+}

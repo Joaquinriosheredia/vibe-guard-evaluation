@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "server/modules-api-platform/api-platform/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/modules-plugin/plugin-sdk/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/modules-station/station/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "server/modules-user/user/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "server/modules-utils/domain-event/domain-event-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "server/modules-wes/wes-basic/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "server/modules-wes/wes-config/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "server/modules-wes/wes-ems-proxy/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/modules-wes/wes-inbound/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "server/modules-wes/wes-outbound/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "server/modules-wes/wes-printer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/modules-wes/wes-stock/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "server/modules-wes/wes-task/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 33
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 1449,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 22,
+    "warning": 1,
+    "info": 0,
+    "total": 24
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "server/modules-api-platform/api-platform/src/main/java/org/openwes/api/platform/domain/service/impl/ApiLogServiceImpl.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ApiLogPORepository)",
+      "file": "server/modules-api-platform/api-platform/src/main/java/org/openwes/api/platform/controller/ApiLogController.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PluginRepository)",
+      "file": "server/modules-plugin/plugin-core/src/main/java/org/openwes/plugin/core/controller/PluginManageController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (pluginRepository)",
+      "file": "server/modules-plugin/plugin-core/src/main/java/org/openwes/plugin/core/controller/PluginManageController.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WorkStationCacheRepository)",
+      "file": "server/modules-station/station/src/main/java/org/openwes/station/controller/StationApiController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DomainEventPORepository)",
+      "file": "server/modules-utils/domain-event/domain-event-core/src/main/java/org/openwes/domain/event/controller/DomainEventController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ContainerSpecRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/container/controller/ContainerSpecController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (containerSpecRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/container/controller/ContainerSpecController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerMainDataRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/main/data/controller/OwnerMainDataController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SkuMainDataRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/main/data/controller/SkuMainDataController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WarehouseMainDataRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/main/data/controller/WarehouseMainDataController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WarehouseConfigRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/warehouse/controller/WarehouseConfigController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PutWallRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/work_station/controller/PutWallController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WorkStationRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/work_station/controller/WorkStationController.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WorkStationConfigRepository)",
+      "file": "server/modules-wes/wes-basic/src/main/java/org/openwes/wes/basic/work_station/controller/WorkStationController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AddressRepository)",
+      "file": "server/modules-wes/wes-config/src/main/java/org/openwes/wes/config/controller/AddressController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BarcodeParseRuleRepository)",
+      "file": "server/modules-wes/wes-config/src/main/java/org/openwes/wes/config/controller/BarcodeParseRuleController.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BatchAttributeConfigRepository)",
+      "file": "server/modules-wes/wes-config/src/main/java/org/openwes/wes/config/controller/BatchAttributeConfigController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DictionaryRepository)",
+      "file": "server/modules-wes/wes-config/src/main/java/org/openwes/wes/config/controller/DictionaryController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (EmsLocationConfigRepository)",
+      "file": "server/modules-wes/wes-ems-proxy/src/main/java/org/openwes/wes/ems/proxy/controller/EmsLocationConfigController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PrintConfigRepository)",
+      "file": "server/modules-wes/wes-printer/src/main/java/org/openwes/wes/printer/controller/PrintConfigController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PrintRuleRepository)",
+      "file": "server/modules-wes/wes-printer/src/main/java/org/openwes/wes/printer/controller/PrintRuleController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PrintTemplateRepository)",
+      "file": "server/modules-wes/wes-printer/src/main/java/org/openwes/wes/printer/controller/PrintTemplateController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "server/modules-ai/ai-core/src/main/java/org/openwes/ai/core/service/impl/AiChatServiceImpl.java",
+      "line": 125,
+      "extra": {}
+    }
+  ]
+}

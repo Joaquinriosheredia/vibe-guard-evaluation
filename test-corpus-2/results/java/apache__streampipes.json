@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "archetypes/streampipes-archetype-extensions-jvm/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-audit-events/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-audit-influx/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "streampipes-audit-management/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "streampipes-audit-management/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-client-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-client-e2e/java-client-e2e/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "streampipes-client-go/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "streampipes-client-python/tests",
+        "pattern": "tests",
+        "files": 21
+      },
+      {
+        "path": "streampipes-client/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "streampipes-commons/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "streampipes-connect-management/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "streampipes-connect-shared/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "streampipes-connect-transformer-js/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-data-explorer-export/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "streampipes-data-explorer-influx/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "streampipes-data-explorer-iotdb/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "streampipes-data-explorer-management/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-data-explorer/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "streampipes-dataformat/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-extensions-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-extensions-management/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connect-adapters-iiot/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-filewatcher/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-kafka/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-mssql/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-opcua/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-plc/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-pulsar/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-rocketmq/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-extensions/streampipes-connectors-ros/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-extensions/streampipes-processors-change-detection-jvm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-extensions/streampipes-processors-enricher-jvm/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "streampipes-extensions/streampipes-processors-filters-jvm/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "streampipes-extensions/streampipes-processors-filters-siddhi/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-extensions/streampipes-processors-llm-jvm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-extensions/streampipes-processors-transformation-jvm/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "streampipes-extensions/streampipes-sinks-databases-jvm/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "streampipes-extensions/streampipes-sinks-internal-jvm/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-extensions/streampipes-sinks-notifications-jvm/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-health-monitoring/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "streampipes-integration-tests/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "streampipes-load-balancer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-mail/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-measurement-units/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-messaging-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-messaging-nats/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "streampipes-model/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "streampipes-nats-extensions/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-pipeline-management/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "streampipes-resource-management/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "streampipes-rest-extensions/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-rest/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "streampipes-sdk/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "streampipes-service-core/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "streampipes-service-extensions/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-storage-couchdb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "streampipes-test-utils-executors/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "streampipes-user-management/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "streampipes-wrapper-standalone/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "ui/cypress/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "ui/cypress/tests",
+        "pattern": "tests",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 388
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 2858,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 13,
+    "info": 0,
+    "total": 13
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 17,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 49,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 65,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 72,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 90,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 91,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "installer/cli/deploy/standalone/pulsar/docker-compose.yml",
+      "line": 100,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "streampipes-client-e2e/docker-compose-loadbalance.yml",
+      "line": 186,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "streampipes-client-e2e/docker-compose.yml",
+      "line": 107,
+      "extra": {}
+    }
+  ]
+}

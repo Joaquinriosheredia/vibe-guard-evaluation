@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.dash.test/src/org/springframework/ide/eclipse/boot/dash/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.dash.test/workspace/boot12/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.dash.test/workspace/demo-lib/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.launch.test/src/org/springframework/ide/eclipse/boot/launch/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.launch.test/workspace/dump-info/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.launch.test/workspace/empty-boot-project/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.launch.test/workspace/project with spaces/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.refactoring.test/src/org/springframework/ide/eclipse/boot/refactoring/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.test/src/org/springframework/ide/eclipse/boot/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.boot.test/workspace/simple-boot-project/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eclipse-extensions/org.springframework.ide.eclipse.maven.pom.tests/src/org/springframework/ide/eclipse/maven/pom/tests",
+        "pattern": "tests",
+        "files": 3
+      },
+      {
+        "path": "eclipse-language-servers/org.springframework.tooling.ls.eclipse.commons.test/src/org/springframework/tooling/ls/eclipse/commons/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "eclipse-language-servers/org.springframework.tooling.ls.eclipse.gotosymbol.test/src/org/springframework/tooling/ls/eclipse/gotosymbol/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eclipse-language-servers/org.springsource.ide.eclipse.commons.frameworks.test.util/src/org/springsource/ide/eclipse/commons/frameworks/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "eclipse-language-servers/org.springsource.ide.eclipse.commons.tests.util/src/org/springsource/ide/eclipse/commons/tests",
+        "pattern": "tests",
+        "files": 3
+      },
+      {
+        "path": "headless-services/bosh-language-server/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "headless-services/commons/commons-cf/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "headless-services/commons/commons-gradle/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "headless-services/commons/commons-java/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "headless-services/commons/commons-language-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "headless-services/commons/commons-lsp-extensions/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "headless-services/commons/commons-maven/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "headless-services/commons/commons-rewrite/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "headless-services/commons/commons-util/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "headless-services/commons/commons-yaml/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "headless-services/commons/java-properties/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "headless-services/commons/jpql/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "headless-services/commons/language-server-test-harness/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "headless-services/concourse-language-server/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "headless-services/jdt-ls-extension/org.springframework.tooling.jdt.ls.commons.test/src/org/springframework/tooling/jdt/ls/commons/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "headless-services/jdt-ls-extension/org.springframework.tooling.jdt.ls.commons.test/src/org/springsource/ide/eclipse/commons/frameworks/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "headless-services/jdt-ls-extension/org.springframework.tooling.jdt.ls.commons.test/test-projects/java-data/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "headless-services/manifest-yaml-language-server/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "headless-services/manifest-yaml-language-server/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "headless-services/spring-boot-language-server-standalone/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "headless-services/spring-boot-language-server/src/test",
+        "pattern": "test",
+        "files": 810
+      },
+      {
+        "path": "headless-services/xml-ls-extension/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 1021
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 4297,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 1
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "headless-services/spring-boot-language-server/src/main/java/org/springframework/ide/vscode/boot/java/Boot3JavaProblemType.java",
+      "line": 34,
+      "extra": {}
+    }
+  ]
+}

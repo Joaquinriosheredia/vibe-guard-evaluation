@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "diboot-admin-ui/src/views/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "diboot-ai-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "diboot-core-starter/src/test",
+        "pattern": "test",
+        "files": 155
+      },
+      {
+        "path": "diboot-file-starter/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "diboot-mobile-ui/src/views/crud/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "diboot-notification-starter/src/test",
+        "pattern": "test",
+        "files": 5
+      }
+    ],
+    "filesExcluded": 175
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 802,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

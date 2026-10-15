@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "antora/components/refguide-index/modules/extensions/pages/index/secman/applib/role/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "antora/components/refguide-index/modules/extensions/pages/index/secman/applib/tenancy/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "antora/components/refguide-index/modules/extensions/pages/index/secman/applib/user/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "antora/components/refguide-index/modules/testing/pages/index/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "api/applib/src/test",
+        "pattern": "test",
+        "files": 76
+      },
+      {
+        "path": "commons/src/main/adoc/modules/commons/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "commons/src/test",
+        "pattern": "test",
+        "files": 55
+      },
+      {
+        "path": "core/config/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "core/mmtest/src/test",
+        "pattern": "test",
+        "files": 229
+      },
+      {
+        "path": "core/runtimeservices/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "core/security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "core/transaction/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "core/webapp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/core/commandlog/applib/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "extensions/core/commandlog/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/core/excel/applib/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/core/excel/integtests/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/core/executionlog/applib/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/core/executionlog/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/core/executionoutbox/applib/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/core/executionoutbox/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/core/executionoutbox/restclient/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/core/layoutloaders/github/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/core/layoutloaders/gitlab/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/security/audittrail/applib/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/security/audittrail/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/security/secman/applib/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/security/secman/integration/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/security/secman/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/security/sessionlog/applib/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/security/sessionlog/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/security/spring-oauth2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/vro/cors/impl/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/vw/fullcalendar/wicket/ui/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/vw/pdfjs/metamodel/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "incubator/examples",
+        "pattern": "examples",
+        "files": 1
+      },
+      {
+        "path": "incubator/extensions/core/commandreplay/secondary/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "persistence/jpa/integration/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "persistence/querydsl/applib/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "regressiontests/bootstrapping/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "regressiontests/cmdexecauditsess/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "regressiontests/config/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "regressiontests/core-wrapperfactory/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "regressiontests/cucumber/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "regressiontests/domainmodel/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "regressiontests/eventhandling/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "regressiontests/factory/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "regressiontests/incubating/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "regressiontests/interact/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "regressiontests/layouts/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "regressiontests/persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "regressiontests/publishing-jpa/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "regressiontests/rest-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "regressiontests/tracing-compatibility/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "regressiontests/value/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "regressiontests/viewers-common/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "regressiontests/viewers-jpa/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "security/simple/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "testing/archtestsupport/applib/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "testing/fakedata/applib/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "testing/fakedata/fixtures",
+        "pattern": "fixtures",
+        "files": 8
+      },
+      {
+        "path": "testing/fakedata/integtests/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "testing/fixtures",
+        "pattern": "fixtures",
+        "files": 46
+      },
+      {
+        "path": "testing/unittestsupport/applib/src/test",
+        "pattern": "test",
+        "files": 46
+      },
+      {
+        "path": "valuetypes/asciidoc/builder/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "viewers/commons/services/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "viewers/graphql/adoc/modules/ROOT/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "viewers/graphql/model/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "viewers/graphql/test",
+        "pattern": "test",
+        "files": 60
+      },
+      {
+        "path": "viewers/graphql/test2/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "viewers/graphql/viewer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "viewers/restfulobjects/applib/src/test",
+        "pattern": "test",
+        "files": 37
+      },
+      {
+        "path": "viewers/restfulobjects/client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "viewers/restfulobjects/rendering/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "viewers/restfulobjects/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "viewers/restfulobjects/viewer/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "viewers/webcomponents/foundation/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "viewers/webcomponents/htmx-security-secman/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "viewers/webcomponents/htmx/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "viewers/webcomponents/htmx/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "viewers/webcomponents/sample-html/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "viewers/webcomponents/sample-htmx-petclinic/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "viewers/webcomponents/sample-petclinic-domain/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "viewers/webcomponents/sample-vue-petclinic/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "viewers/webcomponents/security-secman/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "viewers/webcomponents/vue-security-secman/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "viewers/webcomponents/vue/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "viewers/wicket/ui-test/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "viewers/wicket/viewer/src/test",
+        "pattern": "test",
+        "files": 12
+      }
+    ],
+    "filesExcluded": 1020
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 5577,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

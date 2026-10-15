@@ -1,0 +1,6181 @@
+{
+  "pool": "java",
+  "rules": {
+    "language": "java",
+    "firstBatch": 25,
+    "nextBatch": 25,
+    "cap": 300,
+    "target": 50
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "at": "2026-10-15T06:18:37.251Z",
+      "added": 25,
+      "included": 25,
+      "criticalSoFar": 8
+    },
+    {
+      "batch": 2,
+      "at": "2026-10-15T06:21:47.275Z",
+      "added": 25,
+      "included": 50,
+      "criticalSoFar": 45
+    },
+    {
+      "batch": 3,
+      "at": "2026-10-15T06:26:17.459Z",
+      "added": 25,
+      "included": 75,
+      "criticalSoFar": 58
+    }
+  ],
+  "processed": [
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 1,
+      "full_name": "macrozheng/mall",
+      "id": 127988011,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 2,
+      "full_name": "spring-projects/spring-boot",
+      "id": 6296790,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 3,
+      "full_name": "doocs/advanced-java",
+      "id": 151834062,
+      "status": "excluded",
+      "reason": "3c toy keyword \"interview\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 4,
+      "full_name": "apache/dubbo",
+      "id": 4710920,
+      "stars": 41586,
+      "processedAt": "2026-10-15T06:13:21.450Z",
+      "commit": "ae809de2fc81b408194240965eb20bf27e6971df",
+      "files": {
+        "java": 2468,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1023
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 5,
+      "full_name": "apache/kafka",
+      "id": 2211243,
+      "stars": 33954,
+      "processedAt": "2026-10-15T06:13:28.169Z",
+      "commit": "e2c58a0163c89d00cebc877fbdd81d4267be774f",
+      "files": {
+        "java": 3925,
+        "python": 31
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 3925 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 6,
+      "full_name": "alibaba/nacos",
+      "id": 137451403,
+      "stars": 33448,
+      "processedAt": "2026-10-15T06:13:34.733Z",
+      "commit": "1511b5a85f744acb0ad54e8213b1f4d82674799c",
+      "files": {
+        "java": 2999,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 2003
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 7,
+      "full_name": "conductor-oss/conductor",
+      "id": 728981719,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 8,
+      "full_name": "apolloconfig/apollo",
+      "id": 53127403,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 9,
+      "full_name": "alibaba/spring-cloud-alibaba",
+      "id": 112785414,
+      "stars": 29174,
+      "processedAt": "2026-10-15T06:13:44.855Z",
+      "commit": "858aa8d58d2e902770ac4c6f5598808e125e695e",
+      "files": {
+        "java": 453,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 444
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 10,
+      "full_name": "alibaba/Sentinel",
+      "id": 128018428,
+      "stars": 23147,
+      "processedAt": "2026-10-15T06:13:47.889Z",
+      "commit": "a3f40ba8e900c8489bd520274739f17235a7721c",
+      "files": {
+        "java": 917,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 485
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 11,
+      "full_name": "thingsboard/thingsboard",
+      "id": 75277003,
+      "stars": 22555,
+      "processedAt": "2026-10-15T06:13:51.540Z",
+      "commit": "adbf8b285ac3a204eaa7bf9b8a77f6ed38436f64",
+      "files": {
+        "java": 5479,
+        "python": 7
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 2175
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 12,
+      "full_name": "elunez/eladmin",
+      "id": 161757837,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 13,
+      "full_name": "linlinjava/litemall",
+      "id": 126365965,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 14,
+      "full_name": "YunaiV/yudao-cloud",
+      "id": 184611677,
+      "stars": 19631,
+      "processedAt": "2026-10-15T06:14:03.286Z",
+      "commit": "0757f0597e44357d5f2777a2f9e1370cc1534d5f",
+      "files": {
+        "java": 6915,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1826
+      },
+      "excludesMatch": true,
+      "critical": 2,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 15,
+      "full_name": "quarkusio/quarkus",
+      "id": 139914932,
+      "stars": 15944,
+      "processedAt": "2026-10-15T06:14:12.520Z",
+      "commit": "24c7d6291d276bb40242d46d817f7edd78781222",
+      "files": {
+        "java": 11054,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 5298
+      },
+      "excludesMatch": true,
+      "critical": 4,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 16,
+      "full_name": "zhisheng17/flink-learning",
+      "id": 163721192,
+      "stars": 15099,
+      "processedAt": "2026-10-15T06:14:39.070Z",
+      "commit": "d731cee7618021be56d132cc925102ffff8d75e6",
+      "files": {
+        "java": 425,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 425 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 17,
+      "full_name": "eclipse-vertx/vert.x",
+      "id": 1911523,
+      "stars": 14682,
+      "processedAt": "2026-10-15T06:14:41.623Z",
+      "commit": "e24680bed693ec112f8b1282d50f8cccf29d18ea",
+      "files": {
+        "java": 801,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 801 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 18,
+      "full_name": "GoogleContainerTools/jib",
+      "id": 118497841,
+      "stars": 14454,
+      "processedAt": "2026-10-15T06:14:44.246Z",
+      "commit": "fb949e2676afbbd7dd7a1ef61e20251931325654",
+      "files": {
+        "java": 363,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 19,
+      "full_name": "debezium/debezium",
+      "id": 50205233,
+      "stars": 13218,
+      "processedAt": "2026-10-15T06:14:47.483Z",
+      "commit": "3e05324d239c019e129cb7d928173b25a423f25c",
+      "files": {
+        "java": 1930,
+        "python": 14
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1930 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 20,
+      "full_name": "macrozheng/mall-swarm",
+      "id": 223881576,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 21,
+      "full_name": "codecentric/spring-boot-admin",
+      "id": 22254856,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 22,
+      "full_name": "grpc/grpc-java",
+      "id": 27729926,
+      "stars": 12074,
+      "processedAt": "2026-10-15T06:14:52.249Z",
+      "commit": "6f5fccee9f0946632a2ed1e7c37657a423a22a95",
+      "files": {
+        "java": 1058,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1058 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 23,
+      "full_name": "apereo/cas",
+      "id": 2352744,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 24,
+      "full_name": "AutoMQ/automq",
+      "id": 679601811,
+      "stars": 10914,
+      "processedAt": "2026-10-15T06:14:56.486Z",
+      "commit": "f248efe5fa3a5eb0dd0a7ea09a192494d605a713",
+      "files": {
+        "java": 4015,
+        "python": 19
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 4015 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 25,
+      "full_name": "zfile-dev/zfile",
+      "id": 203183673,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 26,
+      "full_name": "Activiti/Activiti",
+      "id": 5793738,
+      "stars": 10550,
+      "processedAt": "2026-10-15T06:15:02.125Z",
+      "commit": "a8be332bdec36b2181700f33aaddbd1667f85b9d",
+      "files": {
+        "java": 2166,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 27,
+      "full_name": "karatelabs/karate",
+      "id": 81226206,
+      "stars": 8983,
+      "processedAt": "2026-10-15T06:15:06.287Z",
+      "commit": "1ff225d269b3b739bc56fd370ecffd1fca832932",
+      "files": {
+        "java": 477,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 477 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 28,
+      "full_name": "hs-web/hsweb-framework",
+      "id": 49850704,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 29,
+      "full_name": "Graylog2/graylog2-server",
+      "id": 671825,
+      "stars": 8154,
+      "processedAt": "2026-10-15T06:15:08.914Z",
+      "commit": "73f0b0b08132cb9b2842e7380a17a1bf9d433b79",
+      "files": {
+        "java": 4721,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 4721 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 30,
+      "full_name": "didi/KnowStreaming",
+      "id": 248416273,
+      "stars": 7174,
+      "processedAt": "2026-10-15T06:15:16.770Z",
+      "commit": "33524eaaaf8d539cb71f36a36e2b47688fff7591",
+      "files": {
+        "java": 895,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 31,
+      "full_name": "pig-mesh/pig",
+      "id": 204388092,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 32,
+      "full_name": "jetlinks/jetlinks-community",
+      "id": 231329990,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 33,
+      "full_name": "apache/flink-cdc",
+      "id": 282994686,
+      "stars": 6484,
+      "processedAt": "2026-10-15T06:15:19.423Z",
+      "commit": "b11c961adecc6095b9bd97ff63df0bea4b22a1fa",
+      "files": {
+        "java": 1193,
+        "python": 2
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1193 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 34,
+      "full_name": "micronaut-projects/micronaut-core",
+      "id": 124230204,
+      "stars": 6433,
+      "processedAt": "2026-10-15T06:15:23.930Z",
+      "commit": "a8ff8c95ca5103ec0360e34dfaa131275b24c498",
+      "files": {
+        "java": 3434,
+        "python": 15
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 3434 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 35,
+      "full_name": "DerekYRC/mini-spring",
+      "id": 313605398,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 36,
+      "full_name": "obsidiandynamics/kafdrop",
+      "id": 188806350,
+      "stars": 6152,
+      "processedAt": "2026-10-15T06:15:31.526Z",
+      "commit": "648d84cf08a5d7e2fd9bbb057d2a8b4f7b040bb4",
+      "files": {
+        "java": 70,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 132
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 37,
+      "full_name": "strimzi/strimzi-kafka-operator",
+      "id": 58194180,
+      "stars": 5954,
+      "processedAt": "2026-10-15T06:15:30.836Z",
+      "commit": "557ad353b1a1605ad4d18989f660fbc3d141ae6d",
+      "files": {
+        "java": 877,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 877 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 38,
+      "full_name": "redis/lettuce",
+      "id": 19641638,
+      "stars": 5780,
+      "processedAt": "2026-10-15T06:15:34.242Z",
+      "commit": "7ca2d77665708df148f876c3e80772f462ea9541",
+      "files": {
+        "java": 1077,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1077 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 39,
+      "full_name": "dromara/lamp-cloud",
+      "id": 117774290,
+      "stars": 5760,
+      "processedAt": "2026-10-15T06:15:36.888Z",
+      "commit": "d61184d7d402023fc3ea63b6bdbd7a1bfdb8ce92",
+      "files": {
+        "java": 788,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 320
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 40,
+      "full_name": "rubenlagus/TelegramBots",
+      "id": 49610798,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 41,
+      "full_name": "reactor/reactor-core",
+      "id": 45903621,
+      "stars": 5238,
+      "processedAt": "2026-10-15T06:15:40.590Z",
+      "commit": "0d1a22ce5b31e4f2a4b9d2c6b29f943fcb6f2034",
+      "files": {
+        "java": 578,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 578 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 42,
+      "full_name": "baomidou/dynamic-datasource",
+      "id": 131364545,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 43,
+      "full_name": "line/armeria",
+      "id": 46251204,
+      "stars": 5145,
+      "processedAt": "2026-10-15T06:15:43.333Z",
+      "commit": "4a742cc1ed83f930ed529bfa9d7362ebca7b3600",
+      "files": {
+        "java": 2730,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1356
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 44,
+      "full_name": "spring-cloud/spring-cloud-netflix",
+      "id": 21741891,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 45,
+      "full_name": "spring-cloud/spring-cloud-gateway",
+      "id": 73963835,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 46,
+      "full_name": "micrometer-metrics/micrometer",
+      "id": 87859908,
+      "stars": 4907,
+      "processedAt": "2026-10-15T06:16:05.548Z",
+      "commit": "9a9cc6e2c649c7fc198569f277462e8ca2908016",
+      "files": {
+        "java": 821,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 821 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 47,
+      "full_name": "s4kibs4mi/java-developer-roadmap",
+      "id": 182950817,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 48,
+      "full_name": "grimmory-tools/grimmory",
+      "id": 1180257966,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 49,
+      "full_name": "lilishop/lilishop",
+      "id": 367217461,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 50,
+      "full_name": "mybatis/spring-boot-starter",
+      "id": 43142077,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 51,
+      "full_name": "1024-lab/smart-admin",
+      "id": 222035707,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 52,
+      "full_name": "tchiotludo/akhq",
+      "id": 148059143,
+      "stars": 3860,
+      "processedAt": "2026-10-15T06:16:08.715Z",
+      "commit": "4440816b892070fb7ba651a40d09a9e8bffac503",
+      "files": {
+        "java": 194,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 194 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 53,
+      "full_name": "helidon-io/helidon",
+      "id": 146285827,
+      "stars": 3835,
+      "processedAt": "2026-10-15T06:16:10.996Z",
+      "commit": "ab15a905d25acff0976b0b5eeacb57e506ade31d",
+      "files": {
+        "java": 3554,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 3554 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 54,
+      "full_name": "Atmosphere/atmosphere",
+      "id": 749137,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 55,
+      "full_name": "springdoc/springdoc-openapi",
+      "id": 196475719,
+      "stars": 3738,
+      "processedAt": "2026-10-15T06:16:20.126Z",
+      "commit": "354c98cbab303131573c47a4aa39ded8c579dbb3",
+      "files": {
+        "java": 282,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 860
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 56,
+      "full_name": "grpc-ecosystem/grpc-spring",
+      "id": 77675033,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 57,
+      "full_name": "vert-x3/vertx-examples",
+      "id": 31272860,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 58,
+      "full_name": "LinShunKang/MyPerf4J",
+      "id": 124743561,
+      "stars": 3567,
+      "processedAt": "2026-10-15T06:16:24.730Z",
+      "commit": "9846842704821d26ce1f44fd5896b654ae4d326f",
+      "files": {
+        "java": 200,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 200 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 59,
+      "full_name": "spring-cloud/spring-cloud-kubernetes",
+      "id": 76400426,
+      "stars": 3534,
+      "processedAt": "2026-10-15T06:16:26.359Z",
+      "commit": "b5d3da65ac1abcf3e73a5b20dc4fb9e8ecb67841",
+      "files": {
+        "java": 360,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 412
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 60,
+      "full_name": "Tencent/spring-cloud-tencent",
+      "id": 390607649,
+      "stars": 3296,
+      "processedAt": "2026-10-15T06:16:29.236Z",
+      "commit": "c581e9d96154183f05347f8610aa929811729655",
+      "files": {
+        "java": 647,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 386
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 61,
+      "full_name": "smartloli/EFAK",
+      "id": 80907025,
+      "stars": 3180,
+      "processedAt": "2026-10-15T06:16:29.579Z",
+      "commit": "d3bfcf2338a9de09171e6e1c77c30c0f4de2baa9",
+      "files": {
+        "java": 232,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 206
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 62,
+      "full_name": "cruise-control-for-kafka/cruise-control",
+      "id": 100402355,
+      "stars": 3046,
+      "processedAt": "2026-10-15T06:16:32.561Z",
+      "commit": "37982133b74c1f628a16d0e43e570e48a1fcf929",
+      "files": {
+        "java": 489,
+        "python": 20
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 489 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 63,
+      "full_name": "vector4wang/spring-boot-quick",
+      "id": 84824299,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 64,
+      "full_name": "reactor/reactor-netty",
+      "id": 66030306,
+      "stars": 2776,
+      "processedAt": "2026-10-15T06:16:34.986Z",
+      "commit": "acebbb35d17642bda1931a0db73d2462366f4827",
+      "files": {
+        "java": 559,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 559 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 65,
+      "full_name": "vladmihalcea/hypersistence-utils",
+      "id": 104705553,
+      "stars": 2669,
+      "processedAt": "2026-10-15T06:16:37.214Z",
+      "commit": "e895074a429e9b9a386f5cb1e2d2893c0dec4a06",
+      "files": {
+        "java": 452,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 452 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 66,
+      "full_name": "pac4j/pac4j",
+      "id": 3291848,
+      "stars": 2535,
+      "processedAt": "2026-10-15T06:16:38.948Z",
+      "commit": "f746b97453922199ab46a7799de6adcd1fc691df",
+      "files": {
+        "java": 716,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 716 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 67,
+      "full_name": "confluentinc/schema-registry",
+      "id": 27790789,
+      "stars": 2468,
+      "processedAt": "2026-10-15T06:16:41.430Z",
+      "commit": "819ae7947d8bf5c60670f0947d26b02e717d8454",
+      "files": {
+        "java": 651,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 651 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 68,
+      "full_name": "techa03/goodsKill",
+      "id": 76093141,
+      "stars": 2451,
+      "processedAt": "2026-10-15T06:16:46.921Z",
+      "commit": "e77c98571a4785657ea6cb834842308f40698e75",
+      "files": {
+        "java": 259,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 207
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 69,
+      "full_name": "metasfresh/metasfresh",
+      "id": 43760104,
+      "stars": 2446,
+      "processedAt": "2026-10-15T06:16:51.824Z",
+      "commit": "bd198b4d60e6c1e3df0db594694ef29fe55e165b",
+      "files": {
+        "java": 20643,
+        "python": 3
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 7827
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 70,
+      "full_name": "lets-mica/mica",
+      "id": 167107390,
+      "stars": 2236,
+      "processedAt": "2026-10-15T06:17:25.720Z",
+      "commit": "4f278a8a290483d1997ce950a6e7cc3eee1dafff",
+      "files": {
+        "java": 333,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": -2238
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 71,
+      "full_name": "spring-petclinic/spring-petclinic-microservices",
+      "id": 73559008,
+      "stars": 2218,
+      "processedAt": "2026-10-15T06:17:28.539Z",
+      "commit": "1d76b00d683e86b62867a6bf59530f8ab301244f",
+      "files": {
+        "java": 53,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 138
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 72,
+      "full_name": "jonashackt/spring-boot-vuejs",
+      "id": 103118188,
+      "status": "excluded",
+      "reason": "3c toy keyword \"example\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 73,
+      "full_name": "confluentinc/examples",
+      "id": 129901811,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 74,
+      "full_name": "zalando/logbook",
+      "id": 42457394,
+      "stars": 2066,
+      "processedAt": "2026-10-15T06:17:30.471Z",
+      "commit": "fd0f177e48724ca38ee917ce3b0d4c789529dc5c",
+      "files": {
+        "java": 257,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 222
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 75,
+      "full_name": "spring-cloud/spring-cloud-config",
+      "id": 20811348,
+      "stars": 2049,
+      "processedAt": "2026-10-15T06:17:32.816Z",
+      "commit": "c5b2795edfd114b941a29c0fca4aaf1f75bd4a0a",
+      "files": {
+        "java": 246,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 76,
+      "full_name": "xuxueli/xxl-sso",
+      "id": 126347638,
+      "stars": 2010,
+      "processedAt": "2026-10-15T06:17:34.760Z",
+      "commit": "e2158cc2b8212ce9108df9f0bdff9e6c8db42487",
+      "files": {
+        "java": 90,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 158
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 77,
+      "full_name": "nashtech-garage/yas",
+      "id": 449114455,
+      "status": "excluded",
+      "reason": "3c toy keyword \"sample\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 78,
+      "full_name": "javahongxi/whatsmars",
+      "id": 55224431,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 79,
+      "full_name": "YeautyYE/netty-websocket-spring-boot-starter",
+      "id": 139380324,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 80,
+      "full_name": "BroadleafCommerce/BroadleafCommerce",
+      "id": 2948949,
+      "stars": 1925,
+      "processedAt": "2026-10-15T06:17:37.078Z",
+      "commit": "ea8e0f9086ff1e5ff52caa22d43b23f81b72e22f",
+      "files": {
+        "java": 2788,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 81,
+      "full_name": "Discord4J/Discord4J",
+      "id": 45755430,
+      "stars": 1923,
+      "processedAt": "2026-10-15T06:17:40.766Z",
+      "commit": "e966d19c5e707bf6fa96c8ef1a3ee918d67e0133",
+      "files": {
+        "java": 879,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 879 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 82,
+      "full_name": "LianjiaTech/retrofit-spring-boot-starter",
+      "id": 252883578,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 83,
+      "full_name": "DerekYRC/mini-spring-cloud",
+      "id": 476683621,
+      "stars": 1899,
+      "processedAt": "2026-10-15T06:17:42.866Z",
+      "commit": "f3ba1f6a91ae040a49e8621d394aefed10d084c9",
+      "files": {
+        "java": 46,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 84,
+      "full_name": "in28minutes/master-spring-and-spring-boot",
+      "id": 558274787,
+      "status": "excluded",
+      "reason": "3c toy keyword \"tutorial\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 85,
+      "full_name": "ron190/jsql-injection",
+      "id": 5099917,
+      "stars": 1790,
+      "processedAt": "2026-10-15T06:17:44.606Z",
+      "commit": "398834833b05131a449c6e159408c1940c3b0961",
+      "files": {
+        "java": 316,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 86,
+      "full_name": "Netflix/genie",
+      "id": 10828921,
+      "stars": 1766,
+      "processedAt": "2026-10-15T06:17:48.966Z",
+      "commit": "a7125b178dbb70020b6e3495961a18e55ffd11d5",
+      "files": {
+        "java": 737,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 87,
+      "full_name": "ballcat-projects/ballcat",
+      "id": 216357058,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 88,
+      "full_name": "aklivity/zilla",
+      "id": 436039945,
+      "stars": 1710,
+      "processedAt": "2026-10-15T06:17:52.174Z",
+      "commit": "533c82ef1543227c8f109a3b99f9928db3da76ce",
+      "files": {
+        "java": 2807,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 2807 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 89,
+      "full_name": "mateaix/matecloud",
+      "id": 218435426,
+      "stars": 1710,
+      "processedAt": "2026-10-15T06:18:02.373Z",
+      "commit": "580562917197e9ecabfc1c0a20f2f0eea8265a83",
+      "files": {
+        "java": 647,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 336
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 90,
+      "full_name": "whwlsfb/JDumpSpider",
+      "id": 444706560,
+      "stars": 1699,
+      "processedAt": "2026-10-15T06:18:06.195Z",
+      "commit": "43d11bf69b624fdfd35100bea1198124d727b577",
+      "files": {
+        "java": 38,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 38 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 91,
+      "full_name": "kagkarlsson/db-scheduler",
+      "id": 40616171,
+      "stars": 1664,
+      "processedAt": "2026-10-15T06:18:07.963Z",
+      "commit": "466ff4b458b971470b16cfaf4fb840b60d0266fa",
+      "files": {
+        "java": 175,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 92,
+      "full_name": "spring-projects/spring-integration",
+      "id": 2090979,
+      "stars": 1629,
+      "processedAt": "2026-10-15T06:18:09.575Z",
+      "commit": "c55b80912de9543d4ba715c2e6242097a8fcbe7d",
+      "files": {
+        "java": 2156,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 2156 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 93,
+      "full_name": "dibo-software/diboot",
+      "id": 167336393,
+      "stars": 1606,
+      "processedAt": "2026-10-15T06:18:13.503Z",
+      "commit": "cd211a2dcc067491f199e3a298e43c3dcabf2a25",
+      "files": {
+        "java": 565,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 319
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 94,
+      "full_name": "roncoo/roncoo-education",
+      "id": 162245774,
+      "stars": 1561,
+      "processedAt": "2026-10-15T06:18:16.470Z",
+      "commit": "77b2e0b9d1929be5b82d09e8e222f792f41b342e",
+      "files": {
+        "java": 801,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 282
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 95,
+      "full_name": "darbyluv2code/spring-boot-3-spring-6-hibernate-for-beginners",
+      "id": 609547015,
+      "status": "excluded",
+      "reason": "3c toy keyword \"course\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 96,
+      "full_name": "spring-guides/gs-rest-service",
+      "id": 9396682,
+      "stars": 1479,
+      "processedAt": "2026-10-15T06:18:20.488Z",
+      "commit": "3f4cef01152596c19bc4d37939409358812b1421",
+      "files": {
+        "java": 4,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file found, 4 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 97,
+      "full_name": "hawtio/hawtio",
+      "id": 6966619,
+      "stars": 1464,
+      "processedAt": "2026-10-15T06:18:22.040Z",
+      "commit": "db08d63a60677a78f947bd478a0f2d2b5c518e10",
+      "files": {
+        "java": 173,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 98,
+      "full_name": "piomin/sample-spring-microservices-new",
+      "id": 130051471,
+      "status": "excluded",
+      "reason": "3c toy keyword \"sample\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 99,
+      "full_name": "troyzhxu/bean-searcher",
+      "id": 94215190,
+      "stars": 1382,
+      "processedAt": "2026-10-15T06:18:24.363Z",
+      "commit": "cc34e36ba0d8664960965c2efc2e71c6fcedccb6",
+      "files": {
+        "java": 251,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 100,
+      "full_name": "hantsy/spring-reactive-sample",
+      "id": 98204210,
+      "status": "excluded",
+      "reason": "3c toy keyword \"sample\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 101,
+      "full_name": "rstyro/Springboot",
+      "id": 98288377,
+      "status": "excluded",
+      "reason": "3c toy keyword \"demo\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 102,
+      "full_name": "spring-cloud/spring-cloud-openfeign",
+      "id": 120363922,
+      "stars": 1311,
+      "processedAt": "2026-10-15T06:18:26.280Z",
+      "commit": "c577a177c12af4d234bd051da58e3590f5fdfa3b",
+      "files": {
+        "java": 88,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 103,
+      "full_name": "eazybytes/microservices",
+      "id": 664515614,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 104,
+      "full_name": "booklore-app/booklore",
+      "id": 903039267,
+      "stars": 1289,
+      "processedAt": "2026-10-15T06:18:27.992Z",
+      "commit": "01b3407528a6ce00d064dbb9aa3f69b72d82641b",
+      "files": {
+        "java": 846,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 432
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 1,
+      "rank": 105,
+      "full_name": "pnoker/iot-dc3",
+      "id": 146448285,
+      "stars": 1287,
+      "processedAt": "2026-10-15T06:18:29.953Z",
+      "commit": "3c43e720bd40b9a6a5b3aa68d3dd7de07c45730b",
+      "files": {
+        "java": 1733,
+        "python": 16
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1490
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 106,
+      "full_name": "adorsys/keycloak-config-cli",
+      "id": 110106499,
+      "stars": 1206,
+      "processedAt": "2026-10-15T06:18:37.252Z",
+      "commit": "9c507e9acabe6b23f1d5faadd792ede875bd671b",
+      "files": {
+        "java": 121,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 107,
+      "full_name": "spring-projects/spring-modulith",
+      "id": 510838846,
+      "stars": 1198,
+      "processedAt": "2026-10-15T06:18:39.328Z",
+      "commit": "1fe549999aaa2401b675eba4a562ae374f4f96ba",
+      "files": {
+        "java": 393,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 332
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 108,
+      "full_name": "java-up-up/damai",
+      "id": 826164486,
+      "stars": 1183,
+      "processedAt": "2026-10-15T06:18:41.749Z",
+      "commit": "5bce6efe39e3014c2d2517dab80552e50f27feca",
+      "files": {
+        "java": 565,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 262
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 109,
+      "full_name": "mateaix/mateclaw",
+      "id": 1201201482,
+      "stars": 1161,
+      "processedAt": "2026-10-15T06:18:45.115Z",
+      "commit": "2efd519904251bd5a0dc132ab5c0fe216d232fbd",
+      "files": {
+        "java": 1604,
+        "python": 58
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 2273
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 110,
+      "full_name": "sagframe/sagacity-sqltoy",
+      "id": 119921993,
+      "stars": 1147,
+      "processedAt": "2026-10-15T06:18:52.378Z",
+      "commit": "5b28eee5d6d3778f26d408c88b212e92ebbd3761",
+      "files": {
+        "java": 434,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 111,
+      "full_name": "vert-x3/vertx-web",
+      "id": 26628954,
+      "stars": 1147,
+      "processedAt": "2026-10-15T06:18:56.114Z",
+      "commit": "50ff95441507417be48e77f47f309ebb65a998ad",
+      "files": {
+        "java": 414,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 414 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 112,
+      "full_name": "marcosbarbero/spring-cloud-zuul-ratelimit",
+      "id": 56258294,
+      "stars": 1130,
+      "processedAt": "2026-10-15T06:18:58.493Z",
+      "commit": "36dc0a6815d020a280a805bd9ef68dbe37148018",
+      "files": {
+        "java": 44,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 113,
+      "full_name": "awspring/spring-cloud-aws",
+      "id": 300080556,
+      "stars": 1125,
+      "processedAt": "2026-10-15T06:19:00.071Z",
+      "commit": "3e1147056a766acce043af57db66caf1bf223162",
+      "files": {
+        "java": 559,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 349
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 114,
+      "full_name": "hivemq/hivemq-mqtt-client",
+      "id": 116057862,
+      "stars": 1125,
+      "processedAt": "2026-10-15T06:19:00.082Z",
+      "commit": "43a3105c9ccbf1fd79aaae4f18dbdf713cf6f1e1",
+      "files": {
+        "java": 531,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 531 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 115,
+      "full_name": "jaygajera17/E-commerce-project-springBoot",
+      "id": 469053200,
+      "stars": 1106,
+      "processedAt": "2026-10-15T06:19:02.113Z",
+      "commit": "5e74a46b4b70623d0e4a0c9c4aee3bd1777185d2",
+      "files": {
+        "java": 22,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 116,
+      "full_name": "pgjdbc/r2dbc-postgresql",
+      "id": 136984786,
+      "stars": 1102,
+      "processedAt": "2026-10-15T06:19:04.028Z",
+      "commit": "d913c4f528f5e2391c795184609289d4d2bbf833",
+      "files": {
+        "java": 288,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 288 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 117,
+      "full_name": "lishuangqiang/AI-Meeting",
+      "id": 1206545182,
+      "stars": 1084,
+      "processedAt": "2026-10-15T06:19:05.969Z",
+      "commit": "13131f79476e5459b7ce98a36c8f6b5391c3f1e1",
+      "files": {
+        "java": 311,
+        "python": 4
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 361
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 118,
+      "full_name": "hiparker/opsli-boot",
+      "id": 295062029,
+      "stars": 1076,
+      "processedAt": "2026-10-15T06:19:08.317Z",
+      "commit": "80becfa375db9e929243e27ee2e32620f5dae8ab",
+      "files": {
+        "java": 539,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 119,
+      "full_name": "spring-cloud/spring-cloud-stream",
+      "id": 38764029,
+      "stars": 1069,
+      "processedAt": "2026-10-15T06:19:10.475Z",
+      "commit": "64ab8acf24ca6f23a04f66d227c3f39b8a2702c6",
+      "files": {
+        "java": 334,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 334
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 120,
+      "full_name": "gavlyukovskiy/spring-boot-data-source-decorator",
+      "id": 88676590,
+      "stars": 1063,
+      "processedAt": "2026-10-15T06:19:13.042Z",
+      "commit": "6a46e4eda0eaf71e19d78ca515a8e7388e5182eb",
+      "files": {
+        "java": 28,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 121,
+      "full_name": "Byron4j/CookBook",
+      "id": 153215823,
+      "stars": 1057,
+      "processedAt": "2026-10-15T06:19:17.188Z",
+      "commit": "9ed8311243d256f76319e4e0d6ad85b9bfb23ce2",
+      "files": {
+        "java": 216,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 122,
+      "full_name": "apple/servicetalk",
+      "id": 147747963,
+      "stars": 1043,
+      "processedAt": "2026-10-15T06:19:20.501Z",
+      "commit": "a0106c7cc09968ed8bce3b4b02a74057bbec4544",
+      "files": {
+        "java": 1718,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1718 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 123,
+      "full_name": "wso2/product-apim",
+      "id": 20717348,
+      "stars": 1036,
+      "processedAt": "2026-10-15T06:19:24.907Z",
+      "commit": "ad4ebf6c70236ab7033b677b08dfaf9b19cdb005",
+      "files": {
+        "java": 1165,
+        "python": 29
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1165 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 124,
+      "full_name": "microsoft/HydraLab",
+      "id": 486525050,
+      "stars": 1029,
+      "processedAt": "2026-10-15T06:19:32.018Z",
+      "commit": "f580862f26e2a343e86745799dc87122c2354450",
+      "files": {
+        "java": 396,
+        "python": 8
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 125,
+      "full_name": "authorjapps/zerocode",
+      "id": 62640065,
+      "stars": 1017,
+      "processedAt": "2026-10-15T06:19:37.372Z",
+      "commit": "d6694c4a742cda68e60f5cbc858609c255f448d3",
+      "files": {
+        "java": 209,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 209 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 126,
+      "full_name": "gaarason/database-all",
+      "id": 207734459,
+      "stars": 1014,
+      "processedAt": "2026-10-15T06:19:39.211Z",
+      "commit": "5f6e889e3964964dc53135bf238bbf085022cf3e",
+      "files": {
+        "java": 373,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 127,
+      "full_name": "spring-projects/spring-tools",
+      "id": 65829809,
+      "stars": 988,
+      "processedAt": "2026-10-15T06:19:41.023Z",
+      "commit": "bcd4ca5051069cd1df793c21a80283310fa5a976",
+      "files": {
+        "java": 2546,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1457
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 128,
+      "full_name": "vaadin/hilla",
+      "id": 362121444,
+      "stars": 983,
+      "processedAt": "2026-10-15T06:19:47.516Z",
+      "commit": "b14c34865e8f634e6d4edf5c100e3ead1e5cc16f",
+      "files": {
+        "java": 246,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 297
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 129,
+      "full_name": "linkedin/brooklin",
+      "id": 40510168,
+      "stars": 970,
+      "processedAt": "2026-10-15T06:19:50.505Z",
+      "commit": "5c51e576da1ae48035ffe201542d053b22aa3f57",
+      "files": {
+        "java": 240,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 240 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 130,
+      "full_name": "dromara/dante-cloud",
+      "id": 368698472,
+      "stars": 969,
+      "processedAt": "2026-10-15T06:19:52.767Z",
+      "commit": "2921e99cef7d2f503fdab22839fab24dcf8309e4",
+      "files": {
+        "java": 88,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 169
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 131,
+      "full_name": "terrakube-io/terrakube",
+      "id": 349578094,
+      "stars": 969,
+      "processedAt": "2026-10-15T06:19:57.663Z",
+      "commit": "d7db4c44c134468a2c34b2a87bc8f864db427b2e",
+      "files": {
+        "java": 745,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 440
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 132,
+      "full_name": "zalando/problem",
+      "id": 39705783,
+      "stars": 952,
+      "processedAt": "2026-10-15T06:19:58.617Z",
+      "commit": "16bd7a4b584777d52b58e89c86ad4c07d7c041c7",
+      "files": {
+        "java": 38,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 38 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 133,
+      "full_name": "codecentric/chaos-monkey-spring-boot",
+      "id": 87402251,
+      "stars": 941,
+      "processedAt": "2026-10-15T06:20:00.099Z",
+      "commit": "03b642bc6a4f5bcb8bf37963571d893fdf7620f7",
+      "files": {
+        "java": 105,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 150
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 134,
+      "full_name": "smallrye/smallrye-mutiny",
+      "id": 198222234,
+      "stars": 934,
+      "processedAt": "2026-10-15T06:20:02.571Z",
+      "commit": "1c2005decd7445b83775cd7bc85d527960ee31ad",
+      "files": {
+        "java": 569,
+        "python": 2
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 569 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 135,
+      "full_name": "payara/Payara",
+      "id": 23930639,
+      "stars": 922,
+      "processedAt": "2026-10-15T06:20:04.874Z",
+      "commit": "915d3b2a1eac1a285db2f9cdc4235246985279f5",
+      "files": {
+        "java": 6368,
+        "python": 91
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 6368 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 136,
+      "full_name": "Erudika/scoold",
+      "id": 80853339,
+      "stars": 921,
+      "processedAt": "2026-10-15T06:20:17.831Z",
+      "commit": "efe1af36dd2cd7b5818f7f7c68c611f8b75581ef",
+      "files": {
+        "java": 71,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 137,
+      "full_name": "eclipse-vertx/vertx-sql-client",
+      "id": 89879438,
+      "stars": 912,
+      "processedAt": "2026-10-15T06:20:21.856Z",
+      "commit": "630888beb00f8b0f168fa7c763486e35bf16dcbb",
+      "files": {
+        "java": 453,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 453 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 138,
+      "full_name": "apache/causeway",
+      "id": 6935442,
+      "stars": 906,
+      "processedAt": "2026-10-15T06:20:24.246Z",
+      "commit": "794c051d2ae84602c4fb440c4e5aedb5e54bc752",
+      "files": {
+        "java": 3940,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1322
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 139,
+      "full_name": "Alanosy/exam-platform",
+      "id": 808921896,
+      "stars": 884,
+      "processedAt": "2026-10-15T06:20:34.897Z",
+      "commit": "18d157eba37ed813b59f34815ec78b9d61dfb657",
+      "files": {
+        "java": 1110,
+        "python": 67
+      },
+      "pyFrameworks": [
+        "fastapi"
+      ],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 1484
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 140,
+      "full_name": "houko/SpringBootUnity",
+      "id": 55276445,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 141,
+      "full_name": "PlaytikaOSS/testcontainers-spring-boot",
+      "id": 107895339,
+      "stars": 876,
+      "processedAt": "2026-10-15T06:20:43.449Z",
+      "commit": "091cfc654edf6f8d3edfb8d6cba26056fc25bc40",
+      "files": {
+        "java": 218,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 142,
+      "full_name": "allegro/hermes",
+      "id": 35662043,
+      "stars": 871,
+      "processedAt": "2026-10-15T06:20:45.610Z",
+      "commit": "2c31ce23cec7895bc28d8d61db9d8e065662a98e",
+      "files": {
+        "java": 1405,
+        "python": 3
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 537
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 143,
+      "full_name": "risesoft-y9/WorkFlow-Engine",
+      "id": 847516039,
+      "stars": 865,
+      "processedAt": "2026-10-15T06:20:48.907Z",
+      "commit": "61e389a7d4772770f2200682279b5bf20d600db4",
+      "files": {
+        "java": 1216,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 499
+      },
+      "excludesMatch": true,
+      "critical": 34,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 144,
+      "full_name": "bfwg/springboot-jwt-starter",
+      "id": 72315743,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 145,
+      "full_name": "salesforce/reactive-grpc",
+      "id": 109887296,
+      "stars": 838,
+      "processedAt": "2026-10-15T06:20:57.307Z",
+      "commit": "c5957a5bbe205a27b9b8802979375a501636b5c6",
+      "files": {
+        "java": 94,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 204
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 146,
+      "full_name": "spring-cloud/spring-cloud-consul",
+      "id": 27404315,
+      "stars": 822,
+      "processedAt": "2026-10-15T06:20:57.230Z",
+      "commit": "b86e04847e53cf434e525ded9d44e862c2dd8fe2",
+      "files": {
+        "java": 78,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 167
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 147,
+      "full_name": "818000/bus",
+      "id": 788743526,
+      "stars": 815,
+      "processedAt": "2026-10-15T06:20:59.355Z",
+      "commit": "d06be3919be36bdd6192e0a5d1cc5fe32ae9d28a",
+      "files": {
+        "java": 7275,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 2788
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 148,
+      "full_name": "rieckpil/blog-tutorials",
+      "id": 135796936,
+      "status": "excluded",
+      "reason": "3c toy keyword \"tutorials\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 149,
+      "full_name": "darbyluv2code/spring-and-hibernate-for-beginners",
+      "id": 206222405,
+      "status": "excluded",
+      "reason": "3c toy keyword \"course\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 150,
+      "full_name": "moshowgame/spring-cloud-study",
+      "id": 135581492,
+      "stars": 775,
+      "processedAt": "2026-10-15T06:21:13.984Z",
+      "commit": "ea8381e686ede2e37707f2a837336fc9074dc6cf",
+      "files": {
+        "java": 183,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 151,
+      "full_name": "thingsboard/tbmq",
+      "id": 315620558,
+      "stars": 770,
+      "processedAt": "2026-10-15T06:21:15.770Z",
+      "commit": "d9be3f994d57a26f0c52771c5f11b54ce57d266c",
+      "files": {
+        "java": 1346,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 491
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 152,
+      "full_name": "apache/streampipes",
+      "id": 130603282,
+      "stars": 751,
+      "processedAt": "2026-10-15T06:21:19.178Z",
+      "commit": "da635f7e554020425a535d72d652f380daaac86a",
+      "files": {
+        "java": 2216,
+        "python": 68
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1430
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 153,
+      "full_name": "spring-cloud/spring-cloud-commons",
+      "id": 27401779,
+      "stars": 751,
+      "processedAt": "2026-10-15T06:21:25.948Z",
+      "commit": "97460b4efda12a6f39d70d24bed6eb328cd46b42",
+      "files": {
+        "java": 315,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 266
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 154,
+      "full_name": "pig-mesh/deepseek4j",
+      "id": 928679872,
+      "stars": 750,
+      "processedAt": "2026-10-15T06:21:28.341Z",
+      "commit": "b0c38715b2384b957e60f338e375759fa7b1b790",
+      "files": {
+        "java": 100,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 133
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 155,
+      "full_name": "openwms/org.openwms",
+      "id": 28772513,
+      "stars": 747,
+      "processedAt": "2026-10-15T06:21:27.497Z",
+      "commit": "9d263bf65ec75301e0302539ae7bf581412742b8",
+      "files": {
+        "java": 61,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 156,
+      "full_name": "Alovoa/alovoa",
+      "id": 232150505,
+      "stars": 719,
+      "processedAt": "2026-10-15T06:21:29.416Z",
+      "commit": "408e45fbcd34a284ba55f3fe04753cd048b2b46b",
+      "files": {
+        "java": 146,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 157,
+      "full_name": "databufflabs/databuff",
+      "id": 1272859739,
+      "stars": 704,
+      "processedAt": "2026-10-15T06:21:31.677Z",
+      "commit": "ec1133cc0a0d69dbb6ea659e047c837286a82d87",
+      "files": {
+        "java": 459,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 1324
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 158,
+      "full_name": "itwanger/PaiAgent",
+      "id": 1103758703,
+      "stars": 698,
+      "processedAt": "2026-10-15T06:21:36.691Z",
+      "commit": "05297308189fa5054f1f5ac1af6346a48eea5aad",
+      "files": {
+        "java": 132,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 159,
+      "full_name": "risesoft-y9/DataFlow-Engine",
+      "id": 847524673,
+      "stars": 697,
+      "processedAt": "2026-10-15T06:21:38.860Z",
+      "commit": "43dbb6547acd880588be8de2e041f449d216fcfe",
+      "files": {
+        "java": 1030,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 344
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 160,
+      "full_name": "wimdeblauwe/htmx-spring-boot",
+      "id": 487959167,
+      "stars": 690,
+      "processedAt": "2026-10-15T06:21:41.816Z",
+      "commit": "38ad3646b56a4797ae065bcb341122e7f436be74",
+      "files": {
+        "java": 52,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 2,
+      "rank": 161,
+      "full_name": "smart-cloud/smart-cloud",
+      "id": 183929191,
+      "stars": 686,
+      "processedAt": "2026-10-15T06:21:44.583Z",
+      "commit": "a430f1a4390c0a45af0c37123cd2e28e7934ebd9",
+      "files": {
+        "java": 430,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 291
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 162,
+      "full_name": "KouShenhai/KCloud-Platform-IoT",
+      "id": 588032914,
+      "stars": 674,
+      "processedAt": "2026-10-15T06:21:47.276Z",
+      "commit": "0e4913fc2b17852af1f85aa7a4efc1391a7f8b1a",
+      "files": {
+        "java": 1370,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 659
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 163,
+      "full_name": "ch4mpy/spring-addons",
+      "id": 184077868,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starters\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 164,
+      "full_name": "sunkaifei/FlyCms",
+      "id": 158529499,
+      "stars": 656,
+      "processedAt": "2026-10-15T06:21:55.904Z",
+      "commit": "edfdf724c3b944310f60c29aa755d03a00a75837",
+      "files": {
+        "java": 346,
+        "python": 3
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 549
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 165,
+      "full_name": "Ahoo-Wang/CosId",
+      "id": 379480417,
+      "stars": 652,
+      "processedAt": "2026-10-15T06:21:58.319Z",
+      "commit": "6b3ea96946c6f35dfe1128626d23441b097984e2",
+      "files": {
+        "java": 381,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 288
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 166,
+      "full_name": "pig-mesh/excel-spring-boot-starter",
+      "id": 250940013,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 167,
+      "full_name": "bage2014/study",
+      "id": 135044737,
+      "stars": 649,
+      "processedAt": "2026-10-15T06:22:01.019Z",
+      "commit": "1fa674376531b9aeeb214fda285c7a5c69fc2541",
+      "files": {
+        "java": 2230,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 688
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 168,
+      "full_name": "fengzhizi715/NetDiscovery",
+      "id": 112066949,
+      "stars": 644,
+      "processedAt": "2026-10-15T06:22:17.720Z",
+      "commit": "2d118210e8ef8d0bc0f6a51aeb04768e65aadb71",
+      "files": {
+        "java": 137,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 137 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 169,
+      "full_name": "scalar-labs/scalardb",
+      "id": 151700458,
+      "stars": 643,
+      "processedAt": "2026-10-15T06:22:24.462Z",
+      "commit": "eed06bcdd9828769aefa5fd824a85d7630fc6a59",
+      "files": {
+        "java": 820,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 820 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 170,
+      "full_name": "Jarrettluo/all-docs",
+      "id": 499184689,
+      "status": "excluded",
+      "reason": "3c toy keyword \"demo\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 171,
+      "full_name": "shaiwz/data-platform-open",
+      "id": 918934944,
+      "stars": 641,
+      "processedAt": "2026-10-15T06:22:27.218Z",
+      "commit": "efeacd35e8450b7a084fa2134d292cd058cf605b",
+      "files": {
+        "java": 490,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 206
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 172,
+      "full_name": "Sunagatov/Iced-Latte",
+      "id": 576302625,
+      "stars": 641,
+      "processedAt": "2026-10-15T06:22:26.671Z",
+      "commit": "271e968f99f0970f786fa570ffd211f0899eb9d1",
+      "files": {
+        "java": 517,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC",
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 271
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 173,
+      "full_name": "scalecube/scalecube-services",
+      "id": 40714460,
+      "stars": 639,
+      "processedAt": "2026-10-15T06:22:31.985Z",
+      "commit": "8fbaab01b8053deda77e651f801045623f8f6eff",
+      "files": {
+        "java": 161,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 161 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 174,
+      "full_name": "Hakky54/mutual-tls-ssl",
+      "id": 157111668,
+      "status": "excluded",
+      "reason": "3c toy keyword \"tutorial\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 175,
+      "full_name": "openanalytics/shinyproxy",
+      "id": 59122025,
+      "stars": 620,
+      "processedAt": "2026-10-15T06:22:33.938Z",
+      "commit": "2ca140d91a3c20be97f0c0486ef1adf795baa8dd",
+      "files": {
+        "java": 37,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 176,
+      "full_name": "seed4j/seed4j",
+      "id": 388727019,
+      "stars": 617,
+      "processedAt": "2026-10-15T06:22:35.448Z",
+      "commit": "546be9684ad51ec9ac86e0001ea1345c6af942b1",
+      "files": {
+        "java": 1516,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 177,
+      "full_name": "hzxie/voj",
+      "id": 25213631,
+      "stars": 615,
+      "processedAt": "2026-10-15T06:22:39.083Z",
+      "commit": "1ff10a6ef5370b3534da60ca811e11bc370fa418",
+      "files": {
+        "java": 139,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 178,
+      "full_name": "linkedin/venice",
+      "id": 349172057,
+      "stars": 615,
+      "processedAt": "2026-10-15T06:22:41.096Z",
+      "commit": "988080299d8854982e1cb03a2f81d2e920295e36",
+      "files": {
+        "java": 2521,
+        "python": 6
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 2521 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 179,
+      "full_name": "TimefoldAI/timefold-quickstarts",
+      "id": 630933034,
+      "stars": 594,
+      "processedAt": "2026-10-15T06:22:46.014Z",
+      "commit": "76993a35123a127f9b630a8f7a37a1fbe76a24b0",
+      "files": {
+        "java": 344,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 180,
+      "full_name": "line/line-fido2-server",
+      "id": 388284349,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 181,
+      "full_name": "huaweicloud/spring-cloud-huawei",
+      "id": 198181246,
+      "stars": 578,
+      "processedAt": "2026-10-15T06:22:48.872Z",
+      "commit": "d0e531176eee94e197c1b825e6ecd73ccc3b35cf",
+      "files": {
+        "java": 470,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 273
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 182,
+      "full_name": "spring-cloud/spring-cloud-zookeeper",
+      "id": 29989374,
+      "stars": 574,
+      "processedAt": "2026-10-15T06:22:51.230Z",
+      "commit": "202c5aafa4d4a8b53d482bfdd7a13b2d087b9691",
+      "files": {
+        "java": 74,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 146
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 183,
+      "full_name": "juanjuandog/FinSight-AI",
+      "id": 1235483809,
+      "stars": 560,
+      "processedAt": "2026-10-15T06:22:52.975Z",
+      "commit": "5cdf91aa756e1c08239103af4e8d9f61b7541529",
+      "files": {
+        "java": 172,
+        "python": 5
+      },
+      "pyFrameworks": [
+        "fastapi"
+      ],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 184,
+      "full_name": "JavatoDev-com/internet-banking-concept-microservices",
+      "id": 365599102,
+      "stars": 559,
+      "processedAt": "2026-10-15T06:22:55.263Z",
+      "commit": "efb42d6a6656ec128552ba3f3f93c5ce96f039ff",
+      "files": {
+        "java": 121,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 128
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 185,
+      "full_name": "jolie/jolie",
+      "id": 32290815,
+      "stars": 555,
+      "processedAt": "2026-10-15T06:22:56.885Z",
+      "commit": "d597c9aef0c535bfdca077949873a07b74e9534c",
+      "files": {
+        "java": 730,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 730 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 186,
+      "full_name": "quick-perf/quickperf",
+      "id": 191232069,
+      "stars": 543,
+      "processedAt": "2026-10-15T06:22:56.609Z",
+      "commit": "d162d2144aa5bde60bc33945e306e01f56b0b4f6",
+      "files": {
+        "java": 343,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 187,
+      "full_name": "shining-stars-l/javaup",
+      "id": 1104388418,
+      "stars": 543,
+      "processedAt": "2026-10-15T06:22:58.698Z",
+      "commit": "667016807930a32398ccaa67f2bba4451e4822c6",
+      "files": {
+        "java": 0,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 0 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 188,
+      "full_name": "piomin/sample-spring-microservices-kubernetes",
+      "id": 143009107,
+      "status": "excluded",
+      "reason": "3c toy keyword \"sample\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 189,
+      "full_name": "wimdeblauwe/error-handling-spring-boot-starter",
+      "id": 276572087,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 190,
+      "full_name": "siam1026/siam-server",
+      "id": 723677237,
+      "stars": 509,
+      "processedAt": "2026-10-15T06:23:27.344Z",
+      "commit": "0e418d6e8e1a607ae76fb2df054f2b6c8525eacd",
+      "files": {
+        "java": 755,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 191,
+      "full_name": "gessnerfl/fake-smtp-server",
+      "id": 91195201,
+      "stars": 506,
+      "processedAt": "2026-10-15T06:23:28.258Z",
+      "commit": "13475ff497e42a9b728606558fb9479498460f4c",
+      "files": {
+        "java": 115,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 192,
+      "full_name": "osalvador/ReplicaDB",
+      "id": 160506267,
+      "stars": 504,
+      "processedAt": "2026-10-15T06:23:29.967Z",
+      "commit": "75ad9f9b98ef5bfcb26f2c66fa4b7778fe4d791f",
+      "files": {
+        "java": 236,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 273
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 193,
+      "full_name": "hantsy/spring-webmvc-jwt-sample",
+      "id": 130998506,
+      "status": "excluded",
+      "reason": "3c toy keyword \"sample\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 194,
+      "full_name": "apache/camel-examples",
+      "id": 238404616,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 195,
+      "full_name": "atomikos/transactions-essentials",
+      "id": 28975929,
+      "stars": 486,
+      "processedAt": "2026-10-15T06:23:34.350Z",
+      "commit": "84806035261eacd31968a3009ff08c5a60c79726",
+      "files": {
+        "java": 350,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 196,
+      "full_name": "citrusframework/citrus",
+      "id": 500806,
+      "stars": 486,
+      "processedAt": "2026-10-15T06:23:37.328Z",
+      "commit": "9f9b2ec0f794751206cc36b68d93e554b2873145",
+      "files": {
+        "java": 2954,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 197,
+      "full_name": "influxdata/influxdb-client-java",
+      "id": 151233646,
+      "stars": 477,
+      "processedAt": "2026-10-15T06:23:42.480Z",
+      "commit": "fe48dfec2abc1ce636f35d40a518bc218ef0a565",
+      "files": {
+        "java": 554,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 198,
+      "full_name": "quuuuj/hrm",
+      "id": 481171203,
+      "stars": 474,
+      "processedAt": "2026-10-15T06:23:44.578Z",
+      "commit": "c7298b5bbca455895449bc092b734496fc61f41c",
+      "files": {
+        "java": 219,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 199,
+      "full_name": "9tigerio/db2rest",
+      "id": 731745834,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 200,
+      "full_name": "SasanLabs/VulnerableApp",
+      "id": 206928287,
+      "stars": 472,
+      "processedAt": "2026-10-15T06:23:47.180Z",
+      "commit": "ae470e391f099a84eaf09fc90cf8f843ae933f90",
+      "files": {
+        "java": 129,
+        "python": 4
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 201,
+      "full_name": "oracle/coherence",
+      "id": 242776849,
+      "stars": 470,
+      "processedAt": "2026-10-15T06:23:53.432Z",
+      "commit": "b6d2f4139af87df4e621137a53db5e2c8da363f8",
+      "files": {
+        "java": 4486,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 4486 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 202,
+      "full_name": "hibernate/hibernate-reactive",
+      "id": 167560012,
+      "stars": 469,
+      "processedAt": "2026-10-15T06:24:15.902Z",
+      "commit": "a9e4e725c308519cd96bbd4f2d73a1bf4d9da987",
+      "files": {
+        "java": 458,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 458 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 203,
+      "full_name": "openmessaging/benchmark",
+      "id": 108890846,
+      "stars": 451,
+      "processedAt": "2026-10-15T06:24:18.106Z",
+      "commit": "5b1fa70951a323da26bd587174b58bb2c65b0b5c",
+      "files": {
+        "java": 0,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 0 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 204,
+      "full_name": "cloudevents/sdk-java",
+      "id": 149663208,
+      "stars": 447,
+      "processedAt": "2026-10-15T06:24:19.867Z",
+      "commit": "81d64ac49d6e4ecc8c2ff35b4b8e24dfa8ca8336",
+      "files": {
+        "java": 208,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 196
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 205,
+      "full_name": "spring-cloud/spring-cloud-bus",
+      "id": 23238573,
+      "stars": 447,
+      "processedAt": "2026-10-15T06:24:21.981Z",
+      "commit": "6e3ff5ad1f0cab4913b3b593856b404ef5ad3186",
+      "files": {
+        "java": 38,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 206,
+      "full_name": "spring-cloud/spring-cloud-task",
+      "id": 41825227,
+      "stars": 445,
+      "processedAt": "2026-10-15T06:24:23.773Z",
+      "commit": "f55a2a26e3e503633f38ea573ad91732572f5602",
+      "files": {
+        "java": 165,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 186
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 207,
+      "full_name": "Earth-OL-Player/ai_learn_project",
+      "id": 1237639323,
+      "stars": 441,
+      "processedAt": "2026-10-15T06:24:25.934Z",
+      "commit": "267b0a3ecb29c9e63c48c796470fed19ee1ae6ca",
+      "files": {
+        "java": 202,
+        "python": 34
+      },
+      "pyFrameworks": [
+        "fastapi"
+      ],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 208,
+      "full_name": "joinfaces/joinfaces",
+      "id": 57401572,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starters\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 209,
+      "full_name": "temporalio/sdk-java",
+      "id": 215840316,
+      "stars": 436,
+      "processedAt": "2026-10-15T06:24:25.591Z",
+      "commit": "5f815c084861cee759b78f933583afc5c1e2fe39",
+      "files": {
+        "java": 975,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 556
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 210,
+      "full_name": "LnYo-Cly/ai4j",
+      "id": 843734873,
+      "stars": 435,
+      "processedAt": "2026-10-15T06:24:28.810Z",
+      "commit": "a48b30c7c0e9572ba9c4aff7af643fb9e148b7f9",
+      "files": {
+        "java": 1223,
+        "python": 8
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 211,
+      "full_name": "bonigarcia/mastering-junit5",
+      "id": 82903968,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 212,
+      "full_name": "gtiwari333/spring-boot-real-world-web-application-example",
+      "id": 186284368,
+      "status": "excluded",
+      "reason": "3c toy keyword \"example\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 213,
+      "full_name": "piomin/sample-spring-kafka-microservices",
+      "id": 450540635,
+      "status": "excluded",
+      "reason": "3c toy keyword \"sample\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 214,
+      "full_name": "feiyuchuixue/sz-boot-parent",
+      "id": 783276036,
+      "status": "excluded",
+      "reason": "3c toy keyword \"scaffold\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 215,
+      "full_name": "shiyindaxiaojie/eden-demo-cola",
+      "id": 453137046,
+      "status": "excluded",
+      "reason": "3c toy keyword \"demo\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 216,
+      "full_name": "littlehorse-enterprises/littlehorse",
+      "id": 668392754,
+      "stars": 400,
+      "processedAt": "2026-10-15T06:24:32.078Z",
+      "commit": "4848a9499a8e197f748743711b6ada9537af1bcd",
+      "files": {
+        "java": 1523,
+        "python": 41
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1523 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 217,
+      "full_name": "opentracing-contrib/java-spring-cloud",
+      "id": 96905440,
+      "stars": 399,
+      "processedAt": "2026-10-15T06:24:35.766Z",
+      "commit": "7664c1cdd37f87d593af3359fb4127f5b957a2d4",
+      "files": {
+        "java": 53,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 155
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 218,
+      "full_name": "sonus21/rqueue",
+      "id": 216000802,
+      "stars": 394,
+      "processedAt": "2026-10-15T06:24:37.610Z",
+      "commit": "a5abbca42f4cce3646b1cf92b3ca4dff5e485ad8",
+      "files": {
+        "java": 360,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 335
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 219,
+      "full_name": "davidmoten/rxjava2-jdbc",
+      "id": 72403045,
+      "stars": 393,
+      "processedAt": "2026-10-15T06:24:40.380Z",
+      "commit": "d97ac9c4ae172fac0dd083cc3964657708284fe5",
+      "files": {
+        "java": 102,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 102 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 220,
+      "full_name": "hoangtien2k3/ecommerce-microservices",
+      "id": 694105595,
+      "stars": 390,
+      "processedAt": "2026-10-15T06:24:42.056Z",
+      "commit": "394b34ba4699aa54919ff724115c8feb6e78e960",
+      "files": {
+        "java": 365,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 190
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 221,
+      "full_name": "mongodb/mongo-kafka",
+      "id": 183648903,
+      "stars": 389,
+      "processedAt": "2026-10-15T06:24:44.340Z",
+      "commit": "e62a9b9f93999bb82a077f8259a97bbdf1988225",
+      "files": {
+        "java": 203,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 203 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 222,
+      "full_name": "loki4j/loki-logback-appender",
+      "id": 308847657,
+      "stars": 388,
+      "processedAt": "2026-10-15T06:24:46.259Z",
+      "commit": "14ef9ed65e5128749d89a7ba817de160c0a2b1f2",
+      "files": {
+        "java": 72,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 72 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 223,
+      "full_name": "convertigo/convertigo",
+      "id": 118932996,
+      "stars": 387,
+      "processedAt": "2026-10-15T06:24:47.980Z",
+      "commit": "ee4ead547790feec8f2344f1d2b24d0f748d6dff",
+      "files": {
+        "java": 2395,
+        "python": 4
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 2395 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 224,
+      "full_name": "Genc/spring-boot-boilerplate",
+      "id": 287923359,
+      "status": "excluded",
+      "reason": "3c toy keyword \"boilerplate\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 225,
+      "full_name": "line/decaton",
+      "id": 245131903,
+      "stars": 373,
+      "processedAt": "2026-10-15T06:24:53.303Z",
+      "commit": "5e122424dfb9f09c0ddeff0b326eeca8ff3a1155",
+      "files": {
+        "java": 149,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 149 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 226,
+      "full_name": "shuigedeng/taotao-cloud-project",
+      "id": 309319116,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 227,
+      "full_name": "conduktor/kafka-security-manager",
+      "id": 123456662,
+      "stars": 372,
+      "processedAt": "2026-10-15T06:24:55.195Z",
+      "commit": "69f3707629b41db1dde86bc432d5de578cd1201d",
+      "files": {
+        "java": 28,
+        "python": 4
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 28 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 228,
+      "full_name": "MarcGiffing/bucket4j-spring-boot-starter",
+      "id": 96845301,
+      "status": "excluded",
+      "reason": "3c toy keyword \"starter\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 229,
+      "full_name": "anton-liauchuk/educational-platform",
+      "id": 213216035,
+      "stars": 371,
+      "processedAt": "2026-10-15T06:24:56.920Z",
+      "commit": "a6f575c3df95acd0e2891f23f8cab229cbb89c87",
+      "files": {
+        "java": 159,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 156
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 230,
+      "full_name": "sofn/ArchForge",
+      "id": 44239882,
+      "stars": 367,
+      "processedAt": "2026-10-15T06:24:56.559Z",
+      "commit": "af9e614350451c2a193065fd17cd45db8d1a51e0",
+      "files": {
+        "java": 785,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 421
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 231,
+      "full_name": "LuoDi-Nate/financial-management",
+      "id": 1235730493,
+      "stars": 363,
+      "processedAt": "2026-10-15T06:24:59.269Z",
+      "commit": "f423f02bb3b4c3462e5f7a2b9a86fe3f7a7c9b77",
+      "files": {
+        "java": 478,
+        "python": 4
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [
+        "ASYNC"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 517
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 232,
+      "full_name": "apache/camel-spring-boot-examples",
+      "id": 263834466,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 233,
+      "full_name": "koupleless/koupleless",
+      "id": 739365678,
+      "stars": 358,
+      "processedAt": "2026-10-15T06:25:03.902Z",
+      "commit": "9228348c881d9f7c05a10555d02f608dfc686940",
+      "files": {
+        "java": 0,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 0 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 234,
+      "full_name": "spring-cloud/spring-cloud-circuitbreaker",
+      "id": 157572651,
+      "stars": 356,
+      "processedAt": "2026-10-15T06:25:05.668Z",
+      "commit": "dcaccab8d1e2db8265e58027c4e9d0634e1f740c",
+      "files": {
+        "java": 27,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 157
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 235,
+      "full_name": "team-dodn/spring-boot-java-template",
+      "id": 593775657,
+      "status": "excluded",
+      "reason": "3c toy keyword \"template\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 236,
+      "full_name": "wiremock/wiremock-spring-boot",
+      "id": 606020474,
+      "stars": 353,
+      "processedAt": "2026-10-15T06:25:07.441Z",
+      "commit": "d3eef6ac6bf219d63e45a3546b0ea7c6bd93c4b9",
+      "files": {
+        "java": 14,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file found, 14 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 237,
+      "full_name": "springwolf/springwolf-core",
+      "id": 163955174,
+      "stars": 352,
+      "processedAt": "2026-10-15T06:25:08.992Z",
+      "commit": "0ef29af26ac66a7bd02da42c1fe324ac81cf4127",
+      "files": {
+        "java": 478,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 478 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 238,
+      "full_name": "streamthoughts/kafka-connect-file-pulse",
+      "id": 170883666,
+      "stars": 349,
+      "processedAt": "2026-10-15T06:25:11.254Z",
+      "commit": "050f1bc90329201bf39fd674c5111ca3c5bfd742",
+      "files": {
+        "java": 415,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 415 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 239,
+      "full_name": "gruelbox/transaction-outbox",
+      "id": 247489164,
+      "stars": 345,
+      "processedAt": "2026-10-15T06:25:14.196Z",
+      "commit": "7799866575eac6e47343bd2a33712b4a34097b15",
+      "files": {
+        "java": 78,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 240,
+      "full_name": "strimzi/strimzi-kafka-bridge",
+      "id": 54389337,
+      "stars": 345,
+      "processedAt": "2026-10-15T06:25:15.805Z",
+      "commit": "f298ffa313f984e1d1d42d620d316248bf985f26",
+      "files": {
+        "java": 47,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 47 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 241,
+      "full_name": "siam1026/siam-cloud",
+      "id": 710260768,
+      "stars": 344,
+      "processedAt": "2026-10-15T06:25:17.409Z",
+      "commit": "d6ee970f8decaac09d7f6cbce022b6c67d8d2d33",
+      "files": {
+        "java": 913,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 242,
+      "full_name": "apache/syncope",
+      "id": 25623942,
+      "status": "excluded",
+      "reason": "3a used before"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 243,
+      "full_name": "raystack/firehose",
+      "id": 334098715,
+      "stars": 343,
+      "processedAt": "2026-10-15T06:25:20.692Z",
+      "commit": "9e1f4b144bf8d85bddfff754bfab7bb9bec8f71f",
+      "files": {
+        "java": 231,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 231 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 244,
+      "full_name": "zalando/riptide",
+      "id": 33559545,
+      "stars": 342,
+      "processedAt": "2026-10-15T06:25:24.800Z",
+      "commit": "4e9400ad4f4fe01512245d7f651de16b2ebf985c",
+      "files": {
+        "java": 272,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 245,
+      "full_name": "jingsewu/open-wes",
+      "id": 901162663,
+      "stars": 341,
+      "processedAt": "2026-10-15T06:25:27.114Z",
+      "commit": "9d09311ab08e8b2d7472410b56558cf520757458",
+      "files": {
+        "java": 1324,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "ASYNC",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": 327
+      },
+      "excludesMatch": true,
+      "critical": 1,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 246,
+      "full_name": "apache/incubator-kie-optaplanner-quickstarts",
+      "id": 288669538,
+      "stars": 334,
+      "processedAt": "2026-10-15T06:25:27.552Z",
+      "commit": "6e98dfd687322bc0b1f7719d5da8d5412e6bf7a8",
+      "files": {
+        "java": 160,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 247,
+      "full_name": "cloudfoundry/cf-java-client",
+      "id": 2433623,
+      "stars": 334,
+      "processedAt": "2026-10-15T06:25:29.633Z",
+      "commit": "fffc4400d39d8fa192fff229e453cba40f130873",
+      "files": {
+        "java": 1888,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 797
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 248,
+      "full_name": "Nasruddin/spring-boot-based-microservices",
+      "id": 188917917,
+      "status": "excluded",
+      "reason": "3c toy keyword \"courses\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 249,
+      "full_name": "rieckpil/testing-spring-boot-applications-masterclass",
+      "id": 266228023,
+      "stars": 332,
+      "processedAt": "2026-10-15T06:25:36.310Z",
+      "commit": "f3c2227533a9da407db4f84e2f1f81ddf8371380",
+      "files": {
+        "java": 29,
+        "python": 2
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 250,
+      "full_name": "kroxylicious/kroxylicious",
+      "id": 473134112,
+      "stars": 329,
+      "processedAt": "2026-10-15T06:25:38.125Z",
+      "commit": "c0feaf663f20c57c76151a051bbb6d5128c456d3",
+      "files": {
+        "java": 1377,
+        "python": 6
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1377 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 251,
+      "full_name": "politrons/reactive",
+      "id": 42093392,
+      "status": "excluded",
+      "reason": "3c toy keyword \"examples\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 252,
+      "full_name": "shiyindaxiaojie/eden-architect",
+      "id": 237178706,
+      "stars": 328,
+      "processedAt": "2026-10-15T06:25:42.431Z",
+      "commit": "735d40cbe99424ceca9ec541a52144787dd9f314",
+      "files": {
+        "java": 1221,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": true,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 420
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 253,
+      "full_name": "aws-samples/designing-cloud-native-microservices-on-aws",
+      "id": 227897395,
+      "status": "excluded",
+      "reason": "3c toy keyword \"workshop\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 254,
+      "full_name": "geoserver/geoserver-cloud",
+      "id": 278397560,
+      "stars": 321,
+      "processedAt": "2026-10-15T06:25:45.919Z",
+      "commit": "47867cb7c737dc2175a0eedc839677cc9d5a2af0",
+      "files": {
+        "java": 727,
+        "python": 1
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 255,
+      "full_name": "jdubois/boot-ui",
+      "id": 1249296251,
+      "stars": 318,
+      "processedAt": "2026-10-15T06:25:50.759Z",
+      "commit": "85ec9a19f8f700c571d4ed3bd3b2919ff3de3ebd",
+      "files": {
+        "java": 2206,
+        "python": 23
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 1,
+        "signal": null,
+        "durationMs": -178
+      },
+      "excludesMatch": true,
+      "critical": 11,
+      "status": "included"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 256,
+      "full_name": "wso2/product-microgateway",
+      "id": 134538006,
+      "stars": 317,
+      "processedAt": "2026-10-15T06:25:55.656Z",
+      "commit": "7f01aaeae542c8f659a81b6bb506688c1651c806",
+      "files": {
+        "java": 587,
+        "python": 0
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": false,
+        "reactor": false
+      },
+      "families": [],
+      "status": "excluded",
+      "reason": "3g no code signal (ASYNC, KAFKA, REACTOR)"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 257,
+      "full_name": "confluentinc/ksql",
+      "id": 69400326,
+      "stars": 316,
+      "processedAt": "2026-10-15T06:25:58.383Z",
+      "commit": "b665cf557f9bd29985cc52dc087271f256d36e1d",
+      "files": {
+        "java": 1872,
+        "python": 3
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": false
+      },
+      "families": [
+        "KAFKA"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 1872 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 258,
+      "full_name": "anton-liauchuk/java-interview",
+      "id": 188599783,
+      "status": "excluded",
+      "reason": "3c toy keyword \"interview\""
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 259,
+      "full_name": "streamthoughts/jikkou",
+      "id": 141187250,
+      "stars": 312,
+      "processedAt": "2026-10-15T06:26:12.358Z",
+      "commit": "86d2c56bf76610d2fbb971286772a7ede7b3d22f",
+      "files": {
+        "java": 923,
+        "python": 2
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": false,
+        "kafka": true,
+        "reactor": true
+      },
+      "families": [
+        "KAFKA",
+        "REACTOR"
+      ],
+      "status": "excluded",
+      "reason": "3e stack: spring-boot build file not found, 923 .java files"
+    },
+    {
+      "pool": "java",
+      "subpool": "java",
+      "batch": 3,
+      "rank": 260,
+      "full_name": "rrezartprebreza/spring-boot-skills",
+      "id": 1210653721,
+      "stars": 309,
+      "processedAt": "2026-10-15T06:26:15.190Z",
+      "commit": "f0c06a01b0b7571b519cd43e16692b2483a24514",
+      "files": {
+        "java": 59,
+        "python": 4
+      },
+      "pyFrameworks": [],
+      "signals": {
+        "enableAsync": false,
+        "async": true,
+        "kafka": false,
+        "reactor": true
+      },
+      "families": [
+        "REACTOR"
+      ],
+      "scan": {
+        "exitCode": 0,
+        "signal": null,
+        "durationMs": 364
+      },
+      "excludesMatch": true,
+      "critical": 0,
+      "status": "included"
+    }
+  ],
+  "frozen": true,
+  "frozenReason": "58 java CRITICAL >= 50"
+}

@@ -1,0 +1,3968 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "bom/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "core/builder/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "core/deployment/src/test",
+        "pattern": "test",
+        "files": 123
+      },
+      {
+        "path": "core/processor/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "core/runtime/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "devtools/cli-common/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "devtools/cli/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "devtools/config-doc-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/gradle/build-logic/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/gradle/gradle-application-plugin/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "devtools/gradle/gradle-extension-plugin/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "devtools/gradle/gradle-model/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "devtools/maven/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/examples",
+        "pattern": "examples",
+        "files": 27
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/aesh-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/aesh-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/azure-functions-codestart/java/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/azure-functions-http-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/funqy-http-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/grpc-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/lgtm-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/messaging-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/picocli-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/picocli-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/reactive-routes-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/reactive-routes-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/rest-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/rest-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/resteasy-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/resteasy-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/resteasy-reactive-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/resteasy-reactive-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/spring-web-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/main/resources/codestarts/quarkus/extension-codestarts/spring-web-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "devtools/project-core-extension-codestarts/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "docs/.vale/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "docs/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/aesh/deployment/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "extensions/aesh/ssh/deployment/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "extensions/aesh/websocket/deployment/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "extensions/agroal/deployment/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "extensions/amazon-lambda-http/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda-http/http-event-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/amazon-lambda-http/maven-archetype/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda-http/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda-rest/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda-rest/maven-archetype/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda-rest/rest-event-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/amazon-lambda-rest/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda/common-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/amazon-lambda/common-runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda/deployment/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "extensions/amazon-lambda/event-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/amazon-lambda/maven-archetype/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/amazon-lambda/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/arc/deployment/src/test",
+        "pattern": "test",
+        "files": 183
+      },
+      {
+        "path": "extensions/avro/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/azure-functions-http/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/cache/deployment/src/test",
+        "pattern": "test",
+        "files": 37
+      },
+      {
+        "path": "extensions/cache/kotlin/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/config-yaml/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/config-yaml/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/container-image/container-image-docker-common/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/container-image/container-image-jib/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/container-image/container-image-openshift/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/container-image/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/cyclonedx/endpoint/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/cyclonedx/generator/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/data/hibernate/deployment/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "extensions/data/hibernate/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/datasource/common/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/devjsonrpc/deployment-spi/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/devservices/common/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/devservices/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/devservices/postgresql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/devui/deployment/src/test",
+        "pattern": "test",
+        "files": 44
+      },
+      {
+        "path": "extensions/devui/observability-store/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "extensions/elasticsearch-rest-client/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/elytron-security-common/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/elytron-security-jdbc/deployment/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "extensions/elytron-security-ldap/deployment/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "extensions/elytron-security-properties-file/deployment/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "extensions/elytron-security/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/flyway/deployment/src/test",
+        "pattern": "test",
+        "files": 59
+      },
+      {
+        "path": "extensions/funqy/funqy-amazon-lambda/deployment/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "extensions/funqy/funqy-http/deployment/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "extensions/funqy/funqy-knative-events/deployment/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "extensions/funqy/funqy-server-common/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/funqy/funqy-server-common/runtime/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/google-cloud-functions-http/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/grpc/deployment/src/test",
+        "pattern": "test",
+        "files": 135
+      },
+      {
+        "path": "extensions/grpc/protoc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/grpc/runtime/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "extensions/hibernate-envers/deployment/src/test",
+        "pattern": "test",
+        "files": 46
+      },
+      {
+        "path": "extensions/hibernate-orm/deployment/src/test",
+        "pattern": "test",
+        "files": 335
+      },
+      {
+        "path": "extensions/hibernate-orm/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/hibernate-reactive/deployment/src/test",
+        "pattern": "test",
+        "files": 116
+      },
+      {
+        "path": "extensions/hibernate-search-orm-elasticsearch/deployment/src/test",
+        "pattern": "test",
+        "files": 41
+      },
+      {
+        "path": "extensions/hibernate-search-orm-outbox-polling/deployment/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/hibernate-search-standalone-elasticsearch/deployment/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "extensions/hibernate-validator/deployment/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "extensions/http3/deployment/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "extensions/infinispan-cache/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/infinispan-client/deployment/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "extensions/infinispan-client/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/info/deployment/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/jackson/deployment/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "extensions/jaxb/deployment/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "extensions/jdbc/jdbc-db2/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/jdbc/jdbc-h2/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/jdbc/jdbc-mariadb/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/jdbc/jdbc-mssql/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/jdbc/jdbc-mysql/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/jdbc/jdbc-oracle/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/jdbc/jdbc-postgresql/deployment/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/jdbc/jdbc-postgresql/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/jfr/deployment/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "extensions/jsonb/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/jsonb/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kafka-client/runtime-dev/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/kafka-client/runtime/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "extensions/kafka-streams/runtime-dev/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kafka-streams/runtime/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/keycloak-admin-client-common/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/keycloak-admin-rest-client/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/keycloak-admin-resteasy-client/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/keycloak-authorization/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/keycloak-authorization/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kubernetes-client/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/kubernetes-client/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kubernetes-config/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kubernetes-config/runtime/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/kubernetes-service-binding/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kubernetes-service-binding/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/kubernetes/openshift/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/kubernetes/spi/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/kubernetes/vanilla/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/liquibase/liquibase-mongodb/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/liquibase/liquibase/deployment/src/test",
+        "pattern": "test",
+        "files": 40
+      },
+      {
+        "path": "extensions/load-shedding/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/logging-json/deployment/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "extensions/mailer/deployment/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "extensions/mailer/runtime/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "extensions/micrometer-opentelemetry/deployment/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "extensions/micrometer/deployment/src/test",
+        "pattern": "test",
+        "files": 89
+      },
+      {
+        "path": "extensions/micrometer/runtime/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "extensions/mongodb-client/deployment/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "extensions/mongodb-client/runtime/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "extensions/mutiny/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/narayana-jta/deployment/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "extensions/narayana-jta/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/narayana-lra/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/netty/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/observability-devservices/testcontainers/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/observation/deployment/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "extensions/oidc-client-filter/deployment/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "extensions/oidc-client-graphql/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/oidc-client-reactive-filter/deployment/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "extensions/oidc-client-registration/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/oidc-client-registration/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/oidc-client/deployment/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "extensions/oidc-client/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/oidc-common/runtime/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/oidc-db-token-state-manager/deployment/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "extensions/oidc-redis-token-state-manager/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/oidc-token-propagation-reactive/deployment/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/oidc-token-propagation/deployment/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "extensions/oidc/deployment/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "extensions/oidc/runtime/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "extensions/openshift-client/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/opentelemetry/deployment/src/test",
+        "pattern": "test",
+        "files": 112
+      },
+      {
+        "path": "extensions/opentelemetry/runtime/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/packaging/jlink/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/packaging/modular/spi/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/panache/hibernate-orm-panache-common/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/hibernate-orm-panache-kotlin/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/panache/hibernate-orm-panache-kotlin/runtime/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/panache/hibernate-orm-panache/deployment/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "extensions/panache/hibernate-orm-panache/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/hibernate-orm-rest-data-panache/deployment/src/test",
+        "pattern": "test",
+        "files": 74
+      },
+      {
+        "path": "extensions/panache/hibernate-reactive-panache-kotlin/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/panache/hibernate-reactive-panache-kotlin/runtime/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/panache/hibernate-reactive-panache/deployment/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "extensions/panache/hibernate-reactive-panache/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/hibernate-reactive-rest-data-panache/deployment/src/test",
+        "pattern": "test",
+        "files": 61
+      },
+      {
+        "path": "extensions/panache/mongodb-panache-common/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/mongodb-panache-common/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/mongodb-panache-kotlin/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/mongodb-panache-kotlin/runtime/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/panache/mongodb-panache/deployment/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "extensions/panache/panache-hibernate-common/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/panache-mock/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/panache/panacheql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/rest-data-panache/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/panache/rest-data-panache/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/picocli/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/proxy-registry/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/quartz/deployment/src/test",
+        "pattern": "test",
+        "files": 78
+      },
+      {
+        "path": "extensions/qute/deployment/src/test",
+        "pattern": "test",
+        "files": 236
+      },
+      {
+        "path": "extensions/reactive-datasource/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/reactive-db2-client/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/reactive-mssql-client/deployment/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "extensions/reactive-mysql-client/deployment/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "extensions/reactive-oracle-client/deployment/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "extensions/reactive-pg-client/deployment/src/test",
+        "pattern": "test",
+        "files": 37
+      },
+      {
+        "path": "extensions/reactive-routes/deployment/src/test",
+        "pattern": "test",
+        "files": 51
+      },
+      {
+        "path": "extensions/reactive-streams-operators/mutiny-reactive-streams-operators/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/reactive-streams-operators/smallrye-reactive-streams-operators/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/redis-cache/deployment/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "extensions/redis-client/deployment/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "extensions/redis-client/runtime/src/test",
+        "pattern": "test",
+        "files": 67
+      },
+      {
+        "path": "extensions/resteasy-classic/rest-client-config/runtime/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-client-jackson/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-client-jaxb/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-client-jsonb/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-client-mutiny/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-client/deployment/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-client/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-jackson/deployment/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-jaxb/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-jsonb/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-jsonb/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-links/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-multipart/deployment/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-mutiny-common/runtime/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-mutiny/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy-qute/deployment/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "extensions/resteasy-classic/resteasy/deployment/src/test",
+        "pattern": "test",
+        "files": 246
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client-jackson/deployment/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client-jaxb/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client-jaxrs/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client-jsonb/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client-kotlin-serialization/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client/deployment/src/test",
+        "pattern": "test",
+        "files": 260
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-client/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-csrf/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-jackson/deployment/src/test",
+        "pattern": "test",
+        "files": 206
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-jaxb/deployment/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-jsonb/deployment/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-kotlin-serialization-common/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-kotlin-serialization-common/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-links/deployment/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-qute/deployment/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest-servlet/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest/deployment/src/test",
+        "pattern": "test",
+        "files": 631
+      },
+      {
+        "path": "extensions/resteasy-reactive/rest/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/scheduler/common/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/scheduler/deployment/src/test",
+        "pattern": "test",
+        "files": 59
+      },
+      {
+        "path": "extensions/security-jpa-reactive/deployment/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "extensions/security-jpa/deployment/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "extensions/security-webauthn/deployment/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "extensions/security/deployment/src/test",
+        "pattern": "test",
+        "files": 112
+      },
+      {
+        "path": "extensions/security/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/signals/deployment/src/test",
+        "pattern": "test",
+        "files": 43
+      },
+      {
+        "path": "extensions/signals/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/smallrye-context-propagation/deployment/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "extensions/smallrye-fault-tolerance/deployment/src/test",
+        "pattern": "test",
+        "files": 114
+      },
+      {
+        "path": "extensions/smallrye-graphql-client/deployment/src/test",
+        "pattern": "test",
+        "files": 41
+      },
+      {
+        "path": "extensions/smallrye-graphql/deployment/src/test",
+        "pattern": "test",
+        "files": 83
+      },
+      {
+        "path": "extensions/smallrye-health/deployment/src/test",
+        "pattern": "test",
+        "files": 37
+      },
+      {
+        "path": "extensions/smallrye-jwt-build/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/smallrye-jwt/deployment/src/test",
+        "pattern": "test",
+        "files": 61
+      },
+      {
+        "path": "extensions/smallrye-openapi/deployment/src/test",
+        "pattern": "test",
+        "files": 119
+      },
+      {
+        "path": "extensions/smallrye-reactive-messaging-amqp/deployment/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "extensions/smallrye-reactive-messaging-kafka/deployment/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "extensions/smallrye-reactive-messaging-pulsar/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/smallrye-reactive-messaging-pulsar/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/smallrye-reactive-messaging/deployment/src/test",
+        "pattern": "test",
+        "files": 88
+      },
+      {
+        "path": "extensions/smallrye-stork/runtime/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/spiffe-client/deployment/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "extensions/spring-boot-properties/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/spring-cache/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/spring-cloud-config-client/runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/spring-data-jpa/deployment/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "extensions/spring-data-rest/deployment/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "extensions/spring-di/deployment/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "extensions/spring-scheduled/deployment/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/spring-security/deployment/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "extensions/spring-tx/deployment/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/spring-web/resteasy-classic/tests",
+        "pattern": "tests",
+        "files": 7
+      },
+      {
+        "path": "extensions/spring-web/resteasy-reactive/tests",
+        "pattern": "tests",
+        "files": 14
+      },
+      {
+        "path": "extensions/swagger-ui/deployment/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "extensions/tls-registry/cli/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/tls-registry/deployment/src/test",
+        "pattern": "test",
+        "files": 168
+      },
+      {
+        "path": "extensions/tls-registry/runtime/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/undertow/deployment/src/test",
+        "pattern": "test",
+        "files": 77
+      },
+      {
+        "path": "extensions/vertx-graphql/deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/vertx-http/deployment/src/test",
+        "pattern": "test",
+        "files": 372
+      },
+      {
+        "path": "extensions/vertx-http/runtime/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "extensions/vertx/deployment/src/test",
+        "pattern": "test",
+        "files": 55
+      },
+      {
+        "path": "extensions/vertx/runtime/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/virtual-threads/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/web-dependency-locator/deployment/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "extensions/websockets-next/deployment/src/test",
+        "pattern": "test",
+        "files": 292
+      },
+      {
+        "path": "extensions/websockets-next/runtime-dev/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/websockets/client/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "extensions/websockets/server/deployment/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "independent-projects/arc/processor/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "independent-projects/arc/runtime/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "independent-projects/arc/tcks/atinject-tck-runner/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "independent-projects/arc/tcks/cdi-tck-runner/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "independent-projects/arc/tcks/lang-model-tck-runner/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "independent-projects/arc/tests",
+        "pattern": "tests",
+        "files": 882
+      },
+      {
+        "path": "independent-projects/bootstrap/app-model/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "independent-projects/bootstrap/classloader-commons/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/bootstrap/core/src/test",
+        "pattern": "test",
+        "files": 44
+      },
+      {
+        "path": "independent-projects/bootstrap/json/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "independent-projects/bootstrap/maven-resolver/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "independent-projects/bootstrap/runner/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "independent-projects/extension-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "independent-projects/junit-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "independent-projects/qute/core/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "independent-projects/qute/debug/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "independent-projects/qute/generator/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "independent-projects/resteasy-reactive/client/processor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/resteasy-reactive/client/runtime/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "independent-projects/resteasy-reactive/common/runtime/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "independent-projects/resteasy-reactive/server/runtime/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "independent-projects/resteasy-reactive/server/vertx/src/test",
+        "pattern": "test",
+        "files": 352
+      },
+      {
+        "path": "independent-projects/tools/analytics-common/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus-extension/code/devmode-test/java/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus-extension/code/extension-codestart/java/integration-tests/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus-extension/code/integration-tests/java/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus-extension/code/quarkiverse/java/docs/modules/ROOT/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus-extension/code/unit-test/java/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus/legacy-extensions-codestarts/resteasy-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus/legacy-extensions-codestarts/resteasy-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus/legacy-extensions-codestarts/resteasy-reactive-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus/legacy-extensions-codestarts/resteasy-reactive-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus/legacy-extensions-codestarts/spring-web-codestart/java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus/legacy-extensions-codestarts/spring-web-codestart/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "independent-projects/tools/codestarts/examples",
+        "pattern": "examples",
+        "files": 1
+      },
+      {
+        "path": "independent-projects/tools/codestarts/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "independent-projects/tools/devtools-common/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "independent-projects/tools/devtools-testing/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "independent-projects/tools/registry-client/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/aesh-native/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/aesh-ssh-native/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/aesh-websocket-native/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/aesh/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "integration-tests/agroal/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-http-resteasy-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-http/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-rest-funqy/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-rest-reactive-routes/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-rest-resteasy-reactive/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/amazon-lambda-rest-servlet/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-s3event/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda-stream-handler/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/amazon-lambda/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/avro-reload/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/awt-packaging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/awt/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/bouncycastle-fips-jsse/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/bouncycastle-fips/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/bouncycastle-jsse/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/bouncycastle/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/cache-multiple-backends/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/cache/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/command-mode/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/compose-devservices/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/container-image/maven-invoker-way/src/it/container-build-docker-aot/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/container-image/maven-invoker-way/src/it/container-build-jib-aot/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/container-image/maven-invoker-way/src/it/container-native-main/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/container-image/quarkus-standard-way/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/data-hibernate/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/devmode/src/test",
+        "pattern": "test",
+        "files": 52
+      },
+      {
+        "path": "integration-tests/devservices/tests",
+        "pattern": "tests",
+        "files": 22
+      },
+      {
+        "path": "integration-tests/devtools-registry-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/devtools/src/test",
+        "pattern": "test",
+        "files": 105
+      },
+      {
+        "path": "integration-tests/elasticsearch-java-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/elasticsearch-rest-client/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/elytron-resteasy-reactive/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/elytron-resteasy/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/elytron-security-jdbc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/elytron-security-ldap/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/elytron-security-oauth2/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/elytron-security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/elytron-undertow/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/flyway/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/funqy-amazon-lambda/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/funqy-google-cloud-functions/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/google-cloud-functions-http/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/google-cloud-functions/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/add-remove-extension-single-module-kts/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/add-remove-extension-single-module/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/annotation-processor-multi-module/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/annotation-processor-simple-module/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/basic-composite-build-extension-project/extensions/example-extension/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/basic-composite-build-extension-project/extensions/example-extension/runtime/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/basic-java-library-module/application/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/basic-java-platform-module/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/basic-multi-module-project-jacoco/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/basic-multi-module-project-test-setup/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/bean-in-testsources-project/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/build-configuration/with-application-properties/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/build-configuration/with-build-configuration/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/build-configuration/without-configuration/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/builder/multi-module-project/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/builder/multi-module-project/common/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/builder/simple-module-project/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/compile-only-lombok/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/conditional-dependencies-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/config-propagation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/custom-filesystem-provider/application/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/custom-jar-classifier/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/dev-deps-leak-into-prod-48992/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/extensions/simple-extension/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/grpc-multi-module-project/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/included-kotlin-kmp-build/acme-kmp-lib/src/commonMain/kotlin/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/included-kotlin-kmp-build/acme-kmp-lib/src/jvmMain/kotlin/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/inject-bean-from-test-config/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/inject-bean-from-test-config/library/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/inject-quarkus-app-properties/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/it-test-basic-project/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/java-platform-with-eager-resolution-project/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/jib-aot/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/kotlin-grpc-project/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/kotlin-jacoco/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/kotlin-ksp/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/kotlin-multiplatform-module/acme-kmp-lib/src/commonMain/kotlin/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/kotlin-multiplatform-module/acme-kmp-lib/src/jvmMain/kotlin/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/list-extension-single-module/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/maven-exclusion-in-extension-dependency/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-composite-build-extensions-project/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-composite-build-extensions-project/extensions/another-example-extension/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-composite-build-extensions-project/extensions/another-example-extension/runtime/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-composite-build-extensions-project/extensions/example-extension/deployment/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-composite-build-extensions-project/extensions/example-extension/runtime/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-module-kotlin-project/web/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-module-parent-dependency/app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-module-with-empty-module/modB/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-module-with-lib-module/main-mod/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/multi-source-project/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/mutable-jar/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/quarkus-component-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/quarkus-plugin-in-multiple-modules/modB/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-client-exception-mapper/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-client-exception-mapper/src/testFixtures/java/org/example",
+        "pattern": "example",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-module-with-package-private-parent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-module/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-multi-module/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-multi-module/library-1/src/testFixtures/java/org/example",
+        "pattern": "example",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-fixtures-multi-module/library-2/src/testFixtures/java/org/example",
+        "pattern": "example",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-prefixed-profile-properties/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-registry-repo/io/quarkus/registry/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-resources-in-build-steps/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-resources-vs-main-resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-selection/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/test-with-sidecar-module/my-module/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/main/resources/with-junit-properties-file/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/gradle/src/test",
+        "pattern": "test",
+        "files": 140
+      },
+      {
+        "path": "integration-tests/grpc-cli/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/grpc-descriptor-sets/grpc-descriptor-set-alternate-output-dir/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/grpc-descriptor-sets/grpc-descriptor-set-alternate-output/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/grpc-descriptor-sets/grpc-descriptor-set/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/grpc-domain-socket/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/grpc-encoding/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/grpc-exceptions/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/grpc-external-proto-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/grpc-external-proto/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/grpc-health/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/grpc-hibernate-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/grpc-hibernate/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/grpc-interceptors/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "integration-tests/grpc-kotlin-coroutine/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/grpc-mutiny-cancellation/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/grpc-mutual-auth/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/grpc-plain-text-gzip/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/grpc-plain-text-mutiny/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/grpc-proto-v2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/grpc-stork-recovery/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/grpc-stork-response-time/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/grpc-stork-simple/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/grpc-streaming-native/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/grpc-streaming/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/grpc-test-random-port/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/grpc-tls-p12/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/grpc-tls/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/grpc-vertx/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/hibernate-orm-cache/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/hibernate-orm-compatibility-5.6/mariadb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/hibernate-orm-compatibility-5.6/postgresql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/hibernate-orm-data/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/hibernate-orm-envers/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/hibernate-orm-graphql-panache/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/hibernate-orm-jpamodelgen/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-panache-data/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/hibernate-orm-panache-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/hibernate-orm-panache/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "integration-tests/hibernate-orm-rest-data-panache/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/hibernate-orm-spatial/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/hibernate-orm-temporal/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-tenancy/connection-resolver-legacy-qualifiers/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-tenancy/connection-resolver/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-tenancy/datasource/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-tenancy/discriminator/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-tenancy/schema-mariadb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-tenancy/schema/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-orm-vector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-db2/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-mariadb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-mssql/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-mysql-agroal-flyway/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-mysql/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-oracle/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-orm-compatibility/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-panache-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-panache/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "integration-tests/hibernate-reactive-postgresql/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "integration-tests/hibernate-search-orm-elasticsearch-outbox-polling/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/hibernate-search-orm-elasticsearch-tenancy/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/hibernate-search-orm-elasticsearch/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "integration-tests/hibernate-search-orm-opensearch/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/hibernate-search-standalone-elasticsearch/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "integration-tests/hibernate-search-standalone-opensearch/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/hibernate-validator-resteasy-reactive/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/hibernate-validator/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/http-3-rest-auto-tls/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/http-3-rest-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/http-3-rest/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/ide-launcher/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/infinispan-cache/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/infinispan-client/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/injectmock/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "integration-tests/jackson/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "integration-tests/jaxb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/jaxp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/jfr-blocking/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/jfr-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/jfr-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/jpa-db2/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/jpa-h2-embedded/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/jpa-h2/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/jpa-mapping-xml/legacy-app/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/jpa-mapping-xml/modern-app/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/jpa-mariadb/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/jpa-mssql/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/jpa-mysql/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/jpa-oracle/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/jpa-postgresql-withxml/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/jpa-postgresql/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "integration-tests/jpa-without-entity/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/jpa/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "integration-tests/jsonb/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/kafka-avro-apicurio2/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/kafka-devservices/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "integration-tests/kafka-json-schema-apicurio2/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/kafka-oauth-keycloak/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/kafka-sasl-elytron/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/kafka-sasl/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/kafka-snappy/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/kafka-ssl/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/kafka-streams/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/kafka/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/keycloak-authorization/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "integration-tests/kotlin-maven-invoker/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/kubernetes-client-devservices/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/kubernetes-client/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "integration-tests/kubernetes-service-binding-jdbc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/kubernetes-service-binding-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/kubernetes/quarkus-standard-way-kafka/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/kubernetes/quarkus-standard-way/src/test",
+        "pattern": "test",
+        "files": 184
+      },
+      {
+        "path": "integration-tests/liquibase-mongodb/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/liquibase/src/main/resources/db/json/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/liquibase/src/main/resources/db/xml/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/liquibase/src/main/resources/db/yaml/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/liquibase/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/locales/all/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/locales/default/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/locales/some/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/logging-gelf/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/logging-json/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/logging-min-level-set/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "integration-tests/logging-min-level-unset/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/logging-panache-kotlin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/logging-panache/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "integration-tests/mailer/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/main/src/test",
+        "pattern": "test",
+        "files": 138
+      },
+      {
+        "path": "integration-tests/management-interface-auth/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/management-interface/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/maven/src/test",
+        "pattern": "test",
+        "files": 538
+      },
+      {
+        "path": "integration-tests/micrometer-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/micrometer-prometheus-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/micrometer-prometheus/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/micrometer-security/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/mongodb-client/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "integration-tests/mongodb-devservices/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "integration-tests/mongodb-panache-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/mongodb-panache/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "integration-tests/mongodb-rest-data-panache/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/mtls-certificates/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "integration-tests/mutiny-native-jctools/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/narayana-jta/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "integration-tests/narayana-lra/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/narayana-stm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/native-config-profile/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/native-image-annotations/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/no-awt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/observability-lgtm-fixedports/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/observability-lgtm-prometheus/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/observability-lgtm/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "integration-tests/observation-micrometer-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/observation-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/observation-prometheus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/observation-reactive/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/observation/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/oidc-client-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/oidc-client-registration/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/oidc-client-wiremock/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/oidc-client/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/oidc-code-flow/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/oidc-dev-services/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/oidc-dpop/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/oidc-mtls/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/oidc-spiffe/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/oidc-tenancy/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/oidc-token-propagation-reactive/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/oidc-token-propagation/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/oidc-wiremock-logout/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/oidc-wiremock-providers/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/oidc-wiremock/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "integration-tests/oidc/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "integration-tests/openapi/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "integration-tests/openshift-client/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/opentelemetry-exporter-logging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/opentelemetry-grpc-only/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/opentelemetry-grpc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/opentelemetry-jdbc-instrumentation/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "integration-tests/opentelemetry-minimal/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/opentelemetry-mongodb-client-instrumentation/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/opentelemetry-quartz/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/opentelemetry-quickstart/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/opentelemetry-reactive-messaging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/opentelemetry-reactive/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/opentelemetry-redis-instrumentation/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/opentelemetry-scheduler/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/opentelemetry-spi/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/opentelemetry-vertx-exporter/src/test",
+        "pattern": "test",
+        "files": 31
+      },
+      {
+        "path": "integration-tests/opentelemetry-vertx/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/opentelemetry/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "integration-tests/packaging/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "integration-tests/picocli-native/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/picocli/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/quartz-deferred-datasource/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/quartz/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/qute/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/reactive-db2-client/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/reactive-messaging-amqp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/reactive-messaging-context-propagation/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-messaging-hibernate-orm/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-messaging-hibernate-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-messaging-kafka/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/reactive-messaging-mqtt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-messaging-pulsar/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "integration-tests/reactive-messaging-rabbitmq-devservices/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-messaging-rabbitmq-dyn/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-messaging-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/reactive-mssql-client/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/reactive-mysql-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/reactive-oracle-client/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/reactive-pg-client/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/redis-cache/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/redis-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/redis-devservices/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "integration-tests/rest-client-reactive-http2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/rest-client-reactive-kotlin-serialization-with-validator/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/rest-client-reactive-kotlin-serialization/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/rest-client-reactive-multipart/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/rest-client-reactive-stork/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "integration-tests/rest-client-reactive/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "integration-tests/rest-client/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "integration-tests/rest-csrf/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/rest-data-hibernate-json-types/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/resteasy-jackson/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "integration-tests/resteasy-mutiny/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/resteasy-reactive-kotlin/prod-mode/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/resteasy-reactive-kotlin/standard/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/security-webauthn/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/signals-command-mode/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/signals-security/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/signals/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/simple with space/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/smallrye-config/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "integration-tests/smallrye-context-propagation/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "integration-tests/smallrye-graphql-client-keycloak/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/smallrye-graphql-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/smallrye-graphql/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "integration-tests/smallrye-jwt-oidc-webapp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/smallrye-jwt-token-propagation/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "integration-tests/smallrye-jwt/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/smallrye-stork-consul-registration-health-check/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/smallrye-stork-consul-registration-prod-mode/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/smallrye-stork-consul-registration/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/spring-boot-properties/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "integration-tests/spring-cloud-config-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/spring-data-jpa/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "integration-tests/spring-data-rest/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/spring-di/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/spring-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/spring-tx/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/spring-web/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "integration-tests/test-extension/extension/deployment/src/test",
+        "pattern": "test",
+        "files": 100
+      },
+      {
+        "path": "integration-tests/test-extension/tests",
+        "pattern": "tests",
+        "files": 83
+      },
+      {
+        "path": "integration-tests/vertx-graphql/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-http-compressors/all/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-http-compressors/app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/vertx-http-compressors/some/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-http/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "integration-tests/vertx-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/auto-select/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/epoll/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/explicit-io-uring/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/io-uring/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/native-transport-disabled/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/nio-fallback/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-native-transport/required-failure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "integration-tests/vertx-web-jackson/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/vertx-web/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/vertx/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "integration-tests/virtual-http-resteasy/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/virtual-http/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/virtual-threads/amqp-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/virtual-threads/graphql-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/virtual-threads/grpc-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/kafka-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/virtual-threads/mailer-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/virtual-threads/metrics-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/quartz-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/reactive-routes-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/redis-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/rest-client-reactive-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/resteasy-reactive-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/scheduler-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/security-webauthn-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/vertx-event-bus-virtual-threads/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/virtual-threads/virtual-threads-disabled/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/web-dependency-locator/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/websockets-next-security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/websockets-next/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/websockets/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "tcks/jakarta-atinject/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "tcks/jakarta-cdi-lang-model/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tcks/jakarta-cdi/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tcks/jakarta-rest/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tcks/microprofile-config/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tcks/microprofile-context-propagation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-fault-tolerance/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-health/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-jwt/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-lra/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-openapi/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "tcks/microprofile-reactive-messaging/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tcks/microprofile-rest-client-reactive/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "tcks/microprofile-rest-client/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "test-framework/arquillian/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "test-framework/common/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "test-framework/jacoco/deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "test-framework/jacoco/runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "test-framework/junit-common/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "test-framework/junit-component/src/test",
+        "pattern": "test",
+        "files": 78
+      },
+      {
+        "path": "test-framework/junit-internal/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "test-framework/junit/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "test-framework/oidc-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "test-framework/prometheus-metrics/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "test-framework/security-jwt/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "test-framework/security-oidc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "test-framework/security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "test-framework/vertx/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 11880
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 27477,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 4,
+    "major": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 5
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "integration-tests/opentelemetry-quartz/src/main/java/io/quarkus/it/opentelemetry/quartz/Counter.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "integration-tests/opentelemetry-quartz/src/main/java/io/quarkus/it/opentelemetry/quartz/FailedBasicScheduler.java",
+      "line": 12,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "integration-tests/opentelemetry-scheduler/src/main/java/io/quarkus/it/opentelemetry/scheduler/Counter.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "integration-tests/opentelemetry-scheduler/src/main/java/io/quarkus/it/opentelemetry/scheduler/FailedBasicScheduler.java",
+      "line": 12,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "integration-tests/compose-devservices/src/main/resources/application.properties",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

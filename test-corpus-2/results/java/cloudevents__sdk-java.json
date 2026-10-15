@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "amqp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "core/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 29
+      },
+      {
+        "path": "formats/avro-compact/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "formats/json-jackson/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "formats/json-jackson3/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "formats/protobuf/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "formats/xml/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "http/basic/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "http/restful-ws-jakarta-integration-tests/restful-ws-jersey/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "http/restful-ws-jakarta-integration-tests/restful-ws-liberty/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "http/restful-ws-jakarta-integration-tests/restful-ws-resteasy/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "http/restful-ws-jakarta-integration-tests/restful-ws-spring/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "http/vertx/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "kafka/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "rocketmq/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "sql/src/test",
+        "pattern": "test",
+        "files": 6
+      }
+    ],
+    "filesExcluded": 107
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 399,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-consul-binder/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-consul-config/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "spring-cloud-consul-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-consul-discovery/src/test",
+        "pattern": "test",
+        "files": 55
+      },
+      {
+        "path": "spring-cloud-consul-integration-tests/spring-cloud-consul-configdata-retry-tests/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-consul-integration-tests/spring-cloud-consul-configdata-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 88
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 214,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

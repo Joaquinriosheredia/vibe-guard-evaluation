@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "binders/kafka-binder/spring-cloud-stream-binder-kafka-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "binders/kafka-binder/spring-cloud-stream-binder-kafka-streams/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "binders/kafka-binder/spring-cloud-stream-binder-kafka/src/test",
+        "pattern": "test",
+        "files": 40
+      },
+      {
+        "path": "binders/pulsar-binder/spring-cloud-stream-binder-pulsar/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "binders/rabbit-binder/spring-cloud-stream-binder-rabbit-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "binders/rabbit-binder/spring-cloud-stream-binder-rabbit/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "bus/spring-cloud-bus-tests/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "bus/spring-cloud-bus/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "core/spring-cloud-stream-integration-tests/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "core/spring-cloud-stream-test-binder/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "core/spring-cloud-stream/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "schema-registry/spring-cloud-stream-schema-registry-client/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "schema-registry/spring-cloud-stream-schema-registry-core/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "schema-registry/spring-cloud-stream-schema-registry-server/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 197
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 619,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 3,
+    "warning": 5,
+    "info": 0,
+    "total": 8
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SchemaRepository)",
+      "file": "schema-registry/spring-cloud-stream-schema-registry-core/src/main/java/org/springframework/cloud/stream/schema/registry/controllers/ServerController.java",
+      "line": 62,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SchemaRepository)",
+      "file": "schema-registry/spring-cloud-stream-schema-registry-core/src/main/java/org/springframework/cloud/stream/schema/registry/controllers/ServerController.java",
+      "line": 70,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "schema-registry/spring-cloud-stream-schema-registry-core/src/main/java/org/springframework/cloud/stream/schema/registry/controllers/ServerController.java",
+      "line": 72,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "tools/kafka/docker-compose/kafka-cluster.yml",
+      "line": 9,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "tools/kafka/docker-compose/kafka-cluster.yml",
+      "line": 10,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "tools/kafka/docker-compose/kafka-cluster.yml",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "tools/kafka/docker-compose/kafka-cluster.yml",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "tools/kafka/docker-compose/kafka-cluster.yml",
+      "line": 65,
+      "extra": {}
+    }
+  ]
+}

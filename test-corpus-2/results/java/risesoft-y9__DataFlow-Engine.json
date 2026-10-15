@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "vue/y9vue-dataflow-engine/src/views/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 0
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1075,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 4,
+    "warning": 0,
+    "info": 0,
+    "total": 4
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DataBusinessRepository)",
+      "file": "y9-module-dataflow/risenet-y9boot-support-risedata-security/src/main/java/net/risesoft/controller/RoleController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DataLogRepository)",
+      "file": "y9-module-dataflow/risenet-y9boot-webapp-risedata-log/src/main/java/net/risesoft/controller/DataLogApiController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DataLogRepository)",
+      "file": "y9-module-dataflow/risenet-y9boot-webapp-risedata-log/src/main/java/net/risesoft/controller/DataLogController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DataTaskRepository)",
+      "file": "y9-module-dataflow/risenet-y9boot-webapp-risedata-manager/src/main/java/net/risesoft/controller/ApiController.java",
+      "line": 37,
+      "extra": {}
+    }
+  ]
+}

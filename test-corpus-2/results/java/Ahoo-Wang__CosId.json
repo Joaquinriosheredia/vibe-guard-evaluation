@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "cosid-accessor/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "cosid-activiti/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-axon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-benchmark/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "cosid-core/src/test",
+        "pattern": "test",
+        "files": 87
+      },
+      {
+        "path": "cosid-flowable/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-jackson/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "cosid-jdbc/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "cosid-mod-test/src/jmh/java/me/ahoo/cosid/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-mod-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-mongo/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "cosid-mybatis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-sharding/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "cosid-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "cosid-spring-data-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cosid-spring-redis/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "cosid-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "cosid-zookeeper/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 13
+      },
+      {
+        "path": "proxy/cosid-proxy-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "proxy/cosid-proxy-server/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "proxy/cosid-proxy/src/test",
+        "pattern": "test",
+        "files": 6
+      }
+    ],
+    "filesExcluded": 290
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 740,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 4,
+    "info": 0,
+    "total": 4
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": ".github/workflows/example-test.yml",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": ".github/workflows/example-test.yml",
+      "line": 76,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": ".github/workflows/example-test.yml",
+      "line": 82,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": ".github/workflows/integration-test.yml",
+      "line": 444,
+      "extra": {}
+    }
+  ]
+}

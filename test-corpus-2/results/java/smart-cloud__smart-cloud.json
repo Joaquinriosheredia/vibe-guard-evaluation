@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "smart-cloud-starter/smart-cloud-monitor/smart-cloud-monitor-common/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-monitor/smart-cloud-starter-monitor-admin/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-monitor/smart-cloud-starter-monitor-api/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-api-version/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-configure/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-core/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-elasticsearch-dynamic-datasource/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-feign/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-global-id/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-locale/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-log-mask/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-log4j2/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-logback/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-method-log/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-mock/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-mp-shardingjdbc/src/test",
+        "pattern": "test",
+        "files": 59
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-mybatis-plus/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-rate-limit/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-redis/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-static-discovery/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-trace-debug/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "smart-cloud-starter/smart-cloud-starter-web/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "smart-code-generate/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "smart-design-pattern-utility/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "smart-utility/src/test",
+        "pattern": "test",
+        "files": 33
+      }
+    ],
+    "filesExcluded": 285
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 837,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

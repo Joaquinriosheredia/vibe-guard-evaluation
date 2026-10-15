@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "mica-activerecord/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "mica-caffeine/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mica-captcha/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mica-core/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "mica-ddddocr/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mica-holidays/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mica-http/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "mica-ip2region/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mica-qrcode/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mica-redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mica-spider/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "mica-xss/src/test",
+        "pattern": "test",
+        "files": 3
+      }
+    ],
+    "filesExcluded": 91
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 448,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

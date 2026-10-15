@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "application/src/test",
+        "pattern": "test",
+        "files": 660
+      },
+      {
+        "path": "common/actor/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "common/cache/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "common/coap-server/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "common/dao-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/data/src/test",
+        "pattern": "test",
+        "files": 42
+      },
+      {
+        "path": "common/edge-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "common/edqs/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "common/integration/cluster-integration-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "common/integration/http-integrations/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "common/integration/integration-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "common/integration/kafka-integrations/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/integration/mqtt-integrations/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/integration/opcua-integrations/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/integration/rabbitmq-integrations/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/message/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "common/proto/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "common/queue/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "common/report/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "common/script/script-api/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "common/transport/coap/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "common/transport/http/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/transport/lwm2m/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "common/transport/mqtt/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "common/transport/snmp/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "common/transport/transport-api/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "common/util/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "dao/src/test",
+        "pattern": "test",
+        "files": 268
+      },
+      {
+        "path": "edqs/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "monitoring/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "msa/black-box-tests/src/test",
+        "pattern": "test",
+        "files": 190
+      },
+      {
+        "path": "msa/js-executor/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "netty-mqtt/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "rule-engine/rule-engine-api/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "rule-engine/rule-engine-components/src/test",
+        "pattern": "test",
+        "files": 104
+      },
+      {
+        "path": "ui-ngx/src/assets/help/en_US/calculated-field/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/en_US/converter/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/en_US/converter/tbel/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/en_US/widget/action/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/en_US/widget/editor/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/en_US/widget/lib/html_container/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/images/rulenode/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ui-ngx/src/assets/help/images/widget/editor/examples",
+        "pattern": "examples",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 1407
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 7503,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

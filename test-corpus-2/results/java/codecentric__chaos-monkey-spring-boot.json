@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "chaos-monkey-spring-boot/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "demo-apps/chaos-monkey-demo-app-ext-jar/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "demo-apps/chaos-monkey-demo-app-jdbc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demo-apps/chaos-monkey-demo-app-naked/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "demo-apps/chaos-monkey-demo-app-unleash-toggles/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "demo-apps/chaos-monkey-demo-app/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "demo-apps/chaos-monkey-web-reactive-app/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 74
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 217,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

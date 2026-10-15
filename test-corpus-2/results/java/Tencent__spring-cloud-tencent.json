@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-starter-tencent-metadata-transfer/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-auth/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-circuitbreaker/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-config/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-contract/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-discovery/src/test",
+        "pattern": "test",
+        "files": 37
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-ratelimit/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "spring-cloud-starter-tencent-polaris-router/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "spring-cloud-tencent-commons/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-discovery-adapter-plugin/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-fault-tolerance/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-gateway-plugin/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-mq-plugin/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-threadlocal-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-traffic-mirroring-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-tencent-lossless-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-tencent-plugin-starters/spring-cloud-tencent-unit-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-tencent-polaris-context/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "spring-cloud-tencent-rpc-enhancement/src/test",
+        "pattern": "test",
+        "files": 22
+      }
+    ],
+    "filesExcluded": 254
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1002,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

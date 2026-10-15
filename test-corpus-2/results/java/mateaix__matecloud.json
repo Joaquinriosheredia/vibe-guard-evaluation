@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "mate-auth/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mate-biz/mate-notice/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mate-biz/mate-system/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "mate-cli/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mate-monolith/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mate-starters-contrib/mate-ai-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mate-starters/mate-cache-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mate-starters/mate-channel-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mate-starters/mate-ds-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mate-starters/mate-menu-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mate-starters/mate-rpc-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mate-starters/mate-security-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mate-starters/mate-sms-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mate-starters/mate-tenant-starter/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "mate-starters/mate-web-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 42
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 764,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 4,
+    "warning": 0,
+    "info": 0,
+    "total": 4
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (Repository)",
+      "file": "mate-cli/src/main/java/vip/mate/cli/template/GenCodeTemplate.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "mate-cli/src/main/java/vip/mate/cli/template/GenCodeTemplate.java",
+      "line": 314,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "mate-cli/src/main/java/vip/mate/cli/template/GenCodeTemplate.java",
+      "line": 320,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "mate-cli/src/main/java/vip/mate/cli/template/GenCodeTemplate.java",
+      "line": 325,
+      "extra": {}
+    }
+  ]
+}

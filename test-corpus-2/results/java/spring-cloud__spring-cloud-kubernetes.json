@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-kubernetes-client-autoconfig/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "spring-cloud-kubernetes-client-config/src/test",
+        "pattern": "test",
+        "files": 173
+      },
+      {
+        "path": "spring-cloud-kubernetes-client-discovery/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "spring-cloud-kubernetes-client-leader/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-cloud-kubernetes-client-loadbalancer/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "spring-cloud-kubernetes-commons/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "spring-cloud-kubernetes-controllers/spring-cloud-kubernetes-configserver/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "spring-cloud-kubernetes-controllers/spring-cloud-kubernetes-configuration-watcher/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "spring-cloud-kubernetes-controllers/spring-cloud-kubernetes-discoveryserver/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "spring-cloud-kubernetes-discovery/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "spring-cloud-kubernetes-examples/kubernetes-leader-election-example/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-kubernetes-fabric8-autoconfig/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "spring-cloud-kubernetes-fabric8-config/src/test",
+        "pattern": "test",
+        "files": 253
+      },
+      {
+        "path": "spring-cloud-kubernetes-fabric8-discovery/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "spring-cloud-kubernetes-fabric8-istio/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-cloud-kubernetes-fabric8-leader/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "spring-cloud-kubernetes-fabric8-loadbalancer/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-fabric8-client-catalog-watcher/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-fabric8-client-discovery/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-fabric8-client-istio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-fabric8-client-reload/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-fabric8-leader-election/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-catalog-watcher/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-configuration-watcher/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-discovery-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-discovery/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-kafka-configmap-reload/kafka-configmap-test-app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-leader-election/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-rabbitmq-secret-reload/rabbitmq-secret-test-app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-kubernetes-integration-tests/spring-cloud-kubernetes-k8s-client-reload/src/test",
+        "pattern": "test",
+        "files": 5
+      }
+    ],
+    "filesExcluded": 758
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1354,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

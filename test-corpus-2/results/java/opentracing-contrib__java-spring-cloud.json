@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-core/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-feign-starter/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-hystrix-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-jdbc-starter/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-jms-starter/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-kafka-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-mongo-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-reactor-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-redis-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-rxjava-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-websocket-starter/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "instrument-starters/opentracing-spring-cloud-zuul-starter/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "opentracing-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 5
+      }
+    ],
+    "filesExcluded": 70
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 150,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

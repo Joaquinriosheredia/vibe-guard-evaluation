@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "yudao-framework/yudao-common/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-ip/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "yudao-framework/yudao-spring-boot-starter-excel/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "yudao-framework/yudao-spring-boot-starter-protection/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "yudao-framework/yudao-spring-boot-starter-web/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "yudao-gateway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/test",
+        "pattern": "test",
+        "files": 51
+      },
+      {
+        "path": "yudao-module-im/yudao-module-im-server/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/resources/codegen/java/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "yudao-module-iot/yudao-module-iot-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "yudao-module-iot/yudao-module-iot-gateway/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "yudao-module-mall/yudao-module-product-server/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "yudao-module-member/yudao-module-member-server/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "yudao-module-mes/yudao-module-mes-server/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "yudao-module-oa/yudao-module-oa-server/src/test",
+        "pattern": "test",
+        "files": 40
+      },
+      {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "yudao-module-report/yudao-module-report-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "yudao-module-system/yudao-module-system-server/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/test",
+        "pattern": "test",
+        "files": 11
+      }
+    ],
+    "filesExcluded": 414
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 7588,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 3,
+    "warning": 11,
+    "info": 0,
+    "total": 16
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/kafka/KafkaWebSocketMessageSender.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "yudao-module-iot/yudao-module-iot-core/src/main/java/cn/iocoder/yudao/module/iot/core/messagebus/core/kafka/IotKafkaMessageBus.java",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/MesWmStockTakingTaskResultController.java",
+      "line": 83,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/MesWmStockTakingTaskResultController.java",
+      "line": 91,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/MesWmStockTakingTaskResultController.java",
+      "line": 101,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/kafka/KafkaWebSocketMessageConsumer.java",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/security/TokenAuthenticationFilter.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-ai/yudao-module-ai-server/src/main/resources/application-dev.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-infra/yudao-module-infra-server/src/main/resources/application-dev.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-infra/yudao-module-infra-server/src/main/resources/application-local.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-iot/yudao-module-iot-server/src/main/resources/application-dev.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-iot/yudao-module-iot-server/src/main/resources/application-local.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-system/yudao-module-system-server/src/main/resources/application-dev.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-module-system/yudao-module-system-server/src/main/resources/application-local.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-server/src/main/resources/application-dev.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "yudao-server/src/main/resources/application-local.yaml",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}
