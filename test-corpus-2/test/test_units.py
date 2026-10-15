@@ -9,6 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import cards  # noqa: E402
 import evaluate as ev  # noqa: E402
+import review_ab  # noqa: E402
 import review_sheet  # noqa: E402
 import sample  # noqa: E402
 
@@ -301,6 +302,53 @@ class ReviewSheet(unittest.TestCase):
         assistance = prereg[prereg.index("**Assistance during the review:**"):prereg.index("**Known limit of the literal search:**")].rstrip("\n")
         self.assertIn(verdicts, guide)
         self.assertIn(assistance, guide)
+
+
+class ReviewAB(unittest.TestCase):
+    IDS = ["J001", "J002", "P001", "P002"]
+
+    @staticmethod
+    def v(i, verdict, reason="x.py:1 evidence", over=False):
+        return {"id": i, "verdict": verdict, "reason": reason, "overstated": over}
+
+    def test_merge_batches_orders_and_validates(self):
+        out = review_ab.merge_batches([{"batch": 2, "verdicts": [self.v("P002", "U"), self.v("P001", "FP")]},
+                                       {"batch": 1, "verdicts": [self.v("J001", "TP"), self.v("J002", "FP")]}], self.IDS)
+        self.assertEqual([v["id"] for v in out], self.IDS)
+        for bad, expected in [([self.v("J001", "TP"), self.v("J001", "TP")], "J001: appears twice"),
+                              ([self.v("J001", "TP")], "do not cover exactly"),
+                              ([self.v("J001", "tp"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "U")], "J001: verdict is not TP, FP or U"),
+                              ([self.v("J001", "TP", " "), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "U")], "J001: reason missing"),
+                              ([self.v("J001", "TP", over="No"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "U")], "J001: overstated is not true/false")]:
+            with self.assertRaises(ValueError) as cm:
+                review_ab.merge_batches([{"verdicts": bad}], self.IDS)
+            self.assertIn(expected, str(cm.exception))
+
+    def test_compare_is_on_the_verdict_only_and_per_language(self):
+        a = [self.v("J001", "TP"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "TP", over=True)]
+        b = [self.v("J001", "TP", "other.py:2"), self.v("J002", "TP"), self.v("P001", "U"), self.v("P002", "TP", over=False)]
+        c = review_ab.compare(a, b, self.IDS)
+        self.assertEqual((c["java"]["agree"], c["java"]["disagreeing"]), (1, ["J002"]))
+        self.assertEqual((c["python"]["agree"], c["python"]["disagree"]), (2, 0))
+        self.assertEqual((c["all"]["n"], c["all"]["disagreeing"]), (4, ["J002"]))
+
+    def test_audit_sample_seed_size_and_order(self):
+        agreeing = [f"P{n:03d}" for n in range(1, 60)]
+        s = review_ab.audit_sample(agreeing)
+        self.assertEqual(len(s), 20)
+        self.assertEqual(s, [i for i in agreeing if i in s])
+        import random
+        self.assertEqual(set(s), set(random.Random(20261025).sample(agreeing, 20)))
+        with self.assertRaises(ValueError):
+            review_ab.audit_sample(agreeing[:19])
+
+    def test_render_shows_ids_and_counts_never_verdicts(self):
+        a = [self.v("J001", "TP"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "TP")]
+        b = [self.v("J001", "TP"), self.v("J002", "TP"), self.v("P001", "U"), self.v("P002", "TP")]
+        md = review_ab.render(review_ab.compare(a, b, self.IDS), ["J001"])
+        self.assertIn("- [J002](cards/J002.md)", md)
+        for word in ("TP |", "| TP", "FP |", "| FP", " U |", "TP\n", "FP\n"):
+            self.assertNotIn(word, md)
 
 
 if __name__ == "__main__":
