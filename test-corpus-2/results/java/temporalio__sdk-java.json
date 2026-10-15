@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "contrib/temporal-aws-lambda/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "contrib/temporal-gcp-cloud-run-id/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "contrib/temporal-gcp-cloud-run-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "contrib/temporal-opentelemetry/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "contrib/temporal-opentracing/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "contrib/temporal-payload-storage-s3driver-awssdkv2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "contrib/temporal-payload-storage-s3driver/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "contrib/temporal-spring-ai/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "contrib/temporal-workflowstreams/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "temporal-envconfig/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "temporal-kotlin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "temporal-remote-data-encoder/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "temporal-sdk/src/test",
+        "pattern": "test",
+        "files": 553
+      },
+      {
+        "path": "temporal-serviceclient/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "temporal-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "temporal-test-server/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "temporal-testing/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "temporal-workflowcheck/src/test",
+        "pattern": "test",
+        "files": 8
+      }
+    ],
+    "filesExcluded": 745
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1798,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

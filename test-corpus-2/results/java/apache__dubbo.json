@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "dubbo-cluster/src/test",
+        "pattern": "test",
+        "files": 93
+      },
+      {
+        "path": "dubbo-common/src/test",
+        "pattern": "test",
+        "files": 425
+      },
+      {
+        "path": "dubbo-compatible/src/test",
+        "pattern": "test",
+        "files": 115
+      },
+      {
+        "path": "dubbo-config/dubbo-config-api/src/test",
+        "pattern": "test",
+        "files": 153
+      },
+      {
+        "path": "dubbo-config/dubbo-config-spring/src/test",
+        "pattern": "test",
+        "files": 134
+      },
+      {
+        "path": "dubbo-config/dubbo-config-spring6/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "dubbo-configcenter/dubbo-configcenter-apollo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-configcenter/dubbo-configcenter-file/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-configcenter/dubbo-configcenter-nacos/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-configcenter/dubbo-configcenter-zookeeper/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-provider/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-metadata/dubbo-metadata-api/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "dubbo-metadata/dubbo-metadata-definition-protobuf/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-metadata/dubbo-metadata-processor/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "dubbo-metadata/dubbo-metadata-report-nacos/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-metadata/dubbo-metadata-report-zookeeper/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-api/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-config-center/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-default/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-metadata/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-otlp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-prometheus/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-metrics/dubbo-metrics-registry/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dubbo-metrics/dubbo-tracing/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "dubbo-plugin/dubbo-auth/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dubbo-plugin/dubbo-filter-cache/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dubbo-plugin/dubbo-filter-validation/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dubbo-plugin/dubbo-mcp/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "dubbo-plugin/dubbo-mutiny/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "dubbo-plugin/dubbo-native/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-plugin/dubbo-plugin-loom/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-plugin/dubbo-qos/src/test",
+        "pattern": "test",
+        "files": 63
+      },
+      {
+        "path": "dubbo-plugin/dubbo-reactive/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dubbo-plugin/dubbo-rest-jaxrs/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "dubbo-plugin/dubbo-rest-spring/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dubbo-plugin/dubbo-security/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-plugin/dubbo-spring-security/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-plugin/dubbo-spring6-security/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-registry/dubbo-registry-api/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "dubbo-registry/dubbo-registry-multicast/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-registry/dubbo-registry-multiple/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-registry/dubbo-registry-nacos/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "dubbo-registry/dubbo-registry-zookeeper/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-remoting/dubbo-remoting-api/src/test",
+        "pattern": "test",
+        "files": 57
+      },
+      {
+        "path": "dubbo-remoting/dubbo-remoting-http12/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "dubbo-remoting/dubbo-remoting-netty/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "dubbo-remoting/dubbo-remoting-netty4/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "dubbo-remoting/dubbo-remoting-zookeeper-curator5/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-rpc/dubbo-rpc-api/src/test",
+        "pattern": "test",
+        "files": 63
+      },
+      {
+        "path": "dubbo-rpc/dubbo-rpc-dubbo/src/test",
+        "pattern": "test",
+        "files": 41
+      },
+      {
+        "path": "dubbo-rpc/dubbo-rpc-injvm/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "dubbo-rpc/dubbo-rpc-triple/src/test",
+        "pattern": "test",
+        "files": 63
+      },
+      {
+        "path": "dubbo-serialization/dubbo-serialization-fastjson2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dubbo-serialization/dubbo-serialization-hessian2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dubbo-spring-boot-project/dubbo-spring-boot-actuator-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dubbo-spring-boot-project/dubbo-spring-boot-actuator/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-spring-boot-project/dubbo-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "dubbo-spring-boot-project/dubbo-spring-boot-compatible/dubbo-spring-boot-actuator-autoconfigure-compatible/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dubbo-spring-boot-project/dubbo-spring-boot-compatible/dubbo-spring-boot-autoconfigure-compatible/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dubbo-spring-boot-project/dubbo-spring-boot/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dubbo-test/dubbo-test-modules/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 1579
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 4402,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 15,
+    "info": 0,
+    "total": 15
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": ".licenserc.yaml",
+      "line": 184,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": ".licenserc.yaml",
+      "line": 186,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-consumer/src/main/resources/application.yml",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-consumer/src/main/resources/application.yml",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-consumer/src/main/resources/application.yml",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-provider/src/main/resources/application.yml",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-provider/src/main/resources/application.yml",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot-idl/dubbo-demo-spring-boot-idl-provider/src/main/resources/application.yml",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-consumer/src/main/resources/application.yml",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-consumer/src/main/resources/application.yml",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-consumer/src/main/resources/application.yml",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-provider/src/main/resources/application.yml",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-provider/src/main/resources/application.yml",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-provider/src/main/resources/application.yml",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "dubbo-demo/dubbo-demo-spring-boot/dubbo-demo-spring-boot-servlet/src/main/resources/application.yml",
+      "line": 37,
+      "extra": {}
+    }
+  ]
+}

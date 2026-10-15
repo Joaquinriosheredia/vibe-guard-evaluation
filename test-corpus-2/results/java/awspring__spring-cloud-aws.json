@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-aws-app-config/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-aws-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "spring-cloud-aws-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-aws-docker-compose/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-aws-dynamodb/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "spring-cloud-aws-kinesis-stream-binder/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "spring-cloud-aws-kinesis/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "spring-cloud-aws-modulith/spring-cloud-aws-modulith-events-sns/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-aws-modulith/spring-cloud-aws-modulith-events-sqs/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-aws-parameter-store/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-aws-s3/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "spring-cloud-aws-samples/spring-cloud-aws-dynamodb-sample/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-aws-secrets-manager/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-aws-ses/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-aws-sns/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "spring-cloud-aws-sqs/src/test",
+        "pattern": "test",
+        "files": 97
+      },
+      {
+        "path": "spring-cloud-aws-test/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-aws-testcontainers/src/test",
+        "pattern": "test",
+        "files": 4
+      }
+    ],
+    "filesExcluded": 248
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 906,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "archforge-builtin/archforge-admin-user/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "archforge-builtin/archforge-meta-designer/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "archforge-builtin/archforge-meta-runtime/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "archforge-cli/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "archforge-common/archforge-common-base/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "archforge-common/archforge-common-error/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "archforge-common/archforge-common-jpa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archforge-infrastructure/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "archforge-module-cms/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archforge-module-task/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archforge-server-admin/src/test",
+        "pattern": "test",
+        "files": 55
+      },
+      {
+        "path": "archforge-server-web/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "archforge-starters/archforge-cache-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "archforge-starters/archforge-lock-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "archforge-starters/archforge-redisson-starter/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "archforge-starters/archforge-request-log-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "archforge-starters/archforge-trace-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      }
+    ],
+    "filesExcluded": 159
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1020,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

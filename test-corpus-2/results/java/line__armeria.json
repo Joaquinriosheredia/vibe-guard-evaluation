@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "ai/mcp/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "annotation-processor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "athenz/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "brave/brave6/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "bucket4j/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "consul/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "core/src/test",
+        "pattern": "test",
+        "files": 771
+      },
+      {
+        "path": "dropwizard2/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "eureka/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 105
+      },
+      {
+        "path": "graphql-protocol/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "graphql/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "grpc-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "grpc-protocol/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "grpc/src/test",
+        "pattern": "test",
+        "files": 120
+      },
+      {
+        "path": "it/builders/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/context-propagation/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "it/context-storage/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "it/dgs/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/flags-cyclic-dep-logback1.5/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/flags-cyclic-dep/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/flags-provider/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "it/graphql-multipart/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/grpc/java/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "it/grpc/kotlin-coroutine-context-provider/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/grpc/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/grpc/protobuf4/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/grpc/reactor/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "it/grpc/scala/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/grpcweb/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "it/internal-logging/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/jackson-provider/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "it/kotlin-compat/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/kubernetes-chaos-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "it/logback1.4/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/multipart/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "it/nio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/no-unsafe/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/okhttp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/resilience4j/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/server-allow-semicolon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/server/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "it/spring/boot3-jetty12/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "it/spring/boot4-athenz/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/spring/boot4-kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/spring/boot4-mixed-tomcat10/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/spring/boot4-mixed/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/spring/boot4-tomcat10/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "it/spring/webflux-security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "it/thrift-fullcamel/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "it/thrift0.9.1/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "it/trace-context-leak/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "it/websocket/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "it/xds-client/src/test",
+        "pattern": "test",
+        "files": 67
+      },
+      {
+        "path": "it/xds-controlplane-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "it/xds-istio/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "it/xds-no-validation/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jetty/jetty10/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jetty/jetty11/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "jetty/jetty12/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "jetty/jetty9/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jsonrpc/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "junit4/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "junit5/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "kotlin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "kubernetes/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "logback/logback12/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "micrometer-context/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "nacos/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "oauth2/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "prometheus1/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "reactor3/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "resilience4j2/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "resteasy/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "retrofit2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "rxjava2/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "rxjava3/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "saml/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "sangria/sangria_2.13/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "scala/scala_2.13/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "scalapb/scalapb_2.13/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "spring/boot2-actuator-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring/boot2-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring/boot2-webflux-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring/boot3-actuator-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring/boot3-webflux-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring/boot4-actuator-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "spring/boot4-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "spring/boot4-webflux-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "spring/boot4-xds/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring/spring7/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "thrift/thrift0.13/src/test",
+        "pattern": "test",
+        "files": 66
+      },
+      {
+        "path": "thrift/thrift0.14/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "thrift/thrift0.17/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "thrift/thrift0.18/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "thrift/thrift0.19/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "thrift/thrift0.23/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tomcat10/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "xds-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "xds-kubernetes/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "xds/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "zookeeper3/src/test",
+        "pattern": "test",
+        "files": 11
+      }
+    ],
+    "filesExcluded": 1554
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 4640,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

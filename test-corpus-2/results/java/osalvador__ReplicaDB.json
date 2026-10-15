@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "deploy/gcp/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "docs/markdown/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "docs/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "replicadb-server/frontend/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "replicadb-server/src/test",
+        "pattern": "test",
+        "files": 139
+      },
+      {
+        "path": "scripts/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 161
+      }
+    ],
+    "filesExcluded": 300
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 564,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 30,
+    "warning": 0,
+    "info": 0,
+    "total": 30
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditEventRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/audit/api/AuditEventController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditEventRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/audit/api/AuditEventController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/audit/api/AuditEventController.java",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourceController.java",
+      "line": 83,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourceController.java",
+      "line": 129,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourceController.java",
+      "line": 131,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourceController.java",
+      "line": 153,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourceController.java",
+      "line": 194,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AppUserRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourcePermissionController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourcePermissionController.java",
+      "line": 94,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/DatasourcePermissionController.java",
+      "line": 121,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (JobPermissionRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobDefinitionController.java",
+      "line": 63,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobDefinitionController.java",
+      "line": 97,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobDefinitionController.java",
+      "line": 145,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobDefinitionController.java",
+      "line": 147,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobDefinitionController.java",
+      "line": 167,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobDefinitionController.java",
+      "line": 207,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (JobPermissionRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobPermissionController.java",
+      "line": 51,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AppUserRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobPermissionController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobPermissionRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobPermissionController.java",
+      "line": 81,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobPermissionController.java",
+      "line": 85,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (JobDefinitionRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobScheduleController.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (JobScheduleRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobScheduleController.java",
+      "line": 46,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (JobDefinitionRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/job/api/JobScheduleController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SecurityContextRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/security/api/AuthController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AppUserRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/security/api/UserController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AppUserRepository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/security/api/UserController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/security/api/UserController.java",
+      "line": 73,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/security/api/UserController.java",
+      "line": 105,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "replicadb-server/src/main/java/org/replicadb/server/security/api/UserController.java",
+      "line": 107,
+      "extra": {}
+    }
+  ]
+}

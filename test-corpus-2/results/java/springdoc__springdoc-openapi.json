@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "springdoc-openapi-starter-common-mcp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "springdoc-openapi-starter-common/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "springdoc-openapi-starter-webflux-api/src/test",
+        "pattern": "test",
+        "files": 449
+      },
+      {
+        "path": "springdoc-openapi-starter-webflux-mcp/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "springdoc-openapi-starter-webflux-scalar/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "springdoc-openapi-starter-webflux-ui/src/test",
+        "pattern": "test",
+        "files": 70
+      },
+      {
+        "path": "springdoc-openapi-starter-webmvc-api/src/test",
+        "pattern": "test",
+        "files": 1705
+      },
+      {
+        "path": "springdoc-openapi-starter-webmvc-mcp/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "springdoc-openapi-starter-webmvc-scalar/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "springdoc-openapi-starter-webmvc-ui/src/test",
+        "pattern": "test",
+        "files": 96
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-actuator-webflux-tests/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-actuator-webmvc-tests/src/test",
+        "pattern": "test",
+        "files": 93
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-data-rest-tests/src/test",
+        "pattern": "test",
+        "files": 358
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-function-webflux-tests/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-function-webmvc-tests/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-groovy-tests/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-hateoas-tests/src/test",
+        "pattern": "test",
+        "files": 120
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-javadoc-tests/src/test",
+        "pattern": "test",
+        "files": 1130
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-kotlin-data-rest-tests/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-kotlin-webflux-tests/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-kotlin-webmvc-tests/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "springdoc-openapi-tests/springdoc-openapi-security-tests/src/test",
+        "pattern": "test",
+        "files": 102
+      }
+    ],
+    "filesExcluded": 4327
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 4697,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

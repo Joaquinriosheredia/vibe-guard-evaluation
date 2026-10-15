@@ -1,0 +1,1008 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "study-activemq/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-ai-all/flutter_app/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-ai-app-compares/study-ai-app-compares-backend/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-ai-best-practice-dev-flow/best-practice-dev-flow-backend/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "study-ai-best-practice-dev-flow/best-practice-dev-flow-frontend/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "study-ai-best-practice/study-ai-best-practice-exception-analysis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-ai-best-pratice-rca-agent/demo-order-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-ai-best-pratice-rca-agent/demo-supplier-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-ai-best-pratice-rca-agent/rca-agent-backend/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "study-ai-dev-flow/demo/demo-backend/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "study-ai-dev-flow/pipeline/ai-pipeline-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-ai-myapp-fimaly/backend/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "study-ai-myapp-fimaly/frontend/android/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-ai-myapp-fimaly/frontend/web/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "study-ai/myappendpoint/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "study-ai/myappflutter/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-algorithm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-arthas/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-best-practice/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-call-trace/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-cglib/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-code-format/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-cryption/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-docker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-domain-generator/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "study-dubbo-spring-boot-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-dubbo-spring-boot-consumer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-easyexcel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-es/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "study-flutter/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-gateway-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-gray-flow-ui/docs/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-gray-flow/docs/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-guava/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "study-hanlp/src/test",
+        "pattern": "test",
+        "files": 152
+      },
+      {
+        "path": "study-html2pdf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-hystrix/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-id-generator/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-itext/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-itv-pro/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-java-shell/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-java21/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-jenkins/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-jmockit/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-jpush/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-json/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-jvm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-jwt/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "study-leancloud/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-log-logback/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-log4j2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-lombok/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-m3u/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-mapping-generator/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "study-materialize-spring-boot/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-maven/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-mockito/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-nacos/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-nginx/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-pac4j/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-podam/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-regex/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-sentinel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-servlet/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-shiro-tutorial/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-socket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-dependencies/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-dev-tools/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-env/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-h2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-mongo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-oauth2-auth-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-rest-doc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-spring-boot-saml/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-security/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-sso-oauth2-server-jwt/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-test/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "study-spring-boot-trace-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-trace/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot-websocket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-boot/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "study-spring-boot3-security/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-spring-boot3/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-dependencies/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-spring-email/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-sql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-sso-baeldung-auth-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-sso-baeldung-client1/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-sso-baeldung-client2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-summary/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-svm-sandbox/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-swagger-cxf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-tencent-share/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-test-restdoc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "study-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-tidb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-utils/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-vue-npm/my-app/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "study-vue-npm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-vue/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "study-zookeeper/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 337
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 3142,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 34,
+    "warning": 4,
+    "info": 0,
+    "total": 39
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Async method",
+      "file": "study-spring-boot-zipkin/src/main/java/com/bage/SampleBackground.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ProjectRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RequirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PipelineRunRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ProjectRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (requirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (pipelineRunRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 90,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (projectRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 107,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (projectRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 141,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (projectRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 233,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (projectRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/ProjectController.java",
+      "line": 240,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RequirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RequirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (requirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (requirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (requirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 86,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (requirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 110,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (requirementRepository)",
+      "file": "study-ai-dev-flow/pipeline/ai-pipeline-api/src/main/java/com/bage/ai/pipeline/api/controller/RequirementController.java",
+      "line": 117,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "study-ai-myapp-fimaly/backend/src/main/java/com/familytree/controller/ProfileController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ActivityRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/ActivityController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (FamilyMemberRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/FamilyController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/FamilyController.java",
+      "line": 250,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/ImageController.java",
+      "line": 36,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/MessageController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/UserController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserTokenRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/UserController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/UserController.java",
+      "line": 248,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/UserController.java",
+      "line": 261,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/UserController.java",
+      "line": 274,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "study-ai/myappendpoint/src/main/java/com/bage/my/app/end/point/controller/UserController.java",
+      "line": 286,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BookRepository)",
+      "file": "study-cache-memory-spring/src/main/java/com/bage/controller/IndexController.java",
+      "line": 17,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BookRepository)",
+      "file": "study-cache-redis-spring/src/main/java/com/bage/controller/IndexController.java",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SchemaRepository)",
+      "file": "study-dbschema-to-json/src/main/java/com/bage/MainController.java",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomerRepository)",
+      "file": "study-oceanbase/src/main/java/com/bage/study/ocean/base/CustomerController.java",
+      "line": 17,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CookieCsrfTokenRepository)",
+      "file": "study-spring-boot-oauth2-auth-server/src/main/java/com/bage/study/spring/boot/oauth2/auth/server/SocialApplication.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "study-ai-myapp-fimaly/backend/src/main/java/com/familytree/ai/QwenAiProvider.java",
+      "line": 110,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "study-ai-myapp-fimaly/backend/src/main/java/com/familytree/ai/QwenAiProvider.java",
+      "line": 247,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "study-dubbo-spring-boot-consumer/src/main/resources/application.yml",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "study-dubbo-spring-boot-provider/src/main/resources/application.yml",
+      "line": 24,
+      "extra": {}
+    }
+  ]
+}

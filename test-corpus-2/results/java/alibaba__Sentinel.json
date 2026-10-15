@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "sentinel-adapter/sentinel-apache-dubbo-adapter/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "sentinel-adapter/sentinel-apache-dubbo3-adapter/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "sentinel-adapter/sentinel-apache-httpclient-adapter/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "sentinel-adapter/sentinel-apache-httpclient5-adapter/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "sentinel-adapter/sentinel-api-gateway-adapter-common/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "sentinel-adapter/sentinel-dubbo-adapter/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "sentinel-adapter/sentinel-grpc-adapter/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "sentinel-adapter/sentinel-jax-rs-adapter/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "sentinel-adapter/sentinel-okhttp-adapter/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "sentinel-adapter/sentinel-quarkus-adapter/sentinel-annotation-quarkus-adapter-deployment/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "sentinel-adapter/sentinel-quarkus-adapter/sentinel-jax-rs-quarkus-adapter-deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-adapter/sentinel-reactor-adapter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "sentinel-adapter/sentinel-sofa-rpc-adapter/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "sentinel-adapter/sentinel-spring-cloud-gateway-adapter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-adapter/sentinel-spring-cloud-gateway-v6x-adapter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-adapter/sentinel-spring-restclient-adapter/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "sentinel-adapter/sentinel-spring-webflux-adapter/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "sentinel-adapter/sentinel-spring-webmvc-adapter/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "sentinel-adapter/sentinel-spring-webmvc-v6x-adapter/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "sentinel-adapter/sentinel-web-servlet/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "sentinel-adapter/sentinel-zuul-adapter/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "sentinel-adapter/sentinel-zuul2-adapter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-cluster/sentinel-cluster-client-default/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "sentinel-cluster/sentinel-cluster-server-default/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "sentinel-cluster/sentinel-cluster-server-envoy-rls/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "sentinel-core/src/test",
+        "pattern": "test",
+        "files": 77
+      },
+      {
+        "path": "sentinel-dashboard/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "sentinel-demo/sentinel-demo-log-logback/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-demo/sentinel-demo-quarkus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-extension/sentinel-annotation-aspectj/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "sentinel-extension/sentinel-annotation-cdi-interceptor/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "sentinel-extension/sentinel-datasource-consul/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "sentinel-extension/sentinel-datasource-etcd/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "sentinel-extension/sentinel-datasource-eureka/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-extension/sentinel-datasource-redis/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "sentinel-extension/sentinel-datasource-spring-cloud-config/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "sentinel-extension/sentinel-datasource-zookeeper/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "sentinel-extension/sentinel-metric-exporter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-extension/sentinel-parameter-flow-control/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "sentinel-extension/sentinel-prometheus-metric-exporter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "sentinel-logging/sentinel-logging-slf4j/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "sentinel-transport/sentinel-transport-common/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "sentinel-transport/sentinel-transport-netty-http/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "sentinel-transport/sentinel-transport-simple-http/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 317
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1373,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 6,
+    "warning": 0,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RuleRepository)",
+      "file": "sentinel-dashboard/src/main/java/com/alibaba/csp/sentinel/dashboard/controller/AuthorityRuleController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RuleRepository)",
+      "file": "sentinel-dashboard/src/main/java/com/alibaba/csp/sentinel/dashboard/controller/DegradeController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MetricsRepository)",
+      "file": "sentinel-dashboard/src/main/java/com/alibaba/csp/sentinel/dashboard/controller/MetricController.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RuleRepository)",
+      "file": "sentinel-dashboard/src/main/java/com/alibaba/csp/sentinel/dashboard/controller/ParamFlowRuleController.java",
+      "line": 67,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "sentinel-dashboard/src/main/java/com/alibaba/csp/sentinel/dashboard/controller/ParamFlowRuleController.java",
+      "line": 104,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RuleRepository)",
+      "file": "sentinel-dashboard/src/main/java/com/alibaba/csp/sentinel/dashboard/controller/SystemController.java",
+      "line": 49,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "eden-components/eden-cola/eden-cola-catchlog/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-cola/eden-cola-domain/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-cola/eden-cola-dto/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-cola/eden-cola-extension/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-cola/eden-cola-statemachine/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-commons/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "eden-components/eden-extensions/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-common-cache/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-common-excel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-common-mail/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-common-mq/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-common-security/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-common-sms/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-consistency-task/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-data-crypto/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-data-differ/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-data-duplicate/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-data-masker/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-distributed-lock/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-distributed-uid/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-event-auditor/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-flow-compose/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-full-tracing/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-idempotent/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-solutions/eden-sensitive-word/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-arthas-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-canel-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-cat-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-common-cache-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-common-mail-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-common-mq-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-common-security-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-common-sms-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-curator-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-data-crypto-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-data-differ-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-data-duplicate-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-data-masker-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-debezium-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-distributed-lock-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-distributed-uid-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-druid-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-dynamic-datasource-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-dynamic-tp-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-elasticsearch-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-event-auditor-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-flow-compose-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-flyway-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-ftpclient-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-ftpserver-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-full-tracing-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-hikaricp-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-idempotent-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-influxdb-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-javamail-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-jwt-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-kafka-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-leaf-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-liquibase-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-logstash-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-metrics-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-mongobee-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-mongodb-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-mybatis-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-netty-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-oauth2-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-prometheus-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-quartz-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-rabbitmq-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-redis-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-redisson-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-rocketmq-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-sensitive-word-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-shardingsphere-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-swagger2-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-swagger3-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-tinyid-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-tomcat-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-truelicense-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-uid-generator-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-undertow-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-xxljob-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-starters/eden-xxljob2-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot-test/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-boot/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-apollo-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-cat-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-dubbo-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-dynamic-tp-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-eureka-client-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-eureka-server-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-grpc-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-hystrix-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-jaeger-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-nacos-config-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-nacos-discovery-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-openfeign-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-ribbon-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-sentinel-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-sofa-tracer-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-zipkin2-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-zookeeper-config-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-zookeeper-discovery-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-zookeeper-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud-starters/eden-zuul-spring-cloud-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-cloud/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-data/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-framework/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eden-components/eden-spring-integration/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-security/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-components/eden-spring-test/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-deployment-tests/eden-deployment-test-glassfish/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-deployment-tests/eden-deployment-test-tomcat/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-deployment-tests/eden-deployment-test-tomee/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-deployment-tests/eden-deployment-test-wildfly/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-deployment-tests/eden-deployment-test-wlp/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-integration-tests/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-performance-tests/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "eden-tests/eden-smoke-tests/src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 29
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1485,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

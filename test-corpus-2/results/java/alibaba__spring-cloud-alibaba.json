@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-alibaba-examples/sentinel-example/sentinel-resttemplate-example/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-alibaba-nacos-config/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-alibaba-sentinel-datasource/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-alibaba-sentinel-gateway/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-circuitbreaker-sentinel/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-starter-alibaba-nacos-config/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-starter-alibaba-nacos-discovery/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-starter-alibaba-schedulerx/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-starter-alibaba-sentinel/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "spring-cloud-alibaba-starters/spring-cloud-starter-stream-rocketmq/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "spring-cloud-alibaba-tests/nacos-tests/nacos-config-test/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "spring-cloud-alibaba-tests/nacos-tests/nacos-discovery-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-alibaba-tests/rocketmq-tests/rocketmq-stream-test/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-cloud-alibaba-tests/sentinel-tests/sentinel-degrade-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-alibaba-tests/sentinel-tests/sentinel-flowcontrol-test/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 82
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 700,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

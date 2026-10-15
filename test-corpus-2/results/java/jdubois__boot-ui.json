@@ -1,0 +1,934 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "bootui-agent-bridge/src/test",
+        "pattern": "test",
+        "files": 43
+      },
+      {
+        "path": "bootui-agent/src/test",
+        "pattern": "test",
+        "files": 113
+      },
+      {
+        "path": "bootui-cli/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "bootui-conformance/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "bootui-engine/src/test",
+        "pattern": "test",
+        "files": 651
+      },
+      {
+        "path": "bootui-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/base/src/test",
+        "pattern": "test",
+        "files": 73
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/cache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/datasource/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/email/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/fault-tolerance/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/flyway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/health/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/hibernate/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/liquibase/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/micrometer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/otel/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/prod-shell-guard/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/rabbit/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/rest-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/scheduler/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/security/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "bootui-quarkus-integration-tests/websockets/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "bootui-quarkus-sample-app/e2e/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "bootui-quarkus-sample-app/e2e/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "bootui-quarkus/src/test",
+        "pattern": "test",
+        "files": 101
+      },
+      {
+        "path": "bootui-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 321
+      },
+      {
+        "path": "bootui-spring-sample-app/e2e/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "bootui-spring-sample-app/src/test",
+        "pattern": "test",
+        "files": 54
+      },
+      {
+        "path": "bootui-spring-webflux-sample-app/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "workshop/fixtures",
+        "pattern": "fixtures",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 1461
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 3764,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 11,
+    "major": 40,
+    "warning": 15,
+    "info": 0,
+    "total": 66
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 171,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 212,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 940,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 943,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 959,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 1470,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2093,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2116,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2155,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2171,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async — transaction will NOT propagate to async thread",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2185,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 171,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 212,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 940,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 943,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 959,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 1381,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 1394,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 1404,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 1411,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 1470,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2093,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2116,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2155,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2171,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/architecture/ArchitectureRules.java",
+      "line": 2185,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditEventRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/reactive/ReactiveSecurityLogsController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/reactive/ReactiveSecurityLogsController.java",
+      "line": 118,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 86,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (exchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 141,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (exchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 144,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (exchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 175,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (exchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 178,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (exchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 187,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HttpExchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 199,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (exchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 203,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HttpExchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 233,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BootUiHttpExchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/HttpExchangesController.java",
+      "line": 254,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditEventRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/PanelsController.java",
+      "line": 211,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HttpExchangeRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/PanelsController.java",
+      "line": 215,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditEventRepository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/SecurityLogsController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/web/SecurityLogsController.java",
+      "line": 84,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ProductRepository)",
+      "file": "bootui-spring-sample-app/src/main/java/io/github/jdubois/bootui/sample/advisor/architecture/ArchitectureIssuesController.java",
+      "line": 15,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/insights/InsightAfterResponseController.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/insights/InsightAfterResponseController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/insights/InsightSeedController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/notes/NoteController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/notes/NoteController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (noteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/notes/NoteController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NoteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/sample/SampleActionsController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (noteRepository)",
+      "file": "bootui-spring-webflux-sample-app/src/main/java/io/github/jdubois/bootui/webfluxsample/sample/SampleActionsController.java",
+      "line": 206,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/core/dto/KafkaMessageDto.java",
+      "line": 4,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/core/dto/KafkaMessageDto.java",
+      "line": 4,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/kafka/KafkaActivityRecorder.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/kafka/KafkaActivityRecorder.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/web/LiveActivityAssembler.java",
+      "line": 174,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-engine/src/main/java/io/github/jdubois/bootui/engine/web/LiveActivityAssembler.java",
+      "line": 174,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-quarkus/src/main/java/io/github/jdubois/bootui/quarkus/kafka/QuarkusKafkaConsumerCapture.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-quarkus/src/main/java/io/github/jdubois/bootui/quarkus/kafka/QuarkusKafkaConsumerCapture.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/BootUiProperties.java",
+      "line": 1721,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/BootUiProperties.java",
+      "line": 1721,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/kafka/KafkaConsumerCaptureBeanPostProcessor.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-spring-boot-starter/src/main/java/io/github/jdubois/bootui/autoconfigure/kafka/KafkaConsumerCaptureBeanPostProcessor.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "bootui-spring-sample-app/compose.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "bootui-spring-sample-app/src/main/java/io/github/jdubois/bootui/sample/kafka/SampleOrderEventListener.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "bootui-spring-sample-app/src/main/java/io/github/jdubois/bootui/sample/kafka/SampleOrderEventListener.java",
+      "line": 23,
+      "extra": {}
+    }
+  ]
+}

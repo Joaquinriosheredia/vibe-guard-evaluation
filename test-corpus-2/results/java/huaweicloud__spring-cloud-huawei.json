@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "integration-tests/canary-nacos-tests/nacos-canary-tests-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/canary-serivcecomb-tests/servicecomb-canary-tests-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integration-tests/cse-v1/tests-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "integration-tests/cse-v2/tests-client/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "integration-tests/discovery-nacos-tests/discovery-tests-client/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "integration-tests/discovery-servicecomb-tests/discovery-tests-client/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "integration-tests/mesh-tests/mesh-tests-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-cloud-huawei-common/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "spring-cloud-huawei-governance/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-cloud-huawei-service-engine/service-engine-common/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-cloud-huawei-service-engine/service-engine-config/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-cloud-starter-huawei/spring-cloud-starter-huawei-hessian/src/test",
+        "pattern": "test",
+        "files": 4
+      }
+    ],
+    "filesExcluded": 67
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 697,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

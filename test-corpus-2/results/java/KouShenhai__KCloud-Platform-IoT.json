@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "laokou-cloud/laokou-gateway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-algorithm/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-context/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-core/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "laokou-common/laokou-common-crypto/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "laokou-common/laokou-common-csv/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-data-cache/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-elasticsearch/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-excel/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "laokou-common/laokou-common-fory/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-grpc-client/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "laokou-common/laokou-common-grpc-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-i18n/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "laokou-common/laokou-common-idempotent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-lock/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-log4j2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-mybatis-plus/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "laokou-common/laokou-common-nacos/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-oss/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "laokou-common/laokou-common-pulsar/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-reactor/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-redis/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "laokou-common/laokou-common-secret/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-security/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "laokou-common/laokou-common-sensitive/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-sftp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-common/laokou-common-trace/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-common/laokou-common-websocket/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "laokou-common/laokou-common-xss/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-service/laokou-admin/laokou-admin-start/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-service/laokou-auth/laokou-auth-domain/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "laokou-service/laokou-auth/laokou-auth-start/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "laokou-service/laokou-oss/laokou-oss-start/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 144
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 2237,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 11,
+    "info": 0,
+    "total": 11
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-common/laokou-common-log/src/main/java/org/laokou/common/log/handler/OperateEventHandler.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-auth/laokou-auth-adapter/src/main/java/org/laokou/auth/handler/DomainEventHandler.java",
+      "line": 56,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-auth/laokou-auth-adapter/src/main/java/org/laokou/auth/handler/DomainEventHandler.java",
+      "line": 71,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-auth/laokou-auth-adapter/src/main/java/org/laokou/auth/handler/DomainEventHandler.java",
+      "line": 87,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-logstash/laokou-logstash-adapter/src/main/java/org/laokou/logstash/consumer/handler/TraceLogHandler.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-logstash/laokou-logstash-adapter/src/main/java/org/laokou/logstash/consumer/handler/TraceLogHandler.java",
+      "line": 46,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-logstash/laokou-logstash-adapter/src/main/java/org/laokou/logstash/consumer/handler/TraceLogHandler.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-logstash/laokou-logstash-adapter/src/main/java/org/laokou/logstash/consumer/handler/TraceLogHandler.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-logstash/laokou-logstash-adapter/src/main/java/org/laokou/logstash/consumer/handler/TraceLogHandler.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-logstash/laokou-logstash-adapter/src/main/java/org/laokou/logstash/consumer/handler/TraceLogHandler.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "laokou-service/laokou-oss/laokou-oss-adapter/src/main/java/org/laokou/oss/handler/DomainEventHandler.java",
+      "line": 45,
+      "extra": {}
+    }
+  ]
+}

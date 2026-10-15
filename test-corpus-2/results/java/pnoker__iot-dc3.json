@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "dc3-center/dc3-center-agentic/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-center/dc3-center-auth/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-center/dc3-center-data/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-center/dc3-center-manager/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-center/dc3-center-single/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-cli/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "dc3-cli/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dc3-common/dc3-common-agentic/src/test",
+        "pattern": "test",
+        "files": 41
+      },
+      {
+        "path": "dc3-common/dc3-common-auth/src/test",
+        "pattern": "test",
+        "files": 37
+      },
+      {
+        "path": "dc3-common/dc3-common-constant/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-common/dc3-common-data/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "dc3-common/dc3-common-driver/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "dc3-common/dc3-common-exception/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-common/dc3-common-facade/dc3-common-facade-grpc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-common/dc3-common-facade/dc3-common-facade-local-auth/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dc3-common/dc3-common-facade/dc3-common-facade-local-data/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-common/dc3-common-facade/dc3-common-facade-local-manager/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dc3-common/dc3-common-gateway/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dc3-common/dc3-common-log/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-common/dc3-common-manager/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "dc3-common/dc3-common-model/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-common/dc3-common-mqtt/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "dc3-common/dc3-common-public/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "dc3-common/dc3-common-quartz/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-common/dc3-common-resource/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "dc3-common/dc3-common-sql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-common/dc3-common-thread/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-common/dc3-common-web/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-db/dc3-db-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dc3-db/dc3-db-runtime/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dc3-db/dc3-db-tck/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-bacnet-ip/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-ble/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-can/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-coap/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dc3-driver/dc3-driver-dlms/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-dlt645/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-dnp3/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-ethernet-ip/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-driver/dc3-driver-fins/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-http/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-iec104/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-iec61850/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-kafka/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-knx/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-listening-virtual/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dc3-driver/dc3-driver-lorawan/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-lwm2m/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-mbus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-melsec/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-modbus-rtu/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-modbus-tcp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-mqtt/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-driver/dc3-driver-mysql/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-opc-da/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-opc-ua/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-driver/dc3-driver-oracle/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-plcs7/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-postgresql/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "dc3-driver/dc3-driver-redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-serial/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-sl651/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-snmp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-sqlserver/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-tcp-udp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-virtual/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-driver/dc3-driver-zigbee/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-e2e/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "dc3-gateway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dc3-mq/dc3-mq-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dc3-mq/dc3-mq-tck/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dc3-web/tests",
+        "pattern": "tests",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 396
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 2487,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 1
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "dc3-driver/dc3-driver-kafka/src/main/java/io/github/pnoker/driver/service/impl/KafkaDriverCustomServiceImpl.java",
+      "line": 99,
+      "extra": {}
+    }
+  ]
+}

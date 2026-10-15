@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "calliope-backend/tests",
+        "pattern": "tests",
+        "files": 70
+      }
+    ],
+    "filesExcluded": 70
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises it and the others keep running with nobody observing their results or later exceptions",
+      "file": "calliope-backend/src/calliope/agent/harness/loop.py",
+      "line": 775,
+      "extra": {
+        "function": "run_turn",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-008",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "sqlite3.connect() is synchronous — blocks the event loop during I/O",
+      "file": "calliope-backend/src/calliope/db.py",
+      "line": 285,
+      "extra": {
+        "function": "migrate_db",
+        "evidence": "Use `async with aiosqlite.connect('db.sqlite3') as db:` instead",
+        "suggested_fix": "async with aiosqlite.connect(db_path) as db:"
+      }
+    }
+  ]
+}

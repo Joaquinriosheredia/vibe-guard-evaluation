@@ -1,0 +1,1335 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": ".github/flaky-metric/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": ".github/flaky-metric/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": ".github/test-report-permalinks/tests",
+        "pattern": "tests",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.acct.base/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "backend/de.metas.adempiere.adempiere/base/src/test",
+        "pattern": "test",
+        "files": 326
+      },
+      {
+        "path": "backend/de.metas.adempiere.adempiere/client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "backend/de.metas.adempiere.adempiere/serverRoot/de.metas.adempiere.adempiere.serverRoot.base/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.adempiere.adempiere/tools/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.aggregation/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.architecture-tests/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.async/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "backend/de.metas.banking/de.metas.banking.base/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "backend/de.metas.business.rest-api-impl/src/test",
+        "pattern": "test",
+        "files": 51
+      },
+      {
+        "path": "backend/de.metas.business.rest-api/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/de.metas.business/src/test",
+        "pattern": "test",
+        "files": 217
+      },
+      {
+        "path": "backend/de.metas.contracts/src/test",
+        "pattern": "test",
+        "files": 127
+      },
+      {
+        "path": "backend/de.metas.cucumber/src/test",
+        "pattern": "test",
+        "files": 720
+      },
+      {
+        "path": "backend/de.metas.deliveryplanning.base/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "backend/de.metas.deliveryplanning.webui/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.device.adempiere/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "backend/de.metas.device.scales/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.dimension/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.distribution.rest-api/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/de.metas.dlm/base/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "backend/de.metas.document.archive/de.metas.document.archive.base/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "backend/de.metas.document.refid/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.dunning/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "backend/de.metas.edi/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "backend/de.metas.einvoice.base/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "backend/de.metas.elasticsearch/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.externalreference/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/de.metas.externalsystem/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "backend/de.metas.fresh/de.metas.fresh.base/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "backend/de.metas.fresh/de.metas.fresh.swingui/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "backend/de.metas.frontend-testing/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "backend/de.metas.global_qrcode.api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.handlingunits.base/src/test",
+        "pattern": "test",
+        "files": 293
+      },
+      {
+        "path": "backend/de.metas.handlingunits.mobileui/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.hu_consolidation.mobile/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.inbound.mail/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.inventory.mobileui/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.issue.tracking.everhour/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.issue.tracking.github/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.manufacturing.rest-api/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "backend/de.metas.manufacturing/src/test",
+        "pattern": "test",
+        "files": 53
+      },
+      {
+        "path": "backend/de.metas.marketing/base/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "backend/de.metas.marketing/cleverreach/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/de.metas.material/cockpit/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "backend/de.metas.material/dispo-commons/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "backend/de.metas.material/dispo-service/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "backend/de.metas.material/event/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "backend/de.metas.material/planning/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "backend/de.metas.materialtracking/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "backend/de.metas.migration/de.metas.migration.base/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.migration/de.metas.migration.cli/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "backend/de.metas.monitoring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.payment.esr/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "backend/de.metas.payment.paypal/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "backend/de.metas.payment.revolut/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.payment.sepa/base/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "backend/de.metas.payment.sepa/schema-pain_001_01_03_ch_02/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.payment.sumup/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "backend/de.metas.picking.rest-api/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "backend/de.metas.pos.base/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "backend/de.metas.pos.rest-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.printing.client/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "backend/de.metas.printing.common/de.metas.printing.api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.printing.common/de.metas.printing.esb.base/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "backend/de.metas.printing.rest-api-impl/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "backend/de.metas.printing/de.metas.printing.base/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "backend/de.metas.procurement.base/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "backend/de.metas.purchasecandidate.base/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "backend/de.metas.report/de.metas.report.jasper.client/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "backend/de.metas.report/de.metas.report.jasper.commons/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.report/metasfresh-report-service/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "backend/de.metas.salescandidate.base/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "backend/de.metas.serviceprovider/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "backend/de.metas.servicerepair.base/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.shipper.client.nshift/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.commons/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.derkurier/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.dhl/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.dpd/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.go/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.nshift/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.shipper.gateway.spi/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.swat/de.metas.swat.base/src/test",
+        "pattern": "test",
+        "files": 180
+      },
+      {
+        "path": "backend/de.metas.ui.web.base/src/test",
+        "pattern": "test",
+        "files": 138
+      },
+      {
+        "path": "backend/de.metas.util.web/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/de.metas.util/src/test",
+        "pattern": "test",
+        "files": 63
+      },
+      {
+        "path": "backend/de.metas.vatid/base/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "backend/de.metas.vatid/vies/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.vertical.creditscore/creditpass/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.vertical.healthcare.alberta/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma.msv3.commons/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma.msv3.server-peer-metasfresh/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma.msv3.server-peer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma.msv3.server/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma.securpharm/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma.vendor.gateway.msv3/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "backend/de.metas.vertical.pharma/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "backend/de.metas.workflow.rest-api/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/vertical-healthcare_ch/forum_datenaustausch_ch.invoice_440_request/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/vertical-healthcare_ch/forum_datenaustausch_ch.invoice_440_response/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/vertical-healthcare_ch/forum_datenaustausch_ch.invoice_450_request/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/vertical-healthcare_ch/forum_datenaustausch_ch.invoice_450_response/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/vertical-healthcare_ch/forum_datenaustausch_ch.invoice_base/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "backend/vertical-healthcare_ch/forum_datenaustausch_ch.invoice_rest-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "e2e/frontend-webui/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "e2e/mobile-webui/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "frontend/test_setup/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-bpartner/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-changelog/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-delivery/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-externalreference/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-externalsystem/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-filemaker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-manufacturing/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-ordercandidates/src/main/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-pricing/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-procurement/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-product/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-rest_api/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-shipping/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "misc/de-metas-common/de-metas-common-util/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-edi/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/alberta/de-metas-camel-alberta-camelroutes/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/common/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/core/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-ebay/de-metas-camel-ebay-camelroutes/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-grssignum/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-leichundmehl/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-pcm-file-import/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-sap-file-import/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-scriptedadapter/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-shopware6/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/de-metas-camel-woocommerce/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/services/camel/de-metas-camel-externalsystems/ebay/de-metas-camel-ebay-camelroutes/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "misc/services/federated-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/services/procurement-webui/procurement-webui-backend/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/services/procurement-webui/procurement-webui-frontend/src/tests",
+        "pattern": "tests",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 3118
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 25058,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 51,
+    "warning": 1,
+    "info": 0,
+    "total": 52
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DataEntryLayoutRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/dataentry/impl/DataEntryRestController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SalesInvoicePaymentStatusRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v1/invoice/impl/SalesInvoicePaymentStatusRestController.java",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OLCandRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v1/ordercandidates/impl/OrderCandidatesRestController.java",
+      "line": 110,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AdImageRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/image/ImageRestController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (externalSystemRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/invoice/InvoicesRestController.java",
+      "line": 125,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SalesInvoicePaymentStatusRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/invoice/impl/SalesInvoicePaymentStatusRestController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ExternalSystemRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/order/sales/SalesOrderRestController.java",
+      "line": 106,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (externalSystemRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/order/sales/SalesOrderRestController.java",
+      "line": 236,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ExternalSystemRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/ordercandidates/impl/OrderCandidatesRestController.java",
+      "line": 73,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (externalSystemRepository)",
+      "file": "backend/de.metas.business.rest-api-impl/src/main/java/de/metas/rest_api/v2/ordercandidates/impl/OrderCandidatesRestController.java",
+      "line": 118,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HUManagerProfileRepository)",
+      "file": "backend/de.metas.handlingunits.mobileui/src/main/java/de/metas/handlingunits/mobileui/HUManagerRestController.java",
+      "line": 92,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CurrencyRepository)",
+      "file": "backend/de.metas.pos.rest-api/src/main/java/de/metas/pos/rest_api/POSRestController.java",
+      "line": 83,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (currencyRepository)",
+      "file": "backend/de.metas.pos.rest-api/src/main/java/de/metas/pos/rest_api/POSRestController.java",
+      "line": 95,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AddressRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/address/AddressRestController.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MenuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/admin/CacheRestController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BoardDescriptorRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/board/BoardRestController.java",
+      "line": 95,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/board/BoardRestController.java",
+      "line": 98,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserDashboardRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/dashboard/DashboardRestController.java",
+      "line": 82,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/dashboard/DashboardRestController.java",
+      "line": 85,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/debug/DebugRestController.java",
+      "line": 116,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/document/geo_location/ViewGeoLocationsRestController.java",
+      "line": 80,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MenuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/document/references/controller/DocumentReferencesRestController.java",
+      "line": 73,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (GeocodingConfigRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/geo_location/GeoLocationConfigRestController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WebuiLetterRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/letter/LetterRestController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserSessionRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/login/LoginRestController.java",
+      "line": 112,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WebuiMailRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/mail/MailRestController.java",
+      "line": 104,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WebuiMailAttachmentsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/mail/MailRestController.java",
+      "line": 105,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MenuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 68,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 103,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 118,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 136,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 159,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 174,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 189,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 206,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (menuTreeRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/menu/MenuRestController.java",
+      "line": 251,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ASIRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/pattribute/ASIRestController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/pattribute/ASIRestController.java",
+      "line": 91,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IProcessInstancesRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/process/ProcessRestController.java",
+      "line": 115,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/process/ProcessRestController.java",
+      "line": 117,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IProcessInstancesRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/process/ProcessRestController.java",
+      "line": 128,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IProcessInstancesRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/process/ProcessRestController.java",
+      "line": 171,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IProcessInstancesRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/process/ProcessRestController.java",
+      "line": 426,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserSessionRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/session/UserSessionRestController.java",
+      "line": 64,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/view/ViewHealthRestController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/view/ViewRestController.java",
+      "line": 132,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/view/ViewRowAttributesRestController.java",
+      "line": 63,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IViewsRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/view/ViewRowEditRestController.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomizedWindowInfoMapRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/window/controller/WindowRestController.java",
+      "line": 147,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (customizedWindowInfoMapRepository)",
+      "file": "backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/window/controller/WindowRestController.java",
+      "line": 791,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (BPartnerRepository)",
+      "file": "misc/services/procurement-webui/procurement-webui-backend/src/main/java/de/metas/procurement/webui/rest/MetasfreshSyncRestController.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "backend/de.metas.util.web/src/main/java/de/metas/util/web/audit/ApiAuditService.java",
+      "line": 305,
+      "extra": {}
+    }
+  ]
+}

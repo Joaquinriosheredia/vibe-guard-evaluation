@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "logbook-api/src/test",
+        "pattern": "test",
+        "files": 31
+      },
+      {
+        "path": "logbook-common/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "logbook-core/src/test",
+        "pattern": "test",
+        "files": 42
+      },
+      {
+        "path": "logbook-httpclient/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "logbook-httpclient5/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "logbook-jaxrs/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "logbook-jdkserver/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "logbook-jmh/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "logbook-json-jackson2/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "logbook-json/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "logbook-ktor/logbook-ktor-client/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "logbook-ktor/logbook-ktor-common/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "logbook-ktor/logbook-ktor-server/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "logbook-logstash/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "logbook-netty/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "logbook-okhttp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "logbook-okhttp2/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "logbook-openfeign/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "logbook-servlet/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "logbook-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "logbook-spring-boot-ecs-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "logbook-spring-boot-webflux-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "logbook-spring-webflux/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "logbook-spring/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "test-modules/logbook-spring-boot-ecs-autoconfigure-log4j2-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "test-modules/logbook-spring-boot-ecs-autoconfigure-logback-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "test-modules/logbook-test/src/test",
+        "pattern": "test",
+        "files": 3
+      }
+    ],
+    "filesExcluded": 243
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 566,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

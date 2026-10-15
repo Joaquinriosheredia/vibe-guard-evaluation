@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "skills/spring-boot-3/ai-observability/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/api-versioning/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/configuration-properties/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/container-native-deployment/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-3/domain-driven-design/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/event-driven-messaging/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/flyway-migrations/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-3/hateoas/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/hexagonal-architecture/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/http-interface-clients/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/idempotency-patterns/examples",
+        "pattern": "examples",
+        "files": 1
+      },
+      {
+        "path": "skills/spring-boot-3/layered-architecture/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/mcp-server/examples",
+        "pattern": "examples",
+        "files": 3
+      },
+      {
+        "path": "skills/spring-boot-3/multi-module-maven/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-3/multi-tenancy/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/null-safety/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/oauth2-resource-server/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/openapi-first/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/problem-details-rfc9457/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/production-observability/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/resilience-retry/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/rest-api-conventions/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/spring-ai-integration/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/spring-batch/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/spring-boot-migration/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-3/spring-cloud-gateway/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-3/spring-data-jpa/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/spring-data-redis/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/spring-modulith/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/spring-security-jwt/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/testing-pyramid/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/transactional-patterns/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-3/webflux-reactive-patterns/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/ai-observability/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/api-versioning/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/configuration-properties/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/container-native-deployment/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-4/domain-driven-design/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/event-driven-messaging/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/flyway-migrations/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-4/hateoas/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/hexagonal-architecture/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/http-interface-clients/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/idempotency-patterns/examples",
+        "pattern": "examples",
+        "files": 1
+      },
+      {
+        "path": "skills/spring-boot-4/layered-architecture/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/mcp-server/examples",
+        "pattern": "examples",
+        "files": 3
+      },
+      {
+        "path": "skills/spring-boot-4/multi-module-maven/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-4/multi-tenancy/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/null-safety/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/oauth2-resource-server/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/openapi-first/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/problem-details-rfc9457/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/production-observability/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/resilience-retry/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/rest-api-conventions/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/spring-ai-integration/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/spring-batch/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/spring-boot-migration/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-4/spring-cloud-gateway/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/spring-boot-4/spring-data-jpa/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/spring-data-redis/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/spring-modulith/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/spring-security-jwt/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/testing-pyramid/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/transactional-patterns/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "skills/spring-boot-4/webflux-reactive-patterns/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "verification/behavior/src/test",
+        "pattern": "test",
+        "files": 6
+      }
+    ],
+    "filesExcluded": 118
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 518,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 4,
+    "warning": 6,
+    "info": 0,
+    "total": 10
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "plugins/spring-boot-3-skills/skills/openapi-first/examples/bad-delegate-impl.java",
+      "line": 9,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "plugins/spring-boot-3-skills/skills/rest-api-conventions/examples/bad-controller.java",
+      "line": 8,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "plugins/spring-boot-4-skills/skills/openapi-first/examples/bad-delegate-impl.java",
+      "line": 9,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "plugins/spring-boot-4-skills/skills/rest-api-conventions/examples/bad-controller.java",
+      "line": 8,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "plugins/spring-boot-3-skills/skills/event-driven-messaging/examples/bad-consumer.java",
+      "line": 1,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "plugins/spring-boot-3-skills/skills/event-driven-messaging/examples/bad-consumer.java",
+      "line": 1,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "plugins/spring-boot-3-skills/skills/event-driven-messaging/examples/good-consumer.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "plugins/spring-boot-4-skills/skills/event-driven-messaging/examples/bad-consumer.java",
+      "line": 1,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "plugins/spring-boot-4-skills/skills/event-driven-messaging/examples/bad-consumer.java",
+      "line": 1,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "plugins/spring-boot-4-skills/skills/event-driven-messaging/examples/good-consumer.java",
+      "line": 23,
+      "extra": {}
+    }
+  ]
+}

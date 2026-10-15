@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "hermes-api/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "hermes-client/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "hermes-common/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "hermes-consumers/src/test",
+        "pattern": "test",
+        "files": 68
+      },
+      {
+        "path": "hermes-frontend/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "hermes-management/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "hermes-metrics/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "hermes-mock/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "hermes-schema/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "hermes-tracker-elasticsearch/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "hermes-tracker/src/test",
+        "pattern": "test",
+        "files": 7
+      }
+    ],
+    "filesExcluded": 100
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1580,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.14.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 9,
+    "info": 0,
+    "total": 9
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker/docker-compose.yml",
+      "line": 5,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker/latest/consumers/consumers.yaml",
+      "line": 3,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker/latest/frontend/frontend.yaml",
+      "line": 2,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker/latest/management/management.yaml",
+      "line": 11,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "hermes-consumers/src/main/resources/application-integration.yaml",
+      "line": 79,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "hermes-consumers/src/main/resources/application-local.yaml",
+      "line": 3,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "hermes-frontend/src/main/resources/application-integration.yaml",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "hermes-frontend/src/main/resources/application-local.yaml",
+      "line": 2,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "hermes-management/src/main/resources/application.yaml",
+      "line": 10,
+      "extra": {}
+    }
+  ]
+}

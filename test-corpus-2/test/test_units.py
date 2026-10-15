@@ -197,18 +197,59 @@ class Cards(unittest.TestCase):
             Path(d, "tests", "test_api.py").write_text("await handler(req)\n")
             subprocess.run(["git", "add", "-A"], cwd=d, check=True)
             subprocess.run(["git", "commit", "-qm", "x"], cwd=d, check=True, env=env)
+            Path(d, "build").mkdir()
+            Path(d, "build", "app.so").write_bytes(b"\x00\x01 handler \x00\xff")
+            subprocess.run(["git", "add", "-A"], cwd=d, check=True)
+            subprocess.run(["git", "commit", "-qm", "binary"], cwd=d, check=True, env=env)
+            raw = subprocess.run(["git", "grep", "-n", "-w", "-F", "-e", "handler"], cwd=d, capture_output=True, text=True).stdout
+            self.assertIn("Binary file build/app.so matches", raw)  # the git output this covers
             matches = cards.literal_matches(d, "handler")
+            self.assertEqual([(m["path"], m["line"], m["class"], m["text"]) for m in matches][:2],
+                             [("app/api.py", 7, "main", "async def handler(req):"), ("app/main.py", 1, "main", "from app.api import handler")])
             self.assertEqual([(m["path"], m["line"], m["class"]) for m in matches],
-                             [("app/api.py", 7, "main"), ("app/main.py", 1, "main"), ("app/main.py", 2, "main"), ("tests/test_api.py", 1, "test")])
+                             [("app/api.py", 7, "main"), ("app/main.py", 1, "main"), ("app/main.py", 2, "main"),
+                              ("build/app.so", None, "main"), ("tests/test_api.py", 1, "test")])
+            self.assertEqual(matches[3]["text"], "binary file")
             f = {"id": "P001", "language": "python", "repo": "o/r", "commit": "c" * 40, "file": "app/api.py", "line": 8,
                  "ruleId": "PYVIBE-009", "engine": "python-vibe-guard", "severity": "critical", "message": "MESSAGE"}
             card = cards.render_card(f, PY_SRC, matches)
-            self.assertIn("**4 matches**, all listed", card)
+            self.assertIn("**5 matches**, all listed", card)
+            self.assertIn("| build/app.so | — | main | `binary file` |", card)
             self.assertIn('>8      data = open("f").read()', card)
             self.assertIn("https://github.com/o/r/tree/" + "c" * 40, card)
             template = card.replace("MESSAGE", "")
             for word in ("TP", "FP", "true positive", "false positive", "likely", "probably", "seems", "appears", "parece", "verdict"):
                 self.assertNotIn(word, template, word)
+
+
+class CardsRecords(unittest.TestCase):
+    def test_records_split_on_newline_only_and_control_chars_escaped(self):
+        # DEVIATIONS.md §2: a matched line with \r or \x85 is one record, not several.
+        with tempfile.TemporaryDirectory() as d:
+            env = {**os.environ, "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t", "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@t"}
+            subprocess.run(["git", "init", "-q"], cwd=d, check=True)
+            subprocess.run(["git", "config", "core.autocrlf", "false"], cwd=d, check=True)
+            Path(d, "a.css").write_bytes("x{handler:1}\ry{handler:2}\u0085z handler\n".encode("utf-8") + b"second handler line\n")
+            Path(d, "b.py").write_text("def handler():\n    pass\n")
+            subprocess.run(["git", "add", "-A"], cwd=d, check=True)
+            subprocess.run(["git", "commit", "-qm", "x"], cwd=d, check=True, env=env)
+            text_mode = subprocess.run(["git", "grep", "-n", "-w", "-F", "-e", "handler"], cwd=d, capture_output=True, text=True).stdout.splitlines()
+            self.assertGreater(len(text_mode), 3)  # the old reading split the first record
+            matches = cards.literal_matches(d, "handler")
+            self.assertEqual([(m["path"], m["line"]) for m in matches], [("a.css", 1), ("a.css", 2), ("b.py", 1)])
+            self.assertIn("\r", matches[0]["text"])
+            f = {"id": "P001", "language": "python", "repo": "o/r", "commit": "c" * 40, "file": "b.py", "line": 2,
+                 "ruleId": "R", "engine": "e", "severity": "critical", "message": "M"}
+            card = cards.render_card(f, "def handler():\n    pass\n", matches)
+            self.assertIn("| a.css | 1 | main | `x{handler:1}\\x0dy{handler:2}\\x85z handler` |", card)
+            self.assertNotIn("\r", card)
+            self.assertNotIn("\u0085", card)
+
+    def test_parse_record_rejects_unparsable(self):
+        with self.assertRaises(ValueError):
+            cards.parse_record(b" visibility 0s 1s,")
+        self.assertEqual(cards.parse_record(b"Binary file b/app.so matches")["line"], None)
+        self.assertEqual(cards.parse_record(b"a/b.py:12:  x = 1")["line"], 12)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.2.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "common/reactive-grpc-benchmarks/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/reactive-grpc-common/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "demos/bazel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/gradle/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/reactive-grpc-chat/rxjava-chat-android/app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "reactor/reactor-grpc-retry-pre3.3.9/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "reactor/reactor-grpc-retry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "reactor/reactor-grpc-stub/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "reactor/reactor-grpc-tck/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "reactor/reactor-grpc-test-32/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "reactor/reactor-grpc-test/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "rx-java/rxgrpc-stub/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "rx-java/rxgrpc-tck/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "rx-java/rxgrpc-test/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "rx3-java/rx3grpc-stub/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "rx3-java/rx3grpc-tck/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "rx3-java/rx3grpc-test/src/test",
+        "pattern": "test",
+        "files": 19
+      }
+    ],
+    "filesExcluded": 129
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "2.4.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 284,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}
