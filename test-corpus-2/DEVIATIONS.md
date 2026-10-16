@@ -193,3 +193,10 @@ A and B opened → list of disagreements and audit sample (IDs only, no verdicts
      27 verdicts. It checks that the disagreements and the audit sample match
      `REVIEW-AB.md`, builds the final verdicts and applies rule 1.
    - Repeatability is no longer an input, and A against B is published as the agreement.
+4. **Disclosure (Joaquín), recorded 2026-10-16:**
+   "Joaquín vio los 7 IDs de desacuerdo en el informe de Code (2026-10-15 11:16) antes de
+   revisar; el barajado de la hoja no oculta qué casos son desacuerdo. No conoce los
+   veredictos de A ni de B. J001 lo empezó a mirar durante el método anterior
+   (REVIEW-LOG.md)."
+   - Nota: estas entradas se registran el 2026-10-16, con retraso, a partir de la
+     conversación del 2026-10-15.
