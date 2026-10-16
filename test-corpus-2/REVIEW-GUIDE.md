@@ -61,7 +61,8 @@ A rule not listed falls back to conditions 1–3.
 
 This is the format of the files named in `PREREGISTRATION.md`; it adds no rule.
 
-- **`REVIEW-SHEET.md`:** for each ID, open its card (`cards/<ID>.md`) and fill in the three
+- **`REVIEW-SHEET.md`:** it holds 27 IDs in a random order (`DEVIATIONS.md` §3a). For each ID,
+  open its card (`cards/<ID>.md`) and fill in the three
   fields:
   - `Verdict`: `TP`, `FP` or `U`;
   - `Reason (file:line)`: one line with file:line evidence ("Each reason cites file:line

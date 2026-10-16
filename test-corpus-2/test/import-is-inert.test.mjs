@@ -24,8 +24,8 @@ function probe(file) {
 
 const scripts = readdirSync(SCRIPTS).filter((f) => f.endsWith('.mjs') || f.endsWith('.py'));
 
-test('there are scripts to check (build-exclusions, cards, count-files, evaluate, lib, review_sheet, run, sample, select)', () => {
-  assert.deepEqual(scripts.sort(), ['build-exclusions.mjs', 'cards.py', 'count-files.mjs', 'evaluate.py', 'lib.mjs', 'review_sheet.py', 'run.mjs', 'sample.py', 'select.mjs']);
+test('there are scripts to check (build-exclusions, cards, count-files, evaluate, lib, review_ab, review_sheet, run, sample, select)', () => {
+  assert.deepEqual(scripts.sort(), ['build-exclusions.mjs', 'cards.py', 'count-files.mjs', 'evaluate.py', 'lib.mjs', 'review_ab.py', 'review_sheet.py', 'run.mjs', 'sample.py', 'select.mjs']);
 });
 
 for (const f of scripts) {
