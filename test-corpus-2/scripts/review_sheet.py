@@ -5,7 +5,8 @@
                                              each with only a link to its card and empty fields (once)
   python3 scripts/review_sheet.py audit   -> audit-joaquin.json from REVIEW-SHEET.md; fails if any
                                              verdict is missing or not TP/FP/U, a reason is missing,
-                                             or Overstated is not Sí/No
+                                             or Overstated is not "Sí"/"No", optionally followed by
+                                             " — " and a note (kept as overstated_note; DEVIATIONS.md §3c)
 """
 import json
 import random
@@ -15,7 +16,8 @@ from pathlib import Path
 
 DIR = Path(__file__).resolve().parent.parent
 VERDICTS = ("TP", "FP", "U")
-OVERSTATED = {"sí": True, "si": True, "no": False}
+OVERSTATED = {"Sí": True, "No": False}
+_OVERSTATED_RE = re.compile(r"^(Sí|No)(?: — (\S.*))?$")
 SEED_SHEET = 20261026
 FIELDS = ("Verdict", "Reason (file:line)", "Overstated")
 _FIELD_RE = re.compile(r"^- (Verdict|Reason \(file:line\)|Overstated):[ \t]*(.*)$")
@@ -56,9 +58,11 @@ def parse_sheet(text, ids):
             problems.append(f"{i}: verdict {verdict!r} is not TP, FP or U" if verdict else f"{i}: verdict missing")
         if not reason:
             problems.append(f"{i}: reason missing")
-        if over.lower() not in OVERSTATED:
+        om = _OVERSTATED_RE.match(over)
+        if not om:
             problems.append(f"{i}: Overstated {over!r} is not Sí or No" if over else f"{i}: Overstated missing")
-        out.append({"id": i, "verdict": verdict, "reason": reason, "overstated": OVERSTATED.get(over.lower())})
+        out.append({"id": i, "verdict": verdict, "reason": reason, "overstated": OVERSTATED[om.group(1)] if om else None,
+                    "overstated_note": over if om and om.group(2) else None})
     if problems:
         raise ValueError("\n".join(problems))
     return out

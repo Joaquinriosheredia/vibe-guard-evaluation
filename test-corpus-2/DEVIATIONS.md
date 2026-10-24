@@ -244,3 +244,7 @@ desfavorable. Ambas se publican."
 - `test/test_units.py` `EvaluateAssisted` covers this.
 - `evaluate.py` has **not** been run.
 - **Not covered by the rule:** criterion 2 (FP/1000) is published for (a) and for (b), but this section does not say which one decides.
+
+### 3c. `review_sheet.py audit` reads `Overstated` with a note (Joaquín, 2026-10-24)
+
+Change of the parser's format, not of the method. Reason: Joaquín's sheet includes a justification in `Overstated`. Valid values: exactly `Sí` or `No`, optionally followed by ` — ` and text. Only that first word decides, and the full text is kept in `audit-joaquin.json` as `overstated_note`. Anything else still fails, for example `Si` without the accent, `No,` or `Quizá`.

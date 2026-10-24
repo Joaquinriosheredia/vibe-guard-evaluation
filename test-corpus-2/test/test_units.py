@@ -1,5 +1,6 @@
 """Unit tests of evaluate.py, sample.py and cards.py (run by python-units.test.mjs)."""
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -367,7 +368,7 @@ class ReviewSheet(unittest.TestCase):
     def filled(self, **override):
         rows = {"J001": ("TP", "a/B.java:10 runs on the @Async pool", "No"),
                 "J002": ("FP", "b/C.java:3 only called from tests", "Sí"),
-                "P001": ("U", "x.py:5 caller outside the repository", "no")}
+                "P001": ("U", "x.py:5 caller outside the repository", "No")}
         rows.update(override)
         text = review_sheet.render_sheet(self.IDS)
         for i, (v, r, o) in rows.items():
@@ -384,6 +385,17 @@ class ReviewSheet(unittest.TestCase):
         out = review_sheet.parse_sheet(self.filled(), self.IDS)
         self.assertEqual([(v["id"], v["verdict"], v["overstated"]) for v in out], [("J001", "TP", False), ("J002", "FP", True), ("P001", "U", False)])
         self.assertEqual(out[0]["reason"], "a/B.java:10 runs on the @Async pool")
+        self.assertEqual([v["overstated_note"] for v in out], [None, None, None])
+
+    def test_overstated_first_word_and_note(self):
+        for value, flag, note in [("Sí", True, None), ("No", False, None),
+                                  ("Sí — x", True, "Sí — x"), ("No — la referencia se descarta", False, "No — la referencia se descarta")]:
+            out = review_sheet.parse_sheet(self.filled(J002=("FP", "r", value)), self.IDS)[1]
+            self.assertEqual((out["overstated"], out["overstated_note"]), (flag, note), value)
+        for value in ("Si", "no", "SÍ", "No,", "No, x", "No - x", "No —", "No —x", "Quizá", "No — "):
+            with self.assertRaises(ValueError, msg=value) as cm:
+                review_sheet.parse_sheet(self.filled(J002=("FP", "r", value)), self.IDS)
+            self.assertIn("J002: Overstated", str(cm.exception))
 
     def test_fails_on_missing_or_invalid(self):
         for override, expected in [({"J002": ("", "r", "No")}, "J002: verdict missing"),
@@ -404,7 +416,10 @@ class ReviewSheet(unittest.TestCase):
         ids = [f["id"] for f in __import__("json").loads((tc2 / "review-set.json").read_text())["findings"]]
         dis, audit = review_sheet.ab_lists((tc2 / "REVIEW-AB.md").read_text())
         self.assertEqual((len(dis), len(audit), len(set(dis) | set(audit))), (7, 20, 27))
-        self.assertEqual((tc2 / "REVIEW-SHEET.md").read_text(), review_sheet.render_sheet(review_sheet.sheet_ids(ids, dis, audit)) + "\n")
+        sheet = (tc2 / "REVIEW-SHEET.md").read_text()
+        blank = re.sub(r"^(- (?:Verdict|Reason \(file:line\)|Overstated):).*$", r"\1 ", sheet, flags=re.M)
+        self.assertEqual(blank, review_sheet.render_sheet(review_sheet.sheet_ids(ids, dis, audit)) + "\n")  # only the fields filled
+        self.assertEqual(len(review_sheet.parse_sheet(sheet, review_sheet.sheet_ids(ids, dis, audit))), 27)  # complete, in memory only
         prereg = (tc2 / "PREREGISTRATION.md").read_text()
         guide = (tc2 / "REVIEW-GUIDE.md").read_text()
         verdicts = prereg[prereg.index("## Verdicts (the rules"):prereg.index("## Reviewers, cards and blindness")].rstrip("\n")
