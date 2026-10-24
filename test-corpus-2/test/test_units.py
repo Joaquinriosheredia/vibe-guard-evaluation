@@ -161,6 +161,58 @@ class Evaluate(unittest.TestCase):
         self.assertEqual(m["languages"]["java"]["precision"]["primary"], 1.0)
 
 
+class EvaluateAssisted(unittest.TestCase):
+    """DEVIATIONS.md §3b: (a) all verdicts, (b) without the assisted ones in the audit; the less favourable decides."""
+    DIS = ["J050", "P100"]
+    ASSISTED = ["J001", "J002", "J003", "J004", "J005", "J006", "J007", "P001", "P002", "P003", "J050", "P100"]
+
+    def both(self, changed):
+        rs, corpora, reports = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "FP" if i in changed else "TP")
+        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
+        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
+        return ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb)), fa, fb, rb
+
+    def test_proportional_threshold(self):
+        self.assertEqual([ev.audit_max_changes(n) for n in (20, 10, 13, 7, 1)], [3, 2, 2, 2, 1])
+        self.assertEqual(len(ev.ASSISTED), 14)
+
+    def test_version_b_drops_assisted_audit_and_counts_assisted_disagreements_as_u(self):
+        m, fa, fb, rb = self.both(["J001"])
+        self.assertEqual((fa["J001"]["verdict"], fa["J001"]["source"]), ("FP", "Joaquín"))
+        self.assertEqual((fb["J001"]["verdict"], fb["J001"]["source"]), ("TP", "A=B"))
+        self.assertEqual((fa["P100"]["verdict"], fb["P100"]["verdict"], fb["P100"]["source"]), ("TP", "U", "assisted disagreement -> U"))
+        self.assertEqual(fb["P004"]["source"], "Joaquín")
+        au = rb["audit"]
+        self.assertEqual((au["n"], au["maxChanges"], au["byLanguage"]["java"]["n"], au["byLanguage"]["python"]["n"]), (10, 2, 0, 10))
+        self.assertEqual(rb["assistedExcluded"], {"audit": self.ASSISTED[:10], "disagreementsAsU": self.DIS})
+        self.assertEqual(m["notes"], ["In (b) no java audit case remains: the java audit exists only in the assisted version (a)."])
+        self.assertEqual(m["b"]["languages"]["python"]["precision"]["U"], 1)
+
+    def test_less_favourable_criterion1_decides(self):
+        m, _, _, _ = self.both(["P004"])  # (a) 1/20, (b) 1/10: reliable in both
+        self.assertEqual({lang: c["status"] for lang, c in m["criterion1"].items()}, {"java": "MET", "python": "MET"})
+        m, _, _, _ = self.both(["P004", "P005"])  # (a) 2/20 reliable, (b) 2/10 NOT RELIABLE
+        for lang in ("java", "python"):
+            self.assertEqual(m["criterion1"][lang], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
+        md = ev.render_both(m)
+        self.assertIn("| java | MET | NOT MET | **NOT MET** |", md)
+        self.assertIn("the java audit exists only in the assisted version (a)", md)
+        self.assertIn("## (a) All verdicts", md)
+        self.assertIn("### Review", md)
+
+    def test_assisted_must_be_reviewed(self):
+        rs, _, _ = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT)
+        with self.assertRaises(SystemExit):
+            ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, ["P050"])
+
+    def test_assisted_ids_are_in_the_committed_27(self):
+        dis, audit = review_sheet.ab_lists((Path(__file__).resolve().parent.parent / "REVIEW-AB.md").read_text())
+        self.assertLessEqual(set(ev.ASSISTED), set(dis) | set(audit))
+        self.assertEqual(len(set(ev.ASSISTED) & set(audit)), 10)
+
+
 class Sample(unittest.TestCase):
     def test_draw_java_first_and_caps(self):
         def mk(lang, n):
