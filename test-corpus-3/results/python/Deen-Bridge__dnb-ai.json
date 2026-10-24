@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 81
+      }
+    ],
+    "filesExcluded": 81
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 3,
+    "major": 0,
+    "warning": 8,
+    "info": 0,
+    "total": 11
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "main.py",
+      "line": 1988,
+      "extra": {
+        "function": "chat",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "main.py",
+      "line": 1993,
+      "extra": {
+        "function": "chat",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "main.py",
+      "line": 2011,
+      "extra": {
+        "function": "chat",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "agent_orchestrator.py",
+      "line": 330,
+      "extra": {
+        "function": "process_query",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "review.py",
+      "line": 272,
+      "extra": {
+        "function": "run_judge_ensemble",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "stellar.py",
+      "line": 903,
+      "extra": {
+        "function": "zakat_for_account",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "tafsir.py",
+      "line": 1311,
+      "extra": {
+        "function": "fetch_tafsirs_for_ayah",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "tafsir.py",
+      "line": 1509,
+      "extra": {
+        "function": "assemble_ayah",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "tafsir.py",
+      "line": 1537,
+      "extra": {
+        "function": "build_tafsir_response",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "tafsir.py",
+      "line": 1586,
+      "extra": {
+        "function": "retrieve",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "tafsir.py",
+      "line": 1716,
+      "extra": {
+        "function": "_build_chat_tafsir_context",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

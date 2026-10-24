@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "backend/tests",
+        "pattern": "tests",
+        "files": 129
+      },
+      {
+        "path": "docs/examples",
+        "pattern": "examples",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 130
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 6,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "backend/app/api/kline.py",
+      "line": 1009,
+      "extra": {
+        "function": "sync_minute",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "backend/app/api/kline.py",
+      "line": 1164,
+      "extra": {
+        "function": "extend_history",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "backend/app/api/kline.py",
+      "line": 1251,
+      "extra": {
+        "function": "repair_daily",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "backend/app/api/kline.py",
+      "line": 1336,
+      "extra": {
+        "function": "rebuild_enriched",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "backend/app/api/pipeline.py",
+      "line": 83,
+      "extra": {
+        "function": "run_now",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "backend/app/api/pipeline.py",
+      "line": 160,
+      "extra": {
+        "function": "run_market_now",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

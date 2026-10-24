@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": ".agents/skills/humanizer-zh/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "backend/tests",
+        "pattern": "tests",
+        "files": 174
+      }
+    ],
+    "filesExcluded": 175
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 12,
+    "info": 0,
+    "total": 14
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-008",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "sqlite3.connect() is synchronous — blocks the event loop during I/O",
+      "file": ".scratch/prompt-caching/compare.py",
+      "line": 103,
+      "extra": {
+        "function": "scenario",
+        "evidence": "Use `async with aiosqlite.connect('db.sqlite3') as db:` instead",
+        "suggested_fix": "async with aiosqlite.connect(DB) as db:"
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-008",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "sqlite3.connect() is synchronous — blocks the event loop during I/O",
+      "file": ".scratch/prompt-caching/compare.py",
+      "line": 112,
+      "extra": {
+        "function": "scenario",
+        "evidence": "Use `async with aiosqlite.connect('db.sqlite3') as db:` instead",
+        "suggested_fix": "async with aiosqlite.connect(DB) as db:"
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-008",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "sqlite3.connect() is synchronous — blocks the event loop during I/O — WARNING, not CRITICAL: inside hits(), the coroutine this module passes to asyncio.run(), i.e. the program's top-level coroutine (typically start-up)",
+      "file": ".scratch/prompt-caching/compare.py",
+      "line": 182,
+      "extra": {
+        "function": "hits",
+        "evidence": "Use `async with aiosqlite.connect('db.sqlite3') as db:` instead",
+        "suggested_fix": "async with aiosqlite.connect(DB) as db:"
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".scratch/retrieval-and-hotwords/prototype/measure.py",
+      "line": 223,
+      "extra": {
+        "function": "measure",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".scratch/retrieval-and-hotwords/prototype/measure.py",
+      "line": 335,
+      "extra": {
+        "function": "soniox",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/src/eidolon/call.py",
+      "line": 1188,
+      "extra": {
+        "function": "hang_up",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/src/eidolon/call.py",
+      "line": 1227,
+      "extra": {
+        "function": "aclose",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "backend/src/eidolon/call.py",
+      "line": 1582,
+      "extra": {
+        "function": "_hung_up_on",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "backend/src/eidolon/call.py",
+      "line": 1633,
+      "extra": {
+        "function": "_carry_out",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "backend/src/eidolon/call.py",
+      "line": 1661,
+      "extra": {
+        "function": "_time",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/src/eidolon/release_sync.py",
+      "line": 199,
+      "extra": {
+        "function": "import_releases",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/src/eidolon/retrieval.py",
+      "line": 206,
+      "extra": {
+        "function": "candidates",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/src/eidolon/retrieval.py",
+      "line": 385,
+      "extra": {
+        "function": "_find",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/src/eidolon/retrieval.py",
+      "line": 416,
+      "extra": {
+        "function": "_look_up",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

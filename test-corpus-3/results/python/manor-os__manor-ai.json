@@ -1,0 +1,2099 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 1228
+      }
+    ],
+    "filesExcluded": 1228
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 45,
+    "major": 0,
+    "warning": 91,
+    "info": 0,
+    "total": 136
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "except BaseException with an empty body around an await swallows CancelledError, KeyboardInterrupt and SystemExit — breaking cancellation and clean shutdown",
+      "file": "apps/api/routers/documents.py",
+      "line": 1041,
+      "extra": {
+        "function": "_finish_detached_cache_invalidation",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "apps/api/routers/documents.py",
+      "line": 3188,
+      "extra": {
+        "function": "persist_ai_draft_placeholder",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "apps/api/routers/health.py",
+      "line": 173,
+      "extra": {
+        "function": "deep_health",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "apps/api/routers/sites.py",
+      "line": 536,
+      "extra": {
+        "function": "serve_site",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-006",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "ContextVar.set() without guaranteed cleanup leaks state between async tasks",
+      "file": "packages/core/ai/llm_client.py",
+      "line": 702,
+      "extra": {
+        "function": "resolve_llm_routing_for_model",
+        "evidence": "Capture the token: `token = var.set(v)` then call `var.reset(token)` in a finally block",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/mcp/linkedin.py",
+      "line": 383,
+      "extra": {
+        "function": "_read_bytes",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/mcp/youtube.py",
+      "line": 493,
+      "extra": {
+        "function": "_stage_chat_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "packages/core/ai/runtime/context_compaction.py",
+      "line": 262,
+      "extra": {
+        "function": "compact_context",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-006",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "ContextVar.set() without guaranteed cleanup leaks state between async tasks",
+      "file": "packages/core/ai/runtime/file_actions.py",
+      "line": 87,
+      "extra": {
+        "function": "__aenter__",
+        "evidence": "Capture the token: `token = var.set(v)` then call `var.reset(token)` in a finally block",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-006",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "ContextVar.set() without guaranteed cleanup leaks state between async tasks",
+      "file": "packages/core/ai/runtime/tool_effect_intents.py",
+      "line": 237,
+      "extra": {
+        "function": "runtime_record_tool_effect_intent",
+        "evidence": "Capture the token: `token = var.set(v)` then call `var.reset(token)` in a finally block",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 725,
+      "extra": {
+        "function": "_handle_lsp_hover",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1055,
+      "extra": {
+        "function": "_handle_refactor_rename",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1059,
+      "extra": {
+        "function": "_handle_refactor_rename",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1087,
+      "extra": {
+        "function": "_handle_refactor_extract",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1275,
+      "extra": {
+        "function": "_handle_notebook_read",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1312,
+      "extra": {
+        "function": "_handle_notebook_edit",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1325,
+      "extra": {
+        "function": "_handle_notebook_edit",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1364,
+      "extra": {
+        "function": "_handle_notebook_add",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/code_tool.py",
+      "line": 1386,
+      "extra": {
+        "function": "_handle_notebook_add",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/extended_tools.py",
+      "line": 4020,
+      "extra": {
+        "function": "_load_audio_reference_bytes",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/extended_tools.py",
+      "line": 4270,
+      "extra": {
+        "function": "_load_image_reference_bytes",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/file_tools.py",
+      "line": 1077,
+      "extra": {
+        "function": "_read_supported_text",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/file_tools.py",
+      "line": 1825,
+      "extra": {
+        "function": "_read_file_locked",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/media_tools.py",
+      "line": 5334,
+      "extra": {
+        "function": "_merge_video_files",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/media_tools.py",
+      "line": 6105,
+      "extra": {
+        "function": "_load_timeline_json",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/media_tools.py",
+      "line": 6126,
+      "extra": {
+        "function": "_load_entity_json",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/ai/tools/sandbox_tools.py",
+      "line": 526,
+      "extra": {
+        "function": "_read_workspace_bytes",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "packages/core/plans/executor.py",
+      "line": 6584,
+      "extra": {
+        "function": "_repair_task_coordinator_failed_branches",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "except BaseException with an empty body around an await swallows CancelledError, KeyboardInterrupt and SystemExit — breaking cancellation and clean shutdown",
+      "file": "packages/core/read_cache.py",
+      "line": 183,
+      "extra": {
+        "function": "get_or_load",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/content_ledger.py",
+      "line": 501,
+      "extra": {
+        "function": "reserve_content",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/content_ledger.py",
+      "line": 639,
+      "extra": {
+        "function": "record_content_event",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-014",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.ensure_future() return value discarded — task may be GC'd and silently cancelled",
+      "file": "packages/core/services/conversation_messages.py",
+      "line": 149,
+      "extra": {
+        "function": "_publish_workspace_chat_message_event",
+        "evidence": "Assign and await: `task = asyncio.ensure_future(coro()); await task`, or migrate to `asyncio.create_task(coro())` (Python 3.7+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/email_attachments.py",
+      "line": 359,
+      "extra": {
+        "function": "load_workspace_document_email_attachment",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/file_context.py",
+      "line": 1277,
+      "extra": {
+        "function": "build_file_context",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/open_music_catalog.py",
+      "line": 310,
+      "extra": {
+        "function": "download_open_music_track",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/room_file_read_tools.py",
+      "line": 353,
+      "extra": {
+        "function": "_read_room_file",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/room_file_read_tools.py",
+      "line": 482,
+      "extra": {
+        "function": "read_room_file_source_bytes",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/upload_security.py",
+      "line": 203,
+      "extra": {
+        "function": "inspect_upload_path",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "packages/core/services/voice/browser.py",
+      "line": 1376,
+      "extra": {
+        "function": "queue_bridge_call",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/services/youtube_publication_receipts.py",
+      "line": 303,
+      "extra": {
+        "function": "read_publication_receipt",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/tasks/media_tasks.py",
+      "line": 2859,
+      "extra": {
+        "function": "_ensure_public_url",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "packages/core/tasks/media_tasks.py",
+      "line": 2892,
+      "extra": {
+        "function": "_ensure_inline_data_url",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "except BaseException with an empty body around an await swallows CancelledError, KeyboardInterrupt and SystemExit — breaking cancellation and clean shutdown",
+      "file": "sandbox-service/sandbox/concurrency.py",
+      "line": 21,
+      "extra": {
+        "function": "_wait_for_task_terminal",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "except BaseException with an empty body around an await swallows CancelledError, KeyboardInterrupt and SystemExit — breaking cancellation and clean shutdown",
+      "file": "sandbox-service/sandbox/docker_backend.py",
+      "line": 950,
+      "extra": {
+        "function": "_wait_for_task_terminal",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "except BaseException with an empty body around an await swallows CancelledError, KeyboardInterrupt and SystemExit — breaking cancellation and clean shutdown",
+      "file": "sandbox-service/sandbox/skill_runner.py",
+      "line": 1315,
+      "extra": {
+        "function": "_wait_for_task_terminal",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "apps/api/routers/workspace_drafts.py",
+      "line": 374,
+      "extra": {
+        "function": "on_tool_start",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "apps/api/routers/workspace_drafts.py",
+      "line": 393,
+      "extra": {
+        "function": "on_tool_end",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/ai/agentic_loop.py",
+      "line": 7411,
+      "extra": {
+        "function": "agentic_loop",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/ai/engine.py",
+      "line": 206,
+      "extra": {
+        "function": "_handler",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/ai/engine.py",
+      "line": 209,
+      "extra": {
+        "function": "_handler",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/ai/engine.py",
+      "line": 248,
+      "extra": {
+        "function": "_run",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/ai/engine.py",
+      "line": 250,
+      "extra": {
+        "function": "_run",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/ai/mcp/linkedin.py",
+      "line": 615,
+      "extra": {
+        "function": "_stats_for",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/ai/runtime/streams.py",
+      "line": 104,
+      "extra": {
+        "function": "_emit",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/ai/tools/video_edit_tools.py",
+      "line": 655,
+      "extra": {
+        "function": "_upload_sandbox_sources",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/ai/tools/web_tools.py",
+      "line": 448,
+      "extra": {
+        "function": "_web_event_search",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/ai/tools/web_tools.py",
+      "line": 464,
+      "extra": {
+        "function": "_web_event_search",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/ai/workflow_runner.py",
+      "line": 7173,
+      "extra": {
+        "function": "_execute_foreach_subworkflow_step",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/read_cache.py",
+      "line": 136,
+      "extra": {
+        "function": "invalidate",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/services/agent_generator.py",
+      "line": 90,
+      "extra": {
+        "function": "_gather_capability_batch",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/services/chat_intent_routing.py",
+      "line": 335,
+      "extra": {
+        "function": "classify_deferred_chat_intent",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/services/document_access.py",
+      "line": 222,
+      "extra": {
+        "function": "_stat_local_documents",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/services/event_emitter.py",
+      "line": 534,
+      "extra": {
+        "function": "dispatch_due_external_events",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/services/site_publisher.py",
+      "line": 797,
+      "extra": {
+        "function": "dns_points_at_us",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/services/voice/browser.py",
+      "line": 621,
+      "extra": {
+        "function": "finish",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/services/voice/browser.py",
+      "line": 1036,
+      "extra": {
+        "function": "queue_latest_response",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/services/voice/browser.py",
+      "line": 1398,
+      "extra": {
+        "function": "queue_bridge_call",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/services/voice/browser.py",
+      "line": 1400,
+      "extra": {
+        "function": "queue_bridge_call",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/services/voice/browser.py",
+      "line": 2128,
+      "extra": {
+        "function": "_queue_recovered_work",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/services/voice/gateway_call.py",
+      "line": 412,
+      "extra": {
+        "function": "queue_transcript_preview",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": "packages/core/services/voice/gateway_call.py",
+      "line": 419,
+      "extra": {
+        "function": "queue_turn",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 932,
+      "extra": {
+        "function": "settle_scheduled_run",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1597,
+      "extra": {
+        "function": "internal_worker_tick",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1655,
+      "extra": {
+        "function": "cleanup_expired_leases",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1718,
+      "extra": {
+        "function": "budget_monthly_reset",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1742,
+      "extra": {
+        "function": "run_morning_briefing",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1790,
+      "extra": {
+        "function": "run_outcome_evaluation",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1837,
+      "extra": {
+        "function": "run_chat_insight_extraction",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1878,
+      "extra": {
+        "function": "run_entity_chat_extraction_sweep",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 1935,
+      "extra": {
+        "function": "apply_learning_candidate_async",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 2169,
+      "extra": {
+        "function": "run_goal_measurement",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 2224,
+      "extra": {
+        "function": "run_workspace_stat_collection",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 2344,
+      "extra": {
+        "function": "run_plan",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 3718,
+      "extra": {
+        "function": "recover_agent_task_claim_loss",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 3759,
+      "extra": {
+        "function": "recover_agent_task_claim_loss_sweep",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 4759,
+      "extra": {
+        "function": "project_scheduled_agent_result",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 4788,
+      "extra": {
+        "function": "settle_scheduled_agent_run",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 4847,
+      "extra": {
+        "function": "deliver_agent_initiative_run",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 4875,
+      "extra": {
+        "function": "recover_pending_agent_initiative_deliveries",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 5093,
+      "extra": {
+        "function": "generate_job_skill",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 5888,
+      "extra": {
+        "function": "workflow_resume_sweep",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 5908,
+      "extra": {
+        "function": "workflow_terminal_effect_sweep",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 5957,
+      "extra": {
+        "function": "recover_expired_workflow_claims",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 5996,
+      "extra": {
+        "function": "fetch_and_index_url_document",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 6331,
+      "extra": {
+        "function": "send_agent_greetings",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ai_tasks.py",
+      "line": 6398,
+      "extra": {
+        "function": "generate_knowledge_content",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/apify_tasks.py",
+      "line": 10,
+      "extra": {
+        "function": "reconcile_collections",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/channel_tasks.py",
+      "line": 982,
+      "extra": {
+        "function": "health_tick",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/deletion_tasks.py",
+      "line": 28,
+      "extra": {
+        "function": "purge_soft_deleted_workspaces",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/deletion_tasks.py",
+      "line": 34,
+      "extra": {
+        "function": "purge_soft_deleted_users",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/embedding_tasks.py",
+      "line": 175,
+      "extra": {
+        "function": "batch_index_entity",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/embedding_tasks.py",
+      "line": 192,
+      "extra": {
+        "function": "sweep_pending_documents",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 14,
+      "extra": {
+        "function": "recover_runtime_file_commits_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 49,
+      "extra": {
+        "function": "reconcile_booking_metadata_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 67,
+      "extra": {
+        "function": "cleanup_chat_uploads",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 86,
+      "extra": {
+        "function": "cleanup_document_upload_recovery",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 107,
+      "extra": {
+        "function": "cleanup_ai_edit_sessions",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 138,
+      "extra": {
+        "function": "repair_missing_document_files",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/maintenance_tasks.py",
+      "line": 165,
+      "extra": {
+        "function": "sync_openrouter_pricing",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/metrics_tasks.py",
+      "line": 13,
+      "extra": {
+        "function": "metrics_daily_rollup",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/metrics_tasks.py",
+      "line": 35,
+      "extra": {
+        "function": "metrics_http_flush",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/monitor_tasks.py",
+      "line": 156,
+      "extra": {
+        "function": "daily_health_briefing",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/monitor_tasks.py",
+      "line": 569,
+      "extra": {
+        "function": "heartbeat_check",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/monitor_tasks.py",
+      "line": 746,
+      "extra": {
+        "function": "hitl_waiting_reminder",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/monitor_tasks.py",
+      "line": 890,
+      "extra": {
+        "function": "sla_breach_check",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/monitor_tasks.py",
+      "line": 928,
+      "extra": {
+        "function": "workspace_readiness_check",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/monitor_tasks.py",
+      "line": 1211,
+      "extra": {
+        "function": "experiment_guardrail_tick",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/oauth_refresh.py",
+      "line": 600,
+      "extra": {
+        "function": "oauth_refresh_tick",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ops_tasks.py",
+      "line": 166,
+      "extra": {
+        "function": "collect_snapshot_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ops_tasks.py",
+      "line": 224,
+      "extra": {
+        "function": "log_scan_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ops_tasks.py",
+      "line": 243,
+      "extra": {
+        "function": "send_digest_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/ops_tasks.py",
+      "line": 254,
+      "extra": {
+        "function": "alert_tick_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/room_agent_tasks.py",
+      "line": 33,
+      "extra": {
+        "function": "execute_room_agent_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/room_agent_tasks.py",
+      "line": 83,
+      "extra": {
+        "function": "recover_pending_room_agent_tasks",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1430,
+      "extra": {
+        "function": "run_sandbox_scheduler_once",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1818,
+      "extra": {
+        "function": "dispatch_task_execution_intent_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1840,
+      "extra": {
+        "function": "dispatch_task_coordinator_intent_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1919,
+      "extra": {
+        "function": "dispatch_plan_cycle_intent_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1939,
+      "extra": {
+        "function": "sandbox_scheduler_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1944,
+      "extra": {
+        "function": "runtime_outbox_dispatch_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1949,
+      "extra": {
+        "function": "plan_cycle_recovery_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/runtime_tasks.py",
+      "line": 1956,
+      "extra": {
+        "function": "task_coordinator_recovery_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/scheduler_tasks.py",
+      "line": 316,
+      "extra": {
+        "function": "scheduler_tick",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/scheduler_tasks.py",
+      "line": 414,
+      "extra": {
+        "function": "scheduled_job_skill_generation_sweep",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/scheduler_tasks.py",
+      "line": 1753,
+      "extra": {
+        "function": "_dispatch_job_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "packages/core/tasks/scheduler_tasks.py",
+      "line": 2342,
+      "extra": {
+        "function": "_recover_prepared_scheduled_dispatch_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    }
+  ]
+}
