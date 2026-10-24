@@ -197,10 +197,33 @@ class EvaluateAssisted(unittest.TestCase):
         for lang in ("java", "python"):
             self.assertEqual(m["criterion1"][lang], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
         md = ev.render_both(m)
-        self.assertIn("| java | MET | NOT MET | **NOT MET** |", md)
+        self.assertIn("| java | 1 | MET | NOT MET | **NOT MET** |", md)
         self.assertIn("the java audit exists only in the assisted version (a)", md)
         self.assertIn("## (a) All verdicts", md)
         self.assertIn("### Review", md)
+
+    def test_less_favourable_criterion2_decides(self):
+        # Python: 100 CRITICAL in 5000 files -> 20/1000 CRITICAL; FP/1000 = 20 × (FP+U)/100, threshold 5.0
+        m, _, _, _ = self.both(["P004"])  # (a) 1 bad -> 0.2, (b) 1 bad + 1 U -> 0.4: MET in both
+        self.assertEqual(m["criterion2"]["python"], {"a": "MET", "b": "MET", "status": "MET", "differs": False})
+        rs, corpora, reports = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "FP" if f["language"] == "python" and 14 <= int(f["id"][1:]) <= 36 else "TP",
+                                  dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "TP")
+        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
+        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
+        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb))
+        # (a) 23 FP -> 4.6 MET; (b) 23 FP + P100 as U -> 4.8 MET; add P001-P003 (assisted audit) as FP under A = B
+        self.assertEqual(m["criterion2"]["python"]["status"], "MET")
+        a, b, joaquin = ab_inputs(rs, lambda f: "FP" if f["language"] == "python" and (14 <= int(f["id"][1:]) <= 36 or int(f["id"][1:]) <= 3) else "TP",
+                                  dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "TP")
+        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
+        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
+        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb))
+        # (a) Joaquín says TP on P001-P003: 23 bad -> 4.6 MET; (b) A = B FP on P001-P003 + P100 U: 27 bad -> 5.4 NOT MET
+        self.assertEqual((m["a"]["languages"]["python"]["fpPer1000"]["primary"], m["b"]["languages"]["python"]["fpPer1000"]["primary"]), (4.6, 5.4))
+        self.assertEqual(m["criterion2"]["python"], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
+        self.assertEqual(m["criterion2"]["java"]["status"], "MET")
+        self.assertIn("| python | 2 | MET | NOT MET | **NOT MET** |", ev.render_both(m))
 
     def test_assisted_must_be_reviewed(self):
         rs, _, _ = synthetic()

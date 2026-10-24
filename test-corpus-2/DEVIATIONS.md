@@ -233,17 +233,19 @@ desfavorable. Ambas se publican."
    - The 10 assisted audit IDs keep the A = B verdict.
    - The 4 assisted disagreements cannot be left out, because every finding needs a verdict. In (b) they count as **U**, which counts against the primary metric.
 4. **Final rule (unchanged):** if the conclusion of criterion 1 differs between (a) and (b), the less favourable is taken. Both are published.
+5. Criterion 2 (FP/1000) (Joaquín, 2026-10-24, before running
+   evaluate.py): same rule as criterion 1 — if it differs between (a)
+   and (b), the less favourable is taken. Both are published.
 
 **Done:**
 - `scripts/evaluate.py`:
   - `ASSISTED` lists the 14 IDs.
   - `final_verdicts_unassisted` builds version (b).
   - `audit_max_changes(n)` = ⌈3·n/20⌉, which gives 3 for 20 and 2 for 10.
-  - `both` takes the less favourable criterion 1 per language and adds the Java note.
+  - `both` takes the less favourable criterion 1 and criterion 2 per language and adds the Java note.
   - `metrics.json` and `METRICS.md` publish (a), (b) and the criterion 1 that decides.
 - `test/test_units.py` `EvaluateAssisted` covers this.
 - `evaluate.py` has **not** been run.
-- **Not covered by the rule:** criterion 2 (FP/1000) is published for (a) and for (b), but this section does not say which one decides.
 
 ### 3c. `review_sheet.py audit` reads `Overstated` with a note (Joaquín, 2026-10-24)
 

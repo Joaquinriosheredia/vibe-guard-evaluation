@@ -254,16 +254,18 @@ def evaluate(rs, corpora, reports, final_full, review):
 
 
 def both(m_a, m_b):
-    """DEVIATIONS.md §3b: both versions are published; per language, if criterion 1 differs between
-    (a) and (b), the less favourable (NOT MET) is taken."""
-    c1 = {}
-    for lang in LANGS:
-        sa, sb = m_a["languages"][lang]["criterion1"]["status"], m_b["languages"][lang]["criterion1"]["status"]
-        c1[lang] = {"a": sa, "b": sb, "status": "MET" if sa == sb == "MET" else "NOT MET", "differs": sa != sb}
+    """DEVIATIONS.md §3b: both versions are published; per language, if criterion 1 or criterion 2 differs
+    between (a) and (b), the less favourable (NOT MET) is taken."""
+    def decide(key):
+        out = {}
+        for lang in LANGS:
+            sa, sb = m_a["languages"][lang][key]["status"], m_b["languages"][lang][key]["status"]
+            out[lang] = {"a": sa, "b": sb, "status": "MET" if sa == sb == "MET" else "NOT MET", "differs": sa != sb}
+        return out
     no_audit = [lang for lang, x in m_b["review"]["audit"]["byLanguage"].items() if x["n"] == 0]
     return {"assisted": list(ASSISTED),
-            "rule": "criterion 1 computed (a) with all verdicts and (b) without the assisted IDs in the audit sample; if they differ, the less favourable is taken (DEVIATIONS.md §3b)",
-            "criterion1": c1,
+            "rule": "criteria 1 and 2 computed (a) with all verdicts and (b) without the assisted IDs in the audit sample; if they differ, the less favourable is taken (DEVIATIONS.md §3b)",
+            "criterion1": decide("criterion1"), "criterion2": decide("criterion2"),
             "notes": [f"In (b) no {lang} audit case remains: the {lang} audit exists only in the assisted version (a)." for lang in no_audit],
             "a": m_a, "b": m_b}
 
@@ -305,8 +307,8 @@ def render(m, level="#", title="Metrics — test-corpus-2"):
 def render_both(m):
     md = ["# Metrics — test-corpus-2", "",
           f"Assisted verdicts (`DEVIATIONS.md` §3b): {', '.join(m['assisted'])}. Rule: {m['rule']}.", "",
-          "| language | criterion 1 (a) all verdicts | criterion 1 (b) without assisted | **criterion 1** |", "|---|---|---|---|"]
-    md += [f"| {lang} | {c['a']} | {c['b']} | **{c['status']}** |" for lang, c in m["criterion1"].items()]
+          "| language | criterion | (a) all verdicts | (b) without assisted | **decides** |", "|---|---|---|---|---|"]
+    md += [f"| {lang} | {k[-1]} | {m[k][lang]['a']} | {m[k][lang]['b']} | **{m[k][lang]['status']}** |" for lang in LANGS for k in ("criterion1", "criterion2")]
     md += [""] + [f"- **{n}**" for n in m["notes"]] + [""]
     md += [render(m["a"], "##", "(a) All verdicts"), render(m["b"], "##", "(b) Without the assisted verdicts in the audit sample")]
     return "\n".join(md)
@@ -339,9 +341,7 @@ def main(argv):
     m = both(evaluate(rs, corpora, reports, final_a, review_a), evaluate(rs, corpora, reports, final_b, review_b))
     (DIR / "metrics.json").write_text(json.dumps(m, indent=2) + "\n")
     (DIR / "METRICS.md").write_text(render_both(m) + "\n")
-    print(json.dumps({lang: {"criterion1": c["status"], "criterion1a": c["a"], "criterion1b": c["b"],
-                             "criterion2a": m["a"]["languages"][lang]["criterion2"]["status"],
-                             "criterion2b": m["b"]["languages"][lang]["criterion2"]["status"]} for lang, c in m["criterion1"].items()}, indent=2))
+    print(json.dumps({lang: {k: {x: m[k][lang][x] for x in ("a", "b", "status")} for k in ("criterion1", "criterion2")} for lang in LANGS}, indent=2))
 
 
 if __name__ == "__main__":
