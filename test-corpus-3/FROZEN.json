@@ -1,20 +1,20 @@
 {
   "note": "Versions under test, frozen by PREREGISTRATION.md (\"Tools under test\"). Filled in one commit that changes nothing else, after the test-corpus-2 fixes are released and before any search. scripts/select.mjs and scripts/run.mjs refuse to run while any value starts with 'TO-FILL'.",
   "vibeGuardScan": {
-    "version": "TO-FILL: vibe-guard-scan release with the fixed engines",
+    "version": "0.3.0",
     "repository": "Joaquinriosheredia/vibe-guard-scan (private)",
-    "commit": "TO-FILL: full 40-character SHA of that release",
-    "versionLine": "TO-FILL: exact output of vibe-guard --version"
+    "commit": "66ec8f4b5e23d88277048961ca8a56962fe5b85f",
+    "versionLine": "vibe-guard 0.3.0 (java-vibe-guard 3.0.0; pyvibe 0.15.0)"
   },
   "pyvibe": {
     "package": "python-vibe-guard",
-    "version": "TO-FILL: PyPI version",
-    "wheel": "TO-FILL: wheel file name",
-    "sha256": "TO-FILL: wheel sha256"
+    "version": "0.15.0",
+    "wheel": "python_vibe_guard-0.15.0-py3-none-any.whl",
+    "sha256": "e0d5bd00006773fa5ed8165326b64c48affdd8190f57b21539764de058569f97"
   },
   "javaVibeGuard": {
     "package": "java-vibe-guard",
-    "version": "TO-FILL: npm version",
-    "integrity": "TO-FILL: npm integrity (sha512)"
+    "version": "3.0.0",
+    "integrity": "sha512-wVM4YziFV7p/fGGpO6uSTejj+UO8fAhJg1nqvAP2AJuUhMFEIuTsNBA6Bsa8DaV70Q4Vm9zWHajHMnJpN7YcdQ=="
   }
 }
