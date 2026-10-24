@@ -200,3 +200,53 @@ A and B opened → list of disagreements and audit sample (IDs only, no verdicts
    (REVIEW-LOG.md)."
    - Nota: estas entradas se registran el 2026-10-16, con retraso, a partir de la
      conversación del 2026-10-15.
+
+### 3b. Assisted verdicts (Joaquín, 2026-10-24), before the end of the review and before `evaluate.py`
+
+**State when decided:**
+- The review of the 27 IDs is not finished.
+- `REVIEW-SHEET.md` is not touched by this section.
+- Nobody running this change has seen a verdict of A or B, and `evaluate.py` has not run.
+
+**Text (Joaquín, 2026-10-24):**
+"2026-10-24. Según REVIEW-LOG.md, los veredictos de Joaquín en J015, J038, J056, J036,
+J001, J020, J023, J052, J021, P145, P083, P099, P098 y P072 se emitieron después de recibir
+valoraciones de un asistente de IA (fuera de la regla 'solo navegación factual') y un
+porcentaje provisional. Esos 14 se marcan como 'asistidos con valoración'. Los 13
+restantes se revisan sin ayuda más allá de navegación factual.
+Regla fijada antes de terminar la revisión: evaluate.py calcula la auditoría y la
+precisión (a) con todos los veredictos y (b) excluyendo los 14 asistidos de la muestra
+de auditoría; si la conclusión del criterio 1 difiere entre (a) y (b), se toma la más
+desfavorable. Ambas se publican."
+
+**Where the 14 fall** (from `REVIEW-AB.md`, IDs only):
+- **4 disagreements:** J056, J001, P145, P072.
+- **10 of the audit sample:** J015, J038, J036, J020, J023, J052, J021 (Java) and P083, P099, P098 (Python).
+- **(b) keeps 10 audit cases, all Python:** P002, P046, P057, P065, P073, P077, P090, P116, P153, P161.
+
+**Details of (b) (Joaquín, 2026-10-24):**
+1. **Audit threshold:** the original rule is ≥ 3 of 20 (15 %).
+   - In (b) the threshold is proportional and conservative: **≥ 2 of 10 changes → AI review NOT RELIABLE**.
+   - It applies globally, like the original rule: criterion 1 is NOT MET in both languages.
+2. **Java:** in (b) no Java audit case remains, so the Java audit exists only in the assisted version (a). The results say so explicitly.
+3. **Precision in (b):**
+   - The 10 assisted audit IDs keep the A = B verdict.
+   - The 4 assisted disagreements cannot be left out, because every finding needs a verdict. In (b) they count as **U**, which counts against the primary metric.
+4. **Final rule (unchanged):** if the conclusion of criterion 1 differs between (a) and (b), the less favourable is taken. Both are published.
+5. Criterion 2 (FP/1000) (Joaquín, 2026-10-24, before running
+   evaluate.py): same rule as criterion 1 — if it differs between (a)
+   and (b), the less favourable is taken. Both are published.
+
+**Done:**
+- `scripts/evaluate.py`:
+  - `ASSISTED` lists the 14 IDs.
+  - `final_verdicts_unassisted` builds version (b).
+  - `audit_max_changes(n)` = ⌈3·n/20⌉, which gives 3 for 20 and 2 for 10.
+  - `both` takes the less favourable criterion 1 and criterion 2 per language and adds the Java note.
+  - `metrics.json` and `METRICS.md` publish (a), (b) and the criterion 1 that decides.
+- `test/test_units.py` `EvaluateAssisted` covers this.
+- `evaluate.py` has **not** been run.
+
+### 3c. `review_sheet.py audit` reads `Overstated` with a note (Joaquín, 2026-10-24)
+
+Change of the parser's format, not of the method. Reason: Joaquín's sheet includes a justification in `Overstated`. Valid values: exactly `Sí` or `No`, optionally followed by ` — ` and text. Only that first word decides, and the full text is kept in `audit-joaquin.json` as `overstated_note`. Anything else still fails, for example `Si` without the accent, `No,` or `Quizá`.

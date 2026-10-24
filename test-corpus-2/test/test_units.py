@@ -1,5 +1,6 @@
 """Unit tests of evaluate.py, sample.py and cards.py (run by python-units.test.mjs)."""
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -161,6 +162,81 @@ class Evaluate(unittest.TestCase):
         self.assertEqual(m["languages"]["java"]["precision"]["primary"], 1.0)
 
 
+class EvaluateAssisted(unittest.TestCase):
+    """DEVIATIONS.md §3b: (a) all verdicts, (b) without the assisted ones in the audit; the less favourable decides."""
+    DIS = ["J050", "P100"]
+    ASSISTED = ["J001", "J002", "J003", "J004", "J005", "J006", "J007", "P001", "P002", "P003", "J050", "P100"]
+
+    def both(self, changed):
+        rs, corpora, reports = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "FP" if i in changed else "TP")
+        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
+        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
+        return ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb)), fa, fb, rb
+
+    def test_proportional_threshold(self):
+        self.assertEqual([ev.audit_max_changes(n) for n in (20, 10, 13, 7, 1)], [3, 2, 2, 2, 1])
+        self.assertEqual(len(ev.ASSISTED), 14)
+
+    def test_version_b_drops_assisted_audit_and_counts_assisted_disagreements_as_u(self):
+        m, fa, fb, rb = self.both(["J001"])
+        self.assertEqual((fa["J001"]["verdict"], fa["J001"]["source"]), ("FP", "Joaquín"))
+        self.assertEqual((fb["J001"]["verdict"], fb["J001"]["source"]), ("TP", "A=B"))
+        self.assertEqual((fa["P100"]["verdict"], fb["P100"]["verdict"], fb["P100"]["source"]), ("TP", "U", "assisted disagreement -> U"))
+        self.assertEqual(fb["P004"]["source"], "Joaquín")
+        au = rb["audit"]
+        self.assertEqual((au["n"], au["maxChanges"], au["byLanguage"]["java"]["n"], au["byLanguage"]["python"]["n"]), (10, 2, 0, 10))
+        self.assertEqual(rb["assistedExcluded"], {"audit": self.ASSISTED[:10], "disagreementsAsU": self.DIS})
+        self.assertEqual(m["notes"], ["In (b) no java audit case remains: the java audit exists only in the assisted version (a)."])
+        self.assertEqual(m["b"]["languages"]["python"]["precision"]["U"], 1)
+
+    def test_less_favourable_criterion1_decides(self):
+        m, _, _, _ = self.both(["P004"])  # (a) 1/20, (b) 1/10: reliable in both
+        self.assertEqual({lang: c["status"] for lang, c in m["criterion1"].items()}, {"java": "MET", "python": "MET"})
+        m, _, _, _ = self.both(["P004", "P005"])  # (a) 2/20 reliable, (b) 2/10 NOT RELIABLE
+        for lang in ("java", "python"):
+            self.assertEqual(m["criterion1"][lang], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
+        md = ev.render_both(m)
+        self.assertIn("| java | 1 | MET | NOT MET | **NOT MET** |", md)
+        self.assertIn("the java audit exists only in the assisted version (a)", md)
+        self.assertIn("## (a) All verdicts", md)
+        self.assertIn("### Review", md)
+
+    def test_less_favourable_criterion2_decides(self):
+        # Python: 100 CRITICAL in 5000 files -> 20/1000 CRITICAL; FP/1000 = 20 × (FP+U)/100, threshold 5.0
+        m, _, _, _ = self.both(["P004"])  # (a) 1 bad -> 0.2, (b) 1 bad + 1 U -> 0.4: MET in both
+        self.assertEqual(m["criterion2"]["python"], {"a": "MET", "b": "MET", "status": "MET", "differs": False})
+        rs, corpora, reports = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "FP" if f["language"] == "python" and 14 <= int(f["id"][1:]) <= 36 else "TP",
+                                  dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "TP")
+        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
+        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
+        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb))
+        # (a) 23 FP -> 4.6 MET; (b) 23 FP + P100 as U -> 4.8 MET; add P001-P003 (assisted audit) as FP under A = B
+        self.assertEqual(m["criterion2"]["python"]["status"], "MET")
+        a, b, joaquin = ab_inputs(rs, lambda f: "FP" if f["language"] == "python" and (14 <= int(f["id"][1:]) <= 36 or int(f["id"][1:]) <= 3) else "TP",
+                                  dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "TP")
+        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
+        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
+        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb))
+        # (a) Joaquín says TP on P001-P003: 23 bad -> 4.6 MET; (b) A = B FP on P001-P003 + P100 U: 27 bad -> 5.4 NOT MET
+        self.assertEqual((m["a"]["languages"]["python"]["fpPer1000"]["primary"], m["b"]["languages"]["python"]["fpPer1000"]["primary"]), (4.6, 5.4))
+        self.assertEqual(m["criterion2"]["python"], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
+        self.assertEqual(m["criterion2"]["java"]["status"], "MET")
+        self.assertIn("| python | 2 | MET | NOT MET | **NOT MET** |", ev.render_both(m))
+
+    def test_assisted_must_be_reviewed(self):
+        rs, _, _ = synthetic()
+        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT)
+        with self.assertRaises(SystemExit):
+            ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, ["P050"])
+
+    def test_assisted_ids_are_in_the_committed_27(self):
+        dis, audit = review_sheet.ab_lists((Path(__file__).resolve().parent.parent / "REVIEW-AB.md").read_text())
+        self.assertLessEqual(set(ev.ASSISTED), set(dis) | set(audit))
+        self.assertEqual(len(set(ev.ASSISTED) & set(audit)), 10)
+
+
 class Sample(unittest.TestCase):
     def test_draw_java_first_and_caps(self):
         def mk(lang, n):
@@ -315,7 +391,7 @@ class ReviewSheet(unittest.TestCase):
     def filled(self, **override):
         rows = {"J001": ("TP", "a/B.java:10 runs on the @Async pool", "No"),
                 "J002": ("FP", "b/C.java:3 only called from tests", "Sí"),
-                "P001": ("U", "x.py:5 caller outside the repository", "no")}
+                "P001": ("U", "x.py:5 caller outside the repository", "No")}
         rows.update(override)
         text = review_sheet.render_sheet(self.IDS)
         for i, (v, r, o) in rows.items():
@@ -332,6 +408,17 @@ class ReviewSheet(unittest.TestCase):
         out = review_sheet.parse_sheet(self.filled(), self.IDS)
         self.assertEqual([(v["id"], v["verdict"], v["overstated"]) for v in out], [("J001", "TP", False), ("J002", "FP", True), ("P001", "U", False)])
         self.assertEqual(out[0]["reason"], "a/B.java:10 runs on the @Async pool")
+        self.assertEqual([v["overstated_note"] for v in out], [None, None, None])
+
+    def test_overstated_first_word_and_note(self):
+        for value, flag, note in [("Sí", True, None), ("No", False, None),
+                                  ("Sí — x", True, "Sí — x"), ("No — la referencia se descarta", False, "No — la referencia se descarta")]:
+            out = review_sheet.parse_sheet(self.filled(J002=("FP", "r", value)), self.IDS)[1]
+            self.assertEqual((out["overstated"], out["overstated_note"]), (flag, note), value)
+        for value in ("Si", "no", "SÍ", "No,", "No, x", "No - x", "No —", "No —x", "Quizá", "No — "):
+            with self.assertRaises(ValueError, msg=value) as cm:
+                review_sheet.parse_sheet(self.filled(J002=("FP", "r", value)), self.IDS)
+            self.assertIn("J002: Overstated", str(cm.exception))
 
     def test_fails_on_missing_or_invalid(self):
         for override, expected in [({"J002": ("", "r", "No")}, "J002: verdict missing"),
@@ -352,7 +439,10 @@ class ReviewSheet(unittest.TestCase):
         ids = [f["id"] for f in __import__("json").loads((tc2 / "review-set.json").read_text())["findings"]]
         dis, audit = review_sheet.ab_lists((tc2 / "REVIEW-AB.md").read_text())
         self.assertEqual((len(dis), len(audit), len(set(dis) | set(audit))), (7, 20, 27))
-        self.assertEqual((tc2 / "REVIEW-SHEET.md").read_text(), review_sheet.render_sheet(review_sheet.sheet_ids(ids, dis, audit)) + "\n")
+        sheet = (tc2 / "REVIEW-SHEET.md").read_text()
+        blank = re.sub(r"^(- (?:Verdict|Reason \(file:line\)|Overstated):).*$", r"\1 ", sheet, flags=re.M)
+        self.assertEqual(blank, review_sheet.render_sheet(review_sheet.sheet_ids(ids, dis, audit)) + "\n")  # only the fields filled
+        self.assertEqual(len(review_sheet.parse_sheet(sheet, review_sheet.sheet_ids(ids, dis, audit))), 27)  # complete, in memory only
         prereg = (tc2 / "PREREGISTRATION.md").read_text()
         guide = (tc2 / "REVIEW-GUIDE.md").read_text()
         verdicts = prereg[prereg.index("## Verdicts (the rules"):prereg.index("## Reviewers, cards and blindness")].rstrip("\n")
