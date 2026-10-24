@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "erp-ai-assistant-service/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "erp-analytics-service/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "erp-anomaly-detection-service/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "erp-customer-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-finance-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-inventory-alert-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-inventory-prediction-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-inventory-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-order-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "erp-platform-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-pricing-service/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "erp-product-description-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-product-recommendation-service/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "erp-product-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-purchase-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-reporting-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-social-commerce-service/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "erp-supplier-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-tenant-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "erp-user-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "erp-warehouse-service/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 41
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 488,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

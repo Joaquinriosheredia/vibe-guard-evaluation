@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "section01/bedrock/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section01/dockermodel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section01/multimodel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section01/ollama/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section01/openai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section02/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section04/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section05/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section06/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-elicitation/mcpclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-elicitation/mcpserverremote/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-logging/mcpclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-logging/mcpserverremote/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-progress/mcpclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-progress/mcpserverremote/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-sampling/mcpclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-sampling/mcpserverremote/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-tool-filter/mcpclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcp-tool-filter/mcpserverremote/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcpclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcpserverremote/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section07/mcpserverstdio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section08/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section09/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section_10/springai/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section_11/support-agent-demo/mcp-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "section_11/support-agent-demo/support-agent/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 27
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 314,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

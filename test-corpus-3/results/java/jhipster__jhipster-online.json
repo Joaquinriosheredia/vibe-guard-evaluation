@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 44
+      }
+    ],
+    "filesExcluded": 44
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 223,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 3,
+    "major": 7,
+    "warning": 0,
+    "info": 0,
+    "total": 10
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "src/main/java/io/github/jhipster/online/service/StatisticsService.java",
+      "line": 80,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "src/main/java/io/github/jhipster/online/service/StatisticsService.java",
+      "line": 129,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "src/main/java/io/github/jhipster/online/service/StatisticsService.java",
+      "line": 148,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/AccountResource.java",
+      "line": 62,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/AccountResource.java",
+      "line": 68,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (JdlRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/JdlResource.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/UserResource.java",
+      "line": 87,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/UserResource.java",
+      "line": 91,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/UserResource.java",
+      "line": 117,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "src/main/java/io/github/jhipster/online/web/rest/UserResource.java",
+      "line": 119,
+      "extra": {}
+    }
+  ]
+}

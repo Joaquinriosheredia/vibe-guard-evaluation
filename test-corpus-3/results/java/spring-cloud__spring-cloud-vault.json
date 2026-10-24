@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-vault-config-aws/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-cloud-vault-config-consul/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-cloud-vault-config-databases/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "spring-cloud-vault-config-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-cloud-vault-config/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 81
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 200,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "application/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "chapters/chapter-10/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "chapters/chapter-11/application/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "chapters/chapter-12/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "chapters/chapter-6/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dummy-cdk-app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "getting-started-with-spring-boot-on-aws/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 12
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 287,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

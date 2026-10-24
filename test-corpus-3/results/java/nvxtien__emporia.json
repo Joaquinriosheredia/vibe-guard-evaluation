@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "authentication/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "emporia-algorithmic-strategies/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "emporia-ha-core/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "emporia-journal/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "fix-market-simulator/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "frontend/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "gateway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "market-data-service/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "order-management-service/src/test",
+        "pattern": "test",
+        "files": 69
+      },
+      {
+        "path": "portfolio-service/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "static-data-service/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "trading-contracts/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "user-preferences-service/src/test",
+        "pattern": "test",
+        "files": 8
+      }
+    ],
+    "filesExcluded": 156
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 422,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 25,
+    "warning": 0,
+    "info": 0,
+    "total": 25
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TradingOrderRepository)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/ExecutionRecoveryController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TradingOrderRepository)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/ExecutionRecoveryController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/ExecutionRecoveryController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/ExecutionRecoveryController.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TradingOrderRepository)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 36,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderEventRepository)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ExecutionRepository)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TradingOrderRepository)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 96,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 104,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 110,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "order-management-service/src/main/java/com/emporia/ordermanagement/controller/OrderQueryController.java",
+      "line": 117,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InstrumentListingRepository)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InstrumentListingRepository)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 46,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 82,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 111,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 159,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/AdminStaticDataController.java",
+      "line": 179,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InstrumentListingRepository)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/InstrumentController.java",
+      "line": 17,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InstrumentListingRepository)",
+      "file": "static-data-service/src/main/java/com/emporia/staticdata/InstrumentController.java",
+      "line": 19,
+      "extra": {}
+    }
+  ]
+}

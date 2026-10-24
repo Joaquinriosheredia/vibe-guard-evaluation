@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "example",
+        "pattern": "example",
+        "files": 25
+      },
+      {
+        "path": "radiant/devs-codegen/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "radiant/tiny-grow/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "radiant/tiny-mail/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "radiant/tiny-task/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "wings/faceless-codegen/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "wings/faceless-flywave/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "wings/faceless-jooq/src/test",
+        "pattern": "test",
+        "files": 41
+      },
+      {
+        "path": "wings/faceless-shard/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "wings/faceless/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "wings/silencer-curse/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "wings/silencer-jaxb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "wings/silencer/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "wings/slardar-hazel-caching/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "wings/slardar-hazel-session/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "wings/slardar-sprint/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "wings/slardar-webmvc/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "wings/slardar/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "wings/testing-batrider/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "wings/testing-silencer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "wings/warlock-bond/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "wings/warlock-codegen/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "wings/warlock-shadow/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "wings/warlock/src/test",
+        "pattern": "test",
+        "files": 10
+      }
+    ],
+    "filesExcluded": 345
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1366,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

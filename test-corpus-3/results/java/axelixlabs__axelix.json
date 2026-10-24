@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "buildSrc/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "common/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "docs/src/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "master-e2e-tests/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "master/front-end/src/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "master/src/test",
+        "pattern": "test",
+        "files": 103
+      },
+      {
+        "path": "playgrounds/feature-service-maven-sb-3/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "playgrounds/notification-service-gradle-sb-2/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "playgrounds/reactive-greeting-service-gradle-sb-4/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "playgrounds/spring-petclinic-gradle-sb-3/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "playgrounds/spring-petclinic-maven-sb-2/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "playgrounds/spring-petclinic-maven-sb-4/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "plugins/axelix-gradle-plugin/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "plugins/axelix-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "sbs/axelix-spring-boot-2-starter/src/test",
+        "pattern": "test",
+        "files": 76
+      },
+      {
+        "path": "sbs/axelix-spring-boot-3-starter/src/test",
+        "pattern": "test",
+        "files": 83
+      },
+      {
+        "path": "sbs/axelix-spring-boot-4-starter/src/test",
+        "pattern": "test",
+        "files": 82
+      },
+      {
+        "path": "sbs/starter-domain/src/test",
+        "pattern": "test",
+        "files": 26
+      }
+    ],
+    "filesExcluded": 473
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 2080,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 6,
+    "major": 31,
+    "warning": 0,
+    "info": 0,
+    "total": 37
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "playgrounds/feature-service-maven-sb-3/src/main/java/com/sivalabs/ft/features/testdata/BookTestDataQueryRunner.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java",
+      "line": 75,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java",
+      "line": 104,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PetTypeRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetVisitFeedbackRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/vet/VetFeedbackController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetVisitFeedbackRepository)",
+      "file": "playgrounds/spring-petclinic-gradle-sb-3/src/main/java/org/springframework/samples/petclinic/vet/VetFeedbackController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 51,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PetTypeRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PetTypeRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OwnerRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetVisitFeedbackRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/vet/VetFeedbackController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VetVisitFeedbackRepository)",
+      "file": "playgrounds/spring-petclinic-maven-sb-4/src/main/java/org/springframework/samples/petclinic/vet/VetFeedbackController.java",
+      "line": 40,
+      "extra": {}
+    }
+  ]
+}

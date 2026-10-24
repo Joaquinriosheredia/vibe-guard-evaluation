@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "authentication-common/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "authentication-service/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "clojure-service/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "edge-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "kotlin-service/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nodejs-service/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "person-service/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "php-service/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "quarkus-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "scala-address-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "user-service/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "web-common/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 23
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 402,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 14,
+    "warning": 6,
+    "info": 0,
+    "total": 20
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/AuthenticationServiceApplication.java",
+      "line": 210,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (authenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/AuthenticationServiceApplication.java",
+      "line": 214,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (authenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/AuthenticationServiceApplication.java",
+      "line": 226,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/AuthenticationServiceApplication.java",
+      "line": 283,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SessionRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AccountController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AccountController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AndroidOAuth2Controller.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AndroidOAuth2Controller.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SessionRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AuthenticatedUserController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SessionRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AuthenticatedUserController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HttpSessionSecurityContextRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/AuthenticatedUserController.java",
+      "line": 114,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthenticationCommonRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/WebauthnController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PublicKeyCredentialUserEntityRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/WebauthnController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserCredentialRepository)",
+      "file": "authentication-service/src/main/java/com/microservice/authentication/controller/WebauthnController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker/docker-compose.yml",
+      "line": 798,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker/docker-compose.yml",
+      "line": 799,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "person-service/src/main/java/com/microservice/person/PersonServiceApplication.java",
+      "line": 134,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "person-service/src/main/java/com/microservice/person/PersonServiceApplication.java",
+      "line": 134,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "person-service/src/main/java/com/microservice/person/PersonServiceApplication.java",
+      "line": 139,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "person-service/src/main/java/com/microservice/person/PersonServiceApplication.java",
+      "line": 139,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "juneau-bean/juneau-bean-atom/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-bean/juneau-bean-common/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-bean/juneau-bean-hal/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "juneau-bean/juneau-bean-html5/src/test",
+        "pattern": "test",
+        "files": 122
+      },
+      {
+        "path": "juneau-bean/juneau-bean-jsonapi/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-bean/juneau-bean-jsonpatch/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-bean/juneau-bean-jsonrpc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-bean/juneau-bean-jsonschema/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "juneau-bean/juneau-bean-mcp-v20250618/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "juneau-bean/juneau-bean-mcp-v20260728/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "juneau-bean/juneau-bean-openapi-v3/src/test",
+        "pattern": "test",
+        "files": 33
+      },
+      {
+        "path": "juneau-bean/juneau-bean-rfc7807/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-bean/juneau-bean-swagger-v2/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "juneau-core/juneau-beanquery-postgres/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-core/juneau-beanquery-sql/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "juneau-core/juneau-commons/src/test",
+        "pattern": "test",
+        "files": 266
+      },
+      {
+        "path": "juneau-core/juneau-config/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "juneau-core/juneau-marshall-rdf/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "juneau-core/juneau-marshall/src/test",
+        "pattern": "test",
+        "files": 581
+      },
+      {
+        "path": "juneau-core/juneau-test-utils/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-core/juneau-test/src/main/resources/org/apache/juneau/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "juneau-core/juneau-test/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "juneau-examples/juneau-examples-mcp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "juneau-integration-tests/src/test",
+        "pattern": "test",
+        "files": 632
+      },
+      {
+        "path": "juneau-microservice/juneau-microservice-examples/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "juneau-microservice/juneau-microservice-jetty/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "juneau-microservice/juneau-microservice-test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "juneau-microservice/juneau-microservice-tomcat/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "juneau-microservice/juneau-microservice/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "juneau-petstore/juneau-petstore-core/src/test",
+        "pattern": "test",
+        "files": 83
+      },
+      {
+        "path": "juneau-petstore/juneau-petstore-jetty/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "juneau-petstore/juneau-petstore-springboot/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-rest/juneau-rest-auth-oauth-flow/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-apache-httpclient-45/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-apache-httpclient-50/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-classic/src/test",
+        "pattern": "test",
+        "files": 28
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-jetty/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-mcp-auth/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-mcp-v20250618/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-mcp-v20260728/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-mcp/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client-okhttp/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "juneau-rest/juneau-rest-client/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "juneau-rest/juneau-rest-common-classic/src/test",
+        "pattern": "test",
+        "files": 69
+      },
+      {
+        "path": "juneau-rest/juneau-rest-common/src/test",
+        "pattern": "test",
+        "files": 98
+      },
+      {
+        "path": "juneau-rest/juneau-rest-mock/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-auth-jwt/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-auth-oauth/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-auth-oidc-rp/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-auth-saml/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-bus-websocket/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-bus/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-console-ui-freemarker-tests/src/test",
+        "pattern": "test",
+        "files": 89
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-console-ui/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-datatables/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-management-logging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-mcp-v20250618/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-mcp-v20260728/src/test",
+        "pattern": "test",
+        "files": 46
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-mcp/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-metrics-micrometer/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-reactive-reactor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-reactive/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-springboot/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-terminal-bus/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-terminal/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-tracing-otel/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-view-freemarker/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-view-jsp/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-view-mustache/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-view-thymeleaf/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-views-markdown/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-views/src/test",
+        "pattern": "test",
+        "files": 236
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server-widgets/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "juneau-rest/juneau-rest-server/src/test",
+        "pattern": "test",
+        "files": 77
+      },
+      {
+        "path": "juneau-rest/juneau-run-report/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "juneau-run/src/test",
+        "pattern": "test",
+        "files": 54
+      },
+      {
+        "path": "juneau-sc/juneau-sc-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "juneau-secret-macos-keychain/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "scripts/tests",
+        "pattern": "tests",
+        "files": 22
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 3115
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 6640,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

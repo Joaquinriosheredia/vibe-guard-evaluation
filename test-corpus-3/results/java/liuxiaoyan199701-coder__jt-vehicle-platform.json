@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "deploy/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "jt-console/src/test",
+        "pattern": "test",
+        "files": 82
+      },
+      {
+        "path": "jt-platform/jt-api/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jt-platform/jt-boot-all/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "jt-platform/jt-common/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "jt-platform/jt-delivery/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "jt-platform/jt-media/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "jt-platform/jt-protocol/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "jt-platform/jt-signal/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "jt-platform/jt-terminal-simulator/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "packages/jt-player/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 220
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1014,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 21,
+    "warning": 0,
+    "info": 0,
+    "total": 21
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VehicleRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/gateway/DeviceRegistryController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TenantRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/gateway/DeviceRegistryController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (VehicleRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/gateway/DeviceRegistryController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TenantRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/gateway/DeviceRegistryController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AiUsageRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/AiChatController.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AiConversationRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/AiChatController.java",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AlarmRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/AlarmController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AlarmRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/AlarmController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/AuditController.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuditRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/AuditController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DeviceAttributeRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/CommandProxyController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MediaRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/MediaController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MediaRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/MediaController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (StatusRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/MonitorController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (StatusRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/MonitorController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (StatusRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/RecordingProxyController.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RecordingUploadRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/RecordingUploadController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TrackRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/TrackController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TrackRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/TrackController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WaybillRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/WaybillController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WaybillRepository)",
+      "file": "jt-console/src/main/java/io/github/jtconsole/web/WaybillController.java",
+      "line": 25,
+      "extra": {}
+    }
+  ]
+}

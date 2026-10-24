@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "hp-soa-starter/hp-soa-starter-data-mysql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "misc/docker/opt/hp-soa/config/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 1
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 908,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 5,
+    "major": 1,
+    "warning": 16,
+    "info": 0,
+    "total": 22
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/sender/KafkaSender.java",
+      "line": 52,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/sender/KafkaSender.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/producer/sender/AbstractKafkaDomainEventSender.java",
+      "line": 78,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/producer/sender/AbstractKafkaDomainEventSender.java",
+      "line": 84,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "hp-soa-starter/hp-soa-starter-websocket/src/main/java/io/github/hpsocket/soa/starter/websocket/sender/kafka/KafkaWebSocketMessageSender.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "hp-demo/hp-demo-infra-cloud/hp-demo-infra-cloud-service/src/main/java/io/github/hpsocket/demo/infra/cloud/service/impl/UserServiceImpl.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 56,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 63,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 70,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/listener/MqListenerHandler.java",
+      "line": 81,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/consumer/aspect/KafkaListenerMdcInspector.java",
+      "line": 62,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/consumer/aspect/KafkaListenerMdcInspector.java",
+      "line": 62,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "hp-soa-starter/hp-soa-starter-websocket/src/main/java/io/github/hpsocket/soa/starter/websocket/sender/kafka/KafkaWebSocketMessageConsumer.java",
+      "line": 16,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "misc/docker/opt/hp-soa/config/dev/system-config.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "misc/docker/opt/hp-soa/config/local/system-config.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "misc/docker/opt/hp-soa/config/system-config.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "misc/opt/hp-soa/config/dev/system-config.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "misc/opt/hp-soa/config/local/system-config.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "misc/opt/hp-soa/config/system-config.properties",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}
