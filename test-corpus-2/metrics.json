@@ -1,0 +1,1868 @@
+{
+  "assisted": [
+    "J015",
+    "J038",
+    "J056",
+    "J036",
+    "J001",
+    "J020",
+    "J023",
+    "J052",
+    "J021",
+    "P145",
+    "P083",
+    "P099",
+    "P098",
+    "P072"
+  ],
+  "rule": "criteria 1 and 2 computed (a) with all verdicts and (b) without the assisted IDs in the audit sample; if they differ, the less favourable is taken (DEVIATIONS.md \u00a73b)",
+  "criterion1": {
+    "java": {
+      "a": "NOT MET",
+      "b": "NOT MET",
+      "status": "NOT MET",
+      "differs": false
+    },
+    "python": {
+      "a": "NOT MET",
+      "b": "NOT MET",
+      "status": "NOT MET",
+      "differs": false
+    }
+  },
+  "criterion2": {
+    "java": {
+      "a": "MET",
+      "b": "MET",
+      "status": "MET",
+      "differs": false
+    },
+    "python": {
+      "a": "NOT MET",
+      "b": "NOT MET",
+      "status": "NOT MET",
+      "differs": false
+    }
+  },
+  "notes": [
+    "In (b) no java audit case remains: the java audit exists only in the assisted version (a)."
+  ],
+  "a": {
+    "reviewMethod": "two independent AI reviews (A, B); disagreements and an audit sample of 20 decided by Joaqu\u00edn (DEVIATIONS.md \u00a73/\u00a73a)",
+    "review": {
+      "agreementAB": {
+        "n": 158,
+        "raw": 0.9557,
+        "cohenKappa": 0.9028
+      },
+      "agreementABByLanguage": {
+        "java": {
+          "n": 58,
+          "raw": 0.9655,
+          "cohenKappa": 0.9218
+        },
+        "python": {
+          "n": 100,
+          "raw": 0.95,
+          "cohenKappa": 0.8921
+        }
+      },
+      "disagreements": [
+        "J001",
+        "J056",
+        "P072",
+        "P126",
+        "P127",
+        "P145",
+        "P149"
+      ],
+      "overstatedDisputedSetToYes": 69,
+      "audit": {
+        "n": 20,
+        "changed": 3,
+        "rate": 0.15,
+        "rateCI95": [
+          0.0524,
+          0.3604
+        ],
+        "changedIds": [
+          "J015",
+          "P065",
+          "P073"
+        ],
+        "maxChanges": 3,
+        "reliable": false,
+        "rule": ">= 3 of 20 changed -> AI review NOT RELIABLE, criterion 1 NOT MET in both languages",
+        "byLanguage": {
+          "java": {
+            "n": 7,
+            "changed": 1,
+            "rate": 0.1429,
+            "rateCI95": [
+              0.0257,
+              0.5131
+            ],
+            "changedIds": [
+              "J015"
+            ]
+          },
+          "python": {
+            "n": 13,
+            "changed": 2,
+            "rate": 0.1538,
+            "rateCI95": [
+              0.0433,
+              0.4223
+            ],
+            "changedIds": [
+              "P065",
+              "P073"
+            ]
+          }
+        }
+      }
+    },
+    "languages": {
+      "java": {
+        "corpusFrozenReason": "58 java CRITICAL >= 50",
+        "includedRepositories": 75,
+        "totalCritical": 58,
+        "reviewed": 58,
+        "required": 50,
+        "sampling": "every CRITICAL finding",
+        "precision": {
+          "n": 58,
+          "TP": 39,
+          "FP": 19,
+          "U": 0,
+          "primary": 0.6724,
+          "primaryCI95": [
+            0.5442,
+            0.7792
+          ],
+          "secondary": 0.6724,
+          "secondaryCI95": [
+            0.5442,
+            0.7792
+          ]
+        },
+        "criterion1": {
+          "met": false,
+          "status": "NOT MET",
+          "reasons": [
+            "AI review NOT RELIABLE: Joaqu\u00edn changed 3 of 20 in the audit (>= 3)",
+            "primary precision 0.6724 < 0.9"
+          ],
+          "rule": "primary point estimate >= 90% with >= 50 reviewed"
+        },
+        "fpPer1000": {
+          "densityCriticalPer1000": 0.5439,
+          "primary": 0.1782,
+          "primaryCI95": [
+            0.1201,
+            0.2479
+          ],
+          "secondary": 0.1782,
+          "clusterBootstrapCI95": [
+            0.0349,
+            0.4614
+          ]
+        },
+        "criterion2": {
+          "met": true,
+          "status": "MET",
+          "rule": "FP/1000 point estimate <= 5.0"
+        },
+        "volume": {
+          "files": 106639,
+          "findings": {
+            "warning": 176,
+            "major": 335,
+            "critical": 58
+          },
+          "per1000": {
+            "critical": 0.5439,
+            "major": 3.1414,
+            "warning": 1.6504,
+            "info": 0.0
+          },
+          "withinOriginalD2": {
+            "critical": true,
+            "warning": true
+          },
+          "note": "published always; does not decide (amendment of 2026-10-14)"
+        },
+        "clusteringCap10": {
+          "n": 33,
+          "TP": 15,
+          "FP": 18,
+          "U": 0,
+          "primary": 0.4545,
+          "primaryCI95": [
+            0.2984,
+            0.6201
+          ],
+          "secondary": 0.4545,
+          "secondaryCI95": [
+            0.2984,
+            0.6201
+          ]
+        },
+        "messageOverstated": 55,
+        "by_ruleId": {
+          "blocking": {
+            "n": 8,
+            "TP": 2,
+            "FP": 6,
+            "U": 0,
+            "primary": 0.25,
+            "primaryCI95": [
+              0.0715,
+              0.5907
+            ],
+            "secondary": 0.25,
+            "secondaryCI95": [
+              0.0715,
+              0.5907
+            ]
+          },
+          "kafka-send-timeout": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "transactions": {
+            "n": 48,
+            "TP": 35,
+            "FP": 13,
+            "U": 0,
+            "primary": 0.7292,
+            "primaryCI95": [
+              0.59,
+              0.8343
+            ],
+            "secondary": 0.7292,
+            "secondaryCI95": [
+              0.59,
+              0.8343
+            ]
+          }
+        },
+        "by_repo": {
+          "YunaiV/yudao-cloud": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "bage2014/study": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "booklore-app/booklore": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "jdubois/boot-ui": {
+            "n": 11,
+            "TP": 0,
+            "FP": 11,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.2588
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.2588
+            ]
+          },
+          "jingsewu/open-wes": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "quarkusio/quarkus": {
+            "n": 4,
+            "TP": 1,
+            "FP": 3,
+            "U": 0,
+            "primary": 0.25,
+            "primaryCI95": [
+              0.0456,
+              0.6994
+            ],
+            "secondary": 0.25,
+            "secondaryCI95": [
+              0.0456,
+              0.6994
+            ]
+          },
+          "risesoft-y9/WorkFlow-Engine": {
+            "n": 34,
+            "TP": 34,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.8985,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.8985,
+              1.0
+            ]
+          },
+          "spring-petclinic/spring-petclinic-microservices": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "spring-projects/spring-modulith": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "spring-projects/spring-tools": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "terrakube-io/terrakube": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          }
+        },
+        "by_subpool": {
+          "java": {
+            "n": 58,
+            "TP": 39,
+            "FP": 19,
+            "U": 0,
+            "primary": 0.6724,
+            "primaryCI95": [
+              0.5442,
+              0.7792
+            ],
+            "secondary": 0.6724,
+            "secondaryCI95": [
+              0.5442,
+              0.7792
+            ]
+          }
+        },
+        "by_family": {
+          "ASYNC": {
+            "n": 41,
+            "TP": 38,
+            "FP": 3,
+            "U": 0,
+            "primary": 0.9268,
+            "primaryCI95": [
+              0.8057,
+              0.9748
+            ],
+            "secondary": 0.9268,
+            "secondaryCI95": [
+              0.8057,
+              0.9748
+            ]
+          },
+          "KAFKA": {
+            "n": 52,
+            "TP": 37,
+            "FP": 15,
+            "U": 0,
+            "primary": 0.7115,
+            "primaryCI95": [
+              0.5773,
+              0.8167
+            ],
+            "secondary": 0.7115,
+            "secondaryCI95": [
+              0.5773,
+              0.8167
+            ]
+          },
+          "REACTOR": {
+            "n": 23,
+            "TP": 5,
+            "FP": 18,
+            "U": 0,
+            "primary": 0.2174,
+            "primaryCI95": [
+              0.0966,
+              0.419
+            ],
+            "secondary": 0.2174,
+            "secondaryCI95": [
+              0.0966,
+              0.419
+            ]
+          }
+        }
+      },
+      "python": {
+        "corpusFrozenReason": "168 python CRITICAL >= 100",
+        "includedRepositories": 20,
+        "totalCritical": 168,
+        "reviewed": 100,
+        "required": 100,
+        "sampling": "random.Random(20261021).sample of 100",
+        "precision": {
+          "n": 100,
+          "TP": 66,
+          "FP": 34,
+          "U": 0,
+          "primary": 0.66,
+          "primaryCI95": [
+            0.5628,
+            0.7454
+          ],
+          "secondary": 0.66,
+          "secondaryCI95": [
+            0.5628,
+            0.7454
+          ]
+        },
+        "criterion1": {
+          "met": false,
+          "status": "NOT MET",
+          "reasons": [
+            "AI review NOT RELIABLE: Joaqu\u00edn changed 3 of 20 in the audit (>= 3)",
+            "primary precision 0.66 < 0.9"
+          ],
+          "rule": "primary point estimate >= 90% with >= 100 reviewed"
+        },
+        "fpPer1000": {
+          "densityCriticalPer1000": 39.5015,
+          "primary": 13.4305,
+          "primaryCI95": [
+            10.0571,
+            17.2701
+          ],
+          "secondary": 13.4305,
+          "clusterBootstrapCI95": [
+            6.3052,
+            17.7102
+          ]
+        },
+        "criterion2": {
+          "met": false,
+          "status": "NOT MET",
+          "rule": "FP/1000 point estimate <= 5.0"
+        },
+        "volume": {
+          "files": 4253,
+          "findings": {
+            "critical": 168,
+            "warning": 104
+          },
+          "per1000": {
+            "critical": 39.5015,
+            "major": 0.0,
+            "warning": 24.4533,
+            "info": 0.0
+          },
+          "withinOriginalD2": {
+            "critical": false,
+            "warning": false
+          },
+          "note": "published always; does not decide (amendment of 2026-10-14)"
+        },
+        "clusteringCap10": {
+          "n": 44,
+          "TP": 24,
+          "FP": 20,
+          "U": 0,
+          "primary": 0.5455,
+          "primaryCI95": [
+            0.4007,
+            0.6829
+          ],
+          "secondary": 0.5455,
+          "secondaryCI95": [
+            0.4007,
+            0.6829
+          ]
+        },
+        "messageOverstated": 42,
+        "by_ruleId": {
+          "PYVIBE-001": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "PYVIBE-005": {
+            "n": 13,
+            "TP": 0,
+            "FP": 13,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.2281
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.2281
+            ]
+          },
+          "PYVIBE-007": {
+            "n": 8,
+            "TP": 8,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.6756,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.6756,
+              1.0
+            ]
+          },
+          "PYVIBE-008": {
+            "n": 3,
+            "TP": 1,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.3333,
+            "primaryCI95": [
+              0.0615,
+              0.7923
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.0615,
+              0.7923
+            ]
+          },
+          "PYVIBE-009": {
+            "n": 36,
+            "TP": 30,
+            "FP": 6,
+            "U": 0,
+            "primary": 0.8333,
+            "primaryCI95": [
+              0.6811,
+              0.9213
+            ],
+            "secondary": 0.8333,
+            "secondaryCI95": [
+              0.6811,
+              0.9213
+            ]
+          },
+          "PYVIBE-011": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "PYVIBE-012": {
+            "n": 22,
+            "TP": 22,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.8513,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.8513,
+              1.0
+            ]
+          },
+          "PYVIBE-013": {
+            "n": 10,
+            "TP": 2,
+            "FP": 8,
+            "U": 0,
+            "primary": 0.2,
+            "primaryCI95": [
+              0.0567,
+              0.5098
+            ],
+            "secondary": 0.2,
+            "secondaryCI95": [
+              0.0567,
+              0.5098
+            ]
+          },
+          "PYVIBE-017": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "PYVIBE-018": {
+            "n": 4,
+            "TP": 2,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.5,
+            "primaryCI95": [
+              0.15,
+              0.85
+            ],
+            "secondary": 0.5,
+            "secondaryCI95": [
+              0.15,
+              0.85
+            ]
+          }
+        },
+        "by_repo": {
+          "AhmadHassan-BTed/OpenOPC-Shadow-Adapter": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "Anil-matcha/open-agent-email": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "LucieEveille/kiwi-mem": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "MoMoM101/RAG-ReActAgent": {
+            "n": 7,
+            "TP": 5,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.7143,
+            "primaryCI95": [
+              0.3589,
+              0.9178
+            ],
+            "secondary": 0.7143,
+            "secondaryCI95": [
+              0.3589,
+              0.9178
+            ]
+          },
+          "OtoDock/oto-dock": {
+            "n": 49,
+            "TP": 45,
+            "FP": 4,
+            "U": 0,
+            "primary": 0.9184,
+            "primaryCI95": [
+              0.8081,
+              0.9678
+            ],
+            "secondary": 0.9184,
+            "secondaryCI95": [
+              0.8081,
+              0.9678
+            ]
+          },
+          "benjiyaya/Calliope": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "brekkylab/backlot": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "f3rb123/beetle": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "geolens-io/geolens": {
+            "n": 27,
+            "TP": 9,
+            "FP": 18,
+            "U": 0,
+            "primary": 0.3333,
+            "primaryCI95": [
+              0.1864,
+              0.5218
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.1864,
+              0.5218
+            ]
+          },
+          "ikeda042/PhenoPixel": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "not-sekiun/Consortium": {
+            "n": 8,
+            "TP": 3,
+            "FP": 5,
+            "U": 0,
+            "primary": 0.375,
+            "primaryCI95": [
+              0.1368,
+              0.6943
+            ],
+            "secondary": 0.375,
+            "secondaryCI95": [
+              0.1368,
+              0.6943
+            ]
+          }
+        },
+        "by_subpool": {
+          "python-A": {
+            "n": 100,
+            "TP": 66,
+            "FP": 34,
+            "U": 0,
+            "primary": 0.66,
+            "primaryCI95": [
+              0.5628,
+              0.7454
+            ],
+            "secondary": 0.66,
+            "secondaryCI95": [
+              0.5628,
+              0.7454
+            ]
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "reviewMethod": "two independent AI reviews (A, B); disagreements and an audit sample of 20 decided by Joaqu\u00edn (DEVIATIONS.md \u00a73/\u00a73a)",
+    "review": {
+      "agreementAB": {
+        "n": 158,
+        "raw": 0.9557,
+        "cohenKappa": 0.9028
+      },
+      "agreementABByLanguage": {
+        "java": {
+          "n": 58,
+          "raw": 0.9655,
+          "cohenKappa": 0.9218
+        },
+        "python": {
+          "n": 100,
+          "raw": 0.95,
+          "cohenKappa": 0.8921
+        }
+      },
+      "disagreements": [
+        "J001",
+        "J056",
+        "P072",
+        "P126",
+        "P127",
+        "P145",
+        "P149"
+      ],
+      "overstatedDisputedSetToYes": 69,
+      "audit": {
+        "n": 10,
+        "changed": 2,
+        "rate": 0.2,
+        "rateCI95": [
+          0.0567,
+          0.5098
+        ],
+        "changedIds": [
+          "P065",
+          "P073"
+        ],
+        "maxChanges": 2,
+        "reliable": false,
+        "rule": ">= 2 of 10 changed -> AI review NOT RELIABLE, criterion 1 NOT MET in both languages",
+        "byLanguage": {
+          "java": {
+            "n": 0,
+            "changed": 0,
+            "rate": null,
+            "rateCI95": null,
+            "changedIds": []
+          },
+          "python": {
+            "n": 10,
+            "changed": 2,
+            "rate": 0.2,
+            "rateCI95": [
+              0.0567,
+              0.5098
+            ],
+            "changedIds": [
+              "P065",
+              "P073"
+            ]
+          }
+        }
+      },
+      "assistedExcluded": {
+        "audit": [
+          "J015",
+          "J020",
+          "J021",
+          "J023",
+          "J036",
+          "J038",
+          "J052",
+          "P083",
+          "P098",
+          "P099"
+        ],
+        "disagreementsAsU": [
+          "J001",
+          "J056",
+          "P072",
+          "P145"
+        ]
+      }
+    },
+    "languages": {
+      "java": {
+        "corpusFrozenReason": "58 java CRITICAL >= 50",
+        "includedRepositories": 75,
+        "totalCritical": 58,
+        "reviewed": 58,
+        "required": 50,
+        "sampling": "every CRITICAL finding",
+        "precision": {
+          "n": 58,
+          "TP": 38,
+          "FP": 18,
+          "U": 2,
+          "primary": 0.6552,
+          "primaryCI95": [
+            0.5267,
+            0.7644
+          ],
+          "secondary": 0.6786,
+          "secondaryCI95": [
+            0.5482,
+            0.786
+          ]
+        },
+        "criterion1": {
+          "met": false,
+          "status": "NOT MET",
+          "reasons": [
+            "AI review NOT RELIABLE: Joaqu\u00edn changed 2 of 10 in the audit (>= 2)",
+            "primary precision 0.6552 < 0.9"
+          ],
+          "rule": "primary point estimate >= 90% with >= 50 reviewed"
+        },
+        "fpPer1000": {
+          "densityCriticalPer1000": 0.5439,
+          "primary": 0.1875,
+          "primaryCI95": [
+            0.1281,
+            0.2574
+          ],
+          "secondary": 0.1748,
+          "clusterBootstrapCI95": [
+            0.0353,
+            0.4665
+          ]
+        },
+        "criterion2": {
+          "met": true,
+          "status": "MET",
+          "rule": "FP/1000 point estimate <= 5.0"
+        },
+        "volume": {
+          "files": 106639,
+          "findings": {
+            "warning": 176,
+            "major": 335,
+            "critical": 58
+          },
+          "per1000": {
+            "critical": 0.5439,
+            "major": 3.1414,
+            "warning": 1.6504,
+            "info": 0.0
+          },
+          "withinOriginalD2": {
+            "critical": true,
+            "warning": true
+          },
+          "note": "published always; does not decide (amendment of 2026-10-14)"
+        },
+        "clusteringCap10": {
+          "n": 33,
+          "TP": 14,
+          "FP": 17,
+          "U": 2,
+          "primary": 0.4242,
+          "primaryCI95": [
+            0.2724,
+            0.5919
+          ],
+          "secondary": 0.4516,
+          "secondaryCI95": [
+            0.2916,
+            0.6223
+          ]
+        },
+        "messageOverstated": 54,
+        "by_ruleId": {
+          "blocking": {
+            "n": 8,
+            "TP": 1,
+            "FP": 5,
+            "U": 2,
+            "primary": 0.125,
+            "primaryCI95": [
+              0.0224,
+              0.4709
+            ],
+            "secondary": 0.1667,
+            "secondaryCI95": [
+              0.0301,
+              0.5635
+            ]
+          },
+          "kafka-send-timeout": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "transactions": {
+            "n": 48,
+            "TP": 35,
+            "FP": 13,
+            "U": 0,
+            "primary": 0.7292,
+            "primaryCI95": [
+              0.59,
+              0.8343
+            ],
+            "secondary": 0.7292,
+            "secondaryCI95": [
+              0.59,
+              0.8343
+            ]
+          }
+        },
+        "by_repo": {
+          "YunaiV/yudao-cloud": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "bage2014/study": {
+            "n": 1,
+            "TP": 0,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "booklore-app/booklore": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "jdubois/boot-ui": {
+            "n": 11,
+            "TP": 0,
+            "FP": 11,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.2588
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.2588
+            ]
+          },
+          "jingsewu/open-wes": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "quarkusio/quarkus": {
+            "n": 4,
+            "TP": 0,
+            "FP": 4,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.4899
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.4899
+            ]
+          },
+          "risesoft-y9/WorkFlow-Engine": {
+            "n": 34,
+            "TP": 34,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.8985,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.8985,
+              1.0
+            ]
+          },
+          "spring-petclinic/spring-petclinic-microservices": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "spring-projects/spring-modulith": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "spring-projects/spring-tools": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "terrakube-io/terrakube": {
+            "n": 1,
+            "TP": 0,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          }
+        },
+        "by_subpool": {
+          "java": {
+            "n": 58,
+            "TP": 38,
+            "FP": 18,
+            "U": 2,
+            "primary": 0.6552,
+            "primaryCI95": [
+              0.5267,
+              0.7644
+            ],
+            "secondary": 0.6786,
+            "secondaryCI95": [
+              0.5482,
+              0.786
+            ]
+          }
+        },
+        "by_family": {
+          "ASYNC": {
+            "n": 41,
+            "TP": 38,
+            "FP": 1,
+            "U": 2,
+            "primary": 0.9268,
+            "primaryCI95": [
+              0.8057,
+              0.9748
+            ],
+            "secondary": 0.9744,
+            "secondaryCI95": [
+              0.8682,
+              0.9955
+            ]
+          },
+          "KAFKA": {
+            "n": 52,
+            "TP": 36,
+            "FP": 16,
+            "U": 0,
+            "primary": 0.6923,
+            "primaryCI95": [
+              0.5573,
+              0.8009
+            ],
+            "secondary": 0.6923,
+            "secondaryCI95": [
+              0.5573,
+              0.8009
+            ]
+          },
+          "REACTOR": {
+            "n": 23,
+            "TP": 4,
+            "FP": 17,
+            "U": 2,
+            "primary": 0.1739,
+            "primaryCI95": [
+              0.0698,
+              0.3714
+            ],
+            "secondary": 0.1905,
+            "secondaryCI95": [
+              0.0767,
+              0.4
+            ]
+          }
+        }
+      },
+      "python": {
+        "corpusFrozenReason": "168 python CRITICAL >= 100",
+        "includedRepositories": 20,
+        "totalCritical": 168,
+        "reviewed": 100,
+        "required": 100,
+        "sampling": "random.Random(20261021).sample of 100",
+        "precision": {
+          "n": 100,
+          "TP": 64,
+          "FP": 34,
+          "U": 2,
+          "primary": 0.64,
+          "primaryCI95": [
+            0.5424,
+            0.7273
+          ],
+          "secondary": 0.6531,
+          "secondaryCI95": [
+            0.5547,
+            0.7399
+          ]
+        },
+        "criterion1": {
+          "met": false,
+          "status": "NOT MET",
+          "reasons": [
+            "AI review NOT RELIABLE: Joaqu\u00edn changed 2 of 10 in the audit (>= 2)",
+            "primary precision 0.64 < 0.9"
+          ],
+          "rule": "primary point estimate >= 90% with >= 100 reviewed"
+        },
+        "fpPer1000": {
+          "densityCriticalPer1000": 39.5015,
+          "primary": 14.2206,
+          "primaryCI95": [
+            10.7721,
+            18.0759
+          ],
+          "secondary": 13.7046,
+          "clusterBootstrapCI95": [
+            7.1873,
+            18.7883
+          ]
+        },
+        "criterion2": {
+          "met": false,
+          "status": "NOT MET",
+          "rule": "FP/1000 point estimate <= 5.0"
+        },
+        "volume": {
+          "files": 4253,
+          "findings": {
+            "critical": 168,
+            "warning": 104
+          },
+          "per1000": {
+            "critical": 39.5015,
+            "major": 0.0,
+            "warning": 24.4533,
+            "info": 0.0
+          },
+          "withinOriginalD2": {
+            "critical": false,
+            "warning": false
+          },
+          "note": "published always; does not decide (amendment of 2026-10-14)"
+        },
+        "clusteringCap10": {
+          "n": 44,
+          "TP": 22,
+          "FP": 20,
+          "U": 2,
+          "primary": 0.5,
+          "primaryCI95": [
+            0.3583,
+            0.6417
+          ],
+          "secondary": 0.5238,
+          "secondaryCI95": [
+            0.3772,
+            0.6664
+          ]
+        },
+        "messageOverstated": 41,
+        "by_ruleId": {
+          "PYVIBE-001": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "PYVIBE-005": {
+            "n": 13,
+            "TP": 0,
+            "FP": 13,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.2281
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.2281
+            ]
+          },
+          "PYVIBE-007": {
+            "n": 8,
+            "TP": 8,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.6756,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.6756,
+              1.0
+            ]
+          },
+          "PYVIBE-008": {
+            "n": 3,
+            "TP": 1,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.3333,
+            "primaryCI95": [
+              0.0615,
+              0.7923
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.0615,
+              0.7923
+            ]
+          },
+          "PYVIBE-009": {
+            "n": 36,
+            "TP": 30,
+            "FP": 6,
+            "U": 0,
+            "primary": 0.8333,
+            "primaryCI95": [
+              0.6811,
+              0.9213
+            ],
+            "secondary": 0.8333,
+            "secondaryCI95": [
+              0.6811,
+              0.9213
+            ]
+          },
+          "PYVIBE-011": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "PYVIBE-012": {
+            "n": 22,
+            "TP": 21,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.9545,
+            "primaryCI95": [
+              0.782,
+              0.9919
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.8454,
+              1.0
+            ]
+          },
+          "PYVIBE-013": {
+            "n": 10,
+            "TP": 2,
+            "FP": 8,
+            "U": 0,
+            "primary": 0.2,
+            "primaryCI95": [
+              0.0567,
+              0.5098
+            ],
+            "secondary": 0.2,
+            "secondaryCI95": [
+              0.0567,
+              0.5098
+            ]
+          },
+          "PYVIBE-017": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "PYVIBE-018": {
+            "n": 4,
+            "TP": 1,
+            "FP": 2,
+            "U": 1,
+            "primary": 0.25,
+            "primaryCI95": [
+              0.0456,
+              0.6994
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.0615,
+              0.7923
+            ]
+          }
+        },
+        "by_repo": {
+          "AhmadHassan-BTed/OpenOPC-Shadow-Adapter": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "Anil-matcha/open-agent-email": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "LucieEveille/kiwi-mem": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "MoMoM101/RAG-ReActAgent": {
+            "n": 7,
+            "TP": 4,
+            "FP": 2,
+            "U": 1,
+            "primary": 0.5714,
+            "primaryCI95": [
+              0.2505,
+              0.8418
+            ],
+            "secondary": 0.6667,
+            "secondaryCI95": [
+              0.3,
+              0.9032
+            ]
+          },
+          "OtoDock/oto-dock": {
+            "n": 49,
+            "TP": 44,
+            "FP": 4,
+            "U": 1,
+            "primary": 0.898,
+            "primaryCI95": [
+              0.7824,
+              0.9556
+            ],
+            "secondary": 0.9167,
+            "secondaryCI95": [
+              0.8045,
+              0.9671
+            ]
+          },
+          "benjiyaya/Calliope": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "brekkylab/backlot": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "f3rb123/beetle": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "geolens-io/geolens": {
+            "n": 27,
+            "TP": 9,
+            "FP": 18,
+            "U": 0,
+            "primary": 0.3333,
+            "primaryCI95": [
+              0.1864,
+              0.5218
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.1864,
+              0.5218
+            ]
+          },
+          "ikeda042/PhenoPixel": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "not-sekiun/Consortium": {
+            "n": 8,
+            "TP": 3,
+            "FP": 5,
+            "U": 0,
+            "primary": 0.375,
+            "primaryCI95": [
+              0.1368,
+              0.6943
+            ],
+            "secondary": 0.375,
+            "secondaryCI95": [
+              0.1368,
+              0.6943
+            ]
+          }
+        },
+        "by_subpool": {
+          "python-A": {
+            "n": 100,
+            "TP": 64,
+            "FP": 34,
+            "U": 2,
+            "primary": 0.64,
+            "primaryCI95": [
+              0.5424,
+              0.7273
+            ],
+            "secondary": 0.6531,
+            "secondaryCI95": [
+              0.5547,
+              0.7399
+            ]
+          }
+        }
+      }
+    }
+  }
+}
