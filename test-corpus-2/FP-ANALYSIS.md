@@ -118,3 +118,48 @@ so.
     methods on a worker pool.
 - **J056** stays CRITICAL although it is an FP (Joaquín). Closing it would need a measurement
   of `@Scheduled` under virtual threads, which does not exist.
+
+## 4. After the fixes: exploratory re-scan of test-corpus-2 (not evidence for the criteria)
+
+**How it was measured:**
+- The engines were run from source at python-vibe-guard `f35d202` and java-vibe-guard `57c78bd`
+  (branches `fix/tc2-fp-analysis`) on the kept TC2 checkouts at their pinned commits.
+- Each repository got the folders the TC2 wrapper excluded (`results/<pool>/*.json`,
+  `excludes.applied`).
+- Each reviewed finding was matched by (file, line, ruleId).
+- With the engines' `master` the same procedure reproduces TC2 exactly: 58/58 Java and 165/165
+  Python CRITICAL in those checkouts, every reviewed finding found at its severity.
+
+**Caveat:** this is development data, so the fixes were designed on these very cases. It shows
+that each fix removes the FPs it targets and what it costs in TPs. It does not estimate
+precision on new repositories: that is test-corpus-3.
+
+| Language | Reviewed CRITICAL | TP | FP | Precision of what stays CRITICAL | TP no longer CRITICAL | FP still CRITICAL |
+|---|---|---|---|---|---|---|
+| Java | 58 → **40** | 38 | 2 | **0.95** | J015 (§3) | J001, J056 (no fix) |
+| Python | 100 → **66** | 64 | 2 | **0.9697** | P013, P057 (PYVIBE-013 demoted) | P005, P067 (no fix) |
+
+**Where each FP went:**
+- Python:
+  - PYVIBE-005: 13 no longer reported;
+  - PYVIBE-013: 8 WARNING;
+  - PYVIBE-009/008 entry coroutine: 6 WARNING;
+  - PYVIBE-011, 018 and 017: 2 + 2 + 1 no longer reported.
+- Java:
+  - `transactions`: 13 no longer reported;
+  - `blocking`: Quarkus `@Scheduled` 3 no longer reported, and J053 WARNING.
+- No reviewed finding became more severe, and no new CRITICAL appeared in these checkouts.
+  Whole kept pools: Java 58 → 40, Python 165 → 117.
+
+**As implemented, where it differs from the proposal in §1:**
+- PYVIBE-005 does not require Celery provenance in every file. A bare `@app.task` with no
+  import of the receiver is still reported, as before (WARNING now).
+- A receiver **imported** from a module counts as Celery's only if that module's path contains
+  `celery` or the file imports `celery`.
+- A file importing Procrastinate, Huey, Dramatiq, taskiq, arq, RQ, SAQ or Faust (and not
+  `celery`) is never reported.
+- The entry-coroutine rule only counts an `asyncio.run(f(...))` that sits outside every
+  `async def`. Inside one it is the PYVIBE-003 error, as in pyvibe's demo.
+- java-vibe-guard: the fully qualified `@org.springframework.scheduling.annotation.Scheduled`
+  did not match before at all. It now anchors like the imported one, so new findings are
+  possible there.
