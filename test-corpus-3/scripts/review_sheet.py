@@ -1,12 +1,12 @@
-"""Joaquín's review sheet and its conversion to his verdicts (DEVIATIONS.md §3a).
+"""Joaquín's review sheet and its conversion to his verdicts (PREREGISTRATION.md, "Review method").
 
-  python3 scripts/review_sheet.py sheet   -> REVIEW-SHEET.md: the 27 IDs of REVIEW-AB.md (disagreements
-                                             and audit sample) shuffled with random.Random(20261026),
+  python3 scripts/review_sheet.py sheet   -> REVIEW-SHEET.md: the IDs of REVIEW-AB.md (disagreements
+                                             and audit sample) shuffled with random.Random(20261105),
                                              each with only a link to its card and empty fields (once)
   python3 scripts/review_sheet.py audit   -> audit-joaquin.json from REVIEW-SHEET.md; fails if any
                                              verdict is missing or not TP/FP/U, a reason is missing,
                                              or Overstated is not "Sí"/"No", optionally followed by
-                                             " — " and a note (kept as overstated_note; DEVIATIONS.md §3c)
+                                             " — " and a note (kept as overstated_note; test-corpus-2 DEVIATIONS.md §3c)
 """
 import json
 import random
@@ -18,16 +18,16 @@ DIR = Path(__file__).resolve().parent.parent
 VERDICTS = ("TP", "FP", "U")
 OVERSTATED = {"Sí": True, "No": False}
 _OVERSTATED_RE = re.compile(r"^(Sí|No)(?: — (\S.*))?$")
-SEED_SHEET = 20261026
+SEED_SHEET = 20261105
 FIELDS = ("Verdict", "Reason (file:line)", "Overstated")
 _FIELD_RE = re.compile(r"^- (Verdict|Reason \(file:line\)|Overstated):[ \t]*(.*)$")
 
 
 def render_sheet(ids):
-    md = ["# Review sheet — test-corpus-2", "",
-          f"Joaquín's verdicts on {len(ids)} findings (`DEVIATIONS.md` §3a), in a random order. One block per finding.",
+    md = ["# Review sheet — test-corpus-3", "",
+          f"Joaquín's verdicts on {len(ids)} findings (`PREREGISTRATION.md`, \"Review method\"), in a random order. One block per finding.",
           "Fill `Verdict` (TP, FP or U), `Reason (file:line)` and `Overstated` (Sí or No).",
-          "Rules: `REVIEW-GUIDE.md`. Any help received: `REVIEW-LOG.md`.", ""]
+          "Rules: `PREREGISTRATION.md`, \"Verdicts\". Any help received, only factual navigation: `REVIEW-LOG.md`.", ""]
     for i in ids:
         md += [f"## {i}", "", f"- Card: [cards/{i}.md](cards/{i}.md)", "- Verdict: ", "- Reason (file:line): ", "- Overstated: ", ""]
     return "\n".join(md)
@@ -86,7 +86,7 @@ def ab_lists(text):
 
 
 def sheet_ids(ids, disagreeing, audit):
-    """The reviewed IDs in review-set order, shuffled with random.Random(20261026)."""
+    """The reviewed IDs in review-set order, shuffled with random.Random(20261105)."""
     chosen = set(disagreeing) | set(audit)
     out = [i for i in ids if i in chosen]
     random.Random(SEED_SHEET).shuffle(out)

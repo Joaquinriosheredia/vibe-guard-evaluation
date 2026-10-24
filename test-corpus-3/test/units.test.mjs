@@ -12,7 +12,7 @@ import { poolCritical, POOL_RULES, stackExclusion, stopDecision } from '../scrip
 import { loadFrozen, unfilled } from '../scripts/lib.mjs';
 import { namesInList, namesInText, normalize } from '../scripts/build-exclusions.mjs';
 
-const TC2 = join(dirname(fileURLToPath(import.meta.url)), '..');
+const TC3 = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 test('queries: exact strings, cutoff = selection date - 183 days', () => {
   const q = queries('2026-10-20T08:00:00Z');
@@ -90,28 +90,39 @@ test('stopping rule per pool: target, cap, exhaustion; never by verdicts', () =>
   assert.equal(poolCritical(report, 'java'), 1);
 });
 
-test('FROZEN.json guard: refuses TO-FILL values, otherwise needs a full SHA and the frozen versions', () => {
+test('FROZEN.json guard: refuses TO-FILL values, otherwise needs a full SHA', () => {
   assert.deepEqual(unfilled({ a: { b: 'TO-FILL: x' }, c: 'ok' }), ['a.b']);
-  const frozen = JSON.parse(readFileSync(join(TC2, 'FROZEN.json'), 'utf8'));
-  assert.equal(frozen.pyvibe.sha256, '7847e9577bca8eb74e77d4079ecf437232ef5c9d187e3c75cf3ce67084caf254');
-  assert.equal(frozen.javaVibeGuard.integrity, 'sha512-YawOnqjT9X48nqWwjwbl31xecv6jDoqQAUQD0Ohpy4aI1iiReO/QYXm+KKQJeyi0yGvhKuiAhwAuh6b3UubEyQ==');
-  assert.equal(frozen.vibeGuardScan.versionLine, 'vibe-guard 0.2.0 (java-vibe-guard 2.4.0; pyvibe 0.14.0)');
-  if (unfilled(frozen).length) assert.throws(() => loadFrozen(), /FROZEN.json not filled: vibeGuardScan.commit/);
-  else assert.match(loadFrozen().vibeGuardScan.commit, /^[0-9a-f]{40}$/);
+  const frozen = JSON.parse(readFileSync(join(TC3, 'FROZEN.json'), 'utf8'));
+  const keys = ['vibeGuardScan.version', 'vibeGuardScan.commit', 'vibeGuardScan.versionLine', 'pyvibe.version', 'pyvibe.wheel', 'pyvibe.sha256',
+    'javaVibeGuard.version', 'javaVibeGuard.integrity'];
+  // Until the fixes are released (PREREGISTRATION.md, "Tools under test") every version value is TO-FILL
+  // and nothing can run; once filled, none is.
+  const missing = unfilled(frozen);
+  assert.ok(missing.length === 0 || JSON.stringify(missing) === JSON.stringify(keys), JSON.stringify(missing));
+  if (missing.length) assert.throws(() => loadFrozen(), /FROZEN.json not filled: vibeGuardScan.version, vibeGuardScan.commit/);
+  else {
+    assert.match(loadFrozen().vibeGuardScan.commit, /^[0-9a-f]{40}$/);
+    assert.match(frozen.pyvibe.sha256, /^[0-9a-f]{64}$/);
+    assert.match(frozen.javaVibeGuard.integrity, /^sha512-/);
+  }
 });
 
-test('exclusions: names from lists and URLs; own repositories dropped; the committed list covers test-corpus-1', () => {
+test('exclusions: names from lists and URLs; own repositories dropped; the committed list covers test-corpus-1 and test-corpus-2', () => {
   assert.deepEqual(namesInList('x.json', { repositories: [{ name: 'a/b' }, { name: 'not a repo' }], processed: [{ full_name: 'c/d' }], entries: [{ repo: 'e/f' }] }).sort(), ['a/b', 'c/d', 'e/f']);
   assert.deepEqual(namesInText('see https://github.com/foo/bar.git and github.com/x/y.'), ['foo/bar.git', 'x/y.']);
   assert.equal(normalize('foo/bar.git'), 'foo/bar');
   assert.equal(normalize('Joaquinriosheredia/java-vibe-guard'), null);
-  const ex = JSON.parse(readFileSync(join(TC2, 'exclusions.json'), 'utf8'));
+  const ex = JSON.parse(readFileSync(join(TC3, 'exclusions.json'), 'utf8'));
   assert.equal(ex.count, ex.repositories.length);
   const names = new Set(ex.repositories.map((r) => r.name.toLowerCase()));
-  const tc1 = JSON.parse(readFileSync(join(TC2, '..', 'test-corpus-1', 'corpus.json'), 'utf8')).processed;
+  const tc1 = JSON.parse(readFileSync(join(TC3, '..', 'test-corpus-1', 'corpus.json'), 'utf8')).processed;
   assert.ok(tc1.length === 204 && tc1.every((p) => names.has(p.full_name.toLowerCase())));
-  const tc1ex = JSON.parse(readFileSync(join(TC2, '..', 'test-corpus-1', 'exclusions.json'), 'utf8')).repositories;
+  const tc1ex = JSON.parse(readFileSync(join(TC3, '..', 'test-corpus-1', 'exclusions.json'), 'utf8')).repositories;
   assert.ok(tc1ex.every((r) => names.has(r.name.toLowerCase())));
+  const tc2ex = JSON.parse(readFileSync(join(TC3, '..', 'test-corpus-2', 'exclusions.json'), 'utf8')).repositories;
+  assert.ok(tc2ex.length === 1021 && tc2ex.every((r) => names.has(r.name.toLowerCase())));
+  const tc2 = ['java', 'python'].flatMap((p) => JSON.parse(readFileSync(join(TC3, '..', 'test-corpus-2', `corpus-${p}.json`), 'utf8')).processed);
+  assert.ok(tc2.length === 529 && tc2.every((p) => names.has(p.full_name.toLowerCase())));
   for (const n of ['halo-dev/halo', 'yunaiv/ruoyi-vue-pro', 'open-webui/open-webui', 'nysenate/openlegislation']) assert.ok(names.has(n), n);
 });
 

@@ -1,8 +1,7 @@
-"""Review set and repeatability sample, with the seeds fixed in PREREGISTRATION.md.
+"""Review set, with the seed fixed in PREREGISTRATION.md (test-corpus-3: no repeatability sample).
 
   python3 scripts/sample.py review-set   -> review-set.json (per language: every CRITICAL of the
                                             pool's language, or a sample of 100; Java first)
-  python3 scripts/sample.py repeat       -> repeat-sample.json (10 findings, no verdicts)
 """
 import json
 import random
@@ -12,9 +11,7 @@ from pathlib import Path
 DIR = Path(__file__).resolve().parent.parent
 REVIEW_MAX = {"java": 100, "python": 100}
 REQUIRED = {"java": 50, "python": 100}
-SEED_REVIEW = 20261021
-SEED_REPEAT = 20261023
-REPEAT_N = 10
+SEED_REVIEW = 20261101
 PREFIX = {"java": "J", "python": "P"}
 
 
@@ -53,11 +50,6 @@ def draw(by_lang, rng):
     return chosen, method
 
 
-def repeat_sample(findings, n=REPEAT_N, seed=SEED_REPEAT):
-    ordered = sorted(findings, key=lambda f: f["id"])
-    return sorted(random.Random(seed).sample(ordered, n), key=lambda f: f["id"])
-
-
 def main(cmd):
     if cmd == "review-set":
         by_lang, frozen = {}, {}
@@ -74,12 +66,6 @@ def main(cmd):
         (DIR / "review-set.json").write_text(json.dumps(out, indent=2) + "\n")
         for lang in ("java", "python"):
             print(f"{lang}: {len(by_lang[lang])} CRITICAL; review set {len(chosen[lang])} ({method[lang]}); required {REQUIRED[lang]}")
-    elif cmd == "repeat":
-        rs = json.loads((DIR / "review-set.json").read_text())["findings"]
-        keep = ("id", "repo", "commit", "language", "ruleId", "file", "line")
-        sample = [{k: f[k] for k in keep} for f in repeat_sample(rs)]
-        (DIR / "repeat-sample.json").write_text(json.dumps({"seed": SEED_REPEAT, "findings": sample}, indent=2) + "\n")
-        print(f"repeat sample: {[f['id'] for f in sample]}")
     else:
         raise SystemExit(__doc__)
 

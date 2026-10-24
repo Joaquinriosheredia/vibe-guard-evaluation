@@ -1,7 +1,10 @@
-// Builds exclusions.json: every repository used before in any vibe-guard corpus, trial, audit,
-// fixture or label, and every repository test-corpus-1 processed (EXCLUSION-SOURCES.md). Reads
-// each source with `git show` at the pinned commit, never from a working tree, and makes no
-// network call. Its output is committed with the pre-registration, before the search.
+// Builds exclusions.json of test-corpus-3 (PREREGISTRATION.md, "Changes from test-corpus-2",
+// exclusion a): the union of test-corpus-2's exclusions.json (1,021: test-corpus-1, its processed
+// repositories, development labels and sets), every repository test-corpus-2 processed
+// (included and excluded), and every GitHub URL in the docs, READMEs, fixtures and tests of the
+// five repositories below (EXCLUSION-SOURCES.md). Reads each source with `git show` at the
+// pinned commit, never from a working tree, and makes no network call. Its output is committed
+// before FROZEN.json is filled and before the search.
 //
 //   node scripts/build-exclusions.mjs <python-vibe-guard> <java-vibe-guard> <vibe-guard> <vibe-guard-scan> <vibe-guard-evaluation>
 import { join } from 'path';
@@ -10,17 +13,20 @@ import { DIR, git, writeJson } from './lib.mjs';
 
 // `text`: every GitHub URL in any file whose path matches (markdown, fixtures, tests).
 export const SOURCES = {
-  'python-vibe-guard': { commit: '4af3ce75f4b896a77c94e58b685fad4f5c6ff669', lists: [
+  'python-vibe-guard': { commit: '19571da57830573a1e7b5f8ac264f31d317e4c0f', lists: [
     'research/datasets/100-repos.json', 'research/datasets/250-repos.json', 'research/datasets/1000-repos.json',
     'validation/aggregate.json', 'validation/breakdown.json',
-  ], text: [/^README\.md$/, /^research\/.*\.md$/, /^validation\/[^/]*\.md$/, /^tests\//, /^demo\//] },
-  'java-vibe-guard': { commit: 'a4c5380761ded82da6581dca79d02f39ff057a18', lists: ['validation/repos.json', 'validation/b0-corpus/corpus.json'],
-    text: [/^README\.md$/, /^validation\/.*\.md$/, /^cli\/test-fixtures\//, /^cli\/test\//, /^mcp-server\/src\/test\//] },
-  'vibe-guard': { commit: '97ed6564f2acd0d3662584267ea461cbc1603fa2', lists: [], text: [/^docs\/.*\.md$/, /^[^/]*\.md$/] },
-  'vibe-guard-scan': { commit: 'f39dc7dcc2180a28cacd125039bba40e5be97bb4', lists: [], text: [/\.md$/, /^test\//] },
-  'vibe-guard-evaluation': { commit: 'b0242054b8d4c08b1c1a8d8fa94d6aed3f6b7fc0', lists: [
-    'test-corpus-1/exclusions.json', 'test-corpus-1/corpus.json', 'test-corpus-1/dev-labels.json',
-  ], text: [/^test-corpus-1\/.*\.md$/] },
+  ], text: [/^README\.md$/, /^CHANGELOG\.md$/, /^research\/.*\.md$/, /^validation\/[^/]*\.md$/, /^tests\//, /^demo\//] },
+  'java-vibe-guard': { commit: '67314dadff41a4a146b5ce8e0a0307a765368094', lists: ['validation/repos.json', 'validation/b0-corpus/corpus.json'],
+    text: [/^README\.md$/, /^CHANGELOG\.md$/, /^cli\/README\.md$/, /^validation\/.*\.md$/, /^cli\/test-fixtures\//, /^cli\/test\//, /^mcp-server\/src\/test\//] },
+  'vibe-guard': { commit: '6cb970e26101c1ac3bafaf32971793192b8f11f4', lists: [], text: [/^docs\/.*\.md$/, /^[^/]*\.md$/] },
+  'vibe-guard-scan': { commit: '0367d22da5f5e3e63b591885f16238ce1ac979a5', lists: [], text: [/\.md$/, /^test\//] },
+  // test-corpus-2's lists hold test-corpus-1's (its exclusions.json is a superset, checked in
+  // test/units.test.mjs). Its markdown is read at the top level only: cards/*.md quote the code
+  // of the reviewed repositories, and a URL in that code is not a repository used before.
+  'vibe-guard-evaluation': { commit: 'a05e1f4101e56a6f826556adc9d2f58a1815194b', lists: [
+    'test-corpus-2/exclusions.json', 'test-corpus-2/corpus-java.json', 'test-corpus-2/corpus-python.json',
+  ], text: [/^test-corpus-1\/.*\.md$/, /^test-corpus-2\/[^/]*\.md$/, /^test-corpus-3\/[^/]*\.md$/, /^[^/]*\.md$/] },
 };
 // The development set of the 2026-10-12 trial (vibe-guard docs/ensayo-auditoria-2026-10-12/).
 const TRIAL = ['halo-dev/halo', 'YunaiV/ruoyi-vue-pro', 'open-webui/open-webui'];

@@ -147,7 +147,7 @@ def parse_record(record):
     """One `git grep -n` record (bytes, without its final \n) -> match dict. Raises ValueError if unparsable."""
     row = record.decode("utf-8", errors="replace")
     binary = _BINARY_RE.fullmatch(row)
-    if binary:  # a binary tracked file has no line: listed with its path (DEVIATIONS.md §1, option a)
+    if binary:  # a binary tracked file has no line: listed with its path (test-corpus-2 DEVIATIONS.md §1, option a)
         path = binary.group(1)
         return {"path": path, "line": None, "class": classify_path(path), "text": "binary file"}
     m = _RECORD_RE.fullmatch(row)
@@ -158,7 +158,7 @@ def parse_record(record):
 
 
 def grep_records(checkout, name):
-    """Raw `git grep -n -w -F` records, read as bytes and split on \n only (DEVIATIONS.md §2)."""
+    """Raw `git grep -n -w -F` records, read as bytes and split on \n only (test-corpus-2 DEVIATIONS.md §2)."""
     r = subprocess.run(["git", "grep", "-n", "-w", "-F", "-e", name], cwd=checkout, capture_output=True)
     if r.returncode not in (0, 1):
         raise RuntimeError(f"git grep failed in {checkout}: {r.stderr.decode(errors='replace').strip()}")

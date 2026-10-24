@@ -1,11 +1,15 @@
 """Metrics and acceptance criteria of PREREGISTRATION.md, per language (Java and Python are
-evaluated separately; neither compensates for the other), with the review method of
-DEVIATIONS.md §3/§3a: final verdict = Joaquín's where he reviewed (the A/B disagreements and the
-audit sample of REVIEW-AB.md), otherwise the agreeing verdict of reviews A and B.
-DEVIATIONS.md §3b: everything is computed (a) with all of Joaquín's verdicts and (b) without the
-ASSISTED ones in the audit sample; criterion 1 takes the less favourable of (a) and (b).
+evaluated separately; neither compensates for the other), with its review method: final
+verdict = Joaquín's where he reviewed (the A/B disagreements and the audit sample of
+REVIEW-AB.md), otherwise the agreeing verdict of reviews A and B.
 
-  python3 scripts/evaluate.py <audit-claude.json> <audit-claude-B.json> <audit-joaquin.json>
+Assisted verdicts (PREREGISTRATION.md, "Assistance during the review"): REVIEW-LOG.md must hold
+exactly one line `**Assisted IDs:** none` or `**Assisted IDs:** J001, P002, ...`. Only when it
+lists IDs, criteria 1 and 2 are computed (a) with all verdicts and (b) with the assisted audit IDs
+left out of the audit (A = B verdict) and the assisted disagreements as U, audit threshold
+ceil(3·n/20); per language the less favourable decides, and both are published.
+
+  python3 scripts/evaluate.py <audit-claude-A.json> <audit-claude-B.json> <audit-joaquin.json>
       -> metrics.json and METRICS.md
 
 Verdict files: {"reviewer": "...", "verdicts": [{"id", "verdict": "TP"|"FP"|"U", "reason", "overstated": bool}]}.
@@ -13,6 +17,7 @@ Verdict files: {"reviewer": "...", "verdicts": [{"id", "verdict": "TP"|"FP"|"U",
 import json
 import math
 import random
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -25,14 +30,14 @@ PRECISION_TARGET = 0.90
 FP_PER_1000_MAX = 5.0
 VOLUME_D2 = {"critical": 5.0, "warning": 20.0}  # original D2, published always, does not decide
 CAP_PER_REPO = 10
-SEED_CAP = 20261022
-SEED_BOOT = 20261024
+SEED_CAP = 20261102
+SEED_BOOT = 20261103
 BOOT_B = 2000
 CATS = ("TP", "FP", "U")
 AUDIT_N = 20
 AUDIT_MAX_CHANGES = 3  # >= 3 changes of the 20 (15 %) -> AI review NOT RELIABLE, criterion 1 NOT MET in both languages
-# DEVIATIONS.md §3b: verdicts given after an AI assistant's assessments and a provisional percentage
-ASSISTED = ("J015", "J038", "J056", "J036", "J001", "J020", "J023", "J052", "J021", "P145", "P083", "P099", "P098", "P072")
+ASSISTED_RE = re.compile(r"^\*\*Assisted IDs:\*\*[ \t]*(.*?)[ \t]*$", re.M)
+ID_RE = re.compile(r"^[JP]\d{3}$")
 
 
 def wilson(k, n):
@@ -128,14 +133,30 @@ def capped(findings, final, cap=CAP_PER_REPO, seed=SEED_CAP):
     return precision(final[f["id"]] for f in out)
 
 
+def assisted_ids(log_text):
+    """The assisted IDs declared in REVIEW-LOG.md: exactly one `**Assisted IDs:**` line, `none` or
+    comma-separated IDs. Refuses a missing, repeated or malformed line."""
+    lines = ASSISTED_RE.findall(log_text)
+    if len(lines) != 1:
+        raise SystemExit(f"REVIEW-LOG.md must hold exactly one '**Assisted IDs:**' line (found {len(lines)})")
+    value = lines[0]
+    if value == "none":
+        return []
+    ids = [x.strip() for x in value.split(",")]
+    bad = [x for x in ids if not ID_RE.match(x)]
+    if bad or len(set(ids)) != len(ids):
+        raise SystemExit(f"REVIEW-LOG.md '**Assisted IDs:**': invalid or repeated IDs {bad or ids}")
+    return ids
+
+
 def audit_max_changes(n):
     """Changes that make the AI review NOT RELIABLE: the 15 % of the original rule (3 of 20), rounded up
-    (DEVIATIONS.md §3b: 2 of 10)."""
+    (test-corpus-2 DEVIATIONS.md §3b: 2 of 10)."""
     return -(-AUDIT_MAX_CHANGES * n // AUDIT_N)
 
 
 def final_verdicts(findings, a, b, joaquin, disagreeing, audit):
-    """DEVIATIONS.md §3/§3a. a, b, joaquin: {id: {"verdict", "overstated"}}.
+    """PREREGISTRATION.md, "Review method" (test-corpus-2 DEVIATIONS.md §3/§3a). a, b, joaquin: {id: {"verdict", "overstated"}}.
     Returns (final {id: {"verdict", "overstated", "source"}}, review summary)."""
     reviewed = set(disagreeing) | set(audit)
     if set(joaquin) != reviewed:
@@ -174,9 +195,9 @@ def final_verdicts(findings, a, b, joaquin, disagreeing, audit):
     return final, summary
 
 
-def final_verdicts_unassisted(findings, a, b, joaquin, disagreeing, audit, assisted=ASSISTED):
-    """DEVIATIONS.md §3b, version (b): the assisted IDs of the audit sample leave the audit and keep the
-    A = B verdict; the assisted disagreements have no unassisted verdict and count as U."""
+def final_verdicts_unassisted(findings, a, b, joaquin, disagreeing, audit, assisted):
+    """Version (b): the assisted IDs of the audit sample leave the audit and keep the A = B verdict;
+    the assisted disagreements have no unassisted verdict and count as U."""
     assisted = set(assisted)
     if not assisted <= set(disagreeing) | set(audit):
         raise SystemExit(f"assisted IDs not reviewed by Joaquín: {sorted(assisted - set(disagreeing) - set(audit))}")
@@ -206,7 +227,7 @@ def evaluate(rs, corpora, reports, final_full, review):
     if missing:
         raise SystemExit(f"final verdicts missing for {missing}")
     final = {f["id"]: final_full[f["id"]]["verdict"] for f in findings}
-    m = {"reviewMethod": "two independent AI reviews (A, B); disagreements and an audit sample of 20 decided by Joaquín (DEVIATIONS.md §3/§3a)",
+    m = {"reviewMethod": "two independent AI reviews (A, B); disagreements and an audit sample of 20 decided by Joaquín (PREREGISTRATION.md)",
          "review": review, "languages": {}}
     for lang in LANGS:
         fl = [f for f in findings if f["language"] == lang]
@@ -253,18 +274,22 @@ def evaluate(rs, corpora, reports, final_full, review):
     return m
 
 
-def both(m_a, m_b):
-    """DEVIATIONS.md §3b: both versions are published; per language, if criterion 1 or criterion 2 differs
-    between (a) and (b), the less favourable (NOT MET) is taken."""
+def both(m_a, m_b, assisted):
+    """Both versions are published; per language, if criterion 1 or criterion 2 differs between (a) and
+    (b), the less favourable (NOT MET) is taken. m_b is None when no ID is assisted: (a) decides alone."""
     def decide(key):
         out = {}
         for lang in LANGS:
-            sa, sb = m_a["languages"][lang][key]["status"], m_b["languages"][lang][key]["status"]
-            out[lang] = {"a": sa, "b": sb, "status": "MET" if sa == sb == "MET" else "NOT MET", "differs": sa != sb}
+            sa = m_a["languages"][lang][key]["status"]
+            sb = m_b["languages"][lang][key]["status"] if m_b else None
+            out[lang] = {"a": sa, "b": sb, "status": "MET" if sa == "MET" and sb in ("MET", None) else "NOT MET",
+                         "differs": sb is not None and sa != sb}
         return out
-    no_audit = [lang for lang, x in m_b["review"]["audit"]["byLanguage"].items() if x["n"] == 0]
-    return {"assisted": list(ASSISTED),
-            "rule": "criteria 1 and 2 computed (a) with all verdicts and (b) without the assisted IDs in the audit sample; if they differ, the less favourable is taken (DEVIATIONS.md §3b)",
+    no_audit = [lang for lang, x in m_b["review"]["audit"]["byLanguage"].items() if x["n"] == 0] if m_b else []
+    return {"assisted": list(assisted),
+            "rule": ("criteria 1 and 2 computed (a) with all verdicts and (b) without the assisted IDs in the audit sample; "
+                     "if they differ, the less favourable is taken (PREREGISTRATION.md)") if m_b else
+                    "no assisted verdict declared in REVIEW-LOG.md: (a) all verdicts decides",
             "criterion1": decide("criterion1"), "criterion2": decide("criterion2"),
             "notes": [f"In (b) no {lang} audit case remains: the {lang} audit exists only in the assisted version (a)." for lang in no_audit],
             "a": m_a, "b": m_b}
@@ -274,10 +299,10 @@ def _fmt(x):
     return "—" if x is None else (f"{x[0]}–{x[1]}" if isinstance(x, list) else str(x))
 
 
-def render(m, level="#", title="Metrics — test-corpus-2"):
+def render(m, level="#", title="Metrics — test-corpus-3"):
     sub = level + "#"
     md = [f"{level} {title}", "", "Rendered by `scripts/evaluate.py` from `metrics.json`.", "",
-          "Reviewed by two independent AIs; disagreements and a sample of 20 audited by the author (`DEVIATIONS.md` §3/§3a).", "",
+          "Reviewed by two independent AIs; disagreements and a sample of 20 audited by the author (`PREREGISTRATION.md`, \"Review method\").", "",
           "Reaching 90 % as a point estimate does **not** show with 95 % confidence that the true precision is ≥ 90 %; the Wilson interval is published next to it.", ""]
     for lang, L in m["languages"].items():
         p, fp, v = L["precision"], L["fpPer1000"], L["volume"]
@@ -305,8 +330,11 @@ def render(m, level="#", title="Metrics — test-corpus-2"):
 
 
 def render_both(m):
-    md = ["# Metrics — test-corpus-2", "",
-          f"Assisted verdicts (`DEVIATIONS.md` §3b): {', '.join(m['assisted'])}. Rule: {m['rule']}.", "",
+    if m["b"] is None:
+        md = ["# Metrics — test-corpus-3", "", f"Assisted verdicts (`REVIEW-LOG.md`): none. Rule: {m['rule']}.", ""]
+        return "\n".join(md + [render(m["a"], "##", "All verdicts")])
+    md = ["# Metrics — test-corpus-3", "",
+          f"Assisted verdicts (`REVIEW-LOG.md`): {', '.join(m['assisted'])}. Rule: {m['rule']}.", "",
           "| language | criterion | (a) all verdicts | (b) without assisted | **decides** |", "|---|---|---|---|---|"]
     md += [f"| {lang} | {k[-1]} | {m[k][lang]['a']} | {m[k][lang]['b']} | **{m[k][lang]['status']}** |" for lang in LANGS for k in ("criterion1", "criterion2")]
     md += [""] + [f"- **{n}**" for n in m["notes"]] + [""]
@@ -319,7 +347,7 @@ def main(argv):
         raise SystemExit(__doc__)
     import review_ab  # here, not at import: review_ab imports this module
     import review_sheet
-    for path, name in ((argv[0], "audit-claude.sha256"), (argv[1], "audit-claude-B.sha256")):
+    for path, name in ((argv[0], "audit-claude-A.sha256"), (argv[1], "audit-claude-B.sha256")):
         if review_ab.sha256(path) != review_ab.committed(name):
             raise SystemExit(f"{path} does not match {name}")
     rs = json.loads((DIR / "review-set.json").read_text())
@@ -331,14 +359,17 @@ def main(argv):
     cmp = review_ab.compare([a[i] for i in ids], [b[i] for i in ids], ids)
     if cmp["all"]["disagreeing"] != disagreeing or review_ab.audit_sample([i for i in ids if i not in set(disagreeing)]) != audit:
         raise SystemExit("REVIEW-AB.md does not match A and B")
+    assisted = assisted_ids((DIR / "REVIEW-LOG.md").read_text())
     final_a, review_a = final_verdicts(rs["findings"], a, b, joaquin, disagreeing, audit)
-    final_b, review_b = final_verdicts_unassisted(rs["findings"], a, b, joaquin, disagreeing, audit)
+    if assisted:
+        final_b, review_b = final_verdicts_unassisted(rs["findings"], a, b, joaquin, disagreeing, audit, assisted)
     corpora, reports = {}, {}
     for lang in LANGS:
         corpora[lang] = json.loads((DIR / f"corpus-{lang}.json").read_text())
         reports[lang] = {c["full_name"]: json.loads((DIR / "results" / lang / f"{c['full_name'].replace('/', '__')}.json").read_text())
                          for c in corpora[lang]["processed"] if c["status"] == "included"}
-    m = both(evaluate(rs, corpora, reports, final_a, review_a), evaluate(rs, corpora, reports, final_b, review_b))
+    m = both(evaluate(rs, corpora, reports, final_a, review_a),
+             evaluate(rs, corpora, reports, final_b, review_b) if assisted else None, assisted)
     (DIR / "metrics.json").write_text(json.dumps(m, indent=2) + "\n")
     (DIR / "METRICS.md").write_text(render_both(m) + "\n")
     print(json.dumps({lang: {k: {x: m[k][lang][x] for x in ("a", "b", "status")} for k in ("criterion1", "criterion2")} for lang in LANGS}, indent=2))
