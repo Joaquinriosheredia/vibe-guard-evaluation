@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-1061-source-dependency-filters/source-dependency/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-250-excludes/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-250-includes/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-267-resolve-test-jar-type/module-1/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-267-resolve-test-jar-type/module-2/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-267-resolve-tests-classifier/module-1/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-267-resolve-tests-classifier/module-2/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-299-ehcache-jaxb-resolution-failure/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-302-runtime-scope-direct-resolution/project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-302-runtime-scope-direct-resolution/runtime-dependency/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-302-runtime-scope-transitive-resolution/project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-302-runtime-scope-transitive-resolution/transitive-runtime-dependency/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-327-non-zip-archive-handling/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-358-unpackaged-jar-plugin/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-359-modular-jar-plugin/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-363-packaged-jvm-plugin-with-mainclass-set/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-363-packaged-jvm-plugin-without-mainclass-set/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-372-paths-with-spaces/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-397-jvm-plugin-commandline-args/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-397-jvm-plugin-jvm-args/some-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-438-incremental-compilation-no-changes/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-438-standard-compilation-no-changes/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-565-attach-descriptor-file/attach-defaults/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-689-overridden-protobuf-paths/child-with-absolute-path/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-689-overridden-protobuf-paths/child-with-relative-path/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-719-clear-output-directories/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-762-additional-args/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/gh-782-sanctioned-executable-paths/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/grpc-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/http-url-grpc-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/http-url-protoc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-main-legacy-source-directory/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-main-lite/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-main/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-paths/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-test-legacy-source-directory/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-test-lite/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/java-test/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/kotlin-main/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/kotlin-test/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/path-grpc-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/path-protoc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/per-plugin-output-paths/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/per-plugin-skip/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/reactor-grpc-binary-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/reactor-grpc-jvm-plugin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/scalapb-plugin/src/main/scala/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/scalapb-plugin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/skip/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/test-dependency-resolution/main-project/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/test-dependency-resolution/test-dependency/src/main/protobuf/org/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/it/test-dependency-resolution/test-project/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "protobuf-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 67
+      }
+    ],
+    "filesExcluded": 87
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 433,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

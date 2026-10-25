@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "nrich-core-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-encrypt-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-encrypt-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-encrypt/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "nrich-excel-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-excel-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-excel/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "nrich-form-configuration-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-form-configuration-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "nrich-form-configuration/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "nrich-jackson-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "nrich-jackson/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "nrich-javascript-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-javascript/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "nrich-logging-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-logging-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-logging/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "nrich-notification-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-notification-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-notification/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "nrich-registry-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-registry-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "nrich-registry/src/test",
+        "pattern": "test",
+        "files": 78
+      },
+      {
+        "path": "nrich-search-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-search-repository-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "nrich-search-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-search/src/test",
+        "pattern": "test",
+        "files": 58
+      },
+      {
+        "path": "nrich-security-csrf-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-security-csrf-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-security-csrf/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "nrich-spring-boot/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "nrich-spring/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "nrich-validation-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-validation-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-validation/src/test",
+        "pattern": "test",
+        "files": 61
+      },
+      {
+        "path": "nrich-webmvc-api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "nrich-webmvc-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "nrich-webmvc/src/test",
+        "pattern": "test",
+        "files": 20
+      }
+    ],
+    "filesExcluded": 321
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 672,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

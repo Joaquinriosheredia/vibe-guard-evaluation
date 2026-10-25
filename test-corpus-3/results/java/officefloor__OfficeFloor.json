@@ -1,0 +1,1203 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "activity/officeactivity/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "activity/officeadmin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/officecompose/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "activity/officedependency/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/officeescalation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/officegovern/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/officemanagedobject/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/officeprocedure/src/main/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "activity/officeprocedure/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "activity/officesupplier/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/officeteam/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "activity/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "cache/officecache/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "cache/officecache_constant/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cache/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "core/officecompiler/src/main/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "core/officecompiler/src/test",
+        "pattern": "test",
+        "files": 213
+      },
+      {
+        "path": "core/officeframe/src/main/test",
+        "pattern": "test",
+        "files": 56
+      },
+      {
+        "path": "core/officeframe/src/test",
+        "pattern": "test",
+        "files": 230
+      },
+      {
+        "path": "core/officemodelgen/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "core/officexml/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "core/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "declare/officereactor/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "declare/officevertx/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "declare/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "docker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jee/officejaxrs/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "jee/officeservlet/src/main/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jee/officeservlet/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "jee/officeservlet_war/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jee/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "maven/officefloor-googlefunction-maven-plugin/src/it/googlefunction/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "maven/officefloor-googlefunction-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "maven/officefloor-googlefunction-maven/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "maven/officefloor-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "maven/officefloor-sam-maven-plugin/src/it/sam/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "maven/officefloor-sam-maven-plugin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "maven/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "persistence/officeflyway/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officeflyway_migrate/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "persistence/officeflyway_test/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officejdbc/src/main/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "persistence/officejdbc/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "persistence/officejdbc_h2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "persistence/officejdbc_h2_test/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officejdbc_hikari/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "persistence/officejdbc_postgresql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "persistence/officejdbc_postgresql_test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officejpa/src/main/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officejpa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officejpa_datanucleus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officejpa_eclipselink/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officejpa_hibernate/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officejpa_postgresql/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "persistence/officenosql_cosmosdb/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "persistence/officenosql_cosmosdb_connect/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "persistence/officenosql_cosmosdb_test/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "persistence/officenosql_dynamodb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "persistence/officenosql_dynamodb_connect/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "persistence/officenosql_dynamodb_test/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officenosql_firestore/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "persistence/officenosql_firestore_connect/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "persistence/officenosql_firestore_test/src/main/resources/net/officefloor/nosql/firestore/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "persistence/officenosql_firestore_test/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officenosql_objectify/src/main/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officenosql_objectify/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "persistence/officer2dbc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "persistence/officevertx_sqlclient/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "persistence/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/kotlin/officekotlin/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "polyglot/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/officepolyglot_test/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "polyglot/scala/officescala/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "polyglot/scala/officescala_cats/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/scala/officescala_zio/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/scala/officescalatest/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/scala/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/script/officejavascript/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "polyglot/script/officescript/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "polyglot/script/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "polyglot/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "server/officeserver/src/main/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "server/officeserver/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "server/officeserver_default/src/test",
+        "pattern": "test",
+        "files": 31
+      },
+      {
+        "path": "server/officeserver_googlefunction/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "server/officeserver_googlefunction_test/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "server/officeserver_netty/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/officeserver_sam/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "server/officeserver_servlet/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "server/officeserver_servlet_test/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "server/officeserver_test/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "server/officeserver_undertow/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/officeserver_vertx/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "server/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "spring/officespring/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "spring/officespring_data/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring/officespring_jaxrs/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "spring/officespring_webclient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring/officespring_webflux/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring/officespring_webmvc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "springboot/officefloor-rest-spring-boot-3-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "springboot/officefloor-rest-spring-boot-4-starter-tests/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "springboot/officefloor-rest-spring-boot-4-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "springboot/officefloor-rest-spring-boot-starter-tests/src/test",
+        "pattern": "test",
+        "files": 232
+      },
+      {
+        "path": "springboot/officefloor-rest-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "springboot/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/cloud/datastores/CosmosAsyncDbHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/cloud/datastores/CosmosDbHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/cloud/datastores/DynamoDbHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/cloud/datastores/FirestoreHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/cloud/datastores/ObjectifyHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/cloud/datastores/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/cloud/platforms/AwsSamHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/cloud/platforms/AzureWebAppsHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/cloud/platforms/DeployHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/cloud/platforms/GoogleFunctionHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/cloud/platforms/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/cloud/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/polyglot/CatsHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/polyglot/JavaScriptHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/features/polyglot/KotlinHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/polyglot/ScalaHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/polyglot/ZioHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/polyglot/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/reactive/R2dbcHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/features/reactive/ReactorHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/features/reactive/VertxSqlClientHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/features/reactive/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/features/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/legacy/HttpServletHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/legacy/JaxRsHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/legacy/JaxRsWarHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/legacy/ServletHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/legacy/WarApp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/legacy/WarHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/legacy/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/native/core/DiPojoHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/native/core/EnvironmentHttpServer/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "tutorials/native/core/ExceptionHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/native/core/LoggerHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/native/core/RestHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/core/StaticContentHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/core/SwaggerHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/core/VariableHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/core/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/native/infrastructure/ActivityHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/infrastructure/ConstantCacheHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/infrastructure/StartBeforeHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/infrastructure/TeamHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/native/infrastructure/TestHttpServer/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "tutorials/native/infrastructure/ThreadAffinityHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/infrastructure/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/native/persistence/DatabaseHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/persistence/FlywayHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/persistence/TransactionHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/persistence/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/native/security/AuthenticationHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/security/JwtAuthorityHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/security/JwtHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/security/JwtResourceHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/native/security/SecureLinkHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/security/SecurePageHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/security/SessionHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/native/security/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/native/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/reference/JaxRsApp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/reference/SpringWebFluxApp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "tutorials/reference/SpringWebMvcApp/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "tutorials/reference/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/spring_officefloor/SpringHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/spring_officefloor/SpringWebFluxHttpServer/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "tutorials/spring_officefloor/SpringWebMvcHttpServer/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "tutorials/spring_officefloor/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/SpringRestActuatorHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestCatsHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/SpringRestConversionReference/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/SpringRestCorsHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestCrudHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestDataJpaHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestExceptionHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/springboot/SpringRestFilterHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestFunctionHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestGettingStartedHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/springboot/SpringRestGovernanceHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/springboot/SpringRestJavaScriptHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestKotlinHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/SpringRestManagedObjectHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestOpenApiHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestOrchestrationReference/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/SpringRestProblemDetailHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestQualifierHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestRelationshipHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestResolveHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/springboot/SpringRestScalaHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/SpringRestSecurityHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestServletHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestSpringBoot3HttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestSupplierHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestTeamHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestTestingHttpServer/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "tutorials/springboot/SpringRestThymeleafHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestValidationHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestVariableHttpServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tutorials/springboot/SpringRestZioHttpServer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/springboot/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "tutorials/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "web/officejson_default/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "web/officejson_jackson/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "web/officejwt/src/main/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "web/officejwt/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "web/officejwt_authority/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "web/officeweb/src/main/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "web/officeweb/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "web/officeweb_configuration/src/main/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "web/officeweb_configuration/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "web/officeweb_executive/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "web/officeweb_openapi/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "web/officeweb_resource/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "web/officeweb_rest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "web/officeweb_security/src/main/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "web/officeweb_security/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "web/officeweb_template/src/main/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "web/officeweb_template/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "web/officeweb_thymeleaf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "web/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "web/woof/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "web/woof_test/src/test",
+        "pattern": "test",
+        "files": 9
+      }
+    ],
+    "filesExcluded": 1440
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 6138,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

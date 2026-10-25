@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": ".claude/hooks/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": ".codex/hooks/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "nodejs-frontend/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "scripts/sage_harness/hooks/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "springboot-backend/src/test",
+        "pattern": "test",
+        "files": 69
+      }
+    ],
+    "filesExcluded": 70
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 291,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.15.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 2,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "springboot-backend/src/main/java/webChat/service/kafka/ChatRoomEventConsumer.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "springboot-backend/src/main/java/webChat/service/routing/InstanceProvider.java",
+      "line": 199,
+      "extra": {}
+    }
+  ]
+}

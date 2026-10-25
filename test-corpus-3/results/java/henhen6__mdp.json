@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "mdp-apps/md-api/api-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mdp-apps/md-console/console-server/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "mdp-apps/md-console/console-service/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "mdp-apps/md-gateway/sop-gateway-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mdp-apps/md-open/open-server/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "mdp-apps/md-open/open-service/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "mdp-apps/md-public/md-common-pojo/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mdp-apps/md-public/md-resource-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mdp-apps/md-server/boot-server/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "mdp-apps/md-workbench/workbench-server/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mdp-apps/md-workbench/workbench-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mdp-base/md-core/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "mdp-base/md-db-mybatis-flex/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "mdp-base/md-mvc-flex/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mdp-base/md-sa-token/sa-token-sso-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "mdp-base/md-sop-support/sop-service-support/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mdp-base/md-util/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "mdp-sdk/mdp-sdk-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "mdp-sdk/mdp-simple-sdk/src/test",
+        "pattern": "test",
+        "files": 10
+      }
+    ],
+    "filesExcluded": 95
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1824,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 2,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "mdp-apps/md-gateway/sop-gateway-server/src/main/resources/application-dev.yml",
+      "line": 17,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "mdp-apps/md-server/worker-server/src/main/resources/application-dev.yml",
+      "line": 20,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.3.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "spring-cloud-open-service-broker-acceptance-webflux/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-cloud-open-service-broker-acceptance-webmvc/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-cloud-open-service-broker-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "spring-cloud-open-service-broker-core/src/test",
+        "pattern": "test",
+        "files": 70
+      },
+      {
+        "path": "spring-cloud-open-service-broker-docs/src/test",
+        "pattern": "test",
+        "files": 10
+      }
+    ],
+    "filesExcluded": 131
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.0.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 349,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}
