@@ -120,6 +120,10 @@ scheduled tasks can starve:
   than one thread, or a scheduler that starts a new thread per run. Spring Boot ≥ 3.2 with
   `spring.threads.virtual.enabled=true` uses `SimpleAsyncTaskScheduler`, one virtual thread
   per run, so nothing waits behind the job.
+- **U, never FP**, when the repository does not let you determine the scheduler pool, its
+  configuration or whether other `@Scheduled` jobs exist (for example, the pool size or the
+  virtual-thread switch comes from an environment variable or a profile outside the
+  repository, or jobs are registered from a dependency).
 
 Scope: this applies to designed waits. A blocking call that **is** the job's own work
 (a `Thread.sleep` in the job, J015, TC3 J001/J003) stays under the rule criteria (§5): the

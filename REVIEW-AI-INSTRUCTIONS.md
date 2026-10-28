@@ -76,7 +76,9 @@ message states an impact the code does not support (say which part in the reason
   dedicated pool): TP when the application has other `@Scheduled` jobs and the scheduler has
   one thread (Spring's default); FP when there is no other scheduled job, the scheduler pool
   has more than one thread, or each run gets its own thread (Spring Boot ≥ 3.2 with
-  `spring.threads.virtual.enabled=true`). A `Thread.sleep` that is the job's own work is not
+  `spring.threads.virtual.enabled=true`); **U, never FP**, when the repository does not let
+  you determine the pool, its configuration or whether other `@Scheduled` jobs exist. A
+  `Thread.sleep` that is the job's own work is not
   a designed wait: it blocks the job's thread whatever the pool.
 - **Discarded task (PYVIBE-012/014):** TP when no reference to the task is kept anywhere.
   A body that catches its exceptions does not make it FP; it makes the finding Overstated if
