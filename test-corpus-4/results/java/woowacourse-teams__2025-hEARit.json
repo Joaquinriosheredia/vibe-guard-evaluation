@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "android/app/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "backend/admin/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "backend/app/src/test",
+        "pattern": "test",
+        "files": 77
+      },
+      {
+        "path": "backend/core/src/test",
+        "pattern": "test",
+        "files": 19
+      }
+    ],
+    "filesExcluded": 115
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 568,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 4,
+    "warning": 0,
+    "info": 0,
+    "total": 4
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CategoryRepository)",
+      "file": "backend/admin/src/main/java/com/onair/hearit/admin/ai/presentation/AiViewController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (KeywordRepository)",
+      "file": "backend/admin/src/main/java/com/onair/hearit/admin/ai/presentation/AiViewController.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (categoryRepository)",
+      "file": "backend/admin/src/main/java/com/onair/hearit/admin/ai/presentation/AiViewController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (keywordRepository)",
+      "file": "backend/admin/src/main/java/com/onair/hearit/admin/ai/presentation/AiViewController.java",
+      "line": 43,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "basic-with-db/insurance-app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "basic-with-db/person-app/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "camel-spring/person-demo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "cpu-killer/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "messaging/simple-consumer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "micro-springboot/insurance-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "micro-springboot/person-service/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 7
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 237,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 7,
+    "warning": 9,
+    "info": 0,
+    "total": 16
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InsuranceRepository)",
+      "file": "micro-springboot/insurance-service/src/main/java/pl/redhat/samples/insurance/controller/InsuranceController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InsuranceViewRepository)",
+      "file": "micro-springboot/insurance-service/src/main/java/pl/redhat/samples/insurance/controller/InsuranceController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (InsuranceRepository)",
+      "file": "micro-springboot/insurance-service/src/main/java/pl/redhat/samples/insurance/controller/InsuranceController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PersonRepository)",
+      "file": "micro-springboot/person-service/src/main/java/pl/redhat/samples/person/controller/PersonController.java",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PersonViewRepository)",
+      "file": "micro-springboot/person-service/src/main/java/pl/redhat/samples/person/controller/PersonController.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PersonRepository)",
+      "file": "micro-springboot/person-service/src/main/java/pl/redhat/samples/person/controller/PersonController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DepartmentRepository)",
+      "file": "micro-view/department/src/main/java/pl/redhat/samples/department/controller/DepartmentController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/consumer/src/main/resources/application.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/event-gateway/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/order-query-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/order-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/payment-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/producer/src/main/resources/application.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/shipment-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/streams/consumer-streams/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "event-driven/streams/producer-streams/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

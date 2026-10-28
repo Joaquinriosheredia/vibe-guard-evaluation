@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "wamp2spring-core/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "wamp2spring-reactive/src/test",
+        "pattern": "test",
+        "files": 29
+      },
+      {
+        "path": "wamp2spring-servlet/src/test",
+        "pattern": "test",
+        "files": 31
+      }
+    ],
+    "filesExcluded": 110
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 281,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

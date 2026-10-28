@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 9
+      },
+      {
+        "path": "metrics-reporter/metrics-reporter-datadog-spring-boot/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "openapi-validation-api/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "openapi-validation-core/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-boot-starter/spring-boot-starter-core/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-boot-starter/spring-boot-starter-web/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "spring-boot-starter/spring-boot-starter-webflux/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "test",
+        "pattern": "test",
+        "files": 4
+      }
+    ],
+    "filesExcluded": 41
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 133,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

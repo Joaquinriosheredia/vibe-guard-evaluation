@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "samples/xapi-server/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "xapi-client/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "xapi-model-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "xapi-model/src/test",
+        "pattern": "test",
+        "files": 34
+      }
+    ],
+    "filesExcluded": 58
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 292,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 2,
+    "warning": 0,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (StateRepository)",
+      "file": "samples/xapi-server/src/main/java/dev/learning/xapi/samples/xapiserver/StateController.java",
+      "line": 88,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (StateRepository)",
+      "file": "samples/xapi-server/src/main/java/dev/learning/xapi/samples/xapiserver/StateController.java",
+      "line": 95,
+      "extra": {}
+    }
+  ]
+}

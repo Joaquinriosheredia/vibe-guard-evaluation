@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "demos/embedding-cache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/quickstart/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/rag-multimodal/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "demos/rerank-after-retrieval/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/semantic-cache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/server-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "demos/studio-r2-sidecart/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "demos/vcr-e2e/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-bench/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "vectors-cache-jcache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-cache-langchain4j/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "vectors-cache-semantic-db/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-cache-semantic-langchain4j/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-cache-semantic-spring-ai/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "vectors-cache-spring-ai/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "vectors-cache/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "vectors-cluster/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "vectors-core/src/test",
+        "pattern": "test",
+        "files": 87
+      },
+      {
+        "path": "vectors-db-jackson/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-db/src/test",
+        "pattern": "test",
+        "files": 91
+      },
+      {
+        "path": "vectors-distributed/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "vectors-gpu/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "vectors-hnsw/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "vectors-hybrid/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "vectors-ingest/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "vectors-ivf/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "vectors-jakarta-batch/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-langchain4j/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "vectors-optimizer/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "vectors-quantization/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "vectors-router/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "vectors-server-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-server/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "vectors-spring-ai/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "vectors-spring-batch/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-storage/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "vectors-studio-core/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "vectors-studio-distributed/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "vectors-studio-sidecart/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "vectors-studio-web/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "vectors-text-h2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-vamana/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "vectors-vcr-core/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "vectors-vcr-junit5/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "vectors-vcr-langchain4j/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "vectors-vcr-semantic-db/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "vectors-vcr-serde-avaje/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-vcr-serde-jackson/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "vectors-vcr-spring-ai/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "vectors-vcr-testng/src/test",
+        "pattern": "test",
+        "files": 6
+      }
+    ],
+    "filesExcluded": 466
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1308,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

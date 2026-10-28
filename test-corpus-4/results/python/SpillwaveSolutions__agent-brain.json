@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "agent-brain-cli/tests",
+        "pattern": "tests",
+        "files": 66
+      },
+      {
+        "path": "agent-brain-mcp/tests",
+        "pattern": "tests",
+        "files": 105
+      },
+      {
+        "path": "agent-brain-plugin/tests",
+        "pattern": "tests",
+        "files": 2
+      },
+      {
+        "path": "agent-brain-server/tests",
+        "pattern": "tests",
+        "files": 125
+      },
+      {
+        "path": "agent-brain-uds/tests",
+        "pattern": "tests",
+        "files": 6
+      },
+      {
+        "path": "e2e-cli/fixtures",
+        "pattern": "fixtures",
+        "files": 2
+      },
+      {
+        "path": "e2e-cli/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "e2e/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "e2e/sample-project/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "framework-matrix/ts/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "integration/tests",
+        "pattern": "tests",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 309
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 0,
+    "warning": 8,
+    "info": 0,
+    "total": 9
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "agent-brain-server/agent_brain_server/services/indexing_service.py",
+      "line": 208,
+      "extra": {
+        "function": "start_indexing",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "agent-brain-server/agent_brain_server/api/uds_bind.py",
+      "line": 256,
+      "extra": {
+        "function": "serve_uds_only",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "agent-brain-server/agent_brain_server/api/uds_bind.py",
+      "line": 303,
+      "extra": {
+        "function": "serve_dual",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent-brain-server/agent_brain_server/job_queue/job_store.py",
+      "line": 138,
+      "extra": {
+        "function": "_load_jobs",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent-brain-server/agent_brain_server/job_queue/job_store.py",
+      "line": 153,
+      "extra": {
+        "function": "_load_jobs",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent-brain-server/agent_brain_server/job_queue/job_store.py",
+      "line": 202,
+      "extra": {
+        "function": "_persist_job",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent-brain-server/agent_brain_server/job_queue/job_store.py",
+      "line": 220,
+      "extra": {
+        "function": "_compact",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent-brain-server/agent_brain_server/job_queue/job_store.py",
+      "line": 230,
+      "extra": {
+        "function": "_compact",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "scripts/spike_dual_bind.py",
+      "line": 92,
+      "extra": {
+        "function": "_serve_dual",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

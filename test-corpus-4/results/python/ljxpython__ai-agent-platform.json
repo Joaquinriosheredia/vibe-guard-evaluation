@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "apps/platform-api/tests",
+        "pattern": "tests",
+        "files": 97
+      },
+      {
+        "path": "apps/runtime-service/tests",
+        "pattern": "tests",
+        "files": 209
+      },
+      {
+        "path": "docs/projects/20260913-dearflow-agent/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "docs/projects/20261007-agent-usage-cost-governance/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "docs/projects/20261011-project-knowledge-mcp/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "docs/projects/20261011-token-usage-dashboard/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "docs/projects/20261012-project-member-knowledge-upload/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "docs/projects/20261013-knowledge-documents-platform/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "scripts/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 309
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 0,
+    "warning": 3,
+    "info": 0,
+    "total": 4
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "apps/runtime-service/src/runtime_service/workspace/execution.py",
+      "line": 100,
+      "extra": {
+        "function": "_cleanup",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "apps/platform-api/scripts/verify_usage_capacity_http.py",
+      "line": 342,
+      "extra": {
+        "function": "reads",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "apps/runtime-service/scripts/r6_performance_baseline.py",
+      "line": 96,
+      "extra": {
+        "function": "_run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "apps/runtime-service/scripts/verify_usage_capacity.py",
+      "line": 292,
+      "extra": {
+        "function": "reads",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

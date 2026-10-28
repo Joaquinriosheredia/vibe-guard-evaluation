@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "dashboard/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 63
+      }
+    ],
+    "filesExcluded": 63
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 4,
+    "major": 0,
+    "warning": 6,
+    "info": 0,
+    "total": 10
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "agent/services/flow_client.py",
+      "line": 249,
+      "extra": {
+        "function": "handle_message",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "agent/services/flow_client.py",
+      "line": 265,
+      "extra": {
+        "function": "handle_message",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "agent/services/flow_client.py",
+      "line": 269,
+      "extra": {
+        "function": "handle_message",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": "agent/worker/processor.py",
+      "line": 151,
+      "extra": {
+        "function": "_run_loop",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent/api/flow.py",
+      "line": 517,
+      "extra": {
+        "function": "upload_image",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent/sdk/services/operations.py",
+      "line": 201,
+      "extra": {
+        "function": "_poll_workflows",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "agent/services/media_library.py",
+      "line": 171,
+      "extra": {
+        "function": "describe",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-019",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "retry loop without backoff — except retries immediately with no delay",
+      "file": "agent/services/subtitle_translation.py",
+      "line": 245,
+      "extra": {
+        "function": "translate_group",
+        "evidence": "Add `await asyncio.sleep(2 ** attempt)` before continue, or use tenacity / backoff library",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent/services/video_reviewer.py",
+      "line": 139,
+      "extra": {
+        "function": "_download_video",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "agent/services/video_reviewer.py",
+      "line": 176,
+      "extra": {
+        "function": "_download_via_get_media",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

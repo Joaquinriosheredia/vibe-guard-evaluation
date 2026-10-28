@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "backend/src/test",
+        "pattern": "test",
+        "files": 17
+      }
+    ],
+    "filesExcluded": 17
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 257,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 4,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "backend/src/main/java/ch/xxx/manager/common/events/KafkaProducer.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "backend/src/main/java/ch/xxx/manager/common/events/KafkaProducer.java",
+      "line": 78,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "backend/src/main/java/ch/xxx/manager/common/events/KafkaConsumer.java",
+      "line": 51,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "backend/src/main/java/ch/xxx/manager/common/events/KafkaConsumer.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "helm/angularportfoliomgr/values.yaml",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "helm/kafka/values.yaml",
+      "line": 5,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "backend/src/test",
+        "pattern": "test",
+        "files": 220
+      }
+    ],
+    "filesExcluded": 220
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1147,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 53,
+    "warning": 2,
+    "info": 0,
+    "total": 55
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SlowQueryHistoryRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SlowLogSourceConfigRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (QueryFingerprintRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (QueryPerformanceHistoryRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (QueryPerformanceRegressionRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (QueryPerformanceBaselineRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 56,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SecurityEventRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 68,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserSessionRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 71,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userSessionRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 386,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminController.java",
+      "line": 411,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AdminSettingsController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AuthController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserSessionRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AuthController.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserMfaEnrollmentRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AuthController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PrivateBetaRequestRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AuthController.java",
+      "line": 49,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/AuthInternalController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/BootstrapController.java",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/BootstrapController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ConnectionInitStatusRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/ConnectionController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ConnectionInitHistoryRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/ConnectionController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SchemaDocumentationRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/ConnectionController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SavedDashboardRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/DashboardWorkspaceController.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (savedDashboardRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/DashboardWorkspaceController.java",
+      "line": 211,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CredentialRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/DigestPreferenceController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TableStatsHistoryRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/GrowthMonitoringController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (GrowthAnomalyRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/GrowthMonitoringController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (GrowthAlertConfigurationRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/GrowthMonitoringController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/ImpersonationController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ResourceLimitsRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/ResourceLimitsController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (resourceLimitsRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/ResourceLimitsController.java",
+      "line": 137,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ResourceLimitsRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CapacityForecastRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DatabaseEventRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SentinelRecommendationRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 36,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (recommendationRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 97,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (forecastRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 98,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (eventRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 99,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (limitsRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 100,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (limitsRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 123,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (eventRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SentinelDemoDataController.java",
+      "line": 243,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CredentialRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SetupController.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SlackDigestLogRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SlackAdminController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SlackDigestConfigRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SlackAdminController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (digestConfigRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SlackAdminController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ConnectionAnalyticsConfigRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SlowQueryAnalyticsController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (configRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/SlowQueryAnalyticsController.java",
+      "line": 205,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CredentialRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/TrainingController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/UserController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (McpTokenRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/UserController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/UserController.java",
+      "line": 64,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (WorkloadAnalysisReportRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/WorkloadAnalysisController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (reportRepository)",
+      "file": "backend/src/main/java/com/dbaagent/controller/WorkloadAnalysisController.java",
+      "line": 111,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "backend/src/main/java/com/dbaagent/controller/LlmProxyController.java",
+      "line": 143,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "backend/src/main/java/com/dbaagent/service/DatadogLogFetchService.java",
+      "line": 146,
+      "extra": {}
+    }
+  ]
+}

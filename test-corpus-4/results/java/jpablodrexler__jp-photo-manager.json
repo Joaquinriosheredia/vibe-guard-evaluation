@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "JPPhotoManagerWeb/backend/src/test",
+        "pattern": "test",
+        "files": 174
+      },
+      {
+        "path": "JPPhotoManagerWeb/frontend/cypress/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 174
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 664,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 18,
+    "info": 0,
+    "total": 18
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AssetExifProcessor.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AssetHashProcessor.java",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AssetSearchCacheInvalidationListener.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AssetSearchCacheInvalidationListener.java",
+      "line": 46,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AssetThumbnailProcessor.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AuditLogKafkaListener.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AuditLogKafkaListener.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AuditLogKafkaListener.java",
+      "line": 71,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AuditLogKafkaListener.java",
+      "line": 93,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/AuditLogKafkaListener.java",
+      "line": 110,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 72,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 72,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 103,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 103,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 134,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "JPPhotoManagerWeb/backend/src/main/java/com/jpablodrexler/photomanager/infrastructure/kafka/KafkaProgressListener.java",
+      "line": 134,
+      "extra": {}
+    }
+  ]
+}

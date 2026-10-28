@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "admin-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "api-gateway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "inventory-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "order-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "product-service/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 5
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 65,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 11,
+    "info": 0,
+    "total": 11
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-ex.yaml",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-ex.yaml",
+      "line": 78,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-ex.yaml",
+      "line": 93,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose.yaml",
+      "line": 2,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose.yaml",
+      "line": 3,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose.yaml",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/com/minejava/notificationservice/NotificationServiceApplication.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "notification-service/src/main/java/com/minejava/notificationservice/NotificationServiceApplication.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "notification-service/src/main/resources/application-docker.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "order-service/src/main/resources/application-docker.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "order-service/src/main/resources/application.yaml",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

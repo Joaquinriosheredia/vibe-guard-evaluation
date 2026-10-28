@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "ApacheFlink/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Authentication/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "CSV/Jackson/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "CSV/OpenCSV/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Cassandra/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Clickhouse/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "CompletableFutureCRUD/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "ElasticSearch/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Excel/Poiji/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "GatlingPerformanceTest/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Graphql/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "HLS-Stream/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "JacksonBoot/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "JpaSpecification/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Junit5Spring/src/test",
+        "pattern": "test",
+        "files": 40
+      },
+      {
+        "path": "Keycloak/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "MediaMTX/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Mockito/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "RSocket/RSocketClient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "RSocket/RSocketServer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "RSocket/RSocketWithoutSpring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "RateLimitingWithSpring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "RestHttpInterface/OpenFeign/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "RestHttpInterface/Retrofit/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "RestHttpInterface/SpringDefault/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "SSE/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringAOP/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringBatch/Spring-Batch-52/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringBatch/SpringBatchOld/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringBootResilience4j/ServiceOne/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringBootResilience4j/ServiceTwo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringDataJPA/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringDataRedis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringExpressionLanguage/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringJdbcTemplate/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringLiquibaseMigration/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringReactiveR2DBC/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringValidator/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SpringWorkingYAML/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "StateMachine/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "SwaggerUI2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "TCP-Server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Thymeleaf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebFlux/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "WebFluxServerSideEvent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebSocket/ReactiveClientWebSocket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebSocket/ReactiveWebSocket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebSocket/WebSocketClient/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebSocket/WebSocketHandler/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebSocket/WebSocketSTOMP/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "WebSocket/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "gRPC/user-service/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "riak/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-hazelcast/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 117
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 732,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 10,
+    "warning": 0,
+    "info": 0,
+    "total": 10
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "ElasticSearch/src/main/java/org/khasanof/elasticsearch/controller/MessagesController.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PersonRepository)",
+      "file": "ElasticSearch/src/main/java/org/khasanof/elasticsearch/controller/PersonController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "ElasticSearch/src/main/java/org/khasanof/elasticsearch/controller/PersonController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AuthorRepository)",
+      "file": "Graphql/src/main/java/org/khasanof/graphql/controller/AuthorController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (EmployeeRepository)",
+      "file": "SpringBatch/SpringBatchOld/src/main/java/org/khasanof/springbatch/controller/EmployeeController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CompanyRepository)",
+      "file": "SpringBatch/SpringBatchOld/src/main/java/org/khasanof/springbatch/controller/JobController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (companyRepository)",
+      "file": "SpringBatch/SpringBatchOld/src/main/java/org/khasanof/springbatch/controller/JobController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "hibernate-second-lvl-cache/src/main/java/org/khasanof/resource/MainResource.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "hibernate-second-lvl-cache/src/main/java/org/khasanof/resource/MainResource.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "riak/src/main/java/org/khasanof/riak/controller/UserController.java",
+      "line": 13,
+      "extra": {}
+    }
+  ]
+}

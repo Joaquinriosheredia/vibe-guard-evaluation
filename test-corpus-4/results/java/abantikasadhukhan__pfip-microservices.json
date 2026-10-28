@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [],
+    "filesExcluded": 0
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 53,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 2,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "transaction-service/src/main/java/com/pfip/transactionservice/client/AuthServiceClient.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "user-service/src/main/java/com/pfip/userservice/client/AuthServiceClient.java",
+      "line": 40,
+      "extra": {}
+    }
+  ]
+}

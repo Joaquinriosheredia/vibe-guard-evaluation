@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "audit-trail-service/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "auth-service/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "cart-service/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "config-server/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "gateway-service/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "inventory-service/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "notification-service/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "order-service/src/test",
+        "pattern": "test",
+        "files": 19
+      },
+      {
+        "path": "payment-service/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "saga-e2e/src/test",
+        "pattern": "test",
+        "files": 13
+      }
+    ],
+    "filesExcluded": 145
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 397,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 11,
+    "info": 0,
+    "total": 11
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "audit-trail-service/src/main/java/com/daniellaera/audittrailservice/adapter/in/messaging/AuditConsumer.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "auth-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "inventory-service/src/main/java/com/daniellaera/inventoryservice/adapter/in/messaging/OrderEventListener.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "inventory-service/src/main/java/com/daniellaera/inventoryservice/adapter/in/messaging/PaymentEventListener.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "inventory-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/com/daniellaera/notificationservice/adapter/in/messaging/NotificationConsumer.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/com/daniellaera/notificationservice/adapter/in/messaging/OtpNotificationConsumer.java",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "order-service/src/main/java/com/daniellaera/orderservice/adapter/in/messaging/PaymentEventListener.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "order-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "payment-service/src/main/java/com/daniellaera/paymentservice/adapter/in/messaging/InventoryResultEventListener.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "payment-service/src/main/resources/application.yml",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

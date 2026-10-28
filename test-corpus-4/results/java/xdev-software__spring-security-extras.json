@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "demos/demo/integration-tests/webapp-rest-it/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "demos/demo/integration-tests/webapp-vaadin-it/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "src/caching-validation-provider/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "src/codec-sha256/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "src/crypto-symmetric/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "src/oauth2-oidc-remember-me/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "src/oauth2-oidc/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "src/vaadin/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "src/web-sidecar-actuator/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 35
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 338,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

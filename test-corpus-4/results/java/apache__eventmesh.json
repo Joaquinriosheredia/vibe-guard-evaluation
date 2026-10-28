@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "eventmesh-agent-runtime/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "eventmesh-architecture-guard/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "eventmesh-common/src/test",
+        "pattern": "test",
+        "files": 48
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-canal/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-chatgpt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-dingtalk/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-file/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-http/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-jdbc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-kafka/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-knative/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-lark/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-mcp/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-mongodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-openfunction/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-pravega/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-prometheus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-pulsar/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-rabbitmq/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-rocketmq/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-s3/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-slack/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-spring/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-wechat/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-plugin/eventmesh-connector-wecom/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-connector-runtime/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "eventmesh-protocol-plugin/eventmesh-protocol-a2a/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "eventmesh-protocol-plugin/eventmesh-protocol-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-protocol-plugin/eventmesh-protocol-meshmessage/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventmesh-runtime/src/test",
+        "pattern": "test",
+        "files": 128
+      },
+      {
+        "path": "eventmesh-sdks/eventmesh-sdk-c/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "eventmesh-sdks/eventmesh-sdk-go/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "eventmesh-sdks/eventmesh-sdk-java/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "eventmesh-sdks/eventmesh-sdk-rust/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "eventmesh-sdks/eventmesh-sdk-rust/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "eventmesh-spi/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "eventmesh-storage-plugin/eventmesh-storage-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventmesh-storage-plugin/eventmesh-storage-kafka/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "eventmesh-storage-plugin/eventmesh-storage-memory/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventmesh-storage-plugin/eventmesh-storage-rocketmq/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventmesh-storage-plugin/eventmesh-storage-rocketmq5/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 271
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1058,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

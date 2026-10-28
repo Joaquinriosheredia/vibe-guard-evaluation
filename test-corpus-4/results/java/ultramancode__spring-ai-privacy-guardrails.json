@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "build-logic/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "samples/published-artifact-consumer/src/chatClientStarter/java/example",
+        "pattern": "example",
+        "files": 1
+      },
+      {
+        "path": "samples/published-artifact-consumer/src/inspectionOnly/java/example",
+        "pattern": "example",
+        "files": 1
+      },
+      {
+        "path": "samples/published-artifact-consumer/src/securityOnly/java/example",
+        "pattern": "example",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-ai-demo/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-chat-client-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-chat-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-core/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-inspection-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-inspection-onnx/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-inspection-openai-compatible/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-inspection-rules/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-inspection-spring-ai/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-inspection-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-opennlp-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-opennlp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-presidio-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-presidio/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-spring-ai-boundary/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-spring-ai/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-spring-security-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-spring-security/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "spring-ai-privacy-guardrails-test/src/test",
+        "pattern": "test",
+        "files": 5
+      }
+    ],
+    "filesExcluded": 129
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 435,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

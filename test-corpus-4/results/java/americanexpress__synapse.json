@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "archetype/synapse-archetype-client-graphql/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-delete/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-get/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-post/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-put/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-reactive-delete/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-reactive-get/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-reactive-post/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-reactive-put/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest-reactive/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "archetype/synapse-archetype-client-rest/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "archetype/synapse-archetype-data-postgres/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-delete/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-get/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-post/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-put/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-reactive-get/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-reactive-post/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "archetype/synapse-archetype-service-rest-reactive-put/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "client/client-samples/sample-client-graphql-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "client/client-samples/sample-client-reactive-football/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "client/client-samples/sample-client-reactive-weather/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "client/client-samples/sample-client-weather/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "client/synapse-client-rest/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "data/data-samples/sample-data-cassandra-book/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "data/data-samples/sample-data-cassandra-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-db2-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-mongodb-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-mongodb-reactive/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-mssql-reactive-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-mysql-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-mysql-reactive-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-oracle-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "data/data-samples/sample-data-oracle-reactive-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "data/data-samples/sample-data-oracle-reactive-cp-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "data/data-samples/sample-data-redis-book/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "framework/synapse-framework-exception/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "framework/synapse-framework-logging/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "function/function-samples/sample-function-book-aws/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "function/function-samples/sample-function-greeter-aws/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "function/function-samples/sample-function-greeter-gcp/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "function/function-samples/sample-function-greeting/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "function/function-samples/sample-function-rest-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "function/synapse-function/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "service/service-samples/sample-service-db2-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "service/service-samples/sample-service-graphql-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "service/service-samples/sample-service-reactive-cassandra-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "service/service-samples/sample-service-reactive-mongodb-book/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "service/service-samples/sample-service-reactive-mysql-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "service/service-samples/sample-service-reactive-oracle-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "service/service-samples/sample-service-reactive-weather-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "service/service-samples/sample-service-rest-cassandra-book/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "service/service-samples/sample-service-rest-mysql-book/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "service/service-samples/sample-service-rest-native-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "service/service-samples/sample-service-rest-oracle-book/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "service/synapse-service-rest/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "utility/synapse-utilities-common/src/test",
+        "pattern": "test",
+        "files": 59
+      },
+      {
+        "path": "utility/synapse-utility-cryptography/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "utility/synapse-utility-date/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "utility/synapse-utility-number/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "utility/synapse-utility-telephone/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 186
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1302,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 6,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "subscriber/synapse-subscriber-kafka/src/main/java/io/americanexpress/synapse/subscriber/kafka/annotation/KafkaSubscriber.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "subscriber/synapse-subscriber-kafka/src/main/java/io/americanexpress/synapse/subscriber/kafka/annotation/KafkaSubscriber.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "subscriber/synapse-subscriber-kafka/src/main/java/io/americanexpress/synapse/subscriber/kafka/subscriber/BaseKafkaMonoSubscriber.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "subscriber/synapse-subscriber-kafka/src/main/java/io/americanexpress/synapse/subscriber/kafka/subscriber/BaseKafkaMonoSubscriber.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "subscriber/synapse-subscriber-kafka/src/main/java/io/americanexpress/synapse/subscriber/kafka/subscriber/BaseKafkaPolySubscriber.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "subscriber/synapse-subscriber-kafka/src/main/java/io/americanexpress/synapse/subscriber/kafka/subscriber/BaseKafkaPolySubscriber.java",
+      "line": 43,
+      "extra": {}
+    }
+  ]
+}

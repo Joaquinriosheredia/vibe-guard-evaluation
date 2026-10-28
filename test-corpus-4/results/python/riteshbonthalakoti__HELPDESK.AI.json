@@ -1,0 +1,814 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "Fastapi/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "Frontend/cypress/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "Frontend/src/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "Frontend/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 9
+      }
+    ],
+    "filesExcluded": 10
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 3,
+    "major": 0,
+    "warning": 46,
+    "info": 0,
+    "total": 49
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-012",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "asyncio.create_task() return value discarded — the event loop keeps only a weak reference to the task, so it can be garbage-collected before it finishes, and an exception it raises is never retrieved",
+      "file": ".tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py",
+      "line": 247,
+      "extra": {
+        "function": "subscribe",
+        "evidence": "Assign and await: `task = asyncio.create_task(coro()); await task`, or use `async with asyncio.TaskGroup() as tg: tg.create_task(coro())` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "backend/services/semantic_duplicate_service.py",
+      "line": 252,
+      "extra": {
+        "function": "reindex_all",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-002",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "requests.post() is synchronous — blocks the event loop",
+      "file": "backend/services/sla_engine.py",
+      "line": 362,
+      "extra": {
+        "function": "_send_to_channel",
+        "evidence": "Use `async with httpx.AsyncClient() as c: await c.post(url)`",
+        "suggested_fix": "async with httpx.AsyncClient() as client:\n    response = await client.post(channel[\"url\"], json=payload, headers=channel.get(\"headers\", {\"Content-Type\": \"application/json\"}), timeout=10)"
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/anyio/_backends/_asyncio.py",
+      "line": 1020,
+      "extra": {
+        "function": "stop",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/anyio/_backends/_asyncio.py",
+      "line": 2517,
+      "extra": {
+        "function": "run_sync_in_worker_thread",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/fsspec/implementations/cached.py",
+      "line": 760,
+      "extra": {
+        "function": "_cat_file",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/fsspec/implementations/http.py",
+      "line": 271,
+      "extra": {
+        "function": "_get_file",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/fsspec/implementations/http.py",
+      "line": 303,
+      "extra": {
+        "function": "gen_chunks",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/fsspec/implementations/http.py",
+      "line": 837,
+      "extra": {
+        "function": "get_range",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/fsspec/implementations/reference.py",
+      "line": 860,
+      "extra": {
+        "function": "_get_file",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/fsspec/implementations/reference.py",
+      "line": 1245,
+      "extra": {
+        "function": "_put_file",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".tmp-ci-venv/Lib/site-packages/limits/aio/storage/memcached/__init__.py",
+      "line": 174,
+      "extra": {
+        "function": "clear_sliding_window",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".tmp-ci-venv/Lib/site-packages/limits/aio/storage/mongodb.py",
+      "line": 103,
+      "extra": {
+        "function": "create_indices",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".tmp-ci-venv/Lib/site-packages/limits/aio/storage/mongodb.py",
+      "line": 118,
+      "extra": {
+        "function": "reset",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".tmp-ci-venv/Lib/site-packages/limits/aio/storage/mongodb.py",
+      "line": 125,
+      "extra": {
+        "function": "reset",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".tmp-ci-venv/Lib/site-packages/limits/aio/storage/mongodb.py",
+      "line": 136,
+      "extra": {
+        "function": "clear",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": ".tmp-ci-venv/Lib/site-packages/limits/aio/storage/redis/__init__.py",
+      "line": 227,
+      "extra": {
+        "function": "clear_sliding_window",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/storage3/_async/file_api.py",
+      "line": 187,
+      "extra": {
+        "function": "upload_to_signed_url",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": ".tmp-ci-venv/Lib/site-packages/storage3/_async/file_api.py",
+      "line": 563,
+      "extra": {
+        "function": "_upload_or_update",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 126,
+      "extra": {
+        "function": "connection_lost",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 143,
+      "extra": {
+        "function": "shutdown",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 214,
+      "extra": {
+        "function": "handle_connect",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 239,
+      "extra": {
+        "function": "send_receive_event_to_app",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 246,
+      "extra": {
+        "function": "send_receive_event_to_app",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 321,
+      "extra": {
+        "function": "handle_close",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 331,
+      "extra": {
+        "function": "handle_parser_exception",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 392,
+      "extra": {
+        "function": "send",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 441,
+      "extra": {
+        "function": "send",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "line": 460,
+      "extra": {
+        "function": "send",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 133,
+      "extra": {
+        "function": "connection_lost",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 187,
+      "extra": {
+        "function": "shutdown",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 222,
+      "extra": {
+        "function": "handle_connect",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 233,
+      "extra": {
+        "function": "handle_message",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 239,
+      "extra": {
+        "function": "handle_message",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 248,
+      "extra": {
+        "function": "handle_close",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 369,
+      "extra": {
+        "function": "send",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 423,
+      "extra": {
+        "function": "send",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-020",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "put_nowait() without asyncio.QueueFull handler — raises silently if queue is full, item is lost",
+      "file": ".tmp-ci-venv/Lib/site-packages/uvicorn/protocols/websockets/wsproto_impl.py",
+      "line": 443,
+      "extra": {
+        "function": "send",
+        "evidence": "Wrap in `try/except asyncio.QueueFull:` and log or handle explicitly, or use `await queue.put()` to block until space is available",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-006",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "ContextVar.set() without guaranteed cleanup leaks state between async tasks — WARNING, not CRITICAL: this module sets _request_id_ctx back to its default elsewhere, an explicit clearing point; check that it runs before the context is reused",
+      "file": "backend/main.py",
+      "line": 362,
+      "extra": {
+        "function": "limit_request_size_and_add_request_id",
+        "evidence": "Capture the token: `token = var.set(v)` then call `var.reset(token)` in a finally block",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "backend/main.py",
+      "line": 690,
+      "extra": {
+        "function": "log_correction",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "backend/main.py",
+      "line": 697,
+      "extra": {
+        "function": "log_correction",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/monitoring/ws_metrics.py",
+      "line": 59,
+      "extra": {
+        "function": "start_server",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "backend/routers/ai.py",
+      "line": 128,
+      "extra": {
+        "function": "log_correction",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "backend/routers/ai.py",
+      "line": 148,
+      "extra": {
+        "function": "log_correction",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/tests/test_correction_log_async.py",
+      "line": 125,
+      "extra": {
+        "function": "run_both",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/tests/test_correction_log_async.py",
+      "line": 218,
+      "extra": {
+        "function": "run_all",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/tests/test_corrections_log_atomic_writes.py",
+      "line": 214,
+      "extra": {
+        "function": "run_all",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/tests/test_ocr_service.py",
+      "line": 202,
+      "extra": {
+        "function": "test_concurrency_limit",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/tests/test_websocket_manager.py",
+      "line": 343,
+      "extra": {
+        "function": "test_multiple_clients_cooperative_connect",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

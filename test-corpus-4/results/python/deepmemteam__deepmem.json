@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 24
+      }
+    ],
+    "filesExcluded": 24
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 4,
+    "major": 0,
+    "warning": 3,
+    "info": 0,
+    "total": 7
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "deepmem/vector_store.py",
+      "line": 821,
+      "extra": {
+        "function": "delete_all",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "deepmem/vector_store.py",
+      "line": 877,
+      "extra": {
+        "function": "hard_delete_account",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "deepmem/vector_store.py",
+      "line": 957,
+      "extra": {
+        "function": "reset",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "deepmem/vector_store.py",
+      "line": 1006,
+      "extra": {
+        "function": "export",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "benchmarks/run_benchmark.py",
+      "line": 137,
+      "extra": {
+        "function": "run_phase",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "benchmarks/run_benchmark.py",
+      "line": 139,
+      "extra": {
+        "function": "run_phase",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "deepmem/vendor/_core/memory/main.py",
+      "line": 2979,
+      "extra": {
+        "function": "delete_all",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

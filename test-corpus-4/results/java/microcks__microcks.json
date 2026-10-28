@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "commons/model/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "commons/util-el/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "commons/util/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "minions/async/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "webapp/src/main/webapp/src/app/pages/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "webapp/src/test",
+        "pattern": "test",
+        "files": 99
+      }
+    ],
+    "filesExcluded": 156
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 900,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 30,
+    "warning": 18,
+    "info": 0,
+    "total": 48
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ServiceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/AICopilotController.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ResourceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/AICopilotController.java",
+      "line": 70,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ResourceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/AICopilotController.java",
+      "line": 86,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ImportJobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 56,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ImportJobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 115,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 133,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 139,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 149,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 168,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (jobRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/JobController.java",
+      "line": 207,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DailyStatisticRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/MetricsController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TestConformanceMetricRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/MetricsController.java",
+      "line": 54,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TestResultRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/MetricsController.java",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DailyStatisticRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/MetricsController.java",
+      "line": 65,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TestResultRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/MetricsController.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomDailyStatisticRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/MetricsController.java",
+      "line": 130,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SecretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/SecretController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SecretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/SecretController.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (secretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/SecretController.java",
+      "line": 94,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (secretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/SecretController.java",
+      "line": 101,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (secretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/SecretController.java",
+      "line": 116,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (secretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/SecretController.java",
+      "line": 122,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ServiceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/ServiceController.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ServiceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/ServiceController.java",
+      "line": 75,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (serviceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/ServiceController.java",
+      "line": 119,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomServiceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/ServiceController.java",
+      "line": 128,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CustomServiceRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/ServiceController.java",
+      "line": 139,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SecretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/UploadArtifactController.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SecretRepository)",
+      "file": "webapp/src/main/java/io/github/microcks/web/UploadArtifactController.java",
+      "line": 71,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "distro/uber-async-minion/src/main/resources/application.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/docker-compose/async-addon.yml",
+      "line": 2,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/docker-compose/async-addon.yml",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "install/docker-compose/config/application.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "install/kubernetes/microcks/templates/configmap.yaml",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/kubernetes/microcks/templates/kafka.yaml",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/kubernetes/microcks/templates/kafka.yaml",
+      "line": 102,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/kubernetes/microcks/templates/kafka.yaml",
+      "line": 172,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/podman-compose/async-addon.yml",
+      "line": 2,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "install/podman-compose/async-addon.yml",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "install/podman-compose/config/application.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "minions/async/kafka-docker-compose-with-registry.yml",
+      "line": 5,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "minions/async/kafka-docker-compose-with-registry.yml",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "minions/async/kafka-docker-compose.yml",
+      "line": 5,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "minions/async/kafka-docker-compose.yml",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "minions/async/src/main/resources/application.properties",
+      "line": null,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Thread.sleep() detected in @Async method — WARNING, not CRITICAL: spring.threads.virtual.enabled=true in src/main/resources/config/application.properties, and with virtual threads enabled the default @Async executor did not saturate (measured, verify/blocking variant D: https://github.com/Joaquinriosheredia/java-vibe-guard/blob/c4e5ddd/cli/verify/blocking/results/criteria.md#L38-L38)",
+      "file": "webapp/src/main/java/io/github/microcks/listener/CallbackTrigger.java",
+      "line": 106,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "webapp/src/main/resources/config/application.properties",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

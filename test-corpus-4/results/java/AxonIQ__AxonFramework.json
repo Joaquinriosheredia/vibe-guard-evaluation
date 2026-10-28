@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "common/src/test",
+        "pattern": "test",
+        "files": 67
+      },
+      {
+        "path": "conversion/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "docs/message-scheduling-guide/modules/ROOT/examples",
+        "pattern": "examples",
+        "files": 3
+      },
+      {
+        "path": "docs/reference-guide/modules/ROOT/examples",
+        "pattern": "examples",
+        "files": 14
+      },
+      {
+        "path": "docs/reference-guide/modules/commands/examples",
+        "pattern": "examples",
+        "files": 159
+      },
+      {
+        "path": "docs/reference-guide/modules/configuration/examples",
+        "pattern": "examples",
+        "files": 74
+      },
+      {
+        "path": "docs/reference-guide/modules/events/examples",
+        "pattern": "examples",
+        "files": 76
+      },
+      {
+        "path": "docs/reference-guide/modules/messaging-concepts/examples",
+        "pattern": "examples",
+        "files": 109
+      },
+      {
+        "path": "docs/reference-guide/modules/migration/examples",
+        "pattern": "examples",
+        "files": 135
+      },
+      {
+        "path": "docs/reference-guide/modules/monitoring/examples",
+        "pattern": "examples",
+        "files": 8
+      },
+      {
+        "path": "docs/reference-guide/modules/queries/examples",
+        "pattern": "examples",
+        "files": 76
+      },
+      {
+        "path": "docs/reference-guide/modules/testing/examples",
+        "pattern": "examples",
+        "files": 96
+      },
+      {
+        "path": "docs/reference-guide/modules/tuning/examples",
+        "pattern": "examples",
+        "files": 14
+      },
+      {
+        "path": "docs/saga-guide/modules/ROOT/examples",
+        "pattern": "examples",
+        "files": 11
+      },
+      {
+        "path": "eventsourcing/src/test",
+        "pattern": "test",
+        "files": 61
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 562
+      },
+      {
+        "path": "extensions/kotlin/kotlin-test/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/kotlin/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "extensions/metrics/metrics-dropwizard/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/metrics/metrics-micrometer/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/reactor/axon-reactor/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "extensions/spring/spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 52
+      },
+      {
+        "path": "extensions/spring/spring-boot-compatibility-tests/spring-boot-3/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/spring/spring-boot-compatibility-tests/spring-boot-4/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "extensions/spring/spring-boot-starter-test/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "extensions/spring/spring/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "integrationtests/src/test",
+        "pattern": "test",
+        "files": 129
+      },
+      {
+        "path": "messaging/src/test",
+        "pattern": "test",
+        "files": 274
+      },
+      {
+        "path": "migration/src/test",
+        "pattern": "test",
+        "files": 53
+      },
+      {
+        "path": "modelling/src/test",
+        "pattern": "test",
+        "files": 100
+      },
+      {
+        "path": "test",
+        "pattern": "test",
+        "files": 100
+      },
+      {
+        "path": "update/src/test",
+        "pattern": "test",
+        "files": 18
+      }
+    ],
+    "filesExcluded": 2286
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 4997,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

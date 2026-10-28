@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "altinn-v3-client/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "common/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "domain/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dph-client/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dpi-client/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "fiks-meldingsformidler/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "integrasjonspunkt/src/test",
+        "pattern": "test",
+        "files": 113
+      },
+      {
+        "path": "nextmove/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "post-til-private/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "service-registry-client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "web/src/test",
+        "pattern": "test",
+        "files": 3
+      }
+    ],
+    "filesExcluded": 177
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 846,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 29,
+    "warning": 0,
+    "info": 0,
+    "total": 29
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/CapabilitiesController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageInController.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageInController.java",
+      "line": 64,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageInController.java",
+      "line": 111,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageOutController.java",
+      "line": 82,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageOutController.java",
+      "line": 93,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageOutController.java",
+      "line": 101,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/v2/NextMoveMessageOutController.java",
+      "line": 108,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ConversationRepository)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/receipt/ConversationWebController.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ConversationRepository)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/receipt/ConversationWebController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/receipt/ConversationWebController.java",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ConversationRepository)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 67,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/ConversationController.java",
+      "line": 74,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageStatusRepository)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/MessageStatusController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/MessageStatusController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/MessageStatusController.java",
+      "line": 56,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/MessageStatusController.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/status/service/MessageStatusController.java",
+      "line": 85,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/webhooks/subscription/SubscriptionController.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/webhooks/subscription/SubscriptionController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/webhooks/subscription/SubscriptionController.java",
+      "line": 36,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/webhooks/subscription/SubscriptionController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/webhooks/subscription/SubscriptionController.java",
+      "line": 49,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/webhooks/subscription/SubscriptionController.java",
+      "line": 56,
+      "extra": {}
+    }
+  ]
+}

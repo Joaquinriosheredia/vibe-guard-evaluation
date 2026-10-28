@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "client-web/src/ApiServer/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "client-web/src/Utils/testing/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "dispatcher-sdk/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "e2e/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "flow-sdk/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "service-core/src/test",
+        "pattern": "test",
+        "files": 226
+      },
+      {
+        "path": "service-dispatcher/src/test",
+        "pattern": "test",
+        "files": 26
+      }
+    ],
+    "filesExcluded": 278
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 847,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 1
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Thread.sleep() detected in @Async method — WARNING, not CRITICAL: spring.threads.virtual.enabled=true in src/main/resources/application.properties, and with virtual threads enabled the default @Async executor did not saturate (measured, verify/blocking variant D: https://github.com/Joaquinriosheredia/java-vibe-guard/blob/c4e5ddd/cli/verify/blocking/results/criteria.md#L38-L38)",
+      "file": "service-dispatcher/src/main/java/io/boomerang/dispatcher/TaskService.java",
+      "line": 204,
+      "extra": {}
+    }
+  ]
+}

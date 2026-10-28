@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "argi-agent/argi-agent-api/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "argi-agent/argi-agent-core/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "argi-api/argi-adapter-google-adk/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "argi-api/argi-adapter-langchain4j/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "argi-api/argi-adapter-spring-ai/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "argi-api/argi-api-base/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "argi-orchestration/argi-agent-framework/src/test",
+        "pattern": "test",
+        "files": 186
+      },
+      {
+        "path": "argi-orchestration/argi-workflow-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "argi-orchestration/argi-workflow-graph-core/src/test",
+        "pattern": "test",
+        "files": 106
+      },
+      {
+        "path": "argi-runtime/argi-runtime-api/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "argi-runtime/argi-runtime-core/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "argi-spring-boot-starter/argi-starter-adapter-google-adk/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "argi-spring-boot-starter/argi-starter-adapter-langchain4j/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "argi-spring-boot-starter/argi-starter-adapter-spring-ai/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "argi-spring-boot-starter/argi-starter-builtin-nodes/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "argi-spring-boot-starter/argi-starter-graph-observation/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "argi-studio/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "example",
+        "pattern": "example",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 380
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1041,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "ai-kepu-video-server/tests",
+        "pattern": "tests",
+        "files": 36
+      },
+      {
+        "path": "ai-kepu-video-web/frontend/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "ai-kepu-video-web/frontend/tests",
+        "pattern": "tests",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 36
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 0,
+    "warning": 3,
+    "info": 0,
+    "total": 4
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-017",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "bare except around an await swallows every exception, including CancelledError, KeyboardInterrupt and SystemExit — breaking cancellation and clean shutdown",
+      "file": "ai-kepu-video-server/src/utils/volcengine_tts.py",
+      "line": 414,
+      "extra": {
+        "function": "close",
+        "evidence": "Log the error: `except Exception as e: logger.error(e)`, or re-raise: `except Exception: raise`, or handle explicitly",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "ai-kepu-video-server/src/api/routes.py",
+      "line": 2608,
+      "extra": {
+        "function": "create_task_from_images",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "ai-kepu-video-server/src/api/routes.py",
+      "line": 5245,
+      "extra": {
+        "function": "upload_image",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-009",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "open() inside async def runs on the event loop — the open and every read/write on the handle block other coroutines for as long as the file I/O takes",
+      "file": "ai-kepu-video-server/src/utils/volcengine_tts.py",
+      "line": 572,
+      "extra": {
+        "function": "text_to_speech",
+        "evidence": "Use `async with aiofiles.open(path) as f: content = await f.read()`",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

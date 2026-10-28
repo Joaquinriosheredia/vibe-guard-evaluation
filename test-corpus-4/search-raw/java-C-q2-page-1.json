@@ -1,0 +1,10 @@
+{
+  "fetchedAt": "2026-10-28T11:00:54.293Z",
+  "query": "topic:spring-kafka language:Java fork:false archived:false is:public size:100..1000000 pushed:>=2026-04-28 stars:20..49",
+  "path": "/search/repositories?q=topic%3Aspring-kafka%20language%3AJava%20fork%3Afalse%20archived%3Afalse%20is%3Apublic%20size%3A100..1000000%20pushed%3A%3E%3D2026-04-28%20stars%3A20..49&sort=stars&order=desc&per_page=100&page=1",
+  "body": {
+    "total_count": 0,
+    "incomplete_results": false,
+    "items": []
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "applications/application/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "applications/spring/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "base/core/src/test",
+        "pattern": "test",
+        "files": 34
+      },
+      {
+        "path": "base/kotlin/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "base/util/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 49
+      },
+      {
+        "path": "infrastructures/aws-sns/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "infrastructures/aws-sqs/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "infrastructures/kafka/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "infrastructures/rabbitmq/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "observability/micrometer-observation/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "observability/micrometer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "observability/opentelemetry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "observability/opentracing/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "schemas/avro/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "schemas/protobuf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "schemas/schema-registry-confluent/src/test",
+        "pattern": "test",
+        "files": 3
+      }
+    ],
+    "filesExcluded": 155
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 578,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

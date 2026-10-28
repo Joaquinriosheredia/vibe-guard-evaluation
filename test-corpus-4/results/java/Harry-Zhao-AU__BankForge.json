@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "account-service/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "common/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "ledger-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "notification-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "payment-service/src/test",
+        "pattern": "test",
+        "files": 6
+      }
+    ],
+    "filesExcluded": 15
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 134,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 5,
+    "info": 0,
+    "total": 5
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "ledger-service/src/main/java/au/com/bankforge/ledger/kafka/DltHandler.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "ledger-service/src/main/java/au/com/bankforge/ledger/kafka/LedgerEventListener.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/au/com/bankforge/notification/kafka/AustracAuditListener.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "notification-service/src/main/java/au/com/bankforge/notification/kafka/NotificationEventListener.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "payment-service/src/main/java/au/com/bankforge/payment/kafka/TransferConfirmationListener.java",
+      "line": 56,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "cool-jconon-backend/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "cool-jconon-io/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "cool-jconon-spid/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 20
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 652,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 5,
+    "warning": 0,
+    "info": 0,
+    "total": 5
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CacheRepository)",
+      "file": "cool-jconon-backend/src/main/java/it/cnr/si/cool/jconon/rest/openapi/controllers/CacheController.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CacheRepository)",
+      "file": "cool-jconon-backend/src/main/java/it/cnr/si/cool/jconon/rest/openapi/controllers/CacheController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (cacheRepository)",
+      "file": "cool-jconon-backend/src/main/java/it/cnr/si/cool/jconon/rest/openapi/controllers/CacheController.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CommonRepository)",
+      "file": "cool-jconon-backend/src/main/java/it/cnr/si/cool/jconon/rest/openapi/controllers/CallController.java",
+      "line": 69,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CacheRepository)",
+      "file": "cool-jconon-backend/src/main/java/it/cnr/si/cool/jconon/rest/openapi/controllers/ObjectTypeController.java",
+      "line": 52,
+      "extra": {}
+    }
+  ]
+}

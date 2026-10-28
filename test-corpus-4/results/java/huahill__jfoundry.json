@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "jfoundry-boms/jfoundry-quarkus-build/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "jfoundry-boms/jfoundry-spring-boot-parent/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-application-core/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-domain-event-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-domain-event-outbox-core/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-inbox-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-lock-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-messaging-core/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-outbox-core/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "jfoundry-core/jfoundry-application/jfoundry-transaction-core/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-architecture/jfoundry-architecture-test/src/test",
+        "pattern": "test",
+        "files": 66
+      },
+      {
+        "path": "jfoundry-core/jfoundry-architecture/jfoundry-cqrs/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-architecture/jfoundry-hexagonal/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-architecture/jfoundry-onion/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-domain/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-domain-event-persistence-bridge/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-inbox-jpa/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-lock-redisson/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-messaging-jackson/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-observability-otel/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-outbox-jpa/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-outbox-mybatis-plus/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-persistence-core/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-persistence-jpa/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-persistence-mybatis-plus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-core/jfoundry-infrastructure/jfoundry-web/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-domain-event-helidon/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-domain-event-outbox-helidon/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-domain-event-persistence-bridge-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-helidon-integration-tests/src/jvm-integration/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-helidon-integration-tests/src/jvm-redisson/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-helidon-integration-tests/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-inbox-jpa-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-lock-redisson-helidon/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-messaging-kafka-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-messaging-rabbitmq-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-outbox-helidon/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-outbox-jpa-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-persistence-helidon/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-persistence-jpa-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-restclient-helidon/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-transaction-helidon/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-helidon/jfoundry-web-helidon/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-jakarta/jfoundry-domain-event-jta/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-jakarta/jfoundry-http-jaxrs/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-jakarta/jfoundry-lock-el/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-jakarta/jfoundry-transaction-jta/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-jakarta/jfoundry-web-jaxrs/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-domain-event-outbox-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-domain-event-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-inbox-jpa-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-lock-redisson-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-messaging-kafka-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-messaging-rabbitmq-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-outbox-jpa-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-outbox-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-persistence-jpa-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-persistence-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-restclient-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-transaction-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/deployment/jfoundry-web-quarkus-deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/jfoundry-quarkus-integration-tests/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-domain-event-outbox-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-domain-event-persistence-bridge-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-domain-event-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-lock-redisson-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-messaging-kafka-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-messaging-rabbitmq-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-outbox-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-persistence-jpa-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-persistence-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-restclient-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-transaction-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-quarkus/runtime/jfoundry-web-quarkus-runtime/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-domain-event-outbox-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-domain-event-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-inbox-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-lock-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-messaging-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-observability-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-outbox-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-persistence-mybatis-plus-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-persistence-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-restclient-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-transaction-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/autoconfigure/jfoundry-webmvc-spring-boot-autoconfigure/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/jfoundry-spring-integration-tests/src/test",
+        "pattern": "test",
+        "files": 51
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-domain-event-outbox-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-domain-event-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-http-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-lock-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-messaging-spring/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-observability-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-persistence-spring/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-restclient-spring/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-transaction-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/runtime/jfoundry-webmvc-spring/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/starters/jfoundry-inbox-jpa-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/starters/jfoundry-lock-redisson-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/starters/jfoundry-messaging-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/starters/jfoundry-observability-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/starters/jfoundry-outbox-jpa-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jfoundry-runtime/jfoundry-spring/starters/jfoundry-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 364
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 958,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 1
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka config without consumer group.id",
+      "file": "jfoundry-runtime/jfoundry-quarkus/jfoundry-quarkus-integration-tests/src/main/resources/application.properties",
+      "line": null,
+      "extra": {}
+    }
+  ]
+}

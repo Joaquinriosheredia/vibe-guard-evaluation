@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 279
+      }
+    ],
+    "filesExcluded": 279
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 853,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 22,
+    "info": 0,
+    "total": 24
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "blocking .block() detected in @Scheduled method",
+      "file": "src/main/java/com/nephest/battlenet/sc2/config/Cron.java",
+      "line": 221,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "blocking .block() detected in @Scheduled method",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/SC2MetaService.java",
+      "line": 108,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/config/security/DiscordOauth2UserService.java",
+      "line": 66,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/discord/event/RolesSlashCommand.java",
+      "line": 99,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/discord/event/RolesSlashCommand.java",
+      "line": 127,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/discord/event/Summary1v1UserCommand.java",
+      "line": 86,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/BlizzardPrivacyService.java",
+      "line": 303,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/BlizzardPrivacyService.java",
+      "line": 321,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/BlizzardPrivacyService.java",
+      "line": 391,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/ClanService.java",
+      "line": 216,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/DiscordService.java",
+      "line": 207,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/DiscordService.java",
+      "line": 208,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/DiscordService.java",
+      "line": 240,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/MatchService.java",
+      "line": 142,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/ProPlayerService.java",
+      "line": 183,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/ProPlayerService.java",
+      "line": 198,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/ProPlayerService.java",
+      "line": 316,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/ProPlayerService.java",
+      "line": 325,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/SC2MetaService.java",
+      "line": 126,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/StatsService.java",
+      "line": 501,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/StatsService.java",
+      "line": 541,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/StatsService.java",
+      "line": 1011,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockLast()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/StatsService.java",
+      "line": 1056,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockFirst()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "src/main/java/com/nephest/battlenet/sc2/web/service/StatsService.java",
+      "line": 1142,
+      "extra": {}
+    }
+  ]
+}

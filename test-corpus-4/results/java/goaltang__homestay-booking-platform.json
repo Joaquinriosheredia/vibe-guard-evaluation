@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "homestay-backend/src/test",
+        "pattern": "test",
+        "files": 74
+      },
+      {
+        "path": "homestay-front/src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 74
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 589,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 10,
+    "major": 26,
+    "warning": 0,
+    "info": 0,
+    "total": 36
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/CouponBatchIssueServiceImpl.java",
+      "line": 255,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/NotificationBroadcastJobProcessor.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/NotificationServiceImpl.java",
+      "line": 278,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/HomestayIndexingServiceImpl.java",
+      "line": 82,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java",
+      "line": 68,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java",
+      "line": 85,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java",
+      "line": 106,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java",
+      "line": 127,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HolidayCalendarRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminHolidayCalendarController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (holidayCalendarRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminHolidayCalendarController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PromotionCampaignRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminPromotionController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CouponTemplateRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminPromotionController.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PromotionUsageRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminPromotionController.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminVerificationController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (AmenityRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AmenitiesController.java",
+      "line": 49,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/CouponController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/EarningController.java",
+      "line": 60,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HomestayRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/EarningController.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/EarningController.java",
+      "line": 62,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (EarningRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/EarningController.java",
+      "line": 63,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/GuestDisputeController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/HostDisputeController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PromotionCampaignRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/HostPromotionController.java",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (HomestayRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/HostPromotionController.java",
+      "line": 36,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PromotionUsageRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/HostPromotionController.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/OrderController.java",
+      "line": 47,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/PaymentController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (orderRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/PaymentController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (orderRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/PaymentController.java",
+      "line": 87,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/PricingController.java",
+      "line": 22,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OrderRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/UserController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserFavoriteRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/UserController.java",
+      "line": 30,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserCouponRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/UserController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (NotificationRepository)",
+      "file": "homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/UserController.java",
+      "line": 32,
+      "extra": {}
+    }
+  ]
+}

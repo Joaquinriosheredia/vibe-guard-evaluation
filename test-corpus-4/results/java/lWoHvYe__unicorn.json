@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "unicorn-ai/unicorn-ai-chat/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "unicorn-ai/unicorn-ai-mcp-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "unicorn-ai/unicorn-ai-rag/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "unicorn-beans/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "unicorn-core/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "unicorn-oauth2/unicorn-oauth2-authorizationserver/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "unicorn-oauth2/unicorn-oauth2-resource-server-flux/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "unicorn-security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "valentine-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 19
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 531,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 3,
+    "major": 2,
+    "warning": 0,
+    "info": 0,
+    "total": 5
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "unicorn-logging/src/main/java/com/lwohvye/log/service/impl/BzLogServiceImpl.java",
+      "line": 95,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "unicorn-logging/src/main/java/com/lwohvye/log/service/impl/BzLogServiceImpl.java",
+      "line": 123,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "@Transactional + @Async on the same method — it runs in its own new transaction on the async executor thread, never in the caller's: a caller rollback does not undo it, and it cannot see the caller's uncommitted changes",
+      "file": "unicorn-security/src/main/java/com/lwohvye/sys/modules/quartz/service/impl/QuartzJobServiceImpl.java",
+      "line": 151,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (IngestJobRepository)",
+      "file": "unicorn-ai/unicorn-ai-rag/src/main/java/com/unicorn/ai/rag/api/RagController.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (customizeUserRepository)",
+      "file": "unicorn-oauth2/unicorn-oauth2-resource-server-flux/src/main/java/sample/web/NumberController.java",
+      "line": 113,
+      "extra": {}
+    }
+  ]
+}

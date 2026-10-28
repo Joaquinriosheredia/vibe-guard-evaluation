@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "macula-boot-archetype/src/main/resources/archetype-resources/__rootArtifactId__-admin/cypress/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "macula-boot-archetype/src/main/resources/archetype-resources/__rootArtifactId__-admin/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "macula-boot-commons/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "macula-boot-examples/macula-example-alibaba-consumer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-async/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-auditlog/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-binlog4j/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-cache/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-cloud/macula-boot-starter-cloud-alibaba-gray/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-cloud/macula-boot-starter-cloud-alibaba/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-cloud/macula-boot-starter-cloud-gateway/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-crypto/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-dubbo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-feign/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-idempotent/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-jpa/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-kafka/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-leaderelection/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-lock4j/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-mapstruct/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-mybatis-plus/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-observability/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-operationlog/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-oss/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-redis/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-rocketmq/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-seata/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-security/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-sender/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-springdoc/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-springretry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-system/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-task/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-tinyid/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-web/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "macula-boot-starters/macula-boot-starter-websocket/src/test",
+        "pattern": "test",
+        "files": 7
+      }
+    ],
+    "filesExcluded": 131
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 600,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

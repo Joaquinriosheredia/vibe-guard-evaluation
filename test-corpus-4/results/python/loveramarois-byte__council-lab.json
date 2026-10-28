@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "backend/tests",
+        "pattern": "tests",
+        "files": 24
+      },
+      {
+        "path": "frontend/tests",
+        "pattern": "tests",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 24
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 1
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-008",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "sqlite3.connect() is synchronous — blocks the event loop during I/O",
+      "file": "backend/app/store.py",
+      "line": 827,
+      "extra": {
+        "function": "delete_run",
+        "evidence": "Use `async with aiosqlite.connect('db.sqlite3') as db:` instead",
+        "suggested_fix": "async with aiosqlite.connect(checkpoint_path) as db:"
+      }
+    }
+  ]
+}
