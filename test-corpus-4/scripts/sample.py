@@ -1,4 +1,4 @@
-"""Review set, with the seed fixed in PREREGISTRATION.md (test-corpus-3: no repeatability sample).
+"""Review set, with the seed fixed in PREREGISTRATION.md (test-corpus-4: no repeatability sample).
 
   python3 scripts/sample.py review-set   -> review-set.json (per language: every CRITICAL of the
                                             pool's language, or a sample of 100; Java first)
@@ -11,7 +11,7 @@ from pathlib import Path
 DIR = Path(__file__).resolve().parent.parent
 REVIEW_MAX = {"java": 100, "python": 100}
 REQUIRED = {"java": 50, "python": 100}
-SEED_REVIEW = 20261101
+SEED_REVIEW = 20261201
 PREFIX = {"java": "J", "python": "P"}
 
 

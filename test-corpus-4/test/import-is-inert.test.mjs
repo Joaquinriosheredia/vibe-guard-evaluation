@@ -1,7 +1,7 @@
 // Importing any evaluation script must not touch the network, start a process or write a file
 // (test-corpus-1 DEVIATIONS.md §1: importing select.mjs once ran the search). Every script is
 // imported in its own process with those calls intercepted; positive controls prove the
-// interception works. Run: node --test test-corpus-2/test/
+// interception works. Run: node --test test-corpus-4/test/
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'child_process';
@@ -24,8 +24,8 @@ function probe(file) {
 
 const scripts = readdirSync(SCRIPTS).filter((f) => f.endsWith('.mjs') || f.endsWith('.py'));
 
-test('there are scripts to check (build-exclusions, cards, count-files, evaluate, lib, review_ab, review_sheet, run, sample, select)', () => {
-  assert.deepEqual(scripts.sort(), ['build-exclusions.mjs', 'cards.py', 'count-files.mjs', 'evaluate.py', 'lib.mjs', 'review_ab.py', 'review_sheet.py', 'run.mjs', 'sample.py', 'select.mjs']);
+test('there are scripts to check (ai_compare, build-exclusions, cards, count-files, evaluate, lib, review_sheet, run, sample, select)', () => {
+  assert.deepEqual(scripts.sort(), ['ai_compare.py', 'build-exclusions.mjs', 'cards.py', 'count-files.mjs', 'evaluate.py', 'lib.mjs', 'review_sheet.py', 'run.mjs', 'sample.py', 'select.mjs']);
 });
 
 for (const f of scripts) {

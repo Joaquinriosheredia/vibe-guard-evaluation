@@ -1,19 +1,26 @@
 // Steps 3e-3g, the pinned commit and the run of PREREGISTRATION.md for ONE pool, with its own
 // stopping rule (counts only, never verdicts). The pools stop independently.
-//   java:   batches of 25 included repositories; frozen at >= 50 Java CRITICAL, cap 300 included.
+//   java:   subpools java-A, java-B, java-C, java-D in that order; batches of 25 included
+//           repositories; frozen at >= 50 Java CRITICAL, cap 500 included.
 //   python: python-A first, python-B only after python-A is exhausted; batches of 20, then 10;
 //           frozen at >= 100 Python CRITICAL, cap 150 included.
+// Before anything, the tools are checked against FROZEN.json (verifyTools): annotated tags at the
+// frozen commits, the wrapper checkout at its commit with no change, the wheel and the .tgz by
+// name and sha256, the wrapper's lockfile and installed java-vibe-guard, the --version line.
 //
-//   VGS=<vibe-guard-scan checkout> PYVIBE=<pyvibe> WORK=<checkouts dir> node scripts/run.mjs java|python
+//   VGS=<vibe-guard-scan checkout> PYVIBE=<pyvibe in the dedicated venv> WORK=<checkouts dir> \
+//   PYVIBE_PRO=<pyvibe-pro checkout> JVG_PRO=<java-vibe-guard-pro checkout> \
+//   WHEEL=<the installed .whl> TGZ=<the pinned .tgz> node scripts/run.mjs java|python
 import { spawn, spawnSync } from 'child_process';
 import { mkdirSync, readFileSync, rmSync } from 'fs';
-import { join } from 'path';
+import { basename, join } from 'path';
 import { pathToFileURL } from 'url';
 import { countFiles } from './count-files.mjs';
-import { DIR, gh, git, loadFrozen, readJson, slug, writeJson } from './lib.mjs';
+import { artifactProblems, DIR, gh, git, loadFrozen, observeTag, readJson, sha256File, sha512Integrity, slug, tagProblems, writeJson } from './lib.mjs';
+import { POOLS, isJava } from './select.mjs';
 
 export const POOL_RULES = {
-  java: { language: 'java', firstBatch: 25, nextBatch: 25, cap: 300, target: 50 },
+  java: { language: 'java', firstBatch: 25, nextBatch: 25, cap: 500, target: 50 },
   python: { language: 'python', firstBatch: 20, nextBatch: 10, cap: 150, target: 100 },
 };
 const TIMEOUT_MS = 30 * 60_000;
@@ -34,6 +41,30 @@ export function stackExclusion(pool, subpool, files) {
 /** CRITICAL findings of the pool's language in one wrapper report. */
 export const poolCritical = (report, language) => report.findings.filter((f) => f.severity === 'critical' && f.language === language).length;
 
+/** The candidates of one pool, subpools in pre-registered order (java-A..D; python-A, python-B). */
+export function poolCandidates(candidates, pool) {
+  return POOLS.filter((p) => (pool === 'java') === isJava(p)).flatMap((p) => candidates.pools[p].map((c) => ({ ...c, subpool: p })));
+}
+
+/** Every identity problem of the tools against FROZEN.json; empty when they are exactly the frozen ones. */
+export function verifyTools(frozen, env) {
+  const problems = [
+    ...tagProblems('vibe-guard-scan', frozen.vibeGuardScan, observeTag(env.VGS, frozen.vibeGuardScan.tag), { atHead: true }),
+    ...tagProblems('pyvibe-pro', frozen.pyvibePro, observeTag(env.PYVIBE_PRO, frozen.pyvibePro.tag)),
+    ...tagProblems('java-vibe-guard-pro', frozen.javaVibeGuardPro, observeTag(env.JVG_PRO, frozen.javaVibeGuardPro.tag)),
+  ];
+  const lock = JSON.parse(readFileSync(join(env.VGS, 'package-lock.json'), 'utf8'));
+  problems.push(...artifactProblems(frozen, {
+    wheel: { name: basename(env.WHEEL), sha256: sha256File(env.WHEEL) },
+    tgz: { name: basename(env.TGZ), sha256: sha256File(env.TGZ), integrity: sha512Integrity(env.TGZ) },
+    lockIntegrity: lock.packages?.['node_modules/java-vibe-guard']?.integrity ?? null,
+    installedVersion: JSON.parse(readFileSync(join(env.VGS, 'node_modules', 'java-vibe-guard', 'package.json'), 'utf8')).version,
+  }));
+  const v = spawnSync(process.execPath, [join(env.VGS, 'bin', 'vibe-guard.js'), '--version'], { encoding: 'utf8', env: { ...process.env, VIBE_GUARD_PYVIBE: env.PYVIBE } });
+  if (v.stdout.trim() !== frozen.vibeGuardScan.versionLine) problems.push(`--version is "${v.stdout.trim()}", expected "${frozen.vibeGuardScan.versionLine}"`);
+  return problems;
+}
+
 /** Stopping decision after a batch: { frozen, reason }. */
 export function stopDecision(rules, { critical, included, addedThisBatch, quota }) {
   if (critical >= rules.target) return { frozen: true, reason: `${critical} ${rules.language} CRITICAL >= ${rules.target}` };
@@ -51,19 +82,16 @@ async function main() {
   const rules = POOL_RULES[pool];
   const { VGS, PYVIBE, WORK } = process.env;
   if (!rules) throw new Error('usage: run.mjs java|python');
-  if (!VGS || !PYVIBE || !WORK) throw new Error('VGS, PYVIBE and WORK are required');
+  const need = ['VGS', 'PYVIBE', 'WORK', 'PYVIBE_PRO', 'JVG_PRO', 'WHEEL', 'TGZ'].filter((k) => !process.env[k]);
+  if (need.length) throw new Error(`${need.join(', ')} required`);
 
   // The tools must be exactly the frozen ones.
   const frozen = loadFrozen();
-  const head = git(['rev-parse', 'HEAD'], { cwd: VGS }).trim();
-  if (head !== frozen.vibeGuardScan.commit) throw new Error(`vibe-guard-scan is at ${head}, FROZEN.json says ${frozen.vibeGuardScan.commit}`);
-  const v = spawnSync(process.execPath, [join(VGS, 'bin', 'vibe-guard.js'), '--version'], { encoding: 'utf8', env: { ...process.env, VIBE_GUARD_PYVIBE: PYVIBE } });
-  if (v.stdout.trim() !== frozen.vibeGuardScan.versionLine) throw new Error(`--version is "${v.stdout.trim()}", expected "${frozen.vibeGuardScan.versionLine}"`);
+  const problems = verifyTools(frozen, process.env);
+  if (problems.length) throw new Error(`tools are not the frozen ones:\n- ${problems.join('\n- ')}`);
 
   const candidates = readJson(join(DIR, 'candidates.json'));
-  const list = pool === 'java'
-    ? candidates.pools.java.map((c) => ({ ...c, subpool: 'java' }))
-    : [...candidates.pools['python-A'].map((c) => ({ ...c, subpool: 'python-A' })), ...candidates.pools['python-B'].map((c) => ({ ...c, subpool: 'python-B' }))];
+  const list = poolCandidates(candidates, pool);
   const corpusPath = join(DIR, `corpus-${pool}.json`);
   const corpus = readJson(corpusPath, { pool, rules, batches: [], processed: [], frozen: false });
   const resultsDir = join(DIR, 'results', pool);

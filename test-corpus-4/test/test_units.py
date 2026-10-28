@@ -1,4 +1,4 @@
-"""Unit tests of evaluate.py, sample.py, cards.py, review_ab.py and review_sheet.py of test-corpus-3
+"""Unit tests of evaluate.py, sample.py, cards.py, review_sheet.py and ai_compare.py of test-corpus-4
 (run by python-units.test.mjs)."""
 import os
 import subprocess
@@ -8,9 +8,9 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+import ai_compare  # noqa: E402
 import cards  # noqa: E402
 import evaluate as ev  # noqa: E402
-import review_ab  # noqa: E402
 import review_sheet  # noqa: E402
 import sample  # noqa: E402
 
@@ -47,10 +47,6 @@ class Metrics(unittest.TestCase):
         self.assertFalse(ev.criterion2({"primary": 5.0001})["met"])
         self.assertFalse(ev.criterion2({"primary": None})["met"])
 
-    def test_kappa(self):
-        self.assertEqual(ev.kappa([("TP", "TP"), ("FP", "FP")])["cohenKappa"], 1.0)
-        self.assertEqual(ev.kappa([])["n"], 0)
-
     def test_cluster_bootstrap_is_deterministic(self):
         repos = [{"critical": 10, "files": 100, "reviewed": 5, "bad": 1}, {"critical": 2, "files": 400, "reviewed": 2, "bad": 0},
                  {"critical": 0, "files": 300, "reviewed": 0, "bad": 0}]
@@ -61,7 +57,7 @@ class Metrics(unittest.TestCase):
 
 def synthetic(n_java=50, n_py=100):
     def f(lang, i, repo):
-        return {"id": f"{'J' if lang == 'java' else 'P'}{i:03d}", "language": lang, "repo": repo, "ruleId": "R", "subpool": "java" if lang == "java" else "python-A",
+        return {"id": f"{'J' if lang == 'java' else 'P'}{i:03d}", "language": lang, "repo": repo, "ruleId": "R", "subpool": "java-A" if lang == "java" else "python-A",
                 "families": ["KAFKA"] if lang == "java" else [], "severity": "critical"}
     findings = [f("java", i, "j/one") for i in range(1, n_java + 1)] + [f("python", i, "p/one") for i in range(1, n_py + 1)]
     rs = {"languages": {"java": {"totalCritical": n_java, "reviewed": n_java, "required": 50, "method": "every", "corpusFrozenReason": "x"},
@@ -74,112 +70,78 @@ def synthetic(n_java=50, n_py=100):
     return rs, corpora, reports
 
 
-def ab_inputs(rs, verdict_of, dis=(), audit=(), joaquin_of=None, over_a=None, over_b=None):
-    """A and B agree on verdict_of(f) except on `dis` (B flips TP<->FP); Joaquín reviews dis + audit."""
-    a, b = {}, {}
-    for f in rs["findings"]:
-        i, v = f["id"], verdict_of(f)
-        a[i] = {"verdict": v, "overstated": bool(over_a and i in over_a)}
-        b[i] = {"verdict": ({"TP": "FP", "FP": "TP", "U": "TP"}[v] if i in dis else v), "overstated": bool(over_b and i in over_b)}
-    joaquin_of = joaquin_of or (lambda i: a[i]["verdict"])
-    joaquin = {i: {"verdict": joaquin_of(i), "overstated": False} for i in list(dis) + list(audit)}
-    return a, b, joaquin
-
-
-AUDIT = ["J001", "J002", "J003", "J004", "J005", "J006", "J007"] + [f"P{n:03d}" for n in range(1, 14)]
+def joaquin_of(rs, verdict_of, over=()):
+    return {f["id"]: {"verdict": verdict_of(f), "overstated": f["id"] in over} for f in rs["findings"]}
 
 
 class Evaluate(unittest.TestCase):
-    def run_eval(self, rs, corpora, reports, *args, **kw):
-        final, review = ev.final_verdicts(rs["findings"], *ab_inputs(rs, *args, **kw), kw.get("dis", ()), kw.get("audit", AUDIT))
-        return ev.evaluate(rs, corpora, reports, final, review), final, review
+    def run_eval(self, rs, corpora, reports, verdict_of, assisted=(), over=()):
+        final = ev.final_verdicts(rs["findings"], joaquin_of(rs, verdict_of, over), assisted)
+        return ev.evaluate(rs, corpora, reports, final, assisted), final
 
-    def test_joaquin_must_cover_exactly_the_reviewed_ids(self):
+    def test_joaquin_must_cover_exactly_the_review_set(self):
         rs, _, _ = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT)
-        del joaquin["P100"]
+        j = joaquin_of(rs, lambda f: "TP")
+        del j["P100"]
         with self.assertRaises(SystemExit):
-            ev.final_verdicts(rs["findings"], a, b, joaquin, ["P100"], AUDIT)
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT)
-        joaquin["P099"] = {"verdict": "TP", "overstated": False}
+            ev.final_verdicts(rs["findings"], j)
+        j = joaquin_of(rs, lambda f: "TP")
+        j["P101"] = {"verdict": "TP", "overstated": False}
         with self.assertRaises(SystemExit):
-            ev.final_verdicts(rs["findings"], a, b, joaquin, ["P100"], AUDIT)
+            ev.final_verdicts(rs["findings"], j)
 
-    def test_unreviewed_disagreement_is_refused(self):
-        rs, _, _ = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT)
-        with self.assertRaises(SystemExit):
-            ev.final_verdicts(rs["findings"], a, b, {i: joaquin[i] for i in AUDIT}, [], AUDIT)
-
-    def test_final_is_joaquin_where_reviewed_else_a_equals_b(self):
-        rs, _, _ = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=["P100"], audit=AUDIT, joaquin_of=lambda i: "U" if i == "P100" else "TP")
-        final, review = ev.final_verdicts(rs["findings"], a, b, joaquin, ["P100"], AUDIT)
-        self.assertEqual((final["P100"]["verdict"], final["P100"]["source"]), ("U", "Joaquín"))
-        self.assertEqual((final["P050"]["verdict"], final["P050"]["source"]), ("TP", "A=B"))
-        self.assertEqual(review["disagreements"], ["P100"])
-        self.assertEqual(review["agreementAB"]["n"], 150)
-
-    def test_overstated_disputed_is_yes_and_joaquin_decides_where_reviewed(self):
-        rs, _, _ = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", audit=AUDIT, over_a={"P050", "P051", "P001"}, over_b={"P051"})
-        final, review = ev.final_verdicts(rs["findings"], a, b, joaquin, [], AUDIT)
-        self.assertTrue(final["P050"]["overstated"])   # A yes, B no -> yes
-        self.assertTrue(final["P051"]["overstated"])   # both yes
-        self.assertFalse(final["P052"]["overstated"])  # both no
-        self.assertFalse(final["P001"]["overstated"])  # in the audit: Joaquín said no
-        self.assertEqual(review["overstatedDisputedSetToYes"], 2)  # P050 and P001
-
-    def test_audit_two_changes_reliable_three_not_met_in_both_languages(self):
+    def test_final_is_joaquin_everywhere_and_overstated_his(self):
         rs, corpora, reports = synthetic()
-        for changed, reliable in ((["J001", "P001"], True), (["J001", "P001", "P002"], False)):
-            m, _, review = self.run_eval(rs, corpora, reports, lambda f: "TP", audit=AUDIT, joaquin_of=lambda i: "FP" if i in changed else "TP")
-            au = review["audit"]
-            self.assertEqual((au["n"], au["changed"], au["reliable"]), (20, len(changed), reliable))
-            self.assertEqual((au["byLanguage"]["java"]["n"], au["byLanguage"]["java"]["changed"]), (7, 1))
-            self.assertEqual((au["byLanguage"]["python"]["n"], au["byLanguage"]["python"]["changed"]), (13, len(changed) - 1))
-            self.assertEqual(au["rateCI95"], ev.wilson(len(changed), 20))
-            for lang in ("java", "python"):
-                c1 = m["languages"][lang]["criterion1"]
-                self.assertEqual(c1["status"], "MET" if reliable else "NOT MET")
-                self.assertEqual(any("NOT RELIABLE" in r for r in c1["reasons"]), not reliable)
-            self.assertIn("NOT RELIABLE" if not reliable else "**RELIABLE**", ev.render(m))
+        m, final = self.run_eval(rs, corpora, reports, lambda f: "U" if f["id"] == "P100" else "TP", over={"P001", "J003"})
+        self.assertEqual({v["source"] for v in final.values()}, {"Joaquín"})
+        self.assertEqual(final["P100"]["verdict"], "U")
+        self.assertEqual((m["languages"]["python"]["messageOverstated"], m["languages"]["java"]["messageOverstated"]), (1, 1))
+        self.assertIn("no AI verdict", m["reviewMethod"])
+        self.assertNotIn("review", m)  # no A/B summary, no audit
+
+    def test_criterion1_has_no_audit_rule(self):
+        rs, corpora, reports = synthetic()
+        m, _ = self.run_eval(rs, corpora, reports, lambda f: "TP" if int(f["id"][1:]) > 5 else "FP")
+        self.assertEqual(m["languages"]["java"]["criterion1"]["status"], "MET")  # 45/50 = 0.90
+        self.assertEqual(m["languages"]["python"]["criterion1"]["status"], "MET")  # 95/100
+        self.assertFalse(any("RELIABLE" in r for lang in ("java", "python") for r in m["languages"][lang]["criterion1"]["reasons"]))
 
     def test_languages_are_separate(self):
         rs, corpora, reports = synthetic()
-        m, _, _ = self.run_eval(rs, corpora, reports, lambda f: "TP" if f["language"] == "java" else ("TP" if int(f["id"][1:]) <= 80 else "FP"), audit=AUDIT)
+        m, _ = self.run_eval(rs, corpora, reports, lambda f: "TP" if f["language"] == "java" else ("TP" if int(f["id"][1:]) <= 80 else "FP"))
         self.assertEqual(m["languages"]["java"]["criterion1"]["status"], "MET")
         self.assertEqual(m["languages"]["python"]["criterion1"]["status"], "NOT MET")  # 0.80
         self.assertEqual(m["languages"]["python"]["fpPer1000"]["primary"], 4.0)  # 20/100 × 20
         self.assertEqual(m["languages"]["python"]["criterion2"]["status"], "MET")
         self.assertEqual(m["languages"]["python"]["volume"]["per1000"]["warning"], 0.2)
-        self.assertIn("does **not** show with 95 % confidence", ev.render(m))
+        md = ev.render(m)
+        self.assertIn("does **not** show with 95 % confidence", md)
+        self.assertIn("reviewed by the author (Joaquín)", md)
 
     def test_java_short_of_the_sample_is_not_met(self):
         rs, corpora, reports = synthetic(n_java=30)
-        m, _, _ = self.run_eval(rs, corpora, reports, lambda f: "TP", audit=AUDIT)
+        m, _ = self.run_eval(rs, corpora, reports, lambda f: "TP")
         self.assertEqual(m["languages"]["java"]["criterion1"]["status"], "NOT MET")
         self.assertEqual(m["languages"]["java"]["precision"]["primary"], 1.0)
 
+    def test_subpool_breakdown_is_informational(self):
+        rs, corpora, reports = synthetic()
+        m, _ = self.run_eval(rs, corpora, reports, lambda f: "TP")
+        self.assertEqual(list(m["languages"]["java"]["by_subpool"]), ["java-A"])
+
 
 class EvaluateAssisted(unittest.TestCase):
-    """PREREGISTRATION.md "Assistance during the review": (a) all verdicts, (b) without the assisted ones in
-    the audit; the less favourable decides. Applied only when REVIEW-LOG.md lists assisted IDs."""
-    DIS = ["J050", "P100"]
-    ASSISTED = ["J001", "J002", "J003", "J004", "J005", "J006", "J007", "P001", "P002", "P003", "J050", "P100"]
+    """PREREGISTRATION.md "Assistance during the review": (a) all verdicts, (b) the assisted verdicts as U;
+    the less favourable decides. Applied only when REVIEW-LOG.md lists assisted IDs."""
 
-    def both(self, changed):
+    def both(self, verdict_of, assisted):
         rs, corpora, reports = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "FP" if i in changed else "TP")
-        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
-        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
-        return ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb), self.ASSISTED), fa, fb, rb
-
-    def test_proportional_threshold(self):
-        self.assertEqual([ev.audit_max_changes(n) for n in (20, 10, 13, 7, 1)], [3, 2, 2, 2, 1])
+        j = joaquin_of(rs, verdict_of)
+        fa, fb = ev.final_verdicts(rs["findings"], j), ev.final_verdicts(rs["findings"], j, assisted)
+        return ev.both(ev.evaluate(rs, corpora, reports, fa), ev.evaluate(rs, corpora, reports, fb, assisted), assisted), fa, fb
 
     def test_assisted_ids_read_from_review_log(self):
-        log = "# Review log\n\n**Assisted IDs:** {}\n\n| date | who | question | answer |\n"
+        log = "# Review log\n\n**Assisted IDs:** {}\n\n| date | who | IDs | question | answer |\n"
         self.assertEqual(ev.assisted_ids(log.format("none")), [])
         self.assertEqual(ev.assisted_ids(log.format("J001, P072")), ["J001", "P072"])
         for bad in (log.format("J1"), log.format("J001, J001"), log.format(""), "# no line\n", log.format("none") + log.format("none")):
@@ -188,71 +150,37 @@ class EvaluateAssisted(unittest.TestCase):
 
     def test_no_assisted_ids_means_a_alone_decides(self):
         rs, corpora, reports = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "FP" if i in ("P004", "P005") else "TP")
-        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
-        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), None, [])
-        self.assertEqual(m["criterion1"]["java"], {"a": "MET", "b": None, "status": "MET", "differs": False})  # 2/20 reliable
-        self.assertEqual((m["b"], m["assisted"], m["notes"]), (None, [], []))
+        fa = ev.final_verdicts(rs["findings"], joaquin_of(rs, lambda f: "TP"))
+        m = ev.both(ev.evaluate(rs, corpora, reports, fa), None, [])
+        self.assertEqual(m["criterion1"]["java"], {"a": "MET", "b": None, "status": "MET", "differs": False})
         md = ev.render_both(m)
         self.assertIn("Assisted verdicts (`REVIEW-LOG.md`): none", md)
-        self.assertIn("## All verdicts", md)
         self.assertNotIn("(b)", md)
 
-    def test_version_b_drops_assisted_audit_and_counts_assisted_disagreements_as_u(self):
-        m, fa, fb, rb = self.both(["J001"])
-        self.assertEqual((fa["J001"]["verdict"], fa["J001"]["source"]), ("FP", "Joaquín"))
-        self.assertEqual((fb["J001"]["verdict"], fb["J001"]["source"]), ("TP", "A=B"))
-        self.assertEqual((fa["P100"]["verdict"], fb["P100"]["verdict"], fb["P100"]["source"]), ("TP", "U", "assisted disagreement -> U"))
-        self.assertEqual(fb["P004"]["source"], "Joaquín")
-        au = rb["audit"]
-        self.assertEqual((au["n"], au["maxChanges"], au["byLanguage"]["java"]["n"], au["byLanguage"]["python"]["n"]), (10, 2, 0, 10))
-        self.assertEqual(rb["assistedExcluded"], {"audit": self.ASSISTED[:10], "disagreementsAsU": self.DIS})
-        self.assertEqual(m["notes"], ["In (b) no java audit case remains: the java audit exists only in the assisted version (a)."])
+    def test_version_b_counts_assisted_as_u(self):
+        m, fa, fb = self.both(lambda f: "TP", ["J001", "P100"])
+        self.assertEqual((fa["J001"]["verdict"], fb["J001"]["verdict"], fb["J001"]["source"]), ("TP", "U", "assisted -> U"))
+        self.assertEqual(fb["J002"]["source"], "Joaquín")
         self.assertEqual(m["b"]["languages"]["python"]["precision"]["U"], 1)
+        self.assertEqual(m["b"]["assistedAsU"], ["J001", "P100"])
+        self.assertIn("Assisted verdicts counted as U: J001, P100.", ev.render_both(m))
 
-    def test_less_favourable_criterion1_decides(self):
-        m, _, _, _ = self.both(["P004"])  # (a) 1/20, (b) 1/10: reliable in both
-        self.assertEqual({lang: c["status"] for lang, c in m["criterion1"].items()}, {"java": "MET", "python": "MET"})
-        m, _, _, _ = self.both(["P004", "P005"])  # (a) 2/20 reliable, (b) 2/10 NOT RELIABLE
-        for lang in ("java", "python"):
-            self.assertEqual(m["criterion1"][lang], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
+    def test_less_favourable_decides(self):
+        # Java 50: 45 TP (0.90). Assisting one TP turns it into U: (b) 44/50 = 0.88 -> NOT MET.
+        m, _, _ = self.both(lambda f: "FP" if f["language"] == "java" and int(f["id"][1:]) <= 5 else "TP", ["J010"])
+        self.assertEqual(m["criterion1"]["java"], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
+        self.assertEqual(m["criterion1"]["python"]["status"], "MET")
         md = ev.render_both(m)
         self.assertIn("| java | 1 | MET | NOT MET | **NOT MET** |", md)
-        self.assertIn("the java audit exists only in the assisted version (a)", md)
-        self.assertIn("## (a) All verdicts", md)
-        self.assertIn("### Review", md)
+        self.assertIn("## (b) Assisted verdicts as U", md)
 
-    def test_less_favourable_criterion2_decides(self):
-        # Python: 100 CRITICAL in 5000 files -> 20/1000 CRITICAL; FP/1000 = 20 × (FP+U)/100, threshold 5.0
-        m, _, _, _ = self.both(["P004"])  # (a) 1 bad -> 0.2, (b) 1 bad + 1 U -> 0.4: MET in both
-        self.assertEqual(m["criterion2"]["python"], {"a": "MET", "b": "MET", "status": "MET", "differs": False})
-        rs, corpora, reports = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "FP" if f["language"] == "python" and 14 <= int(f["id"][1:]) <= 36 else "TP",
-                                  dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "TP")
-        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
-        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
-        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb), self.ASSISTED)
-        # (a) 23 FP -> 4.6 MET; (b) 23 FP + P100 as U -> 4.8 MET; add P001-P003 (assisted audit) as FP under A = B
-        self.assertEqual(m["criterion2"]["python"]["status"], "MET")
-        a, b, joaquin = ab_inputs(rs, lambda f: "FP" if f["language"] == "python" and (14 <= int(f["id"][1:]) <= 36 or int(f["id"][1:]) <= 3) else "TP",
-                                  dis=self.DIS, audit=AUDIT, joaquin_of=lambda i: "TP")
-        fa, ra = ev.final_verdicts(rs["findings"], a, b, joaquin, self.DIS, AUDIT)
-        fb, rb = ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, self.ASSISTED)
-        m = ev.both(ev.evaluate(rs, corpora, reports, fa, ra), ev.evaluate(rs, corpora, reports, fb, rb), self.ASSISTED)
-        # (a) Joaquín says TP on P001-P003: 23 bad -> 4.6 MET; (b) A = B FP on P001-P003 + P100 U: 27 bad -> 5.4 NOT MET
-        self.assertEqual((m["a"]["languages"]["python"]["fpPer1000"]["primary"], m["b"]["languages"]["python"]["fpPer1000"]["primary"]), (4.6, 5.4))
-        self.assertEqual(m["criterion2"]["python"], {"a": "MET", "b": "NOT MET", "status": "NOT MET", "differs": True})
-        self.assertEqual(m["criterion2"]["java"]["status"], "MET")
-        self.assertIn("| python | 2 | MET | NOT MET | **NOT MET** |", ev.render_both(m))
-
-    def test_assisted_must_be_reviewed(self):
+    def test_assisted_must_be_in_the_review_set(self):
         rs, _, _ = synthetic()
-        a, b, joaquin = ab_inputs(rs, lambda f: "TP", dis=self.DIS, audit=AUDIT)
         with self.assertRaises(SystemExit):
-            ev.final_verdicts_unassisted(rs["findings"], a, b, joaquin, self.DIS, AUDIT, ["P050"])
+            ev.final_verdicts(rs["findings"], joaquin_of(rs, lambda f: "TP"), ["P999"])
 
     def test_seeds_of_the_preregistration(self):
-        self.assertEqual((ev.SEED_CAP, ev.SEED_BOOT), (20261102, 20261103))
+        self.assertEqual((ev.SEED_CAP, ev.SEED_BOOT), (20261202, 20261203))
 
 
 class Sample(unittest.TestCase):
@@ -270,8 +198,8 @@ class Sample(unittest.TestCase):
         self.assertEqual(len(chosen["python"]), 100)
         again, _ = sample.draw(by_lang, sample.random.Random(sample.SEED_REVIEW))
         self.assertEqual([f["id"] for f in chosen["python"]], [f["id"] for f in again["python"]])
-        self.assertEqual((sample.SEED_REVIEW, sample.REQUIRED), (20261101, {"java": 50, "python": 100}))
-        self.assertFalse(hasattr(sample, "repeat_sample"))  # no repeatability in test-corpus-3
+        self.assertEqual((sample.SEED_REVIEW, sample.REQUIRED), (20261201, {"java": 50, "python": 100}))
+        self.assertFalse(hasattr(sample, "repeat_sample"))  # no repeatability in test-corpus-4
 
 
 PY_SRC = '''import asyncio
@@ -400,45 +328,49 @@ class CardsRecords(unittest.TestCase):
 
 class ReviewSheet(unittest.TestCase):
     IDS = ["J001", "J002", "P001"]
+    EMPTY = "- Verdict: \n- FP condition: \n- Reason (file:line): \n- Overstated: "
 
     def filled(self, **override):
-        rows = {"J001": ("TP", "a/B.java:10 runs on the @Async pool", "No"),
-                "J002": ("FP", "b/C.java:3 only called from tests", "Sí"),
-                "P001": ("U", "x.py:5 caller outside the repository", "No")}
+        rows = {"J001": ("TP", "—", "a/B.java:10 runs on the @Async pool", "No"),
+                "J002": ("FP", "reachability", "b/C.java:3 only called from src/test/X.java:7", "Sí"),
+                "P001": ("U", "", "x.py:5 caller outside the repository", "No")}
         rows.update(override)
         text = review_sheet.render_sheet(self.IDS)
-        for i, (v, r, o) in rows.items():
-            text = text.replace(f"## {i}\n\n- Card: [cards/{i}.md](cards/{i}.md)\n- Verdict: \n- Reason (file:line): \n- Overstated: ",
-                                f"## {i}\n\n- Card: [cards/{i}.md](cards/{i}.md)\n- Verdict: {v}\n- Reason (file:line): {r}\n- Overstated: {o}")
+        for i, (v, c, r, o) in rows.items():
+            text = text.replace(f"## {i}\n\n- Card: [cards/{i}.md](cards/{i}.md)\n{self.EMPTY}",
+                                f"## {i}\n\n- Card: [cards/{i}.md](cards/{i}.md)\n- Verdict: {v}\n- FP condition: {c}\n- Reason (file:line): {r}\n- Overstated: {o}")
         return text
 
     def test_sheet_has_only_id_card_and_empty_fields(self):
         text = review_sheet.render_sheet(self.IDS)
         block = text.split("## J001\n", 1)[1].split("## J002", 1)[0]
-        self.assertEqual(block, "\n- Card: [cards/J001.md](cards/J001.md)\n- Verdict: \n- Reason (file:line): \n- Overstated: \n\n")
+        self.assertEqual(block, f"\n- Card: [cards/J001.md](cards/J001.md)\n{self.EMPTY}\n\n")
+        self.assertIn("REVIEW-CRITERIA.md` v1", text)
 
     def test_complete_sheet_converts(self):
         out = review_sheet.parse_sheet(self.filled(), self.IDS)
-        self.assertEqual([(v["id"], v["verdict"], v["overstated"]) for v in out], [("J001", "TP", False), ("J002", "FP", True), ("P001", "U", False)])
+        self.assertEqual([(v["id"], v["verdict"], v["fpCondition"], v["overstated"]) for v in out],
+                         [("J001", "TP", None, False), ("J002", "FP", "reachability", True), ("P001", "U", None, False)])
         self.assertEqual(out[0]["reason"], "a/B.java:10 runs on the @Async pool")
-        self.assertEqual([v["overstated_note"] for v in out], [None, None, None])
 
     def test_overstated_first_word_and_note(self):
-        for value, flag, note in [("Sí", True, None), ("No", False, None),
-                                  ("Sí — x", True, "Sí — x"), ("No — la referencia se descarta", False, "No — la referencia se descarta")]:
-            out = review_sheet.parse_sheet(self.filled(J002=("FP", "r", value)), self.IDS)[1]
+        for value, flag, note in [("Sí", True, None), ("No", False, None), ("No — la referencia se descarta", False, "No — la referencia se descarta")]:
+            out = review_sheet.parse_sheet(self.filled(J002=("FP", "context", "r.py:1", value)), self.IDS)[1]
             self.assertEqual((out["overstated"], out["overstated_note"]), (flag, note), value)
-        for value in ("Si", "no", "SÍ", "No,", "No, x", "No - x", "No —", "No —x", "Quizá", "No — "):
+        for value in ("Si", "no", "No, x", "No - x", "No —", "Quizá"):
             with self.assertRaises(ValueError, msg=value) as cm:
-                review_sheet.parse_sheet(self.filled(J002=("FP", "r", value)), self.IDS)
+                review_sheet.parse_sheet(self.filled(J002=("FP", "context", "r.py:1", value)), self.IDS)
             self.assertIn("J002: Overstated", str(cm.exception))
 
     def test_fails_on_missing_or_invalid(self):
-        for override, expected in [({"J002": ("", "r", "No")}, "J002: verdict missing"),
-                                   ({"J002": ("tp", "r", "No")}, "J002: verdict 'tp' is not TP, FP or U"),
-                                   ({"J002": ("TP", "", "No")}, "J002: reason missing"),
-                                   ({"J002": ("TP", "r", "maybe")}, "J002: Overstated 'maybe' is not Sí or No"),
-                                   ({"J002": ("TP", "r", "")}, "J002: Overstated missing")]:
+        for override, expected in [({"J002": ("", "—", "r.py:1", "No")}, "J002: verdict missing"),
+                                   ({"J002": ("tp", "—", "r.py:1", "No")}, "J002: verdict 'tp' is not TP, FP or U"),
+                                   ({"J002": ("FP", "", "r.py:1", "No")}, "J002: an FP needs its FP condition"),
+                                   ({"J002": ("FP", "scope", "r.py:1", "No")}, "J002: an FP needs its FP condition"),
+                                   ({"J002": ("TP", "context", "r.py:1", "No")}, "J002: FP condition 'context' on a TP"),
+                                   ({"J002": ("TP", "—", "", "No")}, "J002: reason missing"),
+                                   ({"J002": ("TP", "—", "runs on the pool", "No")}, "J002: reason cites no file:line"),
+                                   ({"J002": ("TP", "—", "r.py:1", "")}, "J002: Overstated missing")]:
             with self.assertRaises(ValueError) as cm:
                 review_sheet.parse_sheet(self.filled(**override), self.IDS)
             self.assertIn(expected, str(cm.exception))
@@ -447,70 +379,54 @@ class ReviewSheet(unittest.TestCase):
         with self.assertRaises(ValueError):
             review_sheet.parse_sheet(review_sheet.render_sheet(self.IDS), self.IDS)  # empty sheet
 
-    def test_sheet_ids_shuffled_with_fixed_seed_and_no_group_labels(self):
+    def test_sheet_ids_every_review_set_id_shuffled_with_fixed_seed(self):
         import random
-        ids = [f"J{n:03d}" for n in range(1, 30)] + [f"P{n:03d}" for n in range(1, 60)]
-        dis, audit = ["J002", "P010"], ["J005", "P003", "P040"]
-        expected = ["J002", "J005", "P003", "P010", "P040"]
-        random.Random(20261105).shuffle(expected)
-        self.assertEqual(review_sheet.sheet_ids(ids, dis, audit), expected)
-        text = review_sheet.render_sheet(expected).lower()
-        for word in ("disagree", "audit", "desacuerdo", "auditor"):
-            self.assertNotIn(word, text)
-
-    def test_ab_lists_parses_review_ab(self):
-        md = "# x\n\n| a |\n\n## Disagreements (2): x\n\n- [J001](cards/J001.md)\n- [P072](cards/P072.md)\n\n## Audit sample (1 of x)\n\n- [P002](cards/P002.md)\n"
-        self.assertEqual(review_sheet.ab_lists(md), (["J001", "P072"], ["P002"]))
+        ids = [f"J{n:03d}" for n in range(1, 60)] + [f"P{n:03d}" for n in range(1, 101)]
+        expected = list(ids)
+        random.Random(20261204).shuffle(expected)
+        self.assertEqual(review_sheet.sheet_ids(ids), expected)
+        self.assertEqual(sorted(review_sheet.sheet_ids(ids)), sorted(ids))
+        self.assertEqual(review_sheet.SEED_SHEET, 20261204)
 
 
-class ReviewAB(unittest.TestCase):
+class AICompare(unittest.TestCase):
     IDS = ["J001", "J002", "P001", "P002"]
 
     @staticmethod
-    def v(i, verdict, reason="x.py:1 evidence", over=False):
-        return {"id": i, "verdict": verdict, "reason": reason, "overstated": over}
+    def out(verdicts):
+        return {"entries": [{"id": i, "verdict": v, "valid": v is not None} for i, v in verdicts.items()]}
 
-    def test_merge_batches_orders_and_validates(self):
-        out = review_ab.merge_batches([{"batch": 2, "verdicts": [self.v("P002", "U"), self.v("P001", "FP")]},
-                                       {"batch": 1, "verdicts": [self.v("J001", "TP"), self.v("J002", "FP")]}], self.IDS)
-        self.assertEqual([v["id"] for v in out], self.IDS)
-        for bad, expected in [([self.v("J001", "TP"), self.v("J001", "TP")], "J001: appears twice"),
-                              ([self.v("J001", "TP")], "do not cover exactly"),
-                              ([self.v("J001", "tp"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "U")], "J001: verdict is not TP, FP or U"),
-                              ([self.v("J001", "TP", " "), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "U")], "J001: reason missing"),
-                              ([self.v("J001", "TP", over="No"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "U")], "J001: overstated is not true/false")]:
-            with self.assertRaises(ValueError) as cm:
-                review_ab.merge_batches([{"verdicts": bad}], self.IDS)
-            self.assertIn(expected, str(cm.exception))
-
-    def test_compare_is_on_the_verdict_only_and_per_language(self):
-        a = [self.v("J001", "TP"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "TP", over=True)]
-        b = [self.v("J001", "TP", "other.py:2"), self.v("J002", "TP"), self.v("P001", "U"), self.v("P002", "TP", over=False)]
-        c = review_ab.compare(a, b, self.IDS)
-        self.assertEqual((c["java"]["agree"], c["java"]["disagreeing"]), (1, ["J002"]))
-        self.assertEqual((c["python"]["agree"], c["python"]["disagree"]), (2, 0))
-        self.assertEqual((c["all"]["n"], c["all"]["disagreeing"]), (4, ["J002"]))
-
-    def test_audit_sample_seed_size_and_order(self):
-        agreeing = [f"P{n:03d}" for n in range(1, 60)]
-        s = review_ab.audit_sample(agreeing)
-        self.assertEqual(len(s), 20)
-        self.assertEqual(s, [i for i in agreeing if i in s])
-        import random
-        self.assertEqual(set(s), set(random.Random(20261104).sample(agreeing, 20)))
+    def test_ai_verdicts_invalid_is_none_and_ids_must_match(self):
+        got = ai_compare.ai_verdicts(self.out({"J001": "TP", "J002": None, "P001": "FP", "P002": "U"}), self.IDS)
+        self.assertEqual(got, {"J001": "TP", "J002": None, "P001": "FP", "P002": "U"})
         with self.assertRaises(ValueError):
-            review_ab.audit_sample(agreeing[:19])
+            ai_compare.ai_verdicts(self.out({"J001": "TP"}), self.IDS)
 
-    def test_reviewers_a_and_b(self):
-        self.assertEqual(review_ab.REVIEWERS, {"A": "Claude (review A, claude-opus-5-5)", "B": "Claude (review B, claude-sonnet-5-5)"})
+    def test_compare_invalid_counts_as_disagreement_and_threshold_is_informative(self):
+        ai = {"J001": "TP", "J002": None, "P001": "FP", "P002": "U"}
+        joaquin = {"J001": "TP", "J002": "TP", "P001": "FP", "P002": "TP"}
+        c = ai_compare.compare(ai, joaquin, self.IDS)
+        self.assertEqual((c["java"]["agree"], c["java"]["invalid"], c["java"]["disagreeing"]), (1, ["J002"], ["J002"]))
+        self.assertEqual((c["all"]["n"], c["all"]["agree"], c["all"]["rate"]), (4, 2, 0.5))
+        self.assertEqual(c["all"]["rateCI95"], ev.wilson(2, 4))
+        self.assertFalse(c["all"]["meetsInformativeThreshold"])
+        same = ai_compare.compare(joaquin, joaquin, self.IDS)
+        self.assertTrue(same["all"]["meetsInformativeThreshold"])
+        self.assertEqual(same["all"]["cohenKappa"], 1.0)
+        self.assertEqual(ai_compare.THRESHOLD, 0.95)
 
-    def test_render_shows_ids_and_counts_never_verdicts(self):
-        a = [self.v("J001", "TP"), self.v("J002", "FP"), self.v("P001", "U"), self.v("P002", "TP")]
-        b = [self.v("J001", "TP"), self.v("J002", "TP"), self.v("P001", "U"), self.v("P002", "TP")]
-        md = review_ab.render(review_ab.compare(a, b, self.IDS), ["J001"])
-        self.assertIn("- [J002](cards/J002.md)", md)
-        for word in ("TP |", "| TP", "FP |", "| FP", " U |", "TP\n", "FP\n"):
-            self.assertNotIn(word, md)
+    def test_render_says_it_never_decides(self):
+        joaquin = {"J001": "TP", "J002": "TP", "P001": "FP", "P002": "TP"}
+        md = ai_compare.render({"A": ai_compare.compare(joaquin, joaquin, self.IDS)})
+        self.assertIn("never decides", md)
+        self.assertIn("does **not** make the AI review a measurement method", md)
+
+    def test_seal_refuses_inside_repo_and_after_the_sheet(self):
+        with self.assertRaises(SystemExit) as cm:
+            ai_compare.main(["seal", str(ai_compare.DIR / "x")])
+        self.assertIn("inside the repository", str(cm.exception))
+        with self.assertRaises(SystemExit):
+            ai_compare.main(["peek", "/tmp/x"])
 
 
 if __name__ == "__main__":
