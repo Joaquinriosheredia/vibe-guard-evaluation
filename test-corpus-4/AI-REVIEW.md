@@ -60,5 +60,10 @@ partial review is sealed, and that is recorded here.
 
 ## Outcome
 
-To be filled in one line when the run ends: completed and sealed (with the commit of
-`ai-review.sha256`), or not run (usage limit), with the date.
+**Completed and sealed, 2026-10-28:**
+- run from 12:31 to 13:06 (+01:00);
+- exit 1: 160 reviewed, 0 skipped, 1 invalid answer (counts as disagreement);
+- no usage-limit stop.
+
+`review-a.json` sha256 `6710560ae7747edc96c259b8df9f0261370026b6880d5dfd7769222ff07744ac`
+(`ai-review.sha256`, committed with this line, before `REVIEW-SHEET.md`). Not opened.
