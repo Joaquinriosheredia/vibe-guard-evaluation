@@ -3,27 +3,27 @@
   "pyvibePro": {
     "repository": "Joaquinriosheredia/pyvibe-pro (private)",
     "package": "python-vibe-guard",
-    "tag": "TO-FILL (annotated)",
-    "commit": "TO-FILL",
-    "version": "TO-FILL",
-    "wheel": "TO-FILL (built locally from the tagged commit)",
-    "sha256": "TO-FILL"
+    "tag": "v0.16.0",
+    "commit": "e449dd75a325fe2e9ec3ef624ec6b3be054636a5",
+    "version": "0.16.0",
+    "wheel": "python_vibe_guard-0.16.0-py3-none-any.whl",
+    "sha256": "92bb8f7ead3ea8458cc8717be673d106689de6e9167011821d2cdc11b0bb8db6"
   },
   "javaVibeGuardPro": {
     "repository": "Joaquinriosheredia/java-vibe-guard-pro (private)",
     "package": "java-vibe-guard",
-    "tag": "TO-FILL (annotated)",
-    "commit": "TO-FILL",
-    "version": "TO-FILL",
-    "tgz": "TO-FILL (npm pack from the tagged commit)",
-    "sha256": "TO-FILL",
-    "integrity": "TO-FILL (npm sha512)"
+    "tag": "v3.1.0",
+    "commit": "118711684377b72381598fbfaba0b6fc48fb21ff",
+    "version": "3.1.0",
+    "tgz": "java-vibe-guard-3.1.0.tgz",
+    "sha256": "f276c46c10e4a408287c82cde32844129e49fd795f60d60e3a8e7667b1a5f734",
+    "integrity": "sha512-+U0cBni90rLYkPFueUrdi94mgG20WFv+FIn4oxQQl6+CoRQ5e311WGz65oF9dYlkz3j/Lnae6IG88gxSgi4kUA=="
   },
   "vibeGuardScan": {
     "repository": "Joaquinriosheredia/vibe-guard-scan (private)",
-    "tag": "TO-FILL (annotated)",
-    "commit": "TO-FILL",
-    "version": "TO-FILL",
-    "versionLine": "TO-FILL (exact `vibe-guard --version` output)"
+    "tag": "v0.4.0",
+    "commit": "9538b50a888018e6eb6e8810f5d39921b7b94fdb",
+    "version": "0.4.0",
+    "versionLine": "vibe-guard 0.4.0 (java-vibe-guard 3.1.0; pyvibe 0.16.0)"
   }
 }
