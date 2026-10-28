@@ -1,0 +1,81 @@
+Checks:
+  - every hop location exists in the checkout (file, line range)
+  - each hop line contains the next hop symbol as a whole word, not its definition
+  - the last hop is in the card's file, inside and naming the card's enclosing function
+  - the first hop names an entry kind (marker visibility reported as a warning)
+  - FP by reachability: every name-based caller, climbed from the card function, is on a test/script/benchmark/docs path or ends at a function with no caller and no annotation/decorator; no configuration file names a climbed function
+Cannot guarantee:
+  - that a name resolves to that function (overloads, same-named methods, dynamic dispatch, DI, reflection, string-built names)
+  - that the call executes (conditions, early returns, feature flags)
+  - the thread, pool or event loop the code runs on
+  - that the entry point is live (@EnableAsync, scheduler, listener registration, configuration)
+  - that no caller exists: grep sees names, not calls
+
+A J001 TP: pass  [scheduled] runTests @ playgrounds/feature-service-maven-sb-3/src/main/java/com/sivalabs/ft/features/testdata/BookTestDataQueryRunner.java:24
+A J003 TP: pass  [scheduled] reEntrantLockTask @ playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java:50 → reEntrantLockTask @ playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java:57
+A J010 TP: pass  [scheduled] scheduledRefreshWebSocketToken @ src/main/java/com/xianyusmart/service/impl/TokenRefreshServiceImpl.java:509
+A J016 TP: pass  [scheduled] sendMqEvent @ hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26 → sendMqEvent @ hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/producer/sender/AbstractKafkaDomainEventSender.java:78
+    warning: chain[0] hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26: no entry marker of kind scheduled visible at the hop or on its enclosing function (heuristic)
+A J017 TP: pass  [scheduled] sendMqEvent @ hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26 → sendMqEvent @ hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/producer/sender/AbstractKafkaDomainEventSender.java:84
+    warning: chain[0] hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26: no entry marker of kind scheduled visible at the hop or on its enclosing function (heuristic)
+A P005 TP: pass  [hook] _wrapped_lifespan @ src/apowerb/main.py:836 → _start_webhook_renewal @ src/apowerb/main.py:680
+A P008 TP: pass  [route] upload_complete @ src/apowerb/routers/files.py:250
+A P020 TP: pass  [route] chat @ main.py:1988
+    warning: chain[0] main.py:1988: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+A P026 TP: pass  [route] sync_minute @ backend/app/api/kline.py:913 → sync_minute @ backend/app/api/kline.py:1009
+A P027 TP: pass  [route] extend_history @ backend/app/api/kline.py:1164
+A P028 TP: pass  [route] repair_daily @ backend/app/api/kline.py:1251
+A P035 TP: pass  [route] delete_one_document @ apps/api/routers/documents.py:7570 → _invalidate_committed_document_cache @ apps/api/routers/documents.py:1073 → _detach_cache_invalidation @ apps/api/routers/documents.py:1058 → _finish_detached_cache_invalidation @ apps/api/routers/documents.py:1041
+A P038 TP: pass  [route] serve_site @ apps/api/routers/sites.py:536
+A P044 TP: pass  [registration] _KIND_HANDLERS @ packages/core/workers/internal.py:5038 → _exec_subagent @ packages/core/workers/internal.py:3842 → _exec_subagent_in_step_scope @ packages/core/workers/internal.py:4272 → runtime_execute_worker_subagent_loop @ packages/core/ai/runtime/harness.py:1193 → runtime_execute_subagent_loop @ packages/core/ai/runtime/harness.py:1153 → runtime_execute_agentic_loop @ packages/core/ai/runtime/harness.py:1075 → _runtime_execute_agentic_loop @ packages/core/ai/runtime/harness.py:722 → _runtime_tool_executor @ packages/core/ai/runtime/harness.py:684 → runtime_execute_scoped_dynamic_tool_handler @ packages/core/ai/runtime/tool_execution.py:1091 → runtime_record_tool_effect_intent @ packages/core/ai/runtime/tool_effect_intents.py:237
+    warning: chain[0] packages/core/workers/internal.py:5038: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P050 FP: n/a
+A P056 TP: pass  [registration] get_tools @ packages/core/ai/tools/file_tools.py:3368 → _read_file @ packages/core/ai/tools/file_tools.py:2035 → _read_file_locked @ packages/core/ai/tools/file_tools.py:1896 → _read_supported_text @ packages/core/ai/tools/file_tools.py:1077
+    warning: chain[0] packages/core/ai/tools/file_tools.py:3368: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P060 TP: pass  [registration] register_all_tools @ packages/core/ai/tools/__init__.py:123 → get_tools @ packages/core/ai/tools/media_tools.py:9760 → _align_subtitles_handler @ packages/core/ai/tools/media_tools.py:1688 → _load_entity_json @ packages/core/ai/tools/media_tools.py:6126
+    warning: chain[0] packages/core/ai/tools/__init__.py:123: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P061 TP: pass  [registration] register_all_tools @ packages/core/ai/tools/__init__.py:172 → get_tools @ packages/core/ai/tools/sandbox_tools.py:2493 → _sandbox_handler @ packages/core/ai/tools/sandbox_tools.py:2428 → _sandbox_write_file @ packages/core/ai/tools/sandbox_tools.py:1505 → _read_workspace_bytes @ packages/core/ai/tools/sandbox_tools.py:526
+    warning: chain[0] packages/core/ai/tools/__init__.py:172: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P064 TP: pass  [registration] get_tools @ packages/core/ai/tools/content_ledger_tools.py:248 → _record_content_ledger @ packages/core/ai/tools/content_ledger_tools.py:197 → reserve_content @ packages/core/services/content_ledger.py:501
+    warning: chain[0] packages/core/ai/tools/content_ledger_tools.py:248: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P069 TP: pass  [route] import_free_music @ apps/api/routers/media.py:271 → download_open_music_track @ packages/core/services/open_music_catalog.py:310
+A P075 FP: n/a
+A P076 TP: pass  [task] process_video_job_task @ packages/core/tasks/media_tasks.py:246 → process_video_job @ packages/core/tasks/media_tasks.py:188 → _call_video_api @ packages/core/tasks/media_tasks.py:1747 → _video_adapter_runtime @ packages/core/tasks/media_tasks.py:1482 → _ensure_inline_data_url @ packages/core/tasks/media_tasks.py:2892
+A P087 TP: pass  [route] import_local_video @ backend/api/downloaded.py:527
+A P093 TP: pass  [registration] _ @ pixeltable/functions/twelvelabs.py:222 → _embed_av_content @ pixeltable/functions/twelvelabs.py:339
+    warning: chain[0] pixeltable/functions/twelvelabs.py:222: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P097 TP: pass  [hook] _start_broadcaster @ scanner/api.py:198 → broadcast_loop @ scanner/feed_hub.py:300
+B J001 TP: pass  [scheduled] runTests @ playgrounds/feature-service-maven-sb-3/src/main/java/com/sivalabs/ft/features/testdata/BookTestDataQueryRunner.java:24
+B J003 TP: pass  [scheduled] reEntrantLockTask @ playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java:50 → reEntrantLockTask @ playgrounds/spring-petclinic-maven-sb-2/src/main/java/org/springframework/samples/petclinic/scheduled/SchedulerTestConfig.java:57
+B J010 TP: pass  [scheduled] scheduledRefreshWebSocketToken @ src/main/java/com/xianyusmart/service/impl/TokenRefreshServiceImpl.java:509
+B J016 TP: pass  [scheduled] sendMqEvent @ hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26 → sendMqEvent @ hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/producer/sender/AbstractKafkaDomainEventSender.java:78
+    warning: chain[0] hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26: no entry marker of kind scheduled visible at the hop or on its enclosing function (heuristic)
+B J017 TP: pass  [scheduled] sendMqEvent @ hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26 → sendMqEvent @ hp-soa-starter/hp-soa-starter-kafka/src/main/java/io/github/hpsocket/soa/starter/kafka/producer/sender/AbstractKafkaDomainEventSender.java:84
+    warning: chain[0] hp-demo/hp-demo-kafka/src/main/java/io/github/hpsocket/demo/kafka/handler/DomainEventSenderJobHandler.java:26: no entry marker of kind scheduled visible at the hop or on its enclosing function (heuristic)
+B P005 TP: pass  [hook] _wrapped_lifespan @ src/apowerb/main.py:836 → _start_webhook_renewal @ src/apowerb/main.py:680
+B P008 TP: pass  [route] upload_complete @ src/apowerb/routers/files.py:250
+B P020 TP: pass  [route] chat @ main.py:1988
+    warning: chain[0] main.py:1988: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+B P026 TP: pass  [route] sync_minute @ backend/app/api/kline.py:913 → sync_minute @ backend/app/api/kline.py:1009
+B P027 TP: pass  [route] extend_history @ backend/app/api/kline.py:1164
+B P028 TP: pass  [route] repair_daily @ backend/app/api/kline.py:1251
+B P035 TP: pass  [route] delete_one_document @ apps/api/routers/documents.py:7570 → _invalidate_committed_document_cache @ apps/api/routers/documents.py:1073 → _detach_cache_invalidation @ apps/api/routers/documents.py:1058 → _finish_detached_cache_invalidation @ apps/api/routers/documents.py:1041
+B P038 TP: pass  [route] serve_site @ apps/api/routers/sites.py:536
+B P044 TP: pass  [registration] _KIND_HANDLERS @ packages/core/workers/internal.py:5038 → _exec_subagent @ packages/core/workers/internal.py:3842 → _exec_subagent_in_step_scope @ packages/core/workers/internal.py:4272 → runtime_execute_worker_subagent_loop @ packages/core/ai/runtime/harness.py:1193 → runtime_execute_subagent_loop @ packages/core/ai/runtime/harness.py:1153 → runtime_execute_agentic_loop @ packages/core/ai/runtime/harness.py:1075 → _runtime_execute_agentic_loop @ packages/core/ai/runtime/harness.py:722 → _runtime_tool_executor @ packages/core/ai/runtime/harness.py:684 → runtime_execute_scoped_dynamic_tool_handler @ packages/core/ai/runtime/tool_execution.py:1091 → runtime_record_tool_effect_intent @ packages/core/ai/runtime/tool_effect_intents.py:237
+    warning: chain[0] packages/core/workers/internal.py:5038: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P050 FP: n/a
+B P056 TP: pass  [registration] get_tools @ packages/core/ai/tools/file_tools.py:3368 → _read_file @ packages/core/ai/tools/file_tools.py:2035 → _read_file_locked @ packages/core/ai/tools/file_tools.py:1896 → _read_supported_text @ packages/core/ai/tools/file_tools.py:1077
+    warning: chain[0] packages/core/ai/tools/file_tools.py:3368: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P060 TP: pass  [registration] register_all_tools @ packages/core/ai/tools/__init__.py:123 → get_tools @ packages/core/ai/tools/media_tools.py:9760 → _align_subtitles_handler @ packages/core/ai/tools/media_tools.py:1688 → _load_entity_json @ packages/core/ai/tools/media_tools.py:6126
+    warning: chain[0] packages/core/ai/tools/__init__.py:123: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P061 TP: pass  [registration] register_all_tools @ packages/core/ai/tools/__init__.py:172 → get_tools @ packages/core/ai/tools/sandbox_tools.py:2493 → _sandbox_handler @ packages/core/ai/tools/sandbox_tools.py:2428 → _sandbox_write_file @ packages/core/ai/tools/sandbox_tools.py:1505 → _read_workspace_bytes @ packages/core/ai/tools/sandbox_tools.py:526
+    warning: chain[0] packages/core/ai/tools/__init__.py:172: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P064 TP: pass  [registration] get_tools @ packages/core/ai/tools/content_ledger_tools.py:248 → _record_content_ledger @ packages/core/ai/tools/content_ledger_tools.py:197 → reserve_content @ packages/core/services/content_ledger.py:501
+    warning: chain[0] packages/core/ai/tools/content_ledger_tools.py:248: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P069 TP: pass  [route] import_free_music @ apps/api/routers/media.py:271 → download_open_music_track @ packages/core/services/open_music_catalog.py:310
+B P075 FP: n/a
+B P076 TP: pass  [task] process_video_job_task @ packages/core/tasks/media_tasks.py:246 → process_video_job @ packages/core/tasks/media_tasks.py:188 → _call_video_api @ packages/core/tasks/media_tasks.py:1747 → _video_adapter_runtime @ packages/core/tasks/media_tasks.py:1482 → _ensure_inline_data_url @ packages/core/tasks/media_tasks.py:2892
+B P087 TP: pass  [route] import_local_video @ backend/api/downloaded.py:527
+B P093 TP: pass  [registration] _ @ pixeltable/functions/twelvelabs.py:222 → _embed_av_content @ pixeltable/functions/twelvelabs.py:339
+    warning: chain[0] pixeltable/functions/twelvelabs.py:222: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P097 TP: pass  [hook] _start_broadcaster @ scanner/api.py:198 → broadcast_loop @ scanner/feed_hub.py:300

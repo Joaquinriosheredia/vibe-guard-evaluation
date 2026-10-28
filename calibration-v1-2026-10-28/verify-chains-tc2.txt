@@ -1,0 +1,77 @@
+Checks:
+  - every hop location exists in the checkout (file, line range)
+  - each hop line contains the next hop symbol as a whole word, not its definition
+  - the last hop is in the card's file, inside and naming the card's enclosing function
+  - the first hop names an entry kind (marker visibility reported as a warning)
+  - FP by reachability: every name-based caller, climbed from the card function, is on a test/script/benchmark/docs path or ends at a function with no caller and no annotation/decorator; no configuration file names a climbed function
+Cannot guarantee:
+  - that a name resolves to that function (overloads, same-named methods, dynamic dispatch, DI, reflection, string-built names)
+  - that the call executes (conditions, early returns, feature flags)
+  - the thread, pool or event loop the code runs on
+  - that the entry point is live (@EnableAsync, scheduler, listener registration, configuration)
+  - that no caller exists: grep sees names, not calls
+
+A J001 —: invalid answer
+A J015 TP: pass  [scheduled] increment @ integration-tests/opentelemetry-quartz/src/main/java/io/quarkus/it/opentelemetry/quartz/Counter.java:26
+A J020 TP: pass  [route] addExecutionId @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/MultiInstanceRestController.java:85 → addExecutionId @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/MultiInstanceServiceImpl.java:72 → addMultiInstanceParallelAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:85
+A J021 TP: pass  [route] claim @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/buttonOperation/ButtonOperationRestController.java:190 → claimAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:107
+A J023 TP: pass  [route] removeExecution @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/MultiInstanceRestController.java:143 → removeExecution @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/MultiInstanceServiceImpl.java:238 → deleteMultiInstanceParallelAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:155
+A J036 TP: pass  [route] rollBack2History @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/buttonOperation/ButtonOperationRestController.java:1185 → rollBackTwoHistoryAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:463
+A J038 TP: pass  [route] rollbackToSender @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/buttonOperation/ButtonOperationRestController.java:1256 → rollbackToSenderAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:522
+A J052 TP: pass  [listener] onEvent @ y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/listener/TaskListener4ProcessCompleted.java:61 → saveToEs @ y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/service/impl/Process4CompleteUtilServiceImpl.java:299
+    warning: chain[0] y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/listener/TaskListener4ProcessCompleted.java:61: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J056 FP: n/a  [scheduled] poll @ api/src/main/java/io/terrakube/api/plugin/vcs/provider/azdevops/AzDevOpsPollingService.java:110
+A P002 FP: n/a  [route] verify_domain @ server/app/routers/domains.py:110
+A P046 FP: n/a  [route] create_vrt @ backend/app/processing/ingest/router.py:1381 → create_vrt_job @ backend/app/processing/ingest/service.py:1112 → _defer_vrt @ backend/app/processing/ingest/service.py:1100 → ingest_vrt @ backend/app/processing/ingest/tasks_vrt.py:457
+A P057 TP: pass  [route] debug_memories @ main.py:3750 → search_memories @ database.py:2682
+A P065 FP: n/a
+A P072 TP: pass  [route] upload_document @ backend/api/documents.py:147 → ingest_document_from_staged @ backend/rag/pipeline.py:281 → commit @ backend/storage/files.py:185
+A P073 FP: n/a  [task] _background_reprocess @ backend/api/documents.py:472 → materialize @ backend/storage/__init__.py:76 → open_read @ backend/storage/files.py:210
+    warning: chain[0] backend/api/documents.py:472: no entry marker of kind task visible at the hop or on its enclosing function (heuristic)
+A P077 TP: pass  [main] main @ consortium/client/start_client.py:132 → _start_client @ consortium/client/start_client.py:128 → Client.run @ consortium/client/client.py:287 → _handle_client_session @ consortium/client/client.py:201 → BaseInterpreter.run @ consortium/client/repl_interface/base_interpreter.py:273 → _dispatch_command @ consortium/client/repl_interface/base_interpreter.py:178 → RcCommand.run @ consortium/client/commands/core_commands/rc.py:50
+A P083 FP: n/a  [main] main @ consortium.py:133 → main @ consortium/server/start_server.py:160 → _start_server @ consortium/server/start_server.py:49
+A P090 TP: pass  [registration] call_tool @ mcps/custom/image-gen-mcp/server.py:260 → _handle_edit @ mcps/custom/image-gen-mcp/server.py:697 → _edit_openai @ mcps/custom/image-gen-mcp/server.py:573
+    warning: chain[0] mcps/custom/image-gen-mcp/server.py:260: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P098 TP: pass  [registration] call_tool @ mcps/custom/transcribe-mcp/server.py:588 → _handle_generate_subtitles @ mcps/custom/transcribe-mcp/server.py:696
+    warning: chain[0] mcps/custom/transcribe-mcp/server.py:588: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P099 FP: n/a  [script] <module __main__ guard> @ mcps/custom/tts-mcp/live_smoke.py:61 → main @ mcps/custom/tts-mcp/live_smoke.py:54
+    warning: chain[0] mcps/custom/tts-mcp/live_smoke.py:61: no entry marker of kind script visible at the hop or on its enclosing function (heuristic)
+A P116 —: invalid answer
+A P126 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1083 → _self_uninstall_and_exit @ satellite/transport/lifecycle_update.py:165
+A P127 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1083 → _self_uninstall_and_exit @ satellite/transport/lifecycle_update.py:188
+A P145 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:968
+A P149 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:981
+A P153 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1000
+A P161 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1045
+B J001 —: invalid answer
+B J015 TP: pass  [scheduled] increment @ integration-tests/opentelemetry-quartz/src/main/java/io/quarkus/it/opentelemetry/quartz/Counter.java:26
+B J020 TP: pass  [route] addExecutionId @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/MultiInstanceRestController.java:85 → addExecutionId @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/MultiInstanceServiceImpl.java:72 → addMultiInstanceParallelAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:85
+B J021 TP: pass  [route] claim @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/buttonOperation/ButtonOperationRestController.java:190 → claimAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:107
+B J023 TP: pass  [route] removeExecution @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/MultiInstanceRestController.java:143 → removeExecution @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/MultiInstanceServiceImpl.java:238 → deleteMultiInstanceParallelAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:155
+B J036 TP: pass  [route] rollBack2History @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/buttonOperation/ButtonOperationRestController.java:1185 → rollBackTwoHistoryAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:463
+B J038 TP: pass  [route] rollbackToSender @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/controller/buttonOperation/ButtonOperationRestController.java:1256 → rollbackToSenderAuditLog @ y9-module-flowableui/risenet-y9boot-support-flowableui/src/main/java/net/risesoft/service/impl/AsyncUtilServiceImpl.java:522
+B J052 TP: pass  [listener] onEvent @ y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/listener/TaskListener4ProcessCompleted.java:61 → saveToEs @ y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/service/impl/Process4CompleteUtilServiceImpl.java:299
+    warning: chain[0] y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/listener/TaskListener4ProcessCompleted.java:61: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+B J056 FP: n/a  [scheduled] poll @ api/src/main/java/io/terrakube/api/plugin/vcs/provider/azdevops/AzDevOpsPollingService.java:110
+B P002 FP: n/a  [route] verify_domain @ server/app/routers/domains.py:110
+B P046 FP: n/a  [route] create_vrt @ backend/app/processing/ingest/router.py:1381 → create_vrt_job @ backend/app/processing/ingest/service.py:1112 → _defer_vrt @ backend/app/processing/ingest/service.py:1100 → ingest_vrt @ backend/app/processing/ingest/tasks_vrt.py:457
+B P057 TP: pass  [route] debug_memories @ main.py:3750 → search_memories @ database.py:2682
+B P065 FP: n/a
+B P072 TP: pass  [route] upload_document @ backend/api/documents.py:147 → ingest_document_from_staged @ backend/rag/pipeline.py:281 → commit @ backend/storage/files.py:185
+B P073 FP: n/a  [task] _background_reprocess @ backend/api/documents.py:472 → materialize @ backend/storage/__init__.py:76 → open_read @ backend/storage/files.py:210
+    warning: chain[0] backend/api/documents.py:472: no entry marker of kind task visible at the hop or on its enclosing function (heuristic)
+B P077 TP: pass  [main] main @ consortium/client/start_client.py:132 → _start_client @ consortium/client/start_client.py:128 → run @ consortium/client/client.py:287 → _handle_client_session @ consortium/client/client.py:201 → run @ consortium/client/repl_interface/base_interpreter.py:273 → _dispatch_command @ consortium/client/repl_interface/base_interpreter.py:178 → run @ consortium/client/commands/core_commands/rc.py:50
+B P083 FP: n/a  [main] main @ consortium.py:133 → main @ consortium/server/start_server.py:160 → _start_server @ consortium/server/start_server.py:49
+B P090 TP: pass  [registration] call_tool @ mcps/custom/image-gen-mcp/server.py:260 → _handle_edit @ mcps/custom/image-gen-mcp/server.py:697 → _edit_openai @ mcps/custom/image-gen-mcp/server.py:573
+    warning: chain[0] mcps/custom/image-gen-mcp/server.py:260: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P098 TP: pass  [registration] call_tool @ mcps/custom/transcribe-mcp/server.py:588 → _handle_generate_subtitles @ mcps/custom/transcribe-mcp/server.py:696
+    warning: chain[0] mcps/custom/transcribe-mcp/server.py:588: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+B P099 FP: n/a  [script] <module __main__ guard> @ mcps/custom/tts-mcp/live_smoke.py:61 → main @ mcps/custom/tts-mcp/live_smoke.py:54
+    warning: chain[0] mcps/custom/tts-mcp/live_smoke.py:61: no entry marker of kind script visible at the hop or on its enclosing function (heuristic)
+B P116 —: invalid answer
+B P126 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1083 → _self_uninstall_and_exit @ satellite/transport/lifecycle_update.py:165
+B P127 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1083 → _self_uninstall_and_exit @ satellite/transport/lifecycle_update.py:188
+B P145 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:968
+B P149 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:981
+B P153 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1000
+B P161 TP: pass  [main] main @ satellite/__main__.py:826 → _main @ satellite/__main__.py:730 → connect_forever @ satellite/transport/ws_client.py:435 → _message_loop @ satellite/transport/ws_client.py:1045
