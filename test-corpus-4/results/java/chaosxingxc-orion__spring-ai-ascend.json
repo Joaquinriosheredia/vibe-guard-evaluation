@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "a2a-shared-memory-memopt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "a2a-shared-memory/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "agent-bus/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "agent-runtime/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "agent-sdk/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "collaboration/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "docs/archive/architecture-spike/tools/architecture-workspace-spike/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 262
+      },
+      {
+        "path": "financial/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "tools/architecture-workspace/src/test",
+        "pattern": "test",
+        "files": 13
+      }
+    ],
+    "filesExcluded": 382
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1005,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

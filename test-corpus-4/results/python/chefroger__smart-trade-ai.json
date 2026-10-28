@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "skills/auto-smtp-email/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/auto-trade-customer-development/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-buyer-persona/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-cold-outreach/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-customer-finder/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-customer-intel/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-customer-mgmt/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-customs-data/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-daily-automation/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-data-directory/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-doc-generation/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-document/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-email-imitation/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-email-intel/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-exhibition/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-inquiry-training/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-kol-imitation/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-lead-generation/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-linkedin-marketing/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-market-analysis/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-onboarding/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-osint/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-platform/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-product-description/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-reddit-engagement/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-sales-pipeline/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-seo-aeo/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-short-video/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-six-thinking-hats/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-skill-generator/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-social-media/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-trade-compliance/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/b2b-trade-ops/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "skills/chat-memory/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "tests",
+        "pattern": "tests",
+        "files": 71
+      }
+    ],
+    "filesExcluded": 71
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

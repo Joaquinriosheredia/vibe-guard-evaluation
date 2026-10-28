@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "infobip-spring-data-common/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "infobip-spring-data-jdbc-annotation-processor/src/test",
+        "pattern": "test",
+        "files": 42
+      },
+      {
+        "path": "infobip-spring-data-jdbc-querydsl-boot-starter/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "infobip-spring-data-jdbc-querydsl/src/test",
+        "pattern": "test",
+        "files": 53
+      },
+      {
+        "path": "infobip-spring-data-jpa-querydsl-boot-starter/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "infobip-spring-data-jpa-querydsl/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "infobip-spring-data-r2dbc-querydsl-boot-starter/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "infobip-spring-data-r2dbc-querydsl/src/test",
+        "pattern": "test",
+        "files": 35
+      }
+    ],
+    "filesExcluded": 160
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 244,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

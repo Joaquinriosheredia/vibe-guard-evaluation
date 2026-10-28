@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "agentflow4j-checkpoint/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "agentflow4j-cli-agents/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "agentflow4j-core/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "agentflow4j-graph/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "agentflow4j-openhands/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "agentflow4j-playground/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "agentflow4j-resilience4j/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "agentflow4j-samples/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "agentflow4j-squad/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "agentflow4j-starter/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "agentflow4j-test/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 55
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 176,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

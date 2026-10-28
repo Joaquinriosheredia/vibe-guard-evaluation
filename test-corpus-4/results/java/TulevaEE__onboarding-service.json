@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "appscripts/seb-position-uploader/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "emails/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 1173
+      }
+    ],
+    "filesExcluded": 1173
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 3679,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 8,
+    "warning": 0,
+    "info": 0,
+    "total": 8
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "src/main/java/ee/tuleva/onboarding/admin/ledger/LedgerAdminController.java",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "src/main/java/ee/tuleva/onboarding/admin/ledger/LedgerAdminController.java",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (FundPositionRepository)",
+      "file": "src/main/java/ee/tuleva/onboarding/investment/admin/InvestmentAdminController.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "src/main/java/ee/tuleva/onboarding/investment/admin/InvestmentAdminController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "src/main/java/ee/tuleva/onboarding/investment/admin/InvestmentAdminController.java",
+      "line": 107,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MandateRepository)",
+      "file": "src/main/java/ee/tuleva/onboarding/mandate/MandateController.java",
+      "line": 46,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MemberRepository)",
+      "file": "src/main/java/ee/tuleva/onboarding/member/MemberController.java",
+      "line": 24,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SavingFundPaymentRepository)",
+      "file": "src/main/java/ee/tuleva/onboarding/savings/fund/SavingFundPaymentController.java",
+      "line": 32,
+      "extra": {}
+    }
+  ]
+}

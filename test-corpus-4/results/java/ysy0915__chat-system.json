@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "chat-common/src/test",
+        "pattern": "test",
+        "files": 51
+      },
+      {
+        "path": "chat-core/src/test",
+        "pattern": "test",
+        "files": 39
+      },
+      {
+        "path": "chat-games/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "chat-llm/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "chat-media/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "chat-web/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "frontend/src/test",
+        "pattern": "test",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 140
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 474,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "major": 29,
+    "warning": 2,
+    "info": 0,
+    "total": 32
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "blocking Future.get() detected in @Scheduled method",
+      "file": "chat-core/src/main/java/com/example/chat/service/ModelAutoChatService.java",
+      "line": 94,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 56,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (TreeHoleRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (DebateRecordRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ModelConfigRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 60,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 158,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 164,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 186,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 192,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 198,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 204,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (messageRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 210,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (debateRecordRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 338,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (debateRecordRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 344,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (debateRecordRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 350,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 366,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (userRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 372,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (modelConfigRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 388,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (modelConfigRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/InternalApiController.java",
+      "line": 394,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ToolRegistryRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/ToolAdminController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ToolRegistryRepository)",
+      "file": "chat-core/src/main/java/com/example/chat/internal/ToolAdminController.java",
+      "line": 41,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RAGRepository)",
+      "file": "chat-llm/src/main/java/com/example/chat/llm/rag/controller/KnowledgeController.java",
+      "line": 59,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RAGRepository)",
+      "file": "chat-llm/src/main/java/com/example/chat/llm/rag/controller/KnowledgeController.java",
+      "line": 72,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ragRepository)",
+      "file": "chat-llm/src/main/java/com/example/chat/llm/rag/controller/KnowledgeController.java",
+      "line": 109,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ragRepository)",
+      "file": "chat-llm/src/main/java/com/example/chat/llm/rag/controller/KnowledgeController.java",
+      "line": 215,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MediaGenRecordRepository)",
+      "file": "chat-media/src/main/java/com/example/chat/controller/MediaGenController.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OnlineCountRepository)",
+      "file": "chat-web/src/main/java/com/example/chat/controller/MonitorController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (MessageRepository)",
+      "file": "chat-web/src/main/java/com/example/chat/controller/MonitorController.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (OnlineCountRepository)",
+      "file": "chat-web/src/main/java/com/example/chat/controller/MonitorController.java",
+      "line": 48,
+      "extra": {}
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "stress-test/prod-benchmark.py",
+      "line": 165,
+      "extra": {
+        "function": "run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "stress-test/prod-benchmark.py",
+      "line": 171,
+      "extra": {
+        "function": "run",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

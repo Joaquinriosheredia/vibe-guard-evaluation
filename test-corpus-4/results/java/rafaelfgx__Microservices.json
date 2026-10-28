@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "authservice/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "configurationservice/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "customerservice/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "orderservice/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "paymentservice/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "productservice/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "starter/src/test",
+        "pattern": "test",
+        "files": 37
+      }
+    ],
+    "filesExcluded": 87
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 276,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 6,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "orderservice/src/main/java/com/company/orderservice/order/listeners/PaymentApprovedEventListener.java",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "orderservice/src/main/java/com/company/orderservice/order/listeners/PaymentApprovedEventListener.java",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "orderservice/src/main/java/com/company/orderservice/order/listeners/PaymentCanceledEventListener.java",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "orderservice/src/main/java/com/company/orderservice/order/listeners/PaymentCanceledEventListener.java",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "paymentservice/src/main/java/com/company/paymentservice/payment/listeners/OrderCreatedEventListener.java",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "paymentservice/src/main/java/com/company/paymentservice/payment/listeners/OrderCreatedEventListener.java",
+      "line": 14,
+      "extra": {}
+    }
+  ]
+}

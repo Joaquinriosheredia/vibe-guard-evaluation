@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "backend/tests",
+        "pattern": "tests",
+        "files": 107
+      },
+      {
+        "path": "chrome-extension/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "frontend/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "whatsapp-sidecar/tests",
+        "pattern": "tests",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 107
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": null,
+      "language": "java",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .java files"
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 25,
+    "info": 0,
+    "total": 27
+  },
+  "findings": [
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "backend/app/integrations/gmail.py",
+      "line": 257,
+      "extra": {
+        "function": "sync_gmail_for_user",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-018",
+      "severity": "critical",
+      "nativeSeverity": "CRITICAL",
+      "message": "while True loop inside async def has no await — it holds the event loop until the loop exits; no other coroutine runs meanwhile",
+      "file": "backend/app/integrations/gmail.py",
+      "line": 336,
+      "extra": {
+        "function": "sync_contact_emails",
+        "evidence": "Add `await asyncio.sleep(0)` to yield control, or `await asyncio.sleep(N)` for a real polling interval",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/app/integrations/twitter.py",
+      "line": 208,
+      "extra": {
+        "function": "poll_contacts_activity",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-013",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "asyncio.gather() without return_exceptions=True: if one awaitable raises, gather re-raises the first exception and the other awaitables keep running; their results and later exceptions are not observed by this call",
+      "file": "backend/app/integrations/twitter_contacts.py",
+      "line": 63,
+      "extra": {
+        "function": "_cached_resolve_handles",
+        "evidence": "Add return_exceptions=True and check results: `results = await asyncio.gather(*coros, return_exceptions=True)`, or use `async with asyncio.TaskGroup() as tg:` (Python 3.11+)",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-019",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "retry loop without backoff — except retries immediately with no delay",
+      "file": "backend/app/services/geocoding/mapbox.py",
+      "line": 58,
+      "extra": {
+        "function": "geocode",
+        "evidence": "Add `await asyncio.sleep(2 ** attempt)` before continue, or use tenacity / backoff library",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/common.py",
+      "line": 98,
+      "extra": {
+        "function": "notify_sync_failure",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/common.py",
+      "line": 109,
+      "extra": {
+        "function": "notify_tagging_failure",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/followups.py",
+      "line": 112,
+      "extra": {
+        "function": "generate_weekly_suggestions",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/followups.py",
+      "line": 139,
+      "extra": {
+        "function": "send_weekly_digests",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/followups.py",
+      "line": 157,
+      "extra": {
+        "function": "generate_suggestions_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/followups.py",
+      "line": 172,
+      "extra": {
+        "function": "reactivate_snoozed_suggestions",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/geocoding.py",
+      "line": 89,
+      "extra": {
+        "function": "geocode_contact",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/geocoding.py",
+      "line": 128,
+      "extra": {
+        "function": "backfill_all_contacts",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/gmail.py",
+      "line": 123,
+      "extra": {
+        "function": "sync_gmail_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/google.py",
+      "line": 366,
+      "extra": {
+        "function": "sync_google_contacts_for_user",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/google.py",
+      "line": 387,
+      "extra": {
+        "function": "sync_google_calendar_for_user",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/google.py",
+      "line": 408,
+      "extra": {
+        "function": "sync_google_calendar_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/maintenance.py",
+      "line": 36,
+      "extra": {
+        "function": "refresh_org_stats",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/maintenance.py",
+      "line": 51,
+      "extra": {
+        "function": "backfill_org_logos_task",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/meeting_prep.py",
+      "line": 162,
+      "extra": {
+        "function": "scan_meeting_preps",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/scoring.py",
+      "line": 52,
+      "extra": {
+        "function": "update_relationship_scores",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/telegram.py",
+      "line": 301,
+      "extra": {
+        "function": "sync_telegram_notify",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/telegram_maintenance.py",
+      "line": 34,
+      "extra": {
+        "function": "cleanup_stale_telegram_locks",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/telegram_maintenance.py",
+      "line": 81,
+      "extra": {
+        "function": "recheck_telegram_bios_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/telegram_maintenance.py",
+      "line": 99,
+      "extra": {
+        "function": "sync_telegram_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/twitter.py",
+      "line": 186,
+      "extra": {
+        "function": "poll_twitter_all",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "backend/app/services/task_jobs/version_check.py",
+      "line": 13,
+      "extra": {
+        "function": "check_for_updates",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

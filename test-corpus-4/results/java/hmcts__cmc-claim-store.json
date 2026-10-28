@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "ccd-adapter/src/test",
+        "pattern": "test",
+        "files": 79
+      },
+      {
+        "path": "domain-model/src/test",
+        "pattern": "test",
+        "files": 99
+      },
+      {
+        "path": "email-client/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "job-scheduler/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "launch-darkly-client/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "rpa-mapper/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "src/aat/java/uk/gov/hmcts/cmc/claimstore/tests",
+        "pattern": "tests",
+        "files": 35
+      },
+      {
+        "path": "src/integrationTest/java/uk/gov/hmcts/cmc/claimstore/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 274
+      }
+    ],
+    "filesExcluded": 509
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1554,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 3,
+    "warning": 0,
+    "info": 0,
+    "total": 3
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (SupportRepository)",
+      "file": "src/main/java/uk/gov/hmcts/cmc/claimstore/controllers/IntegrationTestSupportController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CaseRepository)",
+      "file": "src/main/java/uk/gov/hmcts/cmc/claimstore/controllers/support/DeadlineSupportController.java",
+      "line": 67,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (caseRepository)",
+      "file": "src/main/java/uk/gov/hmcts/cmc/claimstore/controllers/support/DeadlineSupportController.java",
+      "line": 78,
+      "extra": {}
+    }
+  ]
+}

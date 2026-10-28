@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "domain-mobility/demand-pin-service/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "domain-mobility/dispatch-coordinator-service/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "domain-mobility/dynamic-surge-service/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "domain-mobility/supply-locator-service/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "domain-platform/audit-compliance-service/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "domain-platform/event-streaming-hub-service/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "domain-platform/experimentation-flipr-service/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "domain-platform/service-registry-discovery-service/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 48
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 399,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 3,
+    "info": 0,
+    "total": 3
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose.yml",
+      "line": 5,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose.yml",
+      "line": 6,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose.yml",
+      "line": 23,
+      "extra": {}
+    }
+  ]
+}

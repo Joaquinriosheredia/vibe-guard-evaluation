@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "helloworld-web-actframework/src/main/resources/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "helloworld-web-actframework/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "helloworld-web-dropwizard/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "helloworld-web-jaxrs-apache-cxf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-jhipster/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "helloworld-web-lagom-impl/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "helloworld-web-micronaut/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "helloworld-web-play/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-quarkus/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "helloworld-web-ratpack/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-spring-boot-mvc/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-spring-boot-webflux/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-spring-mvc-java/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-spring-mvc-xml/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-tapestry/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloworld-web-wicket/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 27
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 273,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

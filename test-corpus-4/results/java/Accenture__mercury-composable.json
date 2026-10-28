@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "connectors/adapters/kafka/kafka-connector/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "connectors/adapters/kafka/kafka-presence/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "connectors/core/cloud-connector/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "connectors/core/service-monitor/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 123
+      },
+      {
+        "path": "extensions/distributed-cache/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "extensions/dynatrace-oneagent/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "extensions/minigraph-state-redis/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "extensions/opentelemetry-forwarder/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "extensions/reactive-postgres/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "extensions/redis-connection/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "extensions/sync-over-async/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "helpers/graph-packager/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "helpers/kafka-standalone/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "helpers/redis-standalone/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "helpers/schema-registry-standalone/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "system/ai-contract-provider/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "system/event-script-engine/src/test",
+        "pattern": "test",
+        "files": 52
+      },
+      {
+        "path": "system/mini-scheduler/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "system/minigraph-playground-engine/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "system/minigraph-playground-engine/webapp/src/protocol/__tests__/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "system/minigraph-playground-engine/webapp/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "system/minimalist-jsonpath/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "system/minimalist-kafka/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "system/minimalist-msgpack/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "system/platform-core/src/test",
+        "pattern": "test",
+        "files": 111
+      },
+      {
+        "path": "system/rest-spring-4/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "system/twin-kafka/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "templates/starter-flow/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "templates/starter-function/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "templates/starter-graph/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 532
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 1454,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

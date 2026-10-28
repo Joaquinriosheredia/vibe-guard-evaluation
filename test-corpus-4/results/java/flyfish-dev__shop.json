@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "flyfish-auth/flyfish-auth-app/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "flyfish-common/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "flyfish-ddl/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "flyfish-git/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "flyfish-lowcode/flyfish-lowcode-app/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "flyfish-shop/flyfish-shop-app/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "flyfish-xianyu-app/src/test",
+        "pattern": "test",
+        "files": 3
+      }
+    ],
+    "filesExcluded": 82
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 725,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 8,
+    "warning": 1,
+    "info": 0,
+    "total": 9
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PortalUserOauthRepository)",
+      "file": "flyfish-auth/flyfish-auth-app/src/main/java/group/flyfish/dev/auth/internal/AuthInternalUserController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (FileMetadataRepository)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/xianyu/XianyuFileBridgeController.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ShopContractFileRepository)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/xianyu/XianyuFileBridgeController.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ShopContractRepository)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/xianyu/XianyuFileBridgeController.java",
+      "line": 28,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ShopContractFileRepository)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/xianyu/XianyuFileBridgeController.java",
+      "line": 32,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ShopOrderRepository)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/xianyu/XianyuShopBridgeController.java",
+      "line": 27,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (ShopOrderRepository)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/xianyu/XianyuShopBridgeController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "flyfish-xianyu-app/src/main/java/group/flyfish/dev/xianyu/web/XianyuManagementController.java",
+      "line": 118,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "flyfish-shop/flyfish-shop-app/src/main/java/group/flyfish/dev/shop/service/impl/ShopItemViewStatServiceImpl.java",
+      "line": 99,
+      "extra": {}
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "oc-alfresco-repository-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-aps-repository-connector/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "oc-camunda-repository-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-cli/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "oc-cmis-repository-connector/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "oc-connector-archetypes/opencrawling-archetype-output-connector/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-connector-archetypes/opencrawling-archetype-repository-connector/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-connector-archetypes/opencrawling-archetype-transformation-connector/src/main/resources/archetype-resources/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-core/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "oc-doxis-client/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "oc-doxis-repository-connector/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "oc-filesystem-repository-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-flowable-repository-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-grpc-push-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-iceberg-repository-connector/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "oc-java-client-sdk/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "oc-jdbc-repository-connector/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "oc-luxir-output-connector/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "oc-mcf-migrator/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "oc-mfiles-repository-connector/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "oc-milvus-output-connector/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "oc-observability/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "oc-openarch-output-connector/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "oc-openarch-repository-connector/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "oc-opensearch2-output-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-opensearch3-output-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-ozone-output-connector/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "oc-qdrant-output-connector/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "oc-runtime/src/test",
+        "pattern": "test",
+        "files": 40
+      },
+      {
+        "path": "oc-seatunnel-output-connector/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "oc-sharepoint-repository-connector/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "oc-solr-output-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-stormcrawler-bolt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-stormcrawler-repository-connector/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "oc-vector-output-connector/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "oc-vespa-output-connector/src/test",
+        "pattern": "test",
+        "files": 5
+      }
+    ],
+    "filesExcluded": 172
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 663,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 7,
+    "major": 1,
+    "warning": 36,
+    "info": 0,
+    "total": 44
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "oc-embedding-service/src/main/java/org/opencrawling/embedding/messaging/EmbeddingConsumer.java",
+      "line": 60,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "oc-embedding-service/src/main/java/org/opencrawling/embedding/messaging/EmbeddingConsumer.java",
+      "line": 81,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking-kafka",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "blocking .block() detected in @KafkaListener method",
+      "file": "oc-ozone-output-connector/src/main/java/org/opencrawling/ozone/messaging/OzoneMigrationWriterConsumer.java",
+      "line": 111,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/messaging/IngestionConsumer.java",
+      "line": 109,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/messaging/IngestionConsumer.java",
+      "line": 284,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java",
+      "line": 267,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka-send-timeout",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Kafka send().get() without timeout — if the broker is slow or unavailable, the calling thread stays blocked until the producer gives up: up to delivery.timeout.ms (120 s with the Kafka client defaults), plus up to max.block.ms (60 s by default) inside send() while metadata is unavailable; use .get(timeout, TimeUnit) or handle the future asynchronously",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java",
+      "line": 477,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (repository)",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/api/JobController.java",
+      "line": 312,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-embedding-service/src/main/java/org/opencrawling/embedding/messaging/EmbeddingConsumer.java",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-luxir-output-connector/src/main/java/org/opencrawling/luxir/messaging/LuxirStoreWriterConsumer.java",
+      "line": 92,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-luxir-output-connector/src/main/java/org/opencrawling/luxir/messaging/LuxirStoreWriterConsumer.java",
+      "line": 92,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-milvus-output-connector/src/main/java/org/opencrawling/milvus/messaging/MilvusStoreWriterConsumer.java",
+      "line": 65,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-milvus-output-connector/src/main/java/org/opencrawling/milvus/messaging/MilvusStoreWriterConsumer.java",
+      "line": 65,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-openarch-output-connector/src/main/java/org/opencrawling/openarch/output/messaging/OpenArchStoreWriterConsumer.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-openarch-output-connector/src/main/java/org/opencrawling/openarch/output/messaging/OpenArchStoreWriterConsumer.java",
+      "line": 57,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-opensearch2-output-connector/src/main/java/org/opencrawling/opensearch2/messaging/OpenSearch2StoreWriterConsumer.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-opensearch2-output-connector/src/main/java/org/opencrawling/opensearch2/messaging/OpenSearch2StoreWriterConsumer.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-opensearch3-output-connector/src/main/java/org/opencrawling/opensearch3/messaging/OpenSearch3StoreWriterConsumer.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-opensearch3-output-connector/src/main/java/org/opencrawling/opensearch3/messaging/OpenSearch3StoreWriterConsumer.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-ozone-output-connector/src/main/java/org/opencrawling/ozone/messaging/OzoneMigrationWriterConsumer.java",
+      "line": 65,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-qdrant-output-connector/src/main/java/org/opencrawling/qdrant/messaging/QdrantStoreWriterConsumer.java",
+      "line": 64,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-qdrant-output-connector/src/main/java/org/opencrawling/qdrant/messaging/QdrantStoreWriterConsumer.java",
+      "line": 64,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/messaging/IngestionConsumer.java",
+      "line": 83,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/messaging/VectorStoreWriterConsumer.java",
+      "line": 77,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.blockFirst()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java",
+      "line": 193,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java",
+      "line": 309,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java",
+      "line": 386,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java",
+      "line": 398,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-seatunnel-output-connector/src/main/java/org/opencrawling/seatunnel/messaging/SeaTunnelStoreWriterConsumer.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-seatunnel-output-connector/src/main/java/org/opencrawling/seatunnel/messaging/SeaTunnelStoreWriterConsumer.java",
+      "line": 61,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-solr-output-connector/src/main/java/org/opencrawling/solr/messaging/SolrStoreWriterConsumer.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-solr-output-connector/src/main/java/org/opencrawling/solr/messaging/SolrStoreWriterConsumer.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose-decoupled-with-stormcrawler.yml",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose-decoupled-with-stormcrawler.yml",
+      "line": 20,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose-decoupled-with-stormcrawler.yml",
+      "line": 43,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose-decoupled-with-stormcrawler.yml",
+      "line": 65,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose-decoupled-with-stormcrawler.yml",
+      "line": 84,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose.yml",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose.yml",
+      "line": 19,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose.yml",
+      "line": 40,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose.yml",
+      "line": 55,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "oc-stormcrawler-repository-connector/docker/docker-compose.yml",
+      "line": 67,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "oc-vespa-output-connector/src/main/java/org/opencrawling/vespa/messaging/VespaStoreWriterConsumer.java",
+      "line": 58,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "oc-vespa-output-connector/src/main/java/org/opencrawling/vespa/messaging/VespaStoreWriterConsumer.java",
+      "line": 58,
+      "extra": {}
+    }
+  ]
+}

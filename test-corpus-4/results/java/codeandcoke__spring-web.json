@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "amazonapi/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "bikesapi_reactive/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "games/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "helloapi/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "myshop-ws-swagger/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "myshop-ws-swagger2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "myshop-ws/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "myshop/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "todoapi_v1/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 9
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 210,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 3,
+    "major": 0,
+    "warning": 4,
+    "info": 0,
+    "total": 7
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Reactive blocking call '.block()' in a WebFlux handler, which runs on the Netty event loop — on a Reactor thread (Netty event loop or Schedulers.parallel() worker) it throws IllegalStateException on every call (measured); compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/controller/BikeController.java",
+      "line": 85,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Reactive blocking call '.block()' in a WebFlux handler, which runs on the Netty event loop — on a Reactor thread (Netty event loop or Schedulers.parallel() worker) it throws IllegalStateException on every call (measured); compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/controller/BikeController.java",
+      "line": 87,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Reactive blocking call '.block()' in a WebFlux handler, which runs on the Netty event loop — on a Reactor thread (Netty event loop or Schedulers.parallel() worker) it throws IllegalStateException on every call (measured); compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/controller/BikeController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/service/BikeServiceImpl.java",
+      "line": 45,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/service/BikeServiceImpl.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/service/RouteServiceImpl.java",
+      "line": 39,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "reactor-block",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Blocking call '.block()' in a Spring bean, on a thread vibe-guard cannot see. Detection: the call exists. Impact: if a Reactor thread (Netty event loop, Schedulers.parallel()) runs it, it throws IllegalStateException on every call (measured); this file shows no evidence that it runs on one. Reproduction: not available for this case. If a Reactor pipeline calls it, compose with .flatMap()/.then() instead, or, if the call must block, run it in Mono.fromCallable(...).subscribeOn(Schedulers.boundedElastic()) (a bounded pool: capacity = threads / call duration)",
+      "file": "bikesapi_reactive/src/main/java/com/svalero/bikesapi/service/RouteServiceImpl.java",
+      "line": 40,
+      "extra": {}
+    }
+  ]
+}

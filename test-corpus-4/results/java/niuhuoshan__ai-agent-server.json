@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "backend/nhs-admin/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "backend/nhs-modules/nhs-migration-cli/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "backend/nhs-modules/nhs-platform/src/test",
+        "pattern": "test",
+        "files": 228
+      },
+      {
+        "path": "backend/nhs-modules/nhs-runtime-agentscope/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "backend/nhs-modules/nhs-runtime-spi/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "backend/nhs-modules/nhs-sandbox-runner/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "backend/script/migration/nhs/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "backend/script/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "frontend/src/views/examples",
+        "pattern": "examples",
+        "files": 0
+      }
+    ],
+    "filesExcluded": 256
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 2072,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 5,
+    "warning": 0,
+    "info": 0,
+    "total": 5
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "backend/nhs-modules/nhs-workflow/src/main/java/group/aitools/nhs/workflow/controller/FlwDefinitionController.java",
+      "line": 89,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "backend/nhs-modules/nhs-workflow/src/main/java/group/aitools/nhs/workflow/controller/FlwDefinitionController.java",
+      "line": 104,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "backend/nhs-modules/nhs-workflow/src/main/java/group/aitools/nhs/workflow/controller/FlwDefinitionController.java",
+      "line": 133,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "backend/nhs-modules/nhs-workflow/src/main/java/group/aitools/nhs/workflow/controller/FlwDefinitionController.java",
+      "line": 161,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "backend/nhs-modules/nhs-workflow/src/main/java/group/aitools/nhs/workflow/controller/FlwDefinitionController.java",
+      "line": 216,
+      "extra": {}
+    }
+  ]
+}

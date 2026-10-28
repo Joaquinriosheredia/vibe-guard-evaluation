@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 33
+      },
+      {
+        "path": "reqover-agent/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "reqover-cli/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "reqover-core/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "reqover-instrumentation/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "reqover-report/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "reqover-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "reqover-spring-mvc/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "reqover-spring-webflux/src/test",
+        "pattern": "test",
+        "files": 2
+      }
+    ],
+    "filesExcluded": 71
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 157,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

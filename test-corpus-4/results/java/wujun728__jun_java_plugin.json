@@ -1,0 +1,971 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "java_project_template/jun-mybatisplus-api-v2/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/jun_api_service_demo/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/jun_api_service_main/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/jun_api_service_simple/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "java_project_template/maven_javaproject/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "java_project_template/springboot-api-jwt/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/springboot-api-session/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/springboot-api-v2/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/springboot_api_simple/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "java_project_template/springboot_jfinal_activerecord/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_java_plugins/jun_algorithm/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "jun_java_plugins/jun_aliyun_sms/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_apache_commons/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "jun_java_plugins/jun_compiler/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_config_resources/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_crawler/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "jun_java_plugins/jun_dbutil/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "jun_java_plugins/jun_easycaptcha/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_email/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "jun_java_plugins/jun_excel/doc/sanri-excel-poi/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "jun_java_plugins/jun_excel/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "jun_java_plugins/jun_freemarker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_guava/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "jun_java_plugins/jun_guice/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_gzip/jun_compress_client/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_java_plugins/jun_gzip/jun_springboot_server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_hibernate/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_java_plugins/jun_httpclient/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "jun_java_plugins/jun_j2cache/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_java_plugins/jun_java_compiler/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_java_plugins/jun_jdbc/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "jun_java_plugins/jun_jdk/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_jgit/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_java_plugins/jun_json/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_java_plugins/jun_jsoup/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_java_plugins/jun_minio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_mongodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_java_plugins/jun_mybatisplus/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_java_plugins/jun_okhttp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_poi/src/test",
+        "pattern": "test",
+        "files": 135
+      },
+      {
+        "path": "jun_java_plugins/jun_qrcode/src/main/webapp/jquery-qrcode/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "jun_java_plugins/jun_qrcode/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_quartz/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "jun_java_plugins/jun_redis/shiro-redis/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_java_plugins/jun_redis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_java_plugins/jun_solr/jun_solr_api_server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_threadpool/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_uid/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "jun_java_plugins/jun_webmagic/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_webservice/webservice/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_java_plugins/jun_webservlet_guice_dbutil/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_websocket/src/main/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_java_plugins/jun_xml/src/test",
+        "pattern": "test",
+        "files": 27
+      },
+      {
+        "path": "jun_springboot_plugin/springboot-validation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_actuator/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_async/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_batch/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_cache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_codegen/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_content_negotiation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_cxf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_data_jpa/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_docker/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_dynamic_datasource/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_echarts/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_ehcache_cache/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_elastic_job/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_email/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_file_uploader/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_flyway/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_freemarker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_graphql_mongodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_graylog/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_groovy/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_hibernate/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_hibernate_validator/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_https/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_jackson2/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_jasypt/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_jsp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_junit/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_justauth/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_jwt/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_ldap/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_logback/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_minio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mongodb/spring-boot-mongodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mongodb/spring-boot-multi-mongodb/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mongodb/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mq_rabbitmq/spring-boot-rabbitmq-simple/producer-simple/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mq_rabbitmq/spring-boot-rabbitmq/producer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mq_rocketmq/spring-boot-rocketmq-simple/rocketmq-producer-simple/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mq_rocketmq/spring-boot-rocketmq/rocketmq-producer/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_multi_datasource_jpa/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_multi_datasource_mybatis/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_multi_threading/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_multisource/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mybatis/spring-boot-mybatis-annotation-mulidatasource/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mybatis/spring-boot-mybatis-annotation/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mybatis/spring-boot-mybatis-xml-mulidatasource/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mybatis/spring-boot-mybatis-xml/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mybatis_jsp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_mybatisplus/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_netty_websocket/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_oauth2/authorization-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_orm_jdbctemplate/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_oss_qiniu/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_ratelimit_guava/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_ratelimit_redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_rbac_security/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_rbac_shiro/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_redis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_redis_cluster/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_redislock/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_resttemplate/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_session/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_shardingsphere-mybatisplus/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_shiro/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_snaker/src/main/resources/config/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_snaker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_socketio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_swagger_beauty/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_template_freemarker/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_template_thymeleaf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_testing/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_thumbnailator/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_thymeleaf/spring-boot-thymeleaf-layout/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_thymeleaf/spring-boot-thymeleaf/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_upload/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_war/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_webflux/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_webservice/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_websocket/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_websocket_socketio/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_plugin/springboot_zookeeper/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "jun_springboot_starter/jun-activerecord/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "jun_springboot_starter/jun-db-activerecord/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "jun_springboot_starter/jun-db-activerecord2/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "jun_springboot_starter/jun-groovy-api-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "jun_springboot_starter/jun-groovy-api/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "jun_springboot_starter/jun-mybatis-sql-engine/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "jun_springboot_starter/jun-uidgenerator-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "long-running-agent/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "long-running-agent/tests",
+        "pattern": "tests",
+        "files": 6
+      }
+    ],
+    "filesExcluded": 545
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 4890,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 7,
+    "warning": 9,
+    "info": 0,
+    "total": 18
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Async method",
+      "file": "jun_springboot_plugin/springboot_async/src/main/java/com/jun/plugin/spirngboot/async/pos/async/AsyncTask.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Async method",
+      "file": "jun_springboot_plugin/springboot_async/src/main/java/com/jun/plugin/spirngboot/async/pos/async/AsyncTask.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RedisRepository)",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/controller/SeckillController.java",
+      "line": 50,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (redisRepository)",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/controller/SeckillController.java",
+      "line": 179,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (redisRepository)",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/controller/SeckillController.java",
+      "line": 203,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (redisRepository)",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/controller/SeckillController.java",
+      "line": 244,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller using KafkaTemplate directly (bypass Service layer)",
+      "file": "jun_springboot_plugin/springboot_kafka/src/main/java/com/example/demo/controller/SendMessageController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "jun_springboot_plugin/springboot_mybatisplus/src/main/java/com/jun/plugin/springboot/mybatisplus/controller/UserController.java",
+      "line": 172,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "jun_springboot_starter/jun-snakerflow-spring-boot-starter/src/main/java/io/github/wujun728/snakerflow/ext/controller/ExtLeaveController.java",
+      "line": 79,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/kafka/KafkaConsumer.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/kafka/KafkaConsumer.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/kafka/KafkaConsumer.java",
+      "line": 71,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without explicit groupId",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/java/com/jun/plugin/seckill/kafka/KafkaConsumer.java",
+      "line": 71,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "jun_springboot_plugin/springboot_distributed_seckill/src/main/resources/application.yml",
+      "line": 8,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "jun_springboot_plugin/springboot_dubbo_zookeeper/server-consumer/src/main/resources/application.yml",
+      "line": 10,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "jun_springboot_plugin/springboot_dubbo_zookeeper/server-provider/src/main/resources/application.yml",
+      "line": 10,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "jun_springboot_plugin/springboot_kafka/src/main/java/com/example/demo/listener/KafkaMessageListener.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "jun_springboot_plugin/springboot_lock4j/lock4j-test/src/main/resources/application.yml",
+      "line": 6,
+      "extra": {}
+    }
+  ]
+}

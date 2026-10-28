@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "redisson-helidon/redisson-helidon-20/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "redisson-helidon/redisson-helidon-30/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "redisson-helidon/redisson-helidon-40/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-4/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-5/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-52/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-53/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-6/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-7/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "redisson-hibernate/redisson-hibernate-72/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "redisson-micronaut/redisson-micronaut-20/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-micronaut/redisson-micronaut-30/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-micronaut/redisson-micronaut-40/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "redisson-micronaut/redisson-micronaut-50/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "redisson-mybatis/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-16/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-20/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-30/cache/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-30/cache/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-30/cdi/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-33/cache/deployment/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-33/cache/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-quarkus/redisson-quarkus-33/cdi/integration-tests/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "redisson-spring/redisson-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "redisson-spring/redisson-spring-cache/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-16/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-17/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-18/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-20/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-21/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-22/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-23/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-24/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-25/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-26/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-27/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-30/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-31/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-32/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-33/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-34/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-35/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-40/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "redisson-spring/redisson-spring-data/redisson-spring-data-41/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "redisson-spring/redisson-spring-transaction/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "redisson-tomcat/redisson-tomcat-10/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson-tomcat/redisson-tomcat-11/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson-tomcat/redisson-tomcat-7/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson-tomcat/redisson-tomcat-8/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson-tomcat/redisson-tomcat-9/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "redisson/src/test",
+        "pattern": "test",
+        "files": 239
+      }
+    ],
+    "filesExcluded": 604
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 3724,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

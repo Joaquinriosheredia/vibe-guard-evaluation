@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": true,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 51
+      }
+    ],
+    "filesExcluded": 51
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": 492,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 2,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 2
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Async method",
+      "file": "src/main/java/com/xianyusmart/service/impl/ItemDetailSyncServiceImpl.java",
+      "line": 156,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "blocking",
+      "severity": "critical",
+      "nativeSeverity": "critical",
+      "message": "Thread.sleep() detected in @Scheduled method",
+      "file": "src/main/java/com/xianyusmart/service/impl/TokenRefreshServiceImpl.java",
+      "line": 519,
+      "extra": {}
+    }
+  ]
+}

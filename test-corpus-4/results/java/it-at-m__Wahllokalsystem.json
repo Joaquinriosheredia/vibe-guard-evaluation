@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "wls-admin-service/src/test",
+        "pattern": "test",
+        "files": 49
+      },
+      {
+        "path": "wls-api-gateway/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "wls-auth-service/src/test",
+        "pattern": "test",
+        "files": 45
+      },
+      {
+        "path": "wls-basisdaten-service/src/test",
+        "pattern": "test",
+        "files": 101
+      },
+      {
+        "path": "wls-briefwahl-service/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "wls-broadcast-service/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "wls-common/exception/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "wls-common/security/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "wls-common/swagger/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "wls-common/testing/src/test",
+        "pattern": "test",
+        "files": 47
+      },
+      {
+        "path": "wls-eai-service/src/test",
+        "pattern": "test",
+        "files": 50
+      },
+      {
+        "path": "wls-ergebnismeldung-service/src/test",
+        "pattern": "test",
+        "files": 156
+      },
+      {
+        "path": "wls-gui-admintool/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "wls-gui-wahllokalsystem/tests",
+        "pattern": "tests",
+        "files": 0
+      },
+      {
+        "path": "wls-infomanagement-service/src/test",
+        "pattern": "test",
+        "files": 30
+      },
+      {
+        "path": "wls-monitoring-service/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "wls-vorfaelleundvorkommnisse-service/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "wls-wahlvorbereitung-service/src/test",
+        "pattern": "test",
+        "files": 64
+      },
+      {
+        "path": "wls-wahlvorstand-service/src/test",
+        "pattern": "test",
+        "files": 18
+      }
+    ],
+    "filesExcluded": 678
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 2065,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 3,
+    "warning": 0,
+    "info": 0,
+    "total": 3
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "wls-auth-service/src/main/java/de/muenchen/oss/wahllokalsystem/authservice/rest/UserController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "wls-auth-service/src/main/java/de/muenchen/oss/wahllokalsystem/authservice/rest/UserController.java",
+      "line": 53,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "wls-ergebnismeldung-service/src/main/java/de/muenchen/oss/wahllokalsystem/ergebnismeldungservice/rest/stimmzettelerfassung/teamstatus/StimmzettelerfassungTeamStatusController.java",
+      "line": 114,
+      "extra": {}
+    }
+  ]
+}

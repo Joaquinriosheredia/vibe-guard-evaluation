@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "1-spring-boot-HelloWorld/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "2-spring-boot-view-JSP-File-1/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "3-spring-boot-view-Error-Page/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "4-springboot-(REST_API_QUERY)/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "5-springboot-with-h2-database(REST_API_QUERY)/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "6-springboot-jpa-with-h2-database (REST_API_QUERY)/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "7-springboot-simple-security-example/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "8-SpringJPA-PostgreSQL-Example/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "9-springboot-security-with-h2-example/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "Spring-Boot-10-JPA-PostgreSQL-CRUD-RESTful Services-And-Jsp/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-11-SpringData-1-JPA-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-12-SpringData-2-JPA-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-13-SpringData-3-JPA-Hibernate-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-14-SpringData-4-Thymeleaf-JPA-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-15-SpringSecurity-(Simple)-JPA-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "Spring-Boot-16-SpringData-5-Thymeleaf-JPA-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-17-SpringSecurity-Jpa-PostgreSQL/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-18-Mongodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-19-RabbitMQ/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-20-React-JWT-without-Redux/backend/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-21-React-JWT-with-Redux/backend/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-22-Role-Based-JWT/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-24-Unit-Test/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "Spring-Boot-25-Elastic-Search/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-26-Kafka-Producer-Consuöer-Scheduled/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-27-PostgreSQL-Trigger-Java-Listener/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-28-ReactJS-WebSocket/backend/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-29-Logging/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-30-BaseRequest-BaseEntity-BaseResponse/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-31-WebFlux-Security-MongoDB-RateLimit-Configuration/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "Spring-Boot-32-Security-WebFlux-Logging-RateLimit-MongoDB/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 36
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 507,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 13,
+    "warning": 4,
+    "info": 0,
+    "total": 17
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-17-SpringSecurity-Jpa-PostgreSQL/src/main/java/com/example/demo/controller/AdminController.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-17-SpringSecurity-Jpa-PostgreSQL/src/main/java/com/example/demo/controller/MainController.java",
+      "line": 36,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (KullaniciRepository)",
+      "file": "Spring-Boot-18-Mongodb/src/main/java/com/example/demo/KullaniciApi.java",
+      "line": 23,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (kullaniciRepository)",
+      "file": "Spring-Boot-18-Mongodb/src/main/java/com/example/demo/KullaniciApi.java",
+      "line": 37,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (kullaniciRepository)",
+      "file": "Spring-Boot-18-Mongodb/src/main/java/com/example/demo/KullaniciApi.java",
+      "line": 42,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-21-React-JWT-with-Redux/backend/src/main/java/com/example/demo/api/JwtAuthenticationController.java",
+      "line": 49,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-22-Role-Based-JWT/src/main/java/com/example/demo/api/AuthApi.java",
+      "line": 35,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (CompanyRepository)",
+      "file": "Spring-Boot-25-Elastic-Search/src/main/java/com/trial/elastic/api/CompanyRestApi.java",
+      "line": 26,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (EmployeeRepository)",
+      "file": "Spring-Boot-25-Elastic-Search/src/main/java/com/trial/elastic/api/CompanyRestApi.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-31-WebFlux-Security-MongoDB-RateLimit-Configuration/src/main/java/com/tracker/job_ts/auth/controller/UserController.java",
+      "line": 25,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-32-Security-WebFlux-Logging-RateLimit-MongoDB/src/main/java/com/security/securityProject/controller/AuthController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (RoleRepository)",
+      "file": "Spring-Boot-32-Security-WebFlux-Logging-RateLimit-MongoDB/src/main/java/com/security/securityProject/controller/AuthController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (UserRepository)",
+      "file": "Spring-Boot-32-Security-WebFlux-Logging-RateLimit-MongoDB/src/main/java/com/security/securityProject/controller/ResourceController.java",
+      "line": 21,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "Spring-Boot-26-Kafka-Producer-Consuöer-Scheduled/docker-kafka-zookeper.yml",
+      "line": 4,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "Spring-Boot-26-Kafka-Producer-Consuöer-Scheduled/docker-kafka-zookeper.yml",
+      "line": 5,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "Spring-Boot-26-Kafka-Producer-Consuöer-Scheduled/docker-kafka-zookeper.yml",
+      "line": 18,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "@KafkaListener without @RetryableTopic or DLQ — failed messages will be lost",
+      "file": "Spring-Boot-26-Kafka-Producer-Consuöer-Scheduled/src/main/java/intellica/kis/kafka/service/KafkaConsumer.java",
+      "line": 19,
+      "extra": {}
+    }
+  ]
+}

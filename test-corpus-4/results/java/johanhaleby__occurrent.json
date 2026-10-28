@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "application/cloudevent-converter/jackson/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "application/cloudevent-converter/jackson3/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "application/cloudevent-converter/xstream/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "application/cloudevent-type-mapper/api/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "application/cloudevent-type-mapper/reflection/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "application/command-composition/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "application/command-dispatch-annotation/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "application/command-dispatch-dcb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "application/command-dispatch/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "application/service/blocking/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "application/service/dcb-annotation/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "application/service/reactor/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "application/service/transaction-mongodb-native/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "application/service/transaction-spring-reactor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "application/service/transaction-spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "broker/api/blocking/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "broker/kafka/blocking/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "broker/kafka/spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "broker/rabbitmq/blocking/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "broker/rabbitmq/spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "cloudevents-extension/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "common/annotation-support/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/filter/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/inmemory/filter-matching-jackson/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "common/inmemory/filter-matching/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "common/mongodb/specialfilterhandling/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "common/retry/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "common/time/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "deadline/inmemory/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "deadline/jobrunr/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dsl/dcb-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dsl/dcb-dsl/common/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dsl/dcb-dsl/reactor/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dsl/decider-arrow/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dsl/decider/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "dsl/module-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dsl/projection-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 11
+      },
+      {
+        "path": "dsl/projection-dsl/common/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dsl/projection-dsl/reactor/src/test",
+        "pattern": "test",
+        "files": 9
+      },
+      {
+        "path": "dsl/query-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dsl/query-dsl/reactor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "dsl/saga-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "dsl/saga-dsl/common/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "dsl/saga-dsl/mongodb-spring/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "dsl/snapshot-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "dsl/snapshot-dsl/common/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "dsl/snapshot-dsl/reactor/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "dsl/subscription-dsl/blocking/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dsl/subscription-dsl/common/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dsl/subscription-dsl/reactor/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "dsl/view-dsl/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventstore/api/common/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "eventstore/api/dcb/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "eventstore/inmemory/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "eventstore/migration/position-backfill/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventstore/migration/update-event-repair/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "eventstore/mongodb/common/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "eventstore/mongodb/dcb-common/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "eventstore/mongodb/native/src/test",
+        "pattern": "test",
+        "files": 26
+      },
+      {
+        "path": "eventstore/mongodb/spring/blocking/src/test",
+        "pattern": "test",
+        "files": 25
+      },
+      {
+        "path": "eventstore/mongodb/spring/reactor/src/test",
+        "pattern": "test",
+        "files": 23
+      },
+      {
+        "path": "example",
+        "pattern": "example",
+        "files": 151
+      },
+      {
+        "path": "framework/spring-boot-autoconfigure/blocking/src/test",
+        "pattern": "test",
+        "files": 48
+      },
+      {
+        "path": "framework/spring-boot-autoconfigure/common/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "framework/spring-boot-autoconfigure/reactor/src/test",
+        "pattern": "test",
+        "files": 32
+      },
+      {
+        "path": "framework/spring-boot-starter-mongodb-reactive/src/test",
+        "pattern": "test",
+        "files": 42
+      },
+      {
+        "path": "framework/spring-boot-starter-mongodb/src/test",
+        "pattern": "test",
+        "files": 60
+      },
+      {
+        "path": "library/hederlig/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "rewrite/src/test",
+        "pattern": "test",
+        "files": 44
+      },
+      {
+        "path": "subscription/api/blocking/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "subscription/api/reactor/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "subscription/core/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "subscription/inmemory/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "subscription/mongodb/common/base/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "subscription/mongodb/common/blocking/competing-consumer-strategy/src/test",
+        "pattern": "test",
+        "files": 15
+      },
+      {
+        "path": "subscription/mongodb/native/blocking-checkpoint-storage/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "subscription/mongodb/native/blocking-competing-consumer-strategy/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "subscription/mongodb/native/blocking/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "subscription/mongodb/spring/blocking-checkpoint-storage/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "subscription/mongodb/spring/blocking-competing-consumer-strategy/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "subscription/mongodb/spring/blocking/src/test",
+        "pattern": "test",
+        "files": 12
+      },
+      {
+        "path": "subscription/mongodb/spring/reactor-checkpoint-storage/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "subscription/mongodb/spring/reactor/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "subscription/push/blocking/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "subscription/push/reactor/src/test",
+        "pattern": "test",
+        "files": 22
+      },
+      {
+        "path": "subscription/redis/spring/blocking-checkpoint-storage/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "subscription/synchronous/blocking/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "subscription/synchronous/reactor/src/test",
+        "pattern": "test",
+        "files": 8
+      },
+      {
+        "path": "subscription/util/blocking/catchup-subscription/src/test",
+        "pattern": "test",
+        "files": 21
+      },
+      {
+        "path": "subscription/util/blocking/competing-consumer-subscription/src/test",
+        "pattern": "test",
+        "files": 64
+      },
+      {
+        "path": "subscription/util/blocking/durable-subscription/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "subscription/util/blocking/stream-catchup-subscription/src/test",
+        "pattern": "test",
+        "files": 16
+      },
+      {
+        "path": "subscription/util/reactor/catchup-subscription/src/test",
+        "pattern": "test",
+        "files": 10
+      },
+      {
+        "path": "subscription/util/reactor/durable-subscription/src/test",
+        "pattern": "test",
+        "files": 35
+      },
+      {
+        "path": "subscription/util/reactor/stream-catchup-subscription/src/test",
+        "pattern": "test",
+        "files": 7
+      },
+      {
+        "path": "tck/common/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "tck/eventstore-blocking/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "tck/eventstore-reactor/src/test",
+        "pattern": "test",
+        "files": 4
+      },
+      {
+        "path": "tck/subscription-blocking/src/test",
+        "pattern": "test",
+        "files": 14
+      },
+      {
+        "path": "tck/subscription-reactor/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "test-support/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "testing/junit-jupiter-blocking/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "testing/junit-jupiter-reactor/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "testing/mongodb/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "testing/spring-boot/src/test",
+        "pattern": "test",
+        "files": 4
+      }
+    ],
+    "filesExcluded": 1121
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 2228,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "findings": []
+}

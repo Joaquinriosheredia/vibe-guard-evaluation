@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "a2a-gateway/src/test",
+        "pattern": "test",
+        "files": 6
+      },
+      {
+        "path": "agentic-clj/src/agentic/example",
+        "pattern": "example",
+        "files": 0
+      },
+      {
+        "path": "agentic-clj/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "agentic-pekko/src/test",
+        "pattern": "test",
+        "files": 20
+      },
+      {
+        "path": "docs/examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "examples",
+        "pattern": "examples",
+        "files": 0
+      },
+      {
+        "path": "ports/agentic-pipeline/tests",
+        "pattern": "tests",
+        "files": 2
+      },
+      {
+        "path": "ports/experimental/gateway-fastapi/tests",
+        "pattern": "tests",
+        "files": 1
+      },
+      {
+        "path": "ports/experimental/kafka-streams/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "ports/experimental/pulsar/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "ports/experimental/quarkus/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "ports/experimental/spring/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "ports/experimental/temporal/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "ports/experimental/tests",
+        "pattern": "tests",
+        "files": 10
+      },
+      {
+        "path": "ports/jagentic-core/src/test",
+        "pattern": "test",
+        "files": 36
+      },
+      {
+        "path": "ports/pyagentic/tests",
+        "pattern": "tests",
+        "files": 29
+      },
+      {
+        "path": "pyflink/examples",
+        "pattern": "examples",
+        "files": 2
+      },
+      {
+        "path": "pyflink/tests",
+        "pattern": "tests",
+        "files": 8
+      },
+      {
+        "path": "python/tests",
+        "pattern": "tests",
+        "files": 23
+      },
+      {
+        "path": "spec/conformance/v1/fixtures",
+        "pattern": "fixtures",
+        "files": 0
+      },
+      {
+        "path": "src/test",
+        "pattern": "test",
+        "files": 172
+      },
+      {
+        "path": "tool-services/tool-services-app/src/test",
+        "pattern": "test",
+        "files": 5
+      },
+      {
+        "path": "tool-services/tool-services-packs/src/test",
+        "pattern": "test",
+        "files": 5
+      }
+    ],
+    "filesExcluded": 333
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 965,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": "0.16.0",
+      "language": "python",
+      "status": "ok",
+      "exitCode": 1,
+      "filesScanned": null,
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 0,
+    "warning": 6,
+    "info": 0,
+    "total": 6
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-fluss.yml",
+      "line": 14,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-fluss.yml",
+      "line": 15,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-kafka.yml",
+      "line": 11,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-kafka.yml",
+      "line": 12,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "kafka",
+      "severity": "warning",
+      "nativeSeverity": "warning",
+      "message": "Kafka using Zookeeper (deprecated in Kafka 3.x — migrate to KRaft)",
+      "file": "docker-compose-kafka.yml",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "python-vibe-guard",
+      "language": "python",
+      "ruleId": "PYVIBE-005",
+      "severity": "warning",
+      "nativeSeverity": "WARNING",
+      "message": "Celery task without soft_time_limit or time_limit — if the work it wraps never returns, it holds a worker until a global task_time_limit (if one is set) stops it",
+      "file": "ports/experimental/celery/agentic_celery/__init__.py",
+      "line": 169,
+      "extra": {
+        "function": "process_turn",
+        "evidence": "Use @app.task(soft_time_limit=30, time_limit=60) to bound execution time",
+        "suggested_fix": null
+      }
+    }
+  ]
+}

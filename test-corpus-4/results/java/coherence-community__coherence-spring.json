@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "vibe-guard",
+    "version": "0.4.0"
+  },
+  "root": ".",
+  "failOn": "critical",
+  "failed": false,
+  "excludes": {
+    "defaults": [
+      "test",
+      "tests",
+      "fixtures",
+      "test-fixtures",
+      "examples",
+      "example"
+    ],
+    "user": [],
+    "applied": [
+      {
+        "path": "coherence-spring-boot-starter/src/test",
+        "pattern": "test",
+        "files": 17
+      },
+      {
+        "path": "coherence-spring-core/src/test",
+        "pattern": "test",
+        "files": 43
+      },
+      {
+        "path": "coherence-spring-data/src/test",
+        "pattern": "test",
+        "files": 18
+      },
+      {
+        "path": "coherence-spring-docs/src/test",
+        "pattern": "test",
+        "files": 24
+      },
+      {
+        "path": "coherence-spring-session/src/test",
+        "pattern": "test",
+        "files": 13
+      },
+      {
+        "path": "samples/cachestore-demo/coherence-spring-cachestore-demo-app/src/test",
+        "pattern": "test",
+        "files": 2
+      },
+      {
+        "path": "samples/circuit-breaker-cache-demo/circuit-breaker-cache-demo-app/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "samples/circuit-breaker-cache-demo/circuit-breaker-cache-demo-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/coherence-spring-cloud-config-demo/coherence-spring-cloud-config-demo-app/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/coherence-spring-cloud-config-demo/coherence-spring-cloud-config-demo-server/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/coherence-spring-demo/coherence-spring-demo-boot/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/coherence-spring-demo/coherence-spring-demo-classic/src/test",
+        "pattern": "test",
+        "files": 0
+      },
+      {
+        "path": "samples/hibernate-cache-demo/src/test",
+        "pattern": "test",
+        "files": 1
+      },
+      {
+        "path": "samples/spring-session-demo/spring-session-demo-app/src/test",
+        "pattern": "test",
+        "files": 3
+      },
+      {
+        "path": "samples/spring-session-demo/spring-session-demo-server/src/test",
+        "pattern": "test",
+        "files": 1
+      }
+    ],
+    "filesExcluded": 126
+  },
+  "engines": [
+    {
+      "name": "java-vibe-guard",
+      "version": "3.1.0",
+      "language": "java",
+      "status": "ok",
+      "exitCode": 0,
+      "filesScanned": 584,
+      "warnings": []
+    },
+    {
+      "name": "python-vibe-guard",
+      "version": null,
+      "language": "python",
+      "status": "skipped",
+      "exitCode": null,
+      "filesScanned": null,
+      "warnings": [],
+      "reason": "no .py files"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "major": 8,
+    "warning": 0,
+    "info": 0,
+    "total": 8
+  },
+  "findings": [
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "samples/cachestore-demo/coherence-spring-cachestore-demo-app/src/main/java/com/oracle/coherence/spring/example/controller/PersonController.java",
+      "line": 34,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PersonRepository)",
+      "file": "samples/cachestore-demo/coherence-spring-cachestore-demo-app/src/main/java/com/oracle/coherence/spring/example/controller/PersonController.java",
+      "line": 44,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "samples/coherence-spring-cloud-config-demo/coherence-spring-cloud-config-demo-app/src/main/java/com/oracle/coherence/spring/demo/controller/PersonController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "samples/coherence-spring-cloud-config-demo/coherence-spring-cloud-config-demo-app/src/main/java/com/oracle/coherence/spring/demo/controller/StatisticsController.java",
+      "line": 29,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "transactions",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "@Transactional on Controller method (move to Service layer)",
+      "file": "samples/coherence-spring-demo/coherence-spring-demo-core/src/main/java/com/oracle/coherence/spring/demo/controller/PersonController.java",
+      "line": 31,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PlantRepository)",
+      "file": "samples/hibernate-cache-demo/src/main/java/com/oracle/coherence/spring/samples/hibernate/controller/PlantController.java",
+      "line": 33,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (PlantRepository)",
+      "file": "samples/hibernate-cache-demo/src/main/java/com/oracle/coherence/spring/samples/hibernate/controller/PlantController.java",
+      "line": 38,
+      "extra": {}
+    },
+    {
+      "engine": "java-vibe-guard",
+      "language": "java",
+      "ruleId": "layers",
+      "severity": "major",
+      "nativeSeverity": "major",
+      "message": "Controller accessing Repository directly (FindByIndexNameSessionRepository)",
+      "file": "samples/spring-session-demo/spring-session-demo-app/src/main/java/com/oracle/coherence/spring/samples/session/controller/HelloController.java",
+      "line": 24,
+      "extra": {}
+    }
+  ]
+}
