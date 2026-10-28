@@ -1,0 +1,29 @@
+{
+  "note": "Tool identities under test, frozen by PREREGISTRATION.md (\"Tools under test\"). Filled in one commit that changes nothing else, after Joaquín tags the three repositories and before any search. scripts/select.mjs and scripts/run.mjs refuse to run while any value starts with 'TO-FILL'.",
+  "pyvibePro": {
+    "repository": "Joaquinriosheredia/pyvibe-pro (private)",
+    "package": "python-vibe-guard",
+    "tag": "TO-FILL (annotated)",
+    "commit": "TO-FILL",
+    "version": "TO-FILL",
+    "wheel": "TO-FILL (built locally from the tagged commit)",
+    "sha256": "TO-FILL"
+  },
+  "javaVibeGuardPro": {
+    "repository": "Joaquinriosheredia/java-vibe-guard-pro (private)",
+    "package": "java-vibe-guard",
+    "tag": "TO-FILL (annotated)",
+    "commit": "TO-FILL",
+    "version": "TO-FILL",
+    "tgz": "TO-FILL (npm pack from the tagged commit)",
+    "sha256": "TO-FILL",
+    "integrity": "TO-FILL (npm sha512)"
+  },
+  "vibeGuardScan": {
+    "repository": "Joaquinriosheredia/vibe-guard-scan (private)",
+    "tag": "TO-FILL (annotated)",
+    "commit": "TO-FILL",
+    "version": "TO-FILL",
+    "versionLine": "TO-FILL (exact `vibe-guard --version` output)"
+  }
+}
