@@ -1,0 +1,19 @@
+Checks:
+  - every hop location exists in the checkout (file, line range)
+  - each hop line contains the next hop symbol as a whole word, not its definition
+  - the last hop is in the card's file, inside and naming the card's enclosing function
+  - the first hop names an entry kind (marker visibility reported as a warning)
+  - FP by reachability: every name-based caller, climbed from the card function, is on a test/script/benchmark/docs path or ends at a function with no caller and no annotation/decorator; no configuration file names a climbed function
+Cannot guarantee:
+  - that a name resolves to that function (overloads, same-named methods, dynamic dispatch, DI, reflection, string-built names)
+  - that the call executes (conditions, early returns, feature flags)
+  - the thread, pool or event loop the code runs on
+  - that the entry point is live (@EnableAsync, scheduler, listener registration, configuration)
+  - that no caller exists: grep sees names, not calls
+
+A J001 TP: pass  [route] async @ study-spring-boot-zipkin/src/main/java/com/bage/SampleController.java:88 → background @ study-spring-boot-zipkin/src/main/java/com/bage/SampleBackground.java:41
+A P116 TP: pass  [route] ws_phone_handler @ proxy/ws/phone.py:762 → start_session @ proxy/core/layers/codex/layer.py:395 → _start_session_impl @ proxy/core/layers/codex/layer.py:801 → create_codex_session @ proxy/core/layers/codex/session.py:1212 → start @ proxy/core/layers/codex/session.py:229 → _start_locked @ proxy/core/layers/codex/session.py:241 → _connect_with_retry @ proxy/core/layers/codex/session.py:836 → start @ proxy/core/layers/codex/app_server_client.py:172
+    warning: chain[0] proxy/ws/phone.py:762: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+B J001 TP: pass  [route] async @ study-spring-boot-zipkin/src/main/java/com/bage/SampleController.java:88 → background @ study-spring-boot-zipkin/src/main/java/com/bage/SampleBackground.java:41
+B P116 TP: pass  [route] ws_phone_handler @ proxy/ws/phone.py:762 → start_session @ proxy/core/layers/codex/layer.py:395 → _start_session_impl @ proxy/core/layers/codex/layer.py:801 → create_codex_session @ proxy/core/layers/codex/session.py:1212 → start @ proxy/core/layers/codex/session.py:229 → _start_locked @ proxy/core/layers/codex/session.py:241 → _connect_with_retry @ proxy/core/layers/codex/session.py:836 → start @ proxy/core/layers/codex/app_server_client.py:172
+    warning: chain[0] proxy/ws/phone.py:762: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
