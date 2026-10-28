@@ -1,0 +1,28 @@
+| Grupo | A vs Joaquín | B vs Joaquín | Consenso (A=B) vs Joaquín | Cobertura del consenso |
+|---|---|---|---|---|
+| TC2 Java | 5/9 = 0.56 [0.27–0.81] | 5/9 = 0.56 [0.27–0.81] | 5/8 = 0.62 [0.31–0.86] | 8/9 = 0.89 [0.57–0.98] |
+| TC2 Python | 15/18 = 0.83 [0.61–0.94] | 14/18 = 0.78 [0.55–0.91] | 14/17 = 0.82 [0.59–0.94] | 17/18 = 0.94 [0.74–0.99] |
+| TC2 Total | 20/27 = 0.74 [0.55–0.87] | 19/27 = 0.70 [0.52–0.84] | 19/25 = 0.76 [0.57–0.89] | 25/27 = 0.93 [0.77–0.98] |
+| TC3 Java | 2/5 = 0.40 [0.12–0.77] | 2/5 = 0.40 [0.12–0.77] | 2/4 = 0.50 [0.15–0.85] | 4/5 = 0.80 [0.38–0.96] |
+| TC3 Python | 16/20 = 0.80 [0.58–0.92] | 16/20 = 0.80 [0.58–0.92] | 16/20 = 0.80 [0.58–0.92] | 20/20 = 1.00 [0.84–1.00] |
+| TC3 Total | 18/25 = 0.72 [0.52–0.86] | 18/25 = 0.72 [0.52–0.86] | 18/24 = 0.75 [0.55–0.88] | 24/25 = 0.96 [0.80–0.99] |
+| TC2+TC3 Java | 7/14 = 0.50 [0.27–0.73] | 7/14 = 0.50 [0.27–0.73] | 7/12 = 0.58 [0.32–0.81] | 12/14 = 0.86 [0.60–0.96] |
+| TC2+TC3 Python | 31/38 = 0.82 [0.67–0.91] | 30/38 = 0.79 [0.64–0.89] | 30/37 = 0.81 [0.66–0.91] | 37/38 = 0.97 [0.87–1.00] |
+| TC2+TC3 Total | 38/52 = 0.73 [0.60–0.83] | 37/52 = 0.71 [0.58–0.82] | 37/49 = 0.76 [0.62–0.85] | 49/52 = 0.94 [0.84–0.98] |
+
+Fallos (ID: Joaquín / A / B):
+TC2 J001: J=FP A=TP B=TP  [A, B, consenso]
+TC2 J015: J=TP A=FP B=FP  [A, B, consenso]
+TC2 J052: J=TP A=inválido B=inválido  [A, B, sin consenso]
+TC2 J056: J=FP A=TP B=TP  [A, B, consenso]
+TC2 P073: J=TP A=FP B=FP  [A, B, consenso]
+TC2 P126: J=TP A=FP B=FP  [A, B, consenso]
+TC2 P127: J=TP A=FP B=FP  [A, B, consenso]
+TC2 P153: J=TP A=TP B=FP  [B, sin consenso]
+TC3 J001: J=TP A=FP B=FP  [A, B, consenso]
+TC3 J003: J=TP A=FP B=FP  [A, B, consenso]
+TC3 J017: J=TP A=inválido B=inválido  [A, B, sin consenso]
+TC3 P026: J=FP A=TP B=TP  [A, B, consenso]
+TC3 P044: J=TP A=FP B=FP  [A, B, consenso]
+TC3 P050: J=TP A=FP B=FP  [A, B, consenso]
+TC3 P075: J=TP A=FP B=FP  [A, B, consenso]
