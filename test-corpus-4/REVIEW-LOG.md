@@ -14,3 +14,9 @@ favourable conclusion decides. Exactly one line, `none` or comma-separated IDs:
 
 | date | who | IDs | question | answer |
 |---|---|---|---|---|
+| 2026-11-01 | Claude (asesor) | J060 (tras registrar TP) | Citó la definición de TP/FP/U del criterio v1 §1 e indicó cómo buscar llamadores del método y su interfaz (navegación), sin valorar el caso. Joaquín cambió TP a U; Claude lo sustituyó literal en la hoja. |
+| 2026-11-02 | Claude (asesor) | P060 (tras registrar U) | Recordó la definición de U del criterio v1 e indicó cómo seguir el llamador de sla_engine.py:323 (navegación). Sin valorar el caso. |
+| 2026-11-02 | Claude (asesor) | J028, P068 (tras registrar U) | Recordó la definición de U del criterio v1 e indicó buscar el publicador del evento y la definición de las colas en el repo (navegación). Sin valorar. |
+| 2026-11-02 | Claude (asesor) | bloque J037–P076 | Preguntó si los veredictos eran de Joaquín por el encabezado del texto; Joaquín confirmó que sí. Sin valorar ningún caso. |
+| 2026-11-02 | Claude (asesor) | P058, J033, J008, J032, J027 (tras registrar U) | Recordó la definición de U del criterio v1 (navegación). Sin valorar. |
+| 2026-11-02 | Claude (asesor) | 160 IDs | Transcribió los veredictos de Joaquín a REVIEW-SHEET.md de forma literal (referencias y texto unidos con " — "; "No."/"Sí." sin punto final). |
