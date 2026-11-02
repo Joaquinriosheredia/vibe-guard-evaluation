@@ -1,0 +1,1374 @@
+{
+  "assisted": [],
+  "rule": "no assisted verdict declared in REVIEW-LOG.md: (a) all verdicts decides",
+  "criterion1": {
+    "java": {
+      "a": "NOT MET",
+      "b": null,
+      "status": "NOT MET",
+      "differs": false
+    },
+    "python": {
+      "a": "NOT MET",
+      "b": null,
+      "status": "NOT MET",
+      "differs": false
+    }
+  },
+  "criterion2": {
+    "java": {
+      "a": "MET",
+      "b": null,
+      "status": "MET",
+      "differs": false
+    },
+    "python": {
+      "a": "MET",
+      "b": null,
+      "status": "MET",
+      "differs": false
+    }
+  },
+  "a": {
+    "reviewMethod": "every finding of the review set reviewed by Joaqu\u00edn under REVIEW-CRITERIA.md v1; no AI verdict (PREREGISTRATION.md)",
+    "assistedAsU": [],
+    "languages": {
+      "java": {
+        "corpusFrozenReason": "60 java CRITICAL >= 50",
+        "includedRepositories": 150,
+        "totalCritical": 60,
+        "reviewed": 60,
+        "required": 50,
+        "sampling": "every CRITICAL finding",
+        "precision": {
+          "n": 60,
+          "TP": 19,
+          "FP": 26,
+          "U": 15,
+          "primary": 0.3167,
+          "primaryCI95": [
+            0.2131,
+            0.4423
+          ],
+          "secondary": 0.4222,
+          "secondaryCI95": [
+            0.2897,
+            0.567
+          ]
+        },
+        "criterion1": {
+          "met": false,
+          "status": "NOT MET",
+          "reasons": [
+            "primary precision 0.3167 < 0.9"
+          ],
+          "rule": "primary point estimate >= 90% with >= 50 reviewed"
+        },
+        "fpPer1000": {
+          "densityCriticalPer1000": 0.9167,
+          "primary": 0.6264,
+          "primaryCI95": [
+            0.5113,
+            0.7214
+          ],
+          "secondary": 0.5297,
+          "clusterBootstrapCI95": [
+            0.3149,
+            1.0185
+          ]
+        },
+        "criterion2": {
+          "met": true,
+          "status": "MET",
+          "rule": "FP/1000 point estimate <= 5.0"
+        },
+        "volume": {
+          "files": 65450,
+          "findings": {
+            "major": 1157,
+            "warning": 278,
+            "critical": 60
+          },
+          "per1000": {
+            "critical": 0.9167,
+            "major": 17.6776,
+            "warning": 4.2475,
+            "info": 0.0
+          },
+          "withinOriginalD2": {
+            "critical": true,
+            "warning": true
+          },
+          "note": "published always; does not decide (amendment of 2026-10-14)"
+        },
+        "clusteringCap10": {
+          "n": 60,
+          "TP": 19,
+          "FP": 26,
+          "U": 15,
+          "primary": 0.3167,
+          "primaryCI95": [
+            0.2131,
+            0.4423
+          ],
+          "secondary": 0.4222,
+          "secondaryCI95": [
+            0.2897,
+            0.567
+          ]
+        },
+        "messageOverstated": 56,
+        "by_ruleId": {
+          "blocking": {
+            "n": 11,
+            "TP": 7,
+            "FP": 2,
+            "U": 2,
+            "primary": 0.6364,
+            "primaryCI95": [
+              0.3538,
+              0.8483
+            ],
+            "secondary": 0.7778,
+            "secondaryCI95": [
+              0.4526,
+              0.9368
+            ]
+          },
+          "blocking-kafka": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "kafka-send-timeout": {
+            "n": 6,
+            "TP": 6,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.6097,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.6097,
+              1.0
+            ]
+          },
+          "reactor-block": {
+            "n": 3,
+            "TP": 0,
+            "FP": 0,
+            "U": 3,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.5615
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "transactions": {
+            "n": 39,
+            "TP": 5,
+            "FP": 24,
+            "U": 10,
+            "primary": 0.1282,
+            "primaryCI95": [
+              0.056,
+              0.2671
+            ],
+            "secondary": 0.1724,
+            "secondaryCI95": [
+              0.076,
+              0.3455
+            ]
+          }
+        },
+        "by_repo": {
+          "Angular2Guy/AngularPortfolioMgr": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "Angular2Guy/MovieManager": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "FAForever/faf-java-api": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "OmniTrustILM/core": {
+            "n": 6,
+            "TP": 0,
+            "FP": 6,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.3903
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.3903
+            ]
+          },
+          "RyanCoreAI/spring-ai-crossborder-customer-service": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "VIJAYAPANDIANT/fixit-hub": {
+            "n": 1,
+            "TP": 0,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "Winfo2024Kuhn/ERP-System-fuer-Handwerksbetriebe": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "cjmalloy/jasper": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "codeandcoke/spring-web": {
+            "n": 3,
+            "TP": 0,
+            "FP": 0,
+            "U": 3,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.5615
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "danielsobrado/edgar4j": {
+            "n": 4,
+            "TP": 3,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.75,
+            "primaryCI95": [
+              0.3006,
+              0.9544
+            ],
+            "secondary": 0.75,
+            "secondaryCI95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "goaltang/homestay-booking-platform": {
+            "n": 10,
+            "TP": 2,
+            "FP": 6,
+            "U": 2,
+            "primary": 0.2,
+            "primaryCI95": [
+              0.0567,
+              0.5098
+            ],
+            "secondary": 0.25,
+            "secondaryCI95": [
+              0.0715,
+              0.5907
+            ]
+          },
+          "grafioschtrader/grafioschtrader": {
+            "n": 1,
+            "TP": 0,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "lWoHvYe/unicorn": {
+            "n": 3,
+            "TP": 0,
+            "FP": 2,
+            "U": 1,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.5615
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "ljramones/trips": {
+            "n": 4,
+            "TP": 0,
+            "FP": 0,
+            "U": 4,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.4899
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "mrtylerzhou/AntFlow-activiti": {
+            "n": 3,
+            "TP": 0,
+            "FP": 1,
+            "U": 2,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.5615
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "najiuwanan/xianyu-Plus": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "opencrawling/opencrawling": {
+            "n": 7,
+            "TP": 7,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.6457,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.6457,
+              1.0
+            ]
+          },
+          "sc2-pulse/sc2-pulse": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "woowacourse-teams/2025-yagu-bogu": {
+            "n": 1,
+            "TP": 0,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.7935
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "wujun728/jun_java_plugin": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "ysy0915/chat-system": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "zqaini002/Novel_Wonderful-generation": {
+            "n": 2,
+            "TP": 1,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.5,
+            "primaryCI95": [
+              0.0945,
+              0.9055
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          }
+        },
+        "by_subpool": {
+          "java-B": {
+            "n": 5,
+            "TP": 0,
+            "FP": 3,
+            "U": 2,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.4345
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.5615
+            ]
+          },
+          "java-C": {
+            "n": 31,
+            "TP": 12,
+            "FP": 9,
+            "U": 10,
+            "primary": 0.3871,
+            "primaryCI95": [
+              0.2373,
+              0.5618
+            ],
+            "secondary": 0.5714,
+            "secondaryCI95": [
+              0.3655,
+              0.7553
+            ]
+          },
+          "java-D": {
+            "n": 24,
+            "TP": 7,
+            "FP": 14,
+            "U": 3,
+            "primary": 0.2917,
+            "primaryCI95": [
+              0.1491,
+              0.4917
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.1719,
+              0.5463
+            ]
+          }
+        },
+        "by_family": {
+          "ASYNC": {
+            "n": 48,
+            "TP": 10,
+            "FP": 26,
+            "U": 12,
+            "primary": 0.2083,
+            "primaryCI95": [
+              0.1173,
+              0.3426
+            ],
+            "secondary": 0.2778,
+            "secondaryCI95": [
+              0.1585,
+              0.4399
+            ]
+          },
+          "KAFKA": {
+            "n": 13,
+            "TP": 7,
+            "FP": 6,
+            "U": 0,
+            "primary": 0.5385,
+            "primaryCI95": [
+              0.2914,
+              0.7679
+            ],
+            "secondary": 0.5385,
+            "secondaryCI95": [
+              0.2914,
+              0.7679
+            ]
+          },
+          "REACTOR": {
+            "n": 36,
+            "TP": 14,
+            "FP": 13,
+            "U": 9,
+            "primary": 0.3889,
+            "primaryCI95": [
+              0.2478,
+              0.5514
+            ],
+            "secondary": 0.5185,
+            "secondaryCI95": [
+              0.3399,
+              0.6926
+            ]
+          }
+        }
+      },
+      "python": {
+        "corpusFrozenReason": "104 python CRITICAL >= 100",
+        "includedRepositories": 90,
+        "totalCritical": 104,
+        "reviewed": 100,
+        "required": 100,
+        "sampling": "random.Random(20261201).sample of 100",
+        "precision": {
+          "n": 100,
+          "TP": 85,
+          "FP": 8,
+          "U": 7,
+          "primary": 0.85,
+          "primaryCI95": [
+            0.7672,
+            0.9069
+          ],
+          "secondary": 0.914,
+          "secondaryCI95": [
+            0.8393,
+            0.9558
+          ]
+        },
+        "criterion1": {
+          "met": false,
+          "status": "NOT MET",
+          "reasons": [
+            "primary precision 0.85 < 0.9"
+          ],
+          "rule": "primary point estimate >= 90% with >= 100 reviewed"
+        },
+        "fpPer1000": {
+          "densityCriticalPer1000": 5.7977,
+          "primary": 0.8697,
+          "primaryCI95": [
+            0.5398,
+            1.3497
+          ],
+          "secondary": 0.4987,
+          "clusterBootstrapCI95": [
+            0.3992,
+            1.3866
+          ]
+        },
+        "criterion2": {
+          "met": true,
+          "status": "MET",
+          "rule": "FP/1000 point estimate <= 5.0"
+        },
+        "volume": {
+          "files": 17938,
+          "findings": {
+            "critical": 104,
+            "warning": 556
+          },
+          "per1000": {
+            "critical": 5.7977,
+            "major": 0.0,
+            "warning": 30.9957,
+            "info": 0.0
+          },
+          "withinOriginalD2": {
+            "critical": false,
+            "warning": false
+          },
+          "note": "published always; does not decide (amendment of 2026-10-14)"
+        },
+        "clusteringCap10": {
+          "n": 91,
+          "TP": 77,
+          "FP": 8,
+          "U": 6,
+          "primary": 0.8462,
+          "primaryCI95": [
+            0.7582,
+            0.9061
+          ],
+          "secondary": 0.9059,
+          "secondaryCI95": [
+            0.8251,
+            0.9515
+          ]
+        },
+        "messageOverstated": 62,
+        "by_ruleId": {
+          "PYVIBE-002": {
+            "n": 11,
+            "TP": 9,
+            "FP": 0,
+            "U": 2,
+            "primary": 0.8182,
+            "primaryCI95": [
+              0.523,
+              0.9486
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.7009,
+              1.0
+            ]
+          },
+          "PYVIBE-006": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "PYVIBE-007": {
+            "n": 11,
+            "TP": 11,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.7412,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.7412,
+              1.0
+            ]
+          },
+          "PYVIBE-008": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "PYVIBE-010": {
+            "n": 3,
+            "TP": 3,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.4385,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "PYVIBE-012": {
+            "n": 55,
+            "TP": 54,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.9818,
+            "primaryCI95": [
+              0.9039,
+              0.9968
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.9336,
+              1.0
+            ]
+          },
+          "PYVIBE-014": {
+            "n": 2,
+            "TP": 1,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.5,
+            "primaryCI95": [
+              0.0945,
+              0.9055
+            ],
+            "secondary": 0.5,
+            "secondaryCI95": [
+              0.0945,
+              0.9055
+            ]
+          },
+          "PYVIBE-016": {
+            "n": 3,
+            "TP": 2,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.6667,
+            "primaryCI95": [
+              0.2077,
+              0.9385
+            ],
+            "secondary": 0.6667,
+            "secondaryCI95": [
+              0.2077,
+              0.9385
+            ]
+          },
+          "PYVIBE-017": {
+            "n": 3,
+            "TP": 2,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.6667,
+            "primaryCI95": [
+              0.2077,
+              0.9385
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "PYVIBE-018": {
+            "n": 9,
+            "TP": 2,
+            "FP": 4,
+            "U": 3,
+            "primary": 0.2222,
+            "primaryCI95": [
+              0.0632,
+              0.5474
+            ],
+            "secondary": 0.3333,
+            "secondaryCI95": [
+              0.0968,
+              0.7
+            ]
+          }
+        },
+        "by_repo": {
+          "AlexAsplund/Vanchor": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "Ambuj123-lab/agentic-rag-financial-parser": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "AndrewCTF/velocity": {
+            "n": 7,
+            "TP": 6,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.8571,
+            "primaryCI95": [
+              0.4869,
+              0.9743
+            ],
+            "secondary": 0.8571,
+            "secondaryCI95": [
+              0.4869,
+              0.9743
+            ]
+          },
+          "HyxiaoGe/fusion": {
+            "n": 3,
+            "TP": 2,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.6667,
+            "primaryCI95": [
+              0.2077,
+              0.9385
+            ],
+            "secondary": 0.6667,
+            "secondaryCI95": [
+              0.2077,
+              0.9385
+            ]
+          },
+          "SkyNotSilent/insightcut-jianying-image-video": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "SpillwaveSolutions/agent-brain": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "TNT-Likely/BeeCount-Cloud": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "antiv/mate": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "asfaraguest/tatap": {
+            "n": 4,
+            "TP": 4,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.5101,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.5101,
+              1.0
+            ]
+          },
+          "chattermate/chattermate.chat": {
+            "n": 11,
+            "TP": 9,
+            "FP": 1,
+            "U": 1,
+            "primary": 0.8182,
+            "primaryCI95": [
+              0.523,
+              0.9486
+            ],
+            "secondary": 0.9,
+            "secondaryCI95": [
+              0.5958,
+              0.9821
+            ]
+          },
+          "crane-in-clear-sky/WorkWit-AI-Agent": {
+            "n": 3,
+            "TP": 3,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.4385,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "dameng2026/xianyu-pilot": {
+            "n": 3,
+            "TP": 3,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.4385,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "deepmemteam/deepmem": {
+            "n": 3,
+            "TP": 2,
+            "FP": 1,
+            "U": 0,
+            "primary": 0.6667,
+            "primaryCI95": [
+              0.2077,
+              0.9385
+            ],
+            "secondary": 0.6667,
+            "secondaryCI95": [
+              0.2077,
+              0.9385
+            ]
+          },
+          "dentalpin/dentalpin": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "foodpm/timecut": {
+            "n": 3,
+            "TP": 3,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.4385,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "jacebrowning/memegen": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "ldbumble/taskuary": {
+            "n": 2,
+            "TP": 0,
+            "FP": 2,
+            "U": 0,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.6576
+            ]
+          },
+          "liyupi/yu-ai-learn": {
+            "n": 2,
+            "TP": 2,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.3424,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "ljxpython/ai-agent-platform": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "loveramarois-byte/council-lab": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "metalogico/issued": {
+            "n": 1,
+            "TP": 1,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.2065,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.2065,
+              1.0
+            ]
+          },
+          "phucnguyentvp1/frameweaver": {
+            "n": 4,
+            "TP": 4,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.5101,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.5101,
+              1.0
+            ]
+          },
+          "riteshbonthalakoti/HELPDESK.AI": {
+            "n": 3,
+            "TP": 0,
+            "FP": 1,
+            "U": 2,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.5615
+            ],
+            "secondary": 0.0,
+            "secondaryCI95": [
+              0.0,
+              0.7935
+            ]
+          },
+          "runvnc/mindroot": {
+            "n": 16,
+            "TP": 15,
+            "FP": 0,
+            "U": 1,
+            "primary": 0.9375,
+            "primaryCI95": [
+              0.7167,
+              0.9889
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.7961,
+              1.0
+            ]
+          },
+          "sneg55/pingcrm": {
+            "n": 2,
+            "TP": 0,
+            "FP": 0,
+            "U": 2,
+            "primary": 0.0,
+            "primaryCI95": [
+              0.0,
+              0.6576
+            ],
+            "secondary": null,
+            "secondaryCI95": null
+          },
+          "stevezau/shortlist": {
+            "n": 3,
+            "TP": 1,
+            "FP": 1,
+            "U": 1,
+            "primary": 0.3333,
+            "primaryCI95": [
+              0.0615,
+              0.7923
+            ],
+            "secondary": 0.5,
+            "secondaryCI95": [
+              0.0945,
+              0.9055
+            ]
+          },
+          "xianer235/115-media-hub": {
+            "n": 12,
+            "TP": 12,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.7575,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.7575,
+              1.0
+            ]
+          },
+          "yujian0815/fnmedia-ext": {
+            "n": 7,
+            "TP": 7,
+            "FP": 0,
+            "U": 0,
+            "primary": 1.0,
+            "primaryCI95": [
+              0.6457,
+              1.0
+            ],
+            "secondary": 1.0,
+            "secondaryCI95": [
+              0.6457,
+              1.0
+            ]
+          }
+        },
+        "by_subpool": {
+          "python-A": {
+            "n": 74,
+            "TP": 61,
+            "FP": 7,
+            "U": 6,
+            "primary": 0.8243,
+            "primaryCI95": [
+              0.7223,
+              0.8944
+            ],
+            "secondary": 0.8971,
+            "secondaryCI95": [
+              0.8024,
+              0.9492
+            ]
+          },
+          "python-B": {
+            "n": 26,
+            "TP": 24,
+            "FP": 1,
+            "U": 1,
+            "primary": 0.9231,
+            "primaryCI95": [
+              0.7586,
+              0.9786
+            ],
+            "secondary": 0.96,
+            "secondaryCI95": [
+              0.8046,
+              0.9929
+            ]
+          }
+        }
+      }
+    }
+  },
+  "b": null
+}
