@@ -4,7 +4,8 @@
 
 - **Documento nuevo.** `REVIEW-CRITERIA.md` (v1) solo recibe notas fechadas que corrigen hechos (§6 y §3.1 de v1). Sus reglas y los veredictos publicados no cambian.
 - **Resultados publicados intactos.** TC1–TC4 conservan sus veredictos, métricas y conclusiones: `audit-joaquin.json`, `metrics.json` y `METRICS.md` no cambian. Cada corpus se lee con el criterio de su propio pre-registro.
-- **Aplicación:** v2 se aplica a la evaluación de desarrollo, que es asistida y se declara como tal (`criterio-v2-desarrollo/`), y al pre-registro de TC5.
+- **Aplicación:** v2 se aplica a la evaluación de desarrollo, que es asistida y se declara como tal (`criterio-v2-desarrollo/`), y al borrador de pre-registro de TC5 (`tc5-borrador/`, aparcado; no se ejecuta).
+- **Cerrar v2 aprueba el criterio, no valida reglas ni resuelve casos sin evidencia.** Los U y las cuestiones abiertas de `criterio-v2-desarrollo/PROPUESTA-v2.md` §5 se conservan.
 - **Aviso:** si las cifras bajo v2 difieren de las publicadas bajo v1, la diferencia refleja también el cambio de definición, no solo un cambio en las reglas.
 
 ## 1. Veredicto
@@ -28,13 +29,14 @@
   - es **U** si falta la configuración que lo decide.
   Esto sustituye la regla fija de v1 §3.1 (número de hilos del scheduler).
 
-## 2. Aparte del veredicto: gravedad, utilidad de corregir y Overstated
+## 2. Aparte del veredicto: categoría, gravedad, utilidad de corregir y Overstated
 
 Se registran por separado y **ninguno decide el veredicto**.
 
-- **Gravedad:**
-  - **CRITICAL:** solo para las reglas que pasan la selección de desarrollo (`criterio-v2-desarrollo/`: n ≥ 15, ≥ 5 repos, TP/n ≥ 0,90 con U como no-TP, e impacto grave justificado por escrito) **y** quedan validadas según el **pre-registro de TC5**, que fija la población, el muestreo, los umbrales por regla y por lenguaje, y qué pasa si falta evidencia. Ese pre-registro es el procedimiento de confirmación; este documento no lo sustituye.
-  - **WARNING:** todo lo demás.
+- **Categoría:** qué clase de incumplimiento es. Por ejemplo, «incumplimiento de recomendación documentada de uso seguro» (PYVIBE-012 por contrato) o «fallo funcional respaldado por código». Es un campo descriptivo: no es una escala ni otro nivel de gravedad.
+- **Gravedad:** WARNING o CRITICAL, y nada más.
+  - **CRITICAL:** solo para las reglas que pasan la selección de desarrollo (`criterio-v2-desarrollo/`: n ≥ 15, ≥ 5 repos, TP/n ≥ 0,90 con U como no-TP, e impacto grave justificado por escrito) **y** quedan validadas según un pre-registro posterior, como el borrador de TC5. Ese pre-registro fija la población, el muestreo, los umbrales y qué pasa si falta evidencia, y es el procedimiento de confirmación; este documento no lo sustituye. **Ninguna regla evaluada reúne hoy los requisitos para CRITICAL automático** (`criterio-v2-desarrollo/PROPUESTA-v2.md` §2), y TC5 está aparcado.
+  - **WARNING:** todo lo demás. **No tiene umbral de aceptación,** pero cada regla publica su evidencia y sus limitaciones: los casos revisados, sus U y lo que la detección no demuestra.
   - **Un TP puede ser WARNING.**
 - **Utilidad de corregir:** si arreglarlo merece la pena en ese repositorio. Un TP de impacto mínimo sigue siendo TP.
 - **Overstated:** el mensaje atribuye un impacto que el código no sostiene. Nunca es motivo de FP.
@@ -51,7 +53,7 @@ Se registran por separado y **ninguno decide el veredicto**.
 | PYVIBE-003/015 (loop anidado) | no se arranca un loop dentro de otro | alcanzable con un loop en marcha | solo alcanzable sin loop en marcha |
 | PYVIBE-005 (Celery sin límite de tiempo) | la tarea termina o se corta | puede colgar en E/S externa y no hay un límite duro efectivo | **solo** un `task_time_limit` duro efectivo en el pool usado. Un `task_soft_time_limit` no basta: lanza una excepción que la tarea puede capturar (Celery, Workers Guide, «Time Limits») |
 | PYVIBE-006 (ContextVar sin reset) | el valor no se filtra a trabajo posterior | trabajo posterior en el mismo contexto puede verlo | el contexto se descarta tras la llamada |
-| PYVIBE-012/014 (tarea descartada) | dos campos separados, ver la nota de abajo | | |
+| PYVIBE-012/014 (tarea descartada) | (a) contrato de retención y, por separado, b1/b2/b3: ver la nota de abajo | | |
 | PYVIBE-013 (gather) | los fallos de los awaitables se observan | algún awaitable puede lanzar en un fallo normal y los demás siguen sin observarse | todos los awaitables contienen sus excepciones |
 | PYVIBE-017 (`except` vacío) | los errores que importan no se tragan | puede tragarse `KeyboardInterrupt`/`SystemExit`, o errores relevantes en una ruta normal | — |
 
@@ -65,19 +67,18 @@ Se registran por separado y **ninguno decide el veredicto**.
 - **Si no puede aportar contexto:** cuando la regla no es capaz de aportar el llamador con transacción abierta y la dependencia, **se desactiva**.
 - **Trabajo futuro:** una regla distinta, «`@Async` llamado desde una transacción abierta», cubriría el riesgo de leer antes del commit en cualquier `@Async`, tenga o no `@Transactional`. Necesitará su propia validación.
 
-**PYVIBE-012/014: dos campos separados por caso.**
+**PYVIBE-012/014: contrato y tres mecanismos, por separado.**
 
 - **(a) Contrato.** Se incumple la recomendación de retención de `asyncio.create_task` (documentación de Python, `asyncio.create_task`: «Save a reference to the result of this function, to avoid a task disappearing mid-execution»). Vale **sí** cuando no se conserva ninguna referencia a la tarea en ninguna parte.
-- **(b) Escenario de fallo funcional respaldado por código: sí / no / U.**
-  - **sí:** el código muestra un fallo funcional, más allá de una línea de log, si la tarea falla o desaparece. Por ejemplo:
-    - una excepción no capturada dentro de la tarea deja un estado a medias (un registro en `processing` para siempre, un trabajo pedido por el usuario que no se hace sin que nadie lo sepa);
-    - un bucle de fondo muere en el primer error y el servicio deja de hacer su trabajo;
-    - la tarea espera un future que nada más referencia, de modo que puede ser recolectada antes de terminar.
-  - **no:** el código muestra que no hay tal fallo. Por ejemplo:
-    - el cuerpo contiene sus excepciones y deja un estado coherente;
-    - la tarea solo hace trabajo no funcional (mensajes, precalentamiento opcional cuyo fallo no cambia el resultado).
-  - **U:** depende de código o configuración que no está en el repositorio, o no se puede decidir.
-- **Para la selección CRITICAL cuenta (b), no (a).** (a) se registra siempre.
+  - Categoría: incumplimiento de recomendación documentada de uso seguro.
+  - Gravedad: WARNING.
+  - El veredicto v2 por contrato es TP si además la ruta es alcanzable.
+- **(b) Escenario de fallo respaldado por código, con tres mecanismos que se registran por separado.** Cada uno vale **sí** (el código muestra la condición), **no** (el cuerpo leído no la muestra; no afirma que sea imposible), **U** (no se puede decidir) o **—** (no aplica):
+  - **b1, pérdida por no retención:** la tarea espera un awaitable que nada más que ella referencia (un `Future`/`Event` local), de modo que puede ser recolectada antes de terminar. Es el único mecanismo causado por la falta de referencia.
+  - **b2, excepción sin supervisión:** una llamada que puede lanzar en operación normal (E/S de red, de disco o de base de datos) está fuera de un `try` que la contenga, y nada supervisa la tarea. asyncio solo registra «Task exception was never retrieved» al recolectarla.
+  - **b3, ausencia de recuperación** (solo si b2 es sí): tras ese fallo, el código no restaura la función. El estado queda a medias, o un bucle de fondo muere sin reinicio, o el trabajo pedido no se hace y nada lo reintenta.
+- **Sin recuentos causales.** No se da por demostrado ningún recuento causal: b2 y b3 nacen del manejo de errores del cuerpo de la tarea, y conservar la referencia no los evita si nadie supervisa la tarea.
+- **Para la selección CRITICAL cuenta (b)**, mecanismo por mecanismo; (a) se registra siempre. Separar los mensajes no autoriza dos alertas basadas en la misma detección (`criterio-v2-desarrollo/DISENO-PYVIBE-012.md`).
 
 ## 4. Ejemplos
 
@@ -120,13 +121,17 @@ Los ejemplos con ID salen de TC2–TC4. Sus etiquetas v2 son las de `criterio-v2
 - **v1 §3.1** (número de hilos del scheduler) queda absorbido en la condición plausible de `blocking`. Su afirmación sobre los hilos virtuales era incorrecta para `fixedDelay` (nota del 2026-11-03 en v1).
 - **`transactions`:** pasa a WARNING como máximo, solo alerta de lo que afirma su mensaje, no alerta en los casos de §3 y se desactiva si no puede aportar contexto.
 - **PYVIBE-005:** solo un límite duro efectivo hace FP.
-- **PYVIBE-012/014:** se separan (a), el contrato, y (b), el escenario de fallo funcional. Para CRITICAL cuenta (b).
-- **Gravedad, utilidad de corregir y Overstated** se registran aparte (§2). La confirmación CRITICAL remite al pre-registro de TC5.
+- **PYVIBE-012/014:** se separan (a), el contrato, y (b), con sus tres mecanismos: b1 pérdida por no retención, b2 excepción sin supervisión, b3 ausencia de recuperación. Para CRITICAL cuenta (b); ningún recuento causal se da por demostrado.
+- **Categoría, gravedad (WARNING/CRITICAL), utilidad de corregir y Overstated** se registran aparte (§2). La confirmación CRITICAL remite a un pre-registro posterior (borrador de TC5, aparcado). WARNING no tiene umbral, pero publica su evidencia y sus limitaciones.
 
 ## 6. Uso
 
-- **Evaluación de desarrollo:** `criterio-v2-desarrollo/`, asistida y declarada como tal. Las etiquetas v2 las propone Claude y las confirma o corrige Joaquín. La población de selección es solo TC3 + TC4; TC2 aporta ejemplos auxiliares.
-- **TC5:** su pre-registro copia literalmente §1, §2 y §3 de este documento y cita su versión.
+- **Evaluación de desarrollo:** `criterio-v2-desarrollo/`, asistida y declarada como tal. Las etiquetas v2 las propone Claude y las confirma o corrige Joaquín.
+  - **Población de selección:** solo TC4, que tuvo revisión humana completa.
+  - **TC3:** queda aparte, porque sus casos dependieron del desacuerdo A/B y de un muestreo.
+  - **TC2:** aporta ejemplos auxiliares.
+- **TC5:** hay un borrador de pre-registro (`tc5-borrador/PREREGISTRATION-BORRADOR.md`), aparcado por la decisión de proyecto del 2026-11-03 (pilotos de auditoría). Si se reactiva, copia literalmente §1, §2 y §3 de este documento y cita su versión.
+- **Analizadores:** este documento no cambia ningún analizador. Los cambios de reglas se diseñan aparte (`criterio-v2-desarrollo/DISENO-PYVIBE-012.md`) y no se implementan sin decisión de Joaquín.
 - **Instrucciones de IA:** las que apliquen v2 serán un documento nuevo; `REVIEW-AI-INSTRUCTIONS.md` (v1) no se toca.
 
 ## 7. Registro de cambios
@@ -141,3 +146,13 @@ Los ejemplos con ID salen de TC2–TC4. Sus etiquetas v2 son las de `criterio-v2
   6. **`kafka-send-timeout`:** la propiedad es la cadencia o el timeout de la ruta frente a la cota efectiva del productor. Comprobado en TC3 J017.
   7. **Celery:** FP solo con `task_time_limit` duro efectivo.
   8. **§2:** la confirmación CRITICAL remite al pre-registro de TC5.
+- **2026-11-03 (segunda revisión):** decisiones de Joaquín tras la segunda opinión de Codex sobre B (`…/2026-11-03-criterio-v2-propuesta-b/`):
+  1. La población de selección es solo TC4.
+  2. Categoría y gravedad (WARNING/CRITICAL) son campos separados, sin escala de contrato.
+  3. PYVIBE-012 se separa en b1/b2/b3, sin recuentos causales.
+  4. Una detección, una alerta (diseño en `criterio-v2-desarrollo/DISENO-PYVIBE-012.md`).
+  5. «Ninguna regla evaluada reúne hoy los requisitos para CRITICAL automático».
+  6. WARNING no tiene umbral, pero publica su evidencia y sus limitaciones.
+  7. Se conservan los U y las cuestiones abiertas.
+  8. Borrador de TC5, no ejecutado.
+  9. TC5 queda aparcado por la decisión de proyecto de pasar a pilotos de auditoría.
