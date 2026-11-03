@@ -1,0 +1,210 @@
+Checks:
+  - every hop location exists in the checkout (file, line range)
+  - each hop line contains the next hop symbol as a whole word, not its definition
+  - the last hop is in the card's file, inside and naming the card's enclosing function
+  - the first hop names an entry kind (marker visibility reported as a warning)
+  - FP by reachability: every name-based caller, climbed from the card function, is on a test/script/benchmark/docs path or ends at a function with no caller and no annotation/decorator; no configuration file names a climbed function
+Cannot guarantee:
+  - that a name resolves to that function (overloads, same-named methods, dynamic dispatch, DI, reflection, string-built names)
+  - that the call executes (conditions, early returns, feature flags)
+  - the thread, pool or event loop the code runs on
+  - that the entry point is live (@EnableAsync, scheduler, listener registration, configuration)
+  - that no caller exists: grep sees names, not calls
+
+A J001 FP: n/a  [listener] receiveLogoutEvent @ backend/src/main/java/ch/xxx/manager/common/events/KafkaProducer.java:58
+    warning: chain[0] backend/src/main/java/ch/xxx/manager/common/events/KafkaProducer.java:58: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J002 TP: pass  [listener] receiveSigninEvent @ backend/src/main/java/ch/xxx/manager/common/events/KafkaProducer.java:78
+    warning: chain[0] backend/src/main/java/ch/xxx/manager/common/events/KafkaProducer.java:78: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J003 FP: n/a  [registration] receiveLogoutEvent @ backend/src/main/java/ch/xxx/moviemanager/adapter/events/KafkaProducer.java:58
+    warning: chain[0] backend/src/main/java/ch/xxx/moviemanager/adapter/events/KafkaProducer.java:58: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A J004 FP: n/a  [listener] receiveSigninEvent @ backend/src/main/java/ch/xxx/moviemanager/adapter/events/KafkaProducer.java:79
+    warning: chain[0] backend/src/main/java/ch/xxx/moviemanager/adapter/events/KafkaProducer.java:79: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J005 TP: pass  [route] BackupController.createBackup @ src/main/java/jasper/web/rest/BackupController.java:65 → BackupService.createBackup @ src/main/java/jasper/service/BackupService.java:64 → Backup.createBackup @ src/main/java/jasper/component/Backup.java:94
+A J006 FP: n/a  [route] getRoutes @ bikesapi_reactive/src/main/java/com/svalero/bikesapi/controller/BikeController.java:85
+A J007 FP: n/a  [route] getRoutes @ bikesapi_reactive/src/main/java/com/svalero/bikesapi/controller/BikeController.java:87
+A J008 FP: n/a  [route] getRoutes @ bikesapi_reactive/src/main/java/com/svalero/bikesapi/controller/BikeController.java:89
+A J009 TP: pass  [scheduled] syncFilings @ src/main/java/org/jds/edgar4j/job/FilingSyncJob.java:94
+A J010 TP: pass  [route] InsiderController.enrichCompanyData @ src/main/java/org/jds/edgar4j/controller/InsiderController.java:335 → CompanyEnrichmentService.enrichCompanyData @ src/main/java/org/jds/edgar4j/service/enrichment/CompanyEnrichmentService.java:39
+A J011 FP: n/a  [route] InsiderController.enrichCompanyData @ src/main/java/org/jds/edgar4j/controller/InsiderController.java:335 → CompanyEnrichmentService.enrichCompanyData(String) @ src/main/java/org/jds/edgar4j/service/enrichment/CompanyEnrichmentService.java:44 → CompanyEnrichmentService.enrichCompanyData(Company) @ src/main/java/org/jds/edgar4j/service/enrichment/CompanyEnrichmentService.java:55
+A J012 FP: n/a  [route] enrichAllCompanies @ src/main/java/org/jds/edgar4j/controller/InsiderController.java:357 → enrichAllActiveCompanies @ src/main/java/org/jds/edgar4j/service/enrichment/CompanyEnrichmentService.java:97
+A J013 FP: n/a  [route] onPush @ src/main/java/com/faforever/api/deployment/GitHubController.java:55 → deploy @ src/main/java/com/faforever/api/deployment/GitHubDeploymentService.java:63
+A J014 TP: pass  [route] AdminPromotionController.retryFailedItems @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminPromotionController.java:411 → CouponBatchIssueServiceImpl.retryFailedItems @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/CouponBatchIssueServiceImpl.java:255
+A J015 TP: pass  [route] broadcastSystemNotification @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminNotificationController.java:60 → submitBroadcast @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/NotificationBroadcastServiceImpl.java:64 → process @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/NotificationBroadcastJobProcessor.java:59
+A J016 U: n/a  [test] broadcastSystemNotificationBatchSavesEnabledUsersAndPublishesEvents @ homestay-backend/src/test/java/com/homestay3/homestaybackend/service/impl/NotificationServiceImplTest.java:181 → broadcastSystemNotification @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/NotificationServiceImpl.java:278
+    warning: chain[0] homestay-backend/src/test/java/com/homestay3/homestaybackend/service/impl/NotificationServiceImplTest.java:181: no entry marker of kind test visible at the hop or on its enclosing function (heuristic)
+    warning: chain starts at a test entry: not normal operation
+A J017 TP: pass  [route] updateHomestayStatus @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/AdminHomestayController.java:185 → updateHomestayStatus @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/HomestayAdminServiceImpl.java:142 → syncHomestayToElasticsearch @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/HomestayAdminServiceImpl.java:277 → syncHomestay @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/HomestayIndexingServiceImpl.java:82
+A J018 TP: pass  [route] BehaviorTrackingController.trackView @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/BehaviorTrackingController.java:46 → UserBehaviorTrackingServiceImpl.trackView @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java:27
+A J019 TP: pass  [route] BehaviorTrackingController.trackSearch @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/BehaviorTrackingController.java:68 → UserBehaviorTrackingServiceImpl.trackSearch @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java:48
+A J020 TP: pass  [route] BehaviorTrackingController.trackClick @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/BehaviorTrackingController.java:87 → UserBehaviorTrackingServiceImpl.trackClick @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java:68
+A J021 TP: pass  [route] addFavorite @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/UserFavoriteController.java:41 → addFavorite @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/UserFavoriteServiceImpl.java:69 → trackFavorite @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java:85
+A J022 TP: pass  [route] createOrder @ homestay-backend/src/main/java/com/homestay3/homestaybackend/controller/OrderController.java:58 → createOrder @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/OrderServiceImpl.java:80 → createOrder @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/OrderLifecycleServiceImpl.java:313 → trackBookingAfterCommit @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/impl/OrderLifecycleServiceImpl.java:386 → trackBooking @ homestay-backend/src/main/java/com/homestay3/homestaybackend/service/search/impl/UserBehaviorTrackingServiceImpl.java:106
+A J023 U: n/a
+A J024 TP: pass  [route] findOrCreateCurrencypairByFromAndToCurrency @ backend/grafioschtrader-server/src/main/java/grafioschtrader/rest/CurrencypairResource.java:117 → findOrCreateCurrencypairByFromAndToCurrency @ backend/grafioschtrader-server/src/main/java/grafioschtrader/repository/CurrencypairJpaRepositoryImpl.java:310 → createNonExistingCurrencypair @ backend/grafioschtrader-server/src/main/java/grafioschtrader/repository/CurrencypairJpaRepositoryImpl.java:353 → asyncLoadHistoryIntraData @ backend/grafioschtrader-server/src/main/java/grafioschtrader/repository/SecurityServiceAsyncExectuion.java:24
+A J025 TP: pass  [listener] SystemPreferencesService.onColorPaletteChangeEvent @ tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:218
+    warning: chain[0] tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:218: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J026 TP: pass  [listener] onGraphEnablesPersistEvent @ tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:230
+    warning: chain[0] tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:230: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J027 TP: pass  [listener] onStarDisplayPreferencesChangeEvent @ tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:242
+    warning: chain[0] tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:242: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J028 TP: pass  [listener] onCivilizationDisplayPreferencesChangeEvent @ tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:254
+    warning: chain[0] tripsapplication/src/main/java/com/teamgannon/trips/service/SystemPreferencesService.java:254: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J029 TP: pass  [hook] logAround @ unicorn-logging/src/main/java/com/lwohvye/log/aspect/OprLogAspect.java:78 → save @ unicorn-logging/src/main/java/com/lwohvye/log/service/impl/BzLogServiceImpl.java:95
+    warning: chain[0] unicorn-logging/src/main/java/com/lwohvye/log/aspect/OprLogAspect.java:78: no entry marker of kind hook visible at the hop or on its enclosing function (heuristic)
+A J030 U: n/a  MultiLogService.saveAuthorizeLog @ unicorn-logging/src/main/java/com/lwohvye/log/service/local/MultiLogService.java:32 → BzLogServiceImpl.save @ unicorn-logging/src/main/java/com/lwohvye/log/service/impl/BzLogServiceImpl.java:123
+A J031 TP: pass  [hook] executeInternal @ unicorn-security/src/main/java/com/lwohvye/sys/modules/quartz/utils/ExecutionJob.java:81 → executionSubJob @ unicorn-security/src/main/java/com/lwohvye/sys/modules/quartz/service/impl/QuartzJobServiceImpl.java:151
+A J032 U: n/a  notifyCurrent @ antflow-engine/src/main/java/org/openoa/engine/bpmnconf/service/biz/NotifyServiceImpl.java:202 → sendMessageBatch @ antflow-engine/src/main/java/org/openoa/engine/utils/MessageUtils.java:33 → sendMessagePreBatch @ antflow-engine/src/main/java/org/openoa/engine/bpmnconf/service/biz/UserMessagePreServiceImpl.java:124
+A J033 U: n/a  MessageUtils.sendMessageBatch @ antflow-engine/src/main/java/org/openoa/engine/utils/MessageUtils.java:46 → UserMessagePreServiceImpl.sendMessagePreBatch @ antflow-engine/src/main/java/org/openoa/engine/bpmnconf/service/biz/UserMessagePreServiceImpl.java:176
+A J034 FP: n/a
+A J035 TP: pass  [route] ItemController.refreshItems @ src/main/java/com/xianyusmart/controller/ItemController.java:51 → ItemServiceImpl.refreshItems @ src/main/java/com/xianyusmart/service/impl/ItemServiceImpl.java:286 → ItemDetailSyncServiceImpl.startSync @ src/main/java/com/xianyusmart/service/impl/ItemDetailSyncServiceImpl.java:121 → ItemDetailSyncServiceImpl.executeSync @ src/main/java/com/xianyusmart/service/impl/ItemDetailSyncServiceImpl.java:156
+A J036 TP: pass  [scheduled] scheduledRefreshWebSocketToken @ src/main/java/com/xianyusmart/service/impl/TokenRefreshServiceImpl.java:519
+A J037 FP: n/a  [route] AcmeControllerImpl.finalizeOrder @ src/main/java/com/otilm/core/api/acme/AcmeControllerImpl.java:138 → AcmeServiceImpl.finalizeOrder @ src/main/java/com/otilm/core/service/acme/impl/AcmeServiceImpl.java:753 → AcmeServiceImpl.finalizeOrder @ src/main/java/com/otilm/core/service/acme/impl/AcmeServiceImpl.java:765
+    warning: chain[0] src/main/java/com/otilm/core/api/acme/AcmeControllerImpl.java:138: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+A J038 TP: pass  [registration] CertificateControllerImpl.bulkDeleteCertificate @ src/main/java/com/otilm/core/api/web/CertificateControllerImpl.java:203 → CertificateServiceImpl.bulkDeleteCertificate @ src/main/java/com/otilm/core/service/impl/CertificateServiceImpl.java:1092
+    warning: chain[0] src/main/java/com/otilm/core/api/web/CertificateControllerImpl.java:203: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A J039 U: n/a  [registration] checkCompliance @ src/main/java/com/otilm/core/api/web/v2/ComplianceControllerImpl.java:46 → checkComplianceAsync @ src/main/java/com/otilm/core/service/impl/ComplianceServiceImpl.java:367
+    warning: chain[0] src/main/java/com/otilm/core/api/web/v2/ComplianceControllerImpl.java:46: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A J040 TP: pass  [route] checkResourceObjectCompliance @ src/main/java/com/otilm/core/api/web/v2/ComplianceControllerImpl.java:62 → checkResourceObjectComplianceAsync @ src/main/java/com/otilm/core/service/impl/ComplianceServiceImpl.java:498
+    warning: chain[0] src/main/java/com/otilm/core/api/web/v2/ComplianceControllerImpl.java:62: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+A J041 TP: pass  [registration] checkResourceObjectsCompliance @ src/main/java/com/otilm/core/api/web/v2/ComplianceControllerImpl.java:54 → checkResourceObjectsComplianceAsync @ src/main/java/com/otilm/core/service/impl/ComplianceServiceImpl.java:519
+    warning: chain[0] src/main/java/com/otilm/core/api/web/v2/ComplianceControllerImpl.java:54: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A J042 U: n/a  [registration] createDiscovery @ src/main/java/com/otilm/core/api/web/DiscoveryControllerImpl.java:109 → runDiscoveryAsync @ src/main/java/com/otilm/core/service/impl/DiscoveryServiceImpl.java:873
+    warning: chain[0] src/main/java/com/otilm/core/api/web/DiscoveryControllerImpl.java:109: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A J043 TP: pass  [listener] EmbeddingConsumer.consume @ oc-embedding-service/src/main/java/org/opencrawling/embedding/messaging/EmbeddingConsumer.java:60
+A J044 TP: pass  [listener] consume @ oc-embedding-service/src/main/java/org/opencrawling/embedding/messaging/EmbeddingConsumer.java:81
+A J045 TP: pass  [listener] consume @ oc-ozone-output-connector/src/main/java/org/opencrawling/ozone/messaging/OzoneMigrationWriterConsumer.java:111
+A J046 TP: pass  [listener] consume @ oc-runtime/src/main/java/org/opencrawling/runtime/messaging/IngestionConsumer.java:109
+A J047 TP: pass  [listener] consume @ oc-runtime/src/main/java/org/opencrawling/runtime/messaging/IngestionConsumer.java:284
+A J048 TP: pass  [route] startJob @ oc-runtime/src/main/java/org/opencrawling/runtime/api/JobController.java:545 → runJob @ oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java:158 → runJobInternal @ oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java:267
+A J049 TP: pass  [route] ingest @ oc-runtime/src/main/java/org/opencrawling/runtime/api/OisIngestController.java:161 → publishDocument @ oc-runtime/src/main/java/org/opencrawling/runtime/orchestrator/JobOrchestrator.java:477
+    warning: chain[0] oc-runtime/src/main/java/org/opencrawling/runtime/api/OisIngestController.java:161: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+A J050 U: n/a
+A J051 FP: n/a  [scheduled] updateBackgroundServices @ src/main/java/com/nephest/battlenet/sc2/config/Cron.java:221
+A J052 FP: n/a  [scheduled] updatePatches @ src/main/java/com/nephest/battlenet/sc2/web/service/SC2MetaService.java:108
+A J053 TP: pass  [route] IngestionController.ingestEvent @ backend/src/main/java/com/fixit/hub/controller/IngestionController.java:40 → IngestionServiceImpl.ingestEvent @ backend/src/main/java/com/fixit/hub/service/impl/IngestionServiceImpl.java:156 → diagnoseIssueAsync @ backend/src/main/java/com/fixit/hub/service/impl/AIDiagnosticServiceImpl.java:43
+A J054 TP: pass  [hook] afterCommit @ src/main/java/org/example/kalkulationsprogramm/service/BelegService.java:244 → analysiereBelegAsync @ src/main/java/org/example/kalkulationsprogramm/service/BelegKiAnalyseService.java:85
+    warning: chain[0] src/main/java/org/example/kalkulationsprogramm/service/BelegService.java:244: no entry marker of kind hook visible at the hop or on its enclosing function (heuristic)
+A J055 TP: pass  [listener] handleBadgeEvent @ backend/app/src/main/java/com/yagubogu/badge/BadgeEventHandler.java:22
+    warning: chain[0] backend/app/src/main/java/com/yagubogu/badge/BadgeEventHandler.java:22: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A J056 U: n/a  [test] testAsync @ jun_springboot_plugin/springboot_async/src/test/java/com/xncoding/pos/ApplicationTests.java:31 → dealNoReturnTask @ jun_springboot_plugin/springboot_async/src/main/java/com/jun/plugin/spirngboot/async/pos/async/AsyncTask.java:26
+    warning: chain[0] jun_springboot_plugin/springboot_async/src/test/java/com/xncoding/pos/ApplicationTests.java:31: no entry marker of kind test visible at the hop or on its enclosing function (heuristic)
+    warning: chain starts at a test entry: not normal operation
+A J057 U: n/a  [test] ApplicationTests.testAsync @ jun_springboot_plugin/springboot_async/src/test/java/com/xncoding/pos/ApplicationTests.java:33 → dealHaveReturnTask @ jun_springboot_plugin/springboot_async/src/main/java/com/jun/plugin/spirngboot/async/pos/async/AsyncTask.java:38
+    warning: chain[0] jun_springboot_plugin/springboot_async/src/test/java/com/xncoding/pos/ApplicationTests.java:33: no entry marker of kind test visible at the hop or on its enclosing function (heuristic)
+    warning: chain starts at a test entry: not normal operation
+A J058 TP: pass  [scheduled] autoChat @ chat-core/src/main/java/com/example/chat/service/ModelAutoChatService.java:94
+A J059 FP: n/a  [route] uploadNovel @ backend/src/main/java/com/novelassistant/controller/NovelController.java:93 → processNovel @ backend/src/main/java/com/novelassistant/service/impl/NovelServiceImpl.java:138 → processNovelFileAsync @ backend/src/main/java/com/novelassistant/service/impl/NovelServiceImpl.java:155
+A J060 U: n/a
+A P002 TP: pass  [route] restart @ src/vanchor/ui/server.py:689
+A P003 TP: pass  [route] test_smtp_connection @ app/api/cron.py:133
+A P004 TP: pass  [route] post_download @ apps/api/app/routes/ai_models.py:106 → start_download @ apps/api/app/localllm/manager.py:628
+A P005 TP: pass  [registration] create_app @ apps/api/app/main.py:709 → lifespan @ apps/api/app/main.py:489
+    warning: chain[0] apps/api/app/main.py:709: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P006 TP: pass  [registration] create_app @ apps/api/app/main.py:709 → lifespan @ apps/api/app/main.py:497
+    warning: chain[0] apps/api/app/main.py:709: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P007 TP: pass  [registration] create_app @ apps/api/app/main.py:709 → lifespan @ apps/api/app/main.py:504
+    warning: chain[0] apps/api/app/main.py:709: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P008 TP: pass  [registration] get_situation @ apps/api/app/mcp_server.py:463 → _get @ apps/api/app/mcp_server.py:330 → _ensure_backend @ apps/api/app/mcp_server.py:321
+A P009 TP: pass  [route] create_job @ apps/api/app/routes/recon.py:652
+A P010 TP: pass  [route] apple_prefetch @ apps/api/app/routes/tiles.py:465
+A P011 TP: pass  [route] convert_wizard_lead @ shared/utils/dashboard/dashboard_server.py:3884
+A P012 TP: pass  [route] websocket_browser_interactive @ server/browser_routes.py:53 → get_session @ shared/utils/tools/browser_tools.py:216
+A P013 TP: pass  [route] health @ android/app/src/main/python/backend/main.py:278
+A P014 TP: pass  [route] resolve @ android/app/src/main/python/backend/main.py:1762 → _check_and_prewarm @ android/app/src/main/python/backend/main.py:1667
+A P015 TP: pass  [route] health @ backend/main.py:278
+A P016 TP: pass  [route] resolve @ backend/main.py:1762 → _check_and_prewarm @ backend/main.py:1667
+A P017 TP: pass  [route] exchange_session_token @ backend/app/api/shopify.py:126
+A P018 TP: pass  [route] delete_shop @ backend/app/api/shopify.py:361
+A P019 FP: n/a  [main] run_service @ backend/app/workers/knowledge_processor.py:335 → main @ backend/app/workers/knowledge_processor.py:330 → run_faq_processor_loop @ backend/app/workers/faq_processor.py:158 → run_faq_processor @ backend/app/workers/faq_processor.py:133 → process_with_semaphore @ backend/app/workers/faq_processor.py:131 → process_faq_job @ backend/app/workers/faq_processor.py:60 → run_article_import_job @ backend/app/services/faq_article_import.py:500
+A P020 TP: pass  [route] jira_oauth_callback @ backend/app/api/jira.py:217 → exchange_code_for_token @ backend/app/services/jira.py:92
+A P021 TP: pass  [route] refresh_jira_token @ backend/app/api/jira.py:277 → refresh_token @ backend/app/services/jira.py:113
+A P022 TP: pass  [route] jira_oauth_callback @ backend/app/api/jira.py:220 → get_cloud_id @ backend/app/services/jira.py:131
+A P023 TP: pass  [route] get_jira_projects @ backend/app/api/jira.py:322 → get_projects @ backend/app/services/jira.py:155
+A P024 TP: pass  [route] get_jira_issue_types @ backend/app/api/jira.py:362 → get_issue_types @ backend/app/services/jira.py:180
+A P025 TP: pass  [route] create_jira_issue @ backend/app/api/jira.py:465 → create_issue @ backend/app/services/jira.py:231 → create_issue_internal @ backend/app/services/jira.py:292
+A P026 TP: pass  [route] get_jira_priorities @ backend/app/api/jira.py:401 → get_priorities @ backend/app/services/jira.py:308
+A P027 TP: pass  [route] check_priority_availability @ backend/app/api/jira.py:442 → is_priority_available @ backend/app/services/jira.py:362 → check_field_availability @ backend/app/services/jira.py:334
+A P029 TP: pass  [route] agent_run_automation @ workwit/backend/agent_endpoints.py:1001
+A P030 TP: pass  [hook] _start_automation_scheduler @ workwit/backend/app.py:34
+A P031 TP: pass  [hook] _start_automation_scheduler @ workwit/backend/app.py:34 → scheduler_loop @ workwit/backend/automation_runner.py:153
+A P032 TP: pass  [route] create_rate_endpoint @ apps/api/app/api/v1/routes/rates.py:222 → create_rate @ apps/api/app/services/rate_service.py:1457
+A P033 TP: pass  [route] websocket_start @ apps/api/app/api/v1/routes/misc.py:1391 → _restart_ws_client_from_db @ apps/api/app/api/v1/routes/misc.py:263 → start_client @ apps/api/app/services/ws_client.py:1717 → start @ apps/api/app/services/ws_client.py:334 → _connect_loop @ apps/api/app/services/ws_client.py:654 → _connect @ apps/api/app/services/ws_client.py:882
+A P034 TP: pass  [route] sync_sold_orders @ apps/api/app/api/v1/routes/order.py:246 → sync_orders_for_account @ apps/api/app/services/xianyu_order_sync.py:382
+A P035 TP: pass  [route] delete_all_memories @ server/main.py:736 → delete_all @ deepmem/vector_store.py:821
+A P036 U: n/a
+A P038 TP: pass  [route] export_memories @ server/main.py:845 → export @ deepmem/vector_store.py:1006
+A P039 FP: n/a  [hook] lifespan @ backend/app/main.py:94 → run @ backend/app/core/plugins/processor.py:71 → _process_one @ backend/app/core/plugins/processor.py:168 → _remove @ backend/app/core/plugins/processor.py:280 → _dump_tables @ backend/app/core/plugins/processor.py:373
+A P040 TP: pass  [registration] trigger_start_recording @ app/main.py:150 → start @ app/recorder/manager.py:190
+    warning: chain[0] app/main.py:150: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P041 TP: pass  [route] trigger_diary @ app/web/routes/diary.py:80
+A P042 TP: pass  [route] trigger_highlight @ app/web/routes/highlights.py:228
+A P043 TP: pass  [route] upload_files @ backend/app/api/files.py:62 → upload_files @ backend/app/services/file_service.py:269
+A P044 TP: pass  [route] complete_direct_upload @ backend/app/api/files.py:103 → complete_direct_upload @ backend/app/services/file_service.py:485
+A P045 TP: pass  [route] test_mcp_server @ backend/app/api/admin_mcp.py:108 → test_server @ backend/app/services/mcp/server_service.py:129 → test_connection @ backend/app/services/mcp/client.py:425 → _run @ backend/app/services/mcp/client.py:583 → run_attempts @ backend/app/services/mcp/client.py:519
+A P046 TP: pass  [route] detail_text @ app/views/images.py:470 → render_image @ app/views/helpers.py:237
+    warning: chain[0] app/views/images.py:470: no entry marker of kind route visible at the hop or on its enclosing function (heuristic)
+A P047 TP: pass  [route] terminal_ws @ taskuary/server.py:9833 → to_browser @ taskuary/server.py:9805
+A P048 TP: pass  [route] terminal_ws @ taskuary/server.py:9850 → to_pty @ taskuary/server.py:9846
+A P049 TP: pass  [route] upload_document @ backend/app/api/v1/routes/knowledge.py:18 → handle_upload @ backend/app/services/knowledge_service.py:67
+A P050 TP: pass  [route] quiz_generate_async @ backend/app/api/v1/routes/quiz.py:34 → create_quiz_task @ backend/app/services/quiz_service.py:155
+A P051 TP: pass  [registration] build_document_tools @ apps/runtime-service/src/runtime_service/tools/documents.py:259 → aparse_document @ apps/runtime-service/src/runtime_service/tools/documents.py:248 → execute_in_workspace @ apps/runtime-service/src/runtime_service/workspace/execution.py:251 → _shield_cleanup @ apps/runtime-service/src/runtime_service/workspace/execution.py:138 → cleanup_and_record @ apps/runtime-service/src/runtime_service/workspace/execution.py:134 → _cleanup @ apps/runtime-service/src/runtime_service/workspace/execution.py:102 → late_cleanup @ apps/runtime-service/src/runtime_service/workspace/execution.py:100
+    warning: chain[0] apps/runtime-service/src/runtime_service/tools/documents.py:259: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P052 TP: pass  [route] delete_run @ backend/app/main.py:1177 → delete @ backend/app/orchestrator.py:1558 → delete_run @ backend/app/store.py:827
+A P053 TP: pass  [hook] _lifespan @ server/opds/__init__.py:66
+A P054 TP: pass  [consumer] ws_handler @ agent/main.py:62 → handle_message @ agent/services/flow_client.py:249
+    warning: chain[0] agent/main.py:62: no entry marker of kind consumer visible at the hop or on its enclosing function (heuristic)
+A P055 TP: pass  [listener] ws_handler @ agent/main.py:62 → handle_message @ agent/services/flow_client.py:265
+    warning: chain[0] agent/main.py:62: no entry marker of kind listener visible at the hop or on its enclosing function (heuristic)
+A P056 TP: pass  [registration] lifespan @ agent/main.py:105 → ws_handler @ agent/main.py:62 → handle_message @ agent/services/flow_client.py:269
+A P057 TP: pass  [hook] lifespan @ agent/main.py:110 → start @ agent/worker/processor.py:74 → _run_loop @ agent/worker/processor.py:151
+A P058 U: n/a  on_presence_sync @ .tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:444 → _resubscribe @ .tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:500 → subscribe @ .tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:269 → on_join_push_ok @ .tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:247
+A P059 FP: pass  [test] test_reindex_all_parallel_processing @ backend/tests/test_semantic_duplicates.py:261 → reindex_all @ backend/services/semantic_duplicate_service.py:252
+    warning: chain starts at a test entry: not normal operation
+    warning: no production caller found by name from reindex_all (1 function(s) climbed): absence of lexical callers, not proof of dead code
+A P060 U: n/a  [main] <module> @ backend/sla_checker.py:350 → background_checker_loop @ backend/sla_checker.py:253 → run_sla_check_sync @ backend/sla_checker.py:234 → run_sla_check @ backend/sla_checker.py:221 → dispatch_notifications @ backend/services/sla_engine.py:323 → _send_to_channel @ backend/services/sla_engine.py:362
+A P061 TP: pass  [route] get_version_info @ src/mindroot/coreplugins/admin/router.py:49 → get_git_version_info @ src/mindroot/coreplugins/admin/mod.py:27
+A P062 TP: pass  [route] get_version_info @ src/mindroot/coreplugins/admin/router.py:49 → get_git_version_info @ src/mindroot/coreplugins/admin/mod.py:41
+A P063 TP: pass  [route] update_mindroot @ src/mindroot/coreplugins/admin/router.py:115
+A P064 TP: pass  [route] restart_server @ src/mindroot/coreplugins/admin/server_router.py:53
+A P065 TP: pass  [route] stop_server @ src/mindroot/coreplugins/admin/server_router.py:66
+A P066 TP: pass  [registration] pic_of_me @ src/mindroot/coreplugins/persona/mod.py:72 → run_command @ src/mindroot/coreplugins/agent/agent.py:936
+A P068 U: n/a
+A P069 TP: pass  [registration] mcp_catalog_install @ src/mindroot/coreplugins/mcp_/catalog_commands.py:112
+A P070 TP: pass  [registration] mcp_catalog_install @ src/mindroot/coreplugins/mcp_/catalog_commands.py:116
+A P071 TP: pass  [registration] mcp_check_tools @ src/mindroot/coreplugins/mcp_/mod.py:339 → check_tools @ src/mindroot/coreplugins/mcp_/server_installer.py:14
+A P072 TP: pass  [route] connect_mcp_server @ src/mindroot/coreplugins/admin/mcp_routes.py:112 → connect_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:781 → install_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:741 → install_with_uvx @ src/mindroot/coreplugins/mcp_/server_installer.py:27
+A P073 TP: pass  [route] connect_mcp_server @ src/mindroot/coreplugins/admin/mcp_routes.py:112 → connect_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:781 → install_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:753 → install_with_npx @ src/mindroot/coreplugins/mcp_/server_installer.py:39
+A P074 TP: pass  [route] connect_mcp_server @ src/mindroot/coreplugins/admin/mcp_routes.py:112 → connect_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:781 → install_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:745 → install_with_pip @ src/mindroot/coreplugins/mcp_/server_installer.py:51
+A P075 TP: pass  [route] connect_mcp_server @ src/mindroot/coreplugins/admin/mcp_routes.py:112 → connect_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:781 → install_server @ src/mindroot/coreplugins/mcp_/mcp_manager.py:749 → install_with_npm @ src/mindroot/coreplugins/mcp_/server_installer.py:63
+A P076 TP: pass  [route] get_history @ src/mindroot/coreplugins/scheduler/router.py:186 → get_schedule_history @ src/mindroot/coreplugins/scheduler/mod.py:498
+A P077 TP: pass  [hook] startup @ src/mindroot/coreplugins/scheduler/mod.py:612 → scheduler_loop @ src/mindroot/coreplugins/scheduler/mod.py:594
+    warning: chain[0] src/mindroot/coreplugins/scheduler/mod.py:612: no entry marker of kind hook visible at the hop or on its enclosing function (heuristic)
+A P078 TP: pass  [main] example1 @ ai-kepu-video-server/src/utils/volcengine_tts.py:600 → text_to_speech @ ai-kepu-video-server/src/utils/volcengine_tts.py:579 → close @ ai-kepu-video-server/src/utils/volcengine_tts.py:414
+A P079 U (coerced from TP): n/a  [task] sync_gmail_for_user @ backend/app/services/task_jobs/gmail.py:116 → _runner @ backend/app/services/task_jobs/gmail.py:113 → _sync_gmail @ backend/app/services/task_jobs/gmail.py:46 → _gmail_sync @ backend/app/integrations/gmail.py:257
+    warning: chain[3] backend/app/integrations/gmail.py:257: the enclosing function found by the heuristic is sync_gmail_for_user, not _gmail_sync
+A P080 TP: pass  [route] sync_contact_emails @ backend/app/api/contacts_routes/sync.py:269 → sync_contact_emails @ backend/app/integrations/gmail.py:336
+A P081 U: n/a
+A P082 TP: pass  [registration] _tool @ shortlist/server/api/support.py:137 → require_support_mode @ shortlist/server/api/support.py:128
+    warning: chain[0] shortlist/server/api/support.py:137: no entry marker of kind registration visible at the hop or on its enclosing function (heuristic)
+A P083 TP: pass  [route] read_as @ shortlist/server/api/support.py:1946
+A P084 TP: pass  [route] run_job @ shortlist/server/api/system.py:1215 → run_pending @ shortlist/server/services/jobs.py:952 → _run_tracked_drain @ shortlist/server/services/jobs.py:966 → run @ shortlist/server/services/jobs.py:964 → _drain @ shortlist/server/services/jobs.py:1063
+A P085 TP: pass  [registration] list_ledgers @ src/mcp/server.py:193 → _logged_call @ src/mcp/server.py:144
+A P086 TP: pass  [hook] startup @ app/startup.py:393 → monitor_scheduler @ app/startup.py:215
+A P087 TP: pass  [hook] startup @ app/startup.py:393
+A P088 TP: pass  [hook] startup @ app/startup.py:394
+A P089 TP: pass  [hook] startup @ app/startup.py:395
+A P090 TP: pass  [hook] startup @ app/startup.py:396
+A P091 TP: pass  [hook] startup @ app/startup.py:397
+A P092 TP: pass  [hook] startup @ app/startup.py:398
+A P093 TP: pass  [hook] startup @ app/startup.py:399
+A P094 TP: pass  [hook] startup @ app/startup.py:400
+A P095 TP: pass  [hook] startup @ app/startup.py:401
+A P096 TP: pass  [hook] startup @ app/startup.py:402
+A P097 TP: pass  [hook] startup @ app/startup.py:403
+A P098 TP: pass  [route] search_list @ proxy/app.py:1499 → online_search @ proxy/app.py:867
+A P099 TP: pass  [route] item_list @ proxy/app.py:1390
+A P100 TP: pass  [route] item_list @ proxy/app.py:1427
+A P101 TP: pass  [route] item_list @ proxy/app.py:1463
+A P102 TP: pass  [route] hls_main @ proxy/app.py:3180 → _get_playlist_cached @ proxy/app.py:3006
+A P103 TP: pass  [route] ext_hot_refresh @ proxy/app.py:3502 → refresh_routes @ proxy/catalog.py:336
+A P104 TP: pass  [route] item_list @ proxy/app.py:1437 → get_window @ proxy/catalog.py:454 → _extend_dense @ proxy/catalog.py:424 → get_page @ proxy/catalog.py:492

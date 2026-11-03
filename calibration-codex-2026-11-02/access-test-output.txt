@@ -1,0 +1,93 @@
+{
+ "ok": true,
+ "error": null,
+ "meta": {
+  "usage": {
+   "input_tokens": 47479,
+   "cached_input_tokens": 30592,
+   "cache_write_input_tokens": 0,
+   "output_tokens": 1066,
+   "reasoning_output_tokens": 0
+  },
+  "threadId": "01a19d72-abcc-7870-a0ce-3dc9063a0508"
+ }
+}
+1. Output:
+
+```text
+/home/usuariojoaquin/vibe-guard-evaluation-work/tc4/checkouts/python/AlexAsplund__Vanchor
+AGENTS.md
+CHANGELOG.md
+CONTRIBUTING.md
+Dockerfile
+LICENSE
+```
+
+2. Output:
+
+```text
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-2/audit-joaquin.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-3/audit-joaquin.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-4/audit-joaquin.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-4/REVIEW-SHEET.md
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-4/cards
+absent  /home/usuariojoaquin/vibe-guard-evaluation-work/tc4/ai-review/review-a.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation-work/calib-v1-2026-10-28
+absent  /home/usuariojoaquin/vibe-guard-evaluation-work/tc2/checkouts
+absent  /mnt/e
+absent  /home/usuariojoaquin/.codex
+absent  /home/usuariojoaquin/.claude
+```
+
+3. Output:
+
+```text
+END
+```
+
+4. Output:
+
+```text
+curl: (6) Could not resolve host: raw.githubusercontent.com
+000 curl_exit=6
+```
+
+5. No web search tool is available; no search performed.
+
+6. Called `mcp__callers__find_definitions` with `{"symbol":"main"}`. Verbatim response:
+
+```text
+MCP tool call requires approval, but approval policy is never
+```
+
+The call was blocked; no result count was returned.
+
+7. Available tools by name (including tools callable through `functions.exec`):
+
+```text
+functions.wait
+functions.request_user_input
+functions.request_user_input_async
+functions.exec
+clock.sleep
+collaboration.followup_task
+collaboration.interrupt_agent
+collaboration.list_agents
+collaboration.send_message
+collaboration.spawn_agent
+collaboration.wait_agent
+apply_patch
+clock__curr_time
+create_goal
+exec_command
+get_goal
+list_mcp_resource_templates
+list_mcp_resources
+mcp__callers__enclosing_function
+mcp__callers__find_callers
+mcp__callers__find_definitions
+read_mcp_resource
+update_goal
+view_image
+write_stdin
+```
