@@ -1,0 +1,49 @@
+# calib-codex-2026-11-02 — run record
+
+- vibe-guard-scan: feat/review-codex-chain-v1 @ 950e59d170efd794831c96d26283ebe2da34aa33 (pushed before the run)
+- vibe-guard-evaluation: main @ 167b2c6623d406deee0956f241440b82fde2c4f5 (REVIEW-AI-INSTRUCTIONS.md v1, calibration-v1-2026-10-28/examples-tc2.md)
+- reviewer: Codex CLI codex-cli 0.166.0 on the ChatGPT session (codex login status: Logged in using ChatGPT); model gpt-6.1-sol, model_reasoning_effort="medium" (Joaquín's choice before the run); proposer only (--reviewer-b none); chain-v1; --concurrency 3
+- jail: codex-jail.sh (bubblewrap); access tests: access-test-bwrap.txt, access-test-output.txt, access-test-mcp-output.txt
+- node v22.22.1
+- order: TC3, TC2, TC4
+
+## Log
+- 2026-11-02T19:17:34+01:00 TC3 start
+- 2026-11-02T19:25:03+01:00 TC3 exit 0
+- 2026-11-02T19:25:03+01:00 TC2 start
+- 2026-11-02T19:31:49+01:00 TC2 exit 3
+- USAGE LIMIT STOP during TC2
+- 2026-11-02T19:32:08+01:00 resume scheduled for 22:48 (Codex: try again at 10:46 PM)
+- 2026-11-02T22:32:55+01:00 resume 1
+- 2026-11-02T22:32:55+01:00 TC3 start
+- 2026-11-02T22:32:55+01:00 TC3 exit 0
+- 2026-11-02T22:32:55+01:00 TC2 start
+- 2026-11-02T22:32:59+01:00 TC2 exit 3
+- USAGE LIMIT STOP during TC2
+- note: resume 1 started early (22:32, sleep drifted under WSL); it hit the same limit (reset 22:46) in 4 s with 0 cards done — premature retry, same stop
+- 2026-11-02T22:50:19+01:00 resume 2
+- 2026-11-02T22:50:19+01:00 TC3 start
+- 2026-11-02T22:50:20+01:00 TC3 exit 0
+- 2026-11-02T22:50:20+01:00 TC2 start
+- 2026-11-02T22:53:26+01:00 TC2 exit 0
+- 2026-11-02T22:53:26+01:00 TC4 start
+- 2026-11-02T23:06:36+01:00 TC4 exit 3
+- USAGE LIMIT STOP during TC4
+- 2026-11-02T23:07:02+01:00 resume 3 scheduled for 2026-11-03T03:55:00+01:00 (Codex: try again at Nov 3rd, 2026 3:50 AM)
+- 2026-11-03T03:55:28+01:00 resume 3
+- 2026-11-03T03:55:28+01:00 TC3 start
+- 2026-11-03T03:55:28+01:00 TC3 exit 0
+- 2026-11-03T03:55:28+01:00 TC2 start
+- 2026-11-03T03:55:28+01:00 TC2 exit 0
+- 2026-11-03T03:55:28+01:00 TC4 start
+- 2026-11-03T04:14:05+01:00 TC4 exit 3
+- USAGE LIMIT STOP during TC4
+- 2026-11-03T04:14:05+01:00 resume 4 scheduled for 2026-11-03T09:00:00+01:00 (Codex: try again at 8:55 AM)
+- 2026-11-03T09:00:09+01:00 resume 4
+- 2026-11-03T09:00:09+01:00 TC3 start
+- 2026-11-03T09:00:10+01:00 TC3 exit 0
+- 2026-11-03T09:00:10+01:00 TC2 start
+- 2026-11-03T09:00:10+01:00 TC2 exit 0
+- 2026-11-03T09:00:10+01:00 TC4 start
+- 2026-11-03T09:12:54+01:00 TC4 exit 0
+- 2026-11-03T09:12:54+01:00 all done

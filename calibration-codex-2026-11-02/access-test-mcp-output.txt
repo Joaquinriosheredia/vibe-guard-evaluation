@@ -1,0 +1,21 @@
+{
+ "ok": true,
+ "error": null
+}
+The `callers.find_definitions` call with symbol `"main"` succeeded and returned **23 results**.
+
+First result verbatim:
+
+```json
+{
+   "at": "deploy/image/stage-vanchor/01-net/files/vanchor-wifi-keepalive.py:185",
+   "kind": "definition",
+   "text": "def main() -> None:",
+   "nonProdPath": false,
+   "enclosing": {
+    "name": "main",
+    "line": 185,
+    "marks": []
+   }
+  }
+```

@@ -1,0 +1,15 @@
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-2/audit-joaquin.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-3/audit-joaquin.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-4/audit-joaquin.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation/test-corpus-4/REVIEW-SHEET.md
+absent  /home/usuariojoaquin/vibe-guard-evaluation-work/tc4/ai-review/review-a.json
+absent  /home/usuariojoaquin/vibe-guard-evaluation-work/calib-v1-2026-10-28
+absent  /mnt/e
+absent  /home/usuariojoaquin/.codex
+absent  /home/usuariojoaquin/.claude
+find audit/review-sheet/review-a anywhere:
+(end find)
+inside: canary-inside
+ls /home:
+usuariojoaquin
+wsl
