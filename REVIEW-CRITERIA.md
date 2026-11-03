@@ -120,6 +120,11 @@ scheduled tasks can starve:
   than one thread, or a scheduler that starts a new thread per run. Spring Boot ≥ 3.2 with
   `spring.threads.virtual.enabled=true` uses `SimpleAsyncTaskScheduler`, one virtual thread
   per run, so nothing waits behind the job.
+  - *Note (2026-11-03, fact correction; this rule and every verdict are unchanged):* that is
+    not true for `fixedDelay` tasks. `SimpleAsyncTaskScheduler` runs fixed-delay tasks on its
+    single scheduler thread (Spring Framework reference, "Task Execution and Scheduling",
+    "TaskScheduler implementations"); only fixed-rate and cron executions get a new thread.
+    See §6 (J056) and `REVIEW-CRITERIA-v2.md`.
 - **U, never FP**, when the repository does not let you determine the scheduler pool, its
   configuration or whether other `@Scheduled` jobs exist (for example, the pool size or the
   virtual-thread switch comes from an environment variable or a profile outside the
@@ -220,6 +225,16 @@ Checked under v1 and **unchanged**: every other non-TP verdict of both audits.
   `api/src/main/resources/application.properties:4` sets `spring.threads.virtual.enabled=true`
   on Spring Boot 4.1.1 (`pom.xml:9`), so each run gets its own virtual thread and nothing
   starves.
+  - *Note (2026-11-03, fact correction; the published verdict stays FP):* the reason above is
+    wrong. Both jobs are `fixedDelay` (`AzDevOpsPollingService.java:82`,
+    `CliAuthSessionCleanupTask.java:19`), and `SimpleAsyncTaskScheduler` runs fixed-delay tasks
+    on one shared scheduler thread (see the note in §3.1), so `poll()`'s `join()` does delay
+    `purgeExpired()`. Read literally, §3.1 would then give TP. Under `REVIEW-CRITERIA-v2.md` it
+    is **FP by context** for a different reason: every task joined only makes bounded calls
+    (HTTP connect 5 s, response 30 s, pool wait 2 s, `WebhookHttpClientConfig.java:33–46`, used
+    by `WebhookServiceBase.java:125–128`; SP/MI token `block(30 s)`,
+    `AzDevOpsTokenService.java:115`), and the purge has no required deadline (expired sessions
+    are rejected on use, `CliLoginService.java:228`).
 - TC2 P083 stays FP (startup only, §2.2); TC2 P099 stays FP (manual script, §2.3).
 - TC2 P002, P065 (PYVIBE-013), P046 (PYVIBE-005 on a non-Celery app), TC3 P035
   (PYVIBE-017), P097 (PYVIBE-018): no v1 point touches them.
