@@ -36,7 +36,7 @@ Validar la **regla de retención** de PYVIBE-012 (regla R de `../criterio-v2-des
 ## Método (heredado de TC4, salvo lo indicado)
 
 - **Población.** Revisión humana completa de todos los hallazgos de la regla en el corpus, como en TC4. No hay ningún mecanismo de inclusión que dependa del acuerdo de las IAs (la lección de TC3).
-- **Exclusiones.** Además de las que se fijen al congelar, se excluye `wenxuanzhang1209-cyber/meetdo`: se usó en el ensayo general de auditoría del 2026-11-03 (commit `d074e79811320e5c776767428adc45648274b0a7`), así que Joaquín ha visto sus hallazgos. Decisión de Joaquín del 2026-11-03.
+- **Exclusiones.** Además de las que se fijen al congelar, se excluye `wenxuanzhang1209-cyber/meetdo`: se analizó en el ensayo general de auditoría del 2026-11-03 (commit `d074e79811320e5c776767428adc45648274b0a7`; 0 hallazgos del analizador, y su código se ha leído). Aplica la exclusión a, «Used before» (`../test-corpus-4/PREREGISTRATION.md:232`), con el precedente del ensayo de auditoría del 2026-10-12 (`../test-corpus-4/EXCLUSION-SOURCES.md:36`). Decisión de Joaquín del 2026-11-03.
 - **Triaje.** Se aplican la exclusión c2 de repositorios de estudio (`../REVIEW-CRITERIA.md` §2.4) y el filtro de repositorios de juguete de TC2–TC4.
 - **Criterio de veredicto.** Se aplican §1–§3 de `../REVIEW-CRITERIA-v2.md`, copiados literalmente al congelar. FP solo si el repositorio demuestra que no se incumple nada; U si falta configuración decisiva.
 - **Hoja de revisión, ayudas y registro de asistencia:** igual que en TC4. Solo se permite navegación factual.
