@@ -3,10 +3,12 @@
 uso: python3 criterio-v2-desarrollo/comprobar.py  (desde la raíz del repo); sale con 1 si algo no cuadra.
 Recalcula desde cero, sin importar propuesta.py: la población (fichas y audit-joaquin.json de TC4) y los recuentos de
 PYVIBE-012 (pyvibe-012-mecanismos.tsv). Después compara con propuesta-v2.json, con las cifras de PROPUESTA-v2.md,
-con DISENO-PYVIBE-012.md, con REVIEW-CRITERIA-v2.md y con el borrador de TC5. También comprueba que los resultados
-publicados de TC1–TC4 siguen coincidiendo con su sha256.
+con DISENO-PYVIBE-012.md, con REVIEW-CRITERIA-v2.md y con el borrador de TC5. Comprueba por caso la etiqueta v2 y el
+campo (a), la distribución completa por regla y repositorio, que los audit-joaquin.json coinciden con su sha256 y que
+los árboles test-corpus-1…4 son idénticos a los de origin/main. No comprueba nada más.
 """
 import hashlib
+import subprocess
 import json
 import math
 import re
@@ -61,7 +63,7 @@ k = {
     'b2_y_b3_si': sum(r['b2_excepcion_sin_supervision'] == 'sí' and r['b3_ausencia_recuperacion'] == 'sí' for r in m4.values()),
     'U': sum(r['b2_excepcion_sin_supervision'] == 'U' for r in m4.values()),
 }
-k['a_contrato_TP'] = n - k['U']
+k['a_contrato_TP'] = sum(r['a_contrato'] == 'sí' for r in m4.values())  # leído del campo (a), no deducido de b2
 
 # 3. JSON
 js = json.load(open(f'{D}/propuesta-v2.json'))
@@ -71,15 +73,17 @@ check((s['n'], s['repos']) == (n, repos), f"JSON n/repos {s['n']}/{s['repos']} !
 for key, val in k.items():
     check(s[key]['k'] == val and s[key]['n'] == n, f'JSON {key} {s[key]} != {val}/{n}')
     check(s[key]['wilson95'] == wilson(val, n), f'JSON {key} Wilson {s[key]["wilson95"]} != {wilson(val, n)}')
-check(js['poblacion_por_regla'] == {r: dict(sorted(c.items())) for r, c in js['poblacion_por_regla'].items()} and
-      {r: sum(c.values()) for r, c in js['poblacion_por_regla'].items()} == {r: sum(c.values()) for r, c in pop.items()},
-      'JSON: población por regla distinta de las fichas')
+check({r: dict(c) for r, c in js['poblacion_por_regla'].items()} == {r: dict(c) for r, c in pop.items()},
+      'JSON: la distribución por regla y repositorio no coincide con las fichas')
 check(all(not v for v in s['pasa_umbral_CRITICAL'].values()), 'JSON: algún mecanismo pasa el umbral CRITICAL')
 cases = {(c['corpus'], c['id']): c for c in js['casos']}
 for r in mech:
     c = cases[(f"TC{r['corpus']}", r['id'])]
     check((c['b1'], c['b2'], c['b3']) == (r['b1_perdida_no_retencion'], r['b2_excepcion_sin_supervision'], r['b3_ausencia_recuperacion']),
           f"JSON y TSV difieren en {r['corpus']} {r['id']}")
+    exp_v2 = 'TP' if r['a_contrato'] == 'sí' else 'U'
+    check(c['v2'] == exp_v2, f"{r['corpus']} {r['id']}: v2 {c['v2']} no coincide con el campo (a) del TSV ({exp_v2})")
+    check(c['a'] == r['a_contrato'], f"{r['corpus']} {r['id']}: campo (a) distinto entre JSON y TSV")
     check(c.get('gravedad') == 'WARNING' and c.get('categoria') == 'incumplimiento de recomendación documentada de uso seguro',
           f"{r['corpus']} {r['id']}: categoría/gravedad")
 
@@ -120,9 +124,11 @@ for c in '1234':
             continue
         exp = open(f'test-corpus-{c}/audit-joaquin.sha256').read().split()[0]
         check(hashlib.sha256(data).hexdigest() == exp, f'TC{c} audit-joaquin.json no coincide con su sha256')
+diff = subprocess.run(['git', 'diff', '--quiet', 'origin/main', '--', 'test-corpus-1', 'test-corpus-2', 'test-corpus-3', 'test-corpus-4'])
+check(diff.returncode == 0, 'los árboles test-corpus-1…4 difieren de origin/main')
 
 print(f'PYVIBE-012 TC4: n={n}, repos={repos}, ' + ', '.join(f'{key}={val}' for key, val in k.items()))
 if problems:
     print('NO CUADRA:\n- ' + '\n- '.join(problems))
     sys.exit(1)
-print('OK: documentos, JSON y cálculos coinciden; TC1–TC4 intactos')
+print('OK: etiquetas por caso, recuentos, distribución por repo y cifras de los documentos coinciden; los audit-joaquin.json coinciden con su sha256 y los árboles test-corpus-1…4 son idénticos a origin/main')

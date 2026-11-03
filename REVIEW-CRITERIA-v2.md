@@ -17,7 +17,7 @@
     - un contrato documentado de la plataforma o la API (asyncio: el event loop no debe bloquearse; Spring: semántica de `@Async`/`@Transactional`);
     - lo que el propio repositorio exige: un timeout, un plazo, una frescura, una garantía transaccional;
     - el comportamiento que el código promete a su llamador.
-  - **La cadencia de un job no es una propiedad.** Un `cron`, un `fixedRate` o un `fixedDelay` fija activaciones, no un SLA; Spring se salta una activación si la anterior sigue ocupada. Retrasar o saltarse activaciones, del propio job o de otro, solo incumple una propiedad si el repositorio exige un plazo o una frescura (por ejemplo, un dato que caduca y que otra parte del código necesita a tiempo). **Excepción decidida para `kafka-send-timeout`** (§3): en esa regla, la propiedad es la cadencia o el timeout de la ruta comparado con la cota efectiva del productor.
+  - **La cadencia de un job no es una propiedad.** Un `cron`, un `fixedRate` o un `fixedDelay` fija activaciones, no un SLA; Cada modalidad trata de forma distinta una ejecución que se alarga: el `CronTrigger` por defecto calcula la siguiente activación al terminar y se salta las que caen mientras está ocupado; `fixedRate` hace ejecuciones tardías sin solaparse (`ScheduledExecutorService.scheduleAtFixedRate`); `fixedDelay` cuenta desde el final de la anterior. Antes de describir el efecto en un caso hay que comprobar el scheduler y el trigger concretos. Retrasar o saltarse activaciones, del propio job o de otro, solo incumple una propiedad si el repositorio exige un plazo o una frescura (por ejemplo, un dato que caduca y que otra parte del código necesita a tiempo). **Excepción decidida para `kafka-send-timeout`** (§3): en esa regla, la propiedad es la cadencia o el timeout de la ruta comparado con la cota efectiva del productor.
 - **FP** solo cuando el repositorio **demuestra**, con `file:line`, que no se incumple nada:
   - **detección:** el patrón no está;
   - **alcanzabilidad:** no hay ruta alcanzable (v1 §2);
@@ -54,7 +54,7 @@ Se registran por separado y **ninguno decide el veredicto**.
 | PYVIBE-005 (Celery sin límite de tiempo) | la tarea termina o se corta | puede colgar en E/S externa y no hay un límite duro efectivo | **solo** un `task_time_limit` duro efectivo en el pool usado. Un `task_soft_time_limit` no basta: lanza una excepción que la tarea puede capturar (Celery, Workers Guide, «Time Limits») |
 | PYVIBE-006 (ContextVar sin reset) | el valor no se filtra a trabajo posterior | trabajo posterior en el mismo contexto puede verlo | el contexto se descarta tras la llamada |
 | PYVIBE-012/014 (tarea descartada) | (a) contrato de retención y, por separado, b1/b2/b3: ver la nota de abajo | | |
-| PYVIBE-013 (gather) | los fallos de los awaitables se observan | algún awaitable puede lanzar en un fallo normal y los demás siguen sin observarse | todos los awaitables contienen sus excepciones |
+| PYVIBE-013 (gather) | el llamador observa los fallos que el programa necesita tratar | un awaitable puede lanzar en un fallo normal: `gather` propaga solo el primero; los demás siguen ejecutándose, y sus excepciones posteriores se marcan como recuperadas y se descartan sin que el llamador las vea (CPython, `asyncio.gather`, `_done_callback`). Es TP solo si perder esos fallos incumple una propiedad concreta del programa | todos los awaitables contienen sus excepciones, o perder los fallos posteriores no incumple ninguna propiedad |
 | PYVIBE-017 (`except` vacío) | los errores que importan no se tragan | puede tragarse `KeyboardInterrupt`/`SystemExit`, o errores relevantes en una ruta normal | — |
 
 **`transactions`: WARNING como máximo, y la regla solo alerta de lo que afirma su mensaje.**
@@ -156,3 +156,10 @@ Los ejemplos con ID salen de TC2–TC4. Sus etiquetas v2 son las de `criterio-v2
   7. Se conservan los U y las cuestiones abiertas.
   8. Borrador de TC5, no ejecutado.
   9. TC5 queda aparcado por la decisión de proyecto de pasar a pilotos de auditoría.
+- **2026-11-03 (tercera revisión):** debate con Codex (`…/2026-11-03-criterio-v2-debate/final.md`, O1–O5) y puntos 2–3 de la consulta `…/2026-11-03-criterio-v2-cierre/`, aprobados por Joaquín:
+  - **O1:** TC5 solo validaría R como WARNING.
+  - **O2:** se reescribe la fila de PYVIBE-013.
+  - **O3:** TC4 P046 pasa a b2 = sí y b3 = no.
+  - **O4:** las tres modalidades de cadencia se describen por separado.
+  - **O5:** `comprobar.py` se hace más estricto.
+  - **Diseño de PYVIBE-012:** un manejador global solo cuenta como supervisión si el repositorio muestra qué hace con el fallo; R exige un análisis de propietarios y alias.

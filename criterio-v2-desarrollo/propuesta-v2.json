@@ -130,12 +130,12 @@
     ]
    },
    "b2_si": {
-    "k": 12,
+    "k": 13,
     "n": 55,
     "wilson95": [
-     0.2182,
-     0.1295,
-     0.3437
+     0.2364,
+     0.1437,
+     0.3635
     ]
    },
    "b2_y_b3_si": {
@@ -1051,9 +1051,9 @@
    "fp_condition": null,
    "a": "sí",
    "b1": "no",
-   "b2": "no",
-   "b3": "—",
-   "razon": "`track` solo envía analítica a un rastreador remoto (`app/utils/meta.py:109–140`); si falla, no cambia ninguna respuesta ni ningún estado funcional.",
+   "b2": "sí",
+   "b3": "no",
+   "razon": "b2: `track` no tiene `try` (`app/utils/meta.py:109–140`), y `http.fetch` solo atrapa `EXCEPTIONS`, que son errores de conexión, URL y redirección (`app/utils/http.py:9–13,32–35`); un `json.JSONDecodeError` de `response.json()` (`:26`) escapa de la tarea. b3: no; es analítica, y la petición siguiente vuelve a enviar su seguimiento. Corregido el 2026-11-03 (debate O3; antes: no, por falta de impacto, que no es la definición de b2).",
    "categoria": "incumplimiento de recomendación documentada de uso seguro",
    "gravedad": "WARNING"
   },

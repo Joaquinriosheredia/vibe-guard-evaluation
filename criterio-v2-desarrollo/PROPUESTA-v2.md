@@ -20,6 +20,13 @@
   8. **TC5:** borrador de pre-registro, `../tc5-borrador/PREREGISTRATION-BORRADOR.md`. No se ejecuta.
   9. **Proyecto:** TC5 se aparca y se pasa a pilotos de auditoría (`~/vibe-guard`, `DECISIONS.md`).
   - **Además:** P094 pasa a b2/b3 sí; «nadie lo nota» se sustituye por «sin observador ni recuperación en el código»; P087 se limita a las tareas de monitorización.
+- **2026-11-03, debate con Codex aprobado por Joaquín** (`~/vibe-guard-evaluation-work/second-opinions/2026-11-03-criterio-v2-debate/final.md`):
+  - **O1:** TC5 solo validaría R como WARNING.
+  - **O2:** se reescribe la fila de PYVIBE-013 en v2.
+  - **O3:** TC4 P046 pasa a b2 = sí y b3 = no; b2 sí en TC4 pasa de 12 a 13, y b2 y b3 sigue en 6.
+  - **O4:** las modalidades de cadencia se describen por separado en v2.
+  - **O5:** `comprobar.py` comprueba etiquetas y campos por caso, distribuciones por repo y árboles de TC1–TC4.
+  - **Puntos 2 y 3 de la consulta `…/2026-11-03-criterio-v2-cierre/`:** manejador global y análisis de propietarios y alias, en `DISENO-PYVIBE-012.md`.
 
 ## 1. Población de selección (declarada)
 
@@ -74,7 +81,7 @@ n = 55, 18 repos. Umbral CRITICAL: n ≥ 15, ≥ 5 repos y TP/n ≥ 0.90, con U 
 |---|---|---|
 | (a) contrato: TP v2 (incumple la recomendación de retención) | 54/55 = 0.98 [0.90–1.00] | no aplica: es la categoría «incumplimiento de recomendación documentada de uso seguro», con gravedad WARNING |
 | b1 pérdida por no retención | 0/55 = 0.00 [0.00–0.07] | no |
-| b2 excepción sin supervisión | 12/55 = 0.22 [0.13–0.34] | no |
+| b2 excepción sin supervisión | 13/55 = 0.24 [0.14–0.36] | no |
 | b2 y b3 (excepción sin supervisión y sin recuperación) | 6/55 = 0.11 [0.05–0.22] | no |
 | U (P058) | 1/55 = 0.02 [0.00–0.10] | cuenta como no-TP |
 
@@ -105,6 +112,7 @@ Categoría: «incumplimiento de recomendación documentada de uso seguro». Grav
 | TC4 | P007 | AndrewCTF/velocity | TP | TP | sí | no | **sí** | **no** | b2: `_warm_apple` no tiene `try` (`apps/api/app/main.py:500–502`), y `apple_maps.session()` hace una petición HTTP con `raise_for_status()` (`apps/api/app/apple_maps.py:175–184`). b3: La sesión se vuelve a pedir bajo demanda, con reintento (`apps/api/app/apple_maps.py:209`). |
 | TC4 | P014 | asfaraguest/tatap | TP | TP | sí | no | **sí** | **no** | b2: `_prewarm_sub_translation` espera `_get_validated_subtitle_cache` fuera de `try` (`android/app/src/main/python/backend/main.py:2354`), y esa función lee la caché de la base de datos (`get_subtitle_cache`). b3: Es un prefetch: la petición real traduce bajo demanda. |
 | TC4 | P016 | asfaraguest/tatap | TP | TP | sí | no | **sí** | **no** | b2: La misma lectura de caché fuera de `try` que P014 (`backend/main.py:2354`; `backend/database/__init__.py:466`). b3: Es un prefetch: la petición real traduce bajo demanda. |
+| TC4 | P046 | jacebrowning/memegen | TP | TP | sí | no | **sí** | **no** | b2: `track` no tiene `try` (`app/utils/meta.py:109–140`), y `http.fetch` solo atrapa `EXCEPTIONS`, que son errores de conexión, URL y redirección (`app/utils/http.py:9–13,32–35`); un `json.JSONDecodeError` de `response.json()` (`:26`) escapa de la tarea. b3: no; es analítica, y la petición siguiente vuelve a enviar su seguimiento. Corregido el 2026-11-03 (debate O3; antes: no, por falta de impacto, que no es la definición de b2). |
 | TC4 | P056 | phucnguyentvp1/frameweaver | TP | TP | sí | no | **sí** | **no** | b2: `_refresh_media_urls` no tiene `try` y hace consultas y actualizaciones de base de datos (`agent/services/flow_client.py:318–362`). b3: La extensión reenvía `media_urls_refresh` cada vez que captura URLs nuevas (`extension/background.js:910–922`). |
 | TC4 | P081 | SpillwaveSolutions/agent-brain | TP | TP | sí | no | **sí** | **no** | b2: `_run_indexing_pipeline` relanza tras marcar el fallo (`agent-brain-server/agent_brain_server/services/indexing_service.py:837–842`). b3: El estado queda `FAILED` con el error y se libera `is_indexing`: es coherente y se puede reintentar. |
 | TC4 | P058 | riteshbonthalakoti/HELPDESK.AI | U | U | sí (patrón presente; alcanzabilidad no demostrada) | U | **U** | **—** | No se demuestra que la aplicación use esta copia vendorizada en `.tmp-ci-venv` (`.tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:247`), así que tampoco se puede respaldar ningún fallo funcional. |
@@ -122,7 +130,6 @@ Categoría: «incumplimiento de recomendación documentada de uso seguro». Grav
 | TC4 | P042 | foodpm/timecut | TP | TP | sí | no | **no** | **—** | El callback registrado (`app/main.py:177–182`) llega a `_run_highlight`, que atrapa `Exception` y cierra el trabajo con `job.finish(False, …)` (`app/highlighter/scheduler.py:144–146`). |
 | TC4 | P043 | HyxiaoGe/fusion | TP | TP | sí | no | **no** | **—** | `_parse_file_with_llm` atrapa todo y marca el fichero como error con `_mark_file_error` (`backend/app/services/file_service.py:728,755–760`). |
 | TC4 | P044 | HyxiaoGe/fusion | TP | TP | sí | no | **no** | **—** | La misma `_parse_file_with_llm` que P043 (`backend/app/services/file_service.py:755–760`). |
-| TC4 | P046 | jacebrowning/memegen | TP | TP | sí | no | **no** | **—** | `track` solo envía analítica a un rastreador remoto (`app/utils/meta.py:109–140`); si falla, no cambia ninguna respuesta ni ningún estado funcional. |
 | TC4 | P049 | liyupi/yu-ai-learn | TP | TP | sí | no | **no** | **—** | `_process_document` atrapa `Exception` y marca el documento `"failed"` (`backend/app/services/knowledge_service.py:74,89–93`). |
 | TC4 | P050 | liyupi/yu-ai-learn | TP | TP | sí | no | **no** | **—** | `_run_quiz_task` atrapa `Exception` y marca la tarea `"failed"` (`backend/app/services/quiz_service.py:166,214–218`). |
 | TC4 | P051 | ljxpython/ai-agent-platform | TP | TP | sí | no | **no** | **—** | `_cleanup` atrapa los fallos de `_reap` y de `docker rm` (`apps/runtime-service/src/runtime_service/workspace/execution.py:28–38,105–108`) y devuelve el resultado. |

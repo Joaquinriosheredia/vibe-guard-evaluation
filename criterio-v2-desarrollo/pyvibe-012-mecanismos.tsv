@@ -29,7 +29,7 @@ corpus	id	b1_perdida_no_retencion	b2_excepcion_sin_supervision	b3_ausencia_recup
 4	P042	no	no	—	sí	El callback registrado (`app/main.py:177–182`) llega a `_run_highlight`, que atrapa `Exception` y cierra el trabajo con `job.finish(False, …)` (`app/highlighter/scheduler.py:144–146`).
 4	P043	no	no	—	sí	`_parse_file_with_llm` atrapa todo y marca el fichero como error con `_mark_file_error` (`backend/app/services/file_service.py:728,755–760`).
 4	P044	no	no	—	sí	La misma `_parse_file_with_llm` que P043 (`backend/app/services/file_service.py:755–760`).
-4	P046	no	no	—	sí	`track` solo envía analítica a un rastreador remoto (`app/utils/meta.py:109–140`); si falla, no cambia ninguna respuesta ni ningún estado funcional.
+4	P046	no	sí	no	sí	b2: `track` no tiene `try` (`app/utils/meta.py:109–140`), y `http.fetch` solo atrapa `EXCEPTIONS`, que son errores de conexión, URL y redirección (`app/utils/http.py:9–13,32–35`); un `json.JSONDecodeError` de `response.json()` (`:26`) escapa de la tarea. b3: no; es analítica, y la petición siguiente vuelve a enviar su seguimiento. Corregido el 2026-11-03 (debate O3; antes: no, por falta de impacto, que no es la definición de b2).
 4	P049	no	no	—	sí	`_process_document` atrapa `Exception` y marca el documento `"failed"` (`backend/app/services/knowledge_service.py:74,89–93`).
 4	P050	no	no	—	sí	`_run_quiz_task` atrapa `Exception` y marca la tarea `"failed"` (`backend/app/services/quiz_service.py:166,214–218`).
 4	P051	no	no	—	sí	`_cleanup` atrapa los fallos de `_reap` y de `docker rm` (`apps/runtime-service/src/runtime_service/workspace/execution.py:28–38,105–108`) y devuelve el resultado.

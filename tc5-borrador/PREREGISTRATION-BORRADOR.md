@@ -25,7 +25,7 @@ Validar la **regla de retención** de PYVIBE-012 (regla R de `../criterio-v2-des
   - el escenario de fallo, con sus tres mecanismos por separado: b1 pérdida por no retención, b2 excepción sin supervisión, b3 ausencia de recuperación (`../REVIEW-CRITERIA-v2.md` §3);
   - la causalidad: ningún recuento atribuye un fallo a la falta de retención sin evidencia propia;
   - la gravedad.
-- **Sin CRITICAL automático.** Aunque la regla pase, la gravedad CRITICAL exige además una justificación escrita del impacto grave, que decide Joaquín. Hoy ninguna regla evaluada reúne los requisitos para CRITICAL automático.
+- **Sin CRITICAL automático.** TC5 solo validaría la detección de retención (R) **como WARNING**: si pasa, la regla queda validada con su evidencia publicada. Cualquier promoción a CRITICAL, por b1 o por la regla de supervisión S, necesita su propia regla, su propia selección por mecanismos (`../REVIEW-CRITERIA-v2.md` §2–3) y su propia confirmación. Hoy ninguna regla evaluada reúne los requisitos para CRITICAL automático.
 - **Evidencia insuficiente** (n < 30, menos de 5 repos o un corpus sin terminar) significa que la regla **no queda validada** y sigue en WARNING.
 - **Los mínimos son una decisión práctica, no una garantía estadística.** Se publican:
   - los intervalos de Wilson al 95 %;
