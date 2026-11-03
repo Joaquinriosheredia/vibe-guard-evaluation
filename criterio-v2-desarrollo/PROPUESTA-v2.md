@@ -1,169 +1,173 @@
-# Evaluación de desarrollo con REVIEW-CRITERIA v2: etiquetas propuestas (pendiente de confirmación)
+# Evaluación de desarrollo con REVIEW-CRITERIA v2: etiquetas propuestas
 
-**Evaluación asistida de desarrollo.** Claude propone la etiqueta v2 de cada caso y su razón; Joaquín la confirma o corrige. No es una revisión ciega ni sustituye a ningún resultado publicado: TC2–TC4 conservan sus veredictos, métricas y conclusiones. Criterio: `../REVIEW-CRITERIA-v2.md` (borrador del 2026-11-03).
+**Evaluación asistida de desarrollo.** Claude propone la etiqueta v2 de cada caso y su razón; Joaquín la confirma o corrige. No es una revisión ciega ni sustituye a ningún resultado publicado: TC2–TC4 conservan sus veredictos, métricas y conclusiones. Criterio: `../REVIEW-CRITERIA-v2.md`. Esta propuesta no calcula tasas por regla: la selección (C) va después de tu confirmación.
 
-**Alcance.** Las reglas que pueden ser candidatas a CRITICAL: las que tienen n ≥ 15 y ≥ 5 repos en TC2–TC4. Son PYVIBE-012 (65 casos), `blocking` (18) y PYVIBE-009 (18), en total 101 casos. `transactions` (44 casos) queda fuera porque v2 §3 la limita a WARNING; sus cambios van en E. Las demás reglas no llegan a n ≥ 15 y siguen en WARNING.
+## Registro
 
-**Fuentes de cada propuesta:**
+- **2026-11-03, primera propuesta:** 101 casos de TC2–TC4 (PYVIBE-012, `blocking`, PYVIBE-009).
+- **2026-11-03, correcciones de Joaquín a B, aplicadas aquí:**
+  - **Población de selección:** solo TC3 + TC4; TC2 queda como ejemplos auxiliares.
+  - **TC2 J015:** FP por contexto; es un fixture y no se incumple ninguna propiedad. No se usan los 25 hilos de Quartz como prueba.
+  - **TC3 J001:** FP por contexto. Un cron fija activaciones, no un SLA; solo sería TP con una obligación de plazo o frescura en el repositorio.
+  - **TC2 J001:** FP por contexto. La exclusión de repositorios de estudio es una regla de triaje, no la razón del veredicto.
+  - **TC2 J052:** TP solo con una contención plausible apoyada en código; U si falta configuración decisiva; FP si el contexto demuestra que no se incumple nada. Revisado: U.
+  - **TC3 P026:** TP por contrato.
+  - **PYVIBE-012:** dos campos por caso, (a) contrato y (b) fallo funcional respaldado por código. Para CRITICAL cuenta (b). Revisados los 65 casos uno a uno.
+- **2026-11-03, decisiones de Joaquín sobre las segundas opiniones de Codex, aplicadas en `REVIEW-CRITERIA-v2.md` y aquí:**
+  - **J056:** comprobado que el `join()` tiene cota y que no hay plazo exigido, así que es FP.
+  - **Frontera FP/U:** FP solo si el repositorio demuestra que no se incumple nada; U si falta configuración decisiva. Con esta regla se re-evaluaron TC2 J001, TC2 J015 y TC3 J001.
+  - **Cadencias:** la cadencia del propio job no es una propiedad sin un plazo exigido.
+  - **`transactions`:** opción (a).
+  - **J053:** pasa de U a TP.
+  - **`kafka-send-timeout`:** comprobado en TC3 J017.
+  - **Celery:** solo un límite duro.
+  - **§2:** la confirmación CRITICAL remite al pre-registro de TC5.
 
-- tu veredicto y tu razón (`audit-joaquin.json`);
-- la ficha;
-- el código en el commit fijado, que he abierto en los casos que cambian o son dudosos;
-- las razones de Claude y de Codex de las calibraciones, solo como pista; no deciden.
+## 1. Población de selección (declarada)
 
-Esta propuesta no calcula tasas por regla: la selección (C) va después de tu confirmación.
+Todos los casos con tu veredicto en **TC3 + TC4**. TC3 y TC4 no comparten ninguna ubicación ni ningún repositorio. TC2 no entra en la selección; solo aporta ejemplos auxiliares.
 
-## 1. Cambian respecto a tu etiqueta original (3)
+| Regla | n | Repos | Máx. por repo | ¿Candidata? (n ≥ 15 y ≥ 5 repos) |
+|---|---|---|---|---|
+| PYVIBE-012 | 60 | 21 | 12 | **sí** |
+| transactions | 39 | 16 | 10 | no: WARNING como máximo (v2 §3) |
+| blocking | 14 | 8 | 2 | no |
+| PYVIBE-009 | 12 | 4 | 9 | no |
+| PYVIBE-002 | 11 | 2 | 10 | no |
+| PYVIBE-007 | 11 | 2 | 10 | no |
+| PYVIBE-018 | 10 | 6 | 3 | no |
+| kafka-send-timeout | 8 | 2 | 6 | no |
+| PYVIBE-017 | 4 | 3 | 2 | no |
+| PYVIBE-006 | 3 | 3 | 1 | no |
+| reactor-block | 3 | 1 | 3 | no |
+| PYVIBE-010 | 3 | 2 | 2 | no |
+| PYVIBE-016 | 3 | 3 | 1 | no |
+| PYVIBE-014 | 2 | 2 | 1 | no |
+| PYVIBE-008 | 1 | 1 | 1 | no |
+| blocking-kafka | 1 | 1 | 1 | no |
 
-| Corpus | ID | Repo | Original | v1 | v2 propuesta | Razón |
-|---|---|---|---|---|---|---|
-| TC2 | J015 | quarkusio/quarkus | TP | TP | **FP (context)** | `Counter.java:24–27`: `Thread.sleep(100)` cada 1 s en el job `increment()` de un fixture; Quartz de Quarkus tiene 25 hilos por defecto y el módulo no fija `thread-count`; nada espera detrás y la pausa es el trabajo deliberado del job (v2 §1, §3 `blocking`). |
-| TC3 | J001 | axelixlabs/axelix | TP | TP | **FP (context)** ⚠ | `BookTestDataQueryRunner.java:22–24`: `Thread.sleep(10000)` en el único `@Scheduled` de la app (scheduler por defecto, `FeatureServiceApplication.java:10`); ningún otro job espera. Lo único incumplido es la propia cadencia `*/2` del job, que el sleep deliberado de un runner de datos de prueba hace imposible por diseño. |
-| TC3 | P026 | hzy1522/tickflow-stock-panel | FP | TP | **TP** | `kline.py:1009`: `create_task(task())` sin conservar la referencia en una ruta de producción; que el cuerpo capture `Exception` solo afecta a la parte de excepciones del mensaje (Overstated). Igual que en v1 §6 y que P027/P028. |
+**La única regla candidata es PYVIBE-012.** n por repo en la población:
 
-- **TC2 J015 y TC3 J001** son pausas deliberadas que nada más espera. En v1 eran TP (§2.3: lo deliberado no hacía FP). En v2 no hay ninguna propiedad que se incumpla en una condición plausible (v2 §1). TC3 J001 está marcado ⚠: la cadencia `*/2` que declara el propio job no se cumple, y si consideras que esa cadencia es la propiedad explícita, sería TP.
-- **TC3 P026** es el mismo cambio que ya hizo v1 §6.
+| Repo | n |
+|---|---|
+| xianer235/115-media-hub | 12 |
+| yujian0815/fnmedia-ext | 7 |
+| AndrewCTF/velocity | 6 |
+| phucnguyentvp1/frameweaver | 4 |
+| runvnc/mindroot | 4 |
+| crane-in-clear-sky/WorkWit-AI-Agent | 3 |
+| dameng2026/xianyu-pilot | 3 |
+| foodpm/timecut | 3 |
+| hzy1522/tickflow-stock-panel | 3 |
+| HyxiaoGe/fusion | 2 |
+| asfaraguest/tatap | 2 |
+| liyupi/yu-ai-learn | 2 |
+| Deen-Bridge/dnb-ai | 1 |
+| SpillwaveSolutions/agent-brain | 1 |
+| TNT-Likely/BeeCount-Cloud | 1 |
+| antiv/mate | 1 |
+| apowerb/apowerb | 1 |
+| jacebrowning/memegen | 1 |
+| ljxpython/ai-agent-platform | 1 |
+| metalogico/issued | 1 |
+| riteshbonthalakoti/HELPDESK.AI | 1 |
 
-## 2. No cambian respecto a la original, pero sí respecto a v1 (1)
+## 2. PYVIBE-012: dos campos por caso
 
-| Corpus | ID | Repo | Original | v1 | v2 propuesta | Razón |
-|---|---|---|---|---|---|---|
-| TC2 | J001 | bage2014/study | FP | TP | **FP (context)** | `SampleBackground.java:38–41`: sleep aleatorio < 1 s que simula latencia en el único `@Async` del módulo, sobre el executor por defecto; ningún `@Scheduled` ni otro `@Async` en `study-spring-boot-zipkin`; nada espera detrás (v2 §1). Además es repositorio de estudio (exclusión c2). |
+- **(a) Contrato:** se incumple la recomendación de retención de `asyncio.create_task` (no se conserva ninguna referencia). El veredicto v2 por contrato es TP cuando (a) es sí y la ruta es alcanzable; es la etiqueta que ya tenías, salvo P026 (FP → TP) y P058 (U).
+- **(b) Fallo funcional respaldado por código: sí / no / U** (`REVIEW-CRITERIA-v2.md` §3). Revisado leyendo el cuerpo de cada corrutina lanzada y lo que llama. **Para la selección CRITICAL cuenta (b).**
 
-TC2 J001 era FP en tu etiqueta original y TP en v1 (§6, por la alcanzabilidad dentro de su propia app). En v2 vuelve a FP, pero por contexto: la ruta existe y nada espera detrás del sleep.
+### 2.1 Población (TC3 + TC4), primero los que tienen (b) = sí o U
 
-## 3. Se mantienen, pero son dudosos (1)
+| Corpus | ID | Repo | Original | v1 | v2 | (a) contrato | (b) fallo funcional | Razón de (b) |
+|---|---|---|---|---|---|---|---|---|
+| TC4 | P004 | AndrewCTF/velocity | TP | TP | TP | sí | **sí** | `_run_job` atrapa los fallos de `mkdir` y de la descarga, pero no los de `_verify_sha256`, el cálculo de tamaño ni `_write_metadata` (`apps/api/app/localllm/manager.py:531,551–558`). Un `OSError` ahí (disco lleno, fichero ilegible) deja `job.status` en `"verifying"` para siempre, y nadie observa la excepción porque la tarea no se conserva (`:628`). |
+| TC4 | P040 | foodpm/timecut | TP | TP | TP | sí | **sí** | `_monitor_process` es la recuperación automática de la grabación: reinicia con `await self.start()` (`app/recorder/manager.py:255,261`). `start()` pone `self._running = True` antes de `_ensure_dirs()` y `create_subprocess_exec` (`:151,171–176`), y nada de eso está en `try`. Si lanzan, la excepción muere dentro de la tarea descartada (`:190`): la grabación queda parada con el indicador `_running = True` y nadie lo sabe. |
+| TC4 | P058 | riteshbonthalakoti/HELPDESK.AI | U | U | U | sí (patrón presente; alcanzabilidad no demostrada) | **U** | No se demuestra que la aplicación use esta copia vendorizada en `.tmp-ci-venv` (`.tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:247`), así que tampoco se puede respaldar ningún fallo funcional. |
+| TC4 | P066 | runvnc/mindroot | TP | TP | TP | sí | **sí** | `run_command` lanza `handle_cmds` y vuelve (`src/mindroot/coreplugins/agent/agent.py:929–936`). Antes de su `try`, `handle_cmds` guarda el mensaje en el chat log, que escribe en disco (`:268`; `src/mindroot/lib/chatlog.py`, `add_message_async` → `_save_log_async`). Si eso lanza, el comando pedido no se ejecuta y nadie se entera. Caso límite: depende de un fallo de E/S de disco. |
+| TC4 | P087 | xianer235/115-media-hub | TP | TP | TP | sí | **sí** | `monitor_scheduler` es el planificador de las tareas de monitorización, y solo protege dos pasos (`app/startup.py:173–176,229–234`). `pending_offline_job_counts_by_monitor()`, que lista los trabajos de recursos de la base de datos (`app/services/resource.py:117–119,138–144`), está fuera de `try` (`app/startup.py:184–186`). Un fallo de la base de datos mata el bucle, y ninguna tarea programada vuelve a ejecutarse. Como la tarea no se conserva (`:393`), nadie lo nota. |
+| TC4 | P096 | xianer235/115-media-hub | TP | TP | TP | sí | **sí** | `memory_housekeeper` no tiene `try` (`app/startup.py:379–385`), y `cleanup_completed_monitor_change_events` abre la base de datos y ejecuta un `DELETE` sin protección (`app/services/monitor_changes.py:2414–2425`). Un fallo de la base de datos mata el bucle: las cachés y los eventos dejan de podarse y la memoria crece, sin que nadie lo vea porque la tarea no se conserva (`app/startup.py:402`). |
+| TC3 | P005 | apowerb/apowerb | TP | TP | TP | sí | **no** | `memory_retention_loop` contiene sus excepciones en cada pasada y sigue (`src/apowerb/memory/retention.py:24–31`); espera `asyncio.sleep`, referenciado por el loop. |
+| TC3 | P020 | Deen-Bridge/dnb-ai | TP | TP | TP | sí | **no** | Todo el cuerpo está en `try/except Exception` con log (`main.py:2526,2540–2541`); solo espera E/S de `session_store`. |
+| TC3 | P026 | hzy1522/tickflow-stock-panel | FP | TP | TP | sí | **no** | El cuerpo atrapa `Exception`, marca `job_store.fail` y libera el slot en `finally` (`backend/app/api/kline.py:957–1007`): el estado del trabajo queda coherente. |
+| TC3 | P027 | hzy1522/tickflow-stock-panel | TP | TP | TP | sí | **no** | Igual: `job_store.fail` en `except` y `release_run_slot` en `finally` (`backend/app/api/kline.py:1143–1162`). |
+| TC3 | P028 | hzy1522/tickflow-stock-panel | TP | TP | TP | sí | **no** | Igual: `job_store.fail` en `except` y `release_run_slot` en `finally` (`backend/app/api/kline.py:1233–1249`). |
+| TC4 | P005 | AndrewCTF/velocity | TP | TP | TP | sí | **no** | Precalentamiento opcional: `_get_catalog` pasa por `cache.get_or_fetch` (`apps/api/app/routes/cams.py:170–182`) y la ruta lo vuelve a pedir bajo demanda; si falla, solo queda frío. |
+| TC4 | P006 | AndrewCTF/velocity | TP | TP | TP | sí | **no** | `warm_basemap` atrapa el fallo de cada tesela (`apps/api/app/routes/tiles.py:243–246`); precalentamiento. |
+| TC4 | P007 | AndrewCTF/velocity | TP | TP | TP | sí | **no** | Precalentamiento: si `apple_maps.session()` falla aquí, la sesión se vuelve a pedir bajo demanda con reintento (`apps/api/app/apple_maps.py:175,209`). |
+| TC4 | P008 | AndrewCTF/velocity | TP | TP | TP | sí | **no** | `_prewarm` atrapa todo (`apps/api/app/mcp_server.py:282–286`); solo precalienta. |
+| TC4 | P009 | AndrewCTF/velocity | TP | TP | TP | sí | **no** | `_pipeline` y `_pipeline_mapany` envuelven todo en `try/except Exception` y marcan `job["status"] = "error"` (`apps/api/app/routes/recon.py:419,511` y `:276,297–300`); la espera de `_GPU_LOCK` queda referenciada por el lock global. |
+| TC4 | P012 | antiv/mate | TP | TP | TP | sí | **no** | `_cleanup_loop` espera `asyncio.sleep` y atrapa el fallo de cerrar cada sesión (`shared/utils/tools/browser_tools.py:235–251`); no hay una ruta normal que mate el bucle. |
+| TC4 | P014 | asfaraguest/tatap | TP | TP | TP | sí | **no** | Prefetch de traducción de subtítulos: si falla, la petición real la hace bajo demanda (`android/app/src/main/python/backend/main.py:2343–2371`); el future interno queda en `_SUB_INFLIGHT`. |
+| TC4 | P016 | asfaraguest/tatap | TP | TP | TP | sí | **no** | Mismo prefetch de traducción que P014 (`backend/main.py:2343–2371`): si falla, la petición real lo hace bajo demanda. |
+| TC4 | P029 | crane-in-clear-sky/WorkWit-AI-Agent | TP | TP | TP | sí | **no** | `run_automation` atrapa `Exception`, registra la ejecución como `"error"` y libera `_RUNNING` en `finally` (`workwit/backend/automation_runner.py:86,129–133`). |
+| TC4 | P030 | crane-in-clear-sky/WorkWit-AI-Agent | TP | TP | TP | sí | **no** | `scheduler_loop` atrapa cada pasada y espera `asyncio.sleep` (`workwit/backend/automation_runner.py:138–156`). |
+| TC4 | P031 | crane-in-clear-sky/WorkWit-AI-Agent | TP | TP | TP | sí | **no** | La misma `run_automation` que P029: registra el error y libera `_RUNNING` (`workwit/backend/automation_runner.py:129–133`). |
+| TC4 | P032 | dameng2026/xianyu-pilot | TP | TP | TP | sí | **no** | `_background_refresh_account` atrapa todo con log (`apps/api/app/services/rate_service.py:1476–1484`); solo recalibra datos que se vuelven a sincronizar. |
+| TC4 | P033 | dameng2026/xianyu-pilot | TP | TP | TP | sí | **no** | `_bg_sync` atrapa todo con log (`apps/api/app/services/ws_client.py:876–880`). |
+| TC4 | P034 | dameng2026/xianyu-pilot | TP | TP | TP | sí | **no** | `relist_sold_item` atrapa todo con log y su propia sesión hace `rollback` (`apps/api/app/services/relist_service.py:456–491`). |
+| TC4 | P041 | foodpm/timecut | TP | TP | TP | sí | **no** | `run_diary_for_date` envuelve la generación en `try/except Exception` con log (`app/diary/generator.py:28–38`). |
+| TC4 | P042 | foodpm/timecut | TP | TP | TP | sí | **no** | El callback registrado (`app/main.py:177–182`) llega a `_run_highlight`, que atrapa `Exception` y cierra el trabajo con `job.finish(False, …)` (`app/highlighter/scheduler.py:144–146`). |
+| TC4 | P043 | HyxiaoGe/fusion | TP | TP | TP | sí | **no** | `_parse_file_with_llm` atrapa todo y marca el fichero como error con `_mark_file_error` (`backend/app/services/file_service.py:728,755–760`). |
+| TC4 | P044 | HyxiaoGe/fusion | TP | TP | TP | sí | **no** | La misma `_parse_file_with_llm` que P043 (`backend/app/services/file_service.py:755–760`). |
+| TC4 | P046 | jacebrowning/memegen | TP | TP | TP | sí | **no** | `track` solo envía analítica a un rastreador remoto (`app/utils/meta.py:109–140`); si falla, no cambia ninguna respuesta ni ningún estado funcional. |
+| TC4 | P049 | liyupi/yu-ai-learn | TP | TP | TP | sí | **no** | `_process_document` atrapa `Exception` y marca el documento `"failed"` (`backend/app/services/knowledge_service.py:74,89–93`). |
+| TC4 | P050 | liyupi/yu-ai-learn | TP | TP | TP | sí | **no** | `_run_quiz_task` atrapa `Exception` y marca la tarea `"failed"` (`backend/app/services/quiz_service.py:166,214–218`). |
+| TC4 | P051 | ljxpython/ai-agent-platform | TP | TP | TP | sí | **no** | `_cleanup` atrapa los fallos de `_reap` y de `docker rm` (`apps/runtime-service/src/runtime_service/workspace/execution.py:28–38,105–108`) y devuelve el resultado. |
+| TC4 | P053 | metalogico/issued | TP | TP | TP | sí | **no** | `_print_startup_messages` solo escribe mensajes de log (`server/opds/__init__.py:53–64`). |
+| TC4 | P054 | phucnguyentvp1/frameweaver | TP | TP | TP | sí | **no** | `_sync_tier` atrapa `Exception` y libera `_sync_in_progress` en `finally` (`agent/services/flow_client.py:294–310`). |
+| TC4 | P055 | phucnguyentvp1/frameweaver | TP | TP | TP | sí | **no** | La misma `_sync_tier` que P054 (`agent/services/flow_client.py:294–310`). |
+| TC4 | P056 | phucnguyentvp1/frameweaver | TP | TP | TP | sí | **no** | Si `_refresh_media_urls` falla (`agent/services/flow_client.py:318–362`), solo se pierde una actualización oportunista de URLs firmadas. La extensión la reenvía cada vez que captura URLs nuevas (`extension/background.js:910–922`), así que no queda ningún estado bloqueado. |
+| TC4 | P057 | phucnguyentvp1/frameweaver | TP | TP | TP | sí | **no** | `_run_one` libera el límite y `_active_ids` en `finally` (`agent/worker/processor.py:163–172`), y `_process_one` atrapa `Exception` y llama a `_handle_failure` (`:280,302–305`). |
+| TC4 | P064 | runvnc/mindroot | TP | TP | TP | sí | **no** | `delayed_exit` duerme 0,5 s y hace `sys.exit(0)` (`src/mindroot/coreplugins/admin/server_router.py:36–38`); la espera está referenciada por el loop y no hay estado que quede a medias. |
+| TC4 | P065 | runvnc/mindroot | TP | TP | TP | sí | **no** | La misma `delayed_exit` que P064 (`src/mindroot/coreplugins/admin/server_router.py:36–38`). |
+| TC4 | P077 | runvnc/mindroot | TP | TP | TP | sí | **no** | `execute_scheduled_command` atrapa `Exception` y registra la ejecución como fallida (`src/mindroot/coreplugins/scheduler/mod.py:516,539–550`). |
+| TC4 | P081 | SpillwaveSolutions/agent-brain | TP | TP | TP | sí | **no** | `_run_indexing_pipeline` atrapa `Exception`, marca el estado `FAILED` con el error y relanza (`agent-brain-server/agent_brain_server/services/indexing_service.py:837–842`), y libera `is_indexing` en `finally`. La excepción relanzada no la ve nadie, pero el estado queda coherente. |
+| TC4 | P085 | TNT-Likely/BeeCount-Cloud | TP | TP | TP | sí | **no** | `_write_call_log` envuelve la escritura en `try/except Exception` con log (`src/mcp/server.py:91,113–114`); si falla, se pierde una línea del log de llamadas, no el resultado de la herramienta. |
+| TC4 | P086 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | `_run_inbox_cron_import` atrapa todo con log (`app/startup.py:68–75`). |
+| TC4 | P088 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | `offline_completion_watcher` atrapa cada pasada y espera `asyncio.sleep` (`app/services/resource.py:381–388`). |
+| TC4 | P089 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | El watcher atrapa cada pasada y espera `asyncio.sleep` (`app/services/subscription_offline_cleanup.py:257–264`). |
+| TC4 | P090 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | El watcher atrapa cada pasada (`app/services/cross_copy_staging_cleanup.py:381–389`). |
+| TC4 | P091 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | El watcher atrapa cada pasada (`app/services/subscription_cross_copy_organize.py:559–567`). |
+| TC4 | P092 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | El watcher atrapa cada pasada (`app/services/subscription_cross_copy_progress.py:622–630`). |
+| TC4 | P093 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | El watcher atrapa cada pasada (`app/services/cross_copy_jobs.py:1265–1274`). |
+| TC4 | P094 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | `subscription_scheduler` no tiene `try` (`app/startup.py:239–283`), pero solo calcula sobre la configuración normalizada. `get_config` lee bajo el mismo lock que la escritura, así que nunca ve un fichero a medias (`app/config_store.py:61–80`). No encuentro ninguna E/S fuera de `try` que falle en operación normal. |
+| TC4 | P095 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | `sign115_scheduler` lee la configuración bajo lock (`app/config_store.py:61–70`), normaliza la hora antes de `int()` y delega en `submit_background` (`app/startup.py:362–377`). |
+| TC4 | P097 | xianer235/115-media-hub | TP | TP | TP | sí | **no** | `resource_jobs_housekeeper` pasa por `_run_prune_step`, que atrapa `Exception` (`app/startup.py:60–65,387–391`). |
+| TC4 | P098 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | `work` atrapa `Exception`, resuelve `fut` y limpia `_search_inflight` (`proxy/app.py:853–865`). Espera E/S de red, referenciada por el loop, así que la petición que espera `fut` no queda colgada. |
+| TC4 | P099 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | `refresh_routes` restablece `_refreshing` en `finally` (`proxy/catalog.py:205–209,337`). Si falla, la siguiente petición con rutas caducadas lo vuelve a lanzar (`proxy/app.py:1389–1391`). |
+| TC4 | P100 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | El mismo `refresh_routes` que P099, relanzado por la siguiente petición (`proxy/app.py:1426–1427`). |
+| TC4 | P101 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | `chart_cache.refresh` atrapa `Exception`, conserva la caché anterior y restablece `_refreshing` (`proxy/charts.py:382–404`). |
+| TC4 | P102 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | `produce` atrapa `Exception`, resuelve `fut` con `None` y limpia `_PLAYLIST_FUT` (`proxy/app.py:2989–3004`). |
+| TC4 | P103 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | `warm_standalone` atrapa todo (`proxy/catalog.py:625–635`); solo precalienta. |
+| TC4 | P104 | yujian0815/fnmedia-ext | TP | TP | TP | sí | **no** | `work` atrapa `Exception`, resuelve `fut` y limpia `_inflight` (`proxy/catalog.py:476–490`). |
 
-| Corpus | ID | Repo | Original | v1 | v2 propuesta | Razón |
-|---|---|---|---|---|---|---|
-| TC2 | J052 | risesoft-y9/WorkFlow-Engine | TP | TP | **TP** ⚠ | `Process4CompleteUtilServiceImpl.java:299`: `Thread.sleep(3000)` por proceso completado en `@Async saveToEs` de producción; el módulo no define executor propio, así que comparte el executor de `@Async` de la aplicación: con completaciones concurrentes, otros `@Async` esperan. |
+### 2.2 Auxiliares (TC2, fuera de la selección)
 
-## 4. Pregunta de interpretación que afecta a 64 casos (PYVIBE-012)
+| Corpus | ID | Repo | Original | v1 | v2 | (a) contrato | (b) fallo funcional | Razón de (b) |
+|---|---|---|---|---|---|---|---|---|
+| TC2 | P145 | OtoDock/oto-dock | TP | TP | TP | sí | **no** | `pty_resize` no tiene ningún `await` (`satellite/sessions/session_manager.py:1091–1094`): termina en el primer paso y no puede ser recolectada a medias; solo fallaría con un mensaje mal formado. |
+| TC2 | P149 | OtoDock/oto-dock | TP | TP | TP | sí | **no** | `stop_turn` no tiene ningún `await` (`satellite/sessions/session_manager.py:837–844`). |
+| TC2 | P161 | OtoDock/oto-dock | TP | TP | TP | sí | **no** | `file_stat` atrapa `ValueError`/`SafeFsError`/`OSError` y siempre responde con `enqueue_send` (`satellite/sessions/session_manager.py:1995–2016,2027–2055`), que no lanza (`satellite/transport/ws_client.py:552–564`). |
+| TC2 | P116 | OtoDock/oto-dock | TP | TP | TP | sí | **no** | `_drain_stderr` atrapa todo (`proxy/core/layers/codex/app_server_client.py:380–401`) y espera la tubería del subproceso, referenciada por el loop. |
+| TC2 | P153 | OtoDock/oto-dock | TP | TP | TP | sí | **no** | `check_session_resumable` atrapa `Exception` y luego responde con `enqueue_send`, que no lanza (`satellite/sessions/session_manager.py:1273–1311`). |
 
-La propuesta lee la propiedad de PYVIBE-012 como **el contrato documentado** de `asyncio.create_task`: hay que guardar una referencia a la tarea, porque el loop solo guarda una referencia débil y una tarea no referenciada «puede ser recolectada en cualquier momento». Con esa lectura, no conservar la referencia en una ruta alcanzable es TP, y los 64 TP siguen siendo TP.
+## 3. Otros casos corregidos el 2026-11-03 (reglas no candidatas)
 
-Hay una lectura más estricta: exigir que el repositorio muestre una condición en la que la recolección sea plausible en la práctica. En CPython, una tarea que espera un temporizador o E/S del loop queda referenciada a través de él; la recolección solo es real si la tarea espera un future que nadie más referencia. Con esa lectura habría que revisar caso por caso qué espera cada tarea y si sus excepciones se pierden. Muchos de tus TP con Overstated (el cuerpo captura sus excepciones) podrían pasar a FP por contexto. Si eliges esta lectura, hago esa revisión caso por caso antes de C.
+Son ejemplos y casos que tus decisiones tocan. No entran en la selección: `blocking` (14) y PYVIBE-009 (12) no llegan a n ≥ 15 en TC3 + TC4, y `transactions` tiene WARNING como máximo.
 
-## 5. Propuesta completa por regla
+| Corpus | ID | Regla | Repo | Original | v1 | v2 propuesta | Razón |
+|---|---|---|---|---|---|---|---|
+| TC3 | J001 | blocking | axelixlabs/axelix | TP | TP | **FP (context)** | `BookTestDataQueryRunner.java:22–24`: `Thread.sleep(10000)` en el único `@Scheduled` de la app. Un cron fija activaciones, no un SLA: Spring se salta las activaciones mientras la anterior sigue ocupada, y el repositorio no exige ningún plazo ni frescura a este runner de datos de prueba (v2 §1). |
+| TC4 | J053 | transactions | VIJAYAPANDIANT/fixit-hub | U | U | **TP** | `ingestEvent` es `@Transactional` (`IngestionServiceImpl.java:46`) y llama a `diagnoseIssueAsync` solo para issues nuevos (`:155–156`). La rama local es rápida (`AIDiagnosticServiceImpl.java:124–130`), y el worker relee el issue en su propia transacción y descarta el resultado sin avisar si no lo encuentra (`:143–146`). Es lo que afirma el mensaje: el worker no ve los cambios sin confirmar del llamador. Confirmado por Joaquín (decisión 5 del 2026-11-03). |
+| TC2 | J015 | blocking | quarkusio/quarkus | TP | TP | **FP (context)** | Fixture: `Thread.sleep(100)` en el job `increment()` con `cron = "*/1 * * * * ?"` (`integration-tests/opentelemetry-quartz/src/main/java/io/quarkus/it/opentelemetry/quartz/Counter.java:24–27`), igual que `FailedBasicScheduler.java:10–13`. La cadencia de un cron no es una propiedad (v2 §1), y el módulo no exige ningún plazo, así que no se incumple ninguna propiedad. |
+| TC2 | J056 | blocking | terrakube-io/terrakube | FP | FP | **FP (context)** | El `join()` (`AzDevOpsPollingService.java:101–110`) tiene cota: HTTP con connect 5 s, respuesta 30 s y espera de pool 2 s (`WebhookHttpClientConfig.java:33–46`, usado en `WebhookServiceBase.java:125–128`) y token SP/MI con `block(30 s)` (`AzDevOpsTokenService.java:115`). Sí retrasa al otro job `fixedDelay` (`CliAuthSessionCleanupTask.java:19`), porque con `SimpleAsyncTaskScheduler` los `fixedDelay` comparten un hilo, pero la purga no tiene plazo exigido: las sesiones caducadas se rechazan al usarlas (`CliLoginService.java:228`). La etiqueta es la misma que la original, por otra razón (decisión 1 del 2026-11-03). |
+| TC2 | J001 | blocking | bage2014/study | FP | TP | **FP (context)** | `SampleBackground.java:38–41`: sleep aleatorio < 1 s, con cota, en el único `@Async` del módulo (`study-spring-boot-zipkin`, sin `@Scheduled` ni configuración de executor); la ruta `/async` no espera el resultado (`SampleController.java:85–88`) y nada en el módulo exige un plazo, así que no se incumple ninguna propiedad. |
+| TC2 | J052 | blocking | risesoft-y9/WorkFlow-Engine | TP | TP | **U** | `saveToEs` duerme 3 s por cada proceso que termina (`y9-module-processadmin/risenet-y9boot-support-processadmin/src/main/java/net/risesoft/service/impl/Process4CompleteUtilServiceImpl.java:283–299`, llamado en `TaskListener4ProcessCompleted.java:61`). La app activa `@EnableAsync` (`risenet-y9boot-server-processadmin/src/main/java/net/risesoft/ProcessAdminApplication.java:23`) sin executor propio ni `spring.task` en el módulo, así que el executor efectivo puede venir de los starters `risenet-y9boot-starter-*` (`risenet-y9boot-server-processadmin/pom.xml:37,49,66`), que están fuera del repositorio. Ningún código muestra la frecuencia o el volumen que llenarían un executor acotado. Falta configuración decisiva. |
 
-### PYVIBE-012 (65 casos)
-
-| Corpus | ID | Repo | Original | v1 | v2 propuesta | Razón |
-|---|---|---|---|---|---|---|
-| TC2 | P145 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: satellite/transport/ws_client.py:968. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC2 | P149 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: `satellite/transport/ws_client.py:981`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC2 | P161 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: `satellite/transport/ws_client.py:1045` descarta la referencia devuelta por `asyncio.create_task(self.sm.file_stat(msg, self))`. El registro `self.sm._pulls` y . Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC2 | P116 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: `proxy/core/layers/codex/app_server_client.py:172–174` descarta la referencia devuelta por `asyncio.create_task()` para `_drain_stderr()`. La función se define . Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC2 | P153 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: `satellite/transport/ws_client.py:1000–1002` crea una tarea para `self.sm.check_session_resumable(msg, self)` sin guardar su referencia ni adjuntar un callback . Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC3 | P026 | hzy1522/tickflow-stock-panel | FP | TP | **TP** | `kline.py:1009`: `create_task(task())` sin conservar la referencia en una ruta de producción; que el cuerpo capture `Exception` solo afecta a la parte de excepciones del mensaje (Overstated). Igual que en v1 §6 y que P027/P028. |
-| TC3 | P020 | Deen-Bridge/dnb-ai | TP | TP | **TP** | Ruta de Joaquín: `main.py:1988`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC3 | P028 | hzy1522/tickflow-stock-panel | TP | TP | **TP** | Ruta de Joaquín: `backend/app/api/kline.py:1251`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC3 | P027 | hzy1522/tickflow-stock-panel | TP | TP | **TP** | Ruta de Joaquín: `backend/app/api/kline.py:1164`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC3 | P005 | apowerb/apowerb | TP | TP | **TP** | Ruta de Joaquín: `src/apowerb/main.py:680`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P102 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: `proxy/app.py:3006`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P057 | phucnguyentvp1/frameweaver | TP | TP | **TP** | Ruta de Joaquín: `agent/worker/processor.py:151`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P065 | runvnc/mindroot | TP | TP | **TP** | Ruta de Joaquín: `src/mindroot/coreplugins/admin/server_router.py:66`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P032 | dameng2026/xianyu-pilot | TP | TP | **TP** | Ruta de Joaquín: `rate_service.py:1457`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P054 | phucnguyentvp1/frameweaver | TP | TP | **TP** | Ruta de Joaquín: agent/services/flow_client.py:249 descarta la tarea creada con asyncio.create_task(self._sync_tier()); agent/main.py:62 llama a handle_message desde la ruta pri. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P008 | AndrewCTF/velocity | TP | TP | **TP** | Ruta de Joaquín: apps/api/app/mcp_server.py:321 descarta asyncio.create_task(_prewarm()); _ensure_backend se invoca desde las rutas de herramientas en las líneas 330, 362 y 382.. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P051 | ljxpython/ai-agent-platform | TP | TP | **TP** | Ruta de Joaquín: execution.py:100 descarta asyncio.create_task(_cleanup(...)); execution.py:102 registra late_cleanup como callback de creation.add_done_callback.. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P099 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: proxy/app.py:1366–1391 define la ruta POST /v/api/v1/item/list y descarta asyncio.create_task(catalog.refresh_routes(...)) en la línea 1390; hay otras creacione. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P090 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: `app/startup.py:102–103,396`; `app/main.py:35`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P104 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: `proxy/catalog.py:457,492–493,424,631,649`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P097 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: `app/startup.py:102–103,403`; `app/main.py:35`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P085 | TNT-Likely/BeeCount-Cloud | TP | TP | **TP** | Ruta de Joaquín: `src/mcp/server.py:117–144,193–206,491–493`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P041 | foodpm/timecut | TP | TP | **TP** | Ruta de Joaquín: `app/web/routes/diary.py:72–80`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P014 | asfaraguest/tatap | TP | TP | **TP** | Ruta de Joaquín: `android/app/src/main/python/backend/main.py:1635–1667,1762,1934`. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P081 | SpillwaveSolutions/agent-brain | TP | TP | **TP** | Ruta de Joaquín: indexing_service.py:208–210. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P006 | AndrewCTF/velocity | TP | TP | **TP** | Ruta de Joaquín: main.py:497. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P064 | runvnc/mindroot | TP | TP | **TP** | Ruta de Joaquín: server_router.py:40–54. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P092 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: startup.py:398. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P056 | phucnguyentvp1/frameweaver | TP | TP | **TP** | Ruta de Joaquín: flow_client.py:268–270; agent/main.py:62. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P055 | phucnguyentvp1/frameweaver | TP | TP | **TP** | Ruta de Joaquín: flow_client.py:252–266; agent/main.py:62. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P049 | liyupi/yu-ai-learn | TP | TP | **TP** | Ruta de Joaquín: knowledge_service.py:67; routes/knowledge.py:18. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P005 | AndrewCTF/velocity | TP | TP | **TP** | Ruta de Joaquín: main.py:482–489. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P091 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: startup.py:397. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P058 | riteshbonthalakoti/HELPDESK.AI | U | U | **U** | `.tmp-ci-venv/Lib/site-packages/realtime/_async/channel.py:247`: dependencia dentro de un virtualenv de CI comiteado; no se demuestra que la aplicación use esa copia. |
-| TC4 | P096 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:402. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P101 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: proxy/app.py:1463. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P077 | runvnc/mindroot | TP | TP | **TP** | Ruta de Joaquín: scheduler/mod.py:594,612. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P030 | crane-in-clear-sky/WorkWit-AI-Agent | TP | TP | **TP** | Ruta de Joaquín: workwit/backend/app.py:32–34. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P012 | antiv/mate | TP | TP | **TP** | Ruta de Joaquín: browser_tools.py:216; server/browser_routes.py:53. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P009 | AndrewCTF/velocity | TP | TP | **TP** | Ruta de Joaquín: routes/recon.py:601–652. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P095 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:401. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P044 | HyxiaoGe/fusion | TP | TP | **TP** | Ruta de Joaquín: file_service.py:485; api/files.py:103. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P053 | metalogico/issued | TP | TP | **TP** | Ruta de Joaquín: server/opds/init.py:66,84. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P034 | dameng2026/xianyu-pilot | TP | TP | **TP** | Ruta de Joaquín: xianyu_order_sync.py:382–385; routes/order.py:246. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P016 | asfaraguest/tatap | TP | TP | **TP** | Ruta de Joaquín: backend/main.py:1667,1762,1934. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P050 | liyupi/yu-ai-learn | TP | TP | **TP** | Ruta de Joaquín: quiz_service.py:155; routes/quiz.py:34. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P029 | crane-in-clear-sky/WorkWit-AI-Agent | TP | TP | **TP** | Ruta de Joaquín: agent_endpoints.py:994–1004. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P007 | AndrewCTF/velocity | TP | TP | **TP** | Ruta de Joaquín: main.py:500–504,709. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P093 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:399; app/main.py:35. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P087 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:393; app/main.py:35. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P004 | AndrewCTF/velocity | TP | TP | **TP** | Ruta de Joaquín: localllm/manager.py:628; routes/ai_models.py:106. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P043 | HyxiaoGe/fusion | TP | TP | **TP** | Ruta de Joaquín: file_service.py:267–269; api/files.py:62. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P031 | crane-in-clear-sky/WorkWit-AI-Agent | TP | TP | **TP** | Ruta de Joaquín: automation_runner.py:153; app.py:34. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P042 | foodpm/timecut | TP | TP | **TP** | Ruta de Joaquín: highlights.py:217–228. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P098 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: proxy/app.py:867–868,1499. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P066 | runvnc/mindroot | TP | TP | **TP** | Ruta de Joaquín: agent.py:929–936; persona/mod.py:72. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P046 | jacebrowning/memegen | TP | TP | **TP** | Ruta de Joaquín: helpers.py:237; views/images.py:299,470. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P103 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: catalog.py:335–336; proxy/app.py:1427. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P040 | foodpm/timecut | TP | TP | **TP** | Ruta de Joaquín: recorder/manager.py:190; app/main.py:60,150. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P089 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:395; app/main.py:35. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P094 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:400; app/main.py:35. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P086 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:215,393. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P100 | yujian0815/fnmedia-ext | TP | TP | **TP** | Ruta de Joaquín: proxy/app.py:1366–1367,1427. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P088 | xianer235/115-media-hub | TP | TP | **TP** | Ruta de Joaquín: app/startup.py:394; app/main.py:35. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-| TC4 | P033 | dameng2026/xianyu-pilot | TP | TP | **TP** | Ruta de Joaquín: ws_client.py:876–882,654. Ninguna referencia a la tarea se conserva: se incumple el contrato de `asyncio.create_task` (v2 §3, PYVIBE-012). |
-
-### blocking (18 casos)
-
-| Corpus | ID | Repo | Original | v1 | v2 propuesta | Razón |
-|---|---|---|---|---|---|---|
-| TC2 | J015 | quarkusio/quarkus | TP | TP | **FP (context)** | `Counter.java:24–27`: `Thread.sleep(100)` cada 1 s en el job `increment()` de un fixture; Quartz de Quarkus tiene 25 hilos por defecto y el módulo no fija `thread-count`; nada espera detrás y la pausa es el trabajo deliberado del job (v2 §1, §3 `blocking`). |
-| TC2 | J056 | terrakube-io/terrakube | FP | FP | **FP (context)** | `AzDevOpsPollingService.java:101–110`: espera de diseño con hilos virtuales (`application.properties:4`, Spring Boot 4.1.1): cada ejecución tiene su propio hilo y nada espera detrás. |
-| TC2 | J001 | bage2014/study | FP | TP | **FP (context)** | `SampleBackground.java:38–41`: sleep aleatorio < 1 s que simula latencia en el único `@Async` del módulo, sobre el executor por defecto; ningún `@Scheduled` ni otro `@Async` en `study-spring-boot-zipkin`; nada espera detrás (v2 §1). Además es repositorio de estudio (exclusión c2). |
-| TC2 | J052 | risesoft-y9/WorkFlow-Engine | TP | TP | **TP** ⚠ | `Process4CompleteUtilServiceImpl.java:299`: `Thread.sleep(3000)` por proceso completado en `@Async saveToEs` de producción; el módulo no define executor propio, así que comparte el executor de `@Async` de la aplicación: con completaciones concurrentes, otros `@Async` esperan. |
-| TC3 | J003 | axelixlabs/axelix | TP | TP | **TP** | `SchedulerTestConfig.java:41,49–57,69`: scheduler de 3 hilos; `reEntrantLockTask` duerme 120 s con el lock tomado y `synchronizedBlockTask` también bloquea; hay 7 `@Scheduled` en el módulo (`cronTask` cada 5 s, `alive` cada 30 s…), que pueden quedarse sin hilo. Playground: alcanzable en su propia app. |
-| TC3 | J001 | axelixlabs/axelix | TP | TP | **FP (context)** ⚠ | `BookTestDataQueryRunner.java:22–24`: `Thread.sleep(10000)` en el único `@Scheduled` de la app (scheduler por defecto, `FeatureServiceApplication.java:10`); ningún otro job espera. Lo único incumplido es la propia cadencia `*/2` del job, que el sleep deliberado de un runner de datos de prueba hace imposible por diseño. |
-| TC3 | J010 | Evvvvvvvan/XianYuSmart | TP | TP | **TP** | `TokenRefreshServiceImpl.java:486–509`: 3–8 s de sleep por cuenta en un `@Scheduled`; scheduler de 2 hilos (`config/AsyncConfig.java:135–137`) compartido con 14 `@Scheduled`: los demás jobs pierden su cadencia. |
-| TC4 | J057 | wujun728/jun_java_plugin | FP | FP | **FP (reachability)** | `AsyncTask.java:33–38`: el único llamador es un test (`ApplicationTests.java:33`). |
-| TC4 | J056 | wujun728/jun_java_plugin | FP | FP | **FP (reachability)** | `AsyncTask.java:22–26`: el único llamador es un test (`ApplicationTests.java:31`). |
-| TC4 | J033 | mrtylerzhou/AntFlow-activiti | U | U | **U** | La sobrecarga de 2 argumentos `MessageUtils.sendMessageBatch(List, MessageSendTypeEnum)` (`MessageUtils.java:44–46`) no tiene llamadores en el repositorio; el único que hay (`NotifyServiceImpl.java:202`) usa la de 1 argumento. Es API pública de un motor integrable: no se puede decidir. |
-| TC4 | J032 | mrtylerzhou/AntFlow-activiti | U | U | **U** | La cadena interna está muerta: `NotifyServiceImpl.notifyCurrent` (`:168`) no tiene llamadores, y `map` es `null` en `:182`, así que `:184` lanza antes de `:202`. Pero `MessageUtils.sendMessageBatch(List)` (`MessageUtils.java:31`) es API pública de un motor que se integra en otras aplicaciones: no se puede decidir sin sus llamadores externos. La duda sobre el retorno `Boolean` ya no cambia la etiqueta. |
-| TC4 | J035 | najiuwanan/xianyu-Plus | TP | TP | **TP** | `ItemDetailSyncServiceImpl.java:121,127–156`: `self.executeSync` pasa por el proxy `@Async` y duerme hasta 500 ms por artículo en `taskExecutor`, el executor que comparten los 25 `@Async` de la app: con lotes grandes, los demás esperan. |
-| TC4 | J036 | najiuwanan/xianyu-Plus | TP | TP | **TP** | `TokenRefreshServiceImpl.java:496–519`: 3–8 s por cuenta en un `@Scheduled`; scheduler de `max(4, app.scheduler.pool-size)` hilos (`AsyncConfig.java:88–91`) con 13 `@Scheduled`: con varias cuentas, otros jobs esperan. |
-| TC4 | J058 | ysy0915/chat-system | TP | TP | **TP** | `ModelAutoChatService.java:59–94`: `Future.get()` sin timeout sobre una llamada LLM en un `@Scheduled`: el hilo del scheduler puede quedar colgado sin cota (4 `@Scheduled` en `chat-core`). |
-| TC4 | J009 | danielsobrado/edgar4j | TP | TP | **TP** | `FilingSyncJob.java:53–94`: sleep por empresa (limitación de frecuencia deliberada) en un `@Scheduled`; 11 `@Scheduled` y ninguna configuración del pool del scheduler (1 hilo por defecto): los demás jobs esperan todo el lote. |
-| TC4 | J052 | sc2-pulse/sc2-pulse | TP | TP | **TP** | `SC2MetaService.java:98–108`: `.block()` espera un flujo completo en un `@Scheduled`; `spring.task.scheduling.pool.size=2` (`application.properties:6`) para 18 `@Scheduled`: con dos esperas así, el resto queda sin hilo. |
-| TC4 | J012 | danielsobrado/edgar4j | TP | TP | **TP** | `CompanyEnrichmentService.java:88–97`, llamada desde `InsiderController.java:357`: 1 s de sleep por empresa, más la espera `.get()`, dentro de `CompletableFuture.runAsync` sin executor, es decir, en el ForkJoinPool común, que comparten otros 15 `runAsync`/`supplyAsync` del repositorio. El sleep no está en el hilo de `@Async` que dice el mensaje (Overstated). |
-| TC4 | J051 | sc2-pulse/sc2-pulse | TP | TP | **TP** | `Cron.java:218–221`: `.block()` sobre `runIfAvailable()` en un `@Scheduled`; mismo scheduler de 2 hilos para 18 `@Scheduled` (`application.properties:6`). |
-
-### PYVIBE-009 (18 casos)
-
-| Corpus | ID | Repo | Original | v1 | v2 propuesta | Razón |
-|---|---|---|---|---|---|---|
-| TC2 | P083 | not-sekiun/Consortium | FP | FP | **FP (context)** | `start_server.py:49`: `open()` solo en el arranque, antes de servir (`:154–155`); nada más corre en el loop. |
-| TC2 | P099 | OtoDock/oto-dock | FP | FP | **FP (reachability)** | `mcps/custom/tts-mcp/live_smoke.py:54`: script manual de humo, no es operación normal. |
-| TC2 | P098 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: mcps/custom/transcribe-mcp/server.py:696 (también :657). E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC2 | P073 | MoMoM101/RAG-ReActAgent | TP | TP | **TP** | Ruta de Joaquín: `backend/storage/files.py:208–212` ejecuta `open()` y lecturas síncronas dentro del generador asíncrono `open_read()`. `backend/storage/__init__.py:76` consume . E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC2 | P090 | OtoDock/oto-dock | TP | TP | **TP** | Ruta de Joaquín: `mcps/custom/image-gen-mcp/server.py:573–576` abre `mask_path` con `open()` síncrono dentro de `_edit_openai()`, una corrutina que realiza la petición HTTP medi. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC2 | P077 | not-sekiun/Consortium | TP | TP | **TP** | Ruta de Joaquín: `consortium/client/commands/core_commands/rc.py:50–51` hace E/S síncrona con `open()` dentro de `RcCommand.run`; `base_interpreter.py:178–179` lo invoca mediant. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P075 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/tasks/media_tasks.py:2859–2860`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P008 | apowerb/apowerb | TP | TP | **TP** | Ruta de Joaquín: `src/apowerb/routers/files.py:212–213, 246–253`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P087 | openclaw-easy/ViralMint | TP | TP | **TP** | Ruta de Joaquín: `backend/api/downloaded.py:485–488, 527–534`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P050 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/ai/tools/code_tool.py:1301–1314, 1325–1326`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P038 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `apps/api/routers/sites.py:483–484, 533–537`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P056 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/ai/tools/file_tools.py:1066–1069, 1077–1078`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P060 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/ai/tools/media_tools.py:6112–6126`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P061 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/ai/tools/sandbox_tools.py:525–527`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P064 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/services/content_ledger.py:498–503`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P093 | pixeltable/pixeltable | TP | TP | **TP** | Ruta de Joaquín: `pixeltable/functions/twelvelabs.py:339–340`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P069 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/services/open_music_catalog.py:310–317`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
-| TC3 | P076 | manor-os/manor-ai | TP | TP | **TP** | Ruta de Joaquín: `packages/core/tasks/media_tasks.py:2892–2893`. E/S de fichero síncrona en el loop, en una ruta que se ejecuta mientras el loop atiende otro trabajo (v2 §3). |
+Los demás casos de `blocking` y PYVIBE-009 de la primera propuesta no se han revisado con las decisiones del 2026-11-03, porque esas reglas no son candidatas. Si alguna vuelve a serlo, hay que revisarlos.
 
 ## Ficheros
 
-- `propuesta.py`: genera `propuesta-v2.json` a partir de `audit-joaquin.json`, las fichas y las razones propias de los casos revisados.
-- `propuesta-v2.json`: la propuesta en formato legible por máquina (`v2_propuesta`, `fp_condition`, `dudoso`, `razon`).
-- Este fichero: pendiente de tu confirmación. Las correcciones se registrarán aquí con fecha, antes de calcular la selección (C).
+- `propuesta.py`: genera `propuesta-v2.json` y este fichero.
+- `pyvibe-012-campo-b.tsv`: el campo (b) de los 65 casos de PYVIBE-012, con su razón y sus `file:line`.
